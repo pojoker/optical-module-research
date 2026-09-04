@@ -102,19 +102,19 @@ HTML 保持单一读者页面：`route_bom.csv` 提供 800G DR8 / 1.6T DR8 / 400
 ```bash
 # 国内：投关记录、互动问答、公告和机械召回差分
 /Users/jowang/miniconda3/bin/python3 -m domestic_daily run \
-  --source-root /Users/jowang/Downloads/workflow-rehearsal-goal-control \
+  --source-root /Users/jowang/Downloads/optical-module-research \
   --state-root /Users/jowang/Downloads/workflow-rehearsal-daily-state/domestic \
   --date YYYY-MM-DD
 
 # 海外：官网/IR/监管端点发现，只生成 schema-shaped candidates
 /Users/jowang/miniconda3/bin/python3 -m calls.daily_discovery run \
-  --source-root /Users/jowang/Downloads/workflow-rehearsal-goal-control \
+  --source-root /Users/jowang/Downloads/optical-module-research \
   --state-root /Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas \
   --date YYYY-MM-DD \
-  --config /Users/jowang/Downloads/workflow-rehearsal-goal-control/calls/discovery_config.json
+  --config /Users/jowang/Downloads/optical-module-research/calls/discovery_config.json
 
 /Users/jowang/miniconda3/bin/python3 -m calls.daily_discovery verify \
-  --source-root /Users/jowang/Downloads/workflow-rehearsal-goal-control \
+  --source-root /Users/jowang/Downloads/optical-module-research \
   --state-root /Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas \
   --date YYYY-MM-DD
 
