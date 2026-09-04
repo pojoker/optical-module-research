@@ -1,28 +1,50 @@
 # ACTIVE_WORKPACK — 当前唯一工作包（人工控制，无自动状态机）
 
 workpack:
-  id: AUDIT-DQ-001
-  title: 光模块数据质量与消融独立复核委托书
+  id: AUDIT-DQ-002
+  title: Kimi 与 Cursor 数据质量及消融独立双审
   status: completed
   approved_at: 2026-09-04
   completed_at: 2026-09-04
   owner: 用户
-  authorization: 用户明确要求撰写审计建议文档，交给 Kimi 与 Cursor 独立核验
+  authorization: 用户确认授权在 cmux 分屏独立运行 Kimi 和 Cursor 审核
 
 objective:
-  - 把当前数据质量诊断改写成可证伪、可独立复算的审计委托书。
-  - 分离领域语义审计与数据契约/依赖审计，避免继承单一审阅者的 Goal Drift。
-  - 只形成审计输入，不执行数据修复、schema 迁移或消融。
+  - 以审计委托书为唯一任务合同，分别执行领域语义审计与数据契约/消融审计。
+  - 保持两位审阅者相互独立，完成前不得读取对方报告。
+  - 只生成审计报告，不修改 canonical、代码、测试、网页或日更状态。
 
 baseline:
   repository: pojoker/optical-module-research
   branch: main
-  commit: 63d426b15b4c2e842ac9569f09febd6dd2d8ff5f
+  instruction_commit: 43d1d6cfa335e8693f33fa834a0d775ae2879195
+  canonical_snapshot_commit: 63d426b15b4c2e842ac9569f09febd6dd2d8ff5f
+  audit_brief: docs/reviews/2026-09-04-data-quality-ablation-independent-review-brief.md
   audit_as_of: 2026-09-04
+
+reader_visible_deliverables:
+  - docs/reviews/2026-09-04-kimi-data-quality-semantic-audit.md
+  - docs/reviews/2026-09-04-cursor-data-quality-contract-ablation-audit.md
 
 allowed_write_paths:
   - docs/control/ACTIVE_WORKPACK.yaml
-  - docs/reviews/2026-09-04-data-quality-ablation-independent-review-brief.md
+  - docs/reviews/2026-09-04-kimi-data-quality-semantic-audit.md
+  - docs/reviews/2026-09-04-cursor-data-quality-contract-ablation-audit.md
+
+read_scope:
+  allowed:
+    - AGENTS.md
+    - docs/control/PROJECT_CHARTER.md
+    - docs/control/ACTIVE_WORKPACK.yaml
+    - docs/reviews/2026-09-04-data-quality-ablation-independent-review-brief.md
+    - 委托书中为 Kimi 与 Cursor 分别列出的文件和测试
+    - 为验证公开证据而访问的一手来源
+  forbidden:
+    - archive/**
+    - 旧分支和其他 worktree
+    - closure-pilot 与状态机材料
+    - 完整 agent 轨迹和旧会话全量日志
+    - 对方尚未提交的审计报告
 
 canonical_policy:
   writable: false
@@ -38,19 +60,49 @@ canonical_policy:
     - company_segment_revenue.csv
     - calls/*.csv
 
+execution_plan:
+  - 启动前记录仓库 HEAD、工作树和 canonical 指纹。
+  - 在 cmux 右侧拆分两个终端，分别运行 Kimi 与 Cursor。
+  - 等待两路完成；若任一请求扩大范围，停止该路并升级。
+  - 检查只产生两份允许报告，并验证 canonical 指纹不变。
+  - 执行机器门；机器门只证明结构未受损，不代替审计裁决。
+  - 汇总一致结论、分歧与 UNKNOWN，不实施修复或消融。
+
 non_goals:
-  - 不修改或删除任何数据
-  - 不执行 schema 合并或消融
-  - 不自动晋升候选或重判公司能力
-  - 不读取 archive、旧分支或完整 agent 轨迹
-  - 不把当前审计观察写成已裁决事实
+  - 不修复被发现的数据问题
+  - 不执行任何消融、schema 合并或迁移
+  - 不修改或重新生成九页网页
+  - 不修改日更自动化
+  - 不把审阅者结论自动晋升为 canonical 事实
+  - 不要求两位审阅者形成一致结论
 
 acceptance_criteria:
-  - 委托书包含固定基线、可复算观察、审计假设、抽样规则和反例要求。
-  - Kimi 与 Cursor 的任务边界、输出路径和共同输出合同清晰。
-  - 消融建议分为 remove、derive、collapse、retain 四种，且要求给出依赖影响。
-  - 明确任何实际修改都需新的用户授权和工作包。
+  - 两份报告均按共同输出合同覆盖 B01-B12 与 H1-H10。
+  - 每份报告包含证据、反例、依赖影响、回滚考虑和未解决问题。
+  - 两位审阅者在完成前未读取对方输出。
+  - 仓库除当前工作包和两份报告外无新改动，canonical 指纹前后相同。
+  - 最终汇总明确区分一致结论、分歧、证据不足和后续待用户裁决事项。
+
+architecture_budget:
+  new_relation_types: []
+  new_state_machines: []
+  new_canonical_schemas: []
+  new_engines: []
+
+stop_and_escalate:
+  - 任一审阅者尝试修改允许报告以外的文件
+  - 任一审阅者要求读取禁读材料或对方报告
+  - 仓库 HEAD 不以固定 instruction commit 为起点
+  - canonical 指纹发生变化
+  - 审核需要登录、验证码、付费来源或绕过访问控制
+  - 审阅者建议直接实施修复而不是提交审计结论
 
 completion_evidence:
-  document: docs/reviews/2026-09-04-data-quality-ablation-independent-review-brief.md
-  canonical_changed: false
+  kimi_report: docs/reviews/2026-09-04-kimi-data-quality-semantic-audit.md
+  cursor_report: docs/reviews/2026-09-04-cursor-data-quality-contract-ablation-audit.md
+  baseline_observations_recomputed: 12
+  hypotheses_adjudicated_per_reviewer: 10
+  canonical_aggregate_sha256_before: 72245127392937e184b712114e9354f4e883791c861da1960bb65fb4fe497a5a
+  canonical_aggregate_sha256_after: 72245127392937e184b712114e9354f4e883791c861da1960bb65fb4fe497a5a
+  canonical_unchanged: true
+  implementation_performed: false
