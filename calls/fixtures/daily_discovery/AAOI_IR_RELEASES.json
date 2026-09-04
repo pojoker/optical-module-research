@@ -1,0 +1,64 @@
+{
+  "endpoint_id": "AAOI_IR_RELEASES",
+  "note": "第一方产品公告 + 同源转载 + 同 URL 重复 + 同内容重复。四项分别用于验证 new_disclosure_candidate / duplicate_origin_group / duplicate_url / duplicate_hash。",
+  "items": [
+    {
+      "url": "https://investors.ao-inc.com/news-releases/aaoi-first-volume-order-800g-2026-09-01",
+      "title": "Applied Optoelectronics Receives First Volume Order for 800G Data Center Optics",
+      "published_at": "2026-09-01",
+      "origin_key": "aoi-2026-09-01-800g-volume-order",
+      "paragraphs": [
+        {
+          "anchor": "press-release:p1",
+          "text": "Applied Optoelectronics today announced that it has received its first volume order for 800G optical modules from a leading hyperscale customer."
+        },
+        {
+          "anchor": "press-release:p2",
+          "text": "Deliveries under the order are scheduled to begin in the fourth quarter."
+        }
+      ]
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2026/09/01/aaoi-first-volume-order-800g",
+      "title": "Applied Optoelectronics Receives First Volume Order for 800G Data Center Optics (newswire mirror)",
+      "published_at": "2026-09-01",
+      "origin_key": "aoi-2026-09-01-800g-volume-order",
+      "note": "同源转载：与 IR 页面同一底层公告，必须归入同一 origin group，不重复计票。",
+      "paragraphs": [
+        {
+          "anchor": "mirror:p1",
+          "text": "Applied Optoelectronics today announced that it has received its first volume order for 800G optical modules from a leading hyperscale customer."
+        }
+      ]
+    },
+    {
+      "url": "https://investors.ao-inc.com/news-releases/aaoi-first-volume-order-800g-2026-09-01",
+      "title": "Applied Optoelectronics Receives First Volume Order for 800G Data Center Optics",
+      "published_at": "2026-09-01",
+      "note": "同 URL 重复，必须命中 duplicate_url。",
+      "paragraphs": [
+        {
+          "anchor": "press-release:p1",
+          "text": "Applied Optoelectronics today announced that it has received its first volume order for 800G optical modules from a leading hyperscale customer."
+        }
+      ]
+    },
+    {
+      "url": "https://investors.ao-inc.com/news-releases/aaoi-800g-order-copy-2026-09-01",
+      "title": "Applied Optoelectronics 800G Order Update",
+      "published_at": "2026-09-01",
+      "origin_key": "aoi-800g-order-copy",
+      "note": "不同 URL 与 origin key，但正文与 IR 公告逐字相同，必须命中 duplicate_hash。",
+      "paragraphs": [
+        {
+          "anchor": "press-release:p1",
+          "text": "Applied Optoelectronics today announced that it has received its first volume order for 800G optical modules from a leading hyperscale customer."
+        },
+        {
+          "anchor": "press-release:p2",
+          "text": "Deliveries under the order are scheduled to begin in the fourth quarter."
+        }
+      ]
+    }
+  ]
+}

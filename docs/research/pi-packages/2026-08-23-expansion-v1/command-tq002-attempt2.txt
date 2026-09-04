@@ -1,0 +1,2 @@
+cwd=/Users/jowang/Downloads/workflow-rehearsal/docs/research/pi-packages/2026-08-23-expansion-v1
+pi --provider opencode-go --model deepseek-v4-flash --thinking high --no-tools --no-context-files --no-session --print @contract-tq002.md @sources-tq002.md @contract-tq002-attempt2.md @adjudication-tq002-attempt1.md '严格执行 TQ002 attempt-2 修订合同，修复 attempt-1 裁决中的全部错误，只输出完整中文 Markdown。'

@@ -1,0 +1,125 @@
+schema: juniper_hct_semantic_object_v1
+source_url: https://apps.juniper.net/hct/model/ORHS-2X800G-FR4-P
+normalizer: capture_web_semantic_snapshots.normalize_juniper
+normalizer_version: '1'
+semantic_object:
+  component:
+    modelNumber: ORHS-2X800G-FR4-P
+    description: OSFP1600-RHS, Riding Heat Sink, 2x800G-FR4, 0°C through 70°C, SMF
+      2 km, Dual Duplex LC/UPC receptacle
+    category: Transceivers
+    categoryKey: 100001
+    useCase: TBD
+    isModelEol: 'No'
+    isCommonSku: 'Yes'
+  attributes:
+    Part Number: 740-189771
+    Breakout Capable: 'Yes'
+    Form Factor: OSFP1600-RHS Riding Heat Sink
+    MSA compliance (SFF, for e.g. SFF-8665): '(1) OSFP MSA, " Specification for OSFP
+      OCTAL SMALL FORM FACTOR PLUGGABLE MODULE", Rev 5.22
+
+
+      (2) Common Management Interface Specification (CMIS), Rev 5.3'
+    Connector: Dual Duplex LC/UPC
+  standards:
+  - standard: IEEE P802.3dj, Clause 181, 800GBASE-FR4-500
+    parameters:
+      Digital Diagnostic Monitoring: "Module Case Temperature  \r\n\r\nPower Supply\
+        \ voltage  \r\n\r\nTX bias current  \r\n\r\nTX power  \r\n\r\nRX power"
+      Distance: ". 800GBASE-FR4 (Inner FEC enabled):  \r\n\r\n2 m to 2 km \r\n\r\n\
+        . 800GBASE-FR4-500 (Inner FEC bypassed):  \r\n\r\n2 m to 500 m \r\n\r\n. 400GBASE-FR4:\
+        \ \r\n\r\n2 m to 2 km"
+      Maximum Power consumption (W): "High Power Mode: 28 W \r\nLow Power Mode: 2\
+        \ W"
+      Operating Temperature (range): 0°C to 70°C
+      Receiver input average power, each lane (minimum): ". 800GBASE-FR4: -6.2 dBm\
+        \ \r\n\r\n. 800GBASE-FR4-500: -5.6 dBm"
+      Receiver sensitivity (OMA), each lane (maximum): ". 800GBASE-FR4: \r\n\r\n \
+        \   for TECQ < 0.9 dB: -3.7 dBm \r\n\r\nfor 0.9 dB ≤ TECQ ≤ SECQ: -4.6 + TECQ\
+        \ dBm \r\n\r\n. 800GBASE-FR4-500: \r\n\r\n    for TECQ < 0.9 dB: -3.2 dBm\
+        \ \r\n\r\n    for 0.9 dB ≤ TECQ ≤ SECQ: -4.1 + TECQ dBm"
+      Signaling rate, each lane: ". 800GBASE-FR4: \r\n\r\n   Host lane: PAM4, 106.25\
+        \ GBd ± 50 ppm \r\n\r\n   Media lane: PAM4, 113.4375 GBd ± 50 ppm  \r\n\r\n\
+        . 800GBASE-FR4-500: \r\n\r\n   Host lane: PAM4, 106.25 GBd ± 50 ppm \r\n\r\
+        \n   Media lane: PAM4, 106.25 GBd ± 50 ppm \r\n\r\n. 400GBASE-FR4: \r\n\r\n\
+        \   Host lane: PAM4, 53.125 GBd ± 100 ppm \r\n\r\n   Media lane: PAM4, 53.125\
+        \ GBd ± 100 ppm"
+      Stressed receiver sensitivity (OMA) each lane (maximum): ". 800GBASE-FR4: -1.2\
+        \ dBm \r\n\r\n. 800GBASE-FR4-500: -0.7 dBm"
+      Supported Breakouts: ". Maximum 2 instances of 800GBASE-FR4 \r\n\r\n. Maximum\
+        \ 2 instances of 800GBASE-FR4-500 \r\n\r\n. Maximum 2 instances of 400GBASE-FR4"
+      Transmitter output average power, each lane (minimum): ". 800GBASE-FR4: -2.2\
+        \ dBm \r\n\r\n. 800GBASE-FR4-500: -2.1 dBm"
+      Transmitter wavelengths (range): "1264.5 to 1277.5 nm \r\n\r\n1284.5 to 1297.5\
+        \ nm \r\n\r\n1304.5 to 1317.5 nm \r\n\r\n1324.5 to 1337.5 nm "
+  - standard: IEEE P802.3dj, Clause 183, 800GBASE-FR4
+    parameters:
+      Digital Diagnostic Monitoring: "Module Case Temperature  \r\n\r\nPower Supply\
+        \ voltage  \r\n\r\nTX bias current  \r\n\r\nTX power  \r\n\r\nRX power"
+      Distance: ". 800GBASE-FR4 (Inner FEC enabled):  \r\n\r\n2 m to 2 km \r\n\r\n\
+        . 800GBASE-FR4-500 (Inner FEC bypassed):  \r\n\r\n2 m to 500 m \r\n\r\n. 400GBASE-FR4:\
+        \ \r\n\r\n2 m to 2 km"
+      Maximum Power consumption (W): "High Power Mode: 28 W \r\nLow Power Mode: 2\
+        \ W"
+      Operating Temperature (range): 0°C to 70°C
+      Receiver input average power, each lane (minimum): ". 800GBASE-FR4: -6.2 dBm\
+        \ \r\n\r\n. 800GBASE-FR4-500: -5.6 dBm"
+      Receiver sensitivity (OMA), each lane (maximum): ". 800GBASE-FR4: \r\n\r\n \
+        \   for TECQ < 0.9 dB: -3.7 dBm \r\n\r\nfor 0.9 dB ≤ TECQ ≤ SECQ: -4.6 + TECQ\
+        \ dBm \r\n\r\n. 800GBASE-FR4-500: \r\n\r\n    for TECQ < 0.9 dB: -3.2 dBm\
+        \ \r\n\r\n    for 0.9 dB ≤ TECQ ≤ SECQ: -4.1 + TECQ dBm"
+      Signaling rate, each lane: ". 800GBASE-FR4: \r\n\r\n   Host lane: PAM4, 106.25\
+        \ GBd ± 50 ppm \r\n\r\n   Media lane: PAM4, 113.4375 GBd ± 50 ppm  \r\n\r\n\
+        . 800GBASE-FR4-500: \r\n\r\n   Host lane: PAM4, 106.25 GBd ± 50 ppm \r\n\r\
+        \n   Media lane: PAM4, 106.25 GBd ± 50 ppm \r\n\r\n. 400GBASE-FR4: \r\n\r\n\
+        \   Host lane: PAM4, 53.125 GBd ± 100 ppm \r\n\r\n   Media lane: PAM4, 53.125\
+        \ GBd ± 100 ppm"
+      Stressed receiver sensitivity (OMA) each lane (maximum): ". 800GBASE-FR4: -1.2\
+        \ dBm \r\n\r\n. 800GBASE-FR4-500: -0.7 dBm"
+      Supported Breakouts: ". Maximum 2 instances of 800GBASE-FR4 \r\n\r\n. Maximum\
+        \ 2 instances of 800GBASE-FR4-500 \r\n\r\n. Maximum 2 instances of 400GBASE-FR4"
+      Transmitter output average power, each lane (minimum): ". 800GBASE-FR4: -2.2\
+        \ dBm \r\n\r\n. 800GBASE-FR4-500: -2.1 dBm"
+      Transmitter wavelengths (range): "1264.5 to 1277.5 nm \r\n\r\n1284.5 to 1297.5\
+        \ nm \r\n\r\n1304.5 to 1317.5 nm \r\n\r\n1324.5 to 1337.5 nm "
+  - standard: IEEE Std 802.3-2022, Clause 151, 400GBASE-FR4
+    parameters:
+      Digital Diagnostic Monitoring: "Module Case Temperature  \r\n\r\nPower Supply\
+        \ voltage  \r\n\r\nTX bias current  \r\n\r\nTX power  \r\n\r\nRX power"
+      Distance: ". 800GBASE-FR4 (Inner FEC enabled):  \r\n\r\n2 m to 2 km \r\n\r\n\
+        . 800GBASE-FR4-500 (Inner FEC bypassed):  \r\n\r\n2 m to 500 m \r\n\r\n. 400GBASE-FR4:\
+        \ \r\n\r\n2 m to 2 km"
+      Maximum Power consumption (W): "High Power Mode: 28 W \r\nLow Power Mode: 2\
+        \ W"
+      Operating Temperature (range): 0°C to 70°C
+      Receiver input average power, each lane (minimum): ". 800GBASE-FR4: -6.2 dBm\
+        \ \r\n\r\n. 800GBASE-FR4-500: -5.6 dBm"
+      Receiver sensitivity (OMA), each lane (maximum): ". 800GBASE-FR4: \r\n\r\n \
+        \   for TECQ < 0.9 dB: -3.7 dBm \r\n\r\nfor 0.9 dB ≤ TECQ ≤ SECQ: -4.6 + TECQ\
+        \ dBm \r\n\r\n. 800GBASE-FR4-500: \r\n\r\n    for TECQ < 0.9 dB: -3.2 dBm\
+        \ \r\n\r\n    for 0.9 dB ≤ TECQ ≤ SECQ: -4.1 + TECQ dBm"
+      Signaling rate, each lane: ". 800GBASE-FR4: \r\n\r\n   Host lane: PAM4, 106.25\
+        \ GBd ± 50 ppm \r\n\r\n   Media lane: PAM4, 113.4375 GBd ± 50 ppm  \r\n\r\n\
+        . 800GBASE-FR4-500: \r\n\r\n   Host lane: PAM4, 106.25 GBd ± 50 ppm \r\n\r\
+        \n   Media lane: PAM4, 106.25 GBd ± 50 ppm \r\n\r\n. 400GBASE-FR4: \r\n\r\n\
+        \   Host lane: PAM4, 53.125 GBd ± 100 ppm \r\n\r\n   Media lane: PAM4, 53.125\
+        \ GBd ± 100 ppm"
+      Stressed receiver sensitivity (OMA) each lane (maximum): ". 800GBASE-FR4: -1.2\
+        \ dBm \r\n\r\n. 800GBASE-FR4-500: -0.7 dBm"
+      Supported Breakouts: ". Maximum 2 instances of 800GBASE-FR4 \r\n\r\n. Maximum\
+        \ 2 instances of 800GBASE-FR4-500 \r\n\r\n. Maximum 2 instances of 400GBASE-FR4"
+      Transmitter output average power, each lane (minimum): ". 800GBASE-FR4: -2.2\
+        \ dBm \r\n\r\n. 800GBASE-FR4-500: -2.1 dBm"
+      Transmitter wavelengths (range): "1264.5 to 1277.5 nm \r\n\r\n1284.5 to 1297.5\
+        \ nm \r\n\r\n1304.5 to 1317.5 nm \r\n\r\n1324.5 to 1337.5 nm "
+  supported_platforms:
+  - category: Switching
+    platforms:
+    - platform: QFX5250-64OE-L
+      isPlatformEol: 'No'
+      isBreakoutSupported: 'Yes'
+      releaseList:
+      - releaseVersion: Junos OS Evolved 25.2X100-D20
+        isReleaseEol: 'No'
+        isSpecialRelease: 'Yes'

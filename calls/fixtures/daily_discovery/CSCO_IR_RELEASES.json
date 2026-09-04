@@ -1,0 +1,30 @@
+{
+  "endpoint_id": "CSCO_IR_RELEASES",
+  "note": "具名对手方独立披露。第 1 条只点名 Lumentum，与 LITE 第一方公告同日同源不同 origin，可提出 corroborated 建议；第 2 条同时点名 AAOI 与 LITE，属于低置信度映射，必须显式留在队列。",
+  "items": [
+    {
+      "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m09/cisco-selects-lumentum-1-6t-optics",
+      "title": "Cisco Selects Lumentum 1.6T Optics for Next-Generation Platforms",
+      "published_at": "2026-09-01",
+      "origin_key": "csco-2026-09-01-lumentum-1-6t",
+      "paragraphs": [
+        {
+          "anchor": "newsroom:p1",
+          "text": "Cisco selected Lumentum to supply 1.6T optical modules, and Lumentum began shipping these modules this quarter."
+        }
+      ]
+    },
+    {
+      "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m09/cisco-800g-supplier-update",
+      "title": "Cisco 800G Optics Supplier Update",
+      "published_at": "2026-09-01",
+      "origin_key": "csco-2026-09-01-800g-supplier-update",
+      "paragraphs": [
+        {
+          "anchor": "newsroom:p1",
+          "text": "Cisco confirmed that Applied Optoelectronics and Lumentum both began shipping 800G modules this quarter."
+        }
+      ]
+    }
+  ]
+}

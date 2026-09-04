@@ -1,0 +1,334 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>光模块产业 · 披露证据图谱</title>
+<style>
+:root{
+  --void:#080B14; --panel:#0F1420; --panel2:#161D2B; --grid:#1B2333;
+  --ink:#EAEEF6; --mute:#727D97; --faint:#3A4358;
+  --lit:#4FE0C4; --amber:#FFB347; --shadow:#4A5470; --dead:#9C5D72; --leak:#B98BE8;
+  --cn:#F0655C; --us:#5B9DF0; --jt:#FFCF5E; --other:#8792AB; --veil:#5A6480;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--void);color:var(--ink);font-family:var(--body);
+  -webkit-font-smoothing:antialiased}
+body{background-image:
+  linear-gradient(var(--grid) 1px,transparent 1px),
+  linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:44px 44px; background-position:center;
+  background-blend-mode:normal;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% -10%,rgba(79,224,196,.06),transparent 60%),
+             radial-gradient(100% 60% at 100% 110%,rgba(91,157,240,.05),transparent 55%);
+  z-index:0}
+.wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:48px 28px 80px}
+
+/* ── header ── */
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--lit);display:flex;align-items:center;gap:12px;margin:0 0 18px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--lit);box-shadow:0 0 8px var(--lit)}
+h1{font-family:var(--disp);font-weight:600;font-size:clamp(34px,5.5vw,60px);line-height:1.02;
+  letter-spacing:-.02em;margin:0 0 20px;max-width:16ch}
+h1 .glow{color:var(--lit);text-shadow:0 0 24px rgba(79,224,196,.45)}
+.thesis{font-size:clamp(15px,1.7vw,18px);line-height:1.65;color:var(--mute);max-width:60ch;margin:0 0 34px}
+.thesis b{color:var(--ink);font-weight:500}
+
+/* ── stat strip ── */
+.stats{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--faint);border-radius:14px;
+  overflow:hidden;background:linear-gradient(180deg,rgba(22,29,43,.6),rgba(15,20,32,.6));
+  backdrop-filter:blur(6px);margin-bottom:40px}
+.stat{flex:1 1 120px;padding:18px 22px;border-right:1px solid var(--faint)}
+.stat:last-child{border-right:0}
+.stat .n{font-family:var(--mono);font-size:30px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.stat .n .u{font-size:14px;color:var(--mute);margin-left:4px}
+.stat .k{font-size:12px;color:var(--mute);margin-top:4px;letter-spacing:.04em}
+
+/* ── legend (visibility encoding) ── */
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px}
+.chip{font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;gap:9px;
+  padding:7px 13px 7px 11px;border:1px solid var(--faint);border-radius:999px;cursor:pointer;
+  color:var(--mute);background:rgba(15,20,32,.5);transition:.18s;user-select:none}
+.chip:hover{border-color:var(--mute);color:var(--ink)}
+.chip.off{opacity:.32}
+.chip .sw{width:22px;height:0;border-top-width:2.5px;border-top-style:solid;position:relative}
+.chip[data-c=lit] .sw{border-color:var(--lit);box-shadow:0 0 7px var(--lit)}
+.chip[data-c=infer] .sw{border-color:var(--amber);border-top-style:dashed}
+.chip[data-c=shadow] .sw{border-color:var(--shadow);border-top-style:dashed}
+.chip[data-c=dead] .sw{border-color:var(--dead);border-top-style:dotted}
+.chip[data-c=leak] .sw{border-color:var(--leak);border-top-style:dashed}
+
+/* ── graph ── */
+.stage{position:relative;border:1px solid var(--faint);border-radius:18px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(11,15,24,.75),rgba(8,11,20,.9))}
+.colhead{position:absolute;top:0;left:0;right:0;display:grid;pointer-events:none;z-index:3}
+.colhead span{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mute);padding:14px 0 0 16px;border-left:1px solid var(--grid)}
+.colhead span:first-child{border-left:0}
+svg{display:block;width:100%;height:auto}
+.edge{fill:none;transition:opacity .2s,stroke-width .2s}
+.edge.lit{stroke:var(--lit);stroke-width:1.5;opacity:.75}
+.edge.infer{stroke:var(--amber);stroke-width:1.4;stroke-dasharray:7 5;opacity:.7}
+.edge.shadow{stroke:var(--shadow);stroke-width:1;stroke-dasharray:2 5;opacity:.5}
+.edge.dead{stroke:var(--dead);stroke-width:1.2;stroke-dasharray:1 6;opacity:.55}
+.edge.leak{stroke:var(--leak);stroke-width:1.3;stroke-dasharray:6 4;opacity:.62}
+.edge.aux{stroke:#2E6E63;stroke-width:.8;opacity:.34;stroke-dasharray:none}
+.edge.aux.shadow{stroke:#39415A}
+.edge.hot{opacity:1;stroke-width:2.6}
+.edge.dim{opacity:.06}
+.flow{stroke:var(--lit);stroke-width:2.2;fill:none;stroke-linecap:round;
+  filter:drop-shadow(0 0 4px var(--lit))}
+.node{cursor:pointer}
+.node circle{transition:.18s}
+.node .halo{fill:none;stroke-width:1}
+.node text{font-family:var(--body);font-size:12px;fill:var(--ink);paint-order:stroke;
+  stroke:var(--void);stroke-width:3px;dominant-baseline:middle}
+.node.ghost text{fill:var(--veil);font-style:italic}
+.node.dim{opacity:.12}
+.node.hot text{fill:#fff;font-weight:600}
+.cn{fill:var(--cn)} .us{fill:var(--us)} .jt{fill:var(--jt)}
+.other{fill:var(--other)} .veil{fill:var(--veil)}
+
+/* ── evidence drawer ── */
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,92vw);z-index:40;
+  background:linear-gradient(180deg,#10151F,#0B0F18);border-left:1px solid var(--faint);
+  transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.1,1);
+  padding:28px 26px;overflow-y:auto;box-shadow:-30px 0 60px rgba(0,0,0,.5)}
+.drawer.open{transform:translateX(0)}
+.drawer h3{font-family:var(--disp);font-size:20px;margin:0 0 4px;line-height:1.2}
+.drawer .close{position:absolute;top:20px;right:20px;background:none;border:1px solid var(--faint);
+  color:var(--mute);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:16px}
+.drawer .close:hover{color:var(--ink);border-color:var(--mute)}
+.gradetag{display:inline-block;font-family:var(--mono);font-size:11px;padding:4px 10px;border-radius:6px;
+  margin:8px 0 20px;letter-spacing:.04em}
+.gt-lit{background:rgba(79,224,196,.14);color:var(--lit)}
+.gt-infer{background:rgba(255,179,71,.14);color:var(--amber)}
+.gt-shadow{background:rgba(74,84,112,.2);color:#9aa6c4}
+.gt-dead{background:rgba(156,93,114,.18);color:#d493a6}
+.gt-leak{background:rgba(185,139,232,.15);color:var(--leak)}
+.field{border-top:1px solid var(--grid);padding:13px 0}
+.field .lab{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--mute);margin-bottom:5px}
+.field .val{font-size:14px;line-height:1.5;word-break:break-word}
+.field .val.mono{font-family:var(--mono);color:var(--lit);font-size:15px}
+.field a{color:var(--us);text-decoration:none;font-family:var(--mono);font-size:12px;word-break:break-all}
+.field a:hover{text-decoration:underline}
+.hint{font-family:var(--mono);font-size:12px;color:var(--mute);margin-top:14px}
+
+.foot{margin-top:34px;padding-top:22px;border-top:1px solid var(--grid);
+  font-size:13px;line-height:1.7;color:var(--mute);max-width:76ch}
+.foot b{color:var(--ink);font-weight:500}
+.foot .warn{color:var(--amber)}
+
+@media (max-width:760px){ .wrap{padding:32px 16px 60px} .colhead{display:none} }
+@media (prefers-reduced-motion:reduce){ .flow{display:none!important} .edge,.node circle{transition:none} }
+</style></head><body>
+<div class="wrap">
+  <div class="eyebrow">披露证据图谱 · v1.4 · 2026-07</div>
+  <h1>光模块产业，<span class="glow">被照亮</span>的供应链</h1>
+  <p class="thesis">这不是一张全行业名单。公开披露只照亮它选择照亮的关系——
+    每条边的样式，都标着<b>我们凭什么看得见它</b>：强制披露的实名、只知金额的匿名槽位、
+    从旧文件里考古解出的对手方、已经死亡的跨境边。<b>亮的看得清，暗的看不清，这本身就是情报。</b></p>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="legend" id="legend"></div>
+  <div class="stage">
+    <div class="colhead" id="colhead"></div>
+    <svg id="svg" viewBox="0 0 1180 1320" role="img" aria-label="光模块产业披露证据网络图"></svg>
+  </div>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<div class="drawer" id="drawer" role="dialog" aria-label="证据详情">
+  <button class="close" id="dclose" aria-label="关闭">✕</button>
+  <div id="dbody"></div>
+</div>
+
+<script id="data" type="application/json">{"nodes": [{"id": "Fabrinet", "type": "代工(EMS)", "country": "泰国", "code": "NYSE:FN", "note": "财年6月止", "layer": "L2", "ck": "other", "deg": 16}, {"id": "NVIDIA", "type": "算力终端/系统商", "country": "美国", "code": "NASDAQ:NVDA", "note": "", "layer": "L3", "ck": "us", "deg": 4}, {"id": "Cisco", "type": "网络设备OEM", "country": "美国", "code": "NASDAQ:CSCO", "note": "2021收购Acacia", "layer": "L3", "ck": "us", "deg": 3}, {"id": "Lumentum", "type": "光器件厂", "country": "美国", "code": "NASDAQ:LITE", "note": "2022收购NeoPhotonics;财年6-7月止", "layer": "L1", "ck": "us", "deg": 15}, {"id": "Acacia", "type": "相干光器件/DSP", "country": "美国", "code": "已退市", "note": "2021被Cisco收购", "layer": "L0", "ck": "us", "deg": 1}, {"id": "Infinera", "type": "系统设备商", "country": "美国", "code": "已退市", "note": "2025被Nokia收购", "layer": "L3", "ck": "us", "deg": 2}, {"id": "NeoPhotonics", "type": "光器件厂(已消亡)", "country": "美国", "code": "已退市", "note": "2022被Lumentum收购;华为边死亡序列原型", "layer": "L1", "ck": "us", "deg": 2}, {"id": "华为(含海思)", "type": "系统设备商", "country": "中国", "code": "未上市", "note": "2019-05进BIS实体清单", "layer": "L3", "ck": "cn", "deg": 2}, {"id": "Ciena", "type": "系统设备商", "country": "美国", "code": "NYSE:CIEN", "note": "", "layer": "L3", "ck": "us", "deg": 6}, {"id": "中际旭创", "type": "光模块厂", "country": "中国", "code": "300308", "note": "", "layer": "L2", "ck": "cn", "deg": 10}, {"id": "新易盛", "type": "光模块厂", "country": "中国", "code": "300502", "note": "", "layer": "L2", "ck": "cn", "deg": 8}, {"id": "天孚通信", "type": "光器件/组件厂", "country": "中国", "code": "300394", "note": "", "layer": "L1", "ck": "cn", "deg": 5}, {"id": "猎奇智能", "type": "老化测试设备商", "country": "中国", "code": "IPO在途(创业板)", "note": "", "layer": "DEV", "ck": "cn", "deg": 12}, {"id": "罗博特科/ficonTEC", "type": "耦合封装设备商", "country": "中国/德国", "code": "300757", "note": "ficonTEC为其收购标的", "layer": "DEV", "ck": "cn", "deg": 3}, {"id": "博通(Broadcom)", "type": "芯片/CPO", "country": "美国", "code": "NASDAQ:AVGO", "note": "", "layer": "L3", "ck": "us", "deg": 2}, {"id": "凯格精机", "type": "组装设备商", "country": "中国", "code": "301338", "note": "", "layer": "DEV", "ck": "cn", "deg": 2}, {"id": "浙江粮油", "type": "出口代理(贸易商)", "country": "中国", "code": "未上市", "note": "新易盛2024年报程序段落点名", "layer": "L3", "ck": "cn", "deg": 1}, {"id": "Coherent", "type": "光器件/模块厂", "country": "美国", "code": "NYSE:COHR", "note": "前II-VI;财年6月止;客户全匿名", "layer": "L1", "ck": "us", "deg": 4}, {"id": "Applied Optoelectronics(AAOI)", "type": "光模块厂", "country": "美国", "code": "NASDAQ:AAOI", "note": "财年12月止;客户全实名", "layer": "L2", "ck": "us", "deg": 9}, {"id": "Microsoft", "type": "云巨头(终端)", "country": "美国", "code": "NASDAQ:MSFT", "note": "", "layer": "L3", "ck": "us", "deg": 3}, {"id": "Oracle", "type": "云巨头(终端)", "country": "美国", "code": "NYSE:ORCL", "note": "FY2024年报追溯实名", "layer": "L3", "ck": "us", "deg": 1}, {"id": "ATX Networks", "type": "CATV设备商", "country": "加拿大", "code": "未上市", "note": "", "layer": "L3", "ck": "other", "deg": 2}, {"id": "Digicomm", "type": "CATV分销商", "country": "美国", "code": "未上市", "note": "分销夹层——终端MSO不可见", "layer": "L3", "ck": "us", "deg": 3}, {"id": "Apple", "type": "消费电子终端", "country": "美国", "code": "NASDAQ:AAPL", "note": "3D传感需求非光通信", "layer": "L3", "ck": "us", "deg": 3}, {"id": "Nokia", "type": "系统设备商", "country": "芬兰", "code": "NYSE:NOK", "note": "2025收购Infinera", "layer": "L3", "ck": "other", "deg": 1}, {"id": "Google", "type": "云巨头(终端)", "country": "美国", "code": "NASDAQ:GOOGL", "note": "Lumentum FY2024实名直销边", "layer": "L3", "ck": "us", "deg": 2}, {"id": "派克新材", "type": "锻件厂(跨行业)", "country": "中国", "code": "605123", "note": "边界外——仅E013 schema参考", "layer": "OUT", "ck": "cn", "deg": 1}, {"id": "等离子体所", "type": "科研院所(跨行业)", "country": "中国", "code": "—", "note": "边界外——仅E013 schema参考", "layer": "OUT", "ck": "cn", "deg": 1}, {"id": "PINEWAVE", "type": "旭创关联方(海外销售主体待核)", "country": "待核", "code": "未上市", "note": "2025年旭创对其销售4.34亿美元;关联自然人任职", "layer": "L3", "ck": "veil", "deg": 1}, {"id": "索恩格(SEG Automotive)", "type": "汽车电机厂", "country": "德国/中国", "code": "未上市", "note": "猎奇非光通信客户", "layer": "L3", "ck": "other", "deg": 2}, {"id": "索尔思(Source Photonics)", "type": "光模块厂", "country": "美国/中国", "code": "未上市", "note": "猎奇新客户", "layer": "L1", "ck": "cn", "deg": 1}, {"id": "光迅科技", "type": "光模块/器件厂", "country": "中国", "code": "002281", "note": "猎奇客户", "layer": "L1", "ck": "cn", "deg": 5}, {"id": "源杰科技", "type": "光芯片厂", "country": "中国", "code": "688498", "note": "猎奇客户", "layer": "L0", "ck": "cn", "deg": 1}, {"id": "星微科技", "type": "驱动控制供应商", "country": "中国", "code": "未上市", "note": "猎奇供应商(实名)", "layer": "L0", "ck": "cn", "deg": 1}, {"id": "奥普瑞", "type": "加工件供应商", "country": "中国", "code": "未上市", "note": "猎奇供应商", "layer": "L0", "ck": "cn", "deg": 1}, {"id": "南央国际", "type": "滑台类日本代理", "country": "中国/日本", "code": "未上市", "note": "猎奇供应商", "layer": "L0", "ck": "cn", "deg": 1}, {"id": "津微光电", "type": "神津精机代理", "country": "中国/日本", "code": "未上市", "note": "猎奇供应商——日系上游标记", "layer": "L0", "ck": "cn", "deg": 1}, {"id": "烽火通信", "type": "系统设备商", "country": "中国", "code": "600498", "note": "光迅科技关联方(同属中国信科)", "layer": "L3", "ck": "cn", "deg": 1}, {"id": "奥特维", "type": "组件封装设备商", "country": "中国", "code": "688516", "note": "主业光伏", "layer": "DEV", "ck": "cn", "deg": 1}, {"id": "博众精工", "type": "自动化设备商", "country": "中国", "code": "688097", "note": "3C自动化主业", "layer": "DEV", "ck": "cn", "deg": 1}, {"id": "快克智能", "type": "焊接设备商", "country": "中国", "code": "603203", "note": "", "layer": "DEV", "ck": "cn", "deg": 1}, {"id": "普源精电", "type": "测试测量仪器", "country": "中国", "code": "688337", "note": "", "layer": "DEV", "ck": "cn", "deg": 1}, {"id": "联讯仪器", "type": "通信/光电测试仪器设备商", "country": "中国", "code": "IPO在途(科创板)", "note": "第二家双侧实名IPO样本", "layer": "DEV", "ck": "cn", "deg": 18}, {"id": "Power Master", "type": "功率器件封测(半导体)", "country": "中国/新加坡", "code": "未上市", "note": "联讯客户", "layer": "L0", "ck": "cn", "deg": 1}, {"id": "讯速信远", "type": "测试设备经销", "country": "中国", "code": "未上市", "note": "联讯经销商客户", "layer": "DEV", "ck": "cn", "deg": 1}, {"id": "士兰微", "type": "半导体IDM", "country": "中国", "code": "600460", "note": "联讯客户", "layer": "L0", "ck": "cn", "deg": 1}, {"id": "海信集团", "type": "光模块/宽带(海信宽带)", "country": "中国", "code": "未上市", "note": "联讯最大实名客户", "layer": "L2", "ck": "cn", "deg": 3}, {"id": "三安光电", "type": "化合物半导体/光芯片", "country": "中国", "code": "600703", "note": "联讯客户", "layer": "L0", "ck": "cn", "deg": 2}, {"id": "◈ 客户一(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L2", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 匿名客户(FY2023)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L1", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 匿名客户(FY2024)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L1", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 匿名客户1(FY2025)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L1", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 匿名客户2(FY2025)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L1", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 客户A(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L2", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 客户B(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L2", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 客户C(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L2", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 客户D(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L2", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 供应商A(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L2", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 客户第一名(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L2", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 客户第二名(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L2", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 客户第三名(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L2", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 客户第四名(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L2", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 供应商第一名(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L2", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 客户2(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L1", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 供应商1(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L1", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 客户五(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": null, "ck": "veil", "deg": 0, "ghost": true}, {"id": "◈ 客户1(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": "L1", "ck": "veil", "deg": 1, "ghost": true}, {"id": "◈ 第一名(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": null, "ck": "veil", "deg": 0, "ghost": true}, {"id": "◈ 集团一(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": null, "ck": "veil", "deg": 0, "ghost": true}, {"id": "◈ 集团二(匿名)", "type": "匿名槽位", "country": "", "code": "", "note": "", "layer": null, "ck": "veil", "deg": 0, "ghost": true}], "edges": [{"id": "E001", "s": "Fabrinet", "d": "NVIDIA", "cls": "lit", "grade": "实边", "amt": "27.6%", "fy": "FY2025(至2025-06)", "src": "Fabrinet 10-K FY2025", "anchor": "https://www.sec.gov/Archives/edgar/data/1408710/000140871025000039/fn-20250627.htm", "vs": "会话端已验证-SEC原文命中", "note": "约9.4亿美元代工额"}, {"id": "E002", "s": "Fabrinet", "d": "NVIDIA", "cls": "lit", "grade": "实边", "amt": "35.1%", "fy": "FY2024", "src": "Fabrinet 10-K FY2024", "anchor": "https://investor.fabrinet.com/static-files/7ddbe628-5ad6-4f71-85c1-88baa3ab2704", "vs": "会话端已验证", "note": ""}, {"id": "E003", "s": "Fabrinet", "d": "Cisco", "cls": "lit", "grade": "实边", "amt": "18.2%", "fy": "FY2025", "src": "Fabrinet 10-K FY2025", "anchor": "同E001", "vs": "会话端已验证", "note": ""}, {"id": "E004", "s": "Fabrinet", "d": "Cisco", "cls": "lit", "grade": "实边", "amt": "13.4%", "fy": "FY2024", "src": "Fabrinet 10-K FY2024", "anchor": "同E002", "vs": "会话端已验证", "note": ""}, {"id": "E005", "s": "Fabrinet", "d": "Lumentum", "cls": "lit", "grade": "实边", "amt": "19%", "fy": "FY2020", "src": "Fabrinet 10-K FY2020财报表", "anchor": "https://www.sec.gov/Archives/edgar/data/1408710/000119312520223682/Financial_Report.xlsx", "vs": "会话端已验证", "note": "历史时代锚点"}, {"id": "E006", "s": "Fabrinet", "d": "Acacia", "cls": "lit", "grade": "实边", "amt": "10%", "fy": "FY2020", "src": "同E005", "anchor": "同E005", "vs": "会话端已验证", "note": ""}, {"id": "E007", "s": "Fabrinet", "d": "Infinera", "cls": "lit", "grade": "实边", "amt": "10%", "fy": "FY2020", "src": "同E005", "anchor": "同E005", "vs": "会话端已验证", "note": ""}, {"id": "E008", "s": "NeoPhotonics", "d": "华为(含海思)", "cls": "dead", "grade": "实边(已死亡)", "amt": "41%", "fy": "2019", "src": "NeoPhotonics 10-K FY2019", "anchor": "https://www.sec.gov/Archives/edgar/data/1227025/000122702520000020/nptn12311910k.htm", "vs": "会话端已验证-SEC原文命中", "note": "2017:40%/2018:46%/2020:40%/2021归零;死亡序列见seed findings"}, {"id": "E009", "s": "NeoPhotonics", "d": "Ciena", "cls": "lit", "grade": "实边", "amt": "29%", "fy": "2019", "src": "同E008", "anchor": "同E008", "vs": "会话端已验证", "note": "2017:16%/2018:24%"}, {"id": "E010", "s": "猎奇智能", "d": "中际旭创", "cls": "lit", "grade": "实边", "amt": "58.85%", "fy": "2024", "src": "创业板IPO招股书申报稿", "anchor": "腾讯转述页+深交所审核项目页可取原文", "vs": "会话端已验证+抽检交叉", "note": "新版申报稿2025降至53.42%;老化测试毛利率50.65%→12.55%"}, {"id": "E011", "s": "罗博特科/ficonTEC", "d": "博通(Broadcom)", "cls": "lit", "grade": "实边", "amt": "已交付14台CPO耦合设备", "fy": "2024", "src": "交易所审核问询函回复", "anchor": "SEC式锚:file.finance.qq.com/1222144802.PDF(问询回复PDF)", "vs": "会话端抽检逐字命中", "note": "唯一供应商表述"}, {"id": "E012", "s": "罗博特科/ficonTEC", "d": "NVIDIA", "cls": "lit", "grade": "实边", "amt": "在手订单2433.83万欧元(至2024-07-31)", "fy": "2024", "src": "天健问询专项说明", "anchor": "多源逐字一致", "vs": "会话端抽检命中", "note": "后续升级:超50台/在手4800万欧元(至2024-12-13)"}, {"id": "E013", "s": "派克新材", "d": "等离子体所", "cls": "lit", "grade": "实边", "amt": "815万元中标", "fy": "2025-09", "src": "中标公示", "anchor": "聚变域收割库F043", "vs": "会话端已验证", "note": "跨行业样本仅作边schema参考(边界外)"}, {"id": "E014", "s": "凯格精机", "d": "Fabrinet", "cls": "shadow", "grade": "半边", "amt": "800G/1.6T组装产线交付", "fy": "2025", "src": "互动平台回应(未点名)+财联社", "anchor": "光模块收割库OF007", "vs": "待P2处理", "note": "产线数量3条vs2条口径不一致待解"}, {"id": "E015", "s": "新易盛", "d": "◈ 客户一(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "36.79%(1139711326.47元)", "fy": "2023", "src": "新易盛2023年报", "anchor": "http://static.cninfo.com.cn/finalpage/2024-04-23/1219746778.PDF", "vs": "P2原文复核-修正转录值36.3%→36.79%", "note": "候选云巨头;解匿上限预期C级;判例#001"}, {"id": "E016", "s": "新易盛", "d": "浙江粮油", "cls": "leak", "grade": "程序段落泄漏", "amt": "收入确认政策点名", "fy": "2023-2025", "src": "新易盛2023/2024/2025年报收入确认政策", "anchor": "http://static.cninfo.com.cn/finalpage/2025-04-23/1223219348.PDF", "vs": "P2原文已验证-全称\"浙江省粮油食品进出口股份有限公司\"逐字命中", "note": "贸易商夹层实证;取得\"货物出口汇总清单\"时确认收入;可顺报关侧追"}, {"id": "E017", "s": "Applied Optoelectronics(AAOI)", "d": "Microsoft", "cls": "lit", "grade": "实边", "amt": "46.6%", "fy": "2023", "src": "AAOI 10-K FY2023", "anchor": "https://www.sec.gov/Archives/edgar/data/1158114/000143774924005367/aaoi20231231_10k.htm", "vs": "本轮P1-SEC原文命中", "note": "2021:14.1%/2022:18.4%"}, {"id": "E018", "s": "Applied Optoelectronics(AAOI)", "d": "Microsoft", "cls": "lit", "grade": "实边", "amt": "43.7%", "fy": "2024", "src": "AAOI 10-K FY2024", "anchor": "https://www.sec.gov/Archives/edgar/data/1158114/000143774925005575/aaoi20241231_10k.htm", "vs": "本轮P1-SEC原文命中", "note": ""}, {"id": "E019", "s": "Applied Optoelectronics(AAOI)", "d": "Microsoft", "cls": "lit", "grade": "实边", "amt": "28.8%", "fy": "2025", "src": "AAOI 10-K FY2025", "anchor": "https://www.sec.gov/Archives/edgar/data/1158114/000143774926005875/aaoi20251231_10k.htm", "vs": "本轮P1-SEC原文命中", "note": "FY2025文件MD&A段三年序列有笔误与概况段不一致(见anomalies);以概况段28.8/43.7/46.6为准"}, {"id": "E020", "s": "Applied Optoelectronics(AAOI)", "d": "Oracle", "cls": "lit", "grade": "实边", "amt": "12.4%", "fy": "2024", "src": "AAOI 10-K FY2024", "anchor": "同E018", "vs": "本轮P1-SEC原文命中", "note": "2022:5.9%/2023:8.8%;2023年在FY2023年报匿名为\"U.S. based large data center operator\"、FY2024年报追溯实名——披露史考古实证样本"}, {"id": "E021", "s": "Applied Optoelectronics(AAOI)", "d": "ATX Networks", "cls": "lit", "grade": "实边", "amt": "47.3%", "fy": "2022", "src": "AAOI 10-K FY2023", "anchor": "同E017", "vs": "本轮P1-SEC原文命中", "note": "2021:25.6%;CATV市场"}, {"id": "E022", "s": "Applied Optoelectronics(AAOI)", "d": "ATX Networks", "cls": "lit", "grade": "实边", "amt": "15.6%", "fy": "2023", "src": "AAOI 10-K FY2023", "anchor": "同E017", "vs": "本轮P1-SEC原文命中", "note": "2024归零——客户关系死亡样本"}, {"id": "E023", "s": "Applied Optoelectronics(AAOI)", "d": "Digicomm", "cls": "lit", "grade": "实边", "amt": "11.3%", "fy": "2023", "src": "AAOI 10-K FY2023", "anchor": "同E017", "vs": "本轮P1-SEC原文命中", "note": "2021/2022均为0;Digicomm为CATV分销商非终端"}, {"id": "E024", "s": "Applied Optoelectronics(AAOI)", "d": "Digicomm", "cls": "lit", "grade": "实边", "amt": "34.1%", "fy": "2024", "src": "AAOI 10-K FY2024", "anchor": "同E018", "vs": "本轮P1-SEC原文命中", "note": ""}, {"id": "E025", "s": "Applied Optoelectronics(AAOI)", "d": "Digicomm", "cls": "lit", "grade": "实边", "amt": "53.1%", "fy": "2025", "src": "AAOI 10-K FY2025", "anchor": "同E019", "vs": "本轮P1-SEC原文命中", "note": "分销商放量;终端MSO不可见——分销夹层"}, {"id": "E026", "s": "Lumentum", "d": "Apple", "cls": "lit", "grade": "实边", "amt": "30.2%", "fy": "FY2021(至2021-07)", "src": "Lumentum 10-K FY2023", "anchor": "https://www.sec.gov/Archives/edgar/data/1633978/000162828023030374/lite-20230701.htm", "vs": "本轮P1-SEC原文命中", "note": "3D传感/消费端非光通信"}, {"id": "E027", "s": "Lumentum", "d": "Apple", "cls": "lit", "grade": "实边", "amt": "28.7%", "fy": "FY2022", "src": "Lumentum 10-K FY2023", "anchor": "同E026", "vs": "本轮P1-SEC原文命中", "note": ""}, {"id": "E028", "s": "Lumentum", "d": "Apple", "cls": "lit", "grade": "实边", "amt": "12.1%", "fy": "FY2023", "src": "Lumentum 10-K FY2023", "anchor": "同E026", "vs": "本轮P1-SEC原文命中", "note": "FY2024起<10%退出表;FY2025匿名表Customer C的FY2023列=12.1%指纹吻合"}, {"id": "E029", "s": "Lumentum", "d": "Ciena", "cls": "lit", "grade": "实边", "amt": "10.1%", "fy": "FY2021", "src": "Lumentum 10-K FY2023", "anchor": "同E026", "vs": "本轮P1-SEC原文命中", "note": ""}, {"id": "E030", "s": "Lumentum", "d": "Ciena", "cls": "lit", "grade": "实边", "amt": "12.6%", "fy": "FY2022", "src": "Lumentum 10-K FY2023", "anchor": "同E026", "vs": "本轮P1-SEC原文命中", "note": ""}, {"id": "E031", "s": "Lumentum", "d": "Ciena", "cls": "lit", "grade": "实边", "amt": "15.3%", "fy": "FY2023", "src": "Lumentum 10-K FY2023", "anchor": "同E026", "vs": "本轮P1-SEC原文命中", "note": "与NeoPhotonics-Ciena(E009)同客户——Lumentum收购NPTN后承接"}, {"id": "E032", "s": "Lumentum", "d": "Ciena", "cls": "lit", "grade": "实边", "amt": "11.4%", "fy": "FY2024", "src": "Lumentum 10-K FY2024", "anchor": "https://www.sec.gov/Archives/edgar/data/1633978/000162828024038024/lite-20240629.htm", "vs": "本轮P1-SEC原文命中", "note": ""}, {"id": "E033", "s": "Lumentum", "d": "华为(含海思)", "cls": "lit", "grade": "实边", "amt": "10.8%", "fy": "FY2021(2020-07至2021-07)", "src": "Lumentum 10-K FY2023", "anchor": "同E026", "vs": "本轮P1-SEC原文命中", "note": "跨境边;实体清单升级后财年仍>10%;FY2022起<10%——第二条对华断边时间序列"}, {"id": "E034", "s": "Lumentum", "d": "Nokia", "cls": "lit", "grade": "实边", "amt": "10.5%", "fy": "FY2023", "src": "Lumentum 10-K FY2023", "anchor": "同E026", "vs": "本轮P1-SEC原文命中", "note": ""}, {"id": "E035", "s": "Lumentum", "d": "Google", "cls": "lit", "grade": "实边", "amt": "18.9%", "fy": "FY2024", "src": "Lumentum 10-K FY2024", "anchor": "同E032", "vs": "本轮P1-SEC原文命中", "note": "云巨头实名直销边——罕见样本;datacom激光/组件"}, {"id": "E036", "s": "Lumentum", "d": "Ciena", "cls": "infer", "grade": "推断边(A级)", "amt": "16.0%", "fy": "FY2025", "src": "Lumentum 10-K FY2025+FY2024+FY2023考古", "anchor": "https://www.sec.gov/Archives/edgar/data/1633978/000162828025040830/lite-20250628.htm", "vs": "P3判例#003-A级", "note": "原Customer A;四组指纹自洽双射;判例见deanonymization-cases.md"}, {"id": "E037", "s": "Lumentum", "d": "Google", "cls": "infer", "grade": "推断边(A级)", "amt": "15.4%", "fy": "FY2025", "src": "Lumentum 10-K FY2025+FY2024考古", "anchor": "同E036", "vs": "P3判例#003-A级", "note": "原Customer B;FY2024列18.9%=Google实名值"}, {"id": "E038", "s": "Fabrinet", "d": "Lumentum", "cls": "infer", "grade": "推断边(B级)", "amt": "采购占比FY2023:42.5%/FY2024:30.3%/FY2025:25.1%", "fy": "FY2023-FY2025", "src": "Lumentum 10-K FY2024/FY2025+Fabrinet 10-K FY2023反照", "anchor": "同E032;同E036", "vs": "P3判例#004-B级(RT-006由A降级)", "note": "原Contract Manufacturer A;对手方实名+量级排除(排他性分母口径未闭合);FY2023年报口径43%后重列42.5%"}, {"id": "E039", "s": "Coherent", "d": "◈ 匿名客户(FY2023)", "cls": "shadow", "grade": "半边槽位", "amt": "10%", "fy": "FY2023(至2023-06)", "src": "Coherent 10-K FY2023", "anchor": "https://www.sec.gov/Archives/edgar/data/820318/000082031823000016/iivi-20230630.htm", "vs": "本轮P1登记", "note": "Networking段;Coherent制度性不点名"}, {"id": "E040", "s": "Coherent", "d": "◈ 匿名客户(FY2024)", "cls": "shadow", "grade": "半边槽位", "amt": "10%", "fy": "FY2024", "src": "Coherent 10-K FY2024", "anchor": "https://www.sec.gov/Archives/edgar/data/820318/000082031824000016/iivi-20240630.htm", "vs": "本轮P1登记", "note": "年报明示与FY2023客户不同人(\"another major customer\")"}, {"id": "E041", "s": "Coherent", "d": "◈ 匿名客户1(FY2025)", "cls": "shadow", "grade": "半边槽位", "amt": "12%", "fy": "FY2025", "src": "Coherent 10-K FY2025", "anchor": "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm", "vs": "本轮P1登记", "note": "Networking段;年报明示FY2024客户是\"a different major customer\""}, {"id": "E042", "s": "Coherent", "d": "◈ 匿名客户2(FY2025)", "cls": "shadow", "grade": "半边槽位", "amt": "10%", "fy": "FY2025", "src": "Coherent 10-K FY2025", "anchor": "同E041", "vs": "本轮P1登记", "note": "Networking段"}, {"id": "E043", "s": "天孚通信", "d": "Fabrinet", "cls": "lit", "grade": "实边", "amt": "63.31%(3268843594.94元)", "fy": "2025", "src": "天孚通信2025年报前五大客户表(实名)", "anchor": "http://static.cninfo.com.cn/finalpage/2026-04-08/1225082705.PDF", "vs": "本轮P2原文命中", "note": "A股前五大表实名例外样本;链条天孚→Fabrinet→NVIDIA两跳全实名"}, {"id": "E044", "s": "中际旭创", "d": "PINEWAVE", "cls": "lit", "grade": "实边", "amt": "43378万美元(占同类关联交易100%)", "fy": "2025", "src": "中际旭创2025年报重大关联交易表", "anchor": "http://static.cninfo.com.cn/finalpage/2026-03-31/1225056459.PDF", "vs": "本轮P2原文命中", "note": "关联关系:关联自然人任职;获批额度5亿美元;客户E占比8.10%=前五大关联方销售占比8.10%且金额指纹吻合(判例#002)"}, {"id": "E045", "s": "猎奇智能", "d": "中际旭创", "cls": "lit", "grade": "实边", "amt": "53.42%(37277.97万元)", "fy": "2025", "src": "创业板IPO招股书申报稿(2026-04)", "anchor": "https://reportdocs.static.szse.cn/UpFiles/rasinfodisc1/202604/RAS_202604_2219353F853040F4664F68A9C0227EAD584A6C.pdf", "vs": "本轮P2原文命中", "note": "三年序列62.19%(2023)/58.85%(2024)/53.42%(2025);升级seed E010锚点为深交所原文"}, {"id": "E046", "s": "猎奇智能", "d": "索恩格(SEG Automotive)", "cls": "lit", "grade": "实边", "amt": "10.12%(7059.21万元)", "fy": "2025", "src": "同E045", "anchor": "同E045", "vs": "本轮P2原文命中", "note": "汽车自动化线;2024:6.27%/2023:6.89%"}, {"id": "E047", "s": "猎奇智能", "d": "索尔思(Source Photonics)", "cls": "lit", "grade": "实边", "amt": "6.55%(4569.15万元)", "fy": "2025", "src": "同E045", "anchor": "同E045", "vs": "本轮P2原文命中", "note": "光模块厂新客户;招股书注明\"新拓展客户，交易规模保持增长\""}, {"id": "E048", "s": "猎奇智能", "d": "光迅科技", "cls": "lit", "grade": "实边", "amt": "11.23%(6097.74万元)", "fy": "2024", "src": "同E045", "anchor": "同E045", "vs": "本轮P2原文命中", "note": "2025年跌出前五"}, {"id": "E049", "s": "猎奇智能", "d": "源杰科技", "cls": "lit", "grade": "实边", "amt": "10.77%(3115.80万元)", "fy": "2023", "src": "同E045", "anchor": "同E045", "vs": "本轮P2原文命中", "note": "2024/2025跌出前五;按扩产周期波动"}, {"id": "E050", "s": "猎奇智能", "d": "索恩格(SEG Automotive)", "cls": "lit", "grade": "实边", "amt": "5.58%(3890.49万元)", "fy": "2025", "src": "同E045", "anchor": "同E045", "vs": "本轮P2原文命中", "note": "自动化线;2024:3.00%"}, {"id": "E051", "s": "星微科技", "d": "猎奇智能", "cls": "lit", "grade": "实边", "amt": "10.41%(2710.62万元)", "fy": "2023", "src": "同E045(供应商表-实名)", "anchor": "同E045", "vs": "本轮P2原文命中", "note": "驱动控制类;2024:6.54%/2025:4.63%;IPO文件是A股域唯一双侧实名文件类型"}, {"id": "E052", "s": "奥普瑞", "d": "猎奇智能", "cls": "lit", "grade": "实边", "amt": "5.85%(5040.29万元)", "fy": "2025", "src": "同E045", "anchor": "同E045", "vs": "本轮P2原文命中", "note": "加工件;2024:5.81%/2023:4.32%"}, {"id": "E053", "s": "南央国际", "d": "猎奇智能", "cls": "lit", "grade": "实边", "amt": "3.00%(2586.96万元)", "fy": "2025", "src": "同E045", "anchor": "同E045", "vs": "本轮P2原文命中", "note": "滑台类日本代理;三年均入前五"}, {"id": "E054", "s": "津微光电", "d": "猎奇智能", "cls": "lit", "grade": "实边", "amt": "3.69%(1007.62万元)", "fy": "2024", "src": "同E045", "anchor": "同E045", "vs": "本轮P2原文命中", "note": "神津精机(日本)代理商——上游日系依赖标记"}, {"id": "E055", "s": "中际旭创", "d": "◈ 客户A(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "24.06%(9201495755.91元)", "fy": "2025", "src": "中际旭创2025年报", "anchor": "同E044", "vs": "本轮P2登记-待解匿", "note": "云巨头直销槽位候选;上限C级"}, {"id": "E056", "s": "中际旭创", "d": "◈ 客户B(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "18.26%(6981202208.21元)", "fy": "2025", "src": "同E044", "anchor": "同E044", "vs": "本轮P2登记-待解匿", "note": ""}, {"id": "E057", "s": "中际旭创", "d": "◈ 客户C(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "14.22%(5438189570.59元)", "fy": "2025", "src": "同E044", "anchor": "同E044", "vs": "本轮P2登记-待解匿", "note": ""}, {"id": "E058", "s": "中际旭创", "d": "◈ 客户D(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "11.34%(4337902496.40元)", "fy": "2025", "src": "同E044", "anchor": "同E044", "vs": "本轮P2登记-待解匿", "note": ""}, {"id": "E059", "s": "◈ 供应商A(匿名)", "d": "中际旭创", "cls": "shadow", "grade": "半边槽位", "amt": "35.76%(8885926791.46元)", "fy": "2025", "src": "同E044", "anchor": "同E044", "vs": "本轮P2登记-待解匿", "note": "采购集中度头部;光芯片/EML候选域"}, {"id": "E060", "s": "新易盛", "d": "◈ 客户第一名(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "22.97%(5706560719.37元)", "fy": "2025", "src": "新易盛2025年报", "anchor": "http://static.cninfo.com.cn/finalpage/2026-04-24/1225172598.PDF", "vs": "本轮P2登记-待解匿", "note": "2024第一名31.74%(2744287306.63元)/2023即E015;云巨头直销槽位候选"}, {"id": "E061", "s": "新易盛", "d": "◈ 客户第二名(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "16.64%(4133465492.45元)", "fy": "2025", "src": "同E060", "anchor": "同E060", "vs": "本轮P2登记-待解匿", "note": "2024第二名12.39%"}, {"id": "E062", "s": "新易盛", "d": "◈ 客户第三名(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "15.63%(3881540609.61元)", "fy": "2025", "src": "同E060", "anchor": "同E060", "vs": "本轮P2登记-待解匿", "note": "2024第三名12.15%"}, {"id": "E063", "s": "新易盛", "d": "◈ 客户第四名(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "10.96%(2721814735.32元)", "fy": "2025", "src": "同E060", "anchor": "同E060", "vs": "本轮P2登记-待解匿", "note": ""}, {"id": "E064", "s": "◈ 供应商第一名(匿名)", "d": "新易盛", "cls": "shadow", "grade": "半边槽位", "amt": "23.87%(3666795583.83元)", "fy": "2025", "src": "同E060", "anchor": "同E060", "vs": "本轮P2登记-待解匿", "note": "2024:23.57%/2023:15.03%;光芯片候选域"}, {"id": "E065", "s": "天孚通信", "d": "◈ 客户2(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "11.66%(601931536.36元)", "fy": "2025", "src": "天孚通信2025年报", "anchor": "同E043", "vs": "本轮P2登记-待解匿", "note": "第一名Fabrinet已实名(E043)"}, {"id": "E066", "s": "◈ 供应商1(匿名)", "d": "天孚通信", "cls": "shadow", "grade": "半边槽位", "amt": "34.81%(832889806.30元)", "fy": "2025", "src": "同E043", "anchor": "同E043", "vs": "本轮P2登记-待解匿", "note": ""}, {"id": "E067", "s": "猎奇智能", "d": "◈ 客户五(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "11.32%(3273.09万元)", "fy": "2023", "src": "同E045", "anchor": "同E045", "vs": "本轮P2登记-待解匿", "note": "半导体封装测试设备客户;2024:3.48%/2025:3.74%;全表唯一匿名客户"}, {"id": "E068", "s": "Fabrinet", "d": "Lumentum", "cls": "lit", "grade": "实边", "amt": "15.4%", "fy": "FY2023", "src": "Fabrinet 10-K FY2023", "anchor": "https://www.sec.gov/Archives/edgar/data/1408710/000140871023000028/fn-20230630.htm", "vs": "本轮P3-SEC原文命中", "note": "FY2022:10.3%/FY2021:13.6%;判例#004对侧证据"}, {"id": "E069", "s": "Fabrinet", "d": "NVIDIA", "cls": "lit", "grade": "实边", "amt": "12.5%", "fy": "FY2023", "src": "Fabrinet 10-K FY2023", "anchor": "同E068", "vs": "本轮P3-SEC原文命中", "note": "NVIDIA首次进Fabrinet≥10%表——E001/E002的前史起点"}, {"id": "E070", "s": "Fabrinet", "d": "Cisco", "cls": "lit", "grade": "实边", "amt": "15.6%", "fy": "FY2023", "src": "Fabrinet 10-K FY2023", "anchor": "同E068", "vs": "本轮P3-SEC原文命中", "note": "FY2022:25.4%/FY2021:10.7%"}, {"id": "E071", "s": "Fabrinet", "d": "Infinera", "cls": "lit", "grade": "实边", "amt": "12.4%", "fy": "FY2023", "src": "Fabrinet 10-K FY2023", "anchor": "同E068", "vs": "本轮P3-SEC原文命中", "note": "FY2022:12.5%/FY2021:11.6%;Infinera 2025并入Nokia"}, {"id": "E072", "s": "天孚通信", "d": "Fabrinet", "cls": "lit", "grade": "实边", "amt": "53.61%(1039308855.95元)", "fy": "2023", "src": "天孚通信2023年报前五大客户表(实名)", "anchor": "https://static.cninfo.com.cn/finalpage/2024-04-22/1219698777.PDF", "vs": "正式版管线产出-人工原文复核通过", "note": "原文名\"Fabrinet Co.，Ltd.(半角逗号转全角避CSV列分裂)\";三年序列53.61→61.69→63.31起点"}, {"id": "E073", "s": "天孚通信", "d": "Fabrinet", "cls": "lit", "grade": "实边", "amt": "61.69%(2005917035.59元)", "fy": "2024", "src": "天孚通信2024年报前五大客户表(实名)", "anchor": "https://static.cninfo.com.cn/finalpage/2025-04-21/1223152632.PDF", "vs": "正式版管线产出-人工原文复核通过", "note": ""}, {"id": "E074", "s": "光迅科技", "d": "烽火通信", "cls": "lit", "grade": "实边", "amt": "5.59%(369224117.92元)", "fy": "2023", "src": "光迅科技2023年报前五大客户表(实名)", "anchor": "https://static.cninfo.com.cn/finalpage/2024-04-26/1219826062.PDF", "vs": "正式版管线产出-人工原文复核通过", "note": "原文全称\"烽火通信科技股份有限公司\";关联方锁定:前五大关联方销售占比5.59%逐位相等;同属中国信科体系;2024/2025年跌出前五"}, {"id": "E075", "s": "光迅科技", "d": "◈ 客户1(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "15.16%(1807934600.51元)", "fy": "2025", "src": "光迅科技2025年报", "anchor": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225148212.PDF", "vs": "正式版管线产出-人工原文复核通过", "note": "2024:12.42%/2023:15.24%(2023年第一名)"}, {"id": "E076", "s": "罗博特科/ficonTEC", "d": "◈ 客户一(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "19.35%(183805309.74元)", "fy": "2025", "src": "罗博特科2025年报", "anchor": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225059372.PDF", "vs": "正式版管线产出-人工原文复核通过", "note": "前五集中度63.14%"}, {"id": "E077", "s": "凯格精机", "d": "◈ 第一名(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "8.51%(94811977.48元)", "fy": "2025", "src": "凯格精机2025年报", "anchor": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225202249.PDF", "vs": "正式版管线产出-人工原文复核通过", "note": "前五集中度仅27.65%——设备商客户分散样本"}, {"id": "E078", "s": "快克智能", "d": "◈ 客户一(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "12.13%(131019640.80元)", "fy": "2025", "src": "快克智能2025年报", "anchor": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225173150.PDF", "vs": "正式版管线产出-人工原文复核通过", "note": "沪市模板但金额单位为元(模板变体)"}, {"id": "E079", "s": "普源精电", "d": "◈ 客户1(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "12.73%(112631500.00元)", "fy": "2025", "src": "普源精电2025年报", "anchor": "https://static.cninfo.com.cn/finalpage/2026-03-26/1225031855.PDF", "vs": "正式版管线产出-人工原文复核通过", "note": "行级关联列全\"否\""}, {"id": "E080", "s": "奥特维", "d": "◈ 客户1(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "15.35%(981740400.00元)", "fy": "2025", "src": "奥特维2025年报", "anchor": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225145661.PDF", "vs": "正式版管线产出-人工原文复核通过", "note": "主业光伏设备;光模块设备为扩张线"}, {"id": "E081", "s": "博众精工", "d": "◈ 客户一(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "32.82%(2154855900.00元)", "fy": "2025", "src": "博众精工2025年报", "anchor": "https://static.cninfo.com.cn/finalpage/2026-04-11/1225096862.PDF", "vs": "正式版管线产出-人工原文复核通过", "note": "前五集中度75.36%高依赖;3C自动化主业"}, {"id": "E082", "s": "联讯仪器", "d": "Power Master", "cls": "lit", "grade": "实边", "amt": "9.06%(1821.39万元)", "fy": "2025Q1", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "功率器件测试设备;Power Master Semiconductor Co.,Ltd."}, {"id": "E083", "s": "联讯仪器", "d": "新易盛", "cls": "lit", "grade": "实边", "amt": "8.29%(1668.10万元)", "fy": "2025Q1", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "光电子器件测试设备;成都新易盛通信技术股份有限公司"}, {"id": "E084", "s": "联讯仪器", "d": "讯速信远", "cls": "lit", "grade": "实边", "amt": "5.47%(1100.78万元)", "fy": "2025Q1", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "经销;通信测试仪器+光电子器件测试设备;成都讯速信远科技等同一控制"}, {"id": "E085", "s": "联讯仪器", "d": "光迅科技", "cls": "lit", "grade": "实边", "amt": "7.57%", "fy": "2024", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "武汉光迅科技股份有限公司;与其IPO客户E048互为对手方"}, {"id": "E086", "s": "联讯仪器", "d": "士兰微", "cls": "lit", "grade": "实边", "amt": "6.92%", "fy": "2024", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "杭州士兰微电子股份有限公司"}, {"id": "E087", "s": "联讯仪器", "d": "海信集团", "cls": "lit", "grade": "实边", "amt": "6.54%", "fy": "2024", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "青岛海信宽带多媒体+广东海信宽带等同一控制"}, {"id": "E088", "s": "联讯仪器", "d": "中际旭创", "cls": "lit", "grade": "实边", "amt": "6.26%", "fy": "2024", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "通信测试仪器;中际旭创股份有限公司"}, {"id": "E089", "s": "联讯仪器", "d": "海信集团", "cls": "lit", "grade": "实边", "amt": "15.33%(4227.19万元)", "fy": "2023", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "通信测试仪器+光电子器件测试设备"}, {"id": "E090", "s": "联讯仪器", "d": "中际旭创", "cls": "lit", "grade": "实边", "amt": "14.75%(4068.26万元)", "fy": "2023", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "通信测试仪器"}, {"id": "E091", "s": "联讯仪器", "d": "三安光电", "cls": "lit", "grade": "实边", "amt": "6.81%(1876.87万元)", "fy": "2023", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "功率器件测试设备;三安光电股份有限公司"}, {"id": "E092", "s": "联讯仪器", "d": "海信集团", "cls": "lit", "grade": "实边", "amt": "14.02%(3005.18万元)", "fy": "2022", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "光电子器件测试设备+通信测试仪器"}, {"id": "E093", "s": "联讯仪器", "d": "光迅科技", "cls": "lit", "grade": "实边", "amt": "11.53%(2471.91万元)", "fy": "2022", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": ""}, {"id": "E094", "s": "联讯仪器", "d": "博通(Broadcom)", "cls": "lit", "grade": "实边", "amt": "6.11%(1310.23万元)", "fy": "2022", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "光电子器件测试设备;Broadcom(原Avago);与ficonTEC-博通E011第二独立证据"}, {"id": "E095", "s": "联讯仪器", "d": "三安光电", "cls": "lit", "grade": "实边", "amt": "5.06%(1084.04万元)", "fy": "2022", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "光电子器件测试设备+电性能测试设备"}, {"id": "E096", "s": "联讯仪器", "d": "◈ 集团一(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "35.51%(7140.45万元)", "fy": "2025Q1", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "通信测试仪器;三年序列9.90%(2023)/16.92%(2024)/35.51%(2025Q1);解匿判例#006候选;线索见jituanyi-leads.md"}, {"id": "E097", "s": "联讯仪器", "d": "◈ 集团一(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "16.92%", "fy": "2024", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "通信测试仪器;同判例#006"}, {"id": "E098", "s": "联讯仪器", "d": "◈ 集团一(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "9.90%(2730.72万元)", "fy": "2023", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": "通信测试仪器+功率器件测试设备;同判例#006"}, {"id": "E099", "s": "联讯仪器", "d": "◈ 集团二(匿名)", "cls": "shadow", "grade": "半边槽位", "amt": "6.03%", "fy": "2023", "src": "联讯仪器IPO招股书申报稿(前五大客户表)", "anchor": "https://static.sse.com.cn/stock/disclosure/announcement/c/202508/002075_20250815_QAVG.pdf", "vs": "v1.3管线抽取+人工原文复核通过", "note": ""}], "layerLabel": {"L0": "上游 · 芯片/元件", "L1": "器件/组件", "L2": "模块/代工", "L3": "终端/系统/云"}, "layerX": {"L0": 0, "L1": 1, "L2": 2, "L3": 3}}</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const NS='http://www.w3.org/2000/svg';
+const CK={cn:'中国',us:'美国',jt:'日本/台湾',other:'其他',veil:'待核/匿名'};
+const CLSNAME={lit:'实边 · 强制披露实名',infer:'推断边 · 考古解出',shadow:'半边槽位 · 只知金额',dead:'实边 · 已死亡',leak:'程序段落 · 侧信道泄漏'};
+
+// ── layout: 4 主列 + 设备带 + 边界外 ──
+const W=1180, PADX=40, TOP=54, ROWH=44;
+const cols=['L0','L1','L2','L3'];
+const colW=(W-PADX*2)/cols.length;
+const colX=i=>PADX+colW*i+colW/2;
+
+const byLayer={L0:[],L1:[],L2:[],L3:[],DEV:[],OUT:[]};
+const idmap={};
+D.nodes.forEach(n=>{idmap[n.id]=n; (byLayer[n.layer]||byLayer.L1).push(n);});
+// 列内排序：实名在上、幽灵在下，度数高居中
+['L0','L1','L2','L3'].forEach(L=>{
+  byLayer[L].sort((a,b)=>(a.ghost?1:0)-(b.ghost?1:0) || b.deg-a.deg);
+});
+// 主列 y
+let maxRows=0;
+cols.forEach((L,ci)=>{
+  byLayer[L].forEach((n,ri)=>{ n.x=colX(ci); n.y=TOP+40+ri*ROWH; });
+  maxRows=Math.max(maxRows, byLayer[L].length);
+});
+const mainH=TOP+40+maxRows*ROWH+30;
+// 设备带（底部横排）
+const devY=mainH+70;
+const devN=byLayer.DEV;
+devN.forEach((n,i)=>{ n.x=PADX+((W-PADX*2)/(devN.length))*(i+.5); n.y=devY; });
+// 边界外（最底，居中两枚）
+const outY=devY+80;
+byLayer.OUT.forEach((n,i)=>{ n.x=PADX+120+i*150; n.y=outY; });
+const H=outY+60;
+
+const svg=document.getElementById('svg');
+svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+
+// column headers
+const ch=document.getElementById('colhead');
+ch.style.gridTemplateColumns=`repeat(4,1fr)`;
+cols.forEach(L=>{const s=document.createElement('span');s.textContent=D.layerLabel[L];ch.appendChild(s);});
+
+// defs: soft glow
+svg.innerHTML=`<defs>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="1.1" result="b"/><feMerge>
+    <feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>`;
+
+// band separators (subtle)
+[byLayer.DEV.length?devY-38:0].forEach(y=>{if(!y)return;
+  const l=document.createElementNS(NS,'line');
+  l.setAttribute('x1',PADX);l.setAttribute('x2',W-PADX);l.setAttribute('y1',y);l.setAttribute('y2',y);
+  l.setAttribute('stroke','var(--grid)');l.setAttribute('stroke-dasharray','2 6');svg.appendChild(l);
+  const t=document.createElementNS(NS,'text');t.setAttribute('x',PADX);t.setAttribute('y',y-10);
+  t.setAttribute('fill','var(--mute)');t.setAttribute('font-family','var(--mono)');t.setAttribute('font-size','11');
+  t.setAttribute('letter-spacing','.18em');t.textContent='设备 / 仪器供应带 ↑ 供货给模块厂';svg.appendChild(t);});
+
+const edgeEls=[], flowEls=[];
+function path(a,b){
+  if(!a||!b) return '';
+  const mx=(a.x+b.x)/2;
+  return `M${a.x},${a.y} C${mx},${a.y} ${mx},${b.y} ${b.x},${b.y}`;
+}
+// draw edges
+const gEdges=document.createElementNS(NS,'g');svg.appendChild(gEdges);
+const AUX=n=>n&&(n.layer==='DEV'||n.layer==='OUT');
+D.edges.forEach(e=>{
+  const a=idmap[e.s], b=idmap[e.d]; if(!a||!b) return;
+  const aux = AUX(a)||AUX(b);
+  const p=document.createElementNS(NS,'path');
+  p.setAttribute('class','edge '+e.cls+(aux?' aux':'')); p.setAttribute('d',path(a,b));
+  p.dataset.eid=e.id; p.dataset.cls=e.cls;
+  p._a=a;p._b=b;p._e=e;
+  p.addEventListener('click',ev=>{ev.stopPropagation();openEdge(e,a,b);});
+  gEdges.appendChild(p); edgeEls.push(p);
+  if(e.cls==='lit' && !aux){ // signature: 光子只沿主信号链的实边流动
+    const f=document.createElementNS(NS,'path');
+    f.setAttribute('class','flow');f.setAttribute('d',path(a,b));
+    const len=Math.hypot(b.x-a.x,b.y-a.y)+80;
+    f.style.strokeDasharray=`3 ${len}`;
+    f.style.animation=`flow ${2.6+Math.random()*1.6}s linear infinite`;
+    f.style.animationDelay=`${-Math.random()*3}s`;
+    gEdges.appendChild(f);flowEls.push(f);
+  }
+});
+const kf=document.createElementNS(NS,'style');
+kf.textContent=`@keyframes flow{from{stroke-dashoffset:0}to{stroke-dashoffset:-1000}}`;
+svg.appendChild(kf);
+
+// draw nodes
+const ABBR={'Applied Optoelectronics(AAOI)':'AAOI','罗博特科/ficonTEC':'罗博特科','索尔思(Source Photonics)':'索尔思','华为(含海思)':'华为','博通(Broadcom)':'博通','索恩格(SEG Automotive)':'索恩格'};
+function label(id){const raw=id.replace('◈ ','');if(ABBR[raw])return ABBR[raw];const clean=raw.replace(/\(.*/,'');return clean.length>12?clean.slice(0,11)+'…':clean;}
+const gNodes=document.createElementNS(NS,'g');svg.appendChild(gNodes);
+D.nodes.forEach(n=>{
+  const g=document.createElementNS(NS,'g');
+  g.setAttribute('class','node '+(n.ghost?'ghost ':'')); g.dataset.nid=n.id;
+  const r = n.ghost?4 : Math.max(5, Math.min(11, 4+n.deg*0.9));
+  const halo=document.createElementNS(NS,'circle');
+  halo.setAttribute('class','halo '+n.ck);halo.setAttribute('cx',n.x);halo.setAttribute('cy',n.y);
+  halo.setAttribute('r',r+4);halo.setAttribute('stroke-opacity',n.ghost?'.4':'.9');halo.setAttribute('fill','none');
+  const c=document.createElementNS(NS,'circle');
+  c.setAttribute('class',n.ck);c.setAttribute('cx',n.x);c.setAttribute('cy',n.y);c.setAttribute('r',r);
+  c.setAttribute('fill-opacity',n.ghost?'.35':'1');
+  if(!n.ghost) c.setAttribute('filter','url(#soft)');
+  const t=document.createElementNS(NS,'text');
+  const right = n.layer==='L3' || (n.x> W/2 && n.layer!=='DEV');
+  t.setAttribute('x', right? n.x-r-8 : n.x+r+8);
+  t.setAttribute('y', n.y); t.setAttribute('text-anchor', right?'end':'start');
+  t.textContent=label(n.id);
+  g.append(halo,c,t);
+  g.addEventListener('click',ev=>{ev.stopPropagation();openNode(n);});
+  g.addEventListener('mouseenter',()=>hover(n.id));
+  g.addEventListener('mouseleave',clearHover);
+  gNodes.appendChild(g);
+});
+
+// ── interaction ──
+function neighbors(id){const s=new Set([id]);D.edges.forEach(e=>{if(e.s===id)s.add(e.d);if(e.d===id)s.add(e.s);});return s;}
+function hover(id){
+  const nb=neighbors(id);
+  edgeEls.forEach(p=>{const on=p._e.s===id||p._e.d===id;p.classList.toggle('hot',on);p.classList.toggle('dim',!on);});
+  document.querySelectorAll('.node').forEach(g=>{const on=nb.has(g.dataset.nid);g.classList.toggle('hot',g.dataset.nid===id);g.classList.toggle('dim',!on);});
+}
+function clearHover(){edgeEls.forEach(p=>p.classList.remove('hot','dim'));document.querySelectorAll('.node').forEach(g=>g.classList.remove('hot','dim'));}
+
+const drawer=document.getElementById('drawer'),dbody=document.getElementById('dbody');
+function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function field(lab,val,mono){return val?`<div class="field"><div class="lab">${lab}</div><div class="val${mono?' mono':''}">${esc(val)}</div></div>`:'';}
+function openEdge(e,a,b){
+  const anchor = /^https?:/.test(e.anchor)? `<div class="field"><div class="lab">锚点 URL</div><div class="val"><a href="${esc(e.anchor)}" target="_blank" rel="noopener">${esc(e.anchor)}</a></div></div>` : field('锚点',e.anchor);
+  dbody.innerHTML=`<h3>${esc(a.id.replace('◈ ',''))} → ${esc(b.id.replace('◈ ',''))}</h3>
+    <span class="gradetag gt-${e.cls}">${esc(e.grade)} · ${CLSNAME[e.cls]}</span>
+    ${field('占比 / 金额',e.amt,true)}${field('财年',e.fy,true)}
+    ${field('证据文件',e.src)}${anchor}${field('验证状态',e.vs)}${field('备注',e.note)}
+    <div class="hint">边 ${esc(e.id)}</div>`;
+  drawer.classList.add('open');
+}
+function openNode(n){
+  const outs=D.edges.filter(e=>e.s===n.id),ins=D.edges.filter(e=>e.d===n.id);
+  const line=(e,dir)=>`<div class="field"><div class="lab">${dir} ${esc(e.id)} · ${esc(e.grade)}</div><div class="val mono" style="cursor:pointer">${esc((dir==='供给'?e.d:e.s).replace('◈ ',''))} · ${esc(e.amt)}</div></div>`;
+  dbody.innerHTML=`<h3>${esc(n.id.replace('◈ ',''))}</h3>
+    <span class="gradetag gt-${n.ghost?'shadow':'lit'}">${esc(n.type)} · ${CK[n.ck]}</span>
+    ${field('代码',n.code,true)}${field('备注',n.note)}
+    ${outs.length?'<div class="hint">作为供方 ↓</div>'+outs.map(e=>line(e,'供给')).join(''):''}
+    ${ins.length?'<div class="hint">作为需方 ↓</div>'+ins.map(e=>line(e,'获得')).join(''):''}`;
+  drawer.classList.add('open');
+}
+document.getElementById('dclose').onclick=()=>drawer.classList.remove('open');
+document.addEventListener('keydown',e=>{if(e.key==='Escape')drawer.classList.remove('open');});
+svg.addEventListener('click',()=>drawer.classList.remove('open'));
+
+// ── stats ──
+const g=D.edges.reduce((m,e)=>((m[e.cls]=(m[e.cls]||0)+1),m),{});
+document.getElementById('stats').innerHTML=[
+  ['99','条关系边'],['48','个节点'],
+  [String(g.lit||0),'实边 · 照亮'],[String(g.shadow||0),'匿名槽位 · 阴影'],
+  [String((g.infer||0)),'考古解出'],['30','月海关流向'],
+].map(([n,k])=>`<div class="stat"><div class="n">${n}</div><div class="k">${k}</div></div>`).join('');
+
+// ── legend (clickable filter) ──
+const leg=document.getElementById('legend');
+['lit','infer','shadow','dead','leak'].forEach(c=>{
+  const el=document.createElement('div');el.className='chip';el.dataset.c=c;
+  el.innerHTML=`<span class="sw"></span>${CLSNAME[c]}`;
+  el.onclick=()=>{el.classList.toggle('off');const off=el.classList.contains('off');
+    edgeEls.forEach(p=>{if(p.dataset.cls===c)p.style.display=off?'none':'';});
+    flowEls.forEach(f=>{}); if(c==='lit')flowEls.forEach(f=>f.style.display=off?'none':'');};
+  leg.appendChild(el);
+});
+// country legend inline
+const cl=document.createElement('div');cl.className='chip';cl.style.cursor='default';
+cl.innerHTML=Object.entries(CK).map(([k,v])=>`<span style="display:inline-flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:var(--${k})"></span>${v}</span>`).join('&nbsp;&nbsp;');
+leg.appendChild(cl);
+
+document.getElementById('foot').innerHTML=`<b>诚实边界。</b>
+  图中 <span class="warn">29 个匿名槽位</span>（阴影虚线）只知金额不知对手方；
+  <b>3 条推断边</b>（琥珀点划）经披露史考古/金额指纹/对手方反照解出（2 条 A 级、
+  1 条 B 级——Fabrinet 反照因排他性分母口径未闭合为高置信候选）；
+  <b>1 条已死亡边</b>（NeoPhotonics→华为，衰减虚线）记录管制下的关系消亡。
+  实名≠终端可见：PINEWAVE（旭创关联平台）、浙江粮油（出口代理）、Digicomm（分销）
+  身后的终端买家仍在夹层里，不可判定。点任意边看四件套证据。`;
+</script>
+</body></html>

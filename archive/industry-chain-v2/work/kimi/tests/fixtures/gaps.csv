@@ -1,0 +1,6 @@
+gap_id,node_id,route_scope,gap_type,priority,status,reason,next_question,completion_condition,owner,evidence_ids,updated_at,notes
+GAP-001,SN-COMP-PIN,SN-ROUTE-DR8,capability_gap,P0,identified,PIN supplier not mapped for DR8,Which company supplies PIN PD for 800G DR8?,At least one capability record mapping an org to PIN,WP-KIMI,,2026-07-24,
+GAP-002,SN-COMP-MUX,SN-ROUTE-2XFR4,trade_gap,P1,identified,MUX capability has no observed trade,Who supplies CWDM MUX to 2xFR4 module makers?,At least one trade observation for SN-COMP-MUX,WP-KIMI,,2026-07-24,
+GAP-003,SN-EQC-MOCVD,SN-ROUTE-DR8,capability_gap,P1,identified,High-end MOCVD player not mapped,Who provides III-V epitaxy equipment?,Capability or org record for MOCVD equipment,WP-KIMI,,2026-07-24,
+GAP-004,SN-PRC-FAB,SN-ROUTE-400ZR,currentness_gap,P2,identified,Process as_of is older than current cycle,When was the 400ZR process flow last verified?,as_of updated within 180 days,WP-KIMI,,2026-07-24,
+GAP-005,SN-COMP-HPCB,SN-ROUTE-DR8,structure_gap,P2,identified,HPCB evidence not referenced,What evidence supports HPCB as a required component?,At least one structure evidence for HPCB,WP-KIMI,,2026-07-24,

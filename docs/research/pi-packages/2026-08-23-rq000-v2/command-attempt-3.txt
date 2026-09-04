@@ -1,0 +1,2 @@
+cwd=/Users/jowang/Downloads/workflow-rehearsal/docs/research/pi-packages/2026-08-23-rq000-v2
+pi --provider opencode-go --model deepseek-v4-flash --thinking high --no-tools --no-context-files --no-session --print @contract-attempt-3.md @sources.md '严格执行随附 attempt-3 研究合同，只输出合同第4节规定的中文 Markdown。'

@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "note": "日更镜像的按实体 discovery 端点登记。只允许公司 IR/官网、监管或交易所托管文件、具名客户/交易对手、政府记录等可追溯页面；media/generic_news/aggregator/macro_news 会被 load_discovery_config 拒绝。本文件只声明端点，不写任何 canonical 数据。",
+  "entities": {
+    "AAOI": {
+      "endpoints": [
+        {
+          "endpoint_id": "AAOI_IR_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.ao-inc.com/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "commercial_disclosure",
+          "provenance_class": "first_party"
+        }
+      ]
+    },
+    "LITE": {
+      "endpoints": [
+        {
+          "endpoint_id": "LITE_IR_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investor.lumentum.com/financial-news-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party"
+        },
+        {
+          "endpoint_id": "LITE_TECH_BLOG",
+          "endpoint_kind": "official_blog",
+          "url": "https://www.lumentum.com/en/blog",
+          "disclosure_type": "technical_blog",
+          "content_class": "demonstration_disclosure",
+          "provenance_class": "first_party"
+        }
+      ]
+    },
+    "CSCO": {
+      "endpoints": [
+        {
+          "endpoint_id": "CSCO_IR_RELEASES",
+          "endpoint_kind": "counterparty_release",
+          "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m09",
+          "disclosure_type": "customer_release",
+          "content_class": "commercial_disclosure",
+          "provenance_class": "counterparty",
+          "corroborates_entity_ids": ["AAOI", "LITE"]
+        }
+      ]
+    },
+    "MTSI": {
+      "endpoints": [
+        {
+          "endpoint_id": "MTSI_IR_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.macom.com/news-releases",
+          "disclosure_type": "official_release",
+          "content_class": "commercial_disclosure",
+          "provenance_class": "first_party"
+        }
+      ]
+    },
+    "WATCH_IQE": {
+      "endpoints": [
+        {
+          "endpoint_id": "IQE_RNS_RELEASES",
+          "endpoint_kind": "counterparty_release",
+          "url": "https://www.iqep.com/media/press-releases/2026",
+          "disclosure_type": "official_release",
+          "content_class": "commercial_disclosure",
+          "provenance_class": "counterparty",
+          "corroborates_entity_ids": ["MTSI", "LITE"]
+        }
+      ]
+    },
+    "CAND_HAMAMATSU": {
+      "endpoints": [
+        {
+          "endpoint_id": "HAMAMATSU_IR_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.hamamatsu.com/jp/en/newsroom.html",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party"
+        }
+      ]
+    },
+    "POET": {
+      "endpoints": [
+        {
+          "endpoint_id": "POET_IR_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.poet-technologies.com/news-releases",
+          "disclosure_type": "official_release",
+          "content_class": "commercial_disclosure",
+          "provenance_class": "first_party"
+        }
+      ]
+    }
+  }
+}

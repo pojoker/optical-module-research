@@ -1,0 +1,2695 @@
+{
+  "company_timelines": [
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV001",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "official release title and opening paragraph",
+              "claim_reviewed_at": "2026-08-09",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_AAOI_20260309_ORDER",
+              "disclosure_reviewed_at": "2026-08-09",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL001",
+              "evidence_id": "EE001",
+              "independence_class": "first_party",
+              "origin_group": "OG_AAOI_20260309_ORDER",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-09",
+              "quote": "Applied Optoelectronics Inc. today announced it received its first volume order for its 1.6T data center transceivers from one of its long-term major hyperscale customers",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-04",
+              "statement_kind": "fact_assertion",
+              "title": "AOI Receives First Volume Order of 1.6T Data Center Transceivers from Major Hyperscale Customer",
+              "url": "https://investors.ao-inc.com/node/16751"
+            }
+          ],
+          "lifecycle_stage": "volume_order",
+          "occurred_end": "2026-03-09",
+          "occurred_start": "2026-03-09",
+          "previous_event_id": "",
+          "primary_subject_id": "AAOI",
+          "program_id": "PRG_AAOI_1P6",
+          "summary": "AAOI第一方披露首笔1.6T批量订单",
+          "theme_ids": [
+            "T015"
+          ]
+        }
+      ],
+      "primary_subject_id": "AAOI"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV003",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "Availability > paragraph 1",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "technical_disclosure",
+              "disclosure_id": "D_AVGO_20260311_TAURUS",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL003",
+              "evidence_id": "EE003",
+              "independence_class": "first_party",
+              "origin_group": "OG_AVGO_20260311_TAURUS",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-11",
+              "quote": "Broadcom has begun sampling its Taurus BCM83640 to its early access customers and partners.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Broadcom Delivers Industry's First 400G/lane Optical DSP",
+              "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-delivers-industrys-first-400glane-optical-dsp-next"
+            }
+          ],
+          "lifecycle_stage": "sampling",
+          "occurred_end": "2026-03-11",
+          "occurred_start": "2026-03-11",
+          "previous_event_id": "",
+          "primary_subject_id": "AVGO",
+          "program_id": "PRG_AVGO_TAURUS",
+          "summary": "Broadcom第一方披露400G/lane Taurus光DSP开始送样",
+          "theme_ids": [
+            "T011"
+          ]
+        }
+      ],
+      "primary_subject_id": "AVGO"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV019",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "prepared remarks p.3 / scale-across project paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CIEN_20250904_Q3",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL021",
+              "evidence_id": "EE021",
+              "independence_class": "first_party",
+              "origin_group": "OG_CIEN_20250904_Q3",
+              "provenance_class": "first_party",
+              "published_at": "2025-09-04",
+              "quote": "Initial revenue shipments are underway.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Ciena FY2025 Q3 earnings call transcript",
+              "url": "https://s25.q4cdn.com/550667411/files/doc_financials/2025/q3/Transcript-Cienas-Fiscal-Third-Quarter-2025-Financial-Results-Conference-Call.pdf"
+            }
+          ],
+          "lifecycle_stage": "first_shipment",
+          "occurred_end": "2025-09-04",
+          "occurred_start": "2025-09-04",
+          "previous_event_id": "",
+          "primary_subject_id": "CIEN",
+          "program_id": "PRG_CIEN_SCALEACROSS",
+          "summary": "Ciena称首个scale-across项目已开始产生收入出货",
+          "theme_ids": [
+            "T021"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV012",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning HANOVER",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "technical_disclosure",
+              "disclosure_id": "D_CIEN_20260225_VESTA",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL012",
+              "evidence_id": "EE012",
+              "independence_class": "first_party",
+              "origin_group": "OG_CIEN_20260225_VESTA",
+              "provenance_class": "first_party",
+              "published_at": "2026-02-25",
+              "quote": "Ciena is unveiling Vesta 200 6.4T CPX",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Ciena unveils Vesta 200 6.4T CPX optical engine",
+              "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Unveils-the-Industrys-Highest-Density-Lowest-Power-Pluggable-Optical-Engine-to-Meet-Data-Center-AI-Demands-02-25-2026/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-02-25",
+          "occurred_start": "2026-02-25",
+          "previous_event_id": "",
+          "primary_subject_id": "CIEN",
+          "program_id": "PRG_CIEN_VESTA",
+          "summary": "Ciena发布Vesta 200 6.4T CPX可插拔CPO光引擎",
+          "theme_ids": [
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV020",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "prepared remarks pp.6-7 / supply constraint discussion",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CIEN_20260305_Q1",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL022",
+              "evidence_id": "EE022",
+              "independence_class": "first_party",
+              "origin_group": "OG_CIEN_20260305_Q1",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-05",
+              "quote": "our revenue in the first quarter would have been higher but for these constraints",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Ciena FY2026 Q1 earnings call transcript",
+              "url": "https://s25.q4cdn.com/550667411/files/doc_events/2026/03/Q1-2026-Earnings-Call-Transcript.pdf"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-05",
+          "occurred_start": "2026-03-05",
+          "previous_event_id": "",
+          "primary_subject_id": "CIEN",
+          "program_id": "PRG_CIEN_SUPPLY_CONSTRAINT",
+          "summary": "Ciena称供应约束实际压低第一季度可实现收入",
+          "theme_ids": [
+            "T016"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV006",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "Summary bullet 2",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "demonstration_disclosure",
+              "disclosure_id": "D_CIEN_20260331_WL6E",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL006",
+              "evidence_id": "EE006",
+              "independence_class": "first_party",
+              "origin_group": "OG_CIEN_20260331_WL6E",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-31",
+              "quote": "Recent trial successfully transmitted 1.6 Tb/s line rate on a single optical channel across Vi's two data centers",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "technical_demo",
+              "title": "Vodafone Idea Deploys Ciena WaveLogic 6 Extreme",
+              "url": "https://investor.ciena.com/news/news-details/2026/Vodafone-Idea-Deploys-Cienas-WaveLogic-6-Extreme-to-Deliver-High-Capacity-Connectivity-03-31-2026/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "demonstrated",
+          "occurred_end": "2026-03-31",
+          "occurred_start": "2026-03-31",
+          "previous_event_id": "",
+          "primary_subject_id": "CIEN",
+          "program_id": "PRG_CIEN_WL6E",
+          "summary": "Ciena第一方披露1.6T单波跨数据中心现场试验",
+          "theme_ids": [
+            "T021"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV021",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "prepared remarks p.3 / Hyper-Rail paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CIEN_20260604_Q2",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL023",
+              "evidence_id": "EE023",
+              "independence_class": "first_party",
+              "origin_group": "OG_CIEN_20260604_Q2",
+              "provenance_class": "first_party",
+              "published_at": "2026-06-04",
+              "quote": "we've been awarded the industry's first multi-rail order from a leading hyperscaler",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Ciena FY2026 Q2 earnings call transcript",
+              "url": "https://s25.q4cdn.com/550667411/files/content_files/Ciena-Fiscal-Q2-2026-Financial-Results-Call.pdf"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-06-04",
+          "occurred_start": "2026-06-04",
+          "previous_event_id": "",
+          "primary_subject_id": "CIEN",
+          "program_id": "PRG_CIEN_HYPERRAIL",
+          "summary": "Ciena称获得首个Hyper-Rail多轨订单",
+          "theme_ids": [
+            "T021"
+          ]
+        }
+      ],
+      "primary_subject_id": "CIEN"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV015",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "Availability paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "technical_disclosure",
+              "disclosure_id": "D_CRDO_20251013_ZEROFLAP",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL017",
+              "evidence_id": "EE017",
+              "independence_class": "first_party",
+              "origin_group": "OG_CRDO_20251013_ZEROFLAP",
+              "provenance_class": "first_party",
+              "published_at": "2025-10-13",
+              "quote": "Credo ZF optical transceivers are now sampling.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Credo unveils ZeroFlap optical transceivers",
+              "url": "https://investors.credosemi.com/news-events/news/news-details/2025/Credo-Unveils-ZeroFlap-Optical-Transceivers--A-Reliability-Revolution-for-Optics-in-AI-Networks/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "sampling",
+          "occurred_end": "2025-10-13",
+          "occurred_start": "2025-10-13",
+          "previous_event_id": "",
+          "primary_subject_id": "CRDO",
+          "program_id": "PRG_CRDO_ZEROFLAP",
+          "summary": "Credo称400G 800G与1.6T ZeroFlap光模块产品族开始送样",
+          "theme_ids": [
+            "T004"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV008",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning SAN JOSE",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CRDO_20260317_ZEROFLAP",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL008",
+              "evidence_id": "EE008",
+              "independence_class": "first_party",
+              "origin_group": "OG_CRDO_20260317_ZEROFLAP",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-17",
+              "quote": "today announced the general availability of its revolutionary 800G 2 x DR4 ZeroFlap (ZF) transceiver products.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Credo Launches 800G ZeroFlap Optical Transceivers",
+              "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Launches-800G-ZeroFlap-Optical-Transceivers-Engineered-for-AI-Networks/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-03-17",
+          "occurred_start": "2026-03-17",
+          "previous_event_id": "EV015",
+          "primary_subject_id": "CRDO",
+          "program_id": "PRG_CRDO_ZEROFLAP",
+          "summary": "Credo第一方披露800G 2xDR4 ZeroFlap光模块一般可用",
+          "theme_ids": [
+            "T004"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV016",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "Product Availability paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "technical_disclosure",
+              "disclosure_id": "D_CRDO_20260317_CARDINAL",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL018",
+              "evidence_id": "EE018",
+              "independence_class": "first_party",
+              "origin_group": "OG_CRDO_20260317_CARDINAL",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-17",
+              "quote": "Credo is now sampling the Cardinal DSP family to lead customers.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Credo introduces Cardinal 1.6T optical DSP",
+              "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Introduces-Cardinal-A-LowPower-1-6T-Optical-DSP-Family-Engineered-for-MassiveScale-AI-Fabrics/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "sampling",
+          "occurred_end": "2026-03-17",
+          "occurred_start": "2026-03-17",
+          "previous_event_id": "",
+          "primary_subject_id": "CRDO",
+          "program_id": "PRG_CRDO_CARDINAL",
+          "summary": "Credo称Cardinal 1.6T光DSP开始向主要客户送样",
+          "theme_ids": [
+            "T010"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_DUST"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV017",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning SAN JOSE",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CRDO_20260413_DUST",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL019",
+              "evidence_id": "EE019",
+              "independence_class": "first_party",
+              "origin_group": "OG_CRDO_20260413_DUST",
+              "provenance_class": "first_party",
+              "published_at": "2026-04-13",
+              "quote": "it has entered into a definitive agreement to acquire DustPhotonics",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Credo agrees to acquire DustPhotonics",
+              "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Agrees-to-Acquire-DustPhotonics-Accelerating-Expansion-into-Silicon-Photonics-and-Next-Generation-Optical-Connectivity/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-04-13",
+          "occurred_start": "2026-04-13",
+          "previous_event_id": "",
+          "primary_subject_id": "CRDO",
+          "program_id": "PRG_CRDO_DUST",
+          "summary": "Credo签署收购DustPhotonics的确定性协议",
+          "theme_ids": [
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_DUST"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV018",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning SAN JOSE",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CRDO_20260528_DUST_CLOSE",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL020",
+              "evidence_id": "EE020",
+              "independence_class": "first_party",
+              "origin_group": "OG_CRDO_20260528_DUST_CLOSE",
+              "provenance_class": "first_party",
+              "published_at": "2026-05-28",
+              "quote": "it has completed its acquisition of DustPhotonics",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Credo completes acquisition of DustPhotonics",
+              "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Completes-Acquisition-of-DustPhotonics/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-05-28",
+          "occurred_start": "2026-05-28",
+          "previous_event_id": "EV017",
+          "primary_subject_id": "CRDO",
+          "program_id": "PRG_CRDO_DUST",
+          "summary": "Credo完成对DustPhotonics的收购",
+          "theme_ids": [
+            "T017"
+          ]
+        }
+      ],
+      "primary_subject_id": "CRDO"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV002",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "official blog lines 24-30",
+              "claim_reviewed_at": "2026-08-09",
+              "content_class": "demonstration_disclosure",
+              "disclosure_id": "D_LITE_20260430_BLOG",
+              "disclosure_reviewed_at": "2026-08-09",
+              "disclosure_type": "technical_blog",
+              "event_claim_id": "ECL002",
+              "evidence_id": "EE002",
+              "independence_class": "first_party",
+              "origin_group": "OG_LITE_20260430_BLOG",
+              "provenance_class": "first_party",
+              "published_at": "2026-04-30",
+              "quote": "Lumentum demonstrated two live NVIDIA 1.6T 2xDR4 OSFP transceiver modules built on different optical architectures, but both enabled by Lumentum lasers",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-06",
+              "statement_kind": "technical_demo",
+              "title": "Enabling the Next Phase of AI Optical Infrastructure",
+              "url": "https://www.lumentum.com/en/blog/enabling-next-phase-ai-optical-infrastructure"
+            }
+          ],
+          "lifecycle_stage": "demonstrated",
+          "occurred_end": "2026-04-30",
+          "occurred_start": "2026-04-30",
+          "previous_event_id": "",
+          "primary_subject_id": "LITE",
+          "program_id": "PRG_LITE_1P6_DEMO",
+          "summary": "Lumentum第一方博客披露1.6T 2xDR4现场演示",
+          "theme_ids": [
+            "T010"
+          ]
+        }
+      ],
+      "primary_subject_id": "LITE"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV004",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "Ara产品段落",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_MRVL_20260312_ARA",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL004",
+              "evidence_id": "EE004",
+              "independence_class": "first_party",
+              "origin_group": "OG_MRVL_20260312_ARA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-12",
+              "quote": "Now shipping in mass volume to global customers",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Marvell Expands 1.6T Optical DSP Platform Portfolio",
+              "url": "https://investor.marvell.com/news-events/press-releases/detail/1013/marvell-ushers-in-the-1-6t-era-with-expanded-optical-dsp-platform-portfolio-redefining-ai-data-center-end-to-end-connectivity"
+            }
+          ],
+          "lifecycle_stage": "scaled",
+          "occurred_end": "2026-03-12",
+          "occurred_start": "2026-03-12",
+          "previous_event_id": "",
+          "primary_subject_id": "MRVL",
+          "program_id": "PRG_MRVL_ARA",
+          "summary": "Marvell第一方称Ara 1.6T光DSP已大批量出货",
+          "theme_ids": [
+            "T010"
+          ]
+        }
+      ],
+      "primary_subject_id": "MRVL"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV007",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning LOWELL",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "technical_disclosure",
+              "disclosure_id": "D_MTSI_20260317_448G",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL007",
+              "evidence_id": "EE007",
+              "independence_class": "first_party",
+              "origin_group": "OG_MTSI_20260317_448G",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-17",
+              "quote": "today announced the availability of its new 448G PAM4 modulator drivers",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "MACOM Announces Two New 448G per Lane Drivers",
+              "url": "https://ir.macom.com/news-releases/news-release-details/macom-announces-two-new-448g-lane-drivers-32t-data-center/"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-03-17",
+          "occurred_start": "2026-03-17",
+          "previous_event_id": "",
+          "primary_subject_id": "MTSI",
+          "program_id": "PRG_MTSI_448G",
+          "summary": "MACOM第一方披露448G/lane PAM4驱动器可获得",
+          "theme_ids": [
+            "T011"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_IQE"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV013",
+          "event_status": "corroborated",
+          "evidence": [
+            {
+              "anchor": "Part I Item 1 Note 4 Investments p.11 first paragraph beginning On May 28 2026",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "regulatory_record",
+              "disclosure_id": "D_MTSI_20260703_IQE_10Q",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "regulatory_filing",
+              "event_claim_id": "ECL013",
+              "evidence_id": "EE013",
+              "independence_class": "first_party",
+              "origin_group": "OG_MTSI_20260703_IQE_10Q",
+              "provenance_class": "first_party",
+              "published_at": "2026-08-06",
+              "quote": "On May 28, 2026, we completed an investment in IQE plc",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "MACOM FY2026 Q3 Form 10-Q IQE investment and supply agreements",
+              "url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359426000038/mtsi-20260703.htm"
+            },
+            {
+              "anchor": "Fundraise paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_IQE_20260528_RESULTS",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL015",
+              "evidence_id": "EE014",
+              "independence_class": "counterparty",
+              "origin_group": "OG_IQE_20260528_RESULTS",
+              "provenance_class": "counterparty",
+              "published_at": "2026-05-28",
+              "quote": "The fundraise included a £45m strategic investment from MACOM Technology Solutions Inc.",
+              "relationship": "supports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "IQE full-year 2025 results and MACOM strategic transaction",
+              "url": "https://www.iqep.com/media/press-releases/2026/full-year-2025-results/"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-05-28",
+          "occurred_start": "2026-05-28",
+          "previous_event_id": "",
+          "primary_subject_id": "MTSI",
+          "program_id": "PRG_MTSI_IQE",
+          "summary": "MACOM完成对IQE的4500万英镑战略投资",
+          "theme_ids": [
+            "T016"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_IQE"
+          ],
+          "date_precision": "exact",
+          "event_category": "supply_chain_arrangement",
+          "event_id": "EV014",
+          "event_status": "corroborated",
+          "evidence": [
+            {
+              "anchor": "Part I Item 1 Note 4 Investments p.11 first paragraph beginning On May 28 2026",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "regulatory_record",
+              "disclosure_id": "D_MTSI_20260703_IQE_10Q",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "regulatory_filing",
+              "event_claim_id": "ECL014",
+              "evidence_id": "EE015",
+              "independence_class": "first_party",
+              "origin_group": "OG_MTSI_20260703_IQE_10Q",
+              "provenance_class": "first_party",
+              "published_at": "2026-08-06",
+              "quote": "which included entering into long-term supply agreements",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "MACOM FY2026 Q3 Form 10-Q IQE investment and supply agreements",
+              "url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359426000038/mtsi-20260703.htm"
+            },
+            {
+              "anchor": "Fundraise paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_IQE_20260528_RESULTS",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL016",
+              "evidence_id": "EE016",
+              "independence_class": "counterparty",
+              "origin_group": "OG_IQE_20260528_RESULTS",
+              "provenance_class": "counterparty",
+              "published_at": "2026-05-28",
+              "quote": "Concurrently, IQE and MACOM also entered into long-term supply agreements.",
+              "relationship": "supports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "IQE full-year 2025 results and MACOM strategic transaction",
+              "url": "https://www.iqep.com/media/press-releases/2026/full-year-2025-results/"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-05-28",
+          "occurred_start": "2026-05-28",
+          "previous_event_id": "",
+          "primary_subject_id": "MTSI",
+          "program_id": "PRG_MTSI_IQE",
+          "summary": "MACOM与IQE已订立长期供应协议",
+          "theme_ids": [
+            "T016"
+          ]
+        }
+      ],
+      "primary_subject_id": "MTSI"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV005",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "CEO Q3 comments > Network Infrastructure",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_NOK_20251023_800G",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL005",
+              "evidence_id": "EE005",
+              "independence_class": "first_party",
+              "origin_group": "OG_NOK_20251023_800G",
+              "provenance_class": "first_party",
+              "published_at": "2025-10-23",
+              "quote": "became generally available and have started shipping to a large US customer.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Nokia Q3 2025 results: 800G coherent pluggables shipping",
+              "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2025-789295/"
+            }
+          ],
+          "lifecycle_stage": "first_shipment",
+          "occurred_end": "2025-10-23",
+          "occurred_start": "2025-10-23",
+          "previous_event_id": "",
+          "primary_subject_id": "NOK",
+          "program_id": "PRG_NOK_800G_COHERENT",
+          "summary": "Nokia第一方称800G相干可插拔开始向一家美国客户发货",
+          "theme_ids": [
+            "T021"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV009",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "CEO Q1 comments > Network Infrastructure",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_NOK_20260423_Q1",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL009",
+              "evidence_id": "EE009",
+              "independence_class": "first_party",
+              "origin_group": "OG_NOK_20260423_Q1",
+              "provenance_class": "first_party",
+              "published_at": "2026-04-23",
+              "quote": "We won a number of important AI & Cloud design wins and orders for both pluggables and line systems in the quarter",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Nokia Q1 2026 interim report",
+              "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q1-2026/"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-04-23",
+          "occurred_start": "2026-04-23",
+          "previous_event_id": "",
+          "primary_subject_id": "NOK",
+          "program_id": "PRG_NOK_AI_OPTICAL_ORDERS",
+          "summary": "Nokia第一方披露AI与云可插拔及线路系统设计定点与订单",
+          "theme_ids": [
+            "T021"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV010",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "CEO Q1 comments > OFC optical conference",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_NOK_20260423_Q1",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL010",
+              "evidence_id": "EE010",
+              "independence_class": "first_party",
+              "origin_group": "OG_NOK_20260423_Q1",
+              "provenance_class": "first_party",
+              "published_at": "2026-04-23",
+              "quote": "Products will begin sampling in mid-2027",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "forward_looking",
+              "title": "Nokia Q1 2026 interim report",
+              "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q1-2026/"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-04-23",
+          "occurred_start": "2026-04-23",
+          "previous_event_id": "",
+          "primary_subject_id": "NOK",
+          "program_id": "PRG_NOK_PSE6S",
+          "summary": "Nokia第一方预告下一代光网络产品2027年送样及量产窗口",
+          "theme_ids": [
+            "T021"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV011",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "CEO Q2 comments > Network Infrastructure",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_NOK_20260723_Q2",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL011",
+              "evidence_id": "EE011",
+              "independence_class": "first_party",
+              "origin_group": "OG_NOK_20260723_Q2",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-23",
+              "quote": "Demand remains strong while supply continues to be the main industry constraint",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "corporate_narrative",
+              "title": "Nokia Q2 and half-year 2026 report",
+              "url": "https://www.nokia.com/newsroom/nokia-corporation-report-for-q2-and-half-year-2026/"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-07-23",
+          "occurred_start": "2026-07-23",
+          "previous_event_id": "",
+          "primary_subject_id": "NOK",
+          "program_id": "PRG_NOK_SUPPLY_CONSTRAINT",
+          "summary": "Nokia管理层叙事称供应继续是网络行业主要约束",
+          "theme_ids": [
+            "T016"
+          ]
+        }
+      ],
+      "primary_subject_id": "NOK"
+    }
+  ],
+  "coverage_summary": {
+    "disclosure_count": 38,
+    "latest_disclosure_at": "2026-08-06",
+    "latest_retrieved_at": "2026-08-11",
+    "latest_reviewed_at": "2026-08-11",
+    "processing_status_counts": {
+      "anchor_reviewed": 30,
+      "no_relevant_claims": 8
+    }
+  },
+  "discovery_queue": [],
+  "radar_events": [
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "commercial_adoption",
+      "event_id": "EV001",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "official release title and opening paragraph",
+          "claim_reviewed_at": "2026-08-09",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_AAOI_20260309_ORDER",
+          "disclosure_reviewed_at": "2026-08-09",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL001",
+          "evidence_id": "EE001",
+          "independence_class": "first_party",
+          "origin_group": "OG_AAOI_20260309_ORDER",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-09",
+          "quote": "Applied Optoelectronics Inc. today announced it received its first volume order for its 1.6T data center transceivers from one of its long-term major hyperscale customers",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-04",
+          "statement_kind": "fact_assertion",
+          "title": "AOI Receives First Volume Order of 1.6T Data Center Transceivers from Major Hyperscale Customer",
+          "url": "https://investors.ao-inc.com/node/16751"
+        }
+      ],
+      "lifecycle_stage": "volume_order",
+      "occurred_end": "2026-03-09",
+      "occurred_start": "2026-03-09",
+      "previous_event_id": "",
+      "primary_subject_id": "AAOI",
+      "program_id": "PRG_AAOI_1P6",
+      "summary": "AAOI第一方披露首笔1.6T批量订单",
+      "theme_ids": [
+        "T015"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "product_stage",
+      "event_id": "EV002",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "official blog lines 24-30",
+          "claim_reviewed_at": "2026-08-09",
+          "content_class": "demonstration_disclosure",
+          "disclosure_id": "D_LITE_20260430_BLOG",
+          "disclosure_reviewed_at": "2026-08-09",
+          "disclosure_type": "technical_blog",
+          "event_claim_id": "ECL002",
+          "evidence_id": "EE002",
+          "independence_class": "first_party",
+          "origin_group": "OG_LITE_20260430_BLOG",
+          "provenance_class": "first_party",
+          "published_at": "2026-04-30",
+          "quote": "Lumentum demonstrated two live NVIDIA 1.6T 2xDR4 OSFP transceiver modules built on different optical architectures, but both enabled by Lumentum lasers",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-06",
+          "statement_kind": "technical_demo",
+          "title": "Enabling the Next Phase of AI Optical Infrastructure",
+          "url": "https://www.lumentum.com/en/blog/enabling-next-phase-ai-optical-infrastructure"
+        }
+      ],
+      "lifecycle_stage": "demonstrated",
+      "occurred_end": "2026-04-30",
+      "occurred_start": "2026-04-30",
+      "previous_event_id": "",
+      "primary_subject_id": "LITE",
+      "program_id": "PRG_LITE_1P6_DEMO",
+      "summary": "Lumentum第一方博客披露1.6T 2xDR4现场演示",
+      "theme_ids": [
+        "T010"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "product_stage",
+      "event_id": "EV003",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "Availability > paragraph 1",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "technical_disclosure",
+          "disclosure_id": "D_AVGO_20260311_TAURUS",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL003",
+          "evidence_id": "EE003",
+          "independence_class": "first_party",
+          "origin_group": "OG_AVGO_20260311_TAURUS",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-11",
+          "quote": "Broadcom has begun sampling its Taurus BCM83640 to its early access customers and partners.",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Broadcom Delivers Industry's First 400G/lane Optical DSP",
+          "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-delivers-industrys-first-400glane-optical-dsp-next"
+        }
+      ],
+      "lifecycle_stage": "sampling",
+      "occurred_end": "2026-03-11",
+      "occurred_start": "2026-03-11",
+      "previous_event_id": "",
+      "primary_subject_id": "AVGO",
+      "program_id": "PRG_AVGO_TAURUS",
+      "summary": "Broadcom第一方披露400G/lane Taurus光DSP开始送样",
+      "theme_ids": [
+        "T011"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "product_stage",
+      "event_id": "EV004",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "Ara产品段落",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_MRVL_20260312_ARA",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL004",
+          "evidence_id": "EE004",
+          "independence_class": "first_party",
+          "origin_group": "OG_MRVL_20260312_ARA",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-12",
+          "quote": "Now shipping in mass volume to global customers",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Marvell Expands 1.6T Optical DSP Platform Portfolio",
+          "url": "https://investor.marvell.com/news-events/press-releases/detail/1013/marvell-ushers-in-the-1-6t-era-with-expanded-optical-dsp-platform-portfolio-redefining-ai-data-center-end-to-end-connectivity"
+        }
+      ],
+      "lifecycle_stage": "scaled",
+      "occurred_end": "2026-03-12",
+      "occurred_start": "2026-03-12",
+      "previous_event_id": "",
+      "primary_subject_id": "MRVL",
+      "program_id": "PRG_MRVL_ARA",
+      "summary": "Marvell第一方称Ara 1.6T光DSP已大批量出货",
+      "theme_ids": [
+        "T010"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "commercial_adoption",
+      "event_id": "EV005",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "CEO Q3 comments > Network Infrastructure",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_NOK_20251023_800G",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL005",
+          "evidence_id": "EE005",
+          "independence_class": "first_party",
+          "origin_group": "OG_NOK_20251023_800G",
+          "provenance_class": "first_party",
+          "published_at": "2025-10-23",
+          "quote": "became generally available and have started shipping to a large US customer.",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Nokia Q3 2025 results: 800G coherent pluggables shipping",
+          "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2025-789295/"
+        }
+      ],
+      "lifecycle_stage": "first_shipment",
+      "occurred_end": "2025-10-23",
+      "occurred_start": "2025-10-23",
+      "previous_event_id": "",
+      "primary_subject_id": "NOK",
+      "program_id": "PRG_NOK_800G_COHERENT",
+      "summary": "Nokia第一方称800G相干可插拔开始向一家美国客户发货",
+      "theme_ids": [
+        "T021"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "product_stage",
+      "event_id": "EV006",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "Summary bullet 2",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "demonstration_disclosure",
+          "disclosure_id": "D_CIEN_20260331_WL6E",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL006",
+          "evidence_id": "EE006",
+          "independence_class": "first_party",
+          "origin_group": "OG_CIEN_20260331_WL6E",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-31",
+          "quote": "Recent trial successfully transmitted 1.6 Tb/s line rate on a single optical channel across Vi's two data centers",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "technical_demo",
+          "title": "Vodafone Idea Deploys Ciena WaveLogic 6 Extreme",
+          "url": "https://investor.ciena.com/news/news-details/2026/Vodafone-Idea-Deploys-Cienas-WaveLogic-6-Extreme-to-Deliver-High-Capacity-Connectivity-03-31-2026/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "demonstrated",
+      "occurred_end": "2026-03-31",
+      "occurred_start": "2026-03-31",
+      "previous_event_id": "",
+      "primary_subject_id": "CIEN",
+      "program_id": "PRG_CIEN_WL6E",
+      "summary": "Ciena第一方披露1.6T单波跨数据中心现场试验",
+      "theme_ids": [
+        "T021"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "product_stage",
+      "event_id": "EV007",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "lead paragraph beginning LOWELL",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "technical_disclosure",
+          "disclosure_id": "D_MTSI_20260317_448G",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL007",
+          "evidence_id": "EE007",
+          "independence_class": "first_party",
+          "origin_group": "OG_MTSI_20260317_448G",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-17",
+          "quote": "today announced the availability of its new 448G PAM4 modulator drivers",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "MACOM Announces Two New 448G per Lane Drivers",
+          "url": "https://ir.macom.com/news-releases/news-release-details/macom-announces-two-new-448g-lane-drivers-32t-data-center/"
+        }
+      ],
+      "lifecycle_stage": "announced",
+      "occurred_end": "2026-03-17",
+      "occurred_start": "2026-03-17",
+      "previous_event_id": "",
+      "primary_subject_id": "MTSI",
+      "program_id": "PRG_MTSI_448G",
+      "summary": "MACOM第一方披露448G/lane PAM4驱动器可获得",
+      "theme_ids": [
+        "T011"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "product_stage",
+      "event_id": "EV008",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "lead paragraph beginning SAN JOSE",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_CRDO_20260317_ZEROFLAP",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL008",
+          "evidence_id": "EE008",
+          "independence_class": "first_party",
+          "origin_group": "OG_CRDO_20260317_ZEROFLAP",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-17",
+          "quote": "today announced the general availability of its revolutionary 800G 2 x DR4 ZeroFlap (ZF) transceiver products.",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Credo Launches 800G ZeroFlap Optical Transceivers",
+          "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Launches-800G-ZeroFlap-Optical-Transceivers-Engineered-for-AI-Networks/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "announced",
+      "occurred_end": "2026-03-17",
+      "occurred_start": "2026-03-17",
+      "previous_event_id": "EV015",
+      "primary_subject_id": "CRDO",
+      "program_id": "PRG_CRDO_ZEROFLAP",
+      "summary": "Credo第一方披露800G 2xDR4 ZeroFlap光模块一般可用",
+      "theme_ids": [
+        "T004"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "commercial_adoption",
+      "event_id": "EV009",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "CEO Q1 comments > Network Infrastructure",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_NOK_20260423_Q1",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL009",
+          "evidence_id": "EE009",
+          "independence_class": "first_party",
+          "origin_group": "OG_NOK_20260423_Q1",
+          "provenance_class": "first_party",
+          "published_at": "2026-04-23",
+          "quote": "We won a number of important AI & Cloud design wins and orders for both pluggables and line systems in the quarter",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Nokia Q1 2026 interim report",
+          "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q1-2026/"
+        }
+      ],
+      "lifecycle_stage": "announced",
+      "occurred_end": "2026-04-23",
+      "occurred_start": "2026-04-23",
+      "previous_event_id": "",
+      "primary_subject_id": "NOK",
+      "program_id": "PRG_NOK_AI_OPTICAL_ORDERS",
+      "summary": "Nokia第一方披露AI与云可插拔及线路系统设计定点与订单",
+      "theme_ids": [
+        "T021"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "product_stage",
+      "event_id": "EV010",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "CEO Q1 comments > OFC optical conference",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_NOK_20260423_Q1",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL010",
+          "evidence_id": "EE010",
+          "independence_class": "first_party",
+          "origin_group": "OG_NOK_20260423_Q1",
+          "provenance_class": "first_party",
+          "published_at": "2026-04-23",
+          "quote": "Products will begin sampling in mid-2027",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "forward_looking",
+          "title": "Nokia Q1 2026 interim report",
+          "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q1-2026/"
+        }
+      ],
+      "lifecycle_stage": "announced",
+      "occurred_end": "2026-04-23",
+      "occurred_start": "2026-04-23",
+      "previous_event_id": "",
+      "primary_subject_id": "NOK",
+      "program_id": "PRG_NOK_PSE6S",
+      "summary": "Nokia第一方预告下一代光网络产品2027年送样及量产窗口",
+      "theme_ids": [
+        "T021"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "capacity_constraint",
+      "event_id": "EV011",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "CEO Q2 comments > Network Infrastructure",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_NOK_20260723_Q2",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL011",
+          "evidence_id": "EE011",
+          "independence_class": "first_party",
+          "origin_group": "OG_NOK_20260723_Q2",
+          "provenance_class": "first_party",
+          "published_at": "2026-07-23",
+          "quote": "Demand remains strong while supply continues to be the main industry constraint",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "corporate_narrative",
+          "title": "Nokia Q2 and half-year 2026 report",
+          "url": "https://www.nokia.com/newsroom/nokia-corporation-report-for-q2-and-half-year-2026/"
+        }
+      ],
+      "lifecycle_stage": "not_applicable",
+      "occurred_end": "2026-07-23",
+      "occurred_start": "2026-07-23",
+      "previous_event_id": "",
+      "primary_subject_id": "NOK",
+      "program_id": "PRG_NOK_SUPPLY_CONSTRAINT",
+      "summary": "Nokia管理层叙事称供应继续是网络行业主要约束",
+      "theme_ids": [
+        "T016"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "product_stage",
+      "event_id": "EV012",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "lead paragraph beginning HANOVER",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "technical_disclosure",
+          "disclosure_id": "D_CIEN_20260225_VESTA",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL012",
+          "evidence_id": "EE012",
+          "independence_class": "first_party",
+          "origin_group": "OG_CIEN_20260225_VESTA",
+          "provenance_class": "first_party",
+          "published_at": "2026-02-25",
+          "quote": "Ciena is unveiling Vesta 200 6.4T CPX",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Ciena unveils Vesta 200 6.4T CPX optical engine",
+          "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Unveils-the-Industrys-Highest-Density-Lowest-Power-Pluggable-Optical-Engine-to-Meet-Data-Center-AI-Demands-02-25-2026/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "announced",
+      "occurred_end": "2026-02-25",
+      "occurred_start": "2026-02-25",
+      "previous_event_id": "",
+      "primary_subject_id": "CIEN",
+      "program_id": "PRG_CIEN_VESTA",
+      "summary": "Ciena发布Vesta 200 6.4T CPX可插拔CPO光引擎",
+      "theme_ids": [
+        "T017"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "WATCH_IQE"
+      ],
+      "date_precision": "exact",
+      "event_category": "capital_relationship",
+      "event_id": "EV013",
+      "event_status": "corroborated",
+      "evidence": [
+        {
+          "anchor": "Part I Item 1 Note 4 Investments p.11 first paragraph beginning On May 28 2026",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "regulatory_record",
+          "disclosure_id": "D_MTSI_20260703_IQE_10Q",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "regulatory_filing",
+          "event_claim_id": "ECL013",
+          "evidence_id": "EE013",
+          "independence_class": "first_party",
+          "origin_group": "OG_MTSI_20260703_IQE_10Q",
+          "provenance_class": "first_party",
+          "published_at": "2026-08-06",
+          "quote": "On May 28, 2026, we completed an investment in IQE plc",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "MACOM FY2026 Q3 Form 10-Q IQE investment and supply agreements",
+          "url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359426000038/mtsi-20260703.htm"
+        },
+        {
+          "anchor": "Fundraise paragraph",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_IQE_20260528_RESULTS",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL015",
+          "evidence_id": "EE014",
+          "independence_class": "counterparty",
+          "origin_group": "OG_IQE_20260528_RESULTS",
+          "provenance_class": "counterparty",
+          "published_at": "2026-05-28",
+          "quote": "The fundraise included a £45m strategic investment from MACOM Technology Solutions Inc.",
+          "relationship": "supports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "IQE full-year 2025 results and MACOM strategic transaction",
+          "url": "https://www.iqep.com/media/press-releases/2026/full-year-2025-results/"
+        }
+      ],
+      "lifecycle_stage": "not_applicable",
+      "occurred_end": "2026-05-28",
+      "occurred_start": "2026-05-28",
+      "previous_event_id": "",
+      "primary_subject_id": "MTSI",
+      "program_id": "PRG_MTSI_IQE",
+      "summary": "MACOM完成对IQE的4500万英镑战略投资",
+      "theme_ids": [
+        "T016"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "WATCH_IQE"
+      ],
+      "date_precision": "exact",
+      "event_category": "supply_chain_arrangement",
+      "event_id": "EV014",
+      "event_status": "corroborated",
+      "evidence": [
+        {
+          "anchor": "Part I Item 1 Note 4 Investments p.11 first paragraph beginning On May 28 2026",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "regulatory_record",
+          "disclosure_id": "D_MTSI_20260703_IQE_10Q",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "regulatory_filing",
+          "event_claim_id": "ECL014",
+          "evidence_id": "EE015",
+          "independence_class": "first_party",
+          "origin_group": "OG_MTSI_20260703_IQE_10Q",
+          "provenance_class": "first_party",
+          "published_at": "2026-08-06",
+          "quote": "which included entering into long-term supply agreements",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "MACOM FY2026 Q3 Form 10-Q IQE investment and supply agreements",
+          "url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359426000038/mtsi-20260703.htm"
+        },
+        {
+          "anchor": "Fundraise paragraph",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_IQE_20260528_RESULTS",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL016",
+          "evidence_id": "EE016",
+          "independence_class": "counterparty",
+          "origin_group": "OG_IQE_20260528_RESULTS",
+          "provenance_class": "counterparty",
+          "published_at": "2026-05-28",
+          "quote": "Concurrently, IQE and MACOM also entered into long-term supply agreements.",
+          "relationship": "supports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "IQE full-year 2025 results and MACOM strategic transaction",
+          "url": "https://www.iqep.com/media/press-releases/2026/full-year-2025-results/"
+        }
+      ],
+      "lifecycle_stage": "not_applicable",
+      "occurred_end": "2026-05-28",
+      "occurred_start": "2026-05-28",
+      "previous_event_id": "",
+      "primary_subject_id": "MTSI",
+      "program_id": "PRG_MTSI_IQE",
+      "summary": "MACOM与IQE已订立长期供应协议",
+      "theme_ids": [
+        "T016"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "product_stage",
+      "event_id": "EV015",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "Availability paragraph",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "technical_disclosure",
+          "disclosure_id": "D_CRDO_20251013_ZEROFLAP",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL017",
+          "evidence_id": "EE017",
+          "independence_class": "first_party",
+          "origin_group": "OG_CRDO_20251013_ZEROFLAP",
+          "provenance_class": "first_party",
+          "published_at": "2025-10-13",
+          "quote": "Credo ZF optical transceivers are now sampling.",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Credo unveils ZeroFlap optical transceivers",
+          "url": "https://investors.credosemi.com/news-events/news/news-details/2025/Credo-Unveils-ZeroFlap-Optical-Transceivers--A-Reliability-Revolution-for-Optics-in-AI-Networks/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "sampling",
+      "occurred_end": "2025-10-13",
+      "occurred_start": "2025-10-13",
+      "previous_event_id": "",
+      "primary_subject_id": "CRDO",
+      "program_id": "PRG_CRDO_ZEROFLAP",
+      "summary": "Credo称400G 800G与1.6T ZeroFlap光模块产品族开始送样",
+      "theme_ids": [
+        "T004"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "product_stage",
+      "event_id": "EV016",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "Product Availability paragraph",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "technical_disclosure",
+          "disclosure_id": "D_CRDO_20260317_CARDINAL",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL018",
+          "evidence_id": "EE018",
+          "independence_class": "first_party",
+          "origin_group": "OG_CRDO_20260317_CARDINAL",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-17",
+          "quote": "Credo is now sampling the Cardinal DSP family to lead customers.",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Credo introduces Cardinal 1.6T optical DSP",
+          "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Introduces-Cardinal-A-LowPower-1-6T-Optical-DSP-Family-Engineered-for-MassiveScale-AI-Fabrics/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "sampling",
+      "occurred_end": "2026-03-17",
+      "occurred_start": "2026-03-17",
+      "previous_event_id": "",
+      "primary_subject_id": "CRDO",
+      "program_id": "PRG_CRDO_CARDINAL",
+      "summary": "Credo称Cardinal 1.6T光DSP开始向主要客户送样",
+      "theme_ids": [
+        "T010"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "WATCH_DUST"
+      ],
+      "date_precision": "exact",
+      "event_category": "capital_relationship",
+      "event_id": "EV017",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "lead paragraph beginning SAN JOSE",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_CRDO_20260413_DUST",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL019",
+          "evidence_id": "EE019",
+          "independence_class": "first_party",
+          "origin_group": "OG_CRDO_20260413_DUST",
+          "provenance_class": "first_party",
+          "published_at": "2026-04-13",
+          "quote": "it has entered into a definitive agreement to acquire DustPhotonics",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Credo agrees to acquire DustPhotonics",
+          "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Agrees-to-Acquire-DustPhotonics-Accelerating-Expansion-into-Silicon-Photonics-and-Next-Generation-Optical-Connectivity/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "announced",
+      "occurred_end": "2026-04-13",
+      "occurred_start": "2026-04-13",
+      "previous_event_id": "",
+      "primary_subject_id": "CRDO",
+      "program_id": "PRG_CRDO_DUST",
+      "summary": "Credo签署收购DustPhotonics的确定性协议",
+      "theme_ids": [
+        "T017"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "WATCH_DUST"
+      ],
+      "date_precision": "exact",
+      "event_category": "capital_relationship",
+      "event_id": "EV018",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "lead paragraph beginning SAN JOSE",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_CRDO_20260528_DUST_CLOSE",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL020",
+          "evidence_id": "EE020",
+          "independence_class": "first_party",
+          "origin_group": "OG_CRDO_20260528_DUST_CLOSE",
+          "provenance_class": "first_party",
+          "published_at": "2026-05-28",
+          "quote": "it has completed its acquisition of DustPhotonics",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Credo completes acquisition of DustPhotonics",
+          "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Completes-Acquisition-of-DustPhotonics/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "not_applicable",
+      "occurred_end": "2026-05-28",
+      "occurred_start": "2026-05-28",
+      "previous_event_id": "EV017",
+      "primary_subject_id": "CRDO",
+      "program_id": "PRG_CRDO_DUST",
+      "summary": "Credo完成对DustPhotonics的收购",
+      "theme_ids": [
+        "T017"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "commercial_adoption",
+      "event_id": "EV019",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "prepared remarks p.3 / scale-across project paragraph",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_CIEN_20250904_Q3",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL021",
+          "evidence_id": "EE021",
+          "independence_class": "first_party",
+          "origin_group": "OG_CIEN_20250904_Q3",
+          "provenance_class": "first_party",
+          "published_at": "2025-09-04",
+          "quote": "Initial revenue shipments are underway.",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Ciena FY2025 Q3 earnings call transcript",
+          "url": "https://s25.q4cdn.com/550667411/files/doc_financials/2025/q3/Transcript-Cienas-Fiscal-Third-Quarter-2025-Financial-Results-Conference-Call.pdf"
+        }
+      ],
+      "lifecycle_stage": "first_shipment",
+      "occurred_end": "2025-09-04",
+      "occurred_start": "2025-09-04",
+      "previous_event_id": "",
+      "primary_subject_id": "CIEN",
+      "program_id": "PRG_CIEN_SCALEACROSS",
+      "summary": "Ciena称首个scale-across项目已开始产生收入出货",
+      "theme_ids": [
+        "T021"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "capacity_constraint",
+      "event_id": "EV020",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "prepared remarks pp.6-7 / supply constraint discussion",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_CIEN_20260305_Q1",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL022",
+          "evidence_id": "EE022",
+          "independence_class": "first_party",
+          "origin_group": "OG_CIEN_20260305_Q1",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-05",
+          "quote": "our revenue in the first quarter would have been higher but for these constraints",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Ciena FY2026 Q1 earnings call transcript",
+          "url": "https://s25.q4cdn.com/550667411/files/doc_events/2026/03/Q1-2026-Earnings-Call-Transcript.pdf"
+        }
+      ],
+      "lifecycle_stage": "not_applicable",
+      "occurred_end": "2026-03-05",
+      "occurred_start": "2026-03-05",
+      "previous_event_id": "",
+      "primary_subject_id": "CIEN",
+      "program_id": "PRG_CIEN_SUPPLY_CONSTRAINT",
+      "summary": "Ciena称供应约束实际压低第一季度可实现收入",
+      "theme_ids": [
+        "T016"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "commercial_adoption",
+      "event_id": "EV021",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "prepared remarks p.3 / Hyper-Rail paragraph",
+          "claim_reviewed_at": "2026-08-11",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_CIEN_20260604_Q2",
+          "disclosure_reviewed_at": "2026-08-11",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL023",
+          "evidence_id": "EE023",
+          "independence_class": "first_party",
+          "origin_group": "OG_CIEN_20260604_Q2",
+          "provenance_class": "first_party",
+          "published_at": "2026-06-04",
+          "quote": "we've been awarded the industry's first multi-rail order from a leading hyperscaler",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-11",
+          "statement_kind": "fact_assertion",
+          "title": "Ciena FY2026 Q2 earnings call transcript",
+          "url": "https://s25.q4cdn.com/550667411/files/content_files/Ciena-Fiscal-Q2-2026-Financial-Results-Call.pdf"
+        }
+      ],
+      "lifecycle_stage": "announced",
+      "occurred_end": "2026-06-04",
+      "occurred_start": "2026-06-04",
+      "previous_event_id": "",
+      "primary_subject_id": "CIEN",
+      "program_id": "PRG_CIEN_HYPERRAIL",
+      "summary": "Ciena称获得首个Hyper-Rail多轨订单",
+      "theme_ids": [
+        "T021"
+      ]
+    }
+  ],
+  "theme_impacts": [
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV015",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "Availability paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "technical_disclosure",
+              "disclosure_id": "D_CRDO_20251013_ZEROFLAP",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL017",
+              "evidence_id": "EE017",
+              "independence_class": "first_party",
+              "origin_group": "OG_CRDO_20251013_ZEROFLAP",
+              "provenance_class": "first_party",
+              "published_at": "2025-10-13",
+              "quote": "Credo ZF optical transceivers are now sampling.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Credo unveils ZeroFlap optical transceivers",
+              "url": "https://investors.credosemi.com/news-events/news/news-details/2025/Credo-Unveils-ZeroFlap-Optical-Transceivers--A-Reliability-Revolution-for-Optics-in-AI-Networks/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "sampling",
+          "occurred_end": "2025-10-13",
+          "occurred_start": "2025-10-13",
+          "previous_event_id": "",
+          "primary_subject_id": "CRDO",
+          "program_id": "PRG_CRDO_ZEROFLAP",
+          "summary": "Credo称400G 800G与1.6T ZeroFlap光模块产品族开始送样",
+          "theme_ids": [
+            "T004"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV008",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning SAN JOSE",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CRDO_20260317_ZEROFLAP",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL008",
+              "evidence_id": "EE008",
+              "independence_class": "first_party",
+              "origin_group": "OG_CRDO_20260317_ZEROFLAP",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-17",
+              "quote": "today announced the general availability of its revolutionary 800G 2 x DR4 ZeroFlap (ZF) transceiver products.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Credo Launches 800G ZeroFlap Optical Transceivers",
+              "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Launches-800G-ZeroFlap-Optical-Transceivers-Engineered-for-AI-Networks/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-03-17",
+          "occurred_start": "2026-03-17",
+          "previous_event_id": "EV015",
+          "primary_subject_id": "CRDO",
+          "program_id": "PRG_CRDO_ZEROFLAP",
+          "summary": "Credo第一方披露800G 2xDR4 ZeroFlap光模块一般可用",
+          "theme_ids": [
+            "T004"
+          ]
+        }
+      ],
+      "theme_id": "T004"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV004",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "Ara产品段落",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_MRVL_20260312_ARA",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL004",
+              "evidence_id": "EE004",
+              "independence_class": "first_party",
+              "origin_group": "OG_MRVL_20260312_ARA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-12",
+              "quote": "Now shipping in mass volume to global customers",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Marvell Expands 1.6T Optical DSP Platform Portfolio",
+              "url": "https://investor.marvell.com/news-events/press-releases/detail/1013/marvell-ushers-in-the-1-6t-era-with-expanded-optical-dsp-platform-portfolio-redefining-ai-data-center-end-to-end-connectivity"
+            }
+          ],
+          "lifecycle_stage": "scaled",
+          "occurred_end": "2026-03-12",
+          "occurred_start": "2026-03-12",
+          "previous_event_id": "",
+          "primary_subject_id": "MRVL",
+          "program_id": "PRG_MRVL_ARA",
+          "summary": "Marvell第一方称Ara 1.6T光DSP已大批量出货",
+          "theme_ids": [
+            "T010"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV016",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "Product Availability paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "technical_disclosure",
+              "disclosure_id": "D_CRDO_20260317_CARDINAL",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL018",
+              "evidence_id": "EE018",
+              "independence_class": "first_party",
+              "origin_group": "OG_CRDO_20260317_CARDINAL",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-17",
+              "quote": "Credo is now sampling the Cardinal DSP family to lead customers.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Credo introduces Cardinal 1.6T optical DSP",
+              "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Introduces-Cardinal-A-LowPower-1-6T-Optical-DSP-Family-Engineered-for-MassiveScale-AI-Fabrics/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "sampling",
+          "occurred_end": "2026-03-17",
+          "occurred_start": "2026-03-17",
+          "previous_event_id": "",
+          "primary_subject_id": "CRDO",
+          "program_id": "PRG_CRDO_CARDINAL",
+          "summary": "Credo称Cardinal 1.6T光DSP开始向主要客户送样",
+          "theme_ids": [
+            "T010"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV002",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "official blog lines 24-30",
+              "claim_reviewed_at": "2026-08-09",
+              "content_class": "demonstration_disclosure",
+              "disclosure_id": "D_LITE_20260430_BLOG",
+              "disclosure_reviewed_at": "2026-08-09",
+              "disclosure_type": "technical_blog",
+              "event_claim_id": "ECL002",
+              "evidence_id": "EE002",
+              "independence_class": "first_party",
+              "origin_group": "OG_LITE_20260430_BLOG",
+              "provenance_class": "first_party",
+              "published_at": "2026-04-30",
+              "quote": "Lumentum demonstrated two live NVIDIA 1.6T 2xDR4 OSFP transceiver modules built on different optical architectures, but both enabled by Lumentum lasers",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-06",
+              "statement_kind": "technical_demo",
+              "title": "Enabling the Next Phase of AI Optical Infrastructure",
+              "url": "https://www.lumentum.com/en/blog/enabling-next-phase-ai-optical-infrastructure"
+            }
+          ],
+          "lifecycle_stage": "demonstrated",
+          "occurred_end": "2026-04-30",
+          "occurred_start": "2026-04-30",
+          "previous_event_id": "",
+          "primary_subject_id": "LITE",
+          "program_id": "PRG_LITE_1P6_DEMO",
+          "summary": "Lumentum第一方博客披露1.6T 2xDR4现场演示",
+          "theme_ids": [
+            "T010"
+          ]
+        }
+      ],
+      "theme_id": "T010"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV003",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "Availability > paragraph 1",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "technical_disclosure",
+              "disclosure_id": "D_AVGO_20260311_TAURUS",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL003",
+              "evidence_id": "EE003",
+              "independence_class": "first_party",
+              "origin_group": "OG_AVGO_20260311_TAURUS",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-11",
+              "quote": "Broadcom has begun sampling its Taurus BCM83640 to its early access customers and partners.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Broadcom Delivers Industry's First 400G/lane Optical DSP",
+              "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-delivers-industrys-first-400glane-optical-dsp-next"
+            }
+          ],
+          "lifecycle_stage": "sampling",
+          "occurred_end": "2026-03-11",
+          "occurred_start": "2026-03-11",
+          "previous_event_id": "",
+          "primary_subject_id": "AVGO",
+          "program_id": "PRG_AVGO_TAURUS",
+          "summary": "Broadcom第一方披露400G/lane Taurus光DSP开始送样",
+          "theme_ids": [
+            "T011"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV007",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning LOWELL",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "technical_disclosure",
+              "disclosure_id": "D_MTSI_20260317_448G",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL007",
+              "evidence_id": "EE007",
+              "independence_class": "first_party",
+              "origin_group": "OG_MTSI_20260317_448G",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-17",
+              "quote": "today announced the availability of its new 448G PAM4 modulator drivers",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "MACOM Announces Two New 448G per Lane Drivers",
+              "url": "https://ir.macom.com/news-releases/news-release-details/macom-announces-two-new-448g-lane-drivers-32t-data-center/"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-03-17",
+          "occurred_start": "2026-03-17",
+          "previous_event_id": "",
+          "primary_subject_id": "MTSI",
+          "program_id": "PRG_MTSI_448G",
+          "summary": "MACOM第一方披露448G/lane PAM4驱动器可获得",
+          "theme_ids": [
+            "T011"
+          ]
+        }
+      ],
+      "theme_id": "T011"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV001",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "official release title and opening paragraph",
+              "claim_reviewed_at": "2026-08-09",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_AAOI_20260309_ORDER",
+              "disclosure_reviewed_at": "2026-08-09",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL001",
+              "evidence_id": "EE001",
+              "independence_class": "first_party",
+              "origin_group": "OG_AAOI_20260309_ORDER",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-09",
+              "quote": "Applied Optoelectronics Inc. today announced it received its first volume order for its 1.6T data center transceivers from one of its long-term major hyperscale customers",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-04",
+              "statement_kind": "fact_assertion",
+              "title": "AOI Receives First Volume Order of 1.6T Data Center Transceivers from Major Hyperscale Customer",
+              "url": "https://investors.ao-inc.com/node/16751"
+            }
+          ],
+          "lifecycle_stage": "volume_order",
+          "occurred_end": "2026-03-09",
+          "occurred_start": "2026-03-09",
+          "previous_event_id": "",
+          "primary_subject_id": "AAOI",
+          "program_id": "PRG_AAOI_1P6",
+          "summary": "AAOI第一方披露首笔1.6T批量订单",
+          "theme_ids": [
+            "T015"
+          ]
+        }
+      ],
+      "theme_id": "T015"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV020",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "prepared remarks pp.6-7 / supply constraint discussion",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CIEN_20260305_Q1",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL022",
+              "evidence_id": "EE022",
+              "independence_class": "first_party",
+              "origin_group": "OG_CIEN_20260305_Q1",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-05",
+              "quote": "our revenue in the first quarter would have been higher but for these constraints",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Ciena FY2026 Q1 earnings call transcript",
+              "url": "https://s25.q4cdn.com/550667411/files/doc_events/2026/03/Q1-2026-Earnings-Call-Transcript.pdf"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-05",
+          "occurred_start": "2026-03-05",
+          "previous_event_id": "",
+          "primary_subject_id": "CIEN",
+          "program_id": "PRG_CIEN_SUPPLY_CONSTRAINT",
+          "summary": "Ciena称供应约束实际压低第一季度可实现收入",
+          "theme_ids": [
+            "T016"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_IQE"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV013",
+          "event_status": "corroborated",
+          "evidence": [
+            {
+              "anchor": "Part I Item 1 Note 4 Investments p.11 first paragraph beginning On May 28 2026",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "regulatory_record",
+              "disclosure_id": "D_MTSI_20260703_IQE_10Q",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "regulatory_filing",
+              "event_claim_id": "ECL013",
+              "evidence_id": "EE013",
+              "independence_class": "first_party",
+              "origin_group": "OG_MTSI_20260703_IQE_10Q",
+              "provenance_class": "first_party",
+              "published_at": "2026-08-06",
+              "quote": "On May 28, 2026, we completed an investment in IQE plc",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "MACOM FY2026 Q3 Form 10-Q IQE investment and supply agreements",
+              "url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359426000038/mtsi-20260703.htm"
+            },
+            {
+              "anchor": "Fundraise paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_IQE_20260528_RESULTS",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL015",
+              "evidence_id": "EE014",
+              "independence_class": "counterparty",
+              "origin_group": "OG_IQE_20260528_RESULTS",
+              "provenance_class": "counterparty",
+              "published_at": "2026-05-28",
+              "quote": "The fundraise included a £45m strategic investment from MACOM Technology Solutions Inc.",
+              "relationship": "supports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "IQE full-year 2025 results and MACOM strategic transaction",
+              "url": "https://www.iqep.com/media/press-releases/2026/full-year-2025-results/"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-05-28",
+          "occurred_start": "2026-05-28",
+          "previous_event_id": "",
+          "primary_subject_id": "MTSI",
+          "program_id": "PRG_MTSI_IQE",
+          "summary": "MACOM完成对IQE的4500万英镑战略投资",
+          "theme_ids": [
+            "T016"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_IQE"
+          ],
+          "date_precision": "exact",
+          "event_category": "supply_chain_arrangement",
+          "event_id": "EV014",
+          "event_status": "corroborated",
+          "evidence": [
+            {
+              "anchor": "Part I Item 1 Note 4 Investments p.11 first paragraph beginning On May 28 2026",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "regulatory_record",
+              "disclosure_id": "D_MTSI_20260703_IQE_10Q",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "regulatory_filing",
+              "event_claim_id": "ECL014",
+              "evidence_id": "EE015",
+              "independence_class": "first_party",
+              "origin_group": "OG_MTSI_20260703_IQE_10Q",
+              "provenance_class": "first_party",
+              "published_at": "2026-08-06",
+              "quote": "which included entering into long-term supply agreements",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "MACOM FY2026 Q3 Form 10-Q IQE investment and supply agreements",
+              "url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359426000038/mtsi-20260703.htm"
+            },
+            {
+              "anchor": "Fundraise paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_IQE_20260528_RESULTS",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL016",
+              "evidence_id": "EE016",
+              "independence_class": "counterparty",
+              "origin_group": "OG_IQE_20260528_RESULTS",
+              "provenance_class": "counterparty",
+              "published_at": "2026-05-28",
+              "quote": "Concurrently, IQE and MACOM also entered into long-term supply agreements.",
+              "relationship": "supports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "IQE full-year 2025 results and MACOM strategic transaction",
+              "url": "https://www.iqep.com/media/press-releases/2026/full-year-2025-results/"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-05-28",
+          "occurred_start": "2026-05-28",
+          "previous_event_id": "",
+          "primary_subject_id": "MTSI",
+          "program_id": "PRG_MTSI_IQE",
+          "summary": "MACOM与IQE已订立长期供应协议",
+          "theme_ids": [
+            "T016"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV011",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "CEO Q2 comments > Network Infrastructure",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_NOK_20260723_Q2",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL011",
+              "evidence_id": "EE011",
+              "independence_class": "first_party",
+              "origin_group": "OG_NOK_20260723_Q2",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-23",
+              "quote": "Demand remains strong while supply continues to be the main industry constraint",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "corporate_narrative",
+              "title": "Nokia Q2 and half-year 2026 report",
+              "url": "https://www.nokia.com/newsroom/nokia-corporation-report-for-q2-and-half-year-2026/"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-07-23",
+          "occurred_start": "2026-07-23",
+          "previous_event_id": "",
+          "primary_subject_id": "NOK",
+          "program_id": "PRG_NOK_SUPPLY_CONSTRAINT",
+          "summary": "Nokia管理层叙事称供应继续是网络行业主要约束",
+          "theme_ids": [
+            "T016"
+          ]
+        }
+      ],
+      "theme_id": "T016"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV012",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning HANOVER",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "technical_disclosure",
+              "disclosure_id": "D_CIEN_20260225_VESTA",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL012",
+              "evidence_id": "EE012",
+              "independence_class": "first_party",
+              "origin_group": "OG_CIEN_20260225_VESTA",
+              "provenance_class": "first_party",
+              "published_at": "2026-02-25",
+              "quote": "Ciena is unveiling Vesta 200 6.4T CPX",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Ciena unveils Vesta 200 6.4T CPX optical engine",
+              "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Unveils-the-Industrys-Highest-Density-Lowest-Power-Pluggable-Optical-Engine-to-Meet-Data-Center-AI-Demands-02-25-2026/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-02-25",
+          "occurred_start": "2026-02-25",
+          "previous_event_id": "",
+          "primary_subject_id": "CIEN",
+          "program_id": "PRG_CIEN_VESTA",
+          "summary": "Ciena发布Vesta 200 6.4T CPX可插拔CPO光引擎",
+          "theme_ids": [
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_DUST"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV017",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning SAN JOSE",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CRDO_20260413_DUST",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL019",
+              "evidence_id": "EE019",
+              "independence_class": "first_party",
+              "origin_group": "OG_CRDO_20260413_DUST",
+              "provenance_class": "first_party",
+              "published_at": "2026-04-13",
+              "quote": "it has entered into a definitive agreement to acquire DustPhotonics",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Credo agrees to acquire DustPhotonics",
+              "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Agrees-to-Acquire-DustPhotonics-Accelerating-Expansion-into-Silicon-Photonics-and-Next-Generation-Optical-Connectivity/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-04-13",
+          "occurred_start": "2026-04-13",
+          "previous_event_id": "",
+          "primary_subject_id": "CRDO",
+          "program_id": "PRG_CRDO_DUST",
+          "summary": "Credo签署收购DustPhotonics的确定性协议",
+          "theme_ids": [
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_DUST"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV018",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning SAN JOSE",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CRDO_20260528_DUST_CLOSE",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL020",
+              "evidence_id": "EE020",
+              "independence_class": "first_party",
+              "origin_group": "OG_CRDO_20260528_DUST_CLOSE",
+              "provenance_class": "first_party",
+              "published_at": "2026-05-28",
+              "quote": "it has completed its acquisition of DustPhotonics",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Credo completes acquisition of DustPhotonics",
+              "url": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Completes-Acquisition-of-DustPhotonics/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-05-28",
+          "occurred_start": "2026-05-28",
+          "previous_event_id": "EV017",
+          "primary_subject_id": "CRDO",
+          "program_id": "PRG_CRDO_DUST",
+          "summary": "Credo完成对DustPhotonics的收购",
+          "theme_ids": [
+            "T017"
+          ]
+        }
+      ],
+      "theme_id": "T017"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV019",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "prepared remarks p.3 / scale-across project paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CIEN_20250904_Q3",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL021",
+              "evidence_id": "EE021",
+              "independence_class": "first_party",
+              "origin_group": "OG_CIEN_20250904_Q3",
+              "provenance_class": "first_party",
+              "published_at": "2025-09-04",
+              "quote": "Initial revenue shipments are underway.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Ciena FY2025 Q3 earnings call transcript",
+              "url": "https://s25.q4cdn.com/550667411/files/doc_financials/2025/q3/Transcript-Cienas-Fiscal-Third-Quarter-2025-Financial-Results-Conference-Call.pdf"
+            }
+          ],
+          "lifecycle_stage": "first_shipment",
+          "occurred_end": "2025-09-04",
+          "occurred_start": "2025-09-04",
+          "previous_event_id": "",
+          "primary_subject_id": "CIEN",
+          "program_id": "PRG_CIEN_SCALEACROSS",
+          "summary": "Ciena称首个scale-across项目已开始产生收入出货",
+          "theme_ids": [
+            "T021"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV005",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "CEO Q3 comments > Network Infrastructure",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_NOK_20251023_800G",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL005",
+              "evidence_id": "EE005",
+              "independence_class": "first_party",
+              "origin_group": "OG_NOK_20251023_800G",
+              "provenance_class": "first_party",
+              "published_at": "2025-10-23",
+              "quote": "became generally available and have started shipping to a large US customer.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Nokia Q3 2025 results: 800G coherent pluggables shipping",
+              "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2025-789295/"
+            }
+          ],
+          "lifecycle_stage": "first_shipment",
+          "occurred_end": "2025-10-23",
+          "occurred_start": "2025-10-23",
+          "previous_event_id": "",
+          "primary_subject_id": "NOK",
+          "program_id": "PRG_NOK_800G_COHERENT",
+          "summary": "Nokia第一方称800G相干可插拔开始向一家美国客户发货",
+          "theme_ids": [
+            "T021"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV006",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "Summary bullet 2",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "demonstration_disclosure",
+              "disclosure_id": "D_CIEN_20260331_WL6E",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL006",
+              "evidence_id": "EE006",
+              "independence_class": "first_party",
+              "origin_group": "OG_CIEN_20260331_WL6E",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-31",
+              "quote": "Recent trial successfully transmitted 1.6 Tb/s line rate on a single optical channel across Vi's two data centers",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "technical_demo",
+              "title": "Vodafone Idea Deploys Ciena WaveLogic 6 Extreme",
+              "url": "https://investor.ciena.com/news/news-details/2026/Vodafone-Idea-Deploys-Cienas-WaveLogic-6-Extreme-to-Deliver-High-Capacity-Connectivity-03-31-2026/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "demonstrated",
+          "occurred_end": "2026-03-31",
+          "occurred_start": "2026-03-31",
+          "previous_event_id": "",
+          "primary_subject_id": "CIEN",
+          "program_id": "PRG_CIEN_WL6E",
+          "summary": "Ciena第一方披露1.6T单波跨数据中心现场试验",
+          "theme_ids": [
+            "T021"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV009",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "CEO Q1 comments > Network Infrastructure",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_NOK_20260423_Q1",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL009",
+              "evidence_id": "EE009",
+              "independence_class": "first_party",
+              "origin_group": "OG_NOK_20260423_Q1",
+              "provenance_class": "first_party",
+              "published_at": "2026-04-23",
+              "quote": "We won a number of important AI & Cloud design wins and orders for both pluggables and line systems in the quarter",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Nokia Q1 2026 interim report",
+              "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q1-2026/"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-04-23",
+          "occurred_start": "2026-04-23",
+          "previous_event_id": "",
+          "primary_subject_id": "NOK",
+          "program_id": "PRG_NOK_AI_OPTICAL_ORDERS",
+          "summary": "Nokia第一方披露AI与云可插拔及线路系统设计定点与订单",
+          "theme_ids": [
+            "T021"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV010",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "CEO Q1 comments > OFC optical conference",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_NOK_20260423_Q1",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL010",
+              "evidence_id": "EE010",
+              "independence_class": "first_party",
+              "origin_group": "OG_NOK_20260423_Q1",
+              "provenance_class": "first_party",
+              "published_at": "2026-04-23",
+              "quote": "Products will begin sampling in mid-2027",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "forward_looking",
+              "title": "Nokia Q1 2026 interim report",
+              "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q1-2026/"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-04-23",
+          "occurred_start": "2026-04-23",
+          "previous_event_id": "",
+          "primary_subject_id": "NOK",
+          "program_id": "PRG_NOK_PSE6S",
+          "summary": "Nokia第一方预告下一代光网络产品2027年送样及量产窗口",
+          "theme_ids": [
+            "T021"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV021",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "prepared remarks p.3 / Hyper-Rail paragraph",
+              "claim_reviewed_at": "2026-08-11",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_CIEN_20260604_Q2",
+              "disclosure_reviewed_at": "2026-08-11",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL023",
+              "evidence_id": "EE023",
+              "independence_class": "first_party",
+              "origin_group": "OG_CIEN_20260604_Q2",
+              "provenance_class": "first_party",
+              "published_at": "2026-06-04",
+              "quote": "we've been awarded the industry's first multi-rail order from a leading hyperscaler",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-11",
+              "statement_kind": "fact_assertion",
+              "title": "Ciena FY2026 Q2 earnings call transcript",
+              "url": "https://s25.q4cdn.com/550667411/files/content_files/Ciena-Fiscal-Q2-2026-Financial-Results-Call.pdf"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-06-04",
+          "occurred_start": "2026-06-04",
+          "previous_event_id": "",
+          "primary_subject_id": "CIEN",
+          "program_id": "PRG_CIEN_HYPERRAIL",
+          "summary": "Ciena称获得首个Hyper-Rail多轨订单",
+          "theme_ids": [
+            "T021"
+          ]
+        }
+      ],
+      "theme_id": "T021"
+    }
+  ]
+}

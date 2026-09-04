@@ -1,0 +1,13 @@
+relationship_id,subject_entity_id,object_entity_id,relationship_type,effective_from,effective_to,source_ref,review_status,notes
+REL_DUST_CRDO,WATCH_DUST,CRDO,acquired_by,2026-05-28,,https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Completes-Acquisition-of-DustPhotonics/default.aspx,reviewed,只用于身份与历史事件去重；不证明产品整合或收入目标兑现
+REL_IIVI_COHR,WATCH_IIVI,COHR,predecessor_of,2022-09-08,,https://www.coherent.com/news/press-releases/ii-vi-changes-name-to-coherent-and-launches-new-brand,reviewed,同一经营主体更名而非新增公司
+REL_FINISAR_COHR,WATCH_FINISAR,COHR,acquired_by,2019-09-24,,https://www.coherent.com/content/dam/coherent/site/en/documents/investors/annual-filings/2020/ii-vi-2020-annual-report.pdf,reviewed,收购时主体名为II-VI；现归当前Coherent身份
+REL_OCLARO_LITE,WATCH_OCLARO,LITE,acquired_by,2018-12-10,,https://investor.lumentum.com/financial-news-releases/news-details/2018/Lumentum-Announces-Completion-Of-Oclaro-Acquisition-2018-12-10/default.aspx,reviewed,历史身份保留但不重复计票
+REL_NEOPHOTONICS_LITE,WATCH_NEOPHOTONICS,LITE,acquired_by,2022-08-03,,https://investor.lumentum.com/financial-news-releases/news-details/2022/Lumentum-Announces-Completion-of-NeoPhotonics-Acquisition/default.aspx,reviewed,历史身份保留但不重复计票
+REL_CLOUDLIGHT_LITE,WATCH_CLOUDLIGHT,LITE,acquired_by,2023-11-07,,https://investor.lumentum.com/financial-news-releases/news-details/2023/Lumentum-Announces-Completion-of-Cloud-Light-Acquisition/default.aspx,reviewed,历史身份保留但不重复计票
+REL_ACACIA_CSCO,WATCH_ACACIA,CSCO,acquired_by,2021-03-01,,https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2021/m03/cisco-completes-acquisition-of-acac-1.html,reviewed,历史身份保留但不重复计票
+REL_INPHI_MRVL,WATCH_INPHI,MRVL,acquired_by,2021-04-20,,https://www.marvell.com/company/newsroom/marvell-completes-acquisition-of-inphi.html,reviewed,历史身份保留但不重复计票
+REL_INFINERA_NOK,WATCH_INFINERA,NOK,acquired_by,2025-02-28,,https://www.nokia.com/newsroom/nokia-completes-acquisition-of-infinera-to-create-innovation-powerhouse-in-optical-networks-with-the-scale-to-power-the-data-center-revolution/,reviewed,历史身份保留但不重复计票
+REL_NUBIS_CIEN,WATCH_NUBIS,CIEN,acquired_by,2025-10-07,,https://investor.ciena.com/static-files/11dd73c3-c17b-44d3-8018-844fe6979976,reviewed,历史身份保留但不重复计票
+REL_HYPERLUME_CRDO,WATCH_HYPERLUME,CRDO,acquired_by,2025-09-29,,https://investors.credosemi.com/news-events/news/news-details/2025/Credo-to-Acquire-Hyperlume-Inc-/default.aspx,reviewed,正文明确closing；历史身份保留但不重复计票
+REL_TERAMOUNT_MOLEX,WATCH_TERAMOUNT,WATCH_MOLEX,acquired_by,2026-05-07,,https://www.molex.com/en-us/news/molex-completes-acquisition-of-teramount-ltd,reviewed,历史身份保留但不重复计票；不证明产品整合

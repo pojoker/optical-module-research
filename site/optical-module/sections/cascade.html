@@ -1,0 +1,31 @@
+<section class="section" id="cascade" data-certainty="mechanism">
+  <div class="statusline"><span class="certainty mechanism">WHY 串联</span><small>同一约束可以带出不同、甚至相反的工程选择</small></div>
+  <div class="kicker">从约束走到路线</div><h2>技术路线不是“突然出现”，而是对约束传导方式的不同回答</h2>
+  <p class="intro">最容易缺失的就是中间这几步：需求不是直接指向 EML、SiPh、LPO 或 CPO；它先改变约束，再改变某种方案的相对价值。每条链还必须继续追踪代价去了哪里。</p>
+
+  <div class="cascade-list">
+    <article class="cascade-row"><div class="cascade-title"><span>链 1</span><b>电通道余量变小</b></div><div class="cascade-flow"><div><small>上游变化</small><b>200G/lane、较长 C2M 路径</b></div><i>→</i><div><small>约束</small><b>损耗、反射、串扰占用余量</b></div><i>→</i><div class="cascade-fork"><small>两个方向</small><b>增加 retiming</b><em>或</em><b>缩短路径 / linear</b></div><i>→</i><div><small>下游代价</small><b>模块功耗增加，或 Host/封装/验证责任增加</b></div></div><footer>因此 Retimed 与 LPO 并不是简单的新旧关系，而是对“在哪里恢复信号、由谁承担风险”的不同回答。</footer></article>
+
+    <article class="cascade-row"><div class="cascade-title"><span>链 2</span><b>面板与纤芯密度受限</b></div><div class="cascade-flow"><div><small>上游变化</small><b>端口吞吐和 lane 数增加</b></div><i>→</i><div><small>约束</small><b>连接器、光纤、极性与布线膨胀</b></div><i>→</i><div class="cascade-fork"><small>两个方向</small><b>Parallel：保留空间 lane</b><em>或</em><b>WDM：按波长复用</b></div><i>→</i><div><small>下游代价</small><b>多纤管理，或 mux/demux、波长与温控责任</b></div></div><footer>因此“纤芯更少”不等于 BOM 更少：空间管理责任可能转化为光谱管理责任。</footer></article>
+
+    <article class="cascade-row"><div class="cascade-title"><span>链 3</span><b>功耗与热密度受限</b></div><div class="cascade-flow"><div><small>上游变化</small><b>更高速 DSP、光源与更多密集端口</b></div><i>→</i><div><small>约束</small><b>模块壳温、风道与面板功率密度</b></div><i>→</i><div class="cascade-fork"><small>多个方向</small><b>先进制程 / LPO / 更强散热</b><em>或</em><b>NPO / CPO 改变放置</b></div><i>→</i><div><small>下游代价</small><b>Host 分责、共同封装、外置光源、维修边界重画</b></div></div><footer>因此 CPO 的吸引力来自系统级边界变化，不等于“只要到 3.2T 就必然采用 CPO”。</footer></article>
+  </div>
+
+  <h3 class="subhead">提速时必须同时看三个分母</h3>
+  <div class="denominator-grid">
+    <article><span>每只模块</span><b>W / module · $ / module</b><p>1.6T 模块的绝对功耗或售价可能高于 800G；这反映单只产品压力。</p></article>
+    <article><span>每单位带宽</span><b>W / Tb/s · $ / Gb/s</b><p>绝对功耗上升时，每比特能耗仍可能下降；这是效率口径。</p></article>
+    <article><span>整个系统</span><b>ASIC + optics + cooling + service</b><p>模块省下的功耗、成本或复杂度可能转移到 Host、交换芯片、冷却、封装、测试和维护。</p></article>
+  </div>
+  <div class="warn red"><b>不能跨分母下结论：</b>“模块功耗更低”“每比特更高效”和“交换机系统更省电”是三个不同命题；同样，“零件减少”“BOM 降低”和“全生命周期成本降低”也不是同一句话。</div>
+
+  <div class="tablewrap"><table class="bridge-table"><thead><tr><th>观察到的压力</th><th>可以继续问</th><th>还不能直接推出</th></tr></thead><tbody>
+    <tr><td>200G/lane 电通道更难</td><td>Retimed、LRO、LPO 分别把均衡、FEC、观测和故障责任放在哪里？</td><td class="scope">不能说 LPO 必然更省系统功耗，也不能说 DSP 一定不可缺</td></tr>
+    <tr><td>光 lane 带宽提高</td><td>Driver、modulator、PD、TIA、封装寄生和目标 reach 如何共同闭合？</td><td class="scope">不能只凭 1.6T 标签判断必须使用 EML 或 SiPh</td></tr>
+    <tr><td>纤芯与面板密度提高</td><td>Parallel 与 WDM 分别增加哪些接口、温控、耦合和维护责任？</td><td class="scope">不能只按光纤数量判断成本和可靠性</td></tr>
+    <tr><td>模块和面板热密度提高</td><td>模块、ASIC、风扇/液冷和外置激光器的功耗分别是多少？</td><td class="scope">不能用两款模块 nameplate 功耗代替系统受控比较</td></tr>
+    <tr><td>装配与测试边界收紧</td><td>KGD、耦合、老化、温箱、端到端 BER 和返工流程怎样变化？</td><td class="scope">不能自动推出设备价值量、测试时长或良率方向</td></tr>
+  </tbody></table></div>
+
+  <div class="foundation-note">延伸阅读：<a href="https://www.broadcom.com/company/news/product-releases/63146" target="_blank" rel="noreferrer">Broadcom Tomahawk 6</a>提供 102.4Tb/s 交换容量与 100G/200G 接口对象；<a href="https://www.ieee802.org/3/dj/" target="_blank" rel="noreferrer">IEEE P802.3dj</a>给出 200G 至 1.6T Ethernet 的标准工作边界；<a href="https://www.oiforum.com/wp-content/uploads/OIF-FD-CEI-224G-01.0.pdf" target="_blank" rel="noreferrer">OIF 224G 接口框架</a>把问题展开到芯片、封装、连接器、信道与系统。</div>
+</section>

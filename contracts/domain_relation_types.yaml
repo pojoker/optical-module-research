@@ -1,0 +1,60 @@
+schema_version: domain_relation_types_v1
+
+disciplines:
+  - source_encoded != derived_candidate
+  - actual != planned
+  - lead != formal_question
+  - generated_output != canonical_data
+
+relation_types:
+  - name: part_of
+    subject_kinds: [cell, tree_node]
+    object_kinds: [tree_node]
+    automatic_origin: source_encoded
+
+  - name: connects_to
+    subject_kinds: [cell]
+    object_kinds: [cell]
+    automatic_origin: source_encoded
+
+  - name: requires
+    subject_kinds: [route_item]
+    object_kinds: [cell]
+    automatic_origin: source_encoded
+
+  - name: has_capability
+    subject_kinds: [company]
+    object_kinds: [cell]
+    automatic_origin: source_encoded
+
+  - name: offers_product
+    subject_kinds: [company]
+    object_kinds: [product]
+    automatic_origin: none
+    admission: explicit_human_review
+
+  - name: implements_route
+    subject_kinds: [product]
+    object_kinds: [route_item, route_profile]
+    automatic_origin: none
+    admission: explicit_human_review
+
+  - name: has_stage
+    subject_kinds: [program, product]
+    object_kinds: [lifecycle_stage]
+    automatic_origin: source_encoded
+
+  - name: supported_by
+    subject_kinds: [knowledge, relation]
+    object_kinds: [evidence]
+    automatic_origin: source_encoded
+
+lead_contract:
+  kind: capability_requirement_overlap
+  human_review_required: true
+  does_not_imply:
+    - complete_route_capability
+    - offers_product
+    - implements_route
+    - formal_question
+    - customer_adoption

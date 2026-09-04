@@ -1,0 +1,248 @@
+meta:
+  version: v3
+  root_id: RQ000
+  answer_target: knowledge.yaml
+  # ---- 完成语义（契约，改动须人工评审，不得由脚本自动翻转）----
+  # 旧字段名 `acceptance` 已重命名为 `minimum_writeback_contract`：它描述的是"有材料可回填"的
+  # 机器最低条件，不是"问题已完成"。旧名会诱导把"有一条 KN/WHY 引用"读成"问题已回答"，故弃用。
+  completion_semantics:
+    linked_kn_or_why_means: 已有材料
+    linked_kn_or_why_does_not_mean: 已完成
+    completion_is: 由人工复核判定（并需用户确认写入 canonical），本文件不保存自动完成状态
+    machine_role: 只判结构与引用闭合（scan.py 不变量⑭ + render.py 渲染），不判语义蕴含
+    forbidden_phrasing_when_describing_question_state: [已覆盖, 已完成, 已回答]
+    required_phrasing_when_describing_question_state: [已有材料]
+
+# 人工策划问题图：parent_id 只决定页面树形展示，depends_on 保存真实理解依赖；不保存事实答案或自动状态。
+# 答案进入 knowledge.yaml（物理知识/技术路线 KN）；跨体系因果关系进入 why_links。
+# 问题 ID 与文案首版冻结（上游方案 §5）；新增问题须改本文件并升版本。
+# 每题 `minimum_writeback_contract` 只规定"有材料可回填"的最低条件；问题是否完成由人工复核判定。
+questions:
+  - id: RQ000
+    parent_id:
+    system: root
+    order: 0
+    question: 什么是光模块？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 RQ000）
+
+  # ---- 物理知识体系主干（首版固定）----
+  - id: PQ001
+    parent_id: RQ000
+    system: physical
+    order: 1
+    question: 光模块在系统中解决什么问题，边界在哪里？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 PQ001）
+  - id: PQ002
+    parent_id: PQ001
+    system: physical
+    order: 2
+    question: 电→光→电的功能链如何工作？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 PQ002）
+  - id: PQ003
+    parent_id: PQ001
+    system: physical
+    order: 3
+    question: 应选哪一个真实产品作参考样机，代表性边界是什么？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 PQ003）
+  - id: PQ004
+    parent_id: PQ003
+    depends_on: [PQ002, PQ003]
+    system: physical
+    order: 4
+    question: 参考样机由哪些组件构成，每个组件完成什么功能？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 PQ004）
+  - id: PQ005
+    parent_id: PQ004
+    depends_on: [PQ002, PQ004]
+    system: physical
+    order: 5
+    question: 组件之间怎样衔接，分别是什么电/光/机械/热接口？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 PQ005）
+  - id: PQ006
+    parent_id: PQ004
+    depends_on: [PQ004]
+    system: physical
+    order: 6
+    question: 每个组件由什么材料和结构构成？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 PQ006）
+  - id: PQ007
+    parent_id: PQ004
+    depends_on: [PQ004, PQ006]
+    system: physical
+    order: 7
+    question: 每个组件怎样制造，关键工序和检测点是什么？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 PQ007）
+  - id: PQ008
+    parent_id: PQ007
+    depends_on: [PQ007]
+    system: physical
+    order: 8
+    question: 每道制造或装配工序需要什么设备？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 PQ008）
+  - id: PQ009
+    parent_id: PQ005
+    depends_on: [PQ005]
+    system: physical
+    order: 9
+    question: 每个接口用什么指标验证连接是否合格？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 PQ009）
+  - id: PQ010
+    parent_id: PQ004
+    depends_on: [PQ004]
+    system: physical
+    order: 10
+    question: 哪些组件是通用骨干，哪些会随技术路线改变？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 PQ010）
+
+  # ---- 技术路线体系主干（首版固定）----
+  - id: TQ001
+    parent_id: RQ000
+    system: route
+    order: 1
+    question: 为什么会存在不同的光模块技术路线？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ001）
+  - id: TQ002
+    parent_id: TQ001
+    system: route
+    order: 2
+    question: 不同场景的带宽、距离、功耗、密度、成本和维护约束是什么？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ002）
+  - id: TQ003
+    parent_id: TQ002
+    depends_on: [TQ002]
+    system: route
+    order: 3
+    question: 当前方案最先遇到的物理或工程瓶颈是什么？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ003）
+  - id: TQ004
+    parent_id: TQ001
+    system: route
+    order: 4
+    question: 比较路线时必须分开哪些正交选择轴？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ004）
+  - id: TQ005
+    parent_id: TQ004
+    system: route
+    order: 5
+    question: 产品/链路标准轴有哪些选择，各自定义什么边界？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ005）
+  - id: TQ006
+    parent_id: TQ004
+    system: route
+    order: 6
+    question: 电接口架构轴有哪些选择，各自把信号处理放在哪里？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ006）
+  - id: TQ007
+    parent_id: TQ004
+    system: route
+    order: 7
+    question: 光子平台轴有哪些选择，各自怎样产生、调制和接收光？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ007）
+  - id: TQ008
+    parent_id: TQ004
+    system: route
+    order: 8
+    question: 封装架构轴有哪些选择，光学离 ASIC 多远？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ008）
+  - id: TQ009
+    parent_id: TQ004
+    depends_on: [TQ005, TQ006, TQ007, TQ008]
+    system: route
+    order: 9
+    question: 一个可比较的具体路线画像由哪些轴值组合而成？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ009）
+  - id: TQ010
+    parent_id: TQ009
+    depends_on: [TQ009, PQ004, PQ005]
+    system: route
+    order: 10
+    question: 该路线画像相对基线改变了哪些组件、接口、工序和设备？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ010）
+  - id: TQ011
+    parent_id: TQ010
+    depends_on: [TQ010, PQ007, PQ008]
+    system: route
+    order: 11
+    question: 这些变化要求供应链具备哪些物理能力？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ011）
+  - id: TQ012
+    parent_id: TQ011
+    depends_on: [TQ011]
+    system: route
+    order: 12
+    question: 哪些公司按现有能力点构成候选能力群？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ012）
+  - id: TQ013
+    parent_id: TQ012
+    depends_on: [TQ012]
+    system: route
+    order: 13
+    question: 哪些公司有路线级直接证据，可进入已确认服务群？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ013）
+  - id: TQ014
+    parent_id: TQ009
+    depends_on: [TQ002, TQ003, TQ009]
+    system: route
+    order: 14
+    question: 该路线解决了什么、代价是什么、新瓶颈在哪里、替代方案是什么？
+    writeback: knowledge
+    minimum_writeback_contract: 有一条通过校验的 KN 显式关联本问题（研究问题含 TQ014）
+
+# Why 桥：只表示技术路线体系与物理知识体系之间的跨体系关系，不挂进第三主干。
+why_questions:
+  - id: WQ001
+    order: 1
+    route_question_ids: [TQ002, TQ003]
+    physical_question_ids: [PQ001, PQ002, PQ009]
+    relation_type: need_to_constraint
+    question: 系统需求为什么会变成这些物理约束？
+    writeback: why_links
+    minimum_writeback_contract: 有一条通过校验的 WHY 显式关联本问题（研究问题含 WQ001）
+  - id: WQ002
+    order: 2
+    route_question_ids: [TQ003, TQ009]
+    physical_question_ids: [PQ010]
+    relation_type: bottleneck_to_choice
+    question: 这个瓶颈为什么提高某种工程选择的相对价值？
+    writeback: why_links
+    minimum_writeback_contract: 有一条通过校验的 WHY 显式关联本问题（研究问题含 WQ002）
+  - id: WQ003
+    order: 3
+    route_question_ids: [TQ009, TQ010]
+    physical_question_ids: [PQ004, PQ005, PQ006, PQ007, PQ008]
+    relation_type: choice_to_physical
+    question: 工程选择为什么会改变这些组件、接口、工序或设备？
+    writeback: why_links
+    minimum_writeback_contract: 有一条通过校验的 WHY 显式关联本问题（研究问题含 WQ003）
+  - id: WQ004
+    order: 4
+    route_question_ids: [TQ011, TQ012, TQ013]
+    physical_question_ids: [PQ007, PQ008]
+    relation_type: physical_to_capability
+    question: 物理变化为什么要求这些能力，公司证据够不够？
+    writeback: why_links
+    minimum_writeback_contract: 有一条通过校验的 WHY 显式关联本问题（研究问题含 WQ004）

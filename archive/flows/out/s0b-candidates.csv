@@ -1,0 +1,67 @@
+node_id,名称,市场,代码,识别依据,置信
+N01,Fabrinet,美股（NYSE）,FN.N,nodes.csv既有代码NYSE:FN,高
+N02,NVIDIA,美股（NASDAQ）,NVDA.O,nodes.csv既有代码NASDAQ:NVDA,高
+N03,Cisco,美股（NASDAQ）,CSCO.O,nodes.csv既有代码NASDAQ:CSCO,高
+N04,Lumentum,美股（NASDAQ）,LITE.O,nodes.csv既有代码NASDAQ:LITE,高
+N05,Acacia,美股（NASDAQ，已退市）,ACIA.O,Wind基本档案返回ACIA.O；nodes.csv记载2021年被Cisco收购并退市,高
+N06,Infinera,美股（NASDAQ，已退市）,INFN.O,Wind基本档案返回INFN.O；nodes.csv记载2025年被Nokia收购并退市,高
+N07,NeoPhotonics,美股（NYSE，已退市）,NPTN.N,Wind基本档案返回NPTN.N；nodes.csv记载2022年被Lumentum收购并退市,高
+N09,Ciena,美股（NYSE）,CIEN.N,nodes.csv既有代码NYSE:CIEN,高
+N10,中际旭创,创业板,300308.SZ,nodes.csv既有代码300308,高
+N11,新易盛,创业板,300502.SZ,nodes.csv既有代码300502,高
+N12,天孚通信,创业板,300394.SZ,nodes.csv既有代码300394,高
+N13,猎奇智能,创业板IPO（非上市）,unknown,nodes.csv明确标注IPO在途（创业板）；尚非上市/挂牌主体且无证券代码,高
+N14,罗博特科/ficonTEC,创业板,300757.SZ,nodes.csv既有代码300757；代码对应罗博特科且ficonTEC为收购标的,中
+N15,博通(Broadcom),美股（NASDAQ）,AVGO.O,nodes.csv既有代码NASDAQ:AVGO,高
+N16,凯格精机,创业板,301338.SZ,nodes.csv既有代码301338,高
+N18,Coherent,美股（NYSE）,COHR.N,nodes.csv既有代码NYSE:COHR,高
+N19,Applied Optoelectronics(AAOI),美股（NASDAQ）,AAOI.O,nodes.csv既有代码NASDAQ:AAOI,高
+N20,Microsoft,美股（NASDAQ）,MSFT.O,nodes.csv既有代码NASDAQ:MSFT,高
+N21,Oracle,美股（NYSE）,ORCL.N,nodes.csv既有代码NYSE:ORCL,高
+N24,Apple,美股（NASDAQ）,AAPL.O,nodes.csv既有代码NASDAQ:AAPL,高
+N25,Nokia,美股（NYSE ADR）,NOK.N,nodes.csv既有代码NYSE:NOK,高
+N26,Google,美股（NASDAQ）,GOOGL.O,nodes.csv既有代码NASDAQ:GOOGL,高
+N27,派克新材,沪市主板,605123.SH,nodes.csv既有代码605123,高
+N32,光迅科技,深市主板,002281.SZ,nodes.csv既有代码002281,高
+N33,源杰科技,科创板,688498.SH,nodes.csv既有代码688498,高
+N38,烽火通信,沪市主板,600498.SH,nodes.csv既有代码600498；本地2023年报明确股票代码,高
+N39,奥特维,科创板,688516.SH,nodes.csv既有代码688516,高
+N40,博众精工,科创板,688097.SH,nodes.csv既有代码688097,高
+N41,快克智能,沪市主板,603203.SH,nodes.csv既有代码603203,高
+N42,普源精电,科创板,688337.SH,nodes.csv既有代码688337,高
+N43,联讯仪器,科创板IPO（非上市）,unknown,nodes.csv明确标注IPO在途（科创板）；尚非上市/挂牌主体且无证券代码,高
+N46,士兰微,沪市主板,600460.SH,nodes.csv既有代码600460,高
+N48,三安光电,沪市主板,600703.SH,nodes.csv既有代码600703,高
+N52,Corning Incorporated,美股（NYSE）,GLW.N,Wind以“康宁公司”解析为Corning Incorporated并返回GLW.N,高
+N53,Corning(解匿),unknown,unknown,解匿标签并非法定主体名；不得在entity-registry裁决前机械继承N52代码,低
+N58,Intel(含其代工厂),美股（NASDAQ）,INTC.O,Wind返回Intel Corporation=INTC.O；节点含代工厂为混合scope,中
+N62,Marvell,美股（NASDAQ）,MRVL.O,Wind返回Marvell Technology Inc.=MRVL.O；本地另有FY2026 10-K锚,高
+N75,上海飞博激光科技股份有限公司,unknown,unknown,Wind同名基本档案查询无结果；“股份有限公司”不等于已挂牌,低
+N77,东莞铭普光磁股份有限公司,深市主板,002902.SZ,Wind返回同名法人002902.SZ且上市板=主板,高
+N80,中天科技(含关联方),沪市主板,600522.SH,Wind返回江苏中天科技股份有限公司600522.SH；节点为含关联方合并scope,中
+N82,中航光电(含关联方),深市主板,002179.SZ,Wind返回中航光电科技股份有限公司002179.SZ；节点为含关联方合并scope,中
+N83,亨通光电(含关联方),沪市主板,600487.SH,Wind返回江苏亨通光电股份有限公司600487.SH；节点为含关联方合并scope,中
+N85,仕佳光子,科创板,688313.SH,Wind返回河南仕佳光子科技股份有限公司688313.SH且上市板=科创板；本地2024年报同证,高
+N91,剑桥科技,沪市主板,603083.SH,Wind返回上海剑桥科技股份有限公司603083.SH且上市板=主板,高
+N94,华工科技,深市主板,000988.SZ,Wind返回华工科技产业股份有限公司000988.SZ且上市板=主板,高
+N95,博创科技,创业板,300548.SZ,Wind返回代码300548.SZ且当前公司名为长芯博创科技股份有限公司；同N96待registry去重,高
+N96,博创科技股份有限公司,创业板,300548.SZ,Wind返回代码300548.SZ且当前公司名为长芯博创科技股份有限公司；同N95待registry去重,高
+N104,太辰光,创业板,300570.SZ,Wind返回深圳太辰光通信股份有限公司300570.SZ且上市板=创业板,高
+N106,广东瑞谷光网通信股份有限公司,unknown,unknown,Wind同名基本档案查询无结果；本地招股书仅证明其为交易对手不证明挂牌,低
+N109,成都储翰科技,新三板（已摘牌）,831964.NQ,Wind事件返回储翰科技831964.NQ于2015-02-11挂牌并于2019-10-29摘牌,高
+N116,杜邦(含关联方),unknown,unknown,Wind“杜邦公司”解析为历史E. I. Du Pont主体F1000077.N；节点为含关联方集团scope且无法闭合到当前上市法人,低
+N120,武汉云岭光电股份有限公司,unknown,874775.BJ,Wind基本档案返回874775.BJ/北证但挂牌日与首发上市日均为空；状态未闭环故市场不猜,中
+N121,武汉华日精密激光,新三板,874868.NQ,Wind事件返回华日激光874868.NQ于2025-07-18挂牌且摘牌日为空,高
+N122,"武汉昱升光电(原昱升光器件,同主体待补工商锚)",unknown,unknown,Wind同名基本档案无结果且节点自身注明同主体待补工商锚,低
+N128,江苏南大光电材料股份有限公司,创业板,300346.SZ,Wind返回同名法人300346.SZ且上市板=创业板,高
+N132,泰科电子(含关联方),美股（NYSE）,TEL.N,Wind返回TE Connectivity plc=TEL.N；节点为含关联方集团scope,中
+N133,洛阳中超新材料股份有限公司,unknown,unknown,Wind查询误配到南京中超新材料831313.NQ；法人名称不一致故拒绝赋码,低
+N140,深圳市路维光电股份有限公司,科创板,688401.SH,Wind返回同名法人688401.SH且上市板=科创板,高
+N145,腾景科技股份有限公司,科创板,688195.SH,Wind返回同名法人688195.SH且上市板=科创板,高
+N146,芯思杰技术股份有限公司,unknown,unknown,Wind仅解析到芯思杰技术(深圳)股份有限公司但未返回证券代码；无本地一手挂牌证据,低
+N158,"金信诺及其关联方轨道信号系统科技有限公司、赣州金信诺电缆技术有限公司、金信诺光纤光缆有限公司、东莞金信诺电子有限公司）",创业板,300252.SZ,Wind返回上市锚深圳金信诺高新技术股份有限公司300252.SZ；节点为多关联方合并scope,中
+N159,锐科激光,创业板,300747.SZ,Wind返回武汉锐科光纤激光技术股份有限公司300747.SZ且上市板=创业板,高
+N160,长光华芯,科创板,688048.SH,Wind返回苏州长光华芯光电技术股份有限公司688048.SH且上市板=科创板,高
+N161,长飞光纤(合并),沪市主板|港股,601869.SH|6869.HK,Wind分别返回长飞光纤A股601869.SH与H股6869.HK；本节点是合并观察scope,中
+N162,长飞光纤光缆股份有限公司(单体),沪市主板|港股,601869.SH|6869.HK,Wind分别返回同一法人A股601869.SH与H股6869.HK并说明A+H上市,高
+N167,飞博激光,unknown,unknown,名称为松散简称且可能与N75重复；Wind同名查询无结果，待registry去重后再识别,低

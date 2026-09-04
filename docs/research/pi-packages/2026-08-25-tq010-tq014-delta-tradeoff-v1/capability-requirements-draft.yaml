@@ -1,0 +1,109 @@
+meta:
+  mode: draft_only
+  source_round: 2026-08-25-tq010-tq014-delta-tradeoff-v1
+  schema: capability-requirement-schema-draft.yaml
+  canonical_write_performed: false
+
+physical_capability_requirements:
+  - requirement_id: PCR-D02-C5-001
+    route_seed: RPS-D02
+    comparison_id: CMP-D02-D03
+    physical_cell: C5
+    facets:
+      component_type: DSP
+      tx_retiming_scope: retimed
+      rx_retiming_scope: linear_no_retiming
+      raw_architecture_label: LRO
+    evidence_state: observed_company_stated
+    evidence_refs: [S3#D02]
+    eligible_company_roles: [component_design, module_integrate, product_offer, role_unknown]
+    matching_limit: a point must explicitly mention LRO or the Tx/Rx retiming split; generic DSP evidence is related-facet-only, not a requirement match
+
+  - requirement_id: PCR-D03-C5-001
+    route_seed: RPS-D03
+    comparison_id: CMP-D02-D03
+    physical_cell: C5
+    facets:
+      component_type: DSP
+      dsp_process_node_raw: 3 nm
+      normalized_architecture: UNKNOWN
+    evidence_state: company_stated_raw_label
+    evidence_refs: [S3#D03]
+    eligible_company_roles: [component_design, component_manufacture, module_integrate, product_offer, role_unknown]
+    matching_limit: generic DSP evidence is related-facet-only; do not infer process ownership or D03 electrical architecture
+
+  - requirement_id: PCR-D04-C4-001
+    route_seed: RPS-D04
+    comparison_id: CMP-D04-D05
+    physical_cell: C4
+    facets:
+      platform: silicon_photonics
+      modulator_type: MZM
+      device_integration_raw: MZM_PIC
+    evidence_state: observed_company_stated
+    evidence_refs: [S4#D04]
+    eligible_company_roles: [component_design, component_manufacture, module_integrate, product_offer, role_unknown]
+    matching_limit: generic silicon-photonics evidence is related-facet-only; do not infer MZM PIC, PIC/EIC, or laser/PIC integration
+
+  - requirement_id: PCR-D05-C1-001
+    route_seed: RPS-D05
+    comparison_id: CMP-D04-D05
+    physical_cell: C1
+    facets:
+      light_source_label_raw: EML_laser
+      wavelength: 1310_nm
+    evidence_state: observed_company_stated
+    evidence_refs: [S4#D05]
+    eligible_company_roles: [component_design, component_manufacture, module_integrate, product_offer, role_unknown]
+    matching_limit: EML without 1310 nm is related-facet-only; preserve the raw EML-laser label and do not expand to DFB+EAM, InP, monolithic integration, or an independent modulator field
+
+  - requirement_id: PCR-D05-C3-001
+    route_seed: RPS-D05
+    comparison_id: CMP-D04-D05
+    physical_cell: C3
+    facets:
+      detector_type: generic_photodetector
+      detector_subtype: UNKNOWN
+    evidence_state: observed_company_stated
+    evidence_refs: [S4#D05]
+    eligible_company_roles: [component_design, component_manufacture, module_integrate, product_offer, role_unknown]
+    matching_limit: generic detector evidence may match; do not infer PIN or APD
+
+route_product_attributes:
+  - attribute_id: RPA-D04-FORM-001
+    route_seed: RPS-D04
+    field: tq008_placement.form_factor
+    value: QSFP-DD800
+    evidence_refs: [S4#D04]
+    tree_disposition: UNMODELED
+    company_match_limit: product evidence must explicitly mention QSFP-DD800; no physical manufacturing capability follows automatically
+  - attribute_id: RPA-D05-FORM-001
+    route_seed: RPS-D05
+    field: tq008_placement.form_factor
+    value: OSFP
+    evidence_refs: [S4#D05]
+    tree_disposition: UNMODELED
+    company_match_limit: product evidence must explicitly mention OSFP; no physical manufacturing capability follows automatically
+
+validation_gaps:
+  - gap_id: VG-D02-D03-ELECTRICAL-001
+    comparison_id: CMP-D02-D03
+    missing_fields:
+      - tq006_electrical_responsibility.normalized_architecture#RPS-D03
+      - tq006_electrical_responsibility.tx_retiming#RPS-D03
+      - tq006_electrical_responsibility.rx_retiming#RPS-D03
+      - tq006_electrical_responsibility.fec_location#both
+      - tq006_electrical_responsibility.dac_adc_location#both
+      - tq006_electrical_responsibility.host_serdes_role#both
+    blocks: normalized electrical-responsibility comparison and any power/performance trade-off
+    company_matchable: false
+  - gap_id: VG-D04-D05-PHOTONICS-001
+    comparison_id: CMP-D04-D05
+    missing_fields:
+      - tq007_photonics.light_source_type#RPS-D04
+      - tq007_photonics.detector_type#RPS-D04
+      - tq007_photonics.platform#RPS-D05
+      - tq007_photonics.modulator_or_emitter_type#RPS-D05
+      - tq007_photonics.device_integration#RPS-D05
+    blocks: equal-grain component comparison and any advantage/disadvantage conclusion
+    company_matchable: false

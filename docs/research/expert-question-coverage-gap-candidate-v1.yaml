@@ -1,0 +1,62 @@
+schema_version: expert_question_candidate_v2
+contract: docs/research/expert-question-contract-v1.yaml
+status: draft_only
+candidate_state: ready_for_user_admission_decision_after_stable_batch_decision
+canonical_write_allowed: false
+formal_question_ids_created: false
+portfolio_admission: false
+source_question: BS-SYSTEM-DEMAND-TO-ROUTE
+source_coverage_audit: docs/research/expert-question-coverage-audit-v1.yaml
+admission_blocker: 战略顺序要求先处理 stable-explanations-01 的用户晋升决定；之后本候选仍需单独的用户入队批准，不能因外部语义评审通过而自动进入三十问组合
+external_review:
+  reviewer: Kimi
+  continuity_handle: session_9b3c8af2-d10c-4713-a573-ed0e37e69a03
+  review_artifact: docs/reviews/2026-08-31-kimi-review-coverage-gap-candidate.md
+  initial_verdict: PASS_WITH_FIXES
+  required_fix: sensitivity_ranges_and_weight_sets_must_be_preregistered_and_frozen_before_model_outputs_are_read
+  delta_verdict: PASS
+  required_fix_closed: true
+  canonical_effect: none
+
+deduplication:
+  nearest_existing_question: QUP05-NQ03
+  nearest_existing_scope: 在匹配交换容量与业务负载的系统边界下闭合三种 placement 的分项功耗与 wall power
+  candidate_distinction: 本候选以前置 AI fabric 服务目标为共同分母，以拓扑、radix、reach 与系统约束为场景变量，寻找 placement 的 Pareto/决策边界；它不重复单一系统边界的功耗闭合问题
+  adjacent_existing_questions:
+    - question_id: QUP05-NQ01
+      distinction: existing_question_closes_common_reference_plane_electrical_penalty_not_fabric_level_decision_boundary
+    - question_id: QMID01-NQ09
+      distinction: existing_question_compares_electrical_responsibility_routes_not_optical_placement
+
+questions:
+  - question_id: COVERAGE-GAP-CANDIDATE-01
+    question_class: system_boundary
+    question: 在相同 AI 集群规模、业务流量和网络服务目标下，哪些 topology、switch radix、port/reach distribution、电力、散热与维护约束，会使 front-panel pluggable、NPO 与 CPO 的 Pareto 边界或显式带权决策结果发生反转？
+    triggered_by: [BS-SYSTEM-DEMAND-TO-ROUTE]
+    object_boundary: 至少两个具名或可复现参数化的 AI fabric 设计；共同满足同一 endpoint 数、业务流量分布、delivered bisection bandwidth、oversubscription、hop/latency、availability 和部署边界，并使用可比的器件代际与证据日期
+    upstream_unknown: 现有问题从 electrical、thermal、serviceability 等中游约束开始，尚未闭合 AI 网络拓扑和端口预算如何把系统需求传导为 placement 选择，以及相对排序在哪些阈值发生反转
+    known_boundary: front-panel、NPO 与 CPO 是 placement-and-packaging 轴上的不同实现；已有问题可分别检验电通道、功耗、散热和维护机制，但这些局部机制不能自动推出特定系统拓扑下的总价值排序
+    controlled_variables: [accelerator_or_endpoint_count, workload_and_offered_load, delivered_bisection_bandwidth_target, oversubscription_target, hop_and_latency_target, availability_target, component_generation, optical_lane_rate, FEC_and_BER_target, deployment_boundary, accounting_boundary, evidence_date]
+    independent_variables: [network_topology, switch_radix, port_distribution, port_occupancy, reach_distribution, placement, redundancy_policy, power_envelope, cooling_envelope, service_policy]
+    observables: [switch_count, network_stage_count, port_count, cable_count, faceplate_utilization, electrical_channel_length_and_loss, optical_engine_count, delivered_bandwidth, latency, module_or_engine_power, board_power, cooling_power, wall_power, capex_and_operating_cost, failure_domain, availability, MTTR]
+    decision_metrics: [delivered_performance, wall_power, lifecycle_cost, availability, failure_domain_size, serviceability]
+    decision_rule: 未声明权重时只报告 Pareto dominance/frontier；只有预先声明权重、硬约束和成本边界时才允许报告总排序或排序反转
+    preregistration_rule: 在读取或生成任何模型输出前，冻结场景变量区间、敏感性区间、缺失数据处理、权重集、硬约束、成本边界和反转判据；任何事后变更必须作为新的分析版本，不能覆盖原结果
+    acceptance_criteria:
+      - 至少比较两个满足同一网络服务目标的具名 fabric 设计，或提供输入、方程、敏感性区间均可复现的参数化模型
+      - 对每个 placement 同时闭合交换层级与数量、端口/布线、电通道、光引擎数量、功耗、散热、故障域、可用性和维护边界，不以单项优势代替系统结论
+      - 无权重时报告 Pareto frontier；有显式权重或硬约束时，报告至少一个决策结果反转的 active constraint、阈值区间和边界两侧反例，或在已声明范围内证明不存在反转
+      - 敏感性区间、权重集、硬约束与反转判据在模型输出可见前预注册并冻结；事后敏感性分析必须与预注册结果分开报告
+      - 将测得事实、设计输入和模型假设分开，并报告结论对关键假设的敏感性
+    falsifier: 在共同网络服务边界和建模输出可见前已预注册的敏感性区间与权重集内，改变 topology、radix、port/reach distribution、电力、散热与维护约束仍不改变三种 placement 的 Pareto/带权决策结果，或所谓反转完全由未冻结的器件代际、FEC、成本口径、权重或证据日期造成
+    evidence_plan:
+      - 优先使用交换芯片或系统厂的具名参考架构、端口配置、功耗与散热边界，以及 OIF 等组织的 placement 定义
+      - 构建可复现的系统预算模型，所有外部输入绑定来源、日期、对象和边界；缺测量时不得把模型输出写成部署事实
+      - 若公开资料不能闭合故障率、维护或成本输入，则保留参数区间并标记 private_or_measurement_dependency
+    branch_if_supported: 将上游 fabric 服务约束到 placement 选择的 WHY 边写成带适用范围、active constraint 和反转阈值的机制候选，并由阈值继续生成具名系统验证问题
+    branch_if_falsified: 撤销“网络拓扑或端口/reach 分布会改变 placement 决策边界”的候选解释，转而检验器件代际、成本口径、权重或服务策略是否才是主导变量
+    maturity_ceiling: measured_demo
+    review_status: externally_reviewed
+    research_status: ready_for_research
+
+promotion_effect: none_without_explicit_user_approval

@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225082705",
+    "stock_code": "300394",
+    "company_name": "<em>天孚通信</em>",
+    "title": "2025年年度报告",
+    "announcement_date": "2026-04-08",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082705.PDF",
+    "adjunct_url": "finalpage/2026-04-08/1225082705.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300394/300394__em_天孚通信_em__2025_2025年年度报告.pdf",
+    "sha256": "969e5142ee753b68e1f01c26e25215310d643dda43e4a25ae72bcc01f1265268",
+    "size_bytes": 2317596,
+    "error": ""
+  },
+  {
+    "announcement_id": "1223152632",
+    "stock_code": "300394",
+    "company_name": "<em>天孚通信</em>",
+    "title": "2024年年度报告",
+    "announcement_date": "2025-04-21",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-21/1223152632.PDF",
+    "adjunct_url": "finalpage/2025-04-21/1223152632.PDF",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300394/300394__em_天孚通信_em__2024_2024年年度报告.pdf",
+    "sha256": "b411f1cfbc224f0d12c20a6df89cb0896ffd36b9b2b9f64377a897c2161a2e6c",
+    "size_bytes": 3688060,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219698777",
+    "stock_code": "300394",
+    "company_name": "<em>天孚通信</em>",
+    "title": "2023年年度报告",
+    "announcement_date": "2024-04-22",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-22/1219698777.PDF",
+    "adjunct_url": "finalpage/2024-04-22/1219698777.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300394/300394__em_天孚通信_em__2023_2023年年度报告.pdf",
+    "sha256": "0781dc909b8610714f1abd226cfd52e519b63d96350aeef550bd9c8e42f2d2fd",
+    "size_bytes": 2482981,
+    "error": ""
+  }
+]

@@ -1,0 +1,78 @@
+site:
+  title: 光模块知识体系
+  edition: 模块化重构版
+  updated_at: 2026-09-04
+  canonical_status: KN008–KN010 已整批晋升；其余候选仍未写入
+
+pages:
+  - id: foundation
+    file: 01-foundation.html
+    number: "01"
+    nav: 基础结构
+    title: 光模块是什么，里面有什么
+    question: 从一个基础问题建立完整的物理骨架
+    description: 从双向光电转换出发，沿功能、组件、连接、制造和装配逐层展开。
+    sections: [answer, physical-gallery, physical, connections, manufacturing]
+
+  - id: demand
+    file: 02-demand.html
+    number: "02"
+    nav: 提速需求
+    title: 为什么从 800G 走向 1.6T 与 3.2T
+    question: 需求从哪里来，瓶颈落在哪里
+    description: 把 AI 集群通信压力、lane 速率、电通道、功耗与封装约束连成因果链。
+    sections: [demand, scaling, constraints, cascade]
+
+  - id: routes
+    file: 03-routes.html
+    number: "03"
+    nav: 技术路线
+    title: 不同技术选项怎样组合成一条路线
+    question: EML、SiPh、LPO、CPO 分别处在哪一层
+    description: 先给名词归位，再组合链路、电职责、光子平台、放置与外形，并展示增减关系。
+    sections: [choices, link-requirements, axes, routes, why, tradeoffs, route-impact]
+
+  - id: cases
+    file: 04-cases.html
+    number: "04"
+    nav: 案例与 UNKNOWN
+    title: 用现实案例解释未知，而不冒充通用答案
+    question: 硅光需要几个 laser，WDM 是否必须 TEC
+    description: 保留目标对象 UNKNOWN，同时展示 Intel、NVIDIA、Coherent、GIGALIGHT 等受限案例。
+    sections: [case-lab, mainstream]
+
+  - id: companies
+    file: 05-companies.html
+    number: "05"
+    nav: 公司投影
+    title: 公司服务哪一层，证据闭合到哪一步
+    question: 能力、产品、路线服务和客户供货如何区分
+    description: 用具名对象、成熟度和不可外推边界展示公司—路线关系。
+    sections: [companies]
+
+  - id: research
+    file: 06-research.html
+    number: "06"
+    nav: 研究台账
+    title: 当前知道什么，还缺什么
+    question: 问题如何继续生长，证据如何复核
+    description: 集中放置确定性说明、问题树、来源台账和边界审计，不打断正文阅读。
+    sections: [status, candidate-foundation, questions, sources, audit]
+
+  - id: decision-dossier
+    file: 07-decision-dossier.html
+    number: "07"
+    nav: 决策卷宗
+    title: 哪些条件会改变 Front-panel、NPO、CPO 的相对价值
+    question: 先定放置，再定电职责；什么时候 Pareto 前沿会反转
+    description: 用同一 AI fabric 服务目标组织约束、责任迁移、候选路线、反证和 UNKNOWN，形成第一个条件化决策产品。
+    sections: [decision-dossier-01]
+
+  - id: concept-primer
+    file: 08-concept-primer.html
+    number: "08"
+    nav: 名词入门
+    title: Front-panel、NPO、CPO 与 Pareto 到底是什么意思
+    question: 不认识专业名词，也能读懂决策卷宗
+    description: 用位置示意图、白话类比和最小词典解释光学放置、电职责、Pareto、硬约束、故障域、MTTR 与 TCO。
+    sections: [placement-primer, decision-glossary]

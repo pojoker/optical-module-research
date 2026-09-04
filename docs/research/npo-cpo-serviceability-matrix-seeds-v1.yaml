@@ -1,0 +1,289 @@
+schema_version: npo_cpo_serviceability_matrix_seed_v1
+status: draft_only
+source_question: QUP05-NQ02
+retrieved_at: 2026-08-31
+canonical_write_allowed: false
+formal_serviceability_claim_created: false
+
+observation_status_enum: [company_stated, normalized, unknown]
+replacement_class_enum:
+  - field_replaceable_operator
+  - authorized_service
+  - depot_rework
+  - factory_only
+  - whole_system_rma
+  - not_applicable
+required_dimensions:
+  - attach_method
+  - replacement_class
+  - service_actor
+  - service_location
+  - power_state
+  - fiber_state
+  - required_tools
+  - replacement_steps
+  - post_repair_test
+  - downtime_mttr
+  - rma_boundary
+
+sources:
+  - source_id: SM-S1
+    title: Passage L20 product page
+    publisher: Lightmatter
+    source_type: official_product_page
+    url: https://lightmatter.co/products/passage-l20/
+  - source_id: SM-S2
+    title: XT-1.6T DR16 NPO Linear Silicon Photonics Engine announcement
+    publisher: GIGALIGHT
+    source_type: official_product_announcement
+    url: https://www.gigalight.com/news-events/news-10133.html
+  - source_id: SM-S10
+    title: Passage L20 official announcement with preliminary specification
+    publisher: Lightmatter
+    source_type: official_product_announcement
+    url: https://lightmatter.co/press-release/lightmatter-expands-photonic-interconnect-roadmap-with-passage-l20-unified-optical-engine-for-npo-and-obo-applications/
+  - source_id: SM-S3
+    title: BCM78909 51.2-Tb/s Multilayer CPO Switch Product Brief
+    publisher: Broadcom
+    source_type: official_product_brief
+    url: https://docs.broadcom.com/doc/BCM78909-PB
+  - source_id: SM-S4
+    title: ARLM-96F8DMZ Product Brief
+    publisher: Broadcom
+    source_type: official_product_brief
+    url: https://docs.broadcom.com/doc/ARLM-96F8DMZ-Product-Brief
+  - source_id: SM-S5
+    title: Q3450 FRU Replacements
+    publisher: NVIDIA
+    source_type: official_service_manual
+    url: https://networking-docs.nvidia.com/xdrswitcheshw/fru-replacements
+  - source_id: SM-S6
+    title: ELS Replacement Procedure for Q3450-LD Systems
+    publisher: NVIDIA
+    source_type: official_service_manual
+    url: https://networking-docs.nvidia.com/xdrswitcheshw/els-replacement-procedure-for-q3450-ld-systems
+  - source_id: SM-S7
+    title: NVIDIA CPO ecosystem technical disclosure
+    publisher: NVIDIA
+    source_type: official_technical_blog
+    url: https://developer.nvidia.com/blog/how-industry-collaboration-fosters-nvidia-co-packaged-optics/
+  - source_id: SM-S8
+    title: Q3450 Cable Installation and exact topology parts
+    publisher: NVIDIA
+    source_type: official_product_manual
+    url: https://networking-docs.nvidia.com/xdrswitcheshw/cable-installation
+  - source_id: SM-S11
+    title: Q3450 accessory and replacement parts
+    publisher: NVIDIA
+    source_type: official_service_manual
+    url: https://networking-docs.nvidia.com/xdrswitcheshw/accessory-and-replacement-parts
+  - source_id: SM-S12
+    title: Q3450-LD liquid-cooling and whole-system RMA preparation
+    publisher: NVIDIA
+    source_type: official_service_manual
+    url: https://networking-docs.nvidia.com/xdrswitcheshw/q3450-ld-liquid-cooling-system
+  - source_id: SM-S9
+    title: Q-UP-05 primary-only serviceability research
+    publisher: local_main_agent_research
+    source_type: adjudicated_source_boundary
+    locator: docs/research/pi-packages/2026-08-31-q-up-05-npo-cpo-boundaries-v1/serviceability-products-deployment-primary.md
+
+serviceability_matrices:
+  - matrix_id: SM-NPO-LIGHTMATTER-L20
+    object_identity:
+      vendor: Lightmatter
+      product: Passage_L20
+      architecture_label: NPO_and_OBO
+      evidence_date: "2026-08-31"
+      exact_identity_boundary: exact_product_name_and_product_page_but_no_public_orderable_part_number_or_hardware_revision
+    matrix_status: mostly_unknown
+    rows:
+      - row_id: SM-L20-ENGINE
+        failed_unit: Passage_L20_optical_engine
+        failure_mode: optical_engine_failure_or_out_of_spec
+        dimensions:
+          attach_method: {value: BGA_reflow_compatible_ball_count_conflict_1827_current_product_page_vs_2000_preliminary_announcement, observation_status: company_stated, source_ids: [SM-S1, SM-S10], does_not_support: exact_hardware_revision_field_replaceable_or_specific_rework_profile}
+          replacement_class: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S1, SM-S9], does_not_support: field_replaceable_depot_rework_or_whole_board_RMA}
+          service_actor: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S1, SM-S9], does_not_support: operator_authorized_service_or_factory_only}
+          service_location: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S1, SM-S9], does_not_support: rack_depot_or_factory_location}
+          power_state: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S1, SM-S9], does_not_support: powered_service_or_board_power_off}
+          fiber_state: {value: UNKNOWN_Corning_CPO_FlexConnect_is_named_but_detach_sequence_is_not_published, observation_status: unknown, searched_source_ids: [SM-S1, SM-S9], does_not_support: field_detachable_fiber_or_connector_reuse_cycle}
+          required_tools: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S1, SM-S9], does_not_support: ordinary_BGA_rework_tools_or_vendor_fixture}
+          replacement_steps: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S1, SM-S9], does_not_support: desolder_reball_reflow_or_board_swap_sequence}
+          post_repair_test: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S1, SM-S9], does_not_support: optical_calibration_BER_or_thermal_requalification}
+          downtime_mttr: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S1, SM-S9], does_not_support: any_MTTR_or_traffic_recovery_claim}
+          rma_boundary: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S1, SM-S9], does_not_support: engine_board_mezzanine_or_whole_system_RMA}
+    comparability_ceiling: attach_is_known_but_no_public_repair_contract_so_L20_cannot_support_a_serviceability_ranking
+    unresolved_questions:
+      - Is the BGA engine vendor-reworkable separately from the host PCB or mezzanine?
+      - What fiber and cold-plate detach sequence is required before rework?
+      - Is there an orderable revision with an assembly or RMA manual?
+    forbidden_inferences:
+      - BGA_reflow_compatible_means_depot_reworkable
+      - modular_or_accessible_marketing_means_field_replaceable
+      - product_listing_means_customer_service_procedure_exists
+
+  - matrix_id: SM-NPO-GIGALIGHT-XT1P6T-DR16
+    object_identity:
+      vendor: GIGALIGHT
+      product: XT_1_6T_DR16_NPO_linear_silicon_photonics_engine
+      architecture_label: NPO
+      evidence_date: "2026-03-16"
+      exact_identity_boundary: exact_announced_product_name_without_public_part_number_hardware_revision_or_service_manual
+    matrix_status: mostly_unknown
+    rows:
+      - row_id: SM-GIGA-ENGINE
+        failed_unit: XT_1_6T_DR16_NPO_engine
+        failure_mode: optical_engine_failure_or_out_of_spec
+        dimensions:
+          attach_method: {value: socket_based_form_factor_with_flip_chip_bonding_inside_the_product, observation_status: company_stated, source_ids: [SM-S2], does_not_support: socket_part_field_access_or_engine_FRU_policy}
+          replacement_class: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: field_replaceable_authorized_service_or_depot_rework}
+          service_actor: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: operator_partner_or_vendor_actor}
+          service_location: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: rack_depot_or_factory_location}
+          power_state: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: powered_service_or_host_shutdown}
+          fiber_state: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: pigtail_board_connector_or_faceplate_detach_sequence}
+          required_tools: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: ordinary_socket_extraction_or_calibration_fixture}
+          replacement_steps: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: socket_release_engine_swap_or_EL_OSFP_sequence}
+          post_repair_test: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: TDECQ_BER_calibration_or_host_retraining}
+          downtime_mttr: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: any_MTTR_or_traffic_recovery_claim}
+          rma_boundary: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: engine_board_or_whole_system_RMA}
+      - row_id: SM-GIGA-ELS
+        failed_unit: EL_OSFP_external_light_source
+        failure_mode: external_laser_source_failure_or_low_output
+        dimensions:
+          attach_method: {value: front_facing_EL_OSFP_optical_port_design, observation_status: company_stated, source_ids: [SM-S2], does_not_support: exact_cage_latch_or_hot_plug_contract}
+          replacement_class: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: field_replaceable_or_authorized_service}
+          service_actor: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: operator_partner_or_vendor_actor}
+          service_location: {value: UNKNOWN_front_facing_does_not_establish_rack_service_permission, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: rack_front_depot_or_factory_location}
+          power_state: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: hot_plug_powered_service_or_hitless_operation}
+          fiber_state: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: laser_fiber_disconnect_cleaning_or_redundancy_sequence}
+          required_tools: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: tool_less_or_special_cleaning_fixture}
+          replacement_steps: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: removal_cleaning_install_or_bring_up_sequence}
+          post_repair_test: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: optical_power_alarm_or_traffic_test}
+          downtime_mttr: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: any_MTTR_or_traffic_recovery_claim}
+          rma_boundary: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S2, SM-S9], does_not_support: EL_OSFP_module_or_system_RMA}
+    comparability_ceiling: socket_and_external_laser_topology_are_known_but_no_public_service_authority_or_workflow_is_published
+    unresolved_questions:
+      - Does the socket support field replacement or only assembly and depot rework?
+      - Is EL-OSFP hot-pluggable and who is permitted to replace it?
+      - What post-swap calibration and host retraining are required?
+    forbidden_inferences:
+      - socket_based_form_factor_means_field_FRU
+      - front_facing_EL_OSFP_means_hot_pluggable
+      - announced_development_means_service_documentation_exists
+
+  - matrix_id: SM-CPO-BROADCOM-BCM78909
+    object_identity:
+      vendor: Broadcom
+      product: BCM78909_Bailly_51_2T_CPO_switch
+      architecture_label: CPO
+      evidence_date: "2024-11-07"
+      exact_identity_boundary: BCM78909_product_brief_and_exact_ARLM_96F8DMZ_laser_module_without_public_engine_service_manual
+    matrix_status: evidence_bearing
+    rows:
+      - row_id: SM-BAILLY-ENGINE
+        failed_unit: one_of_eight_6_4T_FR4_SCIP_optical_engines
+        failure_mode: optical_engine_failure_or_out_of_spec
+        dimensions:
+          attach_method: {value: UNKNOWN_common_substrate_placement_is_known_but_socket_or_solder_is_not, observation_status: unknown, searched_source_ids: [SM-S3, SM-S9], does_not_support: engine_socket_solder_or_rework_path}
+          replacement_class: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S3, SM-S9], does_not_support: field_depot_factory_or_whole_system_RMA}
+          service_actor: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S3, SM-S9], does_not_support: operator_integrator_or_Broadcom_actor}
+          service_location: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S3, SM-S9], does_not_support: rack_depot_or_factory_location}
+          power_state: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S3, SM-S9], does_not_support: powered_service_or_switch_shutdown}
+          fiber_state: {value: UNKNOWN_internal_fiber_and_BFC_repair_sequence_not_public, observation_status: unknown, searched_source_ids: [SM-S3, SM-S9], does_not_support: field_detachable_internal_fiber_or_connector_reuse}
+          required_tools: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S3, SM-S9], does_not_support: engine_fixture_or_package_rework_tools}
+          replacement_steps: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S3, SM-S9], does_not_support: engine_or_common_substrate_swap_sequence}
+          post_repair_test: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S3, SM-S9], does_not_support: optical_calibration_BER_or_system_requalification}
+          downtime_mttr: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S3, SM-S9], does_not_support: any_MTTR_or_traffic_recovery_claim}
+          rma_boundary: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S3, SM-S9], does_not_support: engine_package_board_or_whole_system_RMA}
+      - row_id: SM-BAILLY-ARLM
+        failed_unit: ARLM_96F8DMZ_external_laser_module
+        failure_mode: laser_module_failure_or_low_output
+        dimensions:
+          attach_method: {value: QSFP_DD_electrical_interface_plus_1x12_SM_APC_MPO_and_built_in_pull_tab, observation_status: company_stated, source_ids: [SM-S3, SM-S4], does_not_support: exact_system_cage_location_or_replacement_sequence}
+          replacement_class: {value: field_replaceable_operator, observation_status: company_stated, source_ids: [SM-S3], does_not_support: engine_or_internal_fiber_field_replaceability}
+          service_actor: {value: operator, observation_status: company_stated, source_ids: [SM-S3], does_not_support: untrained_personnel_or_engine_service_authority}
+          service_location: {value: field_exact_chassis_access_location_UNKNOWN, observation_status: company_stated, source_ids: [SM-S3], does_not_support: front_panel_rear_panel_or_specific_rack_procedure}
+          power_state: {value: hot_pluggable, observation_status: company_stated, source_ids: [SM-S4], does_not_support: hitless_traffic_or_redundancy_behavior}
+          fiber_state: {value: 1x12_SM_APC_MPO_interface_known_but_disconnect_cleaning_sequence_UNKNOWN, observation_status: company_stated, source_ids: [SM-S4], does_not_support: cable_removal_order_cleanliness_acceptance_or_reuse_cycles}
+          required_tools: {value: built_in_pull_tab_reported_exact_cleaning_or_inspection_tools_UNKNOWN, observation_status: company_stated, source_ids: [SM-S4], does_not_support: tool_less_complete_service_workflow}
+          replacement_steps: {value: UNKNOWN_only_insertion_extraction_facilitation_is_published, observation_status: unknown, searched_source_ids: [SM-S3, SM-S4, SM-S9], does_not_support: complete_remove_clean_install_bring_up_sequence}
+          post_repair_test: {value: UNKNOWN_CPO_JDF_diagnostics_support_does_not_define_acceptance_procedure, observation_status: unknown, searched_source_ids: [SM-S3, SM-S4, SM-S9], does_not_support: diagnostic_threshold_traffic_test_or_recalibration}
+          downtime_mttr: {value: UNKNOWN_hot_pluggable_does_not_provide_MTTR_or_traffic_recovery, observation_status: unknown, searched_source_ids: [SM-S3, SM-S4, SM-S9], does_not_support: zero_downtime_hitless_or_measured_MTTR}
+          rma_boundary: {value: laser_module_is_an_operator_level_field_unit_engine_and_system_RMA_boundary_UNKNOWN, observation_status: normalized, source_ids: [SM-S3, SM-S4], does_not_support: whole_switch_field_repair_policy}
+    comparability_ceiling: operator_level_hot_pluggable_laser_is_proven_but_engine_serviceability_MTTR_and_hitless_behavior_are_not
+    unresolved_questions:
+      - Where in an exact BCM78909 system is the ARLM cage and what is the approved cleaning procedure?
+      - Is loss of one ARLM masked by redundancy or does it interrupt mapped ports?
+      - What is the engine and internal BFC or fiber harness RMA boundary?
+    forbidden_inferences:
+      - hot_pluggable_means_hitless
+      - field_replaceable_laser_means_field_replaceable_engine
+      - common_substrate_means_soldered_or_socketed
+
+  - matrix_id: SM-CPO-NVIDIA-Q3450-LD
+    object_identity:
+      vendor: NVIDIA
+      product: Quantum_X_Q3450_LD
+      architecture_label: CPO
+      evidence_date: "2026-08-21"
+      exact_identity_boundary: exact_switch_part_920_9B36M_00MX_8ES_and_Q3450_specific_service_manual
+    matrix_status: evidence_bearing
+    rows:
+      - row_id: SM-Q3450-ENGINE
+        failed_unit: socketed_optical_subassembly_or_internal_engine
+        failure_mode: optical_subassembly_failure_or_out_of_spec
+        dimensions:
+          attach_method: {value: socket_based_optical_subassembly_electrical_connection_to_main_switch_package, observation_status: company_stated, source_ids: [SM-S7], does_not_support: customer_or_authorized_field_replacement}
+          replacement_class: {value: UNKNOWN_not_listed_in_public_Q3450_FRU_procedure, observation_status: unknown, searched_source_ids: [SM-S5, SM-S6, SM-S7, SM-S9], does_not_support: absence_of_FRU_listing_means_factory_only_or_whole_system_RMA}
+          service_actor: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S5, SM-S6, SM-S7, SM-S9], does_not_support: operator_NVIDIA_service_depot_or_factory_actor}
+          service_location: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S5, SM-S6, SM-S7, SM-S9], does_not_support: rack_depot_or_factory_location}
+          power_state: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S5, SM-S6, SM-S7, SM-S9], does_not_support: powered_service_or_full_switch_shutdown}
+          fiber_state: {value: UNKNOWN_hermetic_internal_fiber_interface_is_described_but_service_sequence_is_not_public, observation_status: unknown, searched_source_ids: [SM-S7, SM-S9], does_not_support: field_detachable_internal_fiber_or_reuse_cycle}
+          required_tools: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S5, SM-S6, SM-S7, SM-S9], does_not_support: socket_extraction_or_alignment_fixture}
+          replacement_steps: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S5, SM-S6, SM-S7, SM-S9], does_not_support: subassembly_swap_or_engine_rework_sequence}
+          post_repair_test: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S5, SM-S6, SM-S7, SM-S9], does_not_support: calibration_BER_or_liquid_cooling_requalification}
+          downtime_mttr: {value: UNKNOWN, observation_status: unknown, searched_source_ids: [SM-S5, SM-S6, SM-S7, SM-S9], does_not_support: any_MTTR_or_traffic_recovery_claim}
+          rma_boundary: {value: UNKNOWN_public_FRU_list_only_proves_ELS_boundary, observation_status: unknown, searched_source_ids: [SM-S5, SM-S9], does_not_support: subassembly_board_or_whole_system_RMA}
+      - row_id: SM-Q3450-ELS
+        failed_unit: one_of_18_external_laser_source_modules_OPN_692_9IAG1_0P00IH
+        failure_mode: ELS_failure_or_debug_replacement
+        dimensions:
+          attach_method: {value: latched_ELSFP_cage_with_dedicated_extraction_jig_and_optical_ferrule, observation_status: company_stated, source_ids: [SM-S6], does_not_support: ordinary_operator_tool_less_replacement}
+          replacement_class: {value: authorized_service, observation_status: company_stated, source_ids: [SM-S5], does_not_support: operator_self_service_or_engine_FRU}
+          service_actor: {value: NVIDIA_service_representative, observation_status: company_stated, source_ids: [SM-S5], does_not_support: customer_operator_or_untrained_personnel}
+          service_location: {value: in_system_ELS_cage_under_authorized_service_procedure_exact_site_class_not_stated, observation_status: normalized, source_ids: [SM-S5, SM-S6], does_not_support: depot_only_or_customer_rack_self_service}
+          power_state: {value: system_may_remain_powered_on_during_replacement, observation_status: company_stated, source_ids: [SM-S6], does_not_support: hitless_service_or_port_traffic_continuity}
+          fiber_state: {value: optical_ferrule_and_cage_must_be_inspected_and_cleaned_as_needed_ELS_absence_under_30_minutes, observation_status: company_stated, source_ids: [SM-S6], does_not_support: internal_engine_fiber_service_or_redundancy}
+          required_tools: {value: Quigon_2_0_TV_IHS_extraction_tool_Senko_cleaning_kit_Sumix_Manta_HM_adapters_and_MaxInspect, observation_status: company_stated, source_ids: [SM-S6], does_not_support: every_site_has_tools_or_no_training_required}
+          replacement_steps: {value: inspect_clean_reinspect_remove_with_jig_cap_old_unit_inspect_clean_new_unit_and_cage_install_new_ELS, observation_status: company_stated, source_ids: [SM-S6], does_not_support: firmware_recovery_traffic_failover_or_engine_replacement}
+          post_repair_test: {value: optical_connector_inspection_report_saved_exact_traffic_or_optical_power_acceptance_UNKNOWN, observation_status: normalized, source_ids: [SM-S6], does_not_support: BER_validation_hitless_recovery_or_full_calibration}
+          downtime_mttr: {value: ELS_absence_must_be_under_30_minutes_actual_MTTR_and_traffic_downtime_UNKNOWN, observation_status: company_stated, source_ids: [SM-S6], does_not_support: thirty_minute_MTTR_or_zero_downtime}
+          rma_boundary: {value: ELS_has_independent_replacement_OPN_and_repair_or_return_requires_NVIDIA_service_representative_whole_system_has_separate_liquid_cooling_RMA_path, observation_status: company_stated, source_ids: [SM-S5, SM-S11, SM-S12], does_not_support: optical_subassembly_RMA_boundary_or_engine_fault_requires_whole_system_RMA}
+    comparability_ceiling: exact_authorized_powered_ELS_workflow_is_public_but_internal_engine_service_and_traffic_effects_remain_unknown
+    unresolved_questions:
+      - Is the socketed optical subassembly replaceable by NVIDIA service in the field or only at depot or factory?
+      - Which ports lose traffic during one ELS replacement and is redundancy automatic?
+      - What command or optical thresholds close the repair after connector inspection?
+    forbidden_inferences:
+      - powered_replacement_means_hitless
+      - socketed_optical_subassembly_means_field_FRU
+      - detailed_ELS_manual_means_internal_engine_serviceability_is_known
+
+cross_object_adjudication:
+  supported:
+    - Attach method and placement label are independent of the published service authority.
+    - A replaceable external laser does not establish an optical-engine replacement boundary.
+    - Broadcom operator-level hot-pluggable ARLM and NVIDIA authorized-service powered ELS are different service contracts despite both being external laser modules.
+    - Powered replacement and hot-pluggable describe physical or power state; neither proves hitless traffic recovery.
+    - Public sources support component-level matrices but not NPO-versus-CPO MTTR or reliability ranking.
+  not_supported:
+    - NPO is generally more field-serviceable than CPO.
+    - BGA necessarily means depot rework and socket necessarily means field replacement.
+    - Any of the four objects has a published optical-engine MTTR or hitless replacement guarantee.
+    - Missing public repair documentation proves that a unit is unrepairable.
+  question_disposition:
+    - QUP05-NQ02_public_research_exhausted_but_same_engine_failure_workflow_remains_blocked_on_public_evidence
+    - split_engine_service_bulletins_into_public_monitoring_questions
+    - split_MTTR_and_traffic_effects_into_private_or_controlled_measurement_questions
+    - preserve_NPO_service_workflows_as_public_evidence_insufficient_until_vendor_documents_exist

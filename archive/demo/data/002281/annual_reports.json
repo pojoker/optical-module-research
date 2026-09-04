@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225148212",
+    "stock_code": "002281",
+    "company_name": "<em>光迅科技</em>",
+    "title": "2025年年度报告",
+    "announcement_date": "2026-04-23",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225148212.PDF",
+    "adjunct_url": "finalpage/2026-04-23/1225148212.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/002281/002281__em_光迅科技_em__2025_2025年年度报告.pdf",
+    "sha256": "8363cd690d29f4d6f913339f9dc7a70b7bc14f260f0140175c5cb45593053869",
+    "size_bytes": 1515825,
+    "error": ""
+  },
+  {
+    "announcement_id": "1223234851",
+    "stock_code": "002281",
+    "company_name": "<em>光迅科技</em>",
+    "title": "2024年年度报告",
+    "announcement_date": "2025-04-24",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-24/1223234851.PDF",
+    "adjunct_url": "finalpage/2025-04-24/1223234851.PDF",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/002281/002281__em_光迅科技_em__2024_2024年年度报告.pdf",
+    "sha256": "a4f57ef8f3787cde4b73bf6547a4bf1011859cba22225b5a2eb5bf3580ac4281",
+    "size_bytes": 3905599,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219826062",
+    "stock_code": "002281",
+    "company_name": "<em>光迅科技</em>",
+    "title": "2023年年度报告",
+    "announcement_date": "2024-04-26",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-26/1219826062.PDF",
+    "adjunct_url": "finalpage/2024-04-26/1219826062.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/002281/002281__em_光迅科技_em__2023_2023年年度报告.pdf",
+    "sha256": "da9c5b92a92e6d776d575a4d9b4c3812f300b562950fc91ee0ad3d371087bc61",
+    "size_bytes": 1183125,
+    "error": ""
+  }
+]

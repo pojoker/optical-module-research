@@ -1,0 +1,17 @@
+schema: eoptolink_product_row_semantic_object_v1
+source_url: https://www.eoptolink.com/product-solutions/800g/800g-osfp-200g-per-lane
+normalizer: capture_web_semantic_snapshots.normalize_eoptolink
+normalizer_version: '1'
+semantic_object:
+  publisher: Eoptolink Technology Inc., Ltd.
+  page_title: 800G OSFP (200G per lane)
+  part_number: EOLO-138HG-E-5H-XDX
+  description: OSFP 800G DR4
+  optical_lane_organization: 4x200G
+  aggregate_protocol: 800GbE
+  wavelength: 1311nm
+  distance: 500m
+  connector: MPO-12
+  temperature_grade: C
+  normalized_source_text: EOLO-138HG-E-5H-XDX OSFP 800G DR4 4x200G, 800GbE 1311nm
+    500m MPO-12 C

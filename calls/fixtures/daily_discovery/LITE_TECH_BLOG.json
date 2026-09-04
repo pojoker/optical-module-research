@@ -1,0 +1,22 @@
+{
+  "endpoint_id": "LITE_TECH_BLOG",
+  "note": "技术博客/演示。演示阶段可以形成事件候选；正文越界推导量产时必须被 permission_denied 拦截。",
+  "items": [
+    {
+      "url": "https://www.lumentum.com/en/blog/ecoc-2026-co-packaged-optics-demo",
+      "title": "Lumentum Showcases 3.2T Co-Packaged Optics at ECOC 2026",
+      "published_at": "2026-09-01",
+      "origin_key": "lite-blog-2026-09-01-cpo-demo",
+      "paragraphs": [
+        {
+          "anchor": "blog:p1",
+          "text": "At ECOC 2026, Lumentum demonstrated a 3.2T co-packaged optics prototype in a live switch demo."
+        },
+        {
+          "anchor": "blog:p2",
+          "text": "The platform is ramping to volume production and has already received volume orders from customers."
+        }
+      ]
+    }
+  ]
+}

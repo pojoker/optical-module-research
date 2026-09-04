@@ -1,0 +1,50 @@
+meta:
+  mode: draft_only
+  python_interpreter: /Users/jowang/miniconda3/bin/python3
+  verifier_type: deterministic_mechanical
+  canonical_write_performed: false
+candidate_results:
+- file: candidate-p1.yaml
+  valid: true
+  counts:
+    physical_delta_candidates: 3
+    tradeoff_cards: 2
+    capability_requirement_candidates: 6
+    validation_questions: 8
+  errors: []
+  warnings: []
+- file: candidate-p2.yaml
+  valid: true
+  counts:
+    physical_delta_candidates: 3
+    tradeoff_cards: 2
+    capability_requirement_candidates: 6
+    validation_questions: 6
+  errors: []
+  warnings: []
+- file: candidate-p3.yaml
+  valid: false
+  counts:
+    physical_delta_candidates: 3
+    tradeoff_cards: 2
+    capability_requirement_candidates: 5
+    validation_questions: 8
+  errors:
+  - 'capability_requirement_candidates[1]: existing_points_matchable must be one of [''no'', ''partial'', ''yes''], not False'
+  warnings: []
+- file: candidate-c1.yaml
+  valid: false
+  counts:
+    physical_delta_candidates: 3
+    tradeoff_cards: 2
+    capability_requirement_candidates: 3
+    validation_questions: 5
+  errors:
+  - 'physical_delta_candidates[0]: D02/D03 has no equal-grain observed/normalized difference; raw labels are not_comparable'
+  - 'capability_requirement_candidates[0]: existing_points_matchable must be one of [''no'', ''partial'', ''yes''], not False'
+  - 'capability_requirement_candidates[1]: existing_points_matchable must be one of [''no'', ''partial'', ''yes''], not False'
+  warnings: []
+summary:
+  candidate_count: 4
+  valid_count: 2
+  candidate_valid_rate: 0.5

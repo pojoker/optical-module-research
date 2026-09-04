@@ -1,0 +1,276 @@
+schema_version: knowledge_append_candidate_v1
+status: draft_only
+canonical_write_allowed: false
+canonical_write_performed: false
+target_file: knowledge.yaml
+prepared_at: '2026-08-31'
+
+source_package:
+  path: docs/research/pi-packages/2026-08-23-expansion-v1
+  adjudication: docs/research/pi-packages/2026-08-23-expansion-v1/adjudication-pq002-final.md
+  adjudication_sha256: a8f266b133e03c1d5f09d6bcb26ebc141ca9a1b161b389b0e4538a33a0923180
+  adjudication_outcome: usable_draft_with_one_wording_erratum
+  effective_text: docs/research/pi-packages/2026-08-23-expansion-v1/post-review-effective-text.md
+  effective_text_sha256: 2d0b9a74a2e8789b384168596c41b8cdd5f40de06819f903599edf96c99fa4a3
+  frozen_manifest: docs/research/pi-packages/2026-08-23-expansion-v1/snapshot-manifest.md
+  frozen_manifest_sha256: 8c80ce000eb44cb026b6ca9f37055fc8ae63efba4d3f8c2de14e9f8b09c827ea
+  consumption_rule: post_review_effective_text_overrides_raw_outputs
+
+target_contract:
+  target_class: physical_domain_knowledge
+  target_system: 物理知识
+  batch_write_policy: atomic_all_or_none
+  canonical_write_requires_explicit_user_approval: true
+  current_canonical_sha256: ecb9f6efefaba2085bf0e3f6121de17ab56e107953b3649e6bb07e64288b5c22
+  current_canonical_max_id: KN010
+  proposed_ids: [KN011, KN012, KN013]
+  proposed_ids_are_reserved: false
+  question_acceptance_effect:
+    PQ002:
+      proposed_status: acceptance_complete_if_full_batch_promoted
+      required_candidate_ids: [PQ002-KN-C01, PQ002-KN-C02, PQ002-KN-C03]
+      acceptance_criteria:
+        - criterion_id: PQ002-AC01
+          requirement: 明确Host到Media与Media到Host的发送接收方向_光纤型对象才补电光转换
+          status: met
+          satisfied_by_candidate_ids: [PQ002-KN-C01]
+        - criterion_id: PQ002-AC02
+          requirement: 区分高速业务数据_低速管理控制_供电地三类并行路径
+          status: met
+          satisfied_by_candidate_ids: [PQ002-KN-C02]
+        - criterion_id: PQ002-AC03
+          requirement: 给出至少一个受限对象的模块内功能分工实例_并保留may_contain
+          status: met
+          satisfied_by_candidate_ids: [PQ002-KN-C03]
+        - criterion_id: PQ002-AC04
+          requirement: 明确功能链骨架不等于所有模块固定BOM或独立器件顺序
+          status: met
+          satisfied_by_candidate_ids: [PQ002-KN-C01, PQ002-KN-C02, PQ002-KN-C03]
+    PQ003:
+      proposed_status: unchanged_unresearched
+      required_candidate_ids: []
+    PQ004:
+      proposed_status: unchanged_unresearched
+      required_candidate_ids: []
+    PQ005:
+      proposed_status: unchanged_unresearched
+      required_candidate_ids: []
+    PQ009:
+      proposed_status: unchanged_unresearched
+      required_candidate_ids: []
+
+items:
+  - candidate_id: PQ002-KN-C01
+    proposed_knowledge_id: KN011
+    target_contract:
+      target_class: physical_domain_knowledge
+      knowledge_yaml_eligible: true
+      research_question_ids: [PQ002]
+      physical_cell_ids: []
+      route_item_ids: []
+    entailment_contract:
+      atomic_claim: 对CMIS管理的传输模块_发送方向是主机把高速电信号送进模块并由模块送向介质_接收方向按相反方向把介质信号送回主机_当介质为光纤时对应电转光和光转电
+      claim_class: stable_explanation
+      applies_when: 解释CMIS管理的传输模块的收发方向_并以光纤型光收发模块说明电光转换
+      does_not_apply_when: 非CMIS对象_CMIS允许的电介质实例_内部器件顺序_完整BOM或具体机械形态
+      proposed_disposition: ready_for_stable_explanation_review
+      evidence:
+        - source_id: S1-OIF-CMIS-05.4
+          source_type: implementation_agreement_web_snapshot
+          locator: corpus/web/2026-08-23/oiforum.com__OIF-CMIS-05.4.pdf#印刷页65-67·§6.1.1至§6.2.1.1
+          supports: Host侧发送输入与接收输出方向_Media侧发送输出与接收输入方向_Application在两侧之间桥接
+          does_not_support: Media一定是光纤_远端模块内部行为_任何内部器件顺序
+        - source_id: S2-中际旭创2024年报
+          source_type: annual_report_local_file
+          locator: corpus/annual-2024/300308/300308__em_中际旭创_em__2024_2024年年度报告.pdf.txt#释义章节·光模块/光通信模块
+          supports: 光纤型光模块发送端电转光_经光纤后接收端光转电
+          does_not_support: CMIS接口名称_完整BOM_所有介质均为光纤
+      falsifier: 目标对象不在CMIS传输模块适用范围_或适用版本不再采用所述Host与Media收发方向_或目标介质并非光而仍被写成电光转换
+    append_payload:
+      id: KN011
+      体系: 物理知识
+      研究问题: [PQ002]
+      格: []
+      标题: 一条信号怎样穿过光模块——发出去走一遍，收回来反向走一遍
+      一句话: |
+        发送时，主机把高速电信号送进模块，模块再把信号送到传输介质；接收时方向相反。
+        对以光纤为介质的光收发模块，这两段分别包含电转光和光转电。
+      说细点: |
+        在采用 CMIS 管理的传输模块里，主机送进模块的高速信号叫发送输入，模块送回主机的
+        高速信号叫接收输出；介质一侧，模块送向介质的是发送输出，介质送进模块的是接收输入。
+        模块中的应用功能负责在主机侧和介质侧之间桥接。
+
+        CMIS 允许介质侧是高速电接口或光接口，所以不能只凭 CMIS 就说介质一定是光纤。
+        当研究对象明确是光纤型光收发模块时，公司年报给出的功能口径补上了中间的物理转换：
+        发送端把电信号变成光信号，经光纤传输后，接收端再把光信号变回电信号。
+
+        这仍是一条功能链，不是内部零件连线图。它没有回答 DSP、驱动器、激光器、探测器和
+        放大器究竟如何集成或排序。
+      怎么用它判断: |
+        先逐段标出“谁把什么信号送给谁”：主机发送输入、介质发送输出、介质接收输入、主机接收输出。
+        再确认介质究竟是光还是电；只有介质为光时，才把中间写成电转光和光转电。
+      证据:
+        - 谁: Optical Internetworking Forum（OIF）
+          原话: （忠实转述，非逐字引文）Host Interface 上，主机到模块是 transmitter input、模块到主机是 receiver output；Media Interface 上，模块到介质是 transmitter output、介质到模块是 receiver input；Application 在两侧之间桥接或转发。
+          出处: OIF-CMIS-05.4·§6.1.1、§6.1.2、§6.2.1.1
+          锚型: web_snapshot
+          锚:
+            原URL: https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.4.pdf
+            存档路径: corpus/web/2026-08-23/oiforum.com__OIF-CMIS-05.4.pdf
+            抓取日期: '2026-08-23'
+            SHA256: cd57ebb1cfb8e0a9e9c7b63862b5b261855e9b77844f4cf85bd36ea3808911db
+          说明: 只支撑CMIS条件骨架_不单独证明介质一定是光
+        - 谁: 中际旭创股份有限公司
+          原话: 光模块的作用就是光电转换，发送端把电信号转换成光信号，通过光纤传送后，接收端再把光信号转换成电信号。
+          出处: 2024年年度报告·释义章节
+          锚型: local_file
+          锚: corpus/annual-2024/300308/300308__em_中际旭创_em__2024_2024年年度报告.pdf.txt#释义章节·光模块/光通信模块
+          说明: 补充光纤型光收发模块的电光转换功能_不支撑内部器件顺序
+      录入日期: '2026-08-31'
+
+  - candidate_id: PQ002-KN-C02
+    proposed_knowledge_id: KN012
+    target_contract:
+      target_class: physical_domain_knowledge
+      knowledge_yaml_eligible: true
+      research_question_ids: [PQ002]
+      physical_cell_ids: []
+      route_item_ids: []
+    entailment_contract:
+      atomic_claim: 在CMIS与OSFP所描述的对象中_承载业务数据的高速收发路径与低速管理控制以及供电接地路径是分开的并行路径_后者不是电转光转电功能链上的串行步骤
+      claim_class: stable_explanation
+      applies_when: 区分CMIS管理通信与OSFP高速收发_低速控制_供电和接地路径
+      does_not_apply_when: 推断所有光模块都采用相同管脚_管理控制不重要_或定义具体内部管理电路
+      proposed_disposition: ready_for_stable_explanation_review
+      evidence:
+        - source_id: S1-OIF-CMIS-05.4
+          source_type: implementation_agreement_web_snapshot
+          locator: corpus/web/2026-08-23/oiforum.com__OIF-CMIS-05.4.pdf#Abstract与印刷页65-67
+          supports: two_wire主机到模块通信属于管理接口_Host与Media高速接口承载传输任务
+          does_not_support: OSFP具体管脚_所有模块的供电实现_管理路径无关紧要
+        - source_id: S3-OSFP-Rev5.22
+          source_type: msa_specification_web_snapshot
+          locator: corpus/web/2026-08-23/osfpmsa.org__OSFP_Module_Specification_Rev5_22.pdf#印刷页159-160·§15
+          supports: edge_connector分别承载高速TX_RX差分对_低速控制_供电和地
+          does_not_support: 所有形态都采用OSFP管脚_模块内部管理电路或电源拓扑
+      falsifier: 适用规范把低速管理控制或供电接地定义为高速业务数据串行链路的一部分_或目标对象并非这些规范所描述的模块
+    append_payload:
+      id: KN012
+      体系: 物理知识
+      研究问题: [PQ002]
+      格: []
+      标题: 数据、管理和供电是三类并行路径，不要画成一条流水线
+      一句话: |
+        高速收发信号负责搬运业务数据；低速管理与控制负责配置和监测；电源与地负责供能。
+        它们会一起进入模块，但后两类不是“电转光再转电”链条上的处理步骤。
+      说细点: |
+        一张完整的模块图通常不只有收发箭头。CMIS 另设低速双线通信，让主机管理模块；
+        OSFP 的边缘连接器也把高速发送和接收差分对、低速控制、供电和地分开定义。
+
+        因此画功能链时，应把高速业务数据画成主干，把管理、控制和供电画成并行支撑路径。
+        如果把 I2C 或 CMIS 管理通信塞在“电信号→光信号”的串行箭头中，就混淆了数据如何传输
+        与模块如何被配置、监测和供能。
+
+        这里没有说管理或电源不重要，也没有声称所有光模块都采用 OSFP 的相同管脚定义。
+      怎么用它判断: |
+        看框图时先给每条线分类：高速业务数据、低速管理/控制、供电/地。
+        只有第一类进入收发功能链；其余两类应作为支撑路径单独追踪，并按具体规范核对。
+      证据:
+        - 谁: Optical Internetworking Forum（OIF）
+          原话: （忠实转述，非逐字引文）CMIS 规定主机到模块的双线管理通信，同时把与传输任务相关的 Host Interface 和 Media Interface 作为另一层接口描述。
+          出处: OIF-CMIS-05.4·Abstract、§6
+          锚型: web_snapshot
+          锚:
+            原URL: https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.4.pdf
+            存档路径: corpus/web/2026-08-23/oiforum.com__OIF-CMIS-05.4.pdf
+            抓取日期: '2026-08-23'
+            SHA256: cd57ebb1cfb8e0a9e9c7b63862b5b261855e9b77844f4cf85bd36ea3808911db
+          说明: 支撑管理通信与高速任务接口分层
+        - 谁: OSFP MSA
+          原话: （忠实转述，非逐字引文）OSFP 模块边缘连接器分别定义主机到模块的高速发送差分对、模块到主机的高速接收差分对，以及低速控制信号、供电和地。
+          出处: OSFP Module Specification Rev 5.22·§15
+          锚型: web_snapshot
+          锚:
+            原URL: https://www.osfpmsa.org/assets/pdf/OSFP_Module_Specification_Rev5_22.pdf
+            存档路径: corpus/web/2026-08-23/osfpmsa.org__OSFP_Module_Specification_Rev5_22.pdf
+            抓取日期: '2026-08-23'
+            SHA256: c8e80dda50e85b1d4ec96c88642d8a9ed0ed254124f9442f20c51559533850eb
+          说明: 只作为OSFP实例_不推广为全部模块的引脚定义
+      录入日期: '2026-08-31'
+
+  - candidate_id: PQ002-KN-C03
+    proposed_knowledge_id: KN013
+    target_contract:
+      target_class: physical_domain_knowledge
+      knowledge_yaml_eligible: true
+      research_question_ids: [PQ002]
+      physical_cell_ids: []
+      route_item_ids: []
+    entailment_contract:
+      atomic_claim: 在OIF共封装框架实例中_EIC可包含驱动激光器或调制器的电子电路以及把探测器光电流变为可用电信号的TIA或后置放大器_OIC或PIC可包含调制器_探测器_波导等光学功能
+      claim_class: object_level_candidate
+      applies_when: 解释OIF_Co_Packaging_Framework_01.0给出的光引擎内部功能归属示例
+      does_not_apply_when: 所有可插拔模块_所有CPO产品_强制BOM_确定的封装位置或器件连接顺序
+      proposed_disposition: ready_for_object_level_candidate_review
+      evidence:
+        - source_id: S4-OIF-Co-Packaging-FD-01.0
+          source_type: framework_document_web_snapshot
+          locator: corpus/web/2026-08-23/oiforum.com__OIF-Co-Packaging-FD-01.0.pdf#印刷页29-31·Glossary
+          supports: EIC_OIC_PIC_Optical_Engine_TIA的条件性功能定义与电光双向转换
+          does_not_support: may_contain被解释为must_contain_所有模块采用相同部件_完整BOM或实际产品量产状态
+      falsifier: 目标对象不是该OIF框架所述共封装光引擎_或适用版本不再给出这些条件性功能定义_或实物证据表明功能归属不同
+    append_payload:
+      id: KN013
+      体系: 物理知识
+      研究问题: [PQ002]
+      格: []
+      标题: 一个受限的内部例子——CPO 光引擎怎样分担发送和接收功能
+      一句话: |
+        在 OIF 的共封装光学框架里，电子芯片可以负责驱动发光/调制以及放大探测器输出，
+        光学芯片可以承载调制器、探测器和波导；这是框架实例，不是所有光模块的固定零件表。
+      说细点: |
+        OIF 的 Co-Packaging Framework 把一个光引擎看作电子与光学功能的组合。
+        其中，电子集成电路（EIC）可以包含驱动激光器或调制器的电路；在接收方向，
+        也可以包含跨阻放大器（TIA）和后置放大器，把光探测器产生的微弱光电流变成可用电信号。
+        光学集成电路（OIC）或光子集成电路（PIC）可以包含调制器、光探测器和波导等功能。
+
+        这里最重要的词是“可以包含”。该框架给出了功能如何分工的一种设计空间，
+        没有要求所有 CPO 产品必须按同一方式切分，更不能把这张表复制为可插拔光模块的通用 BOM。
+      怎么用它判断: |
+        看到 EIC、OIC 或 PIC 时，先问来源是在定义一种框架能力，还是披露某个真实产品的部件。
+        只有拿到具体产品的框图、拆解或测试证据，才能把“可以包含”升级为“该产品确实包含”。
+      证据:
+        - 谁: Optical Internetworking Forum（OIF）
+          原话: （忠实转述，非逐字引文）EIC 可以包含驱动激光器或调制器的电子电路，也可包含把光探测器光电流转为可用电信号的 TIA/后置放大器；OIC/PIC 可以包含调制器、光探测器、波导等。
+          出处: OIF-Co-Packaging-FD-01.0·Glossary
+          锚型: web_snapshot
+          锚:
+            原URL: https://www.oiforum.com/wp-content/uploads/OIF-Co-Packaging-FD-01.0.pdf
+            存档路径: corpus/web/2026-08-23/oiforum.com__OIF-Co-Packaging-FD-01.0.pdf
+            抓取日期: '2026-08-23'
+            SHA256: 1d614845b92471ae50dd1c6d80a4070515bd4ef369ded9d42fe5e3df4c8457af
+          说明: 仅支撑OIF共封装框架实例_保留may_contain条件语气
+      录入日期: '2026-08-31'
+
+question_growth:
+  new_formal_question_ids_created: false
+  principle: 先把现有PQ004_PQ005_PQ009具体化为可证伪研究实例_通过去重后再决定是否需要新ID
+  routed_gaps:
+    - existing_question_id: PQ004
+      gap: 真实料号内部哪些功能独立成件_哪些已集成_公开参数页不能替代内部BOM与连线证据
+    - existing_question_id: PQ005
+      gap: 发送接收是否共享激光_时钟_DSP_电源_热路径_以及共享资源形成的故障域
+    - existing_question_id: PQ009
+      gap: 每个功能边界需要什么可观测量与故障注入_才能把故障定位到该段而不是相邻段
+
+review_state:
+  machine_preflight: pass
+  machine_checker: tools/research/check_knowledge_append_candidates.py
+  materialized_scan: pass_on_temporary_copy
+  canonical_knowledge_file_mutated: false
+  external_semantic_review: pass
+  external_reviewer: Kimi
+  continuity_handle: session_9b3c8af2-d10c-4713-a573-ed0e37e69a03
+  external_review_record: docs/reviews/2026-08-31-kimi-review-knowledge-append-pq002-v1.md
+  user_decision: not_requested
+  canonical_changes: 0

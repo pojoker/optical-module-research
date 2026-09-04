@@ -1,0 +1,22 @@
+{
+  "endpoint_id": "MTSI_IR_RELEASES",
+  "note": "未来交付承诺。命中成熟商业动词（volume production）但整句带前瞻语气，必须降级为 announced/forward_looking，不能写成已兑现。",
+  "items": [
+    {
+      "url": "https://investors.macom.com/news-releases/macom-ann-arbor-capacity-expansion-2026-09-01",
+      "title": "MACOM Announces Ann Arbor Capacity Expansion",
+      "published_at": "2026-09-01",
+      "origin_key": "mtsi-2026-09-01-ann-arbor-expansion",
+      "paragraphs": [
+        {
+          "anchor": "press-release:p1",
+          "text": "MACOM expects to begin volume production of its 200G/lane EML driver at the Ann Arbor fab by Q4 2026."
+        },
+        {
+          "anchor": "press-release:p2",
+          "text": "The company plans to expand its capacity at the Ann Arbor facility over the next year."
+        }
+      ]
+    }
+  ]
+}

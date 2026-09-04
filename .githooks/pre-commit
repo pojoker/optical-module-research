@@ -1,0 +1,8 @@
+#!/bin/bash
+# 白名单唯一来源 = scan.py 不变量⑥（--check 已覆盖根目录白名单+refs文件数），钩子不再重复定义。
+# 历史教训：白名单曾在此处与 scan.py 各写一份，一天内三次因只改一份卡闸——单一来源后此病根除。
+cd "$(git rev-parse --show-toplevel)"
+[ -f scan.py ] && { /Users/jowang/miniconda3/bin/python3 scan.py --check || exit 1; }
+[ -f render.py ] && { /Users/jowang/miniconda3/bin/python3 render.py --verify || exit 1; }
+[ -f participation.py ] && { /Users/jowang/miniconda3/bin/python3 participation.py --check || exit 1; }
+exit 0

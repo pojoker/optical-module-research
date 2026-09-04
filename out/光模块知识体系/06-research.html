@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="集中放置确定性说明、问题树、来源台账和边界审计，不打断正文阅读。">
+  <title>当前知道什么，还缺什么｜光模块知识体系</title>
+  <link rel="stylesheet" href="assets/content.css?v=98f63f49a89c">
+  <link rel="stylesheet" href="assets/site-shell.css?v=cc86a9dc06c3">
+</head>
+<body data-page="research">
+  <header class="site-header">
+    <a class="site-brand" href="index.html"><span class="brand-mark">OM</span><span><b>光模块知识体系</b><small>模块化重构版 · 2026-08-31</small></span></a>
+    <nav class="global-nav" aria-label="主题模块"><a class="" href="index.html">总览</a><a class="" href="01-foundation.html">基础结构</a><a class="" href="02-demand.html">提速需求</a><a class="" href="03-routes.html">技术路线</a><a class="" href="04-cases.html">案例与 UNKNOWN</a><a class="" href="05-companies.html">公司投影</a><a class="active" href="06-research.html">研究台账</a><a class="" href="07-decision-dossier.html">决策卷宗</a><a class="" href="08-concept-primer.html">名词入门</a></nav>
+    <div class="canonical-pill">研究草案 · canonical 仍为 0</div>
+  </header>
+
+  <main class="site-frame">
+    <header class="module-hero">
+      <div><span class="module-number">06</span><span class="module-kicker">问题如何继续生长，证据如何复核</span></div>
+      <h1>当前知道什么，还缺什么</h1>
+      <p>集中放置确定性说明、问题树、来源台账和边界审计，不打断正文阅读。</p>
+    </header>
+
+    <div class="module-layout">
+      <nav class="local-nav" aria-label="本页小节"><span>本页内容</span><a href="#status">这不是一张“所有句子都同样确定”的百科页</a><a href="#candidate-foundation">candidate-foundation</a><a href="#questions">问题树下一步怎么生长</a><a href="#sources">基础层轻量引用，路线与公司层严格引用</a><a href="#audit">这一版已经回答了什么，还有什么不能下结论？</a></nav>
+      <div class="module-content"><section class="section" id="status" data-certainty="open">
+        <div class="kicker">阅读说明 · 先看确定性</div><h2>这不是一张“所有句子都同样确定”的百科页</h2>
+        <p class="intro">每一段结论都要先回答：它是可以用于入门解释的稳定骨架，还是只对某个产品成立？它是工程机理候选，还是仍缺数据的未知？颜色不是好坏评分，而是告诉你这句话可以被用到哪里。</p>
+        <div class="certainty-key">
+          <article class="certainty-card"><span class="certainty stable">稳定解释</span><h3>先用它建立骨架</h3><p>基础功能、信号方向、技术选项所在维度。仍可被新规范修正，但不依赖某一只具体产品。</p></article>
+          <article class="certainty-card"><span class="certainty object">对象级候选</span><h3>只对具名对象成立</h3><p>产品页、演示、规范版本或公司披露。离开料号、版本和成熟度就不能泛化。</p></article>
+          <article class="certainty-card"><span class="certainty mechanism">机理候选</span><h3>解释为什么可能有效</h3><p>说明约束、优势与代价之间的工程关系；缺少同边界数据时不能排胜负。</p></article>
+          <article class="certainty-card"><span class="certainty open">未知 / 阻断</span><h3>明确保留空格</h3><p>市场份额、exact BOM、客户供货、系统净功耗等没有合格分母或直接证据。</p></article>
+        </div>
+        <div class="knowledge-rails"><div class="rail"><strong>物理知识</strong><span>功能 → 组件 → 接口 → 制造 → 装配 → 测试</span></div><div class="rail-arrow">通过<br>WHY</div><div class="rail"><strong>技术路线</strong><span>需求 → 约束 → 六个选择轴 → 路线画像 → 成熟度</span></div><div class="rail-arrow">再投影到</div><div class="rail"><strong>公司与产业</strong><span>能力格 → 具名产品 → 路线服务候选；禁止偷渡供货</span></div></div>
+        <div class="reader-rule"><b>重要边界：</b>KN008–KN010 已正式写入 canonical；其他“稳定解释”、对象候选和机理候选并不会因此自动晋升，仍须连同范围、反证条件与未知一起阅读。</div>
+      </section>
+<section class="section" id="candidate-foundation" data-certainty="stable" aria-labelledby="candidate-foundation-title">
+        <div class="statusline"><span class="certainty stable">正式知识</span><small>KN008–KN010 · PQ001 原子批次已晋升</small></div>
+        <div class="kicker">正式知识 · PQ001 批次</div><h2 id="candidate-foundation-title">把“光模块是什么、边界在哪里”落成三条正式原子知识</h2>
+        <p class="intro">这一批把冻结研究压缩成三张读者卡：先定义基本收发功能，再标出 CMIS 传输模块的两侧接口，最后用 OSFP 与 OIF 3.2T CPO 对照机械边界。经显式用户批准，它们已按原子批次整体写入正式知识库。</p>
+        <div class="reader-rule"><b>正式层状态：</b>KN008、KN009、KN010 已经用户明确批准写入 canonical。读者仍须遵守每条知识的适用范围与“不能推出”边界。</div>
+        <div class="component-grid">
+          <article class="component-card" data-knowledge-id="KN008">
+            <div class="statusline"><span class="certainty stable">正式 KN ID：KN008</span><small>对应 RQ/PQ：RQ000 · 根问题</small></div>
+            <h3>光收发模块完成两次方向相反的转换</h3>
+            <p><b>对应问题：</b>RQ000「什么是光模块？」</p>
+            <p><b>简明结论：</b>发送端把电信号转换成光信号，经光纤传送；接收端再把光信号转换成电信号。</p>
+            <p><b>适用范围：</b>解释具备发送和接收功能的光收发模块的基本作用。</p>
+            <p><b>不能推出：</b>不能推出完整零件清单、统一机械形态、接口协议、性能指标，也不能把单向发射或接收器件直接当作同一对象。</p>
+            <p><b>证据来源：</b>类别：年报本地文件（annual_report_local_file）；对象：中际旭创 2024 年报、博创科技 2024 年报（S1/S2）。</p>
+          </article>
+          <article class="component-card" data-knowledge-id="KN009">
+            <div class="statusline"><span class="certainty stable">正式 KN ID：KN009</span><small>对应 RQ/PQ：PQ001 · 父问题 RQ000</small></div>
+            <h3>CMIS 传输模块先分清主机侧与介质侧</h3>
+            <p><b>对应问题：</b>PQ001「光模块在系统中解决什么问题，边界在哪里？」（父问题 RQ000）。</p>
+            <p><b>简明结论：</b>对采用 CMIS 管理的 transmission module，Host Interface 是模块与主机之间的高速电接口；Media Interface 是模块与远端介质之间的高速电或光接口；Application 负责两侧之间的桥接或转发。</p>
+            <p><b>适用范围：</b>仅用于 CMIS 管理的 transmission module；业务高速接口与主机到模块的低速管理通信要分开看。</p>
+            <p><b>不能推出：</b>不能推广到所有光模块、CMIS 资源模块或线缆组件；不能由此推出具体外壳、连接器、散热器或内部 BOM。</p>
+            <p><b>证据来源：</b>类别：实施协议网页快照（implementation_agreement_web_snapshot）；对象：OIF-CMIS-05.4，§6.1.1、§6.1.2、§6.2.1.1（S3）。</p>
+          </article>
+          <article class="component-card" data-knowledge-id="KN010">
+            <div class="statusline"><span class="certainty stable">正式 KN ID：KN010</span><small>对应 RQ/PQ：PQ001 · 父问题 RQ000</small></div>
+            <h3>前面板机笼不是所有光模块的必要边界</h3>
+            <p><b>对应问题：</b>PQ001「光模块在系统中解决什么问题，边界在哪里？」（父问题 RQ000）。</p>
+            <p><b>简明结论：</b>OSFP 通过金手指与主机连接器配合、通过外壳与机笼配合；OIF 的一种 3.2T CPO 模块则靠近 ASIC，可位于共封装基板或嵌板上，并以尾纤接出。因此前面板机笼不能作为所有光模块的必要条件。</p>
+            <p><b>适用范围：</b>只比较 OSFP/OSFP-RHS 前面板可插拔实例与 OIF 3.2T CPO Module 01.0 所定义的 CPO 模块边界。</p>
+            <p><b>不能推出：</b>不能推出所有 CPO 都无机笼或都用尾纤，不能把 ASIC 或整块基板算进光模块本体，也不能推出具体产品的内部 BOM。</p>
+            <p><b>证据来源：</b>类别：MSA 规范网页快照 + 实施协议网页快照（msa_specification_web_snapshot / implementation_agreement_web_snapshot）；对象：OSFP Module Specification Rev 5.22（S4）、OIF-Co-Packaging-3.2T-Module-01.0（S5）。</p>
+          </article>
+        </div>
+        <div class="warn"><b>晋升结果 · PQ001：</b>用户已整批接受，KN008 + KN009 + KN010 三条同时写入，不存在部分写入。</div>
+        <div class="foundation-note"><b>证据沿袭：</b>本批在写入前完成证据与语义复核，获得用户明确批准后进入正式知识库。KN009 保留 CMIS transmission module 边界，KN010 保留 OSFP 与 OIF 3.2T CPO 的对象边界。</div>
+      </section>
+<section class="section" id="questions" data-certainty="open">
+        <div class="statusline"><span class="certainty open">问题与缺口</span><small>问题按证据解锁条件调度，不靠继续网页搜索制造进度</small></div>
+        <div class="kicker">Question growth loop</div><h2>问题树下一步怎么生长</h2>
+        <p class="intro">不是“再随机问一些更细的问题”，而是沿一条稳定链条生长：上游约束带来路线差异；中间比较优势、劣势和边界；下游观察组件、工艺、测试、公司角色与采用阶段。下面先保留最初的 16 问作为入门树，再展示这些问题长成专家问题后目前被分配到了哪里。</p>
+        <div class="portfolio-strip" aria-label="30个专家问题当前调度状态"><div class="portfolio-cell"><b>0</b><span>现在适合继续公开搜索</span></div><div class="portfolio-cell"><b>5</b><span>等待新版本或新事件监控</span></div><div class="portfolio-cell"><b>10</b><span>需要受控实验</span></div><div class="portfolio-cell"><b>7</b><span>需要私有或工厂数据</span></div><div class="portfolio-cell"><b>5</b><span>公开证据已触顶</span></div><div class="portfolio-cell"><b>3</b><span>候选答案已关闭</span></div></div>
+        <div class="reader-rule"><b>为什么“现在适合继续公开搜索”是 0？</b>不是没有问题，而是剩余问题已经明确依赖新披露、实物 CMIS/热测试、维修文档、产线数据或外部语义复核。继续换关键词搜索会产生更多材料，却不会关闭验收条件。</div>
+        <div class="review-note" data-coverage-audit="expert-question-coverage-audit-v1"><strong>30 问偏向哪里</strong><p>按主域看：物理 9、路线 6、WHY 13、证据治理 2。30/30 都有验收或证伪条件，但只有 4 问追到上游约束、2 问直接讨论优势价值；现有组合更擅长验证“代价和后果”，还不够擅长解释“系统需求为什么让路线决策改变”。</p><p><b>这不意味着所有空格都要补题。</b>基础收发功能已经稳定；产品形态尚未绑定同系统比较对象；EML/SiPh 先复用原有问题；“最主流”继续等待共同分母。唯一真实缺口已写成一个未入队候选：在同一 AI fabric 服务目标下，topology、radix、port/reach、电力、散热与维护约束何时改变 pluggable、NPO、CPO 的 Pareto 或显式带权决策边界。Kimi 原会话 delta review 已 PASS，但外审通过不等于入队。</p><div class="links"><a href="../../docs/research/expert-question-coverage-audit-v1.yaml">查看覆盖审计</a><a href="../../docs/research/expert-question-coverage-gap-candidate-v1.yaml">查看未入队候选</a><a href="../../docs/reviews/2026-08-31-kimi-review-coverage-gap-candidate.md">Kimi delta PASS</a></div></div>
+        <div class="question-layers">
+          <article class="qcol"><h3>上游：什么约束带来差异</h3><p>6 问 · 需求与物理边界</p><div class="q"><b>Q-UP-01 · physical</b>800G/500m 等已知边界与 FEC、lane、波长等未知字段，如何约束 DR8 或 FR4？</div><div class="q"><b>Q-UP-02 · physical</b>同为前面板可插拔时，供电、机械、热、载体与耦合有哪些共同约束？</div><div class="q"><b>Q-UP-03 · why_tradeoff</b>host SerDes、均衡和验证能力达到什么条件时，retimed、LRO 或 LPO 才可行？</div><div class="q more"><b>Q-UP-04 · physical</b>哪些温度、波长稳定度与功率边界会让 TEC 成为必要部件？</div><div class="q more"><b>Q-UP-05 · route_axis</b>NPO 与 CPO 在基板关系、电互连、可服务性和热边界上有何定义差异？</div><div class="q more"><b>Q-UP-06 · physical</b>同速率同距离下，parallel 与 WDM 分别受哪些约束？</div></article>
+          <article class="qcol"><h3>中间：优势、劣势与条件</h3><p>5 问 · WHY 与 trade-off</p><div class="q"><b>Q-MID-01 · why_tradeoff</b>比较 retimed 与 LPO，应同时控制哪些电职责、FEC、host、功耗、成本和成熟度变量？</div><div class="q"><b>Q-MID-02 · route_axis</b>LPO 拆解后与 LRO 在什么条件下可比，方向信息缺失时应保留哪些 UNKNOWN？</div><div class="q"><b>Q-MID-03 · route_axis</b>比较 EML 与 SiPh 产品前，哪些光源、调制、探测与集成字段必须补齐？</div><div class="q more"><b>Q-MID-04 · why_tradeoff</b>比较 pluggable、NPO、CPO 时，哪些边界必须保持一致？</div><div class="q more"><b>Q-MID-05 · why_tradeoff</b>光子实现变化时，耦合与载体工艺如何影响良率和成本？</div></article>
+          <article class="qcol"><h3>下游：因此发生什么</h3><p>5 问 · 组件、公司和采用</p><div class="q"><b>Q-DOWN-01 · physical</b>从 EML/PIN 参考实现转向 SiPh 平台时，哪些共同功能保留，哪些组件可能变化？</div><div class="q"><b>Q-DOWN-02 · route_profile</b>datasheet、demo、listing 各能证明什么，升级到 GA、出货、部署还缺什么？</div><div class="q"><b>Q-DOWN-03 · company_attachment</b>同公司出现于多个画像时，如何记录能力而不跨产品补 UNKNOWN？</div><div class="q more"><b>Q-DOWN-04 · mainstream_snapshot</b>哪些同分母资料最可能关闭 800G 路线份额 UNKNOWN，如何冻结核验？</div><div class="q more"><b>Q-DOWN-05 · mainstream_snapshot</b>出货、收入、installed base、design win 与 SKU 数分别回答哪种“主流”？</div></article>
+        </div>
+        <button class="toggle" id="toggleQuestions" type="button">展开更多问题</button>
+        <div class="warn"><b>新长出的问题都尚未加入 30 问组合：</b>QX-12 保留路线身份键碰撞、branded optic 实体角色两问；覆盖审计另保留一个已外审通过的系统服务目标→placement 决策边界候选。它们不会因机器或外审 PASS 自动获得正式 ID；仍须分别获得用户入队批准。</div>
+      </section>
+<section class="section" id="sources" data-certainty="object">
+        <div class="statusline"><span class="certainty object">来源台账</span><small>来源类型决定它最多能支持到哪一层</small></div>
+        <div class="kicker">Source ledger</div><h2>基础层轻量引用，路线与公司层严格引用</h2>
+        <p class="intro">稳定基础知识采用标准组织和头部厂商教学资料交叉确认；路线、产品、市场和公司结论继续区分规范、产品页、演示、年报与招股书，来源类型不能互相替代。</p>
+        <div class="source-list">
+          <div class="source-row"><span class="source-id">B1</span><div><strong>Cisco · Silicon Photonics in Pluggable Optics</strong><small>电—光—电转换、TX/RX、光源、调制、耦合、探测与电子功能的基础说明</small></div><a class="source-type" href="https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/silicon-photonics-wp.html" target="_blank" rel="noreferrer">基础资料 ↗</a></div>
+          <div class="source-row"><span class="source-id">B2</span><div><strong>Juniper · Optical Transceiver Overview</strong><small>光收发器双向作用、主机电信号与光纤信号之间的转换</small></div><a class="source-type" href="https://www.juniper.net/documentation/us/en/software/junos/interfaces-ethernet-switches/topics/concept/overview-optical-transceivers.html" target="_blank" rel="noreferrer">基础资料 ↗</a></div>
+          <div class="source-row"><span class="source-id">B3</span><div><strong>Juniper · Know Your 100G Transceiver</strong><small>DSP、driver、laser、photodetector、TIA，以及 parallel/WDM 的教学实例</small></div><a class="source-type" href="https://www.juniper.net/documentation/us/en/hardware/100g-optics-cables-guide/optics/topics/concept/100g-know-your-transceiver.html" target="_blank" rel="noreferrer">组件说明 ↗</a></div>
+          <div class="source-row"><span class="source-id">B4</span><div><strong>OIF · 3.2T Co-Packaging Module IA</strong><small>DSP、driver、TIA、调制与可选 MUX/DEMUX 的正式功能块及变体</small></div><a class="source-type" href="https://www.oiforum.com/wp-content/uploads/OIF-Co-Packaging-3.2T-Module-01.0.pdf" target="_blank" rel="noreferrer">规范 ↗</a></div>
+          <div class="source-row"><span class="source-id">B5</span><div><strong>IEEE P802.3dj Task Force</strong><small>200G/400G/800G/1.6T Ethernet 与 200Gb/s/lane 工作边界</small></div><a class="source-type" href="https://www.ieee802.org/3/dj/" target="_blank" rel="noreferrer">标准项目 ↗</a></div>
+          <div class="source-row"><span class="source-id">B6</span><div><strong>Broadcom · Tomahawk 6</strong><small>102.4Tb/s 交换容量、100G/200G SerDes、AI scale-up/scale-out 与 CPO 支持</small></div><a class="source-type" href="https://www.broadcom.com/company/news/product-releases/63146" target="_blank" rel="noreferrer">产品发布 ↗</a></div>
+          <div class="source-row"><span class="source-id">B7</span><div><strong>OIF · CEI-224G Framework</strong><small>224G/lane 面向多层硬件应用空间的新解决方案需求</small></div><a class="source-type" href="https://www.oiforum.com/wp-content/uploads/OIF-FD-CEI-224G-01.0.pdf" target="_blank" rel="noreferrer">框架 ↗</a></div>
+          <div class="source-row"><span class="source-id">B8</span><div><strong>ficonTEC · Photonics Assembly & Testing</strong><small>chip bonding、optical align-and-attach、active fiber-array alignment 与多种键合方式</small></div><a class="source-type" href="https://www.ficontec.com/wp-content/uploads/pdf/en/A-2501-v1-web.pdf" target="_blank" rel="noreferrer">设备资料 ↗</a></div>
+          <div class="source-row"><span class="source-id">S1</span><div><strong>LPO MSA 100G-DR-LPO Specification</strong><small>链路画像、host FEC、equalization、测试责任、平台不绑定</small></div><a class="source-type" href="https://www.lpo-msa.org/files/live/sites/lpomsa/files/specs/LPO_MSA_Specification_v1p2_final.pdf" target="_blank" rel="noreferrer">规范 ↗</a></div>
+          <div class="source-row"><span class="source-id">S2</span><div><strong>OIF CEI 5.3 · Clause 29</strong><small>End-to-end linear channel、电接口、EECQ 与 stressed-input 测试</small></div><a class="source-type" href="https://www.oiforum.com/wp-content/uploads/OIF-CEI-05.3.pdf" target="_blank" rel="noreferrer">IA ↗</a></div>
+          <div class="source-row"><span class="source-id">S3–4</span><div><strong>OIF OFC demo + CMIS-VCS</strong><small>生态演示、BER/FEC margin、host-channel-loss 与 equalization 管理</small></div><a class="source-type" href="https://www.oiforum.com/wp-content/uploads/OIF_CEI_Demo_OFC2024_Final.pdf" target="_blank" rel="noreferrer">演示 ↗</a></div>
+          <div class="source-row"><span class="source-id">S5</span><div><strong>Coherent 800G DR8 retimed OSFP datasheet</strong><small>基线产品观察，不是受控平台比较</small></div><span class="source-type">产品资料</span></div>
+          <div class="source-row"><span class="source-id">S6</span><div><strong>Hyper Photonix 产品页</strong><small>800G DR8 LPO SiPh、500m、OSFP/QSFP-DD、≤9 W</small></div><a class="source-type" href="https://www.hyperphotonix.com/product_detail/1254.html" target="_blank" rel="noreferrer">产品页 ↗</a></div>
+          <div class="source-row"><span class="source-id">S8</span><div><strong>Credo Carmel8</strong><small>800G DR8 SiPh Tx PIC 与 LPO/LRO application；不证明进入目标模块</small></div><a class="source-type" href="https://credosemi.com/products/silicon-photonics/carmel8/" target="_blank" rel="noreferrer">组件页 ↗</a></div>
+          <div class="source-row"><span class="source-id">S9</span><div><strong>MACOM PURE DRIVE</strong><small>Linear driver/TIA production-available capability</small></div><a class="source-type" href="https://www.macom.com/pure-drive-linear-architecture" target="_blank" rel="noreferrer">平台页 ↗</a></div>
+          <div class="source-row"><span class="source-id">S10</span><div><strong>LPO MSA FAQ</strong><small>Capable host、well-designed transmission lines、LPO-to-retimed 边界</small></div><a class="source-type" href="https://www.lpo-msa.org/home/faqs.html" target="_blank" rel="noreferrer">FAQ ↗</a></div>
+          <div class="source-row"><span class="source-id">S11</span><div><strong>Intel Silicon Photonics 平台</strong><small>公司特定的 8-lane、wafer-scale test/burn-in/KGD 与 hybrid laser-on-wafer 陈述</small></div><a class="source-type" href="https://www.intel.com/content/www/us/en/products/details/network-io/silicon-photonics.html" target="_blank" rel="noreferrer">平台页 ↗</a></div>
+          <div class="source-row"><span class="source-id">S12</span><div><strong>Lumentum EML</strong><small>InP、DFB + 单片集成 EAM；器件实现基线</small></div><a class="source-type" href="https://www.lumentum.com/en/optical-communications/products/source-lasers-ics-and-photodiodes/emls" target="_blank" rel="noreferrer">器件页 ↗</a></div>
+          <div class="source-row"><span class="source-id">S13–15</span><div><strong>剑桥科技、新易盛、联特科技 2025 年报</strong><small>近邻路线的认证、发货、量产、项目验收、客户协作和 NPI 阶段</small></div><span class="source-type">公司披露</span></div>
+          <div class="source-row"><span class="source-id">S16</span><div><strong>猎奇智能设备、联讯仪器招股书</strong><small>先进键合研发与 SiPh 晶圆测试设备</small></div><span class="source-type">发行人披露</span></div>
+          <div class="source-row"><span class="source-id">C1</span><div><strong>Intel · CWDM4 Silicon Photonics Implementation</strong><small>四个不同波长 laser、四个 modulator 与片上 optical multiplexer 的对象级案例</small></div><a class="source-type" href="https://www.intel.com/content/dam/www/public/us/en/documents/product-briefs/silicon-photonics-the-key-to-data-centre-connectivity-robert-blum.pdf" target="_blank" rel="noreferrer">技术资料 ↗</a></div>
+          <div class="source-row"><span class="source-id">C2</span><div><strong>NVIDIA · Q3450-LD ELS Service Manual</strong><small>18 个 ELS、每个 8 个 laser，以及特定服务人员执行的带电更换流程</small></div><a class="source-type" href="https://networking-docs.nvidia.com/xdrswitcheshw/els-replacement-procedure-for-q3450-ld-systems" target="_blank" rel="noreferrer">维修资料 ↗</a></div>
+          <div class="source-row"><span class="source-id">C3</span><div><strong>Coherent · SWDM/CWDM/LWDM Z-block</strong><small>分立滤光式 mux/demux 产品路径及其通带、插损和串扰责任</small></div><a class="source-type" href="https://www.coherent.com/resources/datasheet/optics/swdm-cwdm-lwdm-z-block-ds.pdf" target="_blank" rel="noreferrer">器件资料 ↗</a></div>
+          <div class="source-row"><span class="source-id">C4</span><div><strong>Coherent · Uncooled CWDM4 DFB Laser Die</strong><small>无 TEC 路径可以存在的对象级反例；不能继承给 200G/lane FR4-500</small></div><a class="source-type" href="https://www.coherent.com/content/dam/coherent/site/en/resources/datasheet/networking/1300nm-100mw-cw-cwdm4-dfb-laser-diode-chips-ds.pdf" target="_blank" rel="noreferrer">器件资料 ↗</a></div>
+          <div class="source-row"><span class="source-id">C5</span><div><strong>GIGALIGHT · XT-1.6T DR16 NPO Engine</strong><small>socket、flip-chip、linear SiPh 与 16-channel CWL 外置光源的公司案例</small></div><a class="source-type" href="https://www.gigalight.com/news-events/news-10133.html" target="_blank" rel="noreferrer">公司公告 ↗</a></div>
+          <div class="source-row"><span class="source-id">C6</span><div><strong>Lightmatter · Passage L20</strong><small>BGA/reflow 的 NPO/OBO 光引擎案例；不支持现场可更换结论</small></div><a class="source-type" href="https://lightmatter.co/products/passage-l20/" target="_blank" rel="noreferrer">产品页 ↗</a></div>
+          <div class="source-row"><span class="source-id">W1</span><div><strong>Juniper ORHS-2X800G-FR4-P 语义快照</strong><small>保存原始 HCT HTML 与归一化 exact-object；三次抓取 raw 出现 2 个哈希，semantic 3/3 稳定</small></div><a class="source-type" href="../../corpus/web/2026-08-31/semantic/juniper__ORHS-2X800G-FR4-P.normalized.yaml">冻结对象 ↗</a></div>
+          <div class="source-row"><span class="source-id">W2</span><div><strong>Eoptolink EOLO-138HG-E-5H-XDX 语义快照</strong><small>保存原始产品页与归一化产品行；三次抓取 raw 3/3 不同，semantic 3/3 稳定</small></div><a class="source-type" href="../../corpus/web/2026-08-31/semantic/eoptolink__EOLO-138HG-E-5H-XDX.normalized.yaml">冻结对象 ↗</a></div>
+        </div>
+      </section>
+<section class="section" id="audit" data-certainty="open">
+        <div class="statusline"><span class="certainty open">边界审计</span><small>PQ001 首批已写入</small></div>
+        <div class="kicker">研究边界</div><h2>这一版已经回答了什么，还有什么不能下结论？</h2>
+        <p class="intro">这不是一份假装什么都已经确定的行业百科。它先把工作原理、零件、制造、提速压力、技术选择和公司位置连成一条可读主线；遇到缺少统一数据或具体产品证据的地方，仍然明确保留“不知道”。PQ001 的三条基础知识已经正式写入，其余内容继续按候选或未知管理。</p>
+        <div class="audit"><article class="auditcard"><h3>已经连起来的内容</h3><p>从“光模块是什么”出发，依次解释 9 类功能零件、6 个关键连接环节、4 类代表性制造过程、800G 到 3.2T 的提速压力、六个技术选择轴、3 个产品路线样例和 WHY 桥；另有 7 个公司—产品—路线只读投影、12 条受限研究候选，以及 30 个专家问题的实际调度状态。PQ001 父批的 KN008–KN010 已按原子策略整体晋升，正式闭合基本功能、CMIS 条件化接口骨架和机械边界；PQ002 的 KN011–KN013、PQ003 的 KN014 及后续对象候选仍停在候选层。</p><div class="links"><a href="../../docs/research/光模块知识体系-历史综合-v1.30.md">历史综合底稿（非当前任务控制）</a><a href="../../docs/research/knowledge-append-candidate-pq001-v1.yaml">PQ001 已晋升批次</a><a href="../../docs/research/knowledge-append-candidate-pq002-v1.yaml">PQ002 下一批</a><a href="../../docs/research/knowledge-append-candidate-pq003-v1.yaml">PQ003 样机候选</a><a href="../../docs/research/company-route-projection-seeds-v1.yaml">公司—路线投影</a><a href="../../docs/research/expert-question-portfolio-v1.yaml">专家问题组合</a></div></article><article class="auditcard"><h3>仍然不能确定的内容</h3><p>不同光子平台在相同速率、距离和工作条件下的完整比较；换路线以后设备数量、成本和良率究竟怎样变化；具名产品内部器件如何集成、由谁实体制造、向谁供货；以及同一统计范围内各种路线各占多少市场份额。教学样机只提供受限产品上下文，不能回答这些问题。原先 5 条外审通过的 stable explanation 仍是研究治理规则，不能冒充领域知识；KN011 之后的知识候选也没有因 PQ001 晋升而自动获得用户授权。</p><div class="links"><a href="../../docs/reviews/2026-08-31-kimi-review-knowledge-append-pq003-v1.md">PQ003 Kimi 审核</a><a href="../../docs/research/cursor-proposal-assessment-2026-08-31.md">Cursor 建议独立审计</a><a href="../../docs/research/web-semantic-snapshot-pilot-v1.yaml">动态网页语义快照</a></div></article></div>
+      </section></div>
+    </div>
+
+    <nav class="prev-next" aria-label="模块翻页"><a href="05-companies.html"><small>← 上一模块</small><b>公司投影</b></a><a href="07-decision-dossier.html"><small>下一模块 →</small><b>决策卷宗</b></a></nav>
+  </main>
+
+  <footer class="site-footer"><span>光模块知识体系 · 模块化重构版</span><span>展示层重构，不改变知识库状态</span></footer>
+  <script src="assets/site.js?v=5d2cebaa45c6"></script>
+</body>
+</html>

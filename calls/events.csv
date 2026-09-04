@@ -1,0 +1,35 @@
+event_id,program_id,event_category,lifecycle_stage,event_status,primary_subject_id,counterparty_ids,theme_ids,occurred_start,occurred_end,date_precision,previous_event_id,site_country,target_market,policy_jurisdiction,summary,notes
+EV001,PRG_AAOI_1P6,commercial_adoption,volume_order,asserted,AAOI,,T015,2026-03-09,2026-03-09,exact,,,,美国,AAOI第一方披露首笔1.6T批量订单,未披露客户身份；预计发货不作为已兑现事件
+EV002,PRG_LITE_1P6_DEMO,product_stage,demonstrated,asserted,LITE,,T010,2026-04-30,2026-04-30,exact,,,,,Lumentum第一方博客披露1.6T 2xDR4现场演示,技术演示不等于量产或客户采用
+EV003,PRG_AVGO_TAURUS,product_stage,sampling,asserted,AVGO,,T011,2026-03-11,2026-03-11,exact,,,,全球,Broadcom第一方披露400G/lane Taurus光DSP开始送样,送样不等于客户认证或批量采用
+EV004,PRG_MRVL_ARA,product_stage,scaled,asserted,MRVL,,T010,2026-03-12,2026-03-12,exact,,,,全球,Marvell第一方称Ara 1.6T光DSP已大批量出货,asserted保留公司自述属性；未获得客户侧数量确认
+EV005,PRG_NOK_800G_COHERENT,commercial_adoption,first_shipment,asserted,NOK,,T021,2025-10-23,2025-10-23,exact,,,美国,,Nokia第一方称800G相干可插拔开始向一家美国客户发货,客户未具名；不等同短距800G数通模块
+EV006,PRG_CIEN_WL6E,product_stage,demonstrated,asserted,CIEN,,T021,2026-03-31,2026-03-31,exact,,,印度,,Ciena第一方披露1.6T单波跨数据中心现场试验,同一公司公告内的客户叙述不构成独立验证
+EV007,PRG_MTSI_448G,product_stage,announced,asserted,MTSI,,T011,2026-03-17,2026-03-17,exact,,,,全球,MACOM第一方披露448G/lane PAM4驱动器可获得,announced为保守阶段；不推导模块量产
+EV008,PRG_CRDO_ZEROFLAP,product_stage,announced,asserted,CRDO,,T004,2026-03-17,2026-03-17,exact,EV015,,全球,,Credo第一方披露800G 2xDR4 ZeroFlap光模块一般可用,只把800G 2xDR4 SKU从产品族送样推进到GA；不推导规模和客户采用
+EV009,PRG_NOK_AI_OPTICAL_ORDERS,commercial_adoption,announced,asserted,NOK,,T021,2026-04-23,2026-04-23,exact,,,,全球,Nokia第一方披露AI与云可插拔及线路系统设计定点与订单,未披露客户速率金额或发货；不能据订单推导规模采用
+EV010,PRG_NOK_PSE6S,product_stage,announced,asserted,NOK,,T021,2026-04-23,2026-04-23,exact,,,,全球,Nokia第一方预告下一代光网络产品2027年送样及量产窗口,Guidance事件仅记录承诺窗口；不把未来阶段写成已实现
+EV011,PRG_NOK_SUPPLY_CONSTRAINT,capacity_constraint,not_applicable,asserted,NOK,,T016,2026-07-23,2026-07-23,exact,,,,全球,Nokia管理层叙事称供应继续是网络行业主要约束,口径混合光网络与IP网络且未识别具体元件；不作为行业事实
+EV012,PRG_CIEN_VESTA,product_stage,announced,asserted,CIEN,,T017,2026-02-25,2026-02-25,exact,,,全球,,Ciena发布Vesta 200 6.4T CPX可插拔CPO光引擎,发布与计划展示不等于样品已交付客户或已经量产
+EV013,PRG_MTSI_IQE,capital_relationship,not_applicable,corroborated,MTSI,WATCH_IQE,T016,2026-05-28,2026-05-28,exact,,英国,全球,,MACOM完成对IQE的4500万英镑战略投资,MACOM申报与IQE独立披露相互支持；投资不等于外延有效产能增加
+EV014,PRG_MTSI_IQE,supply_chain_arrangement,not_applicable,corroborated,MTSI,WATCH_IQE,T016,2026-05-28,2026-05-28,exact,,英国,全球,,MACOM与IQE已订立长期供应协议,协议覆盖多种技术且未披露InP份额数量价格良率或交付
+EV015,PRG_CRDO_ZEROFLAP,product_stage,sampling,asserted,CRDO,,T004,2025-10-13,2025-10-13,exact,,,全球,,Credo称400G 800G与1.6T ZeroFlap光模块产品族开始送样,后续GA只覆盖800G 2xDR4 SKU；不能整体提升产品族阶段
+EV016,PRG_CRDO_CARDINAL,product_stage,sampling,asserted,CRDO,,T010,2026-03-17,2026-03-17,exact,,,全球,,Credo称Cardinal 1.6T光DSP开始向主要客户送样,上游DSP送样不等于1.6T光模块客户认证或量产
+EV017,PRG_CRDO_DUST,capital_relationship,announced,asserted,CRDO,WATCH_DUST,T017,2026-04-13,2026-04-13,exact,,,全球,,Credo签署收购DustPhotonics的确定性协议,收购公告中的光学组合收入预测不作为交易完成证据
+EV018,PRG_CRDO_DUST,capital_relationship,not_applicable,asserted,CRDO,WATCH_DUST,T017,2026-05-28,2026-05-28,exact,EV017,,全球,,Credo完成对DustPhotonics的收购,只证明交易完成；不证明硅光整合量产或收入预测兑现
+EV019,PRG_CIEN_SCALEACROSS,commercial_adoption,first_shipment,asserted,CIEN,,T021,2025-09-04,2025-09-04,exact,,,全球,,Ciena称首个scale-across项目已开始产生收入出货,第一方管理层陈述；客户未具名且不是短距IMDD模块
+EV020,PRG_CIEN_SUPPLY_CONSTRAINT,capacity_constraint,not_applicable,asserted,CIEN,,T016,2026-03-05,2026-03-05,exact,,,全球,,Ciena称供应约束实际压低第一季度可实现收入,管理层未识别具体受限元件；不作为单一器件行业卡点
+EV021,PRG_CIEN_HYPERRAIL,commercial_adoption,announced,asserted,CIEN,,T021,2026-06-04,2026-06-04,exact,,,全球,,Ciena称获得首个Hyper-Rail多轨订单,订单没有客户名称金额数量或交付状态
+EV022,PRG_AXTI_LITE_INP,supply_chain_arrangement,not_applicable,asserted,AXTI,LITE,T007;T016,2026-07-29,2026-07-29,exact,,,全球,,AXT称与Lumentum签署InP晶圆供给和产能预留协议,只有AXT一方披露；协议不等于交付或实际产能形成
+EV023,PRG_GFS_US_SIPHO,capacity_constraint,announced,asserted,GFS,,T013;T015;T017,2026-07-29,2026-07-29,exact,,美国,美国,美国,GlobalFoundries称签署3亿美元硅光研发资助LOI,LOI与expected award不等于最终拨款或量产产能
+EV024,PRG_TSEM_JP_SIPHO,capacity_constraint,announced,asserted,TSEM,,T013;T015;T017,2026-07-14,2026-07-14,exact,,日本,全球,日本,Tower提出日本300mm硅光产能2027Q4生产准备目标,目标日期尚需后续正式材料验证
+EV025,PRG_VECO_LUMINAPLUS,product_stage,qualifying,asserted,VECO,WATCH_ENNOSTAR,T007;T008,2026-06-11,2026-06-11,exact,,中国台湾,全球,,Veeco称LUMINA+ MOCVD获Ennostar商业验收与生产资格,设备覆盖AsP高量产但应用不只光通信
+EV026,PRG_LITE_GREENSBORO_INP,capacity_constraint,announced,asserted,LITE,,T007;T008,2026-03-26,2026-03-26,exact,,美国,美国,美国,Lumentum提出Greensboro美国InP工厂2028年中爬坡目标,设施当前运营但InP产品线仍需改造
+EV027,PRG_GLW_NVDA_OPTICAL,capacity_constraint,announced,asserted,GLW,NVDA,T017;T019,2026-05-06,2026-05-06,exact,,美国,美国,美国,Corning提出美国光连接产能十倍和光纤产能提升逾50%的目标,Corning与NVIDIA两域名承载同一联合新闻稿；仍只有一个原始事件源
+EV028,PRG_POET_LUMILENS,commercial_adoption,volume_order,asserted,POET,WATCH_LUMILENS,T010;T017,2026-05-14,2026-05-14,exact,,,全球,,POET称获得Lumilens价值5000万美元EOI光引擎初始采购订单,只有POET一方披露；五年潜在采购额不作为已确认订单
+EV029,PRG_POET_CELESTIAL,commercial_adoption,withdrawn,asserted,POET,,T010;T017,2026-04-23,2026-04-23,exact,,,全球,,POET披露Marvell/Celestial AI于2026-04-23书面取消此前全部purchase orders,被取消订单不得继续计入backlog；取消不影响其他订单的真实性判断也不证明其他订单兑现
+EV030,PRG_COHR_NVDA_20260302,supply_chain_arrangement,not_applicable,asserted,COHR,NVDA,T007;T016,2026-03-02,2026-03-02,exact,,,全球,,Coherent披露与NVIDIA签署含采购承诺及未来产能权的非独家多年协议,仅Coherent第一方公告；协议不等于未来采购已执行交付或产能已可用
+EV031,PRG_COHR_NVDA_20260302,capital_relationship,not_applicable,asserted,COHR,NVDA,T017,2026-03-02,2026-03-02,exact,,,全球,,Coherent披露NVIDIA将投资20亿美元,前瞻投资表述；不等于资金已到账
+EV032,PRG_LITE_NVDA_20260302,supply_chain_arrangement,not_applicable,asserted,LITE,NVDA,T007;T016,2026-03-02,2026-03-02,exact,,,全球,,Lumentum披露与NVIDIA签署含采购承诺及未来产能权的非独家多年协议,仅Lumentum第一方公告；协议不等于未来采购已执行交付或产能已可用
+EV033,PRG_LITE_NVDA_20260302,capital_relationship,not_applicable,asserted,LITE,NVDA,T017,2026-03-02,2026-03-02,exact,,,全球,,Lumentum披露NVIDIA将投资20亿美元,前瞻投资表述；不等于资金已到账
+EV034,PRG_MOLEX_TERAMOUNT,capital_relationship,not_applicable,asserted,WATCH_MOLEX,WATCH_TERAMOUNT,T017,2026-05-07,2026-05-07,exact,,,全球,,Molex完成对Teramount Ltd.的收购,收购完成不证明产品整合、量产或收入

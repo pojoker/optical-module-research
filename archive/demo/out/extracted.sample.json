@@ -1,0 +1,31 @@
+{"reports": [
+ {"stock_code": "300308", "company": "中际旭创", "fiscal_year": 2025,
+  "source_pdf": "demo/data/300308/300308_中际旭创_2025_2025年年度报告.pdf",
+  "pdf_url": "http://static.cninfo.com.cn/finalpage/2026-03-31/1225056459.PDF",
+  "customers": {"rows": [
+    {"rank": 1, "name_raw": "客户 A", "is_anonymous": true, "amount_yuan": "9201495755.91", "pct": "24.06"},
+    {"rank": 2, "name_raw": "客户 B", "is_anonymous": true, "amount_yuan": "6981202208.21", "pct": "18.26"},
+    {"rank": 3, "name_raw": "客户 C", "is_anonymous": true, "amount_yuan": "5438189570.59", "pct": "14.22"},
+    {"rank": 4, "name_raw": "客户 D", "is_anonymous": true, "amount_yuan": "4337902496.40", "pct": "11.34"},
+    {"rank": 5, "name_raw": "客户 E", "is_anonymous": true, "amount_yuan": "3096780769.22", "pct": "8.10"}],
+   "total_amount": "29055570800.33", "total_pct": "75.98", "related_party_pct": "8.10"},
+  "suppliers": {"rows": [
+    {"rank": 1, "name_raw": "供应商 A", "is_anonymous": true, "amount_yuan": "8885926791.46", "pct": "35.76"}],
+   "total_amount": "12796800648.87", "total_pct": "51.50", "related_party_pct": "0.00"},
+  "procedural": {"revenue_recognition_names": [],
+   "related_party_sales": [{"name": "PINEWAVE", "amount": "43378", "unit": "万美元"}]},
+  "warnings": []},
+ {"stock_code": "300394", "company": "天孚通信", "fiscal_year": 2025,
+  "source_pdf": "demo/data/300394/300394_天孚通信_2025_2025年年度报告.pdf",
+  "pdf_url": "http://static.cninfo.com.cn/finalpage/2026-04-08/1225082705.PDF",
+  "customers": {"rows": [
+    {"rank": 1, "name_raw": "Fabrinet", "is_anonymous": false, "amount_yuan": "3268843594.94", "pct": "63.31"},
+    {"rank": 2, "name_raw": "第二名", "is_anonymous": true, "amount_yuan": "601931536.36", "pct": "11.66"}],
+   "total_amount": "4632769481.55", "total_pct": "89.73", "related_party_pct": "0.00"},
+  "suppliers": {"rows": [
+    {"rank": 1, "name_raw": "第一名", "is_anonymous": true, "amount_yuan": "832889806.30", "pct": "34.81"}],
+   "total_amount": "1471846769.96", "total_pct": "61.51", "related_party_pct": "0.00"},
+  "procedural": {"revenue_recognition_names": ["浙江省粮油食品进出口股份有限公司"],
+   "related_party_sales": []},
+  "warnings": ["示例:此处收入确认实名实际属于新易盛,仅作schema演示"]}
+]}

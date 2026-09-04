@@ -1,0 +1,5 @@
+feedback_id,technology_claim_id,commercial_claim_id,theme_id,feedback_status,evidence_status,stage_before,stage_after,rationale
+TF001,CL017,CL022,T010,pending,partially_supported,demonstrated,planned_ramp,官网博客证明两种1.6T模块可现场运行；管理层仅前瞻预计1.6T整体爬坡，不能确认两种架构已商业部署
+TF002,CL018,,T011,not_mentioned,insufficient,demonstrated,demonstrated,电话会与业绩材料没有提到4x400G EML演示或3.2T具体商业时间表
+TF003,CL019,CL023,T013,pending,insufficient,demonstrated,planned_revenue,技术作者演示的是SHP 800mW，管理层指引是UHP CPO收入；SHP与UHP不得等同且前瞻收入尚未兑现
+TF004,CL016,,T012,pending,insufficient,technical_claim,technical_claim,多维问题框架来自技术作者，尚无管理层对各维度的逐项商业确认

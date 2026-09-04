@@ -1,0 +1,47 @@
+run_id: PI-TQ005-TQ008-AXIS-VALUES-V1-20260824
+status: completed_draft_only_no_promotion
+mode: draft_only
+targets: [TQ005, TQ006, TQ007, TQ008]
+upstream_controlling_text: ../2026-08-24-tq004-route-axes-v1/post-adjudication-effective-text.md
+model: opencode-go/deepseek-v4-flash
+thinking: high
+tools: []
+context_files: disabled
+network: disabled_by_tool_surface
+write_access: disabled_by_tool_surface
+new_question_ids_allowed: false
+canonical_write_allowed: false
+python_allowed: false
+python_for_validation: /Users/jowang/miniconda3/bin/python3
+entrypoint: README-FIRST.md
+contract: contract.md
+source_discovery: source-discovery.md
+sources: sources.md
+snapshot_manifest: snapshot-manifest.md
+command: command.txt
+exit_code: 0
+raw_output: raw-output.md
+adjudication: adjudication.md
+raw_errata: raw-output.errata.md
+controlling_text: post-adjudication-effective-text.md
+raw_output_is_audit_only: true
+first_review_kimi: ../../../reviews/2026-08-24-kimi-review-tq005-tq008-axis-values.md
+first_review_cursor: ../../../reviews/2026-08-24-cursor-review-tq005-tq008-axis-values.md
+first_review_verdict_kimi: PASS_WITH_FIXES
+first_review_verdict_cursor: PASS_WITH_FIXES
+rereview_kimi: ../../../reviews/2026-08-24-kimi-rereview-tq005-tq008-axis-values.md
+rereview_cursor: ../../../reviews/2026-08-24-cursor-rereview-tq005-tq008-axis-values.md
+rereview_verdict_kimi: PASS
+rereview_verdict_cursor: PASS
+validation_report: validation-report.md
+validation_python: /Users/jowang/miniconda3/bin/python3
+validation_scan_check: PASS
+validation_render_verify: PASS
+validation_snapshot_hashes: 14/14 PASS
+validation_draft_ids: 24/24 PASS
+validation_refinement_questions: 20/20 PASS
+validation_question_ids: PASS
+validation_canonical_status: clean
+canonical_write_performed: false
+coverage_status_changed: false
+new_question_ids_created: false

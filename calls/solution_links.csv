@@ -1,0 +1,3 @@
+link_id,bottleneck_theme_id,solution_theme_id,required_capability,point_id,match_stage,evidence_status,missing_evidence,conclusion
+SL001,T002,T003,800G数通光模块的稳定量产和交付,P074,node_overlap,insufficient,缺少与该受限需求对应的增量产能、制造周期、客户认证及800G批量交付证据,现有点仅证明中际旭创从事高端光通信收发模块研发生产销售并服务AI算力集群
+SL002,T007,T008,高速InP激光器外延与芯片制造能力,P095,node_overlap,insufficient,缺少与800G/1.6T 2xFR4所需激光器规格对应的增量MOCVD产能、可靠性、客户认证和批量交付证据,现有点只证明源杰科技具备MOCVD外延生长等内部生产线能力

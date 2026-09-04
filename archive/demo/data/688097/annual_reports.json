@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225096862",
+    "stock_code": "688097",
+    "company_name": "<em>博众精工</em>",
+    "title": "2025年年度报告",
+    "announcement_date": "2026-04-11",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-11/1225096862.PDF",
+    "adjunct_url": "finalpage/2026-04-11/1225096862.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/688097/688097__em_博众精工_em__2025_2025年年度报告.pdf",
+    "sha256": "fb4bb7e30f81c4e850505b2b5abd4172e01da59b05978a23fd7303de13043fd9",
+    "size_bytes": 4933424,
+    "error": ""
+  },
+  {
+    "announcement_id": "1223328775",
+    "stock_code": "688097",
+    "company_name": "<em>博众精工</em>",
+    "title": "2024年年度报告",
+    "announcement_date": "2025-04-26",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-26/1223328775.PDF",
+    "adjunct_url": "finalpage/2025-04-26/1223328775.PDF",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/688097/688097__em_博众精工_em__2024_2024年年度报告.pdf",
+    "sha256": "9a272268b98dedcd462b02c68d9449fecd9ade01086c2927dc8315915e71d2e1",
+    "size_bytes": 5372726,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219769915",
+    "stock_code": "688097",
+    "company_name": "<em>博众精工</em>",
+    "title": "博众精工2023年年度报告",
+    "announcement_date": "2024-04-24",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-24/1219769915.PDF",
+    "adjunct_url": "finalpage/2024-04-24/1219769915.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/688097/688097__em_博众精工_em__2023_博众精工2023年年度报告.pdf",
+    "sha256": "625050861949a8fd0c9b98907209c22be4027e24f68706b20f5e0bfac3f642ee",
+    "size_bytes": 5923896,
+    "error": ""
+  }
+]

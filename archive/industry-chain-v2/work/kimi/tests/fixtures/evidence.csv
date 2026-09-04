@@ -1,0 +1,6 @@
+evidence_id,evidence_use,source_tier,title,publisher,url,publication_date,retrieved_at,as_of,quote,stance,verdict,notes
+EV-STRUCT-001,structure,T1,IEEE 802.3df,IEEE,https://standards.ieee.org/802.3df,2023-06,2026-07-24,2026-07-24,800GBASE-DR8 defines 8x106.25 Gb/s PAM4 over SMF,standard,supports,
+EV-STRUCT-002,structure,T1,OIF 400ZR IA,OIF,https://www.oiforum.com,2020-03,2026-07-24,2026-07-24,400ZR coherent pluggable interface agreement,standard,supports,
+EV-CAP-001,capability,T2,Annual report,Innolight,https://example.com/innolight-annual,2024-04,2026-07-24,2026-07-24,800G modules in mass production,issuer_self,supports,
+EV-TRADE-001,trade,T2,SEC 10-K,Fabrinet,https://sec.gov/fabrinet,2024-09,2026-07-24,2026-07-24,Customer A represented 10% of revenue,issuer_self,supports,
+EV-TRADE-002,trade,T2,Press release,Marvell,https://example.com/marvell,2024-07,2026-07-24,2026-07-24,DSP design win at module customer,issuer_self,supports,

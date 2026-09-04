@@ -1,0 +1,27 @@
+# 观察池：领先性未验证,不同口径不可直接比较
+series_id,主体,指标名,口径,期间,数值,单位,证据锚点,备注
+FT-OB-20240731,ficonTEC(罗博特科),对NVIDIA在手订单余额,在手订单,2024-07-31,2433.83,万欧元,E012;assets/registries/optics/facts-ledger.csv#OF002,时点快照；非订单签署日序列
+FT-OB-20241213,ficonTEC(罗博特科),对NVIDIA在手订单余额,在手订单,2024-12-13,4800,万欧元,E012备注;assets/registries/optics/diff-log.csv#D003,时点快照；与上条同为在手订单口径不可外推领先
+LX-JT1-2025Q1,联讯仪器,对集团一销售收入,收入确认,2025Q1,7140.45,万元,flows/out/lianxun-extract.json#customers.2025Q1;E096,占比35.51%；客户匿名；联讯确认收入≠对方采购总额占比
+LX-PM-2025Q1,联讯仪器,对Power Master销售收入,收入确认,2025Q1,1821.39,万元,flows/out/lianxun-extract.json#customers.2025Q1;E082,占比9.06%；功率器件测试设备
+LX-XYS-2025Q1,联讯仪器,对新易盛销售收入,收入确认,2025Q1,1668.10,万元,flows/out/lianxun-extract.json#customers.2025Q1;E083,占比8.29%；光电子器件测试设备
+LX-XSXY-2025Q1,联讯仪器,对讯速信远销售收入,收入确认,2025Q1,1100.78,万元,flows/out/lianxun-extract.json#customers.2025Q1;E084,占比5.47%；经销
+LX-GX-2025Q1,联讯仪器,对光迅科技销售收入,收入确认,2025Q1,867.11,万元,flows/out/lianxun-extract.json#customers.2025Q1,占比4.31%；未单独晋级边(未入当期前五主边集)
+LX-JT1-2024,联讯仪器,对集团一销售收入,收入确认,2024,13342.41,万元,flows/out/lianxun-extract.json#customers.2024;E097,占比16.92%；客户匿名
+LX-GX-2024,联讯仪器,对光迅科技销售收入,收入确认,2024,5969.32,万元,flows/out/lianxun-extract.json#customers.2024;E085,占比7.57%
+LX-SLW-2024,联讯仪器,对士兰微销售收入,收入确认,2024,5459.38,万元,flows/out/lianxun-extract.json#customers.2024;E086,占比6.92%；功率器件测试设备
+LX-HX-2024,联讯仪器,对海信集团销售收入,收入确认,2024,5159.92,万元,flows/out/lianxun-extract.json#customers.2024;E087,占比6.54%；同一控制合并披露
+LX-ZX-2024,联讯仪器,对中际旭创销售收入,收入确认,2024,4937.25,万元,flows/out/lianxun-extract.json#customers.2024;E088,占比6.26%；通信测试仪器
+LX-HX-2023,联讯仪器,对海信集团销售收入,收入确认,2023,4227.19,万元,flows/out/lianxun-extract.json#customers.2023;E089,占比15.33%
+LX-ZX-2023,联讯仪器,对中际旭创销售收入,收入确认,2023,4068.26,万元,flows/out/lianxun-extract.json#customers.2023;E090,占比14.75%
+LX-JT1-2023,联讯仪器,对集团一销售收入,收入确认,2023,2730.72,万元,flows/out/lianxun-extract.json#customers.2023;E098,占比9.90%；客户匿名
+LX-SA-2023,联讯仪器,对三安光电销售收入,收入确认,2023,1876.87,万元,flows/out/lianxun-extract.json#customers.2023;E091,占比6.81%
+LX-JT2-2023,联讯仪器,对集团二销售收入,收入确认,2023,1662.10,万元,flows/out/lianxun-extract.json#customers.2023;E099,占比6.03%；客户匿名
+LX-HX-2022,联讯仪器,对海信集团销售收入,收入确认,2022,3005.18,万元,flows/out/lianxun-extract.json#customers.2022;E092,占比14.02%
+LX-GX-2022,联讯仪器,对光迅科技销售收入,收入确认,2022,2471.91,万元,flows/out/lianxun-extract.json#customers.2022;E093,占比11.53%
+LX-AVGO-2022,联讯仪器,对Broadcom销售收入,收入确认,2022,1310.23,万元,flows/out/lianxun-extract.json#customers.2022;E094,占比6.11%
+LX-XSXY-2022,联讯仪器,对讯速信远销售收入,收入确认,2022,1269.58,万元,flows/out/lianxun-extract.json#customers.2022,占比5.92%；经销；未单独晋级边
+LX-SA-2022,联讯仪器,对三安光电销售收入,收入确认,2022,1084.04,万元,flows/out/lianxun-extract.json#customers.2022;E095,占比5.06%
+LQ-ZX-2023,猎奇智能,对中际旭创销售收入,收入确认,2023,17985.30,万元,E045备注;flows/input/lieqi_prospectus.txt比照关联交易表,占比62.19%；年度确认收入非订单/在手
+LQ-ZX-2024,猎奇智能,对中际旭创销售收入,收入确认,2024,31949.52,万元,E010;E045备注;flows/input/lieqi_prospectus.txt比照关联交易表,占比58.85%
+LQ-ZX-2025,猎奇智能,对中际旭创销售收入,收入确认,2025,37277.97,万元,E045;flows/input/lieqi_prospectus.txt比照关联交易表,占比53.42%

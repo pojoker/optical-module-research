@@ -1,0 +1,26 @@
+﻿cat_id,公司,产品型号,速率,封装,技术路线,来源URL,抓取日期,备注
+INN-01,中际旭创/InnoLight,100G-QSFP28,100G,QSFP28,,https://www.innolight.com/en/goods/solution.html,2026-07-23,官网产品方案页列出的产品系列名；全页仅提及"silicon photonics"总体技术平台，未逐系列标注EML/硅光/LPO
+INN-02,中际旭创/InnoLight,200G-QSFP56,200G,QSFP56,,https://www.innolight.com/en/goods/solution.html,2026-07-23,官网产品方案页列出的产品系列名；未逐系列标注技术路线
+INN-03,中际旭创/InnoLight,400G-QSFP56-DD,400G,QSFP56-DD,,https://www.innolight.com/en/goods/solution.html,2026-07-23,官网产品方案页列出的产品系列名；未逐系列标注技术路线
+INN-04,中际旭创/InnoLight,400G-QSFP112,400G,QSFP112,,https://www.innolight.com/en/goods/solution.html,2026-07-23,官网产品方案页列出的产品系列名；未逐系列标注技术路线
+INN-05,中际旭创/InnoLight,400G-OSFP56,400G,OSFP56,,https://www.innolight.com/en/goods/solution.html,2026-07-23,官网产品方案页列出的产品系列名；未逐系列标注技术路线
+INN-06,中际旭创/InnoLight,400G-OSFP112,400G,OSFP112,,https://www.innolight.com/en/goods/solution.html,2026-07-23,官网产品方案页列出的产品系列名；未逐系列标注技术路线
+INN-07,中际旭创/InnoLight,800G-QSFP112-DD,800G,QSFP112-DD,,https://www.innolight.com/en/goods/solution.html,2026-07-23,官网产品方案页列出的产品系列名；未逐系列标注技术路线
+INN-08,中际旭创/InnoLight,800G-OSFP224,800G,OSFP224,,https://www.innolight.com/en/goods/solution.html,2026-07-23,官网产品方案页列出的产品系列名；未逐系列标注技术路线
+INN-09,中际旭创/InnoLight,800G-OSFP112,800G,OSFP112,,https://www.innolight.com/en/goods/solution.html,2026-07-23,官网产品方案页列出的产品系列名；未逐系列标注技术路线
+INN-10,中际旭创/InnoLight,1.6T-OSFP224,1.6T,OSFP224,,https://www.innolight.com/en/goods/solution.html,2026-07-23,官网产品方案页列出的产品系列名；未逐系列标注技术路线
+EO-01,新易盛/Eoptolink,400G Coherent QSFP56-DD,400G,QSFP56-DD,相干(Coherent),https://www.eoptolink.com/product-solutions/400g,2026-07-23,型号名标注Coherent；页面述ZR/ZR+已量产，用于120km/480km；来源页列出"400G Coherent QSFP56-DD"
+EO-02,新易盛/Eoptolink,400G QSFP56-DD,400G,QSFP56-DD,,https://www.eoptolink.com/product-solutions/400g,2026-07-23,官网列表页型号名；未标注EML/硅光/LPO（非LPO非相干型号）
+EO-03,新易盛/Eoptolink,400G QSFP56-DD AOC,400G,QSFP56-DD,,https://www.eoptolink.com/product-solutions/400g,2026-07-23,AOC有源光缆变体；型号名未标注技术路线
+EO-04,新易盛/Eoptolink,400G QSFP112,400G,QSFP112,,https://www.eoptolink.com/product-solutions/400g,2026-07-23,新一代400G QSFP112；型号名未标注技术路线
+EO-05,新易盛/Eoptolink,400G LPO QSFP112,400G,QSFP112,LPO,https://www.eoptolink.com/product-solutions/400g,2026-07-23,型号名标注LPO；兼容QSFP112 MSA
+EO-06,新易盛/Eoptolink,400G OSFP,400G,OSFP,,https://www.eoptolink.com/product-solutions/400g,2026-07-23,官网列表页型号名；未标注技术路线
+EO-07,新易盛/Eoptolink,800G LPO OSFP,800G,OSFP,LPO,https://www.eoptolink.com/product-solutions/800g,2026-07-23,型号名标注LPO
+EO-08,新易盛/Eoptolink,800G LPO QSFP-DD800,800G,QSFP-DD800,LPO,https://www.eoptolink.com/product-solutions/800g,2026-07-23,型号名标注LPO
+EO-09,新易盛/Eoptolink,800G OSFP,800G,OSFP,,https://www.eoptolink.com/product-solutions/800g,2026-07-23,官网列表页型号名；未标注技术路线
+EO-10,新易盛/Eoptolink,800G QSFP-DD800,800G,QSFP-DD800,,https://www.eoptolink.com/product-solutions/800g,2026-07-23,官网列表页型号名；未标注技术路线
+EO-11,新易盛/Eoptolink,800G AOC OSFP,800G,OSFP,,https://www.eoptolink.com/product-solutions/800g,2026-07-23,AOC有源光缆变体；型号名未标注技术路线
+EO-12,新易盛/Eoptolink,800G OSFP ZR Coherent,800G,OSFP,相干(Coherent),https://www.eoptolink.com/product-solutions/800g,2026-07-23,型号名标注Coherent(ZR相干)
+EO-13,新易盛/Eoptolink,800G OSFP MCF,800G,OSFP,多芯光纤(MCF),https://www.eoptolink.com/product-solutions/800g,2026-07-23,型号名标注MCF(多芯光纤)；非EML/硅光/LPO路线标注，记为MCF
+EO-14,新易盛/Eoptolink,1.6T OSFP,1.6T,OSFP,,https://www.eoptolink.com/product-solutions/16t/16t-osfp,2026-07-23,页面标题"1.6T OSFP"；兼容OSFP MSA，固件支持CMIS 5.0；型号名未标注技术路线
+TS-01,天孚通信/T&S,(未能抓取),,,,"https://www.tfc-optics.com ; https://www.tscom.com.cn",2026-07-23,官网不可达，未获取任何型号，未编造。检索轨迹：①www.tfc-optics.com 沙箱内DNS解析至198.18.0.110(RFC2544测试网段)直连超时HTTP 000；沙箱外直连仍HTTP 000(无服务)。②www.tscom.com.cn 返回HTTP 403 Forbidden(Apache"You don't have permission to access this resource")，Chrome/Safari UA及WebFetch多种UA均403。③https://tfc-optics.com裸域、/sitemap.xml、/robots.txt均失败。按诚实边界记录失败，不绕行不假装。

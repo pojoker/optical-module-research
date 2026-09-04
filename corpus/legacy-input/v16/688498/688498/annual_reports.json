@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225028582",
+    "stock_code": "688498",
+    "company_name": "<em>源杰科技</em>",
+    "title": "陕西源杰半导体科技股份有限公司2025年年度报告",
+    "announcement_date": "2026-03-25",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-03-25/1225028582.PDF",
+    "adjunct_url": "finalpage/2026-03-25/1225028582.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/688498/688498/688498__em_源杰科技_em__2025_陕西源杰半导体科技股份有限公司2025年年度报告.pdf",
+    "sha256": "a513c4e60068e006161e139ed9b5501c809f9015f6b171cedb18cc1580f12630",
+    "size_bytes": 1547226,
+    "error": ""
+  },
+  {
+    "announcement_id": "1223315235",
+    "stock_code": "688498",
+    "company_name": "<em>源杰科技</em>",
+    "title": "陕西源杰半导体科技股份有限公司2024年年度报告",
+    "announcement_date": "2025-04-26",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-26/1223315235.PDF",
+    "adjunct_url": "finalpage/2025-04-26/1223315235.PDF",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/688498/688498/688498__em_源杰科技_em__2024_陕西源杰半导体科技股份有限公司2024年年度报告.pdf",
+    "sha256": "7083ee4e84601ace4d457876762cf80829b4be2a9c691d4e8702a5601f526936",
+    "size_bytes": 1495349,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219816634",
+    "stock_code": "688498",
+    "company_name": "<em>源杰科技</em>",
+    "title": "陕西源杰半导体科技股份有限公司2023年年度报告",
+    "announcement_date": "2024-04-26",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-26/1219816634.PDF",
+    "adjunct_url": "finalpage/2024-04-26/1219816634.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/688498/688498/688498__em_源杰科技_em__2023_陕西源杰半导体科技股份有限公司2023年年度报告.pdf",
+    "sha256": "ebdc01afad8c3a9a85435b3d9413185e2042a27c9575aac77345f2533ca6c55c",
+    "size_bytes": 4453109,
+    "error": ""
+  }
+]

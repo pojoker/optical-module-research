@@ -1,0 +1,34 @@
+[
+  {
+    "announcement_id": "1225123248",
+    "stock_code": "688048",
+    "company_name": "<em>长光华芯</em>",
+    "title": "2025年年度报告",
+    "announcement_date": "2026-04-18",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-18/1225123248.PDF",
+    "adjunct_url": "finalpage/2026-04-18/1225123248.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/688048/688048/688048__em_长光华芯_em__2025_2025年年度报告.pdf",
+    "sha256": "befd855f05a3b82a6b45c0411035d69be232a5cc1b50bee4b2b1326007475df7",
+    "size_bytes": 1497904,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219837753",
+    "stock_code": "688048",
+    "company_name": "<em>长光华芯</em>",
+    "title": "2023年年度报告",
+    "announcement_date": "2024-04-26",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-26/1219837753.PDF",
+    "adjunct_url": "finalpage/2024-04-26/1219837753.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/688048/688048/688048__em_长光华芯_em__2023_2023年年度报告.pdf",
+    "sha256": "9dbde741d026f59d1a2e3837493ae016e10ce07551c5a9acb63b2120a1f16c27",
+    "size_bytes": 6504720,
+    "error": ""
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225061015",
+    "stock_code": "300570",
+    "company_name": "<em>太辰光</em>",
+    "title": "2025年年度报告",
+    "announcement_date": "2026-03-31",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225061015.PDF",
+    "adjunct_url": "finalpage/2026-03-31/1225061015.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/300570/300570/300570__em_太辰光_em__2025_2025年年度报告.pdf",
+    "sha256": "380dfdf72e08fdfe531a63f856d2f928aba0f3bcef24e432e9894fd2d3438def",
+    "size_bytes": 11452761,
+    "error": ""
+  },
+  {
+    "announcement_id": "1222945632",
+    "stock_code": "300570",
+    "company_name": "<em>太辰光</em>",
+    "title": "2024年年度报告",
+    "announcement_date": "2025-03-29",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-03-29/1222945632.PDF",
+    "adjunct_url": "finalpage/2025-03-29/1222945632.PDF",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/300570/300570/300570__em_太辰光_em__2024_2024年年度报告.pdf",
+    "sha256": "63d7e19bcb3a04f52cdb3fd226578ff59fe2817f6331f7c6c70e001354c486bd",
+    "size_bytes": 5069366,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219443941",
+    "stock_code": "300570",
+    "company_name": "<em>太辰光</em>",
+    "title": "2023年年度报告",
+    "announcement_date": "2024-03-29",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-03-29/1219443941.PDF",
+    "adjunct_url": "finalpage/2024-03-29/1219443941.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/300570/300570/300570__em_太辰光_em__2023_2023年年度报告.pdf",
+    "sha256": "8bd0a8c05ea5b58da0ef4500290adf8b2d3ffc049ff52e036625ff6af3635dbe",
+    "size_bytes": 4835347,
+    "error": ""
+  }
+]

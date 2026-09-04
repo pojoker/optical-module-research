@@ -1,0 +1,266 @@
+meta:
+  generator_id: P1
+  mode: draft_only
+  canonical_write_performed: false
+physical_delta_candidates:
+  - delta_id: P1-D02-D03-001
+    comparison_id: CMP-D02-D03
+    basis_fields:
+      - tq006_electrical_responsibility.raw_architecture_label
+      - tq006_electrical_responsibility.normalized_architecture
+      - tq006_electrical_responsibility.tx_retiming
+      - tq006_electrical_responsibility.rx_retiming
+    left_observation: "D02 discloses raw architecture label LRO, normalized as Tx-retimed / Rx-linear, with DSP retiming in the transmit direction only."
+    right_observation: "D03 discloses only the raw label '3 nm DSP'; normalized architecture and Tx/Rx retiming responsibilities are undisclosed."
+    delta_status: unknown
+    existing_physical_cells: [C5]
+    candidate_facets: [tx_retiming_scope, rx_retiming_scope, dsp_process_node_raw]
+    unmodeled_dimension: electrical_responsibility
+    component_delta: "UNKNOWN: no component add/delete/count/replacement delta is established beyond the raw labels; LRO is an electrical-responsibility label while '3 nm DSP' is a component/process-node label."
+    interface_delta: "Shared 8x200G electrical and optical interfaces are observed on both sides (no delta); comparative Tx/Rx electrical-responsibility interface delta UNKNOWN."
+    process_delta: UNKNOWN
+    equipment_delta: UNKNOWN
+    test_delta: UNKNOWN
+    evidence_refs: [S3#D02, S3#D03]
+  - delta_id: P1-D04-D05-001
+    comparison_id: CMP-D04-D05
+    basis_fields:
+      - tq008_placement.form_factor
+    left_observation: "D04 disclosed as QSFP-DD800 front-panel pluggable module."
+    right_observation: "D05 disclosed as OSFP front-panel pluggable module."
+    delta_status: observed_difference
+    existing_physical_cells: []
+    candidate_facets: []
+    unmodeled_dimension: form_factor
+    component_delta: "UNKNOWN: the observed difference is a front-panel pluggable package form factor (QSFP-DD800 vs OSFP), not an internal component add/delete/count/replacement delta."
+    interface_delta: "Observed different pluggable form factor within the same 800 Gbps interoperability demo; host/media lane, connector, fiber-mapping, and direction-role interface deltas UNKNOWN."
+    process_delta: UNKNOWN
+    equipment_delta: UNKNOWN
+    test_delta: UNKNOWN
+    evidence_refs: [S4#D04, S4#D05]
+  - delta_id: P1-D04-D05-002
+    comparison_id: CMP-D04-D05
+    basis_fields:
+      - tq007_photonics.platform
+      - tq007_photonics.modulator_or_emitter_type
+      - tq007_photonics.device_integration
+      - tq005_external_link.nominal_wavelength
+      - tq007_photonics.light_source_type
+      - tq007_photonics.light_source_wavelength
+      - tq007_photonics.detector_type
+    left_observation: "D04 endpoint disclosed as silicon-photonics MZM PIC; light-source type, light-source wavelength, and detector type undisclosed."
+    right_observation: "D05 endpoint disclosed at 1310 nm with raw EML laser light source and generic photodetector; platform, independent modulator/emitter type, and device integration undisclosed."
+    delta_status: observed_difference
+    existing_physical_cells: [C4, C1, C3]
+    candidate_facets: [MZM]
+    unmodeled_dimension: photonic_device_detail
+    component_delta: "Composite endpoint labels are observed (SiPh MZM PIC vs 1310 nm raw EML laser + generic photodetector); this is not an equal-grain component replacement delta, and internal partitioning (laser-PIC, PIC-EIC, detector subtype) is UNKNOWN."
+    interface_delta: "Interoperation at 800 Gbps is observed between the two endpoints; host/media lane, connector, fiber-mapping, direction-specific role, and electrical-responsibility interface deltas are UNKNOWN."
+    process_delta: UNKNOWN
+    equipment_delta: UNKNOWN
+    test_delta: UNKNOWN
+    evidence_refs: [S4#D04, S4#D05]
+tradeoff_cards:
+  - comparison_id: CMP-D02-D03
+    comparison_status: partially_comparable
+    scenario_constraints:
+      aggregate_rate: "same; 1.6T observed"
+      reach: UNKNOWN
+      media: UNKNOWN
+      fec_ber: UNKNOWN
+      temperature: UNKNOWN
+      power_boundary: UNKNOWN
+      density_boundary: UNKNOWN
+      cost_boundary: UNKNOWN
+      maintenance_boundary: UNKNOWN
+    advantages: []
+    costs_and_disadvantages: []
+    new_bottlenecks: []
+    alternatives: []
+    validation_questions:
+      - "Obtain same-condition modulation, symbol-rate, PMD/FEC/BER, media, reach, wavelength, and connector/fiber-mapping controls."
+      - "Obtain D03 Tx/Rx retiming, FEC, DAC/ADC, and host-SerDes responsibilities."
+      - "Obtain measured power with a common boundary, workload, temperature, instrumentation, and uncertainty."
+      - "Obtain common density/thermal, cost, reliability, and maintenance definitions."
+    feedback_to_tq003: []
+    unknowns:
+      - "D03 normalized architecture and electrical responsibility"
+      - "all listed non-rate/non-lane comparison controls"
+    no_unconditional_ranking: true
+  - comparison_id: CMP-D04-D05
+    comparison_status: partially_comparable
+    scenario_constraints:
+      aggregate_rate: "same link traffic; 800 Gbps observed"
+      reach: UNKNOWN
+      media: UNKNOWN
+      fec_ber: UNKNOWN
+      temperature: UNKNOWN
+      power_boundary: UNKNOWN
+      density_boundary: UNKNOWN
+      cost_boundary: UNKNOWN
+      maintenance_boundary: UNKNOWN
+    advantages: []
+    costs_and_disadvantages: []
+    new_bottlenecks: []
+    alternatives: []
+    validation_questions:
+      - "Obtain endpoint direction/role and a symmetric test topology for an alternative-design comparison."
+      - "Obtain host/media lane count and rate, modulation/symbol rate, formal PMD/FEC/BER, media, reach, wavelength range, connector, and fiber mapping for each endpoint."
+      - "Obtain Tx/Rx/FEC/DAC/ADC/host-SerDes responsibilities for both endpoints."
+      - "Obtain common temperature, measured power, density/thermal, cost, reliability, and maintenance boundaries."
+      - "Obtain equal-grain light-source, modulator, detector, material, and integration disclosures for both endpoints."
+    feedback_to_tq003: []
+    unknowns:
+      - "whether opposite interoperability endpoints are substitutable under the same directional role"
+      - "all listed controls except shared 800 Gbps traffic and normalized front-panel placement"
+    no_unconditional_ranking: true
+capability_requirement_candidates:
+  - requirement_id: REQ-P1-D02-D03-001
+    comparison_id: CMP-D02-D03
+    basis_type: axis_direct
+    basis_fields:
+      - tq005_external_link.nominal_aggregate_rate
+      - tq005_external_link.host_lane_count
+      - tq005_external_link.host_lane_rate
+      - tq005_external_link.media_lane_count
+      - tq005_external_link.media_lane_rate
+    target_physical_cell: C5
+    candidate_facet: host_media_interface_8x200g
+    capability_action: design
+    requirement_statement: "ability to design the DSP/CDR-class electrical cell (C5) for a 1.6T module with 8x200G electrical host lanes and 8x200G optical media lanes, as observed on both endpoints."
+    acceptance_metric_state: observed
+    existing_points_matchable: "partial"
+    match_basis: "point evidence fields for aggregate rate, host lane count/rate, and media lane count/rate could match; same-condition controls (modulation, FEC/BER, reach) are not established."
+    evidence_refs: [S3]
+  - requirement_id: REQ-P1-D02-D03-002
+    comparison_id: CMP-D02-D03
+    basis_type: engineering_inference
+    basis_fields:
+      - tq006_electrical_responsibility.raw_architecture_label
+      - tq006_electrical_responsibility.normalized_architecture
+      - tq006_electrical_responsibility.tx_retiming
+      - tq006_electrical_responsibility.rx_retiming
+    target_physical_cell: C5
+    candidate_facet: tx_rx_responsibility_partition
+    capability_action: test
+    requirement_statement: "ability to characterize and verify the Tx/Rx electrical-responsibility partition (Tx retiming, Rx linearity, FEC, DAC/ADC, host-SerDes roles) symmetrically for both endpoints; the D03 side is currently undisclosed."
+    acceptance_metric_state: unknown
+    existing_points_matchable: "no"
+    match_basis: "no existing point evidence establishes D03 electrical responsibilities; engineering_inference candidates cannot be company-matched."
+    evidence_refs: [S3]
+  - requirement_id: REQ-P1-D04-D05-001
+    comparison_id: CMP-D04-D05
+    basis_type: delta_direct
+    basis_fields:
+      - tq008_placement.form_factor
+    target_physical_cell: UNMODELED
+    candidate_facet: null
+    capability_action: integrate
+    requirement_statement: "ability to integrate an 800 Gbps front-panel pluggable module in both QSFP-DD800 and OSFP form factors as observed in the interoperability demo; tree.yaml has no form-factor cell."
+    acceptance_metric_state: observed
+    existing_points_matchable: "partial"
+    match_basis: "point evidence fields for placement class and raw form-factor label could match; the form-factor dimension is unmodeled in tree.yaml."
+    evidence_refs: [S4]
+  - requirement_id: REQ-P1-D04-D05-002
+    comparison_id: CMP-D04-D05
+    basis_type: axis_direct
+    basis_fields:
+      - tq007_photonics.platform
+      - tq007_photonics.modulator_or_emitter_type
+      - tq007_photonics.device_integration
+    target_physical_cell: C4
+    candidate_facet: MZM
+    capability_action: integrate
+    requirement_statement: "ability to integrate a silicon-photonics MZM PIC as disclosed for the D04 endpoint, with MZM recorded as a modulator-type facet of C4."
+    acceptance_metric_state: observed
+    existing_points_matchable: "partial"
+    match_basis: "point evidence fields for photonics platform, modulator/emitter type, and device integration on the D04 endpoint could match; equal-grain D05 counterparts are not established."
+    evidence_refs: [S4]
+  - requirement_id: REQ-P1-D04-D05-003
+    comparison_id: CMP-D04-D05
+    basis_type: engineering_inference
+    basis_fields:
+      - tq005_external_link.nominal_wavelength
+      - tq007_photonics.light_source_type
+      - tq007_photonics.light_source_wavelength
+    target_physical_cell: C1
+    candidate_facet: null
+    capability_action: test
+    requirement_statement: "ability to characterize the D05 light-source endpoint at equal grain (1310 nm raw EML laser label) without expanding the raw label into unobserved internal structure (modulator/emitter split, integration)."
+    acceptance_metric_state: unknown
+    existing_points_matchable: "no"
+    match_basis: "no existing point evidence establishes D05 light-source internal structure; engineering_inference candidates cannot be company-matched."
+    evidence_refs: [S4]
+  - requirement_id: REQ-P1-D04-D05-004
+    comparison_id: CMP-D04-D05
+    basis_type: engineering_inference
+    basis_fields:
+      - tq007_photonics.detector_type
+    target_physical_cell: C3
+    candidate_facet: null
+    capability_action: test
+    requirement_statement: "ability to characterize the D05 generic photodetector at equal grain when detector subtype is disclosed; detector subtype remains UNKNOWN."
+    acceptance_metric_state: unknown
+    existing_points_matchable: "no"
+    match_basis: "no existing point evidence establishes photodetector subtype; engineering_inference candidates cannot be company-matched."
+    evidence_refs: [S4]
+validation_questions:
+  - comparison_id: CMP-D02-D03
+    basis_fields:
+      - tq006_electrical_responsibility.normalized_architecture
+      - tq006_electrical_responsibility.tx_retiming
+      - tq006_electrical_responsibility.rx_retiming
+    requirement_id: REQ-P1-D02-D03-002
+    question: "What is D03's normalized electrical architecture and Tx/Rx (FEC/DAC/ADC/host-SerDes) responsibility partition for the 1.6T OSFP module, so that the LRO and '3 nm DSP' raw labels can be compared on a common dimension?"
+  - comparison_id: CMP-D02-D03
+    basis_fields:
+      - tq005_external_link.modulation_format
+      - tq005_external_link.pmd_or_application_reference
+      - tq005_external_link.reach
+      - tq005_external_link.media_type
+      - tq005_external_link.nominal_wavelength
+    requirement_id: null
+    question: "Which same-condition link controls (modulation/symbol rate, PMD/FEC/BER, media, reach, wavelength, connector/fiber mapping) apply to both endpoints of the OFC 2025 1.6T group?"
+  - comparison_id: CMP-D02-D03
+    basis_fields:
+      - tq006_electrical_responsibility.raw_architecture_label
+    requirement_id: null
+    question: "Is there a measured power value with a common boundary (workload, temperature, instrumentation, uncertainty) for D02 and D03? The S3 'reduce power consumption' statement alone is not a measured delta."
+  - comparison_id: CMP-D04-D05
+    basis_fields:
+      - tq008_placement.form_factor
+    requirement_id: REQ-P1-D04-D05-001
+    question: "Do the QSFP-DD800 and OSFP endpoints share a symmetric directional role and test topology so that the observed form-factor difference can be evaluated as a design trade-off rather than an endpoint-role artifact?"
+  - comparison_id: CMP-D04-D05
+    basis_fields:
+      - tq005_external_link.host_lane_count
+      - tq005_external_link.host_lane_rate
+      - tq005_external_link.media_lane_count
+      - tq005_external_link.media_lane_rate
+      - tq005_external_link.modulation_format
+      - tq005_external_link.pmd_or_application_reference
+    requirement_id: null
+    question: "What are host/media lane counts and rates, modulation/symbol rate, PMD/FEC/BER, media, reach, wavelength range, connector, and fiber mapping for each endpoint of the ECOC 2022 800 Gbps interoperability link?"
+  - comparison_id: CMP-D04-D05
+    basis_fields:
+      - tq007_photonics.light_source_type
+      - tq007_photonics.light_source_wavelength
+      - tq007_photonics.light_source_location
+      - tq007_photonics.detector_type
+    requirement_id: REQ-P1-D04-D05-003
+    question: "What are D04's light-source type/wavelength/location and detector details, and D05's platform and independent modulator/emitter type, to enable an equal-grain photonic-device comparison?"
+  - comparison_id: CMP-D04-D05
+    basis_fields:
+      - tq007_photonics.pic_eic_integration
+      - tq007_photonics.laser_pic_integration
+    requirement_id: null
+    question: "What are the PIC/EIC and laser/PIC integration states for both endpoints? The D04 MZM PIC label does not by itself establish them."
+  - comparison_id: CMP-D02-D03
+    basis_fields:
+      - tq005_external_link.nominal_aggregate_rate
+      - tq005_external_link.host_lane_count
+      - tq005_external_link.host_lane_rate
+      - tq005_external_link.media_lane_count
+      - tq005_external_link.media_lane_rate
+    requirement_id: REQ-P1-D02-D03-001
+    question: "Can existing point evidence or next-round seed fields confirm the 8x200G electrical host and optical media lane interface capability in the DSP/CDR-class cell (C5) under same-condition controls?"

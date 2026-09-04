@@ -1,0 +1,549 @@
+meta:
+  mode: draft_only
+  scope: all_occupied_cells_in_points_csv
+  canonical_write_performed: false
+  warning: facets are quote-span proposals, not canonical cells or route-service facts
+
+cells:
+  M1:
+    family: material
+    facets:
+      material_type:
+        InP_substrate: ['磷化铟(?:晶片|晶圆|衬底)?', '(?i)(?<![A-Za-z])InP(?![A-Za-z])']
+        GaAs_substrate: ['砷化镓(?:晶片|晶圆|衬底)?', '(?i)(?<![A-Za-z])GaAs(?![A-Za-z])']
+        GaSb_substrate: ['锑化镓', '(?i)(?<![A-Za-z])GaSb(?![A-Za-z])']
+        SOI_wafer: ['(?i)\bSOI\b(?:\s*硅片)?']
+      wafer_diameter:
+        2_inch: ['2英寸', '2吋']
+        3_inch: ['3英寸', '3吋']
+        12_inch: ['12英寸', '12吋', '(?i)300\s*mm']
+  M2a:
+    family: material
+    facets:
+      epitaxy_process:
+        epitaxy_growth: ['外延生长', '外延材料', '外延平台']
+        MOCVD: ['(?i)\bMOCVD\b']
+        MQW: ['(?i)\bMQW\b', '量子阱']
+      material_platform:
+        InP: ['磷化铟', '(?i)\bInP\b']
+        GaAs: ['砷化镓', '(?i)\bGaAs\b']
+  M2b:
+    family: material
+    facets:
+      material_platform:
+        GaAs: ['砷化镓', '(?i)\bGaAs\b']
+      device_application:
+        VCSEL: ['(?i)VCSELs?']
+      process:
+        epitaxy_growth: ['外延生长', '外延']
+  M3:
+    family: material
+    facets:
+      consumable_type:
+        heat_sink_material: ['热沉']
+        photoresist: ['光刻胶']
+        developer: ['显影液']
+        resist_remover: ['光刻胶去除液', '去胶']
+        phosphine: ['磷化氢', '磷烷']
+        arsine: ['砷化氢', '砷烷']
+        process_gas: ['氮气', '氢气', '氧气', '氩气']
+        metal_organic_source: ['MO源', '金属有机物', '三甲基铟', '三甲基镓']
+        sputter_target: ['靶材', '金靶', '铂靶', '金锗靶']
+        evaporation_material: ['蒸发材料', '蒸镀材料', '镀膜材料']
+        photomask: ['光刻掩模板', '掩膜版', '掩膜板']
+  M4:
+    family: material
+    facets:
+      passive_material_type:
+        quartz: ['石英']
+        EVA_polymer: ['(?i)(?<![A-Za-z])EVA(?![A-Za-z])']
+        optical_fiber: ['光纤']
+        aramid_yarn: ['芳纶纱']
+        alumina: ['氢氧化铝', '氧化铝']
+        ceramic_housing_material: ['陶瓷管壳']
+        ceramic_substrate: ['陶瓷基板']
+  M5:
+    family: material
+    facets:
+      board_material_type:
+        copper_clad_laminate: ['覆铜板', '(?i)\bCCL\b']
+        prepreg: ['半固化片']
+        laminate: ['绝缘层压板']
+        resin_coated_copper: ['涂树脂铜箔', '(?i)\bRCC\b']
+        low_Dk: ['(?i)Low\s*Dk']
+        high_speed_board_material: ['高速板']
+  C1:
+    family: chip
+    facets:
+      laser_type:
+        generic_laser_chip: ['激光器芯片系列', '半导体激光芯片']
+        EML: ['(?i)EMLs?']
+        DFB: ['(?i)DFB']
+        CW: ['(?i)CW(?:\s*[- ]?DFB|\s*laser|\s*光源|\s*激光|(?=\W|$))']
+        VCSEL: ['(?i)VCSELs?']
+        FP: ['(?i)(?<![A-Za-z])FP(?![A-Za-z])']
+        DML: ['(?i)DMLs?']
+        analog_laser: ['(?i)analog\s+lasers?']
+        digital_laser: ['(?i)digital\s+lasers?']
+      material_platform:
+        InP: ['(?i)InP[- ]based', '磷化铟']
+        GaAs: ['(?i)GaAs[- ]based', '砷化镓']
+      wavelength:
+        1310_nm: ['(?i)1310\s*nm']
+  C2:
+    family: chip
+    facets:
+      device_type:
+        VCSEL: ['(?i)VCSELs?']
+        VCSEL_array: ['(?i)VCSEL\s+arrays?']
+      lane_rate:
+        10G: ['(?i)(?<![0-9])10G(?![0-9])']
+        25G: ['(?i)(?<![0-9])25G(?![0-9])']
+        50G: ['(?i)(?<![0-9])50G(?![0-9])']
+        100G: ['(?i)(?<![0-9])100G(?![0-9])']
+      material_platform:
+        GaAs: ['(?i)\bGaAs\b', '砷化镓']
+  C3:
+    family: chip
+    facets:
+      detector_type:
+        generic_detector: ['探测器', '(?i)photodetector']
+        photodiode: ['(?i)photodiodes?']
+        PD: ['(?i)(?<![A-Za-z])PD(?![A-Za-z])']
+        APD: ['(?i)(?<![A-Za-z])APD(?![A-Za-z])']
+        PIN: ['(?i)(?<![A-Za-z])PIN(?![A-Za-z])']
+      material_platform:
+        InP: ['(?i)\bInP\b', '磷化铟']
+  C4:
+    family: chip
+    facets:
+      platform:
+        silicon_photonics: ['硅光', '硅光子', '(?i)silicon\s+photonics?', '(?i)\bSiPh\b']
+        SiN: ['(?i)\bSiN\b']
+        SOI: ['(?i)\bSOI\b']
+      product_type:
+        PIC: ['(?i)\bPIC\b', '光子集成芯片']
+      modulator_type:
+        MZM: ['(?i)\bMZM\b']
+      manufacturing_mode:
+        external_foundry: ['外部代工', '外代工']
+        foundry_platform: ['(?i)\bFoundry\b', '工艺平台']
+  C5:
+    family: chip
+    facets:
+      component_type:
+        DSP: ['(?i)DSPs?']
+        Driver: ['(?i)drivers?', '驱动芯片', '驱动器']
+        TIA: ['(?i)TIAs?', '跨阻放大']
+        MCU: ['(?i)MCUs?']
+        CDR: ['(?i)(?<![A-Za-z])CDR(?![A-Za-z])']
+        PHY: ['(?i)PHYs?']
+        SoC: ['(?i)(?<![A-Za-z])SoC(?![A-Za-z])']
+        memory: ['存储器']
+        power_IC: ['电源芯片']
+        AFE: ['(?i)\bAFE\b']
+        IC_generic: ['(?i)\bICs?\b', '电芯片', '控制芯片']
+      electrical_function:
+        retiming: ['重定时', '(?i)retim']
+        amplification: ['放大']
+        drive: ['驱动']
+        control_monitor_protocol: ['控制、监控、协议处理', '控制芯片']
+        bias_control: ['偏置']
+      process_node_raw:
+        3_nm: ['(?i)3\s*nm']
+      raw_architecture_label:
+        LRO: ['(?i)\bLRO\b']
+  C6:
+    family: chip
+    facets:
+      coherent_component_type:
+        coherent_component_generic: ['相干器件', '(?i)coherent\s+(?:transmission\s+)?components?']
+        tunable_laser: ['可调谐激光器', '(?i)tunable\s+lasers?']
+        ultra_narrow_linewidth_laser: ['超窄线宽激光器', '(?i)ultra[- ]narrow\s+linewidth\s+laser']
+        modulator: ['调制器']
+        WSS: ['(?i)\bWSS\b']
+        OXC: ['(?i)\bOXC\b']
+  C7:
+    family: chip
+    facets:
+      clock_type:
+        differential_crystal_oscillator: ['差分晶振']
+        temperature_compensated_differential_oscillator: ['温度补偿差分晶振']
+        high_fundamental_frequency: ['高基频']
+  P1:
+    family: packaging
+    facets:
+      packaging_type:
+        chip_packaging_generic: ['芯片封装']
+        COC: ['(?i)\bCOC\b']
+        TO_CAN: ['(?i)TO[- ]?CAN']
+        outsourced_processing: ['委托加工']
+  D1:
+    family: component
+    facets:
+      assembly_type:
+        TOSA: ['(?i)\bTOSA\b', '光发射组件', '激光器组件']
+      emitter_type:
+        DML: ['(?i)\bDML\b']
+      package_style:
+        coaxial: ['同轴封装']
+      application:
+        OTDR: ['(?i)\bOTDR\b']
+        mobile_fronthaul: ['4G/5G', '5G']
+  D2:
+    family: component
+    facets:
+      assembly_type:
+        ROSA: ['(?i)\bROSA\b', '光接收组件', '探测器组件']
+  D3:
+    family: component
+    facets:
+      assembly_type:
+        BOSA: ['(?i)(?:Combo)?BOSA', '光收发合一']
+      PON_type:
+        GPON: ['(?i)\bGPON\b']
+        XGSPON: ['(?i)XGS[- ]?PON']
+        ComboPON: ['(?i)Combo\s*PON', '三模']
+  D4:
+    family: component
+    facets:
+      housing_type:
+        ceramic_housing: ['陶瓷管壳', '陶瓷外壳', '电子陶瓷.*外壳']
+        TO_package_base: ['(?i)TO[- ]?(?:管座|CAN)']
+        metal_ceramic_housing: ['金属/陶瓷封装外壳', '金属陶瓷封装外壳']
+        metal_package_housing: ['金属封装外壳', '金属封装.*盖板']
+      substrate_type:
+        aluminum_nitride: ['氮化铝']
+        multilayer_ceramic: ['陶瓷多层基板']
+  D6:
+    family: component
+    facets:
+      isolator_type:
+        optical_isolator: ['光隔离器', '隔离器', '(?i)isolators?']
+        inline_isolator: ['(?i)Inline\s+isolator']
+  D7:
+    family: component
+    facets:
+      optic_type:
+        generic_optical_component: ['光学件', '精密光学元组件', '微光学组件']
+        lens_generic: ['透镜']
+        spherical_lens: ['球面透镜']
+        cylindrical_lens: ['柱面透镜']
+        aspheric_lens: ['非球面透镜']
+        fiber_lens: ['光纤透镜']
+        silicon_lens: ['硅透镜']
+        microlens_array: ['微透镜', '透镜阵列']
+        prism: ['棱镜']
+        V_groove_array: ['V型槽阵列', 'V-groove']
+  D8:
+    family: component
+    facets:
+      mux_type:
+        AWG: ['(?i)(?<![A-Za-z])AWG(?![A-Za-z])', '阵列波导光栅']
+        CWDM_AWG: ['(?i)CWDM.*AWG']
+        LAN_WDM_AWG: ['(?i)LAN\s*WDM.*AWG']
+        WDM_generic: ['(?i)(?<![A-Za-z])WDM(?![A-Za-z])', '波分复用器']
+        PLC_splitter: ['(?i)(?<![A-Za-z])PLC(?![A-Za-z]).*分路器', 'PLC光分路器']
+  D9:
+    family: component
+    facets:
+      connection_type:
+        FAU: ['(?i)(?<![A-Za-z])FAU(?![A-Za-z])', '光纤阵列', '光纤阵']
+        MT_FA: ['(?i)MT[- ]?FA']
+        MPO: ['(?i)(?<![A-Za-z])MPO(?![A-Za-z])']
+        MTP: ['(?i)(?<![A-Za-z])MTP(?![A-Za-z])']
+        fiber_array: ['光纤阵列', '(?i)Fiber\s+Array']
+        fiber_harness: ['(?i)harness', '光纤电线组件', '光纖電線組件']
+        fiber_cable_assembly: ['光纤电线组件', '光纖電線組件', '光纤跳线', 'MPO预端接组件']
+        passive_optical_interconnect: ['无源内连光器件', '无源内连']
+        V_groove_array: ['V型槽阵列']
+  D10:
+    family: component
+    facets:
+      ferrule_type:
+        ceramic_ferrule: ['陶瓷插芯']
+        MT_ferrule: ['(?i)(?<![A-Za-z])MT(?![A-Za-z])\s*插芯', '(?i)MT\s+ferrule']
+        sleeve: ['套管']
+      connector_type:
+        fiber_connector: ['光纤连接器']
+        MPO: ['(?i)(?<![A-Za-z])MPO(?![A-Za-z])']
+  D11:
+    family: component
+    facets:
+      filter_type:
+        WDM_filter: ['(?i)WDM滤光片', 'WDM filter']
+        CWDM_filter: ['(?i)CWDM']
+        DWDM_filter: ['(?i)DWDM']
+        LWDM_filter: ['(?i)LWDM']
+        Z_BLOCK: ['(?i)Z[- ]?BLOCK']
+        optical_filter_generic: ['(?i)Optical\s+Filter', '滤光片', '滤波片']
+  D12:
+    family: component
+    facets:
+      assembly_type:
+        OSA: ['(?i)(?<![A-Za-z])OSA(?![A-Za-z])']
+        optical_engine: ['光引擎', '(?i)(?:optical|light)\s+engines?']
+        COB: ['(?i)(?<![A-Za-z])COB(?![A-Za-z])']
+        CPO_component: ['(?i)(?<![A-Za-z])CPO(?![A-Za-z])']
+        NPO_component: ['(?i)(?<![A-Za-z])NPO(?![A-Za-z])']
+      process_type:
+        die_attach: ['贴装', '贴片']
+        wire_bond: ['金丝键合', '键合']
+        optical_coupling: ['耦合']
+  D13:
+    family: component
+    facets:
+      thermal_control_type:
+        TEC: ['(?i)(?<![A-Za-z])TEC(?![A-Za-z])']
+        Micro_TEC: ['(?i)Micro[- ]?TEC']
+        thermoelectric_cooler: ['(?i)thermoelectric\s+coolers?']
+        thermoelectric_component: ['(?i)thermoelectric\s+components?']
+  B1:
+    family: component
+    facets:
+      board_type:
+        PCB: ['(?i)(?<![A-Za-z])PCB(?![A-Za-z])', '印制电路板']
+        high_frequency_high_speed_board: ['高频高速产品']
+        HDI: ['(?i)\bHDI\b']
+        UHD: ['(?i)\bUHD\b']
+        glass_substrate: ['玻璃基载板', '玻璃基封装载板']
+      module_rate:
+        400G: ['(?i)(?<![0-9])400G(?![0-9])']
+        800G: ['(?i)(?<![0-9])800G(?![0-9])']
+        1_6T: ['(?i)(?<![0-9])1\.6T(?![0-9])', '1600G']
+        3_2T: ['(?i)(?<![0-9])3\.2T(?![0-9])']
+  B2:
+    family: component
+    facets:
+      structure_type:
+        housing: ['壳体', '外壳', '模块盒体']
+        heat_sink: ['散热', '热沉', '散热器']
+        MIM_structure: ['(?i)\bMIM\b结构件']
+        metal_structure: ['金属结构件']
+        ceramic_housing: ['陶瓷外壳', '陶瓷管壳']
+        ceramic_package_housing: ['陶瓷封装管壳', '陶瓷多层基板']
+        cage: ['笼子', '(?i)\bcage\b']
+      form_factor:
+        QSFP: ['(?i)\bQSFP(?:-DD)?\b']
+        OSFP: ['(?i)\bOSFP\b']
+      power_boundary:
+        15_18W: ['15[-–]18W']
+  MOD1:
+    family: module
+    facets:
+      aggregate_rate:
+        400G: ['(?i)(?<![0-9])400G(?![0-9])']
+        800G: ['(?i)(?<![0-9])800G(?![0-9])']
+        1_6T: ['(?i)(?<![0-9])1\.6T(?![0-9])']
+      electrical_architecture:
+        LPO: ['(?i)\bLPO\b']
+        LRO: ['(?i)\bLRO\b']
+      photonics_platform:
+        silicon_photonics: ['硅光', '(?i)\bSiPh\b']
+        EML_raw: ['(?i)EMLs?']
+      form_factor:
+        OSFP: ['(?i)\bOSFP\b']
+        QSFP_DD800: ['(?i)QSFP[- ]?DD800']
+      application:
+        data_center: ['数据中心', '云计算', 'AI算力', 'AI compute', 'cloud computing']
+      module_product:
+        optical_transceiver_generic: ['光收发模块', '高速光模块', '(?i)optical\s+transceivers?', '(?i)\btransceivers?\b']
+  MOD2:
+    family: module
+    facets:
+      coherent_type:
+        coherent_pluggable: ['相干.*可插拔', '(?i)coherent\s+pluggable']
+        ZR: ['(?i)\bZR\b']
+        ZR_plus: ['(?i)ZR\+']
+      aggregate_rate:
+        400G: ['(?i)(?<![0-9])400G(?![0-9])']
+        800G: ['(?i)(?<![0-9])800G(?![0-9])']
+      application:
+        DCI: ['(?i)\bDCI\b', 'data center interconnect']
+        metro: ['(?i)\bmetro\b', '城域']
+        long_haul: ['长距', '长途']
+  MOD3:
+    family: module
+    facets:
+      application:
+        PON_access: ['(?i)\bPON\b', '光纤到户', '光纤入户', '(?i)FTT[xH]']
+        5G_fronthaul: ['5G前传', '前传']
+        5G_midhaul: ['中传']
+        5G_backhaul: ['回传']
+        telecom_transport: ['电信传输', '光传输', 'transport']
+        DWDM: ['(?i)\bDWDM\b']
+        telecom_generic: ['电信市场', 'telecom market', 'service provider customers']
+        5G_generic: ['5G等领域', '5G领域']
+      PON_type:
+        GPON: ['(?i)\bGPON\b']
+        XGPON: ['(?i)\bXG[- ]?PON\b']
+        XGSPON: ['(?i)XGS[- ]?PON']
+        25G_PON: ['(?i)25G\s*PON']
+        50G_PON: ['(?i)50G\s*PON']
+      aggregate_rate:
+        100G: ['(?i)(?<![0-9])100G(?![0-9])']
+        400G: ['(?i)(?<![0-9])400G(?![0-9])']
+        800G: ['(?i)(?<![0-9])800G(?![0-9])']
+  EMS1:
+    family: ems
+    facets:
+      service_type:
+        optical_manufacturing_service: ['光学封装', '精密光机电电子制造服务']
+        module_electronic_assembly: ['光模块电子装联']
+        module_professional_manufacturing: ['光模块的专业制造', '光模块专业制造']
+        chip_back_end_processing: ['光芯片后工序加工']
+  EQ1:
+    family: equipment
+    facets:
+      equipment_process:
+        MOCVD: ['(?i)\bMOCVD\b']
+        MBE: ['(?i)\bMBE\b']
+        EPI: ['(?i)\bEPI\b', '外延']
+      material_target:
+        InP: ['(?i)\bInP\b', '磷化铟']
+        GaN: ['氮化镓', '(?i)\bGaN\b']
+        SiGe: ['锗硅', '(?i)SiGe']
+        BTO_on_silicon: ['(?i)barium\s+titanate\s+on\s+silicon']
+      wafer_size:
+        8_inch: ['8英寸', '8吋']
+        300_mm: ['(?i)300\s*mm']
+  EQ2:
+    family: equipment
+    facets:
+      equipment_process:
+        ICP_etch: ['(?i)\bICP\b']
+        CCP_etch: ['(?i)\bCCP\b']
+        plasma_etch: ['等离子刻蚀', '(?i)plasma\s+etch']
+        lithography: ['光刻设备', '激光直写光刻']
+        coat_develop: ['涂胶显影']
+        cleaning: ['清洗机']
+        resist_strip: ['去胶机']
+      material_target:
+        InP: ['(?i)\bInP\b', '磷化铟']
+        compound_semiconductor: ['化合物']
+  EQ3:
+    family: equipment
+    facets:
+      equipment_type:
+        die_bonder: ['固晶', '贴片设备', '贴片机']
+        eutectic_bonder: ['共晶机', '共晶贴片机']
+        automated_assembly_line: ['自动化组装线', '自动化组装产品线']
+        bond_placement: ['(?i)Bond.*贴片']
+      module_rate:
+        400G: ['(?i)(?<![0-9])400G(?![0-9])']
+        800G: ['(?i)(?<![0-9])800G(?![0-9])']
+        1_6T: ['(?i)(?<![0-9])1\.6T(?![0-9])']
+  EQ4:
+    family: equipment
+    facets:
+      equipment_type:
+        optical_coupling: ['光学耦合', '耦合设备', '耦合机']
+        active_alignment: ['主动对准', '(?i)active\s+alignment']
+        micro_assembly: ['微组装']
+      target:
+        silicon_photonics: ['硅光芯片', '硅光']
+        optical_module: ['光模块']
+        CPO: ['(?i)\bCPO\b']
+  EQ5:
+    family: equipment
+    facets:
+      equipment_type:
+        hybrid_bonding: ['混合键合']
+        wafer_to_wafer_bonding: ['晶圆对晶圆', '(?i)wafer[- ]to[- ]wafer']
+      application:
+        silicon_photonics: ['硅光技术', '硅光']
+        3D_integration: ['三维集成']
+  EQ6:
+    family: equipment
+    facets:
+      equipment_type:
+        AOI: ['(?i)(?<![A-Za-z])AOI(?![A-Za-z])', '自动光学检测']
+        sorter: ['分选机']
+        inspection: ['检测设备']
+        exposure: ['曝光机']
+      defect_target:
+        die_offset: ['芯片偏移']
+        wire_bond_defect: ['金线键合缺陷']
+        waveguide_defect: ['波导.*缺陷']
+  EQ7:
+    family: equipment
+    facets:
+      equipment_type:
+        precision_test_equipment: ['精密测试设备', '电子测量仪器', '半导体测试设备']
+        probe_station: ['探针台', '探针测试一体机']
+        sorter: ['分选机']
+        AOI: ['(?i)(?<![A-Za-z])AOI(?![A-Za-z])']
+        tunable_laser: ['可调谐激光器']
+        laser_scan_analyzer: ['激光扫描分析仪']
+        spectrum_analyzer: ['光谱仪']
+        wavelength_meter: ['波长计']
+        module_test_system: ['模组测试设备', '光模块.*测试', '光测试仪器']
+      test_target:
+        PD_APD_VCSEL: ['(?i)PD/APD/VCSEL']
+        silicon_photonics_wafer: ['硅光晶圆', '硅光子芯片']
+        CPO_module: ['(?i)CPO模组']
+
+role_rules:
+  material:
+    material_supply: ['销售', '供货', '交付', '出货', '供应商', '(?i)\bsupply', '(?i)\bship']
+    material_development: ['研发', '开发', '技术能力']
+    material_manufacture: ['生产', '制造', '量产', '产线', '外延生长', '晶体生长']
+  chip:
+    component_design: ['研发', '开发', '设计', '自研', '(?i)\bdesign', '(?i)\bdevelop']
+    component_manufacture: ['生产', '制造', '量产', '晶圆厂', '(?i)\bfabs?\b', '(?i)\bmanufactur']
+    product_offer: ['销售', '供货', '交付', '出货', '发货', '(?i)\bsupply', '(?i)\bship', '(?i)\boffers?\b']
+  packaging:
+    packaging_service: ['芯片封装', '委托加工', '封装服务']
+    component_manufacture: ['生产', '制造', '贴装', '键合']
+    product_offer: ['销售', '供货', '交付']
+  component:
+    component_design: ['研发', '开发', '设计', '自研', '(?i)\bdesign', '(?i)\bdevelop']
+    component_manufacture: ['生产', '制造', '量产', '批量', '(?i)\bmanufactur']
+    product_offer: ['销售', '供货', '交付', '出货', '供应商', '(?i)\bsupply', '(?i)\bship', '(?i)\boffers?\b']
+  module:
+    module_integrate:
+      - '(?:光模块|光收发模块)[^，。；;：:"“”\n]{0,60}(?:研发|开发|设计|生产|制造|量产)'
+      - '(?:研发|开发|设计|生产|制造|量产)[^，。；;：:"“”\n]{0,60}(?:光模块|光收发模块)'
+      - '(?i)(?:transceivers?|optical modules?)[^,.;:"\n]{0,60}(?:design|develop|manufactur)'
+      - '(?i)(?:design|develop|manufactur)[^,.;:"\n]{0,60}(?:transceivers?|optical modules?)'
+    product_offer: ['销售', '供货', '交付', '出货', '提供', '供应商', '(?i)\bsupply', '(?i)\bship', '(?i)\boffers?\b', '(?i)\bprovider\b']
+  ems:
+    manufacturing_service: ['装联', '专业制造', '后工序加工', '代工', '制造服务']
+    product_offer: ['销售', '交付', '订单']
+  equipment:
+    equipment_design: ['研发', '开发', '设计', '自研', '(?i)\bdesign', '(?i)\bdevelop']
+    equipment_manufacture: ['生产', '制造', '量产', '(?i)\bmanufactur']
+    equipment_supply: ['销售', '订单', '交付', '出口', '供应商', '(?i)\bsupply', '(?i)\bship']
+    test_enable: ['测试', '检测', '分选', '探针', '(?i)\btest']
+    process_enable: ['外延', '刻蚀', '光刻', '涂胶显影', '清洗', '去胶', '贴片', '固晶', '耦合', '键合']
+
+role_negative_patterns:
+  product_offer: ['暂未.{0,30}销售订单', '尚未.{0,30}销售', '未形成.{0,30}销售订单']
+  material_supply: ['暂未.{0,30}销售', '尚未.{0,30}销售']
+  equipment_supply: ['尚未.{0,30}订单', '未形成.{0,30}订单']
+
+maturity_rules:
+  volume_production: ['规模量产', '批量生产', '大批量', '量产', '(?i)high\s+volume']
+  volume_delivery: ['规模交付', '规模出货', '批量交付', '批量供货', '批量出货']
+  small_batch: ['小批量', '样板']
+  sample_or_validation: ['送样', '验证', '认证', '流片', '试产', '(?i)qualification']
+  development: ['在研', '正在开发', '开发阶段', '研发', '开发', '(?i)R&D']
+  planned_or_future: ['有望', '预计', '计划', '将于', '未来', '目标']
+  no_sales: ['暂未.{0,30}销售订单', '尚未.{0,30}销售', '未形成.{0,30}销售订单']
+  actual_offer_or_delivery: ['销售', '供货', '交付', '出货', '发货', '订单', '(?i)\bship', '(?i)\bsupply']
+
+subject_overrides:
+  P009: {subject_scope: group_via_acquisition, attachment_eligible: true, reason: quote directly attributes capability to acquired Source Photonics}
+  P039: {subject_scope: direct_named_subsidiary, attachment_eligible: true, reason: quote directly names row company 武汉钧恒 as operating subsidiary}
+  P040: {subject_scope: definition_only, attachment_eligible: false, block_type: evidence_scope, reason: quote is explicitly a definition of module internals and does not assert the row company's independent D12 capability}
+  P069: {subject_scope: group_via_acquisition, attachment_eligible: true, reason: quote frames capability as obtained through acquisition}
+  P130: {subject_scope: controlled_subsidiary, attachment_eligible: true, reason: quote directly attributes capability to Source Photonics under parent group}
+  P131: {subject_scope: controlled_subsidiary, attachment_eligible: true, reason: quote directly attributes capability to Source Photonics under parent group}
+  P133: {subject_scope: group_via_acquisition, attachment_eligible: true, reason: parent-company claim explicitly framed as capability obtained through Source Photonics acquisition}
+  P178: {subject_scope: controlled_subsidiary, attachment_eligible: true, reason: quote attributes instruments to controlled subsidiary GouMax}
+  P193: {subject_scope: affiliate_only, attachment_eligible: false, block_type: subject_scope, reason: quote concerns investee 四川光为 rather than row company 通宇通讯}
+  P199: {subject_scope: controlled_subsidiary, attachment_eligible: true, reason: quote attributes process development and validation to subsidiary 赛莱克斯北京 rather than directly to row company 赛微电子}
+  P202: {subject_scope: direct_named_subsidiary, attachment_eligible: true, reason: quote directly names row company 云南鑫耀 as producing subsidiary}
+  P217: {subject_scope: direct_or_unresolved, attachment_eligible: true, blocked_roles: [equipment_supply], reason: incomplete revenue quote does not identify the sold object as test equipment}
+  P256: {subject_scope: direct_named_subsidiary, attachment_eligible: true, blocked_roles: [component_manufacture], reason: quote directly names row company 星钥光子 but only states a future production plan, not current manufacturing capability}
+  P261: {subject_scope: acquired_asset_or_business, attachment_eligible: true, reason: quote concerns the acquired InP asset group and its team}

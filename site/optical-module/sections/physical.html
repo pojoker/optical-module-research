@@ -1,0 +1,24 @@
+<section class="section" id="physical" data-certainty="stable">
+        <div class="statusline"><span class="certainty stable">稳定功能骨架</span><small>具体部件可以集成、拆分或省略</small></div>
+        <div class="kicker">第 02 章 · 打开盒子</div><h2>一只典型光模块里面，最少要完成哪些工作？</h2>
+        <p class="intro">先沿着数据走一遍：发送方向负责“电变光”，接收方向负责“光变电”。供电、管理、外壳和散热则让这两条通道能够稳定工作。在真实产品中，有些功能由独立零件完成，有些会被集成在同一块芯片里。</p>
+        <div class="legend"><span class="badge common">核心收发动作</span><span class="badge conditional">不同产品会增减</span><span class="badge integrated">多个功能可以集成</span><span class="badge sample">下图是典型示意</span></div>
+        <div class="chain">
+          <article class="lane"><h3>发射通道（TX）：电 → 光</h3><div class="lane-flow"><span class="chip">接入主机电信号</span><span class="arrow">→</span><span class="chip">整理电信号</span><span class="arrow">→</span><span class="chip">提供高速驱动</span><span class="arrow">→</span><span class="chip">产生光并加载数据</span><span class="arrow">→</span><span class="chip">对准并送入光纤</span></div></article>
+          <article class="lane"><h3>接收通道（RX）：光 → 电</h3><div class="lane-flow"><span class="chip">从光纤接收光</span><span class="arrow">→</span><span class="chip">感光产生微弱电流</span><span class="arrow">→</span><span class="chip">放大并转换成电压</span><span class="arrow">→</span><span class="chip">恢复清晰电信号</span><span class="arrow">→</span><span class="chip">交回主机芯片</span></div></article>
+        </div>
+        <div class="peripheral"><div><b>管理与监控</b>读取温度、光功率和运行状态，并接受主机配置</div><div><b>稳定供电</b>为电芯片、光源和控制电路提供所需电压</div><div><b>承载与保护</b>电路板、载体和金属外壳固定并保护内部零件</div><div><b>把热量带走</b>通过外壳、导热材料和散热器维持工作温度</div></div>
+        <div class="component-grid">
+          <article class="component-card"><h3>信号处理芯片（DSP / 重定时器）</h3><p>修整在高速走线中变形的电信号，并校准信号时序。部分轻量化方案会减少模块内这一环节。</p><span class="examples">它处理电，不负责发光；并非所有模块都采用相同配置</span></article>
+          <article class="component-card"><h3>高速驱动芯片（Driver）</h3><p>把前级电信号变成适合激光器或调制器使用的高速电驱动。</p><span class="examples">它负责“怎么驱动”，不等于提供全部光功率</span></article>
+          <article class="component-card"><h3>光源与调制器</h3><p>光源负责产生光，调制环节负责把数据加载到光上。两者可以做在一起，也可以由不同器件完成。</p><span class="examples">具体器件路线将在第 06 章再展开</span></article>
+          <article class="component-card"><h3>合光与分光结构</h3><p>有些产品会让多个波长共用一根光纤，因此需要在发送端合并、在接收端分开。</p><span class="examples">并行光方案与波分方案对此需求不同</span></article>
+          <article class="component-card"><h3>微型光学与光纤接口</h3><p>把芯片或光器件发出的光准确送入光纤，也把光纤送来的光引到接收器。</p><span class="examples">可能使用透镜、光纤阵列或芯片上的耦合结构</span></article>
+          <article class="component-card"><h3>光电探测器（PD）</h3><p>接收端的“眼睛”：感知到达的光，并把它转换成很微弱的电流。</p><span class="examples">不同距离和灵敏度要求会影响探测器选择</span></article>
+          <article class="component-card"><h3>微弱信号放大器（TIA）</h3><p>把探测器产生的微弱电流转换成更容易处理的电压信号，并完成初步放大。</p><span class="examples">通常尽量靠近探测器，以控制互连影响</span></article>
+          <article class="component-card"><h3>管理与控制芯片</h3><p>负责配置、监控和告警，让主机能够读取模块温度、光功率和运行状态。</p><span class="examples">它服务整机运行，不处在主要的光电转换链上</span></article>
+          <article class="component-card"><h3>电路板、外壳与散热系统</h3><p>承载并连接所有零件，保护内部结构，同时把芯片和光源产生的热量传出去。</p><span class="examples">具体零件组合取决于产品功耗、形态和温度要求</span></article>
+        </div>
+        <div class="warn"><b>理解要点：</b>以上是典型的功能分工，不是一张所有产品都必须照抄的零件表。不同速率、距离和技术路线，会把某些功能集成、拆分、增强或省去。</div>
+        <div class="foundation-note">延伸阅读：<a href="https://www.juniper.net/documentation/us/en/hardware/100g-optics-cables-guide/optics/topics/concept/100g-know-your-transceiver.html" target="_blank" rel="noreferrer">Juniper 收发器组件说明</a>、<a href="https://www.oiforum.com/wp-content/uploads/OIF-Co-Packaging-3.2T-Module-01.0.pdf" target="_blank" rel="noreferrer">OIF 3.2T 模块功能框图</a>。</div>
+      </section>

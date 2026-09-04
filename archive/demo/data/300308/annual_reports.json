@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225056459",
+    "stock_code": "300308",
+    "company_name": "<em>中际旭创</em>",
+    "title": "2025年年度报告",
+    "announcement_date": "2026-03-31",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225056459.PDF",
+    "adjunct_url": "finalpage/2026-03-31/1225056459.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300308/300308__em_中际旭创_em__2025_2025年年度报告.pdf",
+    "sha256": "0290f380253dde79613d43a1c6203674ae36cb89f849f063668ccde9a8789b5e",
+    "size_bytes": 6150814,
+    "error": ""
+  },
+  {
+    "announcement_id": "1223155483",
+    "stock_code": "300308",
+    "company_name": "<em>中际旭创</em>",
+    "title": "2024年年度报告",
+    "announcement_date": "2025-04-21",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-21/1223155483.PDF",
+    "adjunct_url": "finalpage/2025-04-21/1223155483.PDF",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300308/300308__em_中际旭创_em__2024_2024年年度报告.pdf",
+    "sha256": "1c13639ab218395ef3c81bfbcddb64ba48262d2afcc8ac9ed1588a9dbd4a513f",
+    "size_bytes": 6966927,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219703026",
+    "stock_code": "300308",
+    "company_name": "<em>中际旭创</em>",
+    "title": "2023年年度报告",
+    "announcement_date": "2024-04-22",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-22/1219703026.PDF",
+    "adjunct_url": "finalpage/2024-04-22/1219703026.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300308/300308__em_中际旭创_em__2023_2023年年度报告.pdf",
+    "sha256": "2276f88c03aca66b37e4d7a03c88df1dfa7eb6bdf1487bf7d3a76d21b84948a9",
+    "size_bytes": 6702448,
+    "error": ""
+  }
+]

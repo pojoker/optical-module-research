@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225172598",
+    "stock_code": "300502",
+    "company_name": "<em>新易盛</em>",
+    "title": "2025年年度报告",
+    "announcement_date": "2026-04-24",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225172598.PDF",
+    "adjunct_url": "finalpage/2026-04-24/1225172598.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300502/300502__em_新易盛_em__2025_2025年年度报告.pdf",
+    "sha256": "3432905a431a8254c2274c2188269e94cfc5a69e92c7d34332a5a3a7da8b15b6",
+    "size_bytes": 2902416,
+    "error": ""
+  },
+  {
+    "announcement_id": "1223219348",
+    "stock_code": "300502",
+    "company_name": "<em>新易盛</em>",
+    "title": "2024年年度报告",
+    "announcement_date": "2025-04-23",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-23/1223219348.PDF",
+    "adjunct_url": "finalpage/2025-04-23/1223219348.PDF",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300502/300502__em_新易盛_em__2024_2024年年度报告.pdf",
+    "sha256": "148155f6d95c86f8f77c6aa5ec7e486e97cea2e9f73c9aaa235079df94140aec",
+    "size_bytes": 8849287,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219746778",
+    "stock_code": "300502",
+    "company_name": "<em>新易盛</em>",
+    "title": "2023年年度报告",
+    "announcement_date": "2024-04-23",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-23/1219746778.PDF",
+    "adjunct_url": "finalpage/2024-04-23/1219746778.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300502/300502__em_新易盛_em__2023_2023年年度报告.pdf",
+    "sha256": "ce36d96ed95c6cabc7acfe077c8e316eb88a01b267e78ab731b5c660c73e9e32",
+    "size_bytes": 8115195,
+    "error": ""
+  }
+]

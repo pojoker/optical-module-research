@@ -1,0 +1,3132 @@
+{
+  "reports": [
+    {
+      "stock_code": "002281",
+      "company": "光迅科技",
+      "fiscal_year": 2023,
+      "source_pdf": "demo/data/002281/002281__em_光迅科技_em__2023_2023年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-26/1219826062.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户一",
+            "is_anonymous": true,
+            "amount_yuan": "1006682470.32",
+            "pct": "15.24"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户二",
+            "is_anonymous": true,
+            "amount_yuan": "505298944.03",
+            "pct": "7.65"
+          },
+          {
+            "rank": 3,
+            "name_raw": "烽火通信科技股份有限公司",
+            "is_anonymous": false,
+            "amount_yuan": "369224117.92",
+            "pct": "5.59"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户四",
+            "is_anonymous": true,
+            "amount_yuan": "270770349.70",
+            "pct": "4.10"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户五",
+            "is_anonymous": true,
+            "amount_yuan": "240067597.33",
+            "pct": "3.63"
+          }
+        ],
+        "total_amount": "2392043479.30",
+        "total_pct": "36.21",
+        "related_party_pct": "5.59"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 1",
+            "is_anonymous": true,
+            "amount_yuan": "207738426.48",
+            "pct": "4.77"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 2",
+            "is_anonymous": true,
+            "amount_yuan": "132707616.65",
+            "pct": "3.05"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 3",
+            "is_anonymous": true,
+            "amount_yuan": "130930766.09",
+            "pct": "3.01"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 4",
+            "is_anonymous": true,
+            "amount_yuan": "122951930.75",
+            "pct": "2.83"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 5",
+            "is_anonymous": true,
+            "amount_yuan": "105514811.68",
+            "pct": "2.42"
+          }
+        ],
+        "total_amount": "699843551.65",
+        "total_pct": "16.08",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "002281",
+      "company": "光迅科技",
+      "fiscal_year": 2024,
+      "source_pdf": "demo/data/002281/002281__em_光迅科技_em__2024_2024年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-24/1223234851.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户 1",
+            "is_anonymous": true,
+            "amount_yuan": "1123216719.41",
+            "pct": "12.42"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户 2",
+            "is_anonymous": true,
+            "amount_yuan": "856489091.23",
+            "pct": "9.47"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户 3",
+            "is_anonymous": true,
+            "amount_yuan": "540184946.18",
+            "pct": "5.97"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户 4",
+            "is_anonymous": true,
+            "amount_yuan": "507468712.22",
+            "pct": "5.61"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户 5",
+            "is_anonymous": true,
+            "amount_yuan": "402076321.03",
+            "pct": "4.45"
+          }
+        ],
+        "total_amount": "3429435790.07",
+        "total_pct": "37.92",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 1",
+            "is_anonymous": true,
+            "amount_yuan": "899264700.94",
+            "pct": "10.08"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 2",
+            "is_anonymous": true,
+            "amount_yuan": "531734607.49",
+            "pct": "5.96"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 3",
+            "is_anonymous": true,
+            "amount_yuan": "521504849.00",
+            "pct": "5.85"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 4",
+            "is_anonymous": true,
+            "amount_yuan": "280333201.42",
+            "pct": "3.14"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 5",
+            "is_anonymous": true,
+            "amount_yuan": "264939351.72",
+            "pct": "2.97"
+          }
+        ],
+        "total_amount": "2497776710.57",
+        "total_pct": "28.00",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "002281",
+      "company": "光迅科技",
+      "fiscal_year": 2025,
+      "source_pdf": "demo/data/002281/002281__em_光迅科技_em__2025_2025年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225148212.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户 1",
+            "is_anonymous": true,
+            "amount_yuan": "1807934600.51",
+            "pct": "15.16"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户 2",
+            "is_anonymous": true,
+            "amount_yuan": "1411719583.75",
+            "pct": "11.83"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户 3",
+            "is_anonymous": true,
+            "amount_yuan": "1153229231.18",
+            "pct": "9.67"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户 4",
+            "is_anonymous": true,
+            "amount_yuan": "971977854.41",
+            "pct": "8.15"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户 5",
+            "is_anonymous": true,
+            "amount_yuan": "438552234.37",
+            "pct": "3.68"
+          }
+        ],
+        "total_amount": "5783413504.22",
+        "total_pct": "48.49",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 1",
+            "is_anonymous": true,
+            "amount_yuan": "960791526.94",
+            "pct": "8.81"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 2",
+            "is_anonymous": true,
+            "amount_yuan": "640290662.04",
+            "pct": "5.87"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 3",
+            "is_anonymous": true,
+            "amount_yuan": "473876577.94",
+            "pct": "4.34"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 4",
+            "is_anonymous": true,
+            "amount_yuan": "456597551.95",
+            "pct": "4.19"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 5",
+            "is_anonymous": true,
+            "amount_yuan": "377894225.06",
+            "pct": "3.46"
+          }
+        ],
+        "total_amount": "2909450543.93",
+        "total_pct": "26.67",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "300308",
+      "company": "中际旭创",
+      "fiscal_year": 2023,
+      "source_pdf": "demo/data/300308/300308__em_中际旭创_em__2023_2023年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-22/1219703026.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户 A",
+            "is_anonymous": true,
+            "amount_yuan": "3890566262.38",
+            "pct": "36.30"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户 B",
+            "is_anonymous": true,
+            "amount_yuan": "1289720577.91",
+            "pct": "12.03"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户 C",
+            "is_anonymous": true,
+            "amount_yuan": "1235663919.23",
+            "pct": "11.53"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户 D",
+            "is_anonymous": true,
+            "amount_yuan": "1120102993.17",
+            "pct": "10.45"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户 E",
+            "is_anonymous": true,
+            "amount_yuan": "364782116.20",
+            "pct": "3.40"
+          }
+        ],
+        "total_amount": "7900835868.89",
+        "total_pct": "73.71",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 A",
+            "is_anonymous": true,
+            "amount_yuan": "1840569759.37",
+            "pct": "27.82"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 B",
+            "is_anonymous": true,
+            "amount_yuan": "615961653.11",
+            "pct": "9.31"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 C",
+            "is_anonymous": true,
+            "amount_yuan": "347012348.26",
+            "pct": "5.25"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 D",
+            "is_anonymous": true,
+            "amount_yuan": "298870646.57",
+            "pct": "4.52"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 E",
+            "is_anonymous": true,
+            "amount_yuan": "167289038.16",
+            "pct": "2.53"
+          }
+        ],
+        "total_amount": "3269703445.47",
+        "total_pct": "49.43",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "300308",
+      "company": "中际旭创",
+      "fiscal_year": 2024,
+      "source_pdf": "demo/data/300308/300308__em_中际旭创_em__2024_2024年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-21/1223155483.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户 A",
+            "is_anonymous": true,
+            "amount_yuan": "5351299636.29",
+            "pct": "22.43"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户 B",
+            "is_anonymous": true,
+            "amount_yuan": "5082442859.17",
+            "pct": "21.30"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户 C",
+            "is_anonymous": true,
+            "amount_yuan": "4477918180.43",
+            "pct": "18.77"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户 D",
+            "is_anonymous": true,
+            "amount_yuan": "1849477639.78",
+            "pct": "7.75"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户 E",
+            "is_anonymous": true,
+            "amount_yuan": "1074489199.41",
+            "pct": "4.50"
+          }
+        ],
+        "total_amount": "17835627515.08",
+        "total_pct": "74.74",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 A",
+            "is_anonymous": true,
+            "amount_yuan": "4904475500.43",
+            "pct": "29.97"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 B",
+            "is_anonymous": true,
+            "amount_yuan": "1259847837.69",
+            "pct": "7.70"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 C",
+            "is_anonymous": true,
+            "amount_yuan": "937358151.35",
+            "pct": "5.73"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 D",
+            "is_anonymous": true,
+            "amount_yuan": "736373333.46",
+            "pct": "4.50"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 E",
+            "is_anonymous": true,
+            "amount_yuan": "501370759.44",
+            "pct": "3.06"
+          }
+        ],
+        "total_amount": "8339425582.37",
+        "total_pct": "50.96",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "300308",
+      "company": "中际旭创",
+      "fiscal_year": 2025,
+      "source_pdf": "demo/data/300308/300308__em_中际旭创_em__2025_2025年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225056459.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户 A",
+            "is_anonymous": true,
+            "amount_yuan": "9201495755.91",
+            "pct": "24.06"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户 B",
+            "is_anonymous": true,
+            "amount_yuan": "6981202208.21",
+            "pct": "18.26"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户 C",
+            "is_anonymous": true,
+            "amount_yuan": "5438189570.59",
+            "pct": "14.22"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户 D",
+            "is_anonymous": true,
+            "amount_yuan": "4337902496.40",
+            "pct": "11.34"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户 E",
+            "is_anonymous": true,
+            "amount_yuan": "3096780769.22",
+            "pct": "8.10"
+          }
+        ],
+        "total_amount": "29055570800.33",
+        "total_pct": "75.98",
+        "related_party_pct": "8.10"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 A",
+            "is_anonymous": true,
+            "amount_yuan": "8885926791.46",
+            "pct": "35.76"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 B",
+            "is_anonymous": true,
+            "amount_yuan": "1230014576.53",
+            "pct": "4.95"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 C",
+            "is_anonymous": true,
+            "amount_yuan": "1118969898.81",
+            "pct": "4.50"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 D",
+            "is_anonymous": true,
+            "amount_yuan": "789695027.30",
+            "pct": "3.18"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 E",
+            "is_anonymous": true,
+            "amount_yuan": "772252396.31",
+            "pct": "3.11"
+          }
+        ],
+        "total_amount": "12796800648.87",
+        "total_pct": "51.50",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": [
+          {
+            "name": "PINEWAVE",
+            "amount": "43378",
+            "unit": "万美元"
+          }
+        ]
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "300394",
+      "company": "天孚通信",
+      "fiscal_year": 2023,
+      "source_pdf": "demo/data/300394/300394__em_天孚通信_em__2023_2023年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-22/1219698777.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "Fabrinet Co.,Ltd.",
+            "is_anonymous": false,
+            "amount_yuan": "1039308855.95",
+            "pct": "53.61"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "62726780.70",
+            "pct": "8.42"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "171267203.92",
+            "pct": "8.84"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "109827978.79",
+            "pct": "5.67"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "46582299.14",
+            "pct": "2.40"
+          }
+        ],
+        "total_amount": "1582582627.37",
+        "total_pct": "81.64",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "218839393.32",
+            "pct": "29.37"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "62726780.70",
+            "pct": "8.42"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "56331651.42",
+            "pct": "7.56"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "35880346.65",
+            "pct": "4.82"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "33999347.68",
+            "pct": "4.56"
+          }
+        ],
+        "total_amount": "407777519.77",
+        "total_pct": "54.73",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "300394",
+      "company": "天孚通信",
+      "fiscal_year": 2024,
+      "source_pdf": "demo/data/300394/300394__em_天孚通信_em__2024_2024年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-21/1223152632.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "Fabrinet",
+            "is_anonymous": false,
+            "amount_yuan": "2005917035.59",
+            "pct": "61.69"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "288559087.49",
+            "pct": "8.87"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "208997464.25",
+            "pct": "6.43"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "203373612.74",
+            "pct": "6.25"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "115611494.07",
+            "pct": "3.56"
+          }
+        ],
+        "total_amount": "2822458694.14",
+        "total_pct": "86.80",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "512255712.65",
+            "pct": "35.49"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "126636223.27",
+            "pct": "8.77"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "61846278.43",
+            "pct": "4.29"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "49066382.80",
+            "pct": "3.40"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "35477475.34",
+            "pct": "2.46"
+          }
+        ],
+        "total_amount": "785282072.49",
+        "total_pct": "54.41",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "300394",
+      "company": "天孚通信",
+      "fiscal_year": 2025,
+      "source_pdf": "demo/data/300394/300394__em_天孚通信_em__2025_2025年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082705.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "Fabrinet",
+            "is_anonymous": false,
+            "amount_yuan": "3268843594.94",
+            "pct": "63.31"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "601931536.36",
+            "pct": "11.66"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "387027101.75",
+            "pct": "7.50"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "203826900.23",
+            "pct": "3.95"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "171140348.27",
+            "pct": "3.31"
+          }
+        ],
+        "total_amount": "4632769481.55",
+        "total_pct": "89.73",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "832889806.30",
+            "pct": "34.81"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "197131874.24",
+            "pct": "8.24"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "187250725.00",
+            "pct": "7.82"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "146413734.00",
+            "pct": "6.12"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "108160630.42",
+            "pct": "4.52"
+          }
+        ],
+        "total_amount": "1471846769.96",
+        "total_pct": "61.51",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "300502",
+      "company": "新易盛",
+      "fiscal_year": 2023,
+      "source_pdf": "demo/data/300502/300502__em_新易盛_em__2023_2023年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-23/1219746778.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "1139711326.47",
+            "pct": "36.79"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "234001176.24",
+            "pct": "7.55"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "219562738.21",
+            "pct": "7.09"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "148551898.07",
+            "pct": "4.80"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "137046010.44",
+            "pct": "4.42"
+          }
+        ],
+        "total_amount": "1878873149.43",
+        "total_pct": "60.66",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "244820085.71",
+            "pct": "15.03"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "211346087.87",
+            "pct": "12.98"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "73667408.33",
+            "pct": "4.52"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "67516928.46",
+            "pct": "4.15"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "64020550.52",
+            "pct": "3.93"
+          }
+        ],
+        "total_amount": "661371060.89",
+        "total_pct": "40.61",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [
+          "浙江粮油"
+        ],
+        "related_party_sales": []
+      },
+      "warnings": []
+    },
+    {
+      "stock_code": "300502",
+      "company": "新易盛",
+      "fiscal_year": 2024,
+      "source_pdf": "demo/data/300502/300502__em_新易盛_em__2024_2024年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-23/1223219348.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "2744287306.63",
+            "pct": "31.74"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "1071183643.16",
+            "pct": "12.39"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "1050522301.55",
+            "pct": "12.15"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "790508700.00",
+            "pct": "9.14"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "491161266.49",
+            "pct": "5.68"
+          }
+        ],
+        "total_amount": "6147663217.83",
+        "total_pct": "71.10",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "1860611109.02",
+            "pct": "23.57"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "789856528.07",
+            "pct": "10.00"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "332095651.71",
+            "pct": "4.21"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "295532719.69",
+            "pct": "3.74"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "290725691.03",
+            "pct": "3.68"
+          }
+        ],
+        "total_amount": "3568821699.52",
+        "total_pct": "45.20",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [
+          "浙江省粮油食品进出口股份有限公司"
+        ],
+        "related_party_sales": []
+      },
+      "warnings": []
+    },
+    {
+      "stock_code": "300502",
+      "company": "新易盛",
+      "fiscal_year": 2025,
+      "source_pdf": "demo/data/300502/300502__em_新易盛_em__2025_2025年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225172598.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "5706560719.37",
+            "pct": "22.97"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "4133465492.45",
+            "pct": "16.64"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "3881540609.61",
+            "pct": "15.63"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "2721814735.32",
+            "pct": "10.96"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "1528112947.89",
+            "pct": "6.15"
+          }
+        ],
+        "total_amount": "17971494504.64",
+        "total_pct": "72.34",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "3666795583.83",
+            "pct": "23.87"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "840502582.55",
+            "pct": "5.47"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "654396417.68",
+            "pct": "4.26"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "646131307.27",
+            "pct": "4.21"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "625854969.40",
+            "pct": "4.07"
+          }
+        ],
+        "total_amount": "6433680860.73",
+        "total_pct": "41.88",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [
+          "浙江省粮油食品进出口股份有限公司"
+        ],
+        "related_party_sales": []
+      },
+      "warnings": []
+    },
+    {
+      "stock_code": "300757",
+      "company": "罗博特科",
+      "fiscal_year": 2023,
+      "source_pdf": "demo/data/300757/300757__em_罗博特科_em__2023_2023年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-23/1219740165.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "309321732.05",
+            "pct": "19.68"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "243983245.93",
+            "pct": "15.53"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "178624915.58",
+            "pct": "11.37"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "141204336.26",
+            "pct": "8.99"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "129819684.26",
+            "pct": "8.26"
+          }
+        ],
+        "total_amount": "1002953914.08",
+        "total_pct": "63.83",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "109479973.85",
+            "pct": "10.87"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "78887526.20",
+            "pct": "7.83"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "62283469.18",
+            "pct": "6.18"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "45327795.18",
+            "pct": "4.50"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "38411549.83",
+            "pct": "3.81"
+          }
+        ],
+        "total_amount": "334390314.24",
+        "total_pct": "33.19",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": [
+          {
+            "name": "TEC",
+            "amount": "641.5",
+            "unit": "万元"
+          },
+          {
+            "name": "MES",
+            "amount": "641.5",
+            "unit": "万元"
+          },
+          {
+            "name": "IGV",
+            "amount": "641.5",
+            "unit": "万元"
+          },
+          {
+            "name": "系维思凯科技参股公司元能微电子戴军控制之公司苏州玖物智能科技股份有限公司",
+            "amount": "641.5",
+            "unit": "万元"
+          }
+        ]
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "300757",
+      "company": "罗博特科",
+      "fiscal_year": 2024,
+      "source_pdf": "demo/data/300757/300757__em_罗博特科_em__2024_2024年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-24/1223238582.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "326455681.24",
+            "pct": "29.51"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "154222476.97",
+            "pct": "13.94"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "108504779.04",
+            "pct": "9.81"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "87550424.45",
+            "pct": "7.91"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "83213982.44",
+            "pct": "7.52"
+          }
+        ],
+        "total_amount": "759947344.14",
+        "total_pct": "68.69",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "47320177.88",
+            "pct": "10.84"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "42001751.54",
+            "pct": "9.63"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "28058156.71",
+            "pct": "6.43"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "20549861.63",
+            "pct": "4.71"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "20408178.66",
+            "pct": "4.68"
+          }
+        ],
+        "total_amount": "158338126.42",
+        "total_pct": "36.28",
+        "related_party_pct": "17.27"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": [
+          {
+            "name": "MES",
+            "amount": "38.27",
+            "unit": "万元"
+          },
+          {
+            "name": "不适用关联交易方关联关系维思凯科技参股公司苏州玖物智能科技股份有限公司",
+            "amount": "38.27",
+            "unit": "万元"
+          }
+        ]
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "300757",
+      "company": "罗博特科",
+      "fiscal_year": 2025,
+      "source_pdf": "demo/data/300757/300757__em_罗博特科_em__2025_2025年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225059372.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户一",
+            "is_anonymous": true,
+            "amount_yuan": "183805309.74",
+            "pct": "19.35"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户二",
+            "is_anonymous": true,
+            "amount_yuan": "149494509.95",
+            "pct": "15.74"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户三",
+            "is_anonymous": true,
+            "amount_yuan": "135150691.32",
+            "pct": "14.23"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户四",
+            "is_anonymous": true,
+            "amount_yuan": "74261286.23",
+            "pct": "7.82"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户五",
+            "is_anonymous": true,
+            "amount_yuan": "56996772.85",
+            "pct": "6.00"
+          }
+        ],
+        "total_amount": "599708570.10",
+        "total_pct": "63.14",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "81172509.81",
+            "pct": "20.34"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "32086519.69",
+            "pct": "8.04"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "25610619.46",
+            "pct": "6.42"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "22035398.23",
+            "pct": "5.52"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "13245961.06",
+            "pct": "3.32"
+          }
+        ],
+        "total_amount": "174151008.25",
+        "total_pct": "43.63",
+        "related_party_pct": "8.04"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "301338",
+      "company": "凯格精机",
+      "fiscal_year": 2023,
+      "source_pdf": "demo/data/301338/301338__em_凯格精机_em__2023_2023年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-23/1219743716.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "154006350.72",
+            "pct": "21.32"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "37666088.43",
+            "pct": "5.21"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "35107556.18",
+            "pct": "4.86"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "31219320.00",
+            "pct": "4.32"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "25527074.90",
+            "pct": "3.53"
+          }
+        ],
+        "total_amount": "283526390.23",
+        "total_pct": "39.24",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "43061067.87",
+            "pct": "6.70"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "20267627.60",
+            "pct": "3.16"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "17177945.21",
+            "pct": "2.67"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "13552046.37",
+            "pct": "2.11"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "13485828.55",
+            "pct": "2.10"
+          }
+        ],
+        "total_amount": "107544515.60",
+        "total_pct": "16.74",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "301338",
+      "company": "凯格精机",
+      "fiscal_year": 2024,
+      "source_pdf": "demo/data/301338/301338__em_凯格精机_em__2024_2024年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-26/1223300271.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "180143873.13",
+            "pct": "21.63"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "30318610.72",
+            "pct": "3.64"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "25619467.26",
+            "pct": "3.08"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "25251923.86",
+            "pct": "3.03"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "24617000.00",
+            "pct": "2.96"
+          }
+        ],
+        "total_amount": "285950874.97",
+        "total_pct": "34.34",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "19750647.81",
+            "pct": "3.40"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "15909064.81",
+            "pct": "2.74"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "14724591.18",
+            "pct": "2.54"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "13638423.80",
+            "pct": "2.35"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "13352775.52",
+            "pct": "2.30"
+          }
+        ],
+        "total_amount": "77375503.12",
+        "total_pct": "13.33",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "301338",
+      "company": "凯格精机",
+      "fiscal_year": 2025,
+      "source_pdf": "demo/data/301338/301338__em_凯格精机_em__2025_2025年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225202249.PDF",
+      "template": "szse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "94811977.48",
+            "pct": "8.51"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "73062438.75",
+            "pct": "6.56"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "52702864.09",
+            "pct": "4.73"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "49924371.14",
+            "pct": "4.48"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "37501611.79",
+            "pct": "3.37"
+          }
+        ],
+        "total_amount": "308003263.25",
+        "total_pct": "27.65",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "第一名",
+            "is_anonymous": true,
+            "amount_yuan": "32637829.24",
+            "pct": "4.18"
+          },
+          {
+            "rank": 2,
+            "name_raw": "第二名",
+            "is_anonymous": true,
+            "amount_yuan": "18518879.39",
+            "pct": "2.37"
+          },
+          {
+            "rank": 3,
+            "name_raw": "第三名",
+            "is_anonymous": true,
+            "amount_yuan": "17975650.89",
+            "pct": "2.30"
+          },
+          {
+            "rank": 4,
+            "name_raw": "第四名",
+            "is_anonymous": true,
+            "amount_yuan": "15122776.28",
+            "pct": "1.93"
+          },
+          {
+            "rank": 5,
+            "name_raw": "第五名",
+            "is_anonymous": true,
+            "amount_yuan": "15000000.00",
+            "pct": "1.92"
+          }
+        ],
+        "total_amount": "99255135.80",
+        "total_pct": "12.70",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "603203",
+      "company": "快克智能",
+      "fiscal_year": 2023,
+      "source_pdf": "demo/data/603203/603203__em_快克智能_em__2023_快克智能2023年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-30/1219905648.PDF",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户一",
+            "is_anonymous": true,
+            "amount_yuan": "98449100.00",
+            "pct": "12.42",
+            "related_flag": null
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户二",
+            "is_anonymous": true,
+            "amount_yuan": "31713000.00",
+            "pct": "4.00",
+            "related_flag": null
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户三",
+            "is_anonymous": true,
+            "amount_yuan": "27214000.00",
+            "pct": "3.43",
+            "related_flag": null
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户四",
+            "is_anonymous": true,
+            "amount_yuan": "18488500.00",
+            "pct": "2.33",
+            "related_flag": null
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户五",
+            "is_anonymous": true,
+            "amount_yuan": "17092800.00",
+            "pct": "2.16",
+            "related_flag": null
+          }
+        ],
+        "total_amount": "192957500.00",
+        "total_pct": "24.34",
+        "related_party_pct": "0"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商一",
+            "is_anonymous": true,
+            "amount_yuan": "6641600.00",
+            "pct": "1.95",
+            "related_flag": null
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商二",
+            "is_anonymous": true,
+            "amount_yuan": "6067600.00",
+            "pct": "1.78",
+            "related_flag": null
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商三",
+            "is_anonymous": true,
+            "amount_yuan": "5968000.00",
+            "pct": "1.75",
+            "related_flag": null
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商四",
+            "is_anonymous": true,
+            "amount_yuan": "5883200.00",
+            "pct": "1.72",
+            "related_flag": null
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商五",
+            "is_anonymous": true,
+            "amount_yuan": "5307500.00",
+            "pct": "1.56",
+            "related_flag": null
+          }
+        ],
+        "total_amount": "29867900.00",
+        "total_pct": "8.75",
+        "related_party_pct": "0"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "603203",
+      "company": "快克智能",
+      "fiscal_year": 2024,
+      "source_pdf": "demo/data/603203/603203__em_快克智能_em__2024_快克智能2024年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-29/1223403806.pdf",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户一",
+            "is_anonymous": true,
+            "amount_yuan": "130685400.00",
+            "pct": "13.83",
+            "related_flag": null
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户二",
+            "is_anonymous": true,
+            "amount_yuan": "33904000.00",
+            "pct": "3.59",
+            "related_flag": null
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户三",
+            "is_anonymous": true,
+            "amount_yuan": "24650400.00",
+            "pct": "2.61",
+            "related_flag": null
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户四",
+            "is_anonymous": true,
+            "amount_yuan": "21699600.00",
+            "pct": "2.30",
+            "related_flag": null
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户五",
+            "is_anonymous": true,
+            "amount_yuan": "20913700.00",
+            "pct": "2.21",
+            "related_flag": null
+          }
+        ],
+        "total_amount": "231853100.00",
+        "total_pct": "24.54",
+        "related_party_pct": "0"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商一",
+            "is_anonymous": true,
+            "amount_yuan": "10907200.00",
+            "pct": "1.44",
+            "related_flag": null
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商二",
+            "is_anonymous": true,
+            "amount_yuan": "9629700.00",
+            "pct": "1.26",
+            "related_flag": null
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商三",
+            "is_anonymous": true,
+            "amount_yuan": "8481600.00",
+            "pct": "1.11",
+            "related_flag": null
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商四",
+            "is_anonymous": true,
+            "amount_yuan": "7916200.00",
+            "pct": "1.04",
+            "related_flag": null
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商五",
+            "is_anonymous": true,
+            "amount_yuan": "7020400.00",
+            "pct": "0.92",
+            "related_flag": null
+          }
+        ],
+        "total_amount": "43955100.00",
+        "total_pct": "5.77",
+        "related_party_pct": "0"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "603203",
+      "company": "快克智能",
+      "fiscal_year": 2025,
+      "source_pdf": "demo/data/603203/603203__em_快克智能_em__2025_快克智能2025年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225173150.PDF",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户一",
+            "is_anonymous": true,
+            "amount_yuan": "131019640.80",
+            "pct": "12.13",
+            "related_flag": null
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户二",
+            "is_anonymous": true,
+            "amount_yuan": "46779766.13",
+            "pct": "4.33",
+            "related_flag": null
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户三",
+            "is_anonymous": true,
+            "amount_yuan": "35502078.53",
+            "pct": "3.29",
+            "related_flag": null
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户四",
+            "is_anonymous": true,
+            "amount_yuan": "35237285.03",
+            "pct": "3.26",
+            "related_flag": null
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户五",
+            "is_anonymous": true,
+            "amount_yuan": "29051330.91",
+            "pct": "2.69",
+            "related_flag": null
+          }
+        ],
+        "total_amount": "277590100.00",
+        "total_pct": "25.69",
+        "related_party_pct": "0"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商一",
+            "is_anonymous": true,
+            "amount_yuan": "10087836.13",
+            "pct": "2.07",
+            "related_flag": null
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商二",
+            "is_anonymous": true,
+            "amount_yuan": "9421417.00",
+            "pct": "1.94",
+            "related_flag": null
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商三",
+            "is_anonymous": true,
+            "amount_yuan": "8783376.31",
+            "pct": "1.81",
+            "related_flag": null
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商四",
+            "is_anonymous": true,
+            "amount_yuan": "8629713.08",
+            "pct": "1.77",
+            "related_flag": null
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商五",
+            "is_anonymous": true,
+            "amount_yuan": "7783869.41",
+            "pct": "1.60",
+            "related_flag": null
+          }
+        ],
+        "total_amount": "44706200.00",
+        "total_pct": "9.19",
+        "related_party_pct": "0"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "688097",
+      "company": "博众精工",
+      "fiscal_year": 2023,
+      "source_pdf": "demo/data/688097/688097__em_博众精工_em__2023_博众精工2023年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-24/1219769915.PDF",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户一",
+            "is_anonymous": true,
+            "amount_yuan": "847140000.00",
+            "pct": "17.51",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户二",
+            "is_anonymous": true,
+            "amount_yuan": "828918800.00",
+            "pct": "17.14",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户三",
+            "is_anonymous": true,
+            "amount_yuan": "687570500.00",
+            "pct": "14.21",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户四",
+            "is_anonymous": true,
+            "amount_yuan": "340842000.00",
+            "pct": "7.05",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户五",
+            "is_anonymous": true,
+            "amount_yuan": "253418900.00",
+            "pct": "5.24",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "2957890200.00",
+        "total_pct": "61.15",
+        "related_party_pct": "0"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商一",
+            "is_anonymous": true,
+            "amount_yuan": "129966300.00",
+            "pct": "5.83",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商二",
+            "is_anonymous": true,
+            "amount_yuan": "74614500.00",
+            "pct": "3.35",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商三",
+            "is_anonymous": true,
+            "amount_yuan": "73262900.00",
+            "pct": "3.29",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商四",
+            "is_anonymous": true,
+            "amount_yuan": "47774100.00",
+            "pct": "2.14",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商五",
+            "is_anonymous": true,
+            "amount_yuan": "33468400.00",
+            "pct": "1.50",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "359086200.00",
+        "total_pct": "16.11",
+        "related_party_pct": "0"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "688097",
+      "company": "博众精工",
+      "fiscal_year": 2024,
+      "source_pdf": "demo/data/688097/688097__em_博众精工_em__2024_2024年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-26/1223328775.PDF",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户一",
+            "is_anonymous": true,
+            "amount_yuan": "1289933500.00",
+            "pct": "26.04",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户二",
+            "is_anonymous": true,
+            "amount_yuan": "923423500.00",
+            "pct": "18.64",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户三",
+            "is_anonymous": true,
+            "amount_yuan": "610653900.00",
+            "pct": "12.33",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户四",
+            "is_anonymous": true,
+            "amount_yuan": "332933600.00",
+            "pct": "6.72",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户五",
+            "is_anonymous": true,
+            "amount_yuan": "239334500.00",
+            "pct": "4.83",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "3396279000.00",
+        "total_pct": "68.56",
+        "related_party_pct": "0"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商一",
+            "is_anonymous": true,
+            "amount_yuan": "250790800.00",
+            "pct": "7.36",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商二",
+            "is_anonymous": true,
+            "amount_yuan": "125248800.00",
+            "pct": "3.67",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商三",
+            "is_anonymous": true,
+            "amount_yuan": "107416600.00",
+            "pct": "3.15",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商四",
+            "is_anonymous": true,
+            "amount_yuan": "73600.00",
+            "pct": "2.69",
+            "related_flag": null
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商五",
+            "is_anonymous": true,
+            "amount_yuan": "36700.00",
+            "pct": "2.48",
+            "related_flag": null
+          }
+        ],
+        "total_amount": "659555400.00",
+        "total_pct": "19.35",
+        "related_party_pct": "0"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "688097",
+      "company": "博众精工",
+      "fiscal_year": 2025,
+      "source_pdf": "demo/data/688097/688097__em_博众精工_em__2025_2025年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-11/1225096862.PDF",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户一",
+            "is_anonymous": true,
+            "amount_yuan": "2154855900.00",
+            "pct": "32.82",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户二",
+            "is_anonymous": true,
+            "amount_yuan": "1509184900.00",
+            "pct": "22.99",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户三",
+            "is_anonymous": true,
+            "amount_yuan": "635724400.00",
+            "pct": "9.68",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户四",
+            "is_anonymous": true,
+            "amount_yuan": "464699200.00",
+            "pct": "7.08",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户五",
+            "is_anonymous": true,
+            "amount_yuan": "183159200.00",
+            "pct": "2.79",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "4947623600.00",
+        "total_pct": "75.36",
+        "related_party_pct": "0"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商一",
+            "is_anonymous": true,
+            "amount_yuan": "291005100.00",
+            "pct": "6.06",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商二",
+            "is_anonymous": true,
+            "amount_yuan": "219898100.00",
+            "pct": "4.58",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商三",
+            "is_anonymous": true,
+            "amount_yuan": "219643500.00",
+            "pct": "4.57",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商四",
+            "is_anonymous": true,
+            "amount_yuan": "164558300.00",
+            "pct": "3.43",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商五",
+            "is_anonymous": true,
+            "amount_yuan": "152512400.00",
+            "pct": "3.17",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "1047617400.00",
+        "total_pct": "21.81",
+        "related_party_pct": "0"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "688337",
+      "company": "普源精电",
+      "fiscal_year": 2023,
+      "source_pdf": "demo/data/688337/688337__em_普源精电_em__2023_普源精电科技股份有限公司2023年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-03-21/1219360668.PDF",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户 1",
+            "is_anonymous": true,
+            "amount_yuan": "75497800.00",
+            "pct": "11.41",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户 2",
+            "is_anonymous": true,
+            "amount_yuan": "66293200.00",
+            "pct": "10.02",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户 3",
+            "is_anonymous": true,
+            "amount_yuan": "31951600.00",
+            "pct": "4.83",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户 4",
+            "is_anonymous": true,
+            "amount_yuan": "20183400.00",
+            "pct": "3.05",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户 5",
+            "is_anonymous": true,
+            "amount_yuan": "20165900.00",
+            "pct": "3.05",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "214091900.00",
+        "total_pct": "32.36",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 1",
+            "is_anonymous": true,
+            "amount_yuan": "50095000.00",
+            "pct": "18.00",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 2",
+            "is_anonymous": true,
+            "amount_yuan": "45040800.00",
+            "pct": "16.19",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 3",
+            "is_anonymous": true,
+            "amount_yuan": "11379900.00",
+            "pct": "4.09",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 4",
+            "is_anonymous": true,
+            "amount_yuan": "10802100.00",
+            "pct": "3.88",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 5",
+            "is_anonymous": true,
+            "amount_yuan": "9742200.00",
+            "pct": "3.50",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "127060000.00",
+        "total_pct": "45.66",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "688337",
+      "company": "普源精电",
+      "fiscal_year": 2024,
+      "source_pdf": "demo/data/688337/688337__em_普源精电_em__2024_普源精电科技股份有限公司2024年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-01/1222972886.PDF",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户 1",
+            "is_anonymous": true,
+            "amount_yuan": "79972000.00",
+            "pct": "10.47",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户 2",
+            "is_anonymous": true,
+            "amount_yuan": "64107400.00",
+            "pct": "8.39",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户 3",
+            "is_anonymous": true,
+            "amount_yuan": "34887000.00",
+            "pct": "4.57",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户 4",
+            "is_anonymous": true,
+            "amount_yuan": "33369900.00",
+            "pct": "4.37",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户 5",
+            "is_anonymous": true,
+            "amount_yuan": "23502300.00",
+            "pct": "3.08",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "235838600.00",
+        "total_pct": "30.87",
+        "related_party_pct": "0.00"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 1",
+            "is_anonymous": true,
+            "amount_yuan": "43553200.00",
+            "pct": "14.02",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 2",
+            "is_anonymous": true,
+            "amount_yuan": "28901000.00",
+            "pct": "9.30",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 3",
+            "is_anonymous": true,
+            "amount_yuan": "13100000.00",
+            "pct": "4.22",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 4",
+            "is_anonymous": true,
+            "amount_yuan": "10588400.00",
+            "pct": "3.41",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 5",
+            "is_anonymous": true,
+            "amount_yuan": "10266200.00",
+            "pct": "3.30",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "106408800.00",
+        "total_pct": "34.25",
+        "related_party_pct": "0.00"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "688337",
+      "company": "普源精电",
+      "fiscal_year": 2025,
+      "source_pdf": "demo/data/688337/688337__em_普源精电_em__2025_普源精电科技股份有限公司2025年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-03-26/1225031855.PDF",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户 1",
+            "is_anonymous": true,
+            "amount_yuan": "112631500.00",
+            "pct": "12.73",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户 2",
+            "is_anonymous": true,
+            "amount_yuan": "49357600.00",
+            "pct": "5.58",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户 3",
+            "is_anonymous": true,
+            "amount_yuan": "47854200.00",
+            "pct": "5.41",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户 4",
+            "is_anonymous": true,
+            "amount_yuan": "41413800.00",
+            "pct": "4.68",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户 5",
+            "is_anonymous": true,
+            "amount_yuan": "24350400.00",
+            "pct": "2.75",
+            "related_flag": null
+          }
+        ],
+        "total_amount": "275607500.00",
+        "total_pct": "31.15",
+        "related_party_pct": "0"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 1",
+            "is_anonymous": true,
+            "amount_yuan": "34513100.00",
+            "pct": "8.53",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 2",
+            "is_anonymous": true,
+            "amount_yuan": "19235500.00",
+            "pct": "4.75",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 3",
+            "is_anonymous": true,
+            "amount_yuan": "14039200.00",
+            "pct": "3.47",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 4",
+            "is_anonymous": true,
+            "amount_yuan": "13862300.00",
+            "pct": "3.43",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 5",
+            "is_anonymous": true,
+            "amount_yuan": "13670800.00",
+            "pct": "3.38",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "95321000.00",
+        "total_pct": "23.56",
+        "related_party_pct": "0"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "688516",
+      "company": "奥特维",
+      "fiscal_year": 2023,
+      "source_pdf": "demo/data/688516/688516__em_奥特维_em__2023_无锡奥特维科技股份有限公司2023年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-03-26/1219401820.PDF",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户 1",
+            "is_anonymous": true,
+            "amount_yuan": "737543500.00",
+            "pct": "11.70",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户 2",
+            "is_anonymous": true,
+            "amount_yuan": "388527200.00",
+            "pct": "6.16",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户 3",
+            "is_anonymous": true,
+            "amount_yuan": "308617300.00",
+            "pct": "4.90",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户 4",
+            "is_anonymous": true,
+            "amount_yuan": "297558400.00",
+            "pct": "4.72",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户 5",
+            "is_anonymous": true,
+            "amount_yuan": "272601200.00",
+            "pct": "4.33",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "2004847600.00",
+        "total_pct": "31.81",
+        "related_party_pct": "0"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 1",
+            "is_anonymous": true,
+            "amount_yuan": "648343100.00",
+            "pct": "9.01",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 2",
+            "is_anonymous": true,
+            "amount_yuan": "340483000.00",
+            "pct": "4.73",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 3",
+            "is_anonymous": true,
+            "amount_yuan": "201347700.00",
+            "pct": "2.80",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 4",
+            "is_anonymous": true,
+            "amount_yuan": "162243600.00",
+            "pct": "2.26",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 5",
+            "is_anonymous": true,
+            "amount_yuan": "138975900.00",
+            "pct": "1.93",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "1491393300.00",
+        "total_pct": "20.73",
+        "related_party_pct": "0"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "688516",
+      "company": "奥特维",
+      "fiscal_year": 2024,
+      "source_pdf": "demo/data/688516/688516__em_奥特维_em__2024_无锡奥特维科技股份有限公司2024年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-22/1223196083.PDF",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户 1",
+            "is_anonymous": true,
+            "amount_yuan": "1219060100.00",
+            "pct": "13.25",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户 2",
+            "is_anonymous": true,
+            "amount_yuan": "1206693200.00",
+            "pct": "13.12",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户 3",
+            "is_anonymous": true,
+            "amount_yuan": "663889900.00",
+            "pct": "7.22",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户 4",
+            "is_anonymous": true,
+            "amount_yuan": "579913800.00",
+            "pct": "6.31",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户 5",
+            "is_anonymous": true,
+            "amount_yuan": "554912000.00",
+            "pct": "6.03",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "4224468900.00",
+        "total_pct": "45.93",
+        "related_party_pct": "0"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 1",
+            "is_anonymous": true,
+            "amount_yuan": "258075400.00",
+            "pct": "31.49",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 2",
+            "is_anonymous": true,
+            "amount_yuan": "133338500.00",
+            "pct": "45.59",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 3",
+            "is_anonymous": true,
+            "amount_yuan": "112182300.00",
+            "pct": "81.33",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 4",
+            "is_anonymous": true,
+            "amount_yuan": "89639300.00",
+            "pct": "53.6",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 5",
+            "is_anonymous": true,
+            "amount_yuan": "59657800.00",
+            "pct": "46.26",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "652893300.00",
+        "total_pct": "19.22",
+        "related_party_pct": "0"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    },
+    {
+      "stock_code": "688516",
+      "company": "奥特维",
+      "fiscal_year": 2025,
+      "source_pdf": "demo/data/688516/688516__em_奥特维_em__2025_无锡奥特维科技股份有限公司2025年年度报告.pdf",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225145661.PDF",
+      "template": "sse",
+      "customers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "客户 1",
+            "is_anonymous": true,
+            "amount_yuan": "981740400.00",
+            "pct": "15.35",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "客户 2",
+            "is_anonymous": true,
+            "amount_yuan": "697400100.00",
+            "pct": "10.9",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "客户 3",
+            "is_anonymous": true,
+            "amount_yuan": "495704700.00",
+            "pct": "7.75",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "客户 4",
+            "is_anonymous": true,
+            "amount_yuan": "408638400.00",
+            "pct": "6.39",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "客户 5",
+            "is_anonymous": true,
+            "amount_yuan": "345974100.00",
+            "pct": "5.41",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "2929457700.00",
+        "total_pct": "45.80",
+        "related_party_pct": "0"
+      },
+      "suppliers": {
+        "rows": [
+          {
+            "rank": 1,
+            "name_raw": "供应商 1",
+            "is_anonymous": true,
+            "amount_yuan": "157361600.00",
+            "pct": "5.58",
+            "related_flag": "否"
+          },
+          {
+            "rank": 2,
+            "name_raw": "供应商 2",
+            "is_anonymous": true,
+            "amount_yuan": "90272900.00",
+            "pct": "3.20",
+            "related_flag": "否"
+          },
+          {
+            "rank": 3,
+            "name_raw": "供应商 3",
+            "is_anonymous": true,
+            "amount_yuan": "56859000.00",
+            "pct": "2.02",
+            "related_flag": "否"
+          },
+          {
+            "rank": 4,
+            "name_raw": "供应商 4",
+            "is_anonymous": true,
+            "amount_yuan": "42960400.00",
+            "pct": "1.52",
+            "related_flag": "否"
+          },
+          {
+            "rank": 5,
+            "name_raw": "供应商 5",
+            "is_anonymous": true,
+            "amount_yuan": "41131000.00",
+            "pct": "1.46",
+            "related_flag": "否"
+          }
+        ],
+        "total_amount": "388584900.00",
+        "total_pct": "13.78",
+        "related_party_pct": "0"
+      },
+      "procedural": {
+        "revenue_recognition_names": [],
+        "related_party_sales": []
+      },
+      "warnings": [
+        "procedural: 收入确认段未抽到实名主体"
+      ]
+    }
+  ]
+}

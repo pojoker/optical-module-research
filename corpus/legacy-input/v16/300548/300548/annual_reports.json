@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225045047",
+    "stock_code": "300548",
+    "company_name": "<em>长芯博创</em>",
+    "title": "2025年年度报告",
+    "announcement_date": "2026-03-28",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF",
+    "adjunct_url": "finalpage/2026-03-28/1225045047.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/300548/300548/300548__em_长芯博创_em__2025_2025年年度报告.pdf",
+    "sha256": "9f2790d028a6e7f7799862a9b5c882070cad4554fd1de62dc95d86e04fbab92f",
+    "size_bytes": 1279228,
+    "error": ""
+  },
+  {
+    "announcement_id": "1222925704",
+    "stock_code": "300548",
+    "company_name": "<em>博创科技</em>",
+    "title": "2024年年度报告",
+    "announcement_date": "2025-03-28",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-03-28/1222925704.PDF",
+    "adjunct_url": "finalpage/2025-03-28/1222925704.PDF",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/300548/300548/300548__em_博创科技_em__2024_2024年年度报告.pdf",
+    "sha256": "9d4ac167277cf020c909ae89459c78f3660665f2851d567728359e3dc003a475",
+    "size_bytes": 1256887,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219390323",
+    "stock_code": "300548",
+    "company_name": "<em>博创科技</em>",
+    "title": "2023年年度报告",
+    "announcement_date": "2024-03-23",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-03-23/1219390323.PDF",
+    "adjunct_url": "finalpage/2024-03-23/1219390323.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/300548/300548/300548__em_博创科技_em__2023_2023年年度报告.pdf",
+    "sha256": "80d89d852fe2f5d522e092f7abc4d2ba8f75dca09c02644e574da4dbe20a1c30",
+    "size_bytes": 1178046,
+    "error": ""
+  }
+]

@@ -1,0 +1,48 @@
+entity_id,entity_name,entity_type,aliases,inclusion_reason,monitoring_status,promoted_company_id,source_ref,notes
+WATCH_IQE,IQE plc,company,IQE,MACOM长期外延供应安排的具名对手方,active,,https://www.iqep.com/media/press-releases/2026/full-year-2025-results/,仅用于显式事件证据；不进入四季度电话会覆盖池
+WATCH_DUST,DustPhotonics,company,Dust Photonics,Credo硅光收购的具名交易对手方,active,,https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Completes-Acquisition-of-DustPhotonics/default.aspx,Credo收购已完成；被收购关系已在entity_relationships.csv的REL_DUST_CRDO登记；由于现有事件身份闭合规则暂保留active，但不代表独立经营计票；历史身份保留但不重复计算
+WATCH_IIVI,II-VI Incorporated,company,II-VI;II VI,Coherent Corp更名前主体和能力来源,promoted,COHR,https://www.coherent.com/news/press-releases/ii-vi-changes-name-to-coherent-and-launches-new-brand,仅作历史身份解析；不重复计算公司或来源
+WATCH_FINISAR,Finisar Corporation,company,Finisar,Coherent通信产品能力的并购来源,promoted,COHR,https://www.coherent.com/content/dam/coherent/site/en/documents/investors/annual-filings/2020/ii-vi-2020-annual-report.pdf,2019-09并入当时的II-VI；历史材料按事件时间归因
+WATCH_OCLARO,Oclaro Inc.,company,Oclaro,Lumentum光通信能力的并购来源,promoted,LITE,https://investor.lumentum.com/financial-news-releases/news-details/2018/Lumentum-Announces-Completion-Of-Oclaro-Acquisition-2018-12-10/default.aspx,只作历史身份与能力来源
+WATCH_NEOPHOTONICS,NeoPhotonics Corporation,company,NeoPhotonics,Lumentum高速光器件能力的并购来源,promoted,LITE,https://investor.lumentum.com/financial-news-releases/news-details/2022/Lumentum-Announces-Completion-of-NeoPhotonics-Acquisition/default.aspx,只作历史身份与能力来源
+WATCH_CLOUDLIGHT,Cloud Light Technology Limited,company,Cloud Light;CloudLight,Lumentum高速数据中心模块能力的并购来源,promoted,LITE,https://investor.lumentum.com/financial-news-releases/news-details/2023/Lumentum-Announces-Completion-of-Cloud-Light-Acquisition/default.aspx,只作历史身份与能力来源
+WATCH_ACACIA,Acacia Communications Inc.,company,Acacia,Cisco相干光学与DSP/PIC能力的并购来源,promoted,CSCO,https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2021/m03/cisco-completes-acquisition-of-acac-1.html,只作历史身份与能力来源
+WATCH_INPHI,Inphi Corporation,company,Inphi,Marvell高速光互连与电光平台能力的并购来源,promoted,MRVL,https://www.marvell.com/company/newsroom/marvell-completes-acquisition-of-inphi.html,只作历史身份与能力来源
+WATCH_POLARITON,Polariton Technologies,company,Polariton,Marvell已公告收购的等离激元调制技术主体,active,,https://www.marvell.com/company/newsroom/marvell-acquires-polariton-advancing-future-of-optical-connectivity.html,公告措辞不足以在本轮确认交易完成；继续事件监控
+WATCH_INFINERA,Infinera Corporation,company,Infinera,Nokia光网络与光子半导体能力的并购来源,promoted,NOK,https://www.nokia.com/newsroom/nokia-completes-acquisition-of-infinera-to-create-innovation-powerhouse-in-optical-networks-with-the-scale-to-power-the-data-center-revolution/,只作历史身份与能力来源
+WATCH_NUBIS,Nubis Communications Inc.,company,Nubis,Ciena低功耗光电互连能力的并购来源,promoted,CIEN,https://investor.ciena.com/static-files/11dd73c3-c17b-44d3-8018-844fe6979976,只作历史身份与能力来源
+WATCH_HYPERLUME,Hyperlume Inc.,company,Hyperlume,Credo microLED光互连能力的并购来源,promoted,CRDO,https://investors.credosemi.com/news-events/news/news-details/2025/Credo-to-Acquire-Hyperlume-Inc-/default.aspx,标题写to acquire但正文明确closing；按正文完成事实登记
+WATCH_FUJIKURA,Fujikura,company,Fujikura Ltd.,光纤与高密度连接事件监控；最新英文季度直链覆盖不足,active,,https://www.fujikura.co.jp/eng/ir/,不承担四季度完整性；待最新正式材料可稳定复核后再晋级
+WATCH_MELCO,Mitsubishi Electric,company,Mitsubishi Electric Corporation,EML产品与扩产事件监控；集团业绩无法分离光器件,active,,https://www.mitsubishielectric.com/investors/library/results/,不把集团电子器件收入当作数据中心光学收入
+WATCH_ASE,ASE Technology,company,ASE Technology Holding;Advanced Semiconductor Engineering,硅光封装与OSAT能力事件监控；集团口径稀释,active,,https://ase.aseglobal.com/about-ase/financials/,技术展示与客户量产分开
+WATCH_SUSS,SUSS MicroTec,company,SUSS,永久键合与异质集成设备事件监控；未拆硅光经营口径,active,,https://www.suss.com/de/investor-relations/finanzberichte,半导体设备总订单不归因光子
+WATCH_SAMCO,Samco,company,Samco Inc.,InP刻蚀沉积设备产品与订单事件监控,active,,https://www.samco.co.jp/en/disclosure/,正式财务材料未给出光通信客户或收入
+WATCH_KEYS,Keysight,company,Keysight Technologies,224G与1.6T验证产品及客户采用事件监控,active,,https://investor.keysight.com/financial-information/quarterly-reports/default.aspx,通信测试总收入不等同光模块测试收入
+WATCH_ACCTON,Accton,company,Accton Technology,800G LPO与光交换系统展示和出货事件监控,active,,https://www.accton.com/shareholder/,网络设备总收入不等同光学产品收入
+WATCH_FREIBERGER,Freiberger Compound Materials,company,Freiberger,GaAs与InP衬底产品产能及客户事件监控,active,,https://freiberger.com/en/technology/,私企不承担季度材料义务
+WATCH_NTTID,NTT Innovative Devices,company,NTT Electronics,相干DSP产品发布和合作事件监控,active,,https://www.ntt-innovative-devices.com/en/optical_communications/dsp_products.html,集团子公司不补母公司季度槽
+WATCH_FUJITSUOC,Fujitsu Optical Components,company,Fujitsu Optical Components Limited,相干收发器和光器件事件监控,active,,https://www.fujitsu.com/jp/group/foc/imagesgig5/FOC%20Product%20Line-up_20201202.pdf,母公司财务口径不归因子公司光学业务
+WATCH_OPENLIGHT,OpenLight,company,OpenLight Photonics,集成激光硅光平台PDK与量产事件监控,active,,https://openlightphotonics.com/,第一方技术主张不自动升级商业事实
+WATCH_SICOYA,Sicoya,company,Sicoya GmbH,硅光芯片和收发组件客户量产事件监控,active,,https://sicoya.com/en/silicon-photonic-components/,客户和量产透明度有限
+WATCH_SCINTIL,SCINTIL Photonics,company,SCINTIL,异质集成硅光融资样片与量产事件监控,active,,https://www.scintil-photonics.com/,融资不等于客户采用
+WATCH_XSCAPE,Xscape Photonics,company,Xscape,多波长光引擎样片客户和量产事件监控,active,,https://www.xscapephotonics.com/falconx,新路线保持asserted状态
+WATCH_AVICENA,Avicena,company,Avicena Tech,microLED光互联评估与量产事件监控,active,,https://avicena.tech/avicena-launches-the-worlds-first-microled-optical-interconnect-eval-kit/,评估套件不等于规模部署
+WATCH_AYAR,Ayar Labs,company,Ayar,光I/O芯粒外置光源样片客户与产能事件监控,active,,https://ayarlabs.com/news/ayar-labs-unveils-worlds-first-ucie-optical-chiplet-for-ai-scale-up-architectures/,私企不补季度槽
+WATCH_LIGHTMATTER,Lightmatter,company,Lightmatter Inc.,Passage光互联商业采用事件监控,active,,https://lightmatter.co/products/passage,产品主张与客户采用分开
+WATCH_RANOVUS,Ranovus,company,Ranovus Inc.,Odin CPO合作演示与量产迁移事件监控,active,,https://ranovus.com/wp-content/uploads/2024/03/Ranovus-CPO-3.0-MediaTek-announcement-March-20-2024-Final.pdf,演示不自动升级量产
+WATCH_SOURCEPHOTONICS,Source Photonics,company,Source Photonics Inc.,800G与1.6T模块产品产能和客户事件监控,active,,https://www.sourcephotonics.com/news/source-photonics-announce-the-product-availability-of-its-200g-per-lane-based-1-6t-and-800g-pam4-transceiver-family-products-at-ofc25/,无连续公开季度材料
+WATCH_MOLEX,Molex,company,Molex LLC,CPO连接与光路交换新品并购事件监控,active,,https://www.molex.com/en-us/news/molex-accelerates-ai-cluster-deployment-with-one-stop-optical-interconnect-architecture-and-debut-of-high-radix-optical-circuit-switch-platform,Koch私有子公司
+WATCH_SENKO,SENKO Advanced Components,company,SENKO,高密度光连接产品合作与采用事件监控,active,,https://www.senko.com/mpc-series/,私企不补季度槽
+WATCH_TERAMOUNT,Teramount,company,Teramount Ltd.,PhotonicPlug产品及Molex拟收购状态事件监控,active,,https://www.molex.com/en-us/news/molex-completes-acquisition-of-teramount-ltd,Molex收购已完成；被收购关系已在entity_relationships.csv的REL_TERAMOUNT_MOLEX登记；由于现有事件身份闭合规则暂保留active，但不代表独立经营计票；历史身份保留但不证明产品整合或收入目标兑现
+WATCH_FICONTEC,ficonTEC,company,ficonTEC Service GmbH,光子装配测试自动化订单事件监控,active,,https://www.ficontec.com/,订单应用范围需逐条核验
+WATCH_PI,PI,company,Physik Instrumente,光子对准产品和订单事件监控,active,,https://www.pi-usa.us/en/products/photonics-alignment-solutions,订单应用不可分时不归因光模块
+WATCH_EVG,EV Group,company,EVG,die-to-wafer键合及异质集成事件监控,active,,https://www.evgroup.com/fileadmin/media/products/bonding/Die_to_Wafer_bonding_systems/White_Paper_D2W_Bonding.pdf,应用跨行业
+WATCH_EXFO,EXFO,company,EXFO Inc.,800G实验室与制造测试产品采用事件监控,active,,https://www.exfo.com/en/products/lab-manufacturing-testing/network-protocol-testing/ethernet-testing/ftbx-88800-series/,电信测试与AI集群内部互联分开
+WATCH_GOOGL,Alphabet,company,Google;Google Cloud,云侧带宽容量需求事件监控,active,,https://abc.xyz/investor/events/,一般资本开支不自动映射光模块
+WATCH_MSFT,Microsoft,company,Microsoft Azure,AI数据中心容量与明确光网络需求事件监控,active,,https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3,一般资本开支不自动映射光模块
+WATCH_AMZN,Amazon,company,AWS;Amazon Web Services,AWS基础设施需求与明确光学披露事件监控,active,,https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/,无光学细节时不形成事件结论
+WATCH_ORCL,Oracle,company,Oracle Cloud Infrastructure;OCI,云容量与具名光学合作事件监控,active,,https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/,订单不直接换算光模块消耗
+WATCH_AMD,AMD,company,Advanced Micro Devices,rack-scale平台与明确互连需求事件监控,active,,https://ir.amd.com/news-events/press-releases/detail/1261/amd-showcases-helios-rack-scale-platform-built-on-the-open-compute-project-open-rack-for-ai-introduced-by-meta,平台发布不证明具体光学BOM
+WATCH_ENNOSTAR,Ennostar,company,Ennostar Corporation,化合物半导体设备资格与量产部署的具名对手方,active,,https://www.ennostar.com/,仅用于具名事件对手方；Veeco单方公告不构成独立确认
+WATCH_LUMILENS,Lumilens,company,Lumilens Technology,POET光引擎采购和联合开发的具名对手方,active,,https://www.lumilens-tech.com/,仅用于具名事件对手方；POET单方披露不构成独立确认
+WATCH_MCHP,Microchip,company,Microchip Technology Inc.;Microchip,高速Ethernet PHY与PCIe/CXL retimer电侧连接事件监控,active,,https://ir.microchip.com/news-events/press-releases/detail/1409/microchip-technology-announces-financial-results-for-first-quarter-of-fiscal-year-2027,电侧信号不写成光模块采用事件；design wins为第一方宣称

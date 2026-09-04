@@ -1,0 +1,40 @@
+company_id,company_name,role,inclusion_reason,enabled
+COHR,Coherent,core_peer,光器件与高速光模块核心同业,yes
+LITE,Lumentum,core_peer,激光器与光通信器件核心同业,yes
+AAOI,Applied Optoelectronics,core_peer,800G与1.6T模块供给和产能信息密度高,yes
+FN,Fabrinet,core_peer,光通信制造交付与产能验证方,yes
+NVDA,NVIDIA,downstream,AI集群架构与互连需求方,yes
+ANET,Arista,downstream,数据中心交换网络需求验证方,yes
+CSCO,Cisco,downstream,交换系统及光学产品需求验证方,yes
+META,Meta,downstream,超大规模数据中心部署与资本开支验证方,yes
+AVGO,Broadcom,upstream_enabler,交换ASIC、SerDes、光DSP、EML与CPO上游平台,yes
+MRVL,Marvell,upstream_enabler,光DSP、硅光、交换芯片与定制互连平台,yes
+NOK,Nokia,system_vendor,光传输、相干可插拔与AI数据中心网络系统方,yes
+CIEN,Ciena,system_vendor,相干光系统、DCI与CPO光引擎观察方,yes
+MTSI,MACOM,upstream_enabler,高速驱动器、TIA、CW激光器与光电模拟器件方,yes
+CRDO,Credo,upstream_enabler,SerDes、AEC、光DSP与高速光收发器平台,yes
+MXL,MaxLinear,upstream_enabler,200G TIA与PAM4 DSP补足LPO和DSP路线,yes
+JBL,Jabil,core_peer,光模块设计制造与1.6T可插拔产品的制造交付观察方,yes
+VECO,Veeco,upstream_enabler,InP MOCVD与离子束设备订单观察激光产能约束,yes
+FORM,FormFactor,upstream_enabler,硅光与CPO晶圆级测试及自动对准平台,yes
+AXTI,AXT,upstream_enabler,InP、GaAs与Ge衬底供给及出口许可观察方,yes
+GFS,GlobalFoundries,upstream_enabler,硅光代工、SiGe与CPO平台的设计到量产观察方,yes
+TSEM,Tower Semiconductor,upstream_enabler,SiPho与模拟混合信号代工及产能扩张观察方,yes
+SMTC,Semtech,upstream_enabler,200G每通道PMD、TIA与驱动器平台观察方,yes
+AIXA,AIXTRON,upstream_enabler,InP与GaAs MOCVD设备和扩产交期观察方,yes
+ASMPT,ASMPT,upstream_enabler,光子芯片贴装、耦合、键合与CPO装配设备观察方,yes
+SOI,Soitec,upstream_enabler,Photonics-SOI材料平台与硅光底座需求观察方,yes
+SUMITOMO,Sumitomo Electric,upstream_enabler,InP激光器、FAU与光纤连接的综合上游观察方,yes
+FURUKAWA,Furukawa Electric,upstream_enabler,光纤、激光器与数据中心光连接需求观察方,yes
+POET,POET Technologies,upstream_enabler,晶圆级光引擎与1.6T商业化进度观察方,yes
+SIVERS,Sivers Semiconductors,upstream_enabler,DFB与CW激光器新进入者及商业化观察方,yes
+SANM,Sanmina,core_peer,光子设计封装制造与云AI基础设施交付观察方,yes
+CLS,Celestica,system_vendor,AI网络硬件制造与高速交换系统交付观察方,yes
+MYCRONIC,Mycronic,upstream_enabler,光通信die bonder订单与封装节拍领先指标,yes
+OXIG,Oxford Instruments,upstream_enabler,化合物半导体等离子设备订单与交期观察方,yes
+VIAV,VIAVI,upstream_enabler,1.6T测试验证需求与量产测试卡点观察方,yes
+ADTN,ADTRAN,system_vendor,800G低功耗模块及开放光传输观察方,yes
+WIWYNN,Wiwynn,system_vendor,机架级AI系统与CPO互连需求观察方,yes
+GLW,Corning,upstream_enabler,AI数据中心光纤与无源连接需求观察方,yes
+LWLG,Lightwave Logic,upstream_enabler,电光聚合物调制器新材料路线与硅光集成商业化观察方,yes
+SMOP,Smartoptics,system_vendor,开放光传输与数据中心互联系统观察方,yes

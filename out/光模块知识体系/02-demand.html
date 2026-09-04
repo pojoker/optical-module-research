@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="把 AI 集群通信压力、lane 速率、电通道、功耗与封装约束连成因果链。">
+  <title>为什么从 800G 走向 1.6T 与 3.2T｜光模块知识体系</title>
+  <link rel="stylesheet" href="assets/content.css?v=98f63f49a89c">
+  <link rel="stylesheet" href="assets/site-shell.css?v=cc86a9dc06c3">
+</head>
+<body data-page="demand">
+  <header class="site-header">
+    <a class="site-brand" href="index.html"><span class="brand-mark">OM</span><span><b>光模块知识体系</b><small>模块化重构版 · 2026-08-31</small></span></a>
+    <nav class="global-nav" aria-label="主题模块"><a class="" href="index.html">总览</a><a class="" href="01-foundation.html">基础结构</a><a class="active" href="02-demand.html">提速需求</a><a class="" href="03-routes.html">技术路线</a><a class="" href="04-cases.html">案例与 UNKNOWN</a><a class="" href="05-companies.html">公司投影</a><a class="" href="06-research.html">研究台账</a><a class="" href="07-decision-dossier.html">决策卷宗</a><a class="" href="08-concept-primer.html">名词入门</a></nav>
+    <div class="canonical-pill">研究草案 · canonical 仍为 0</div>
+  </header>
+
+  <main class="site-frame">
+    <header class="module-hero">
+      <div><span class="module-number">02</span><span class="module-kicker">需求从哪里来，瓶颈落在哪里</span></div>
+      <h1>为什么从 800G 走向 1.6T 与 3.2T</h1>
+      <p>把 AI 集群通信压力、lane 速率、电通道、功耗与封装约束连成因果链。</p>
+    </header>
+
+    <div class="module-layout">
+      <nav class="local-nav" aria-label="本页小节"><span>本页内容</span><a href="#demand">为什么 800G 之后还要 1.6T、3.2T？</a><a href="#scaling">端口提速只有两个基本旋钮：增加 lane，或让每条 lane 更快</a><a href="#constraints">每条 lane 更快、端口更密以后，压力怎样一层层传下去</a><a href="#cascade">技术路线不是“突然出现”，而是对约束传导方式的不同回答</a></nav>
+      <div class="module-content"><section class="section" id="demand" data-certainty="mechanism">
+  <div class="statusline"><span class="certainty stable">稳定因果骨架</span><span class="certainty mechanism">规模与强弱取决于具体系统</span></div>
+  <div class="kicker">第 05 章 · 需求从哪里开始</div><h2>为什么 800G 之后还要 1.6T、3.2T？</h2>
+  <p class="intro">不是因为“800G 突然不能用”，而是交换系统需要搬运的总数据量继续增加，同时机箱空间、交换芯片端口数、连接器和散热能力不能无限扩张。提高单端口速率，可以让同样数量的端口承载更大的总交换容量；由此产生的代价，会沿着电通道、光通道、功耗、封装和测试逐层向下传导。</p>
+  <div class="thesis"><strong>先把三个量分开：系统总交换容量、端口速率、每 lane 速率。</strong><p>它们不是同一件事。交换芯片总容量提高，不必然规定每个端口都采用同一种速率；端口从 800G 提高到 1.6T，也不自动规定内部采用几条电 lane、几条光 lane 或哪一种光子平台。</p></div>
+
+  <div class="demand-ladder" aria-label="从AI集群需求到光模块提速的因果链">
+    <article><span>01</span><div><b>更多计算节点参与同一任务</b><p>训练、推理、参数同步或专家路由会让节点之间产生大量东西向通信；具体通信量仍取决于模型和网络拓扑。</p></div></article>
+    <article><span>02</span><div><b>网络需要更高的聚合吞吐</b><p>交换结构要在可接受的拥塞和完成时间内搬完数据，因此交换芯片容量、链路数量或链路速度至少有一项需要提高。</p></div></article>
+    <article><span>03</span><div><b>只增加端口数量会碰到物理边界</b><p>更多端口会占用更多面板空间、SerDes、封装引脚、连接器、光纤和交换层级，并增加布线与运维复杂度。</p></div></article>
+    <article><span>04</span><div><b>于是提高每个端口的承载能力</b><p>800G → 1.6T → 3.2T 是提高端口聚合速率的路径之一，不代表旧速率立即退出，也不代表所有网络位置同步升级。</p></div></article>
+    <article><span>05</span><div><b>压力继续落到每一条 lane 和整机热设计</b><p>端口提速最终必须由更多 lane、更快 lane，或二者组合完成；困难由此传给芯片、封装、PCB、连接器、光器件和测试。</p></div></article>
+  </div>
+
+  <div class="rate-grid">
+    <article class="rate-card"><div class="rate">800G</div><h3>建立现阶段的比较基准</h3><p>主机侧常见 8×约100G 电 lane；光侧可见 8×100G、4×200G 等不同组织。</p><ul><li>电 lane 与光 lane 必须分开记录</li><li>同为 800G，DR8、DR4、FR4 的物理结构不同</li></ul></article>
+    <article class="rate-card"><div class="rate">1.6T</div><h3>200G/lane 成为关键压力源</h3><p>8×约200G 是重要组织方向；也可以用“更多、较慢 lane”理解另一端的设计取舍。</p><ul><li>单 lane 更快，信号完整性和器件带宽更难</li><li>lane 更多，封装、连接和光纤密度更难</li></ul></article>
+    <article class="rate-card"><div class="rate">3.2T</div><h3>绝对功耗与密度问题进一步集中</h3><p>16×约200G 是可观察候选；更高单 lane 速率属于继续演进方向，尚不能写成唯一实现。</p><ul><li>更关心每模块、每比特与整机三个口径</li><li>前面板、NPO、CPO 的相对价值可能重新排序</li></ul></article>
+  </div>
+
+  <div class="reader-rule"><b>这一节只回答“为什么需要提高端口承载能力”。</b>下一节才回答速率怎样拆到 lane；再下一节解释为什么 lane 变化会放大电、光、热、封装和测试约束。</div>
+</section>
+<section class="section" id="scaling" data-certainty="stable">
+  <div class="statusline"><span class="certainty stable">稳定分解方法</span><small>具体 lane 组织必须绑定标准或产品</small></div>
+  <div class="kicker">先拆总速率</div><h2>端口提速只有两个基本旋钮：增加 lane，或让每条 lane 更快</h2>
+  <p class="intro">可以把聚合速率近似理解为“lane 数 × 每 lane 速率”。这只是帮助理解的骨架；真实链路还涉及编码、FEC 和协议开销。更重要的是，主机电接口和光纤侧介质接口要分别计算，不能拿电 lane 数直接代替光 lane 数。</p>
+
+  <div class="lane-equation"><span>端口聚合速率</span><b>≈</b><span>并行 lane 数量</span><b>×</b><span>每条 lane 的速率</span></div>
+  <div class="knob-grid">
+    <article class="knob-card"><span class="knob-label">旋钮 A · lane 更多</span><h3>保持单 lane 较成熟，用数量堆出总速率</h3><div class="knob-path"><b>100G/lane</b><i>×</i><b>更多 lane</b><i>→</i><b>更高聚合速率</b></div><p>好处是可以复用相对成熟的单 lane 器件与电接口能力；压力转移到封装引脚、连接器、PCB 走线、光通道数量、光纤数量和装配面积。</p><footer>典型问题：面板还能放多少接口？模块和 ASIC 还能提供多少高速 I/O？并行光纤与极性管理是否可接受？</footer></article>
+    <article class="knob-card"><span class="knob-label">旋钮 B · lane 更快</span><h3>保持 lane 数量，用更高波特率提高总速率</h3><div class="knob-path"><b>更少 lane</b><i>×</i><b>200G/lane</b><i>→</i><b>更高聚合速率</b></div><p>好处是减少达到同一聚合速率所需的 lane 数；压力转移到 SerDes、封装和连接器的信号完整性，以及 Driver、modulator、PD、TIA 的带宽和噪声余量。</p><footer>典型问题：现有电通道能否达到目标损耗？更强均衡和 FEC 是否足够？光器件能否在目标温度和误码边界下工作？</footer></article>
+  </div>
+
+  <div class="lane-map" aria-label="主机电lane与介质光lane分层示意">
+    <div class="lane-map-head"><span>层级</span><span>800G 示例</span><span>1.6T 示例</span><span>压力首先落在哪里</span></div>
+    <div><b>主机侧电接口</b><span>8×约100G</span><span>8×约200G</span><span>SerDes、封装、PCB、连接器、均衡与 FEC</span></div>
+    <div><b>模块内部电路径</b><span>DSP/retimer、Driver、TIA</span><span>更高带宽或更短路径</span><span>功耗、时延、通道损耗和 Host—Module 分责</span></div>
+    <div><b>光纤侧介质接口</b><span>8×100G 或 4×200G 等</span><span>8×200G 等候选</span><span>光源、调制、探测、合分波、耦合和光纤数量</span></div>
+  </div>
+
+  <div class="warn"><b>“lane 数减少”不等于产品一定更简单。</b>例如从 8 条空间并行光改成 4 个更高速的波长，可能减少纤芯，却增加合波/分波、波长控制和更高速器件责任。复杂度往往是转移，不是消失。</div>
+</section>
+<section class="section" id="constraints" data-certainty="mechanism">
+  <div class="statusline"><span class="certainty mechanism">机理层展开</span><small>方向相对稳定，幅度和胜负必须绑定对象</small></div>
+  <div class="kicker">被放大的约束</div><h2>每条 lane 更快、端口更密以后，压力怎样一层层传下去</h2>
+  <p class="intro">“被放大”不是说所有指标机械地翻倍，而是原有设计余量变小：过去可以容忍的走线、温漂、噪声、装配偏差和测试简化，在更高 lane 速率或更高端口密度下可能不再够用。下面每张卡都按“触发 → 物理后果 → 补偿方式 → 新代价”展开。</p>
+
+  <div class="constraint-grid">
+    <article class="constraint-card"><header><span>01</span><div><small>Electrical channel</small><h3>高速电通道余量</h3></div></header><div class="constraint-body"><p><b>触发：</b>主机侧从约100G/lane走向约200G/lane，信号的有效带宽提高。</p><p><b>物理后果：</b>芯片封装、PCB、过孔、连接器和模块金手指造成的插损、反射、串扰与抖动占用更多眼图余量；电路径长度和每个不连续点都更敏感。</p><p><b>补偿：</b>改进封装/板材/连接器，缩短 C2M 路径，增加均衡、FEC 或 retiming。</p><p class="constraint-cost"><b>新代价：</b>更强 DSP 会增加模块功耗和时延；缩短路径或采用 NPO/CPO 会改变封装与维护边界；LPO 则把更多责任交给 Host 和联合验证。</p></div></article>
+
+    <article class="constraint-card"><header><span>02</span><div><small>I/O density</small><h3>引脚、面板与光纤密度</h3></div></header><div class="constraint-body"><p><b>触发：</b>用更多 lane 或更多端口增加系统总吞吐。</p><p><b>物理后果：</b>ASIC 封装需要更多高速 I/O，PCB 需要更多受控阻抗走线，前面板需要更多 cage/connector，空间并行光还会增加纤芯和极性管理。</p><p><b>补偿：</b>提高单 lane 速率、使用更高密度连接器、采用 WDM 让多路信号共用更少纤芯，或改变光引擎放置位置。</p><p class="constraint-cost"><b>新代价：</b>高密度连接更难布线和散热；WDM 把空间复杂度转成波长、合分波与温度稳定责任。</p></div></article>
+
+    <article class="constraint-card"><header><span>03</span><div><small>Optical bandwidth</small><h3>发射与接收器件带宽</h3></div></header><div class="constraint-body"><p><b>触发：</b>光 lane 从100G级走向200G级，同时仍要满足目标距离、误码和光功率边界。</p><p><b>物理后果：</b>Driver、激光器/调制器、PD 与 TIA 必须共同支持更高带宽；封装寄生、电光响应、噪声和线性度留给设计的余量变小。</p><p><b>补偿：</b>提高器件带宽，缩短 Driver—modulator 与 PD—TIA 互连，优化封装和 DSP/FEC，并在 EML、SiPh 等平台中选择合适实现。</p><p class="constraint-cost"><b>新代价：</b>更高速器件不只影响芯片价格，还会影响耦合、温控、老化、测试与良率；总速率本身不能决定哪种平台必胜。</p></div></article>
+
+    <article class="constraint-card"><header><span>04</span><div><small>Power &amp; thermal</small><h3>绝对功耗、热密度与冷却</h3></div></header><div class="constraint-body"><p><b>触发：</b>更多高速端口、更高带宽 DSP、Driver/TIA、光源与控制电路集中在有限面板和封装面积内。</p><p><b>物理后果：</b>即使每比特能耗下降，单模块绝对功耗仍可能上升；热必须经过芯片—TIM—外壳/散热器—空气或液冷路径排出，邻近端口还会互相影响热环境。</p><p><b>补偿：</b>先进制程、低功耗架构、降低模块内数字处理、改善散热器与风道、外置光源，或把光学移到 NPO/CPO 位置。</p><p class="constraint-cost"><b>新代价：</b>模块功耗下降不等于交换机总功耗下降；Host、交换 ASIC、风扇、泵和外置激光器的功耗必须一起计算。</p></div></article>
+
+    <article class="constraint-card"><header><span>05</span><div><small>Assembly &amp; yield</small><h3>装配公差、筛选与良率</h3></div></header><div class="constraint-body"><p><b>触发：</b>通道更多、器件更快、集成更密，光、电、热、机械公差同时作用。</p><p><b>物理后果：</b>贴装偏差、键合寄生、耦合损耗、波长漂移或某一路性能不足，都可能影响整机是否通过规格；高价值芯片组合后才发现坏件会放大损失。</p><p><b>补偿：</b>晶圆级测试、已知良品 KGD、过程内检测、更精密贴装/耦合、被动对准设计和可返工接口。</p><p class="constraint-cost"><b>新代价：</b>新增筛选和工艺控制会增加设备与测试投入；高度集成也可能减少零件与装配步骤。没有产线数据时，不能预设良率必升或必降。</p></div></article>
+
+    <article class="constraint-card"><header><span>06</span><div><small>Validation &amp; service</small><h3>联合验证、互操作与维护</h3></div></header><div class="constraint-body"><p><b>触发：</b>高速链路余量变小，而且均衡、FEC、模块传递函数和温度行为跨越 Host 与 Module 边界。</p><p><b>物理后果：</b>单独测试模块“能亮”不够，还要验证 stressed input、BER/FEC tail、通道校准、互操作、启动收敛和温度角落。</p><p><b>补偿：</b>增强可观测性、CMIS/VCS 配置、端到端误码测试、故障注入和明确的 FRU/rework 流程。</p><p class="constraint-cost"><b>新代价：</b>验证责任可能从模块厂扩展到系统厂和客户；CPO 缩短高速电路径，但会重画更换、返工和故障域边界。</p></div></article>
+  </div>
+</section>
+<section class="section" id="cascade" data-certainty="mechanism">
+  <div class="statusline"><span class="certainty mechanism">WHY 串联</span><small>同一约束可以带出不同、甚至相反的工程选择</small></div>
+  <div class="kicker">从约束走到路线</div><h2>技术路线不是“突然出现”，而是对约束传导方式的不同回答</h2>
+  <p class="intro">最容易缺失的就是中间这几步：需求不是直接指向 EML、SiPh、LPO 或 CPO；它先改变约束，再改变某种方案的相对价值。每条链还必须继续追踪代价去了哪里。</p>
+
+  <div class="cascade-list">
+    <article class="cascade-row"><div class="cascade-title"><span>链 1</span><b>电通道余量变小</b></div><div class="cascade-flow"><div><small>上游变化</small><b>200G/lane、较长 C2M 路径</b></div><i>→</i><div><small>约束</small><b>损耗、反射、串扰占用余量</b></div><i>→</i><div class="cascade-fork"><small>两个方向</small><b>增加 retiming</b><em>或</em><b>缩短路径 / linear</b></div><i>→</i><div><small>下游代价</small><b>模块功耗增加，或 Host/封装/验证责任增加</b></div></div><footer>因此 Retimed 与 LPO 并不是简单的新旧关系，而是对“在哪里恢复信号、由谁承担风险”的不同回答。</footer></article>
+
+    <article class="cascade-row"><div class="cascade-title"><span>链 2</span><b>面板与纤芯密度受限</b></div><div class="cascade-flow"><div><small>上游变化</small><b>端口吞吐和 lane 数增加</b></div><i>→</i><div><small>约束</small><b>连接器、光纤、极性与布线膨胀</b></div><i>→</i><div class="cascade-fork"><small>两个方向</small><b>Parallel：保留空间 lane</b><em>或</em><b>WDM：按波长复用</b></div><i>→</i><div><small>下游代价</small><b>多纤管理，或 mux/demux、波长与温控责任</b></div></div><footer>因此“纤芯更少”不等于 BOM 更少：空间管理责任可能转化为光谱管理责任。</footer></article>
+
+    <article class="cascade-row"><div class="cascade-title"><span>链 3</span><b>功耗与热密度受限</b></div><div class="cascade-flow"><div><small>上游变化</small><b>更高速 DSP、光源与更多密集端口</b></div><i>→</i><div><small>约束</small><b>模块壳温、风道与面板功率密度</b></div><i>→</i><div class="cascade-fork"><small>多个方向</small><b>先进制程 / LPO / 更强散热</b><em>或</em><b>NPO / CPO 改变放置</b></div><i>→</i><div><small>下游代价</small><b>Host 分责、共同封装、外置光源、维修边界重画</b></div></div><footer>因此 CPO 的吸引力来自系统级边界变化，不等于“只要到 3.2T 就必然采用 CPO”。</footer></article>
+  </div>
+
+  <h3 class="subhead">提速时必须同时看三个分母</h3>
+  <div class="denominator-grid">
+    <article><span>每只模块</span><b>W / module · $ / module</b><p>1.6T 模块的绝对功耗或售价可能高于 800G；这反映单只产品压力。</p></article>
+    <article><span>每单位带宽</span><b>W / Tb/s · $ / Gb/s</b><p>绝对功耗上升时，每比特能耗仍可能下降；这是效率口径。</p></article>
+    <article><span>整个系统</span><b>ASIC + optics + cooling + service</b><p>模块省下的功耗、成本或复杂度可能转移到 Host、交换芯片、冷却、封装、测试和维护。</p></article>
+  </div>
+  <div class="warn red"><b>不能跨分母下结论：</b>“模块功耗更低”“每比特更高效”和“交换机系统更省电”是三个不同命题；同样，“零件减少”“BOM 降低”和“全生命周期成本降低”也不是同一句话。</div>
+
+  <div class="tablewrap"><table class="bridge-table"><thead><tr><th>观察到的压力</th><th>可以继续问</th><th>还不能直接推出</th></tr></thead><tbody>
+    <tr><td>200G/lane 电通道更难</td><td>Retimed、LRO、LPO 分别把均衡、FEC、观测和故障责任放在哪里？</td><td class="scope">不能说 LPO 必然更省系统功耗，也不能说 DSP 一定不可缺</td></tr>
+    <tr><td>光 lane 带宽提高</td><td>Driver、modulator、PD、TIA、封装寄生和目标 reach 如何共同闭合？</td><td class="scope">不能只凭 1.6T 标签判断必须使用 EML 或 SiPh</td></tr>
+    <tr><td>纤芯与面板密度提高</td><td>Parallel 与 WDM 分别增加哪些接口、温控、耦合和维护责任？</td><td class="scope">不能只按光纤数量判断成本和可靠性</td></tr>
+    <tr><td>模块和面板热密度提高</td><td>模块、ASIC、风扇/液冷和外置激光器的功耗分别是多少？</td><td class="scope">不能用两款模块 nameplate 功耗代替系统受控比较</td></tr>
+    <tr><td>装配与测试边界收紧</td><td>KGD、耦合、老化、温箱、端到端 BER 和返工流程怎样变化？</td><td class="scope">不能自动推出设备价值量、测试时长或良率方向</td></tr>
+  </tbody></table></div>
+
+  <div class="foundation-note">延伸阅读：<a href="https://www.broadcom.com/company/news/product-releases/63146" target="_blank" rel="noreferrer">Broadcom Tomahawk 6</a>提供 102.4Tb/s 交换容量与 100G/200G 接口对象；<a href="https://www.ieee802.org/3/dj/" target="_blank" rel="noreferrer">IEEE P802.3dj</a>给出 200G 至 1.6T Ethernet 的标准工作边界；<a href="https://www.oiforum.com/wp-content/uploads/OIF-FD-CEI-224G-01.0.pdf" target="_blank" rel="noreferrer">OIF 224G 接口框架</a>把问题展开到芯片、封装、连接器、信道与系统。</div>
+</section></div>
+    </div>
+
+    <nav class="prev-next" aria-label="模块翻页"><a href="01-foundation.html"><small>← 上一模块</small><b>基础结构</b></a><a href="03-routes.html"><small>下一模块 →</small><b>技术路线</b></a></nav>
+  </main>
+
+  <footer class="site-footer"><span>光模块知识体系 · 模块化重构版</span><span>展示层重构，不改变知识库状态</span></footer>
+  <script src="assets/site.js?v=5d2cebaa45c6"></script>
+</body>
+</html>

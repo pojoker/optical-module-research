@@ -1,0 +1,18 @@
+<section class="section" id="answer" data-certainty="stable">
+        <div class="statusline"><span class="certainty stable">稳定解释</span><small>回答“它必须完成什么”，不等于所有模块 BOM 相同</small></div>
+        <div class="kicker">第 01 章 · 先建立直觉</div><h2>什么是光模块？电路板和光纤之间的双向翻译器</h2>
+        <p class="intro">交换芯片只能直接处理电信号，光纤里传输的却是光。它们不能直接“对话”，所以中间需要一个翻译盒：送数据时把电信号写到光上，收数据时再把光信号还原成电信号。</p>
+        <figure class="reference-figure"><a class="figure-link" href="assets/figures/01-function-chain.svg" target="_blank" rel="noreferrer" aria-label="打开光模块双向功能链原图"><img src="assets/figures/01-function-chain.svg" alt="光模块发送与接收两条功能链，以及管理、供电、承载和散热支撑层"></a><figcaption>参考图 1 · 从功能出发理解光模块；器件可以因路线不同而集成、拆分或移动。点击查看原图。</figcaption></figure>
+        <div class="primer-grid">
+          <article class="primer-card"><small>为什么不一直用电线</small><h3>速度越高、距离越长，电越难传</h3><p>高速电信号在电路板和连接器中传得越远，损耗和失真越难控制。光纤更适合把大量数据送到另一台设备、另一个机柜或更远的位置。</p></article>
+          <article class="primer-card"><small>光模块究竟做什么</small><h3>一只盒子，同时负责发送和接收</h3><p>发送时，它把芯片给出的电信号变成可以进入光纤的光；接收时，它把光纤送来的微弱光信号恢复成芯片能读懂的电信号。</p></article>
+          <article class="primer-card"><small>为什么会有很多技术路线</small><h3>任务相同，完成任务的方法不同</h3><p>所有方案都要完成“整理电、把数据写到光上、送入光纤、接住光、恢复电”这些动作，但具体使用的器件和摆放方式可以不同。</p></article>
+        </div>
+        <div class="thesis"><strong>先看懂它必须完成哪些动作，再认识每个动作由什么零件完成。</strong><p>后文出现的各种英文缩写，本质上都在回答两个问题：哪个零件来完成某项动作，以及这些零件放在哪里、怎样连接。</p></div>
+        <div class="flow">
+          <div class="node"><small>1</small><b>芯片送出电信号</b><span>数据从交换芯片进入模块</span></div><div class="node"><small>2</small><b>整理电信号</b><span>修整在走线中产生的失真</span></div><div class="node"><small>3</small><b>提供高速驱动</b><span>让发光或调制器件正确工作</span></div><div class="node"><small>4</small><b>把数据写到光上</b><span>光源产生光，调制环节承载数据</span></div><div class="node"><small>5</small><b>把光送进光纤</b><span>经过微型光学结构精确对准</span></div><div class="node"><small>6</small><b>远端接光并放大</b><span>把微弱光还原成可用电信号</span></div><div class="node"><small>7</small><b>交回另一颗芯片</b><span>完成一次设备间的数据传输</span></div>
+        </div>
+        <div class="walkthrough"><h3>最简单的记法</h3><div class="walk-flow"><span class="walk-step">本端芯片：电</span><span class="arrow">→</span><span class="walk-step">本端光模块：电变光</span><span class="arrow">→</span><span class="walk-step">光纤：传输光</span><span class="arrow">→</span><span class="walk-step">远端光模块：光变电</span><span class="arrow">→</span><span class="walk-step">远端芯片：电</span></div></div>
+        <div class="foundation-note">延伸阅读：<a href="https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/transceiver-modules/silicon-photonics-wp.html" target="_blank" rel="noreferrer">Cisco 光收发器原理</a>、<a href="https://www.juniper.net/documentation/us/en/software/junos/interfaces-ethernet-switches/topics/concept/overview-optical-transceivers.html" target="_blank" rel="noreferrer">Juniper 光收发器概览</a>。</div>
+        <div class="reader-rule"><b>正式层状态：</b>PQ001 的 KN008–KN010 已按用户明确批准整批写入，回答“光模块做什么”和“系统/机械边界在哪里”。PQ002 的 KN011–KN013 现在成为下一批独立的原子候选，回答 Host/Media 收发方向、数据/管理/供电三类并行路径，并给出一个明确受限的 CPO 光引擎内部分工实例；PQ003 的 KN014 仍是受限教学样机候选。后两批尚未获得写入授权。 <a href="../docs/research/knowledge-append-candidate-pq001-v1.yaml">PQ001 已晋升批次</a> · <a href="../docs/research/knowledge-append-candidate-pq002-v1.yaml">PQ002 下一批</a> · <a href="../docs/research/knowledge-append-candidate-pq003-v1.yaml">PQ003 样机候选</a> · <a href="../docs/reviews/2026-08-31-kimi-review-knowledge-append-pq003-v1.md">PQ003 语义审核</a></div>
+      </section>

@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225059372",
+    "stock_code": "300757",
+    "company_name": "<em>罗博特科</em>",
+    "title": "2025年年度报告",
+    "announcement_date": "2026-03-31",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225059372.PDF",
+    "adjunct_url": "finalpage/2026-03-31/1225059372.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300757/300757__em_罗博特科_em__2025_2025年年度报告.pdf",
+    "sha256": "4cc8a148a14fe3096054f72bf26d82f960b05f128785a9b960ab35f835afd9e9",
+    "size_bytes": 1705541,
+    "error": ""
+  },
+  {
+    "announcement_id": "1223238582",
+    "stock_code": "300757",
+    "company_name": "<em>罗博特科</em>",
+    "title": "2024年年度报告",
+    "announcement_date": "2025-04-24",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-24/1223238582.PDF",
+    "adjunct_url": "finalpage/2025-04-24/1223238582.PDF",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300757/300757__em_罗博特科_em__2024_2024年年度报告.pdf",
+    "sha256": "afebd6773777a5620320f480ad040e5ec8d90a33ab016effc2fcc7bdae4d7fd4",
+    "size_bytes": 3613267,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219740165",
+    "stock_code": "300757",
+    "company_name": "<em>罗博特科</em>",
+    "title": "2023年年度报告",
+    "announcement_date": "2024-04-23",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-23/1219740165.PDF",
+    "adjunct_url": "finalpage/2024-04-23/1219740165.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/300757/300757__em_罗博特科_em__2023_2023年年度报告.pdf",
+    "sha256": "0a769afb6c69b98b0a79d0859da021dd4f6d418fbd93cf6ec636d6f834bf52d0",
+    "size_bytes": 3396487,
+    "error": ""
+  }
+]

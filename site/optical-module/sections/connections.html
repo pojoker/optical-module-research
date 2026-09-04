@@ -1,0 +1,14 @@
+<section class="section" id="connections" data-certainty="mechanism">
+        <div class="statusline"><span class="certainty mechanism">典型机理候选</span><small>信号关系较稳定；具体 attach 与设备取决于产品</small></div>
+        <div class="kicker">第 03 章 · 精密连接</div><h2>这些零件怎样连在一起，装进一个小盒子？</h2>
+        <p class="intro">列出零件只是第一步。电信号要在芯片和电路板之间低失真地传递，光要在光源、光路和光纤之间精确对准，热量还要顺利传到外壳。下面展示常见连接方法；实际产品会因器件和封装不同而改变。</p>
+        <div class="edge-grid">
+          <article class="edge-card"><h3>主机接口 → 电路板 → 信号芯片</h3><p>高速电信号从设备进入模块，供电和管理信号也通过接口进入。</p><div class="edge-route"><span>金手指/连接器</span><span class="arrow">→</span><span>电路板高速走线</span><span class="arrow">→</span><span>信号处理芯片</span></div><footer>常见动作：贴装、回流焊和自动光学检查；具体封装取决于芯片与载体。</footer></article>
+          <article class="edge-card"><h3>信号处理芯片 → 驱动与放大电路</h3><p>高速电信号在不同电芯片之间传递。速度越高，互连长度、焊点和封装结构越需要精确控制。</p><div class="edge-route"><span>电路板/载体</span><span class="arrow">→</span><span>短距离电互连</span><span class="arrow">→</span><span>模拟前端</span></div><footer>常见方法：焊球、引线键合或倒装连接；不能只因为“高速”就认定必须使用某一种。</footer></article>
+          <article class="edge-card"><h3>高速驱动芯片 → 发光或调制器件</h3><p>驱动芯片提供适合发射器件的高速电压和电流变化，让数据能够被写到光上。</p><div class="edge-route"><span>高速驱动</span><span class="arrow">→</span><span>短射频互连</span><span class="arrow">→</span><span>发射器件</span></div><footer>常见动作：高精度贴装、引线或倒装连接；对电寄生、电极位置和散热都很敏感。</footer></article>
+          <article class="edge-card"><h3>光源 → 集成光路</h3><p>采用独立光源时，需要把光稳定、高效地送进芯片上的微型光路；不同平台也可能采用其他光源集成方式。</p><div class="edge-route"><span>连续光源</span><span class="arrow">→</span><span>光学对准与固定</span><span class="arrow">→</span><span>芯片内光路</span></div><footer>常见动作：主动或被动对准，以及胶粘、共晶或激光辅助键合；平台之间差异很大。</footer></article>
+          <article class="edge-card"><h3>光芯片/光器件 → 光纤</h3><p>芯片中的光束与光纤中的光束形状不同，需要微型光学结构完成匹配和对准。</p><div class="edge-route"><span>芯片耦合结构</span><span class="arrow">→</span><span>透镜/光纤阵列</span><span class="arrow">→</span><span>光纤接口</span></div><footer>常见动作：多轴对准、点胶或焊接、固化、端面和插入损耗检测。</footer></article>
+          <article class="edge-card"><h3>光电探测器 → 微弱信号放大器</h3><p>探测器产生的电流很弱，因此需要用很短的连接送到旁边的放大器，再交给后续电路处理。</p><div class="edge-route"><span>光电探测器</span><span class="arrow">→</span><span>低寄生互连</span><span class="arrow">→</span><span>放大与信号处理</span></div><footer>常见动作：芯片贴装、引线/倒装连接和电光联合测试；最终效果取决于整条接收通道。</footer></article>
+        </div>
+        <div class="warn"><b>记住两张图：</b>信号图回答“数据怎么走”；装配图回答“工厂怎样把零件连起来”。同一个功能可能有多种连接方法，不能把某一种典型做法当成所有产品的标准答案。</div>
+      </section>

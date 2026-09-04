@@ -1,0 +1,17 @@
+<section class="section" id="axes" data-certainty="stable">
+        <div class="statusline"><span class="certainty stable">稳定术语边界</span><small>术语不能跨维度互相替代</small></div>
+        <div class="kicker">第 06 章补充 · 名词放回正确位置</div><h2>这些常见名词，分别能说明什么？</h2>
+        <p class="intro">上一节建立了直观位置，这里进一步给每个术语划定边界：它能说明什么，又不能据此自动推出什么。</p>
+        <div class="tablewrap"><table><thead><tr><th>术语</th><th>所在轴</th><th>它真正回答</th><th>不能自动推出</th></tr></thead><tbody>
+          <tr><td class="term">DR8 / FR4</td><td><span class="axis-tag">链路规格层</span></td><td>具体标准或产品上下文中的光通道与光纤组织</td><td class="scope">不能单独推出速率、距离、纠错方式、外形或光子平台</td></tr>
+          <tr><td class="term">重定时方案（Retimed）</td><td><span class="axis-tag">电处理层</span></td><td>模块内恢复时钟，并重新判决和发送高速电信号</td><td class="scope">不固定光子平台、链路规格、外形或放置位置</td></tr>
+          <tr><td class="term">线性可插拔光学（LPO）</td><td><span class="axis-tag">电处理层</span></td><td>一种减少模块内复杂数字处理、更多依靠主机信号能力的可插拔方案</td><td class="scope">不能自动推出硅光、OSFP 外形或统一的功耗优势</td></tr>
+          <tr><td class="term">线性接收光学（LRO）</td><td><span class="axis-tag">电处理层</span></td><td>发送和接收方向采用不同信号处理责任的方向性架构</td><td class="scope">不能简单等同“半重定时”，也不固定光子平台</td></tr>
+          <tr><td class="term">直接调制激光器（DML）</td><td><span class="axis-tag">光子实现层</span></td><td>通过改变激光器本身的驱动，直接改变输出光</td><td class="scope">不自动推出距离、通道组织、电架构或封装</td></tr>
+          <tr><td class="term">电吸收调制激光器（EML）</td><td><span class="axis-tag">光子实现层</span></td><td>典型器件由 InP 平台上的 DFB 激光器与单片集成 EAM 调制器组成</td><td class="scope">不回答电处理架构、摆放位置、链路规格或市场份额</td></tr>
+          <tr><td class="term">硅光子平台（SiPh）</td><td><span class="axis-tag">光子实现层</span></td><td>在硅平台上集成波导、调制、复用、探测等光子功能</td><td class="scope">不能自动回答光源、调制器、探测器分别如何集成</td></tr>
+          <tr><td class="term">可插拔 / 邻近封装 / 共封装（Pluggable / NPO / CPO）</td><td><span class="axis-tag">物理位置层</span></td><td>光学位于设备前面板、交换芯片附近，还是与交换芯片共同封装</td><td class="scope">不固定电处理方式，也不固定 EML 或硅光</td></tr>
+          <tr><td class="term">OSFP / QSFP-DD</td><td><span class="axis-tag">产品外形层</span></td><td>前面板可插拔产品的机械、散热、供电和电连接形态</td><td class="scope">不自动推出链路规格、光子平台或是否采用 LPO</td></tr>
+        </tbody></table></div>
+        <div class="warn red"><b>最关键纠偏：</b>EML 是“发射器件组合”，SiPh 是“光子集成平台”，粒度不同；LPO 是电职责复合别名，CPO 是放置架构，维度也不同。它们不能直接排成一条互斥清单。</div>
+      </section>

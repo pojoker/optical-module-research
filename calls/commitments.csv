@@ -1,0 +1,10 @@
+commitment_id,claim_id,target,due_date,status,evidence_source_id,evidence_claim_id,assessment
+CM001,CL009,出货第100万颗Silicon One芯片,2026-01-24,fulfilled,S_CSCO_2026Q2_A,CL010,下一季官方prepared remarks明确使用已完成时态确认兑现
+CM002,CL003,800G产品从Q2开始明显放量,2026-06-30,pending,,,尚未用后续季度正式材料核对；pending不代表未兑现
+CM003,CL052,San Jose第二座InP半导体制造设施在2026年底前启用,2026-12-31,pending,,,2026Q1管理层再次称设施年内开始爬坡；重申不是已兑现证据
+CM004,CL056,下一代光网络产品在2027年中开始送样,2027-06-30,pending,,,等待后续产品公告或客户侧送样证据
+CM005,CL062,下一代光网络产品在2027年下半年开始量产,2027-12-31,pending,,,等待后续量产与客户采用证据；送样不等于量产
+CM006,CL061,约一半2026Q2 AI与云长期订单在未来十二个月转为收入,2027-07-23,pending,,,承诺口径混合Optical Networks与IP Networks；后续不能据总收入推导光学兑现
+CM007,CL069,Vesta样品在2026年第二季度可提供,2026-06-30,not_observed,,,窗口已过但只观察到产品发布与OFC展示；未找到明确样品已交付或官方延期表述
+CM008,CL070,Hyper-Rail在2026年底开始标准化,2026-12-31,pending,,,Q2首个多轨订单不等于标准化已经完成
+CM009,CL071,Hyper-Rail于2027年开始爬坡,2027-12-31,pending,,,等待规模收入出货或客户部署证据；首单不等于规模爬坡

@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225031509",
+    "stock_code": "000988",
+    "company_name": "<em>华工科技</em>",
+    "title": "2025年年度报告",
+    "announcement_date": "2026-03-26",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-03-26/1225031509.PDF",
+    "adjunct_url": "finalpage/2026-03-26/1225031509.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/000988/000988/000988__em_华工科技_em__2025_2025年年度报告.pdf",
+    "sha256": "ae1f7383c1094f66b77a3310c2830763d108193586bddd6869bdfc4f3d6d2f46",
+    "size_bytes": 2432885,
+    "error": ""
+  },
+  {
+    "announcement_id": "1223072198",
+    "stock_code": "000988",
+    "company_name": "<em>华工科技</em>",
+    "title": "2024年年度报告",
+    "announcement_date": "2025-04-12",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-12/1223072198.PDF",
+    "adjunct_url": "finalpage/2025-04-12/1223072198.PDF",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/000988/000988/000988__em_华工科技_em__2024_2024年年度报告.pdf",
+    "sha256": "f41be66854b3d394764ed6dc8f42472c89fe3ba0ab8c451820fcfa0e1d6c0080",
+    "size_bytes": 5158046,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219428932",
+    "stock_code": "000988",
+    "company_name": "<em>华工科技</em>",
+    "title": "2023年年度报告",
+    "announcement_date": "2024-03-28",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-03-28/1219428932.PDF",
+    "adjunct_url": "finalpage/2024-03-28/1219428932.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/flows/input/v16/000988/000988/000988__em_华工科技_em__2023_2023年年度报告.pdf",
+    "sha256": "9d7d0d7333af341247d327ee5703c062cb4ad4edc58d2e0e6e654f1425dab6d7",
+    "size_bytes": 5098236,
+    "error": ""
+  }
+]

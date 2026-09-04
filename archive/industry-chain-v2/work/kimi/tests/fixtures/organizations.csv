@@ -1,0 +1,7 @@
+org_id,canonical_name,org_type,country,identifiers,aliases,status,notes
+ORG-001,中际旭创,company,CN,,,active,光模块制造商
+ORG-002,Fabrinet,company,TH,,,active,EMS代工
+ORG-003,Marvell,company,US,,,active,相干DSP供应商
+ORG-004,光迅科技,company,CN,,,active,光器件供应商
+ORG-005,Coherent,company,US,,,active,激光器与光器件供应商
+ORG-006,IEEE,standards_body,US,,,active,标准组织

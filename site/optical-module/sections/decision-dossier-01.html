@@ -1,0 +1,53 @@
+<section class="section" id="decision-dossier-01" data-certainty="mechanism" aria-labelledby="decision-dossier-01-title">
+  <div class="statusline"><span class="certainty mechanism">决策卷宗 v0.1</span><small>DD-01 · 定性边界样板 · 不写 canonical</small></div>
+  <div class="kicker">AI Fabric · Placement × Electrical Responsibility</div>
+  <h2 id="decision-dossier-01-title">第一个结果不是“谁赢”，而是什么条件会改变前沿</h2>
+  <p class="intro">本卷宗把同一 AI fabric 服务目标作为共同分母，先比较光学放在哪里，再比较信号恢复责任放在哪里。当前证据可以画出决策边界和反转条件，但还不能生成可信的系统总分、精确阈值或市场胜负。</p>
+  <div class="reader-rule"><b>第一次看到这些词？</b>先读 <a href="08-concept-primer.html#placement-primer">Front-panel、NPO、CPO 位置图</a> 和 <a href="08-concept-primer.html#decision-glossary">Pareto 白话词典</a>，再回来读条件卡。</div>
+
+  <div class="thesis"><strong>当前裁决：四种组合都有条件进入 Pareto 前沿，没有无条件冠军。</strong><p>前面板方案的核心价值是独立接口与模块边界；LPO 用 Host 与系统验证责任换取模块侧功耗空间；NPO 用板级集成责任换取更短的潜在电路径；CPO 把光引擎带到 ASIC 同一 first-level substrate，同时把封装、热、光纤、光源和维修升级为系统问题。</p></div>
+
+  <h3 class="subhead">先冻结共同分母：不满足这些条件，不允许排总名次</h3>
+  <div class="axis-summary">
+    <div><b>服务目标</b>相同 endpoint、流量、bisection bandwidth、oversubscription</div>
+    <div><b>网络边界</b>相同 hop/latency、availability、部署范围和证据日期</div>
+    <div><b>器件边界</b>相同代际、lane rate、FEC/BER 与 reach 分布</div>
+    <div><b>核算边界</b>同时计入 optics、Host/board、cooling、failure domain 与 service</div>
+  </div>
+  <div class="reader-rule"><b>本版分析模式：</b><code>qualitative_boundary_map_no_numeric_system_model</code>。topology、radix、Host 增量功耗、cooling、failure rate、MTTR 与 yield 仍未闭合，因此只报告硬门和 Pareto 候选，不制造统一分数。</div>
+
+  <h3 class="subhead">两阶段决策：LPO 不能直接和 CPO 做同轴二选一</h3>
+  <div class="decision-grid">
+    <article class="decision"><span class="decision-num">1</span><div><h3>Placement：光学放在哪里</h3><p>先在 front-panel pluggable、NPO/OBO、CPO same-first-level-substrate 之间判断。这里决定电路径、板级或封装集成边界。</p><div class="terms"><span>Front panel</span><span>NPO / OBO</span><span>CPO</span></div></div></article>
+    <article class="decision"><span class="decision-num">2</span><div><h3>Electrical：谁恢复信号</h3><p>再为所选 placement 填 full retimed、Tx-retimed/Rx-linear 或 full linear。NPO/CPO 标签本身不能推出无 DSP、linear 或 direct-drive。</p><div class="terms"><span>Retimed</span><span>LRO / TRO</span><span>Linear</span></div></div></article>
+  </div>
+
+  <h3 class="subhead">当前进入前沿的四张条件卡</h3>
+  <div class="decision-grid">
+    <article class="constraint-card" data-option-id="FP-RETIMED"><header><span>FP-R</span><div><small>front panel × retimed</small><h3>独立边界优先</h3></div></header><div class="constraint-body"><p><b>进入前沿：</b>独立模块更换、多供应商电边界或故障隔离是硬约束，并且面板、电通道与散热仍能闭合。</p><p><b>负担位置：</b>模块承担更多信号恢复、功耗、热和局部诊断。</p><p class="constraint-cost"><b>退出条件：</b>面板热密度或高速电通道成为 active constraint。</p></div></article>
+    <article class="constraint-card" data-option-id="FP-LPO"><header><span>FP-L</span><div><small>front panel × linear</small><h3>Host 闭合优先</h3></div></header><div class="constraint-body"><p><b>进入前沿：</b>Host 与模块能在目标 FEC、温度、老化和多供应商矩阵下闭合 linear channel，且系统分项测量没有抵消模块侧收益。</p><p><b>负担位置：</b>均衡、校准、互操作、遥测与故障定位更多进入 Host 和系统验证。</p><p class="constraint-cost"><b>退出条件：</b>Host/board 不能稳定闭合，或系统净功耗没有改善。</p></div></article>
+    <article class="constraint-card" data-option-id="NPO-CONDITIONAL"><header><span>NPO</span><div><small>near package × object-specific electrical</small><h3>电路径与面板密度优先</h3></div></header><div class="constraint-body"><p><b>进入前沿：</b>ASIC 到前面板的电路径或面板密度成为硬约束，同时具名实现的板级光纤、冷却、attach/rework 与 service workflow 可接受。</p><p><b>负担位置：</b>attach、冷板、板级光纤、校准和维修进入主板与系统集成。</p><p class="constraint-cost"><b>退出条件：</b>attach 的热/信号/返工代价或服务边界抵消路径收益。</p></div></article>
+    <article class="constraint-card" data-option-id="CPO-CONDITIONAL"><header><span>CPO</span><div><small>same substrate × object-specific electrical</small><h3>Package I/O 与最高密度优先</h3></div></header><div class="constraint-body"><p><b>进入前沿：</b>package I/O escape、电路径或系统密度成为前面板/NPO 无法解决的硬约束，并且系统能接住 package thermal、fiber、laser 与 service ownership。</p><p><b>负担位置：</b>封装、热、内部光纤、光源、failure domain 与服务边界成为系统问题。</p><p class="constraint-cost"><b>退出条件：</b>package 故障域、冷却、engine service、成熟度或良率代价过高。</p></div></article>
+  </div>
+
+  <h3 class="subhead">五种会让排序反转的 active constraint</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>反转</th><th>约束从什么变成硬门</th><th>当前条件化结果</th><th>不能偷换成什么</th></tr></thead>
+    <tbody>
+      <tr data-reversal-id="R01"><td class="term">R01 · 服务边界</td><td>独立更换、多供应商边界、故障隔离与可执行维修流程</td><td>满足具名服务合同的 front-panel 方案保持前沿；NPO/CPO 必须证明实际 replaceable unit</td><td class="scope">不能写成“所有可插拔都易修”或“所有 CPO 都不可修”</td></tr>
+      <tr data-reversal-id="R02"><td class="term">R02 · 模块/面板功耗</td><td>Host 已证明 linear closure，系统分项功耗也未抵消模块收益</td><td>FP-LPO 可替代 FP-Retimed 进入前沿</td><td class="scope">不能用模块 nameplate 上限直接宣布系统节能</td></tr>
+      <tr data-reversal-id="R03"><td class="term">R03 · 电通道余量</td><td>lane rate、连接器、走线、串扰或面板密度使 front-panel 无法闭合</td><td>NPO 相对价值提高并进入前沿</td><td class="scope">不能由 NPO 标签自动补成 linear、socket 或 field-replaceable</td></tr>
+      <tr data-reversal-id="R04"><td class="term">R04 · Package I/O</td><td>near-package 路径或板级扇出仍不能满足硬约束，且 CPO 系统责任已闭合</td><td>CPO 进入或取代 NPO 的前沿位置</td><td class="scope">不能写成“到某个速率就必然 CPO”</td></tr>
+      <tr data-reversal-id="R05"><td class="term">R05 · 生命周期</td><td>failure domain、MTTR、RMA、yield 与 cooling 成本进入同一边界</td><td>排序可能再次反转；当前资料不足以判定方向</td><td class="scope">不能用单项电损耗或模块功耗代替 TCO</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 class="subhead">这一版真正产出的结论</h3>
+  <div class="audit">
+    <article class="auditcard"><h3>现在可以用于决策</h3><p>可以先判断是哪一项硬约束在起作用，再决定 placement；可以拒绝 LPO vs CPO 的错层比较；可以说明每条路线把哪些责任迁给模块、Host、主板、封装或服务体系；可以列出使前沿发生反转的验证条件。</p></article>
+    <article class="auditcard"><h3>现在仍不能下结论</h3><p>不能给 front-panel、NPO、CPO 的统一总排名；不能给系统节能比例、精确 lane-rate 切换点、MTTR、良率或 TCO；也不能由某个 exact-object 的 attach、光源或维修流程外推整个路线。</p></article>
+  </div>
+
+  <div class="warn red"><b>下一次真正的定量版本需要：</b>冻结一个可复现 AI fabric 的 topology、radix、port/reach 和 availability 目标，同步取得 optics、Host/board、PSU、cooling、BER/FEC、failure unit 与 service workflow 数据。无权重先画 Pareto frontier；权重与硬约束必须在模型输出可见前冻结。</div>
+  <div class="foundation-note"><b>证据入口：</b><a href="../docs/research/decision-dossier-01-ai-fabric-placement-v1.yaml">卷宗数据</a> · <a href="../docs/research/expert-question-coverage-gap-candidate-v1.yaml">系统边界问题</a> · <a href="../docs/research/pi-packages/2026-08-31-q-mid-01-retimed-vs-lpo-v1/system-power-latency-primary.md">Retimed/LPO 功耗边界</a> · <a href="../docs/research/pi-packages/2026-08-31-q-up-05-npo-cpo-boundaries-v1/adjudication.md">NPO/CPO 总裁决</a> · <a href="../docs/research/npo-cpo-serviceability-matrix-seeds-v1.yaml">可维护性矩阵</a></div>
+</section>

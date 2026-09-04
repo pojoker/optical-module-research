@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}}</title>
+<style>
+:root {
+  --bg: #f8f9fa;
+  --surface: #ffffff;
+  --text: #212529;
+  --text-muted: #6c757d;
+  --border: #dee2e6;
+  --accent: #0d6efd;
+  --accent-light: #e7f1ff;
+  --danger: #dc3545;
+  --danger-bg: #f8d7da;
+  --warning: #ffc107;
+  --warning-bg: #fff3cd;
+  --success: #198754;
+  --success-bg: #d1e7dd;
+  --unknown: #6c757d;
+  --unknown-bg: #e9ecef;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+  --mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+}
+header h1 { margin: 0 0 0.5rem; font-size: 1.75rem; }
+header .meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+nav.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav.tabs button {
+  border: 1px solid transparent;
+  border-bottom: none;
+  background: transparent;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  border-radius: 0.35rem 0.35rem 0 0;
+}
+nav.tabs button:hover { color: var(--accent); background: var(--accent-light); }
+nav.tabs button.active {
+  color: var(--accent);
+  border-color: var(--border);
+  border-bottom: 1px solid var(--surface);
+  margin-bottom: -1px;
+  font-weight: 600;
+  background: var(--surface);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 3rem;
+}
+
+section.tab { display: none; }
+section.tab.active { display: block; }
+
+section h2 { font-size: 1.4rem; margin-top: 2rem; border-bottom: 2px solid var(--border); padding-bottom: 0.4rem; }
+section h3 { font-size: 1.15rem; margin-top: 1.75rem; color: #343a40; }
+section h4 { font-size: 1rem; margin-top: 1.25rem; color: var(--text-muted); }
+
+p.empty { color: var(--text-muted); font-style: italic; }
+
+.badge {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  line-height: 1;
+  white-space: nowrap;
+  margin-right: 0.25rem;
+}
+
+.badge.structural_critical { background: var(--danger-bg); color: #842029; }
+.badge.bottleneck_candidate { background: var(--warning-bg); color: #664d03; }
+.badge.enabling { background: var(--accent-light); color: #084298; }
+.badge.supporting { background: #e2e3e5; color: #41464b; }
+.badge.unknown { background: var(--unknown-bg); color: #495057; }
+.badge.verified { background: var(--success-bg); color: #0f5132; }
+.badge.hypothesis { background: var(--warning-bg); color: #664d03; }
+.badge.structure { background: #cfe2ff; color: #052c65; }
+.badge.capability { background: #d1e7dd; color: #0f5132; }
+.badge.trade { background: #f8d7da; color: #842029; }
+.badge.prio-P0 { background: var(--danger-bg); color: #842029; }
+.badge.prio-P1 { background: var(--warning-bg); color: #664d03; }
+.badge.prio-P2 { background: #e2e3e5; color: #41464b; }
+.badge.prio-monitor { background: var(--unknown-bg); color: #495057; }
+
+.node-badge {
+  display: inline-block;
+  padding: 0.15em 0.4em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 0.2rem;
+  margin-right: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.node-badge.type-application { background: #e0f2fe; color: #075985; }
+.node-badge.type-product_route { background: #dcfce7; color: #166534; }
+.node-badge.type-function { background: #fef3c7; color: #92400e; }
+.node-badge.type-component { background: #f3e8ff; color: #6b21a8; }
+.node-badge.type-material { background: #ffedd5; color: #9a3412; }
+.node-badge.type-process { background: #e5e7eb; color: #374151; }
+.node-badge.type-equipment_category { background: #ccfbf1; color: #115e59; }
+
+.missing-ref { color: var(--danger); font-weight: 600; }
+
+.evid-badge {
+  display: inline-block;
+  padding: 0.15em 0.35em;
+  font-size: 0.75rem;
+  border-radius: 0.2rem;
+  margin: 0.1rem;
+  background: var(--unknown-bg);
+  color: var(--text);
+}
+.evid-badge.use-structure { background: #cfe2ff; color: #052c65; }
+.evid-badge.use-capability { background: #d1e7dd; color: #0f5132; }
+.evid-badge.use-trade { background: #f8d7da; color: #842029; }
+
+.no-evidence { color: var(--text-muted); font-style: italic; }
+
+.anon { color: var(--danger); font-weight: 600; }
+
+.nid, .eid, .cid, .tid, .gid {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+  overflow: hidden;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+table th, table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+table th {
+  background: #f1f3f5;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+table tbody tr:hover { background: #f8f9fa; }
+
+table.key-nodes td:nth-child(2),
+table.p0-gaps td:nth-child(2),
+table.gaps-table td:nth-child(2) { font-weight: 600; }
+
+#summary-composition, #summary-routes, #summary-keynodes, #summary-p0 {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#summary-composition h2, #summary-routes h2, #summary-keynodes h2, #summary-p0 h2 {
+  margin-top: 0;
+  border-bottom: none;
+  font-size: 1.2rem;
+}
+
+ul { margin: 0.5rem 0; padding-left: 1.5rem; }
+li { margin: 0.25rem 0; }
+
+code { font-family: var(--mono); background: #f1f3f5; padding: 0.1em 0.3em; border-radius: 0.2rem; word-break: break-all; }
+
+@media (max-width: 768px) {
+  nav.tabs { padding: 0.5rem 1rem 0; }
+  main { padding: 1rem; }
+  table { font-size: 0.8rem; }
+  table th, table td { padding: 0.4rem; }
+}
+
+@media print {
+  nav.tabs { display: none; }
+  section.tab { display: block !important; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>{{TITLE}}</h1>
+  <div class="meta">输入哈希 (SHA-256): {{INPUT_HASH}}</div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button class="active" onclick="showTab('summary')" role="tab" aria-selected="true">执行摘要</button>
+  <button onclick="showTab('structure')" role="tab">结构</button>
+  <button onclick="showTab('capability')" role="tab">能力</button>
+  <button onclick="showTab('trade')" role="tab">交易</button>
+  <button onclick="showTab('evidence')" role="tab">证据</button>
+  <button onclick="showTab('gaps')" role="tab">缺口</button>
+</nav>
+
+<main>
+  <section id="tab-summary" class="tab active" role="tabpanel">
+    {{EXECUTIVE_SUMMARY}}
+  </section>
+
+  <section id="tab-structure" class="tab" role="tabpanel">
+    {{STRUCTURE_SECTION}}
+  </section>
+
+  <section id="tab-capability" class="tab" role="tabpanel">
+    {{CAPABILITY_SECTION}}
+  </section>
+
+  <section id="tab-trade" class="tab" role="tabpanel">
+    {{TRADE_SECTION}}
+  </section>
+
+  <section id="tab-evidence" class="tab" role="tabpanel">
+    {{EVIDENCE_SECTION}}
+  </section>
+
+  <section id="tab-gaps" class="tab" role="tabpanel">
+    {{GAPS_SECTION}}
+  </section>
+</main>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('section.tab').forEach(function(el) {
+    el.classList.remove('active');
+  });
+  var target = document.getElementById('tab-' + id);
+  if (target) target.classList.add('active');
+
+  document.querySelectorAll('nav.tabs button').forEach(function(btn) {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+  var activeBtn = document.querySelector('nav.tabs button[onclick="showTab(\'' + id + '\')"]');
+  if (activeBtn) {
+    activeBtn.classList.add('active');
+    activeBtn.setAttribute('aria-selected', 'true');
+  }
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>

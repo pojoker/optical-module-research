@@ -1,0 +1,1 @@
+pi --provider opencode-go --model deepseek-v4-flash --thinking high --no-tools --no-context-files --no-session --print @contract-wq001.md @contract-wq001-attempt2.md @sources-wq001.md @adjudication-wq001-attempt1.md @raw-output-pq002-attempt3.md @adjudication-pq002-final.md @raw-output-tq002-attempt3.md @adjudication-tq002-final.md '严格执行 WQ001 attempt 2 收口合同，只输出中文 Markdown。'

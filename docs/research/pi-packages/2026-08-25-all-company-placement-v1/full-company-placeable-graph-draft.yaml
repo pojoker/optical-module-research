@@ -1,0 +1,1201 @@
+meta:
+  mode: draft_only
+  purpose: full_current_company_data_placeable_graph
+  physical_tree_source: tree.yaml
+  attachment_source: all-company-attachments-draft.yaml
+  route_relation_source: ../2026-08-25-tq010-tq014-delta-tradeoff-v1/company-capability-match-pilot.yaml
+  canonical_write_performed: false
+placement_readiness:
+  source_point_count: 271
+  declared_cell_edge_count: 271
+  eligible_company_attachment_count: 269
+  blocked_review_queue_count: 2
+  facet_assertion_count: 484
+  unique_observed_facet_count: 216
+  role_assertion_count: 272
+  route_pilot_linked_point_count: 56
+  route_requirement_candidate_edge_count: 6
+  route_related_facet_edge_count: 16
+  why_causal_edge_count: 0
+  route_service_edge_count: 0
+  all_source_points_have_a_graph_disposition: true
+knowledge_systems:
+  physical:
+    node_types:
+    - physical_cell
+    - capability_facet
+    - company_capability_role
+    source: tree.yaml + full-facet-registry-draft.yaml
+  technology_route:
+    node_types:
+    - route_profile_seed
+    - route_axis_observation
+    - route_product_attribute
+    - physical_capability_requirement
+    - validation_gap
+    source: ../2026-08-25-tq010-tq014-delta-tradeoff-v1/
+  why_bridge:
+    required_chain:
+    - scenario_constraint
+    - engineering_mechanism
+    - tradeoff_or_bottleneck
+    - route_requirement
+    - physical_capability_or_product_attribute
+    current_status: schema_only_blocked_by_missing_controlled_tradeoff_evidence
+    instantiated_causal_edges: 0
+  company_evidence:
+    node_types:
+    - company_string
+    - company_identity_candidate
+    - company_evidence_point
+    - company_capability_assertion
+    - attachment_review_item
+    source: points.csv + all-company-attachments-draft.yaml
+edge_contract:
+- edge_type: POINT_DECLARED_CELL
+  count: 271
+  meaning: source row's existing cell, not a newly inferred capability
+- edge_type: POINT_ELIGIBLE_ATTACHMENT
+  count: 269
+  meaning: eligible for facet/role review; not canonical promotion
+- edge_type: POINT_BLOCKED_ATTACHMENT
+  count: 2
+  meaning: kept in review queue, not attached as company capability
+- edge_type: POINT_PROPOSES_FACET
+  count: 484
+  meaning: span-backed draft facet assertion
+- edge_type: POINT_PROPOSES_ROLE
+  count: 272
+  meaning: span-backed draft role assertion
+- edge_type: ASSERTION_CANDIDATE_MATCHES_REQUIREMENT
+  count: 6
+  meaning: generic-scope or single-attribute candidate; not route service
+- edge_type: ASSERTION_RELATED_FACET_ONLY
+  count: 16
+  meaning: does not create a requirement match
+- edge_type: COMPANY_SERVES_ROUTE
+  count: 0
+  meaning: requires separate Route Service Evidence
+- edge_type: CONSTRAINT_EXPLAINS_REQUIREMENT
+  count: 0
+  meaning: requires controlled tradeoff evidence
+identity_and_scope_audit:
+  company_string_count: 155
+  company_identity_key_count: 154
+  alias_candidate_cluster_count: 1
+  subject_scope_counts:
+    acquired_asset_or_business: 1
+    affiliate_only: 1
+    controlled_subsidiary: 4
+    definition_only: 1
+    direct_named_subsidiary: 3
+    direct_or_unresolved: 258
+    group_via_acquisition: 3
+  company_id_status: missing_stable_company_id
+  automatic_alias_merge_performed: false
+remaining_gaps:
+  cell_only_point_count: 13
+  role_unknown_or_blocked_point_count: 101
+  facet_maturity_state: not_inferred_for_all_facets
+  mixed_or_multiple_maturity_marker_point_count: 73
+  unoccupied_tree_cells:
+  - EQ8
+  - M2c
+  canonical_promotion_status: not_requested_and_not_performed
+physical_cell_nodes:
+- physical_cell: M1
+  cell_name: 衬底(InP/GaAs/SOI)
+  tree_path:
+  - 材料层
+  - 衬底(InP/GaAs/SOI)
+  tree_route_label: 共用
+  point_count: 6
+  eligible_attachment_count: 6
+  blocked_attachment_count: 0
+  company_string_count: 6
+  facet_explicit_point_count: 6
+  cell_only_point_count: 0
+  observed_facets:
+  - material_type.GaAs_substrate
+  - material_type.GaSb_substrate
+  - material_type.InP_substrate
+  - wafer_diameter.12_inch
+  - wafer_diameter.2_inch
+  - wafer_diameter.3_inch
+  observed_roles:
+  - material_development
+  - material_manufacture
+  - material_supply
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - sample_or_validation
+  - small_batch
+  - volume_delivery
+  facet_registry_status: covered
+- physical_cell: M2a
+  cell_name: InP量子阱外延/掩埋再生长
+  tree_path:
+  - 材料层
+  - 外延层
+  - InP量子阱外延/掩埋再生长
+  tree_route_label: 共用
+  point_count: 4
+  eligible_attachment_count: 4
+  blocked_attachment_count: 0
+  company_string_count: 4
+  facet_explicit_point_count: 4
+  cell_only_point_count: 0
+  observed_facets:
+  - epitaxy_process.epitaxy_growth
+  - material_platform.GaAs
+  - material_platform.InP
+  observed_roles:
+  - material_development
+  - material_manufacture
+  observed_maturity_marker_types:
+  - development
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: M2b
+  cell_name: GaAs/VCSEL外延
+  tree_path:
+  - 材料层
+  - 外延层
+  - GaAs/VCSEL外延
+  tree_route_label: 数通COB/硅光
+  point_count: 1
+  eligible_attachment_count: 1
+  blocked_attachment_count: 0
+  company_string_count: 1
+  facet_explicit_point_count: 1
+  cell_only_point_count: 0
+  observed_facets:
+  - process.epitaxy_growth
+  observed_roles:
+  - material_manufacture
+  observed_maturity_marker_types: []
+  facet_registry_status: covered
+- physical_cell: M2c
+  cell_name: 锗/硅基选区外延
+  tree_path:
+  - 材料层
+  - 外延层
+  - 锗/硅基选区外延
+  tree_route_label: 数通COB/硅光
+  point_count: 0
+  eligible_attachment_count: 0
+  blocked_attachment_count: 0
+  company_string_count: 0
+  facet_explicit_point_count: 0
+  cell_only_point_count: 0
+  observed_facets: []
+  observed_roles: []
+  observed_maturity_marker_types: []
+  facet_registry_status: not_required_unoccupied
+- physical_cell: M3
+  cell_name: 靶材/MO源/特气/光刻耗材
+  tree_path:
+  - 材料层
+  - 靶材/MO源/特气/光刻耗材
+  tree_route_label: 共用
+  point_count: 16
+  eligible_attachment_count: 16
+  blocked_attachment_count: 0
+  company_string_count: 16
+  facet_explicit_point_count: 16
+  cell_only_point_count: 0
+  observed_facets:
+  - consumable_type.arsine
+  - consumable_type.developer
+  - consumable_type.evaporation_material
+  - consumable_type.heat_sink_material
+  - consumable_type.metal_organic_source
+  - consumable_type.phosphine
+  - consumable_type.photomask
+  - consumable_type.photoresist
+  - consumable_type.process_gas
+  - consumable_type.resist_remover
+  - consumable_type.sputter_target
+  observed_roles:
+  - material_development
+  - material_manufacture
+  - material_supply
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  facet_registry_status: covered
+- physical_cell: M4
+  cell_name: 结构陶瓷/石英/聚合物等无源材料
+  tree_path:
+  - 材料层
+  - 结构陶瓷/石英/聚合物等无源材料
+  tree_route_label: 共用
+  point_count: 7
+  eligible_attachment_count: 7
+  blocked_attachment_count: 0
+  company_string_count: 7
+  facet_explicit_point_count: 7
+  cell_only_point_count: 0
+  observed_facets:
+  - passive_material_type.EVA_polymer
+  - passive_material_type.alumina
+  - passive_material_type.aramid_yarn
+  - passive_material_type.ceramic_housing_material
+  - passive_material_type.ceramic_substrate
+  - passive_material_type.optical_fiber
+  - passive_material_type.quartz
+  observed_roles: []
+  observed_maturity_marker_types: []
+  facet_registry_status: covered
+- physical_cell: M5
+  cell_name: 高速板材
+  tree_path:
+  - 材料层
+  - 高速板材
+  tree_route_label: 共用
+  point_count: 3
+  eligible_attachment_count: 3
+  blocked_attachment_count: 0
+  company_string_count: 3
+  facet_explicit_point_count: 3
+  cell_only_point_count: 0
+  observed_facets:
+  - board_material_type.copper_clad_laminate
+  - board_material_type.high_speed_board_material
+  - board_material_type.laminate
+  - board_material_type.low_Dk
+  - board_material_type.prepreg
+  - board_material_type.resin_coated_copper
+  observed_roles:
+  - material_manufacture
+  observed_maturity_marker_types: []
+  facet_registry_status: covered
+- physical_cell: C1
+  cell_name: 激光器芯片(EML/DFB/CW光源)
+  tree_path:
+  - 芯片层
+  - 激光器芯片(EML/DFB/CW光源)
+  tree_route_label: 共用
+  point_count: 12
+  eligible_attachment_count: 12
+  blocked_attachment_count: 0
+  company_string_count: 12
+  facet_explicit_point_count: 12
+  cell_only_point_count: 0
+  observed_facets:
+  - laser_type.CW
+  - laser_type.DFB
+  - laser_type.DML
+  - laser_type.EML
+  - laser_type.FP
+  - laser_type.VCSEL
+  - laser_type.digital_laser
+  - laser_type.generic_laser_chip
+  - material_platform.GaAs
+  - material_platform.InP
+  observed_roles:
+  - component_design
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - small_batch
+  - volume_delivery
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: C2
+  cell_name: VCSEL
+  tree_path:
+  - 芯片层
+  - VCSEL
+  tree_route_label: 数通COB/硅光
+  point_count: 6
+  eligible_attachment_count: 6
+  blocked_attachment_count: 0
+  company_string_count: 6
+  facet_explicit_point_count: 6
+  cell_only_point_count: 0
+  observed_facets:
+  - device_type.VCSEL
+  - device_type.VCSEL_array
+  - lane_rate.100G
+  - lane_rate.10G
+  - lane_rate.25G
+  - lane_rate.50G
+  - material_platform.GaAs
+  observed_roles:
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - planned_or_future
+  - sample_or_validation
+  - volume_delivery
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: C3
+  cell_name: 探测器芯片(PIN/APD)
+  tree_path:
+  - 芯片层
+  - 探测器芯片(PIN/APD)
+  tree_route_label: 共用
+  point_count: 5
+  eligible_attachment_count: 5
+  blocked_attachment_count: 0
+  company_string_count: 5
+  facet_explicit_point_count: 5
+  cell_only_point_count: 0
+  observed_facets:
+  - detector_type.APD
+  - detector_type.PD
+  - detector_type.generic_detector
+  - detector_type.photodiode
+  - material_platform.InP
+  observed_roles:
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: C4
+  cell_name: 硅光PIC
+  tree_path:
+  - 芯片层
+  - 硅光PIC
+  tree_route_label: 数通COB/硅光
+  point_count: 6
+  eligible_attachment_count: 6
+  blocked_attachment_count: 0
+  company_string_count: 6
+  facet_explicit_point_count: 5
+  cell_only_point_count: 1
+  observed_facets:
+  - manufacturing_mode.external_foundry
+  - manufacturing_mode.foundry_platform
+  - platform.silicon_photonics
+  observed_roles:
+  - component_design
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - planned_or_future
+  - sample_or_validation
+  - small_batch
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: C5
+  cell_name: 电芯片(DSP/Driver/TIA/CDR/主控MCU)
+  tree_path:
+  - 芯片层
+  - 电芯片(DSP/Driver/TIA/CDR/主控MCU)
+  tree_route_label: 共用
+  point_count: 10
+  eligible_attachment_count: 10
+  blocked_attachment_count: 0
+  company_string_count: 8
+  facet_explicit_point_count: 10
+  cell_only_point_count: 0
+  observed_facets:
+  - component_type.DSP
+  - component_type.Driver
+  - component_type.IC_generic
+  - component_type.MCU
+  - component_type.PHY
+  - component_type.SoC
+  - component_type.TIA
+  - component_type.memory
+  - electrical_function.amplification
+  - electrical_function.bias_control
+  - electrical_function.control_monitor_protocol
+  - electrical_function.drive
+  - electrical_function.retiming
+  observed_roles:
+  - component_design
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - no_sales
+  - sample_or_validation
+  facet_registry_status: covered
+- physical_cell: C6
+  cell_name: 可调谐激光器/相干光组件
+  tree_path:
+  - 芯片层
+  - 可调谐激光器/相干光组件
+  tree_route_label: 相干
+  point_count: 5
+  eligible_attachment_count: 5
+  blocked_attachment_count: 0
+  company_string_count: 5
+  facet_explicit_point_count: 5
+  cell_only_point_count: 0
+  observed_facets:
+  - coherent_component_type.WSS
+  - coherent_component_type.coherent_component_generic
+  - coherent_component_type.modulator
+  - coherent_component_type.ultra_narrow_linewidth_laser
+  observed_roles:
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types: []
+  facet_registry_status: covered
+- physical_cell: C7
+  cell_name: 时钟/频控器件(差分晶振/温补/时钟发生器)
+  tree_path:
+  - 芯片层
+  - 时钟/频控器件(差分晶振/温补/时钟发生器)
+  tree_route_label: 共用
+  point_count: 1
+  eligible_attachment_count: 1
+  blocked_attachment_count: 0
+  company_string_count: 1
+  facet_explicit_point_count: 1
+  cell_only_point_count: 0
+  observed_facets:
+  - clock_type.differential_crystal_oscillator
+  - clock_type.high_fundamental_frequency
+  - clock_type.temperature_compensated_differential_oscillator
+  observed_roles:
+  - component_manufacture
+  observed_maturity_marker_types:
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: P1
+  cell_name: 芯片封装(COC/TO/筛选)
+  tree_path:
+  - 芯片封装/委外
+  - 芯片封装(COC/TO/筛选)
+  tree_route_label: 共用
+  point_count: 9
+  eligible_attachment_count: 9
+  blocked_attachment_count: 0
+  company_string_count: 9
+  facet_explicit_point_count: 9
+  cell_only_point_count: 0
+  observed_facets:
+  - packaging_type.chip_packaging_generic
+  - packaging_type.outsourced_processing
+  observed_roles:
+  - packaging_service
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  facet_registry_status: covered
+- physical_cell: D1
+  cell_name: TOSA
+  tree_path:
+  - 器件层
+  - 电信/接入气密线
+  - TOSA
+  tree_route_label: 电信气密
+  point_count: 6
+  eligible_attachment_count: 6
+  blocked_attachment_count: 0
+  company_string_count: 6
+  facet_explicit_point_count: 4
+  cell_only_point_count: 2
+  observed_facets:
+  - application.OTDR
+  - application.mobile_fronthaul
+  - assembly_type.TOSA
+  - package_style.coaxial
+  observed_roles:
+  - component_design
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  facet_registry_status: covered
+- physical_cell: D2
+  cell_name: ROSA
+  tree_path:
+  - 器件层
+  - 电信/接入气密线
+  - ROSA
+  tree_route_label: 电信气密
+  point_count: 4
+  eligible_attachment_count: 4
+  blocked_attachment_count: 0
+  company_string_count: 4
+  facet_explicit_point_count: 3
+  cell_only_point_count: 1
+  observed_facets:
+  - assembly_type.ROSA
+  observed_roles:
+  - component_design
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  facet_registry_status: covered
+- physical_cell: D3
+  cell_name: BOSA
+  tree_path:
+  - 器件层
+  - 电信/接入气密线
+  - BOSA
+  tree_route_label: 电信气密
+  point_count: 6
+  eligible_attachment_count: 6
+  blocked_attachment_count: 0
+  company_string_count: 6
+  facet_explicit_point_count: 5
+  cell_only_point_count: 1
+  observed_facets:
+  - PON_type.ComboPON
+  - PON_type.XGSPON
+  - assembly_type.BOSA
+  observed_roles:
+  - component_manufacture
+  observed_maturity_marker_types: []
+  facet_registry_status: covered
+- physical_cell: D4
+  cell_name: 陶瓷管壳/TO管座
+  tree_path:
+  - 器件层
+  - 电信/接入气密线
+  - 陶瓷管壳/TO管座
+  tree_route_label: 电信气密
+  point_count: 4
+  eligible_attachment_count: 4
+  blocked_attachment_count: 0
+  company_string_count: 4
+  facet_explicit_point_count: 4
+  cell_only_point_count: 0
+  observed_facets:
+  - housing_type.ceramic_housing
+  - housing_type.metal_package_housing
+  observed_roles:
+  - component_design
+  observed_maturity_marker_types: []
+  facet_registry_status: covered
+- physical_cell: D12
+  cell_name: 光引擎/COB组件
+  tree_path:
+  - 器件层
+  - 数通组件线
+  - 光引擎/COB组件
+  tree_route_label: 数通COB/硅光
+  point_count: 10
+  eligible_attachment_count: 9
+  blocked_attachment_count: 1
+  company_string_count: 9
+  facet_explicit_point_count: 9
+  cell_only_point_count: 1
+  observed_facets:
+  - assembly_type.COB
+  - assembly_type.CPO_component
+  - assembly_type.OSA
+  - assembly_type.optical_engine
+  - process_type.die_attach
+  - process_type.optical_coupling
+  - process_type.wire_bond
+  observed_roles:
+  - component_design
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: D6
+  cell_name: 隔离器
+  tree_path:
+  - 器件层
+  - 无源器件(跨线共用)
+  - 隔离器
+  tree_route_label: 共用
+  point_count: 6
+  eligible_attachment_count: 6
+  blocked_attachment_count: 0
+  company_string_count: 6
+  facet_explicit_point_count: 6
+  cell_only_point_count: 0
+  observed_facets:
+  - isolator_type.inline_isolator
+  - isolator_type.optical_isolator
+  observed_roles:
+  - product_offer
+  observed_maturity_marker_types: []
+  facet_registry_status: covered
+- physical_cell: D7
+  cell_name: 透镜/微光学
+  tree_path:
+  - 器件层
+  - 无源器件(跨线共用)
+  - 透镜/微光学
+  tree_route_label: 共用
+  point_count: 8
+  eligible_attachment_count: 8
+  blocked_attachment_count: 0
+  company_string_count: 7
+  facet_explicit_point_count: 8
+  cell_only_point_count: 0
+  observed_facets:
+  - optic_type.V_groove_array
+  - optic_type.aspheric_lens
+  - optic_type.cylindrical_lens
+  - optic_type.fiber_lens
+  - optic_type.generic_optical_component
+  - optic_type.lens_generic
+  - optic_type.prism
+  - optic_type.silicon_lens
+  - optic_type.spherical_lens
+  observed_roles:
+  - component_design
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - sample_or_validation
+  - small_batch
+  - volume_delivery
+  facet_registry_status: covered
+- physical_cell: D8
+  cell_name: AWG/波分复用
+  tree_path:
+  - 器件层
+  - 无源器件(跨线共用)
+  - AWG/波分复用
+  tree_route_label: 共用
+  point_count: 8
+  eligible_attachment_count: 8
+  blocked_attachment_count: 0
+  company_string_count: 8
+  facet_explicit_point_count: 8
+  cell_only_point_count: 0
+  observed_facets:
+  - mux_type.AWG
+  - mux_type.CWDM_AWG
+  - mux_type.LAN_WDM_AWG
+  - mux_type.PLC_splitter
+  - mux_type.WDM_generic
+  observed_roles:
+  - component_design
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - volume_delivery
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: D9
+  cell_name: 光纤阵列FAU/MPO连接
+  tree_path:
+  - 器件层
+  - 无源器件(跨线共用)
+  - 光纤阵列FAU/MPO连接
+  tree_route_label: 共用
+  point_count: 17
+  eligible_attachment_count: 17
+  blocked_attachment_count: 0
+  company_string_count: 17
+  facet_explicit_point_count: 17
+  cell_only_point_count: 0
+  observed_facets:
+  - connection_type.FAU
+  - connection_type.MPO
+  - connection_type.MTP
+  - connection_type.MT_FA
+  - connection_type.V_groove_array
+  - connection_type.fiber_array
+  - connection_type.fiber_cable_assembly
+  - connection_type.fiber_harness
+  - connection_type.passive_optical_interconnect
+  observed_roles:
+  - component_design
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - sample_or_validation
+  - small_batch
+  - volume_delivery
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: D10
+  cell_name: 陶瓷插芯/套管
+  tree_path:
+  - 器件层
+  - 无源器件(跨线共用)
+  - 陶瓷插芯/套管
+  tree_route_label: 共用
+  point_count: 3
+  eligible_attachment_count: 3
+  blocked_attachment_count: 0
+  company_string_count: 3
+  facet_explicit_point_count: 3
+  cell_only_point_count: 0
+  observed_facets:
+  - connector_type.fiber_connector
+  - ferrule_type.MT_ferrule
+  - ferrule_type.ceramic_ferrule
+  observed_roles:
+  - component_manufacture
+  observed_maturity_marker_types: []
+  facet_registry_status: covered
+- physical_cell: D11
+  cell_name: 滤波片/薄膜
+  tree_path:
+  - 器件层
+  - 无源器件(跨线共用)
+  - 滤波片/薄膜
+  tree_route_label: 共用
+  point_count: 4
+  eligible_attachment_count: 4
+  blocked_attachment_count: 0
+  company_string_count: 4
+  facet_explicit_point_count: 4
+  cell_only_point_count: 0
+  observed_facets:
+  - filter_type.CWDM_filter
+  - filter_type.DWDM_filter
+  - filter_type.LWDM_filter
+  - filter_type.WDM_filter
+  - filter_type.Z_BLOCK
+  - filter_type.optical_filter_generic
+  observed_roles:
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - sample_or_validation
+  - small_batch
+  - volume_delivery
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: D13
+  cell_name: 温控元件(TEC/制冷器)
+  tree_path:
+  - 器件层
+  - 无源器件(跨线共用)
+  - 温控元件(TEC/制冷器)
+  tree_route_label: 共用
+  point_count: 2
+  eligible_attachment_count: 2
+  blocked_attachment_count: 0
+  company_string_count: 2
+  facet_explicit_point_count: 2
+  cell_only_point_count: 0
+  observed_facets:
+  - thermal_control_type.Micro_TEC
+  - thermal_control_type.TEC
+  - thermal_control_type.thermoelectric_component
+  observed_roles:
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - sample_or_validation
+  facet_registry_status: covered
+- physical_cell: B1
+  cell_name: 光模块PCB
+  tree_path:
+  - 电路与结构
+  - 光模块PCB
+  tree_route_label: 共用
+  point_count: 17
+  eligible_attachment_count: 17
+  blocked_attachment_count: 0
+  company_string_count: 17
+  facet_explicit_point_count: 16
+  cell_only_point_count: 1
+  observed_facets:
+  - board_type.PCB
+  - board_type.glass_substrate
+  - board_type.high_frequency_high_speed_board
+  - module_rate.1_6T
+  - module_rate.3_2T
+  - module_rate.400G
+  - module_rate.800G
+  observed_roles:
+  - component_design
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - sample_or_validation
+  - small_batch
+  - volume_delivery
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: B2
+  cell_name: 结构件(底座/壳体/散热)
+  tree_path:
+  - 电路与结构
+  - 结构件(底座/壳体/散热)
+  tree_route_label: 共用
+  point_count: 9
+  eligible_attachment_count: 9
+  blocked_attachment_count: 0
+  company_string_count: 9
+  facet_explicit_point_count: 8
+  cell_only_point_count: 1
+  observed_facets:
+  - power_boundary.15_18W
+  - structure_type.ceramic_housing
+  - structure_type.ceramic_package_housing
+  - structure_type.heat_sink
+  - structure_type.housing
+  observed_roles:
+  - component_design
+  - component_manufacture
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - no_sales
+  - planned_or_future
+  - volume_delivery
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: MOD1
+  cell_name: 数通直检模块(800G/1.6T)
+  tree_path:
+  - 模块层
+  - 数通直检模块(800G/1.6T)
+  tree_route_label: 数通COB/硅光
+  point_count: 23
+  eligible_attachment_count: 22
+  blocked_attachment_count: 1
+  company_string_count: 23
+  facet_explicit_point_count: 20
+  cell_only_point_count: 3
+  observed_facets:
+  - aggregate_rate.1_6T
+  - aggregate_rate.400G
+  - aggregate_rate.800G
+  - application.data_center
+  - form_factor.OSFP
+  - module_product.optical_transceiver_generic
+  - photonics_platform.EML_raw
+  - photonics_platform.silicon_photonics
+  observed_roles:
+  - module_integrate
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - volume_delivery
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: MOD2
+  cell_name: 相干模块(400ZR+)
+  tree_path:
+  - 模块层
+  - 相干模块(400ZR+)
+  tree_route_label: 相干
+  point_count: 8
+  eligible_attachment_count: 8
+  blocked_attachment_count: 0
+  company_string_count: 8
+  facet_explicit_point_count: 8
+  cell_only_point_count: 0
+  observed_facets:
+  - aggregate_rate.400G
+  - aggregate_rate.800G
+  - application.DCI
+  - application.long_haul
+  - application.metro
+  - coherent_type.ZR
+  - coherent_type.ZR_plus
+  - coherent_type.coherent_pluggable
+  observed_roles:
+  - module_integrate
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - sample_or_validation
+  - small_batch
+  - volume_delivery
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: MOD3
+  cell_name: 电信/接入模块
+  tree_path:
+  - 模块层
+  - 电信/接入模块
+  tree_route_label: 电信气密
+  point_count: 15
+  eligible_attachment_count: 15
+  blocked_attachment_count: 0
+  company_string_count: 15
+  facet_explicit_point_count: 14
+  cell_only_point_count: 1
+  observed_facets:
+  - PON_type.25G_PON
+  - PON_type.50G_PON
+  - PON_type.XGPON
+  - PON_type.XGSPON
+  - aggregate_rate.100G
+  - aggregate_rate.400G
+  - aggregate_rate.800G
+  - application.5G_backhaul
+  - application.5G_fronthaul
+  - application.5G_generic
+  - application.5G_midhaul
+  - application.DWDM
+  - application.PON_access
+  - application.telecom_generic
+  - application.telecom_transport
+  observed_roles:
+  - module_integrate
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: EMS1
+  cell_name: 模块代工EMS
+  tree_path:
+  - 制造/代工
+  - 模块代工EMS
+  tree_route_label: 共用
+  point_count: 3
+  eligible_attachment_count: 3
+  blocked_attachment_count: 0
+  company_string_count: 3
+  facet_explicit_point_count: 3
+  cell_only_point_count: 0
+  observed_facets:
+  - service_type.chip_back_end_processing
+  - service_type.module_electronic_assembly
+  - service_type.module_professional_manufacturing
+  - service_type.optical_manufacturing_service
+  observed_roles:
+  - manufacturing_service
+  - product_offer
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - planned_or_future
+  - sample_or_validation
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: EQ1
+  cell_name: 外延设备(MOCVD/MBE/CVD)
+  tree_path:
+  - 设备/仪器纵轴
+  - 外延设备(MOCVD/MBE/CVD)
+  tree_route_label: 共用
+  point_count: 4
+  eligible_attachment_count: 4
+  blocked_attachment_count: 0
+  company_string_count: 4
+  facet_explicit_point_count: 4
+  cell_only_point_count: 0
+  observed_facets:
+  - equipment_process.EPI
+  - material_target.BTO_on_silicon
+  - material_target.GaN
+  - material_target.InP
+  - material_target.SiGe
+  - wafer_size.300_mm
+  - wafer_size.8_inch
+  observed_roles:
+  - equipment_design
+  - equipment_manufacture
+  - equipment_supply
+  - process_enable
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - sample_or_validation
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: EQ2
+  cell_name: 光刻/刻蚀(III-V与硅光)
+  tree_path:
+  - 设备/仪器纵轴
+  - 光刻/刻蚀(III-V与硅光)
+  tree_route_label: 共用
+  point_count: 5
+  eligible_attachment_count: 5
+  blocked_attachment_count: 0
+  company_string_count: 5
+  facet_explicit_point_count: 5
+  cell_only_point_count: 0
+  observed_facets:
+  - equipment_process.CCP_etch
+  - equipment_process.cleaning
+  - equipment_process.coat_develop
+  - equipment_process.lithography
+  - equipment_process.plasma_etch
+  - equipment_process.resist_strip
+  - material_target.InP
+  - material_target.compound_semiconductor
+  observed_roles:
+  - equipment_manufacture
+  - equipment_supply
+  - process_enable
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  facet_registry_status: covered
+- physical_cell: EQ3
+  cell_name: 贴片/固晶(共晶/固晶)
+  tree_path:
+  - 设备/仪器纵轴
+  - 贴片/固晶(共晶/固晶)
+  tree_route_label: 共用
+  point_count: 5
+  eligible_attachment_count: 5
+  blocked_attachment_count: 0
+  company_string_count: 5
+  facet_explicit_point_count: 5
+  cell_only_point_count: 0
+  observed_facets:
+  - equipment_type.automated_assembly_line
+  - equipment_type.bond_placement
+  - equipment_type.die_bonder
+  - equipment_type.eutectic_bonder
+  - module_rate.1_6T
+  - module_rate.400G
+  - module_rate.800G
+  observed_roles:
+  - equipment_design
+  - equipment_manufacture
+  - equipment_supply
+  - process_enable
+  - test_enable
+  observed_maturity_marker_types: []
+  facet_registry_status: covered
+- physical_cell: EQ4
+  cell_name: 耦合设备(含CPO耦合)
+  tree_path:
+  - 设备/仪器纵轴
+  - 耦合设备(含CPO耦合)
+  tree_route_label: 共用
+  point_count: 3
+  eligible_attachment_count: 3
+  blocked_attachment_count: 0
+  company_string_count: 3
+  facet_explicit_point_count: 3
+  cell_only_point_count: 0
+  observed_facets:
+  - equipment_type.micro_assembly
+  - equipment_type.optical_coupling
+  - target.optical_module
+  - target.silicon_photonics
+  observed_roles:
+  - equipment_manufacture
+  - process_enable
+  - test_enable
+  observed_maturity_marker_types: []
+  facet_registry_status: covered
+- physical_cell: EQ5
+  cell_name: 键合设备
+  tree_path:
+  - 设备/仪器纵轴
+  - 键合设备
+  tree_route_label: 共用
+  point_count: 1
+  eligible_attachment_count: 1
+  blocked_attachment_count: 0
+  company_string_count: 1
+  facet_explicit_point_count: 1
+  cell_only_point_count: 0
+  observed_facets:
+  - application.3D_integration
+  - application.silicon_photonics
+  - equipment_type.hybrid_bonding
+  - equipment_type.wafer_to_wafer_bonding
+  observed_roles:
+  - equipment_manufacture
+  - process_enable
+  observed_maturity_marker_types:
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: EQ6
+  cell_name: AOI/在线检测
+  tree_path:
+  - 设备/仪器纵轴
+  - AOI/在线检测
+  tree_route_label: 共用
+  point_count: 3
+  eligible_attachment_count: 3
+  blocked_attachment_count: 0
+  company_string_count: 3
+  facet_explicit_point_count: 3
+  cell_only_point_count: 0
+  observed_facets:
+  - defect_target.die_offset
+  - defect_target.waveguide_defect
+  - defect_target.wire_bond_defect
+  - equipment_type.AOI
+  - equipment_type.exposure
+  - equipment_type.inspection
+  - equipment_type.sorter
+  observed_roles:
+  - equipment_design
+  - equipment_manufacture
+  - equipment_supply
+  - process_enable
+  - test_enable
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  - volume_production
+  facet_registry_status: covered
+- physical_cell: EQ7
+  cell_name: 测试设备与仪器(探针台/分选/ATE/示波器/老化)
+  tree_path:
+  - 设备/仪器纵轴
+  - 测试设备与仪器(探针台/分选/ATE/示波器/老化)
+  tree_route_label: 共用
+  point_count: 6
+  eligible_attachment_count: 6
+  blocked_attachment_count: 0
+  company_string_count: 6
+  facet_explicit_point_count: 5
+  cell_only_point_count: 1
+  observed_facets:
+  - equipment_type.AOI
+  - equipment_type.laser_scan_analyzer
+  - equipment_type.module_test_system
+  - equipment_type.precision_test_equipment
+  - equipment_type.probe_station
+  - equipment_type.sorter
+  - equipment_type.spectrum_analyzer
+  - equipment_type.tunable_laser
+  - equipment_type.wavelength_meter
+  - test_target.CPO_module
+  - test_target.PD_APD_VCSEL
+  - test_target.silicon_photonics_wafer
+  observed_roles:
+  - equipment_design
+  - equipment_manufacture
+  - equipment_supply
+  - process_enable
+  - test_enable
+  observed_maturity_marker_types:
+  - actual_offer_or_delivery
+  - development
+  facet_registry_status: covered
+- physical_cell: EQ8
+  cell_name: 气密封装设备(缝焊/激光焊)
+  tree_path:
+  - 设备/仪器纵轴
+  - 气密封装设备(缝焊/激光焊)
+  tree_route_label: 电信气密
+  point_count: 0
+  eligible_attachment_count: 0
+  blocked_attachment_count: 0
+  company_string_count: 0
+  facet_explicit_point_count: 0
+  cell_only_point_count: 0
+  observed_facets: []
+  observed_roles: []
+  observed_maturity_marker_types: []
+  facet_registry_status: not_required_unoccupied

@@ -1,0 +1,22 @@
+{
+  "endpoint_id": "LITE_IR_RELEASES",
+  "note": "第一方正式公告（corporate_narrative 内容类，但属于 official_release，可以支撑成熟商业阶段的第一方 asserted）。",
+  "items": [
+    {
+      "url": "https://investor.lumentum.com/financial-news-releases/lumentum-first-shipment-1-6t-2026-09-01",
+      "title": "Lumentum Begins Shipment of 1.6T Pluggable Optics",
+      "published_at": "2026-09-01",
+      "origin_key": "lite-2026-09-01-1-6t-first-shipment",
+      "paragraphs": [
+        {
+          "anchor": "press-release:p1",
+          "text": "Lumentum began shipping its 1.6T pluggable optics to a top-tier cloud customer this quarter."
+        },
+        {
+          "anchor": "press-release:p2",
+          "text": "The company is sampling 3.2T modules with additional customers."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+pi --provider opencode-go --model deepseek-v4-flash --thinking high --no-tools --no-context-files --no-session --print @contract-tq004.md @sources-tq004.md @../2026-08-23-expansion-v1/post-review-effective-text.md '严格执行 TQ004 draft-only 合同。只输出中文 Markdown。技术路线必须写成轴值组合；不得生成新 QID、路线胜负或公司结论。'

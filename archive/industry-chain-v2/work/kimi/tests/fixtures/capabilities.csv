@@ -1,0 +1,7 @@
+capability_id,org_id,node_id,capability_status,route_scope,evidence_ids,as_of,review_status,notes
+CAP-001,ORG-001,SN-COMP-DSP-DD,production,SN-ROUTE-DR8;SN-ROUTE-2XFR4,EV-CAP-001,2026-07-24,admitted,
+CAP-002,ORG-001,SN-COMP-EML-DR8,production,SN-ROUTE-DR8,EV-CAP-001,2026-07-24,admitted,
+CAP-003,ORG-004,SN-COMP-EML-FR4,production,SN-ROUTE-2XFR4,EV-CAP-001,2026-07-24,admitted,
+CAP-004,ORG-003,SN-COMP-COH-DSP,sampling,SN-ROUTE-400ZR,EV-CAP-001,2026-07-24,evidenced,
+CAP-005,ORG-005,SN-COMP-ITL,production,SN-ROUTE-400ZR,EV-CAP-001,2026-07-24,admitted,
+CAP-006,ORG-002,SN-PRC-ASM,production,all,EV-CAP-001,2026-07-24,admitted,

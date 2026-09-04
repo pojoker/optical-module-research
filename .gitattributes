@@ -1,0 +1,3 @@
+# Evidence snapshots must remain byte-for-byte stable.
+corpus/web/**/*.html -text -diff
+corpus/web/**/*.pdf -text -diff

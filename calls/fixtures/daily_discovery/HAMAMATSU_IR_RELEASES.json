@@ -1,0 +1,5 @@
+{
+  "endpoint_id": "HAMAMATSU_IR_RELEASES",
+  "failure": "HTTP 504 gateway timeout while retrieving https://www.hamamatsu.com/jp/en/newsroom.html",
+  "note": "抓取失败必须显式留在失败日志与队列，不能静默跳过或降级为‘无相关内容’。"
+}

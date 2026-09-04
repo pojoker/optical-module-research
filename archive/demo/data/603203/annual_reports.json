@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225173150",
+    "stock_code": "603203",
+    "company_name": "<em>快克智能</em>",
+    "title": "快克智能2025年年度报告",
+    "announcement_date": "2026-04-24",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225173150.PDF",
+    "adjunct_url": "finalpage/2026-04-24/1225173150.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/603203/603203__em_快克智能_em__2025_快克智能2025年年度报告.pdf",
+    "sha256": "a8526267b8ef26a079784d3bf280a345d52ee4b0901f3943bf7f0e9665aa37b3",
+    "size_bytes": 1746539,
+    "error": ""
+  },
+  {
+    "announcement_id": "1223403806",
+    "stock_code": "603203",
+    "company_name": "<em>快克智能</em>",
+    "title": "快克智能2024年年度报告",
+    "announcement_date": "2025-04-29",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-29/1223403806.pdf",
+    "adjunct_url": "finalpage/2025-04-29/1223403806.pdf",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/603203/603203__em_快克智能_em__2024_快克智能2024年年度报告.pdf",
+    "sha256": "8e2f35fdb80a2b494242464fb9e85e3220583c467ca7f4f95450ef75122f569c",
+    "size_bytes": 1990572,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219905648",
+    "stock_code": "603203",
+    "company_name": "<em>快克智能</em>",
+    "title": "快克智能2023年年度报告",
+    "announcement_date": "2024-04-30",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-04-30/1219905648.PDF",
+    "adjunct_url": "finalpage/2024-04-30/1219905648.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/603203/603203__em_快克智能_em__2023_快克智能2023年年度报告.pdf",
+    "sha256": "37b4c28ad024c4a66d24c91aa03243b95fd3874c780ebbddcc061e332bdd8a69",
+    "size_bytes": 4514367,
+    "error": ""
+  }
+]

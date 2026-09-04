@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">光模块双向功能链</title>
+  <desc id="desc">发送方向把主机电信号变为光并送入光纤，接收方向把光恢复为主机电信号，管理、供电、承载和散热支撑两条链路。</desc>
+  <defs>
+    <linearGradient id="head" x1="0" x2="1"><stop stop-color="#102f3b"/><stop offset="1" stop-color="#17676e"/></linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#087d78"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#18242d}.title{font-size:28px;font-weight:700;fill:#fff}.subtitle{font-size:15px;fill:#cfe4e3}.lane{font-size:18px;font-weight:700;fill:#102f3b}.node-title{font-size:15px;font-weight:700}.node-note{font-size:12px;fill:#63727d}.support-title{font-size:14px;font-weight:700;fill:#102f3b}.support-note{font-size:11px;fill:#63727d}.arrow{stroke:#087d78;stroke-width:3;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="560" rx="26" fill="#f6f8f5"/>
+  <rect width="1200" height="104" rx="26" fill="url(#head)"/><rect y="78" width="1200" height="26" fill="url(#head)"/>
+  <text x="48" y="46" class="title">一只光模块，同时完成两条相反的翻译链</text>
+  <text x="48" y="76" class="subtitle">先看功能，再问这些功能由哪些器件实现；不同路线可以集成、拆分或移动功能。</text>
+
+  <text x="48" y="148" class="lane">TX 发送：电 → 光</text>
+  <g transform="translate(48 170)">
+    <g><rect width="190" height="92" rx="15" fill="#fff" stroke="#dce2da"/><text x="18" y="35" class="node-title">主机电信号</text><text x="18" y="60" class="node-note">交换 ASIC 输出数据</text></g>
+    <line x1="200" y1="46" x2="248" y2="46" class="arrow"/>
+    <g transform="translate(260)"><rect width="190" height="92" rx="15" fill="#fff" stroke="#dce2da"/><text x="18" y="35" class="node-title">整理与驱动</text><text x="18" y="60" class="node-note">DSP / retimer / driver</text></g>
+    <line x1="460" y1="46" x2="508" y2="46" class="arrow"/>
+    <g transform="translate(520)"><rect width="190" height="92" rx="15" fill="#e6f2ee" stroke="#9ccdc0"/><text x="18" y="35" class="node-title">产生光并加载数据</text><text x="18" y="60" class="node-note">光源 + 调制功能</text></g>
+    <line x1="720" y1="46" x2="768" y2="46" class="arrow"/>
+    <g transform="translate(780)"><rect width="190" height="92" rx="15" fill="#fff" stroke="#dce2da"/><text x="18" y="35" class="node-title">耦合进光纤</text><text x="18" y="60" class="node-note">微光学 / 光纤接口</text></g>
+    <line x1="980" y1="46" x2="1028" y2="46" class="arrow"/>
+    <g transform="translate(1040)"><rect width="112" height="92" rx="15" fill="#102f3b"/><text x="56" y="42" text-anchor="middle" style="font-size:15px;font-weight:700;fill:#fff">光纤</text><text x="56" y="64" text-anchor="middle" style="font-size:11px;fill:#bfe0dc">传输光</text></g>
+  </g>
+
+  <text x="48" y="314" class="lane">RX 接收：光 → 电</text>
+  <g transform="translate(48 336)">
+    <g><rect width="112" height="92" rx="15" fill="#102f3b"/><text x="56" y="42" text-anchor="middle" style="font-size:15px;font-weight:700;fill:#fff">光纤</text><text x="56" y="64" text-anchor="middle" style="font-size:11px;fill:#bfe0dc">送来光</text></g>
+    <line x1="122" y1="46" x2="170" y2="46" class="arrow"/>
+    <g transform="translate(182)"><rect width="190" height="92" rx="15" fill="#fff" stroke="#dce2da"/><text x="18" y="35" class="node-title">接收与耦合</text><text x="18" y="60" class="node-note">把光引到探测器</text></g>
+    <line x1="382" y1="46" x2="430" y2="46" class="arrow"/>
+    <g transform="translate(442)"><rect width="190" height="92" rx="15" fill="#e6f2ee" stroke="#9ccdc0"/><text x="18" y="35" class="node-title">光电探测</text><text x="18" y="60" class="node-note">PD 产生微弱电流</text></g>
+    <line x1="642" y1="46" x2="690" y2="46" class="arrow"/>
+    <g transform="translate(702)"><rect width="190" height="92" rx="15" fill="#fff" stroke="#dce2da"/><text x="18" y="35" class="node-title">放大与恢复</text><text x="18" y="60" class="node-note">TIA + 信号处理</text></g>
+    <line x1="902" y1="46" x2="950" y2="46" class="arrow"/>
+    <g transform="translate(962)"><rect width="190" height="92" rx="15" fill="#fff" stroke="#dce2da"/><text x="18" y="35" class="node-title">交回主机</text><text x="18" y="60" class="node-note">恢复为可读电信号</text></g>
+  </g>
+
+  <g transform="translate(48 472)">
+    <rect width="1104" height="56" rx="14" fill="#fff0d7" stroke="#e5c48e"/>
+    <text x="22" y="25" class="support-title">共同支撑层</text><text x="22" y="43" class="support-note">管理与监控</text>
+    <text x="260" y="34" class="support-title">稳定供电</text><text x="485" y="34" class="support-title">PCB / 载体 / 外壳</text><text x="780" y="34" class="support-title">导热材料与散热路径</text>
+  </g>
+</svg>

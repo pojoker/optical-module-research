@@ -1,0 +1,31 @@
+{
+  "endpoint_id": "IQE_RNS_RELEASES",
+  "note": "具名对手方独立披露 + 未解析实体。第 1 条点名 MACOM，只有对手方证据时事件仍只能 asserted；第 2 条没有任何已登记实体别名，必须显式留在队列。",
+  "items": [
+    {
+      "url": "https://www.iqep.com/media/press-releases/2026/macom-eml-driver-qualification",
+      "title": "IQE Confirms MACOM EML Driver Platform Qualification",
+      "published_at": "2026-09-01",
+      "origin_key": "iqe-2026-09-01-macom-qualification",
+      "paragraphs": [
+        {
+          "anchor": "rns:p1",
+          "text": "IQE plc confirmed today that MACOM has qualified its 200G/lane EML driver platform for epiwafer supply."
+        }
+      ]
+    },
+    {
+      "url": "https://www.iqep.com/media/press-releases/2026/research-collaboration-optics-company",
+      "title": "IQE Enters a New Research Collaboration",
+      "published_at": "2026-09-01",
+      "origin_key": "iqe-2026-09-01-research-collaboration",
+      "note": "未解析实体：不得静默丢弃，必须进入 failure 与 queue。",
+      "paragraphs": [
+        {
+          "anchor": "rns:p1",
+          "text": "IQE plc announced a new research collaboration with a leading optics company on GaAs epiwafer development."
+        }
+      ]
+    }
+  ]
+}

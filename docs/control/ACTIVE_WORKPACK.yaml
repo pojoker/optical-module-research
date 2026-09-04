@@ -1,0 +1,178 @@
+# ACTIVE_WORKPACK — 当前唯一工作包（人工控制，无自动状态机）
+
+workpack:
+  id: OPS-RESTORE-001
+  title: 九页前端与国内/海外只读日更恢复
+  status: completed
+  approved_at: 2026-09-04
+  completed_at: 2026-09-04
+  owner: 用户
+  authorization: 用户明确要求“按序执行”前端恢复、日更恢复、真实试跑和通过后调度
+  supersedes_temporarily: OM-PHYS-001（prepared_not_started，未执行、未写 canonical）
+
+objective:
+  - 在干净领域分支恢复九页读者前端，不带回 closure/state-machine。
+  - 恢复国内和海外只读日更镜像，所有发现停留在仓库外状态目录。
+  - 完成一次真实联网试跑；证明 canonical 输入未变化后才启用每日任务。
+
+execution_order:
+  - 1_restore_nine_page_frontend
+  - 2_restore_read_only_daily_mirrors
+  - 3_run_live_2026_09_04_trial
+  - 4_enable_daily_schedule_after_canonical_proof
+
+reader_visible_deliverables:
+  - out/光模块知识体系/index.html
+  - out/光模块知识体系/07-decision-dossier.html
+  - out/光模块知识体系/08-concept-primer.html
+  - 仓库外 daily-state 的国内日报、海外候选报告和统一索引
+
+allowed_write_paths:
+  - docs/control/ACTIVE_WORKPACK.yaml
+  - docs/control/PARKING_LOT.md
+  - docs/plans/2026-09-domestic-daily-mirror-contract.md
+  - docs/plans/2026-09-overseas-event-daily-mirror-contract.md
+  - docs/research/decision-dossier-01-ai-fabric-placement-v1.yaml
+  - docs/research/npo-cpo-serviceability-matrix-seeds-v1.yaml
+  - docs/research/pi-packages/2026-08-31-q-mid-01-retimed-vs-lpo-v1/system-power-latency-primary.md
+  - docs/research/pi-packages/2026-08-31-q-up-05-npo-cpo-boundaries-v1/adjudication.md
+  - site/optical-module/**
+  - tools/site/**
+  - domestic_daily/**
+  - daily_intelligence/**
+  - calls/DAILY-DISCOVERY.md
+  - calls/daily_discovery.py
+  - calls/http_discovery.py
+  - calls/discovery_config.json
+  - calls/fixtures/daily_discovery/**
+  - calls/tests/test_daily_discovery.py
+  - calls/tests/test_http_discovery.py
+  - tests/test_domestic_daily.py
+  - tests/test_daily_intelligence.py
+  - tests/site/**
+  - README.md
+  - out/**
+  - /Users/jowang/Downloads/workflow-rehearsal-daily-state/**
+
+read_scope:
+  allowed:
+    - AGENTS.md
+    - docs/control/**
+    - README.md
+    - site/optical-module/**
+    - tools/site/**
+    - knowledge.yaml
+    - points.csv
+    - triage.csv
+    - route_bom.csv
+    - calls/*.csv
+    - corpus/_frozen.csv
+    - corpus/_restart_watchlist.csv
+    - corpus/_fetch_qa.py
+    - 用户明确指定的旧九页前端源文件
+    - 已识别的 daily-intelligence-mirror 六个有限提交及其文件
+  forbidden:
+    - archive/**
+    - research-metacognition-lab/**
+    - closure-pilot 状态机源码、输出或报告
+    - 其他无关历史分支和完整 agent 轨迹
+
+canonical_policy:
+  writable: false
+  protected:
+    - knowledge.yaml
+    - points.csv
+    - edges.csv
+    - triage.csv
+    - route_bom.csv
+    - tree.yaml
+    - calls/*.csv
+  daily_outputs_are: mirror_or_candidate_only
+  promotion: human_review_and_new_user_authorization_required
+
+non_goals:
+  - 新增或恢复通用状态机、自动 close/reopen、receipt、snapshot lineage
+  - 自动晋升任何国内或海外候选
+  - 自动生成 offers_product 或 implements_route
+  - 开始 OM-PHYS-001 领域研究
+  - 把测试通过表述为领域问题已完成
+
+acceptance_criteria:
+  - 前端 manifest 为 9 页、27 章节，且读者页面不引用旧“当前任务控制文稿”。
+  - 九页前端构建前后 canonical 指纹不变，站点测试和本地链接检查通过。
+  - 国内镜像只写仓库外 state root；源仓库受保护指纹前后相同。
+  - 海外镜像只写仓库外 staging/daily；promoted=0，calls canonical 前后相同。
+  - 统一日更输出能区分成功、部分失败、缺端点和候选状态。
+  - 真实联网试跑完成；失败端点被记录但不会触发 canonical 写入。
+  - 仅在上述不变量成立后创建每日自动任务；无实质增量时静默。
+  - scan.py --check、render.py --verify、participation.py --check、python -m calls check 全绿。
+
+architecture_budget:
+  new_relation_types: []
+  new_state_machines: []
+  new_canonical_schemas: []
+  restored_modules:
+    - nine_page_reader
+    - domestic_daily_read_only_mirror
+    - overseas_daily_read_only_discovery
+    - daily_intelligence_assembler
+
+stop_and_escalate:
+  - 任一日更命令修改 canonical 或 tracked source files
+  - 九页前端需要 closure/state-machine 才能构建
+  - 需要自动晋升候选
+  - 需要删除旧救援工作区或远端分支
+  - 真实抓取要求凭证、验证码或绕过访问控制
+
+completion_evidence:
+  frontend:
+    page_count: 9
+    section_count: 27
+    site_tests_passed: 13
+    test_entry: direct_unittest
+    output: out/光模块知识体系/index.html
+  domestic_live_trial:
+    date: 2026-09-04
+    watched_a_share_codes: 93
+    ir_new: 6
+    qa_rows_in_report: 711
+    announcements: 2
+    restart_review_hits: 9
+    fetch_failures:
+      - 002222
+      - 688183
+    monthly_rescreen: skipped_after_http_401
+    output: /Users/jowang/Downloads/workflow-rehearsal-daily-state/domestic/daily/2026-09-04.txt
+  overseas_live_trial:
+    date: 2026-09-04
+    configured_entities: 7
+    monitored_entities: 81
+    disclosure_candidates: 1
+    promoted: 0
+    endpoint_failed: 5
+    missing_endpoint: 74
+    verification: passed
+    output: /Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-04/run-summary.json
+  combined_output:
+    status: complete
+    output: /Users/jowang/Downloads/workflow-rehearsal-daily-state/combined/daily/2026-09-04.md
+  canonical_proof:
+    aggregate_sha256_before: 2ece8340c670375b17865c92c85ece6ad94ef34ed021267dec7c050a9c8b84ca
+    aggregate_sha256_after: 2ece8340c670375b17865c92c85ece6ad94ef34ed021267dec7c050a9c8b84ca
+    unchanged: true
+  final_gates:
+    scan: passed_all_14_invariants
+    render_verify: passed
+    participation: passed
+    calls_check: passed_39_companies_166_sources_70_claims
+    daily_tests: 71_passed
+  automation:
+    id: optical-daily-update
+    status: active
+    local_time: "06:47 Asia/Shanghai"
+    mode: existing_task_updated_without_duplicate
+  post_completion_change:
+    authorized_at: 2026-09-04
+    authorization: 用户明确要求将九页网页纳入 Git
+    tracked_reader_snapshot: out/光模块知识体系/**
+    canonical_status: generated_noncanonical_projection

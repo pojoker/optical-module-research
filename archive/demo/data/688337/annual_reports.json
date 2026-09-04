@@ -1,0 +1,50 @@
+[
+  {
+    "announcement_id": "1225031855",
+    "stock_code": "688337",
+    "company_name": "<em>普源精电</em>",
+    "title": "普源精电科技股份有限公司2025年年度报告",
+    "announcement_date": "2026-03-26",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-03-26/1225031855.PDF",
+    "adjunct_url": "finalpage/2026-03-26/1225031855.PDF",
+    "fiscal_year": 2025,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/688337/688337__em_普源精电_em__2025_普源精电科技股份有限公司2025年年度报告.pdf",
+    "sha256": "164ca07a2e1a2c3367a64b5eb89ce9bb80f9bff61ae58d75621f0cbb5598ca1a",
+    "size_bytes": 2566217,
+    "error": ""
+  },
+  {
+    "announcement_id": "1222972886",
+    "stock_code": "688337",
+    "company_name": "<em>普源精电</em>",
+    "title": "普源精电科技股份有限公司2024年年度报告",
+    "announcement_date": "2025-04-01",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2025-04-01/1222972886.PDF",
+    "adjunct_url": "finalpage/2025-04-01/1222972886.PDF",
+    "fiscal_year": 2024,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/688337/688337__em_普源精电_em__2024_普源精电科技股份有限公司2024年年度报告.pdf",
+    "sha256": "8d3294c5c575e4159661a730f4b0006d7151261cb87dc6440c2ff3c7382819bc",
+    "size_bytes": 5291781,
+    "error": ""
+  },
+  {
+    "announcement_id": "1219360668",
+    "stock_code": "688337",
+    "company_name": "<em>普源精电</em>",
+    "title": "普源精电科技股份有限公司2023年年度报告",
+    "announcement_date": "2024-03-21",
+    "market_column": "bj",
+    "pdf_url": "https://static.cninfo.com.cn/finalpage/2024-03-21/1219360668.PDF",
+    "adjunct_url": "finalpage/2024-03-21/1219360668.PDF",
+    "fiscal_year": 2023,
+    "download_status": "downloaded",
+    "local_path": "/Users/jowang/Downloads/workflow-rehearsal/demo/data/688337/688337__em_普源精电_em__2023_普源精电科技股份有限公司2023年年度报告.pdf",
+    "sha256": "14001241e6431a57f4f56ef034335152b2f004df03b7b1e56863c7add35ebe73",
+    "size_bytes": 4843686,
+    "error": ""
+  }
+]

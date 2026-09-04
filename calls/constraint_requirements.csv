@@ -1,0 +1,3 @@
+requirement_id,theme_id,cell_id,route_item_id,dimension,metric_name,comparator,target_value,unit,evidence_claim_ids,review_status,notes
+CRQ001,T002,MOD1,,yield_capacity,800G数通模块稳定量产与交付能力,,,,CL006,reviewed,迁移自legacy SL001；仅迁移全球约束要求，不迁移其国内关系语义；原P074保留于legacy不作证据
+CRQ002,T007,C1,,yield_capacity,高速InP/EML激光器有效制造产能,,,,CL015;CL027;CL028,reviewed,迁移自legacy SL002；原P095保留于legacy不作证据

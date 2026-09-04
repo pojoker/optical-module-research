@@ -1,0 +1,40 @@
+{
+  "endpoint_id": "POET_IR_RELEASES",
+  "note": "无相关内容、非法条目与未来发布日期：三种失败都必须显式记录。",
+  "items": [
+    {
+      "url": "https://investors.poet-technologies.com/news-releases/annual-meeting-2026",
+      "title": "POET Technologies Announces Annual Meeting of Shareholders",
+      "published_at": "2026-09-01",
+      "origin_key": "poet-2026-09-01-annual-meeting",
+      "paragraphs": [
+        {
+          "anchor": "press-release:p1",
+          "text": "POET Technologies will host its annual meeting of shareholders on November 10, 2026 in Toronto."
+        }
+      ]
+    },
+    {
+      "url": "not-a-url",
+      "title": "Broken item",
+      "published_at": "2026-09-01",
+      "paragraphs": [
+        {
+          "anchor": "press-release:p1",
+          "text": "Invalid URL item used to exercise the invalid_item failure path."
+        }
+      ]
+    },
+    {
+      "url": "https://investors.poet-technologies.com/news-releases/poet-future-item",
+      "title": "Item published after the run date",
+      "published_at": "2026-09-20",
+      "paragraphs": [
+        {
+          "anchor": "press-release:p1",
+          "text": "POET Technologies began shipping its optical interposer platform to a new customer."
+        }
+      ]
+    }
+  ]
+}

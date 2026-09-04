@@ -1,0 +1,19 @@
+<section class="section" id="constraints" data-certainty="mechanism">
+  <div class="statusline"><span class="certainty mechanism">机理层展开</span><small>方向相对稳定，幅度和胜负必须绑定对象</small></div>
+  <div class="kicker">被放大的约束</div><h2>每条 lane 更快、端口更密以后，压力怎样一层层传下去</h2>
+  <p class="intro">“被放大”不是说所有指标机械地翻倍，而是原有设计余量变小：过去可以容忍的走线、温漂、噪声、装配偏差和测试简化，在更高 lane 速率或更高端口密度下可能不再够用。下面每张卡都按“触发 → 物理后果 → 补偿方式 → 新代价”展开。</p>
+
+  <div class="constraint-grid">
+    <article class="constraint-card"><header><span>01</span><div><small>Electrical channel</small><h3>高速电通道余量</h3></div></header><div class="constraint-body"><p><b>触发：</b>主机侧从约100G/lane走向约200G/lane，信号的有效带宽提高。</p><p><b>物理后果：</b>芯片封装、PCB、过孔、连接器和模块金手指造成的插损、反射、串扰与抖动占用更多眼图余量；电路径长度和每个不连续点都更敏感。</p><p><b>补偿：</b>改进封装/板材/连接器，缩短 C2M 路径，增加均衡、FEC 或 retiming。</p><p class="constraint-cost"><b>新代价：</b>更强 DSP 会增加模块功耗和时延；缩短路径或采用 NPO/CPO 会改变封装与维护边界；LPO 则把更多责任交给 Host 和联合验证。</p></div></article>
+
+    <article class="constraint-card"><header><span>02</span><div><small>I/O density</small><h3>引脚、面板与光纤密度</h3></div></header><div class="constraint-body"><p><b>触发：</b>用更多 lane 或更多端口增加系统总吞吐。</p><p><b>物理后果：</b>ASIC 封装需要更多高速 I/O，PCB 需要更多受控阻抗走线，前面板需要更多 cage/connector，空间并行光还会增加纤芯和极性管理。</p><p><b>补偿：</b>提高单 lane 速率、使用更高密度连接器、采用 WDM 让多路信号共用更少纤芯，或改变光引擎放置位置。</p><p class="constraint-cost"><b>新代价：</b>高密度连接更难布线和散热；WDM 把空间复杂度转成波长、合分波与温度稳定责任。</p></div></article>
+
+    <article class="constraint-card"><header><span>03</span><div><small>Optical bandwidth</small><h3>发射与接收器件带宽</h3></div></header><div class="constraint-body"><p><b>触发：</b>光 lane 从100G级走向200G级，同时仍要满足目标距离、误码和光功率边界。</p><p><b>物理后果：</b>Driver、激光器/调制器、PD 与 TIA 必须共同支持更高带宽；封装寄生、电光响应、噪声和线性度留给设计的余量变小。</p><p><b>补偿：</b>提高器件带宽，缩短 Driver—modulator 与 PD—TIA 互连，优化封装和 DSP/FEC，并在 EML、SiPh 等平台中选择合适实现。</p><p class="constraint-cost"><b>新代价：</b>更高速器件不只影响芯片价格，还会影响耦合、温控、老化、测试与良率；总速率本身不能决定哪种平台必胜。</p></div></article>
+
+    <article class="constraint-card"><header><span>04</span><div><small>Power &amp; thermal</small><h3>绝对功耗、热密度与冷却</h3></div></header><div class="constraint-body"><p><b>触发：</b>更多高速端口、更高带宽 DSP、Driver/TIA、光源与控制电路集中在有限面板和封装面积内。</p><p><b>物理后果：</b>即使每比特能耗下降，单模块绝对功耗仍可能上升；热必须经过芯片—TIM—外壳/散热器—空气或液冷路径排出，邻近端口还会互相影响热环境。</p><p><b>补偿：</b>先进制程、低功耗架构、降低模块内数字处理、改善散热器与风道、外置光源，或把光学移到 NPO/CPO 位置。</p><p class="constraint-cost"><b>新代价：</b>模块功耗下降不等于交换机总功耗下降；Host、交换 ASIC、风扇、泵和外置激光器的功耗必须一起计算。</p></div></article>
+
+    <article class="constraint-card"><header><span>05</span><div><small>Assembly &amp; yield</small><h3>装配公差、筛选与良率</h3></div></header><div class="constraint-body"><p><b>触发：</b>通道更多、器件更快、集成更密，光、电、热、机械公差同时作用。</p><p><b>物理后果：</b>贴装偏差、键合寄生、耦合损耗、波长漂移或某一路性能不足，都可能影响整机是否通过规格；高价值芯片组合后才发现坏件会放大损失。</p><p><b>补偿：</b>晶圆级测试、已知良品 KGD、过程内检测、更精密贴装/耦合、被动对准设计和可返工接口。</p><p class="constraint-cost"><b>新代价：</b>新增筛选和工艺控制会增加设备与测试投入；高度集成也可能减少零件与装配步骤。没有产线数据时，不能预设良率必升或必降。</p></div></article>
+
+    <article class="constraint-card"><header><span>06</span><div><small>Validation &amp; service</small><h3>联合验证、互操作与维护</h3></div></header><div class="constraint-body"><p><b>触发：</b>高速链路余量变小，而且均衡、FEC、模块传递函数和温度行为跨越 Host 与 Module 边界。</p><p><b>物理后果：</b>单独测试模块“能亮”不够，还要验证 stressed input、BER/FEC tail、通道校准、互操作、启动收敛和温度角落。</p><p><b>补偿：</b>增强可观测性、CMIS/VCS 配置、端到端误码测试、故障注入和明确的 FRU/rework 流程。</p><p class="constraint-cost"><b>新代价：</b>验证责任可能从模块厂扩展到系统厂和客户；CPO 缩短高速电路径，但会重画更换、返工和故障域边界。</p></div></article>
+  </div>
+</section>
