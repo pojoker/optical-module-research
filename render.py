@@ -45,6 +45,51 @@ def _q_unlock(period):
 def _filled(v):
     return (v or '').strip()!=''
 
+def _fmt_anchor(v):
+    """锚点安全渲染（WP-C）：仅当整值 strip 后是 http(s) 直接 URL 才生成链接。
+    其余值一律渲染为说明文本（不生成超链接，防假链接）；
+    "同上"显式声明沿用上一行锚点、非独立锚，不伪装成独立锚点。"""
+    a=(v or '').strip()
+    if not a: return '（锚点空——待补锚）'
+    if a.startswith('http://') or a.startswith('https://'): return f'[锚]({a})'
+    if a=='同上': return '锚点为“同上”——沿用上一行锚点，**非独立锚点**，不可独立核验'
+    # 说明文本：转义 [] 与 |，防止 markdown/表格把占位、描述性引用或内嵌链接重新解释成可用超链接
+    esc=a.replace('\\','\\\\').replace('[','\\[').replace(']','\\]').replace('|','\\|')
+    return f'非URL锚（说明文本，非超链接）：{esc}'
+
+def _shipments_section(ships, names):
+    """出货观察段（WP-C）：shipments.csv 只读转写，按单位分组、按行展示业务范围。
+    明确禁止全表求和、排名、份额推导；不做任何自动配对或计算（无小计/合计/排名）。"""
+    units=[]
+    for r in ships:
+        u=(r.get('单位') or '').strip() or '（单位空）'
+        if u not in units: units.append(u)
+    L=['## 出货观察（shipments.csv 只读转写，非比较面）','',
+       '> ⚠ 证据边界（读本节前必读）：',
+       '>  · 本节按行原样转写 shipments.csv，每个数字都是**单行观察值**；本页不含、也不允许推导任何小计、合计、排名或份额——',
+       f'>    全表 {len(ships)} 行并存 {len(units)} 种单位（万只/万件/台/台套/万个/万片/千只/千克/万平方米/KK/万颗/万美元等），对全表或任何跨组子集做求和、排名或份额推导**无业务含义，明确禁止**；',
+       '>  · 同单位、同一 cell 也不保证可比：披露产品标签与口径可能不同（如“光通信收发模块”vs“光互联产品”），任何配对比较前必须人工核对 shipments.csv 的推导式/收入锚字段；',
+       '>  · cell_id 含“聚合”的行为跨层聚合口径，不可与单格行比较；情景标记非 base 的行不可与 base 行混算；',
+       '>  · 行间唯一可能安全的比较面是「同期间+同单位+同披露表型+相近业务边界」的极小交集，须逐对人工复核，本页不做自动配对。','']
+    L.append(f'以下按单位分组（组内保持 shipments.csv 原行序）；文中所有计数均为**行数**，不是出货量数值。')
+    L.append('')
+    for u in units:
+        rs=[r for r in ships if ((r.get('单位') or '').strip() or '（单位空）')==u]
+        L.append(f'### 单位：{u}（{len(rs)} 行）')
+        L.append('')
+        L.append('| row_id | 公司 | 业务范围(cell) | 期间 | 出货量（原值+单位） | 证据等级 | 情景标记 |')
+        L.append('|---|---|---|---|---|---|---|')
+        for r in rs:
+            c=(r.get('cell_id') or '').strip()
+            scope=names.get(c,c)
+            mark=' ⚠跨层聚合' if '聚合' in c else ''
+            scm=(r.get('情景标记') or '').strip()
+            if scm and scm!='base': mark+=' ⚠非base'
+            qty=((r.get('出货量') or '').strip()+' '+(r.get('单位') or '').strip()).strip()
+            L.append(f"| {r.get('row_id','')} | {r.get('公司','')} | {c} {scope}{mark} | {r.get('期间','')} | {qty} | {r.get('证据等级','')} | {scm} |")
+        L.append('')
+    return L
+
 # 派生问题封装：稳定携带显式 question_id（前缀-来源ID），供人工裁决对齐
 Q = namedtuple('Q', ['kind','q','acc','wb','src','seq','qid'])
 def _mkq(kind,q,acc,wb,src,seq):
@@ -341,7 +386,7 @@ def write_research_tree(outdir):
         '> 一条产品路线框架下可列出多个兼容选择轴取值，并非唯一具体路线。',
         '> **候选能力群 = 路线所需物理格 × points.csv 过闸能力点 推导的能力匹配，不是路线采用/供货证据。**',
         '> **确认服务群 = 技术路线 KN 显式关联该路线 RB 且关联真实 point 的公司群；首版可能为空。**',
-        '> 任何候选/确认群都不自动构成供货关系；供货只读 edges.csv。','']
+        '> 任何候选/确认群都不自动构成供货关系；公司间关系只读 edges.csv 的**关系观察**记录（不默认光模块供货，产品范围以各行备注为准）。','']
     # 每条路线的候选格集合（用于检测相同）
     route_cells={}
     for route in routes:
@@ -460,7 +505,7 @@ def build(outdir):
                 if cs:
                     L.append('| 公司 | 状态 | 上市 | 引语 | 锚 |'); L.append('|---|---|---|---|---|')
                     for p in sorted(cs,key=lambda x:x['公司']):
-                        L.append(f"| {p['公司']} | {p['状态']} | {p['上市标签']} | {p['命中引语'][:60]} | [锚]({p['锚点URL']}) |")
+                        L.append(f"| {p['公司']} | {p['状态']} | {p['上市标签']} | {p['命中引语'][:60]} | {_fmt_anchor(p['锚点URL'])} |")
                 else:
                     empty.append(n['cell_id']); L.append('（空格——未有公司过闸）')
                 for k in kbycell.get(n['cell_id'],[]):
@@ -482,21 +527,24 @@ def build(outdir):
     for e in egs:
         sc,dc=pid2cell.get(e.get('供方point_id','')),pid2cell.get(e.get('需方point_id',''))
         if sc and dc and sc!=dc: cnt[(sc,dc)]=cnt.get((sc,dc),0)+1
-    L+=['---','## BOM流向（骨架=常识层免锚；括号=已证公司级边数，来自edges.csv）','']
+    L+=['---','## BOM流向（骨架=常识层免锚；括号=关系观察边数，来自edges.csv）','',
+        '> 边界：计入的每条边是 edges.csv 里的一条**关系观察**（客户集中度占比、代工/供货等混合口径，产品范围以该边备注为准，如备注“3D传感/消费端非光通信”的边就不是光模块供货），',
+        '> **不默认等价于“光模块供货”**；边数是观察计数，不是供货强度、份额或排名。','']
     skel=set()
     for f in tr.get('flows',[]):
         s=f['from']
         for d in f['to']:
             skel.add((s,d))
             c=cnt.get((s,d),0)
-            L.append(f"- {s} {names.get(s,'')} → {d} {names.get(d,'')}"+(f"  **(已证{c}边)**" if c else ''))
+            L.append(f"- {s} {names.get(s,'')} → {d} {names.get(d,'')}"+(f"  **(关系观察{c}条，非默认光模块供货)**" if c else ''))
     extra=sorted((k,v) for k,v in cnt.items() if k not in skel)
     if extra:
-        L+=['','骨架外已证流向（现实先于常识，待并入骨架或复核归格）：']
-        for (s,d),c in extra: L.append(f"- {s} {names.get(s,'')} → {d} {names.get(d,'')} ({c}边)")
+        L+=['','骨架外关系观察（现实先于常识，待并入骨架或复核归格）：']
+        for (s,d),c in extra: L.append(f"- {s} {names.get(s,'')} → {d} {names.get(d,'')} ({c}条关系观察，非默认光模块供货)")
     L.append('')
     dates=[p['检索日期'] for p in pts if p.get('检索日期')]
     cov=f"{len(pts)}点/{len(egs)}边"
+    L+=_shipments_section(ships,names)
     L+=['---',f"页脚：宇宙={tr['universe']['count']}家(冻结{tr['universe']['frozen_date']}) | 数据截至={max(dates) if dates else '—'} | 覆盖={cov} | 空叶格={len(empty)}/{len(meta)}: {','.join(empty) if empty else '无'}（纪律第8条 commit 取此数）"]
     os.makedirs(outdir,exist_ok=True)
     md='\n'.join(L)+'\n'
