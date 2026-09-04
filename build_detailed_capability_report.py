@@ -208,8 +208,9 @@ FIELDNAMES = [
     "规格与应用",
     "当前阶段",
     "产业角色",
-    # 准入路径（判定闸 / 边支持 / 交叉引用…），不是 A–D 证据等级。
-    "准入依据",
+    # 保持 capability_details.csv 的既有 canonical schema；reader 将该列
+    # 解释为准入路径，并在展示时去除括号内过程备注。
+    "证据等级",
     "证据日期",
     "来源锚点",
     "原始披露摘要",
@@ -419,7 +420,7 @@ def granular_rows() -> list[dict[str, str]]:
                 "规格与应用": "、".join(specs) if specs else "披露未细分",
                 "当前阶段": stage_detail(quote_text, best_point.get("状态", "")),
                 "产业角色": role_for(cell_id, combined),
-                "准入依据": admission_path(best_point.get("判定等级", "")) or UNKNOWN_ADMISSION_LABEL,
+                "证据等级": best_point.get("判定等级", ""),
                 "证据日期": max(dates) if dates else "",
                 "来源锚点": anchor,
                 "原始披露摘要": quote_text,
@@ -950,7 +951,7 @@ def build_pdf(path: Path, rows: list[dict[str, str]]) -> None:
             story += [
                 cap_table,
                 Paragraph(
-                    f"准入依据：{esc(cap['准入依据'])}　|　证据日期：{esc(cap['证据日期'] or '—')}　|　"
+                    f"准入依据：{esc(admission_path(cap['证据等级']) or UNKNOWN_ADMISSION_LABEL)}　|　证据日期：{esc(cap['证据日期'] or '—')}　|　"
                     + (
                         f'<link href="{esc(cap["来源锚点"])}" color="#165DFF">查看来源</link>'
                         if cap["来源锚点"].startswith(("http://", "https://"))
@@ -997,7 +998,7 @@ def capability_section(
                     <dt>阶段与角色</dt><dd>{esc(cap['当前阶段'])} · {esc(cap['产业角色'])}</dd>
                     <dt>披露摘要</dt><dd class="quote">{esc(cap['原始披露摘要'])}</dd>
                   </dl>
-                  <div class="cap-source">{esc(cap['准入依据'])} · {esc(cap['证据日期'])} · {source}</div>
+                  <div class="cap-source">{esc(admission_path(cap['证据等级']) or UNKNOWN_ADMISSION_LABEL)} · {esc(cap['证据日期'])} · {source}</div>
                 </div>
                 """
             )

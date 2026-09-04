@@ -1,4 +1,1784 @@
 {
+  "company_candidates": [
+    {
+      "candidate_id": "CAND_ACCTON",
+      "capability_scope": "MOD1",
+      "entity_name": "Accton",
+      "entity_type": "company",
+      "inclusion_reason": "800G LPO与光波长交换连接ODM端",
+      "notes": "正式披露未拆光学产品规模",
+      "priority": "P2",
+      "promoted_entity_id": "WATCH_ACCTON",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.accton.com/optics/",
+      "suggested_role": "system_vendor",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_ADTN",
+      "capability_scope": "MOD2",
+      "entity_name": "ADTRAN",
+      "entity_type": "company",
+      "inclusion_reason": "800G与相干可插拔补齐运营商和边缘DCI",
+      "notes": "AI集群内互联与运营商光传输分开",
+      "priority": "P2",
+      "promoted_entity_id": "ADTN",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.adtran.com/de-de/innovation/optical-networking/800g-optical-transport",
+      "suggested_role": "system_vendor",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_AIXA",
+      "capability_scope": "EQ1",
+      "entity_name": "AIXTRON",
+      "entity_type": "company",
+      "inclusion_reason": "InP/GaAs MOCVD观察六英寸InP扩产与设备交期",
+      "notes": "半年报与九个月报告按正式等价材料登记",
+      "priority": "P1",
+      "promoted_entity_id": "AIXA",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.aixtron.com/investoren/events/telefonkonferenz/2025/AIXTRON_SE_FY_2025_speech.pdf",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_AMD",
+      "capability_scope": "T018/T019",
+      "entity_name": "AMD",
+      "entity_type": "company",
+      "inclusion_reason": "rack-scale平台提供互连需求背景",
+      "notes": "平台发布不证明具体光学BOM",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_AMD",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://ir.amd.com/news-events/press-releases/detail/1261/amd-showcases-helios-rack-scale-platform-built-on-the-open-compute-project-open-rack-for-ai-introduced-by-meta",
+      "suggested_role": "downstream",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_AMKR",
+      "capability_scope": "P1",
+      "entity_name": "Amkor",
+      "entity_type": "company",
+      "inclusion_reason": "光子与光学封装提供OSAT补充",
+      "notes": "官网证据较泛",
+      "priority": "P3",
+      "promoted_entity_id": "",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://amkor.com/technology/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_AMZN",
+      "capability_scope": "T020",
+      "entity_name": "Amazon",
+      "entity_type": "company",
+      "inclusion_reason": "AWS AI基础设施需求只做需求验证",
+      "notes": "光学细节通常缺失",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_AMZN",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/",
+      "suggested_role": "downstream",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_ASE",
+      "capability_scope": "P1/EQ7",
+      "entity_name": "ASE Technology",
+      "entity_type": "company",
+      "inclusion_reason": "硅光FOPOP与光学实验室验证OSAT量产能力",
+      "notes": "集团季度材料无法分离硅光经营信号",
+      "priority": "P2",
+      "promoted_entity_id": "WATCH_ASE",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://ase.aseglobal.com/silicon-photonics/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_ASMPT",
+      "capability_scope": "EQ3/EQ4/EQ5",
+      "entity_name": "ASMPT",
+      "entity_type": "company",
+      "inclusion_reason": "CPO与SiPh贴装耦合键合覆盖封装自动化",
+      "notes": "展示与量产收入需分开",
+      "priority": "P1",
+      "promoted_entity_id": "ASMPT",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.asmpt.com/en/news-center/press-releases/asmpt-at-ofc-2026-los-angeles-enabling-scalable-co-packaged-optics-and-photonic-integration/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_AVICENA",
+      "capability_scope": "D12",
+      "entity_name": "Avicena",
+      "entity_type": "company",
+      "inclusion_reason": "microLED光互联提供非主流路线对照",
+      "notes": "量产待证",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_AVICENA",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://avicena.tech/avicena-launches-the-worlds-first-microled-optical-interconnect-eval-kit/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_AXT",
+      "capability_scope": "M1",
+      "entity_name": "AXT",
+      "entity_type": "company",
+      "inclusion_reason": "InP/GaAs/Ge衬底直接观察InP供给扩产与出口许可",
+      "notes": "四槽已建；2026Q2只有发布预告并显式unavailable",
+      "priority": "P1",
+      "promoted_entity_id": "AXTI",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-First-Quarter-2026-Financial-Results/default.aspx",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_AYAR",
+      "capability_scope": "C4/D12",
+      "entity_name": "Ayar Labs",
+      "entity_type": "company",
+      "inclusion_reason": "UCIe光I/O芯粒与外置光源适合样片客户产能监控",
+      "notes": "私企",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_AYAR",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://ayarlabs.com/news/ayar-labs-unveils-worlds-first-ucie-optical-chiplet-for-ai-scale-up-architectures/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_CLS",
+      "capability_scope": "EMS1/MOD1",
+      "entity_name": "Celestica",
+      "entity_type": "company",
+      "inclusion_reason": "AI网络硬件制造可观察系统交付",
+      "notes": "兼容光模块不视作自产模块",
+      "priority": "P2",
+      "promoted_entity_id": "CLS",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.celestica.com/our-expertise/markets/communications",
+      "suggested_role": "system_vendor",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_DELTA",
+      "capability_scope": "MOD1/D12",
+      "entity_name": "Delta Electronics",
+      "entity_type": "company",
+      "inclusion_reason": "COBO与800G概念验证提供系统集成样本",
+      "notes": "旧演示不能证明当前量产",
+      "priority": "P3",
+      "promoted_entity_id": "",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://landing.deltaww.com/en-US/news/12998",
+      "suggested_role": "system_vendor",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_EKI",
+      "capability_scope": "MOD2",
+      "entity_name": "Ekinops",
+      "entity_type": "company",
+      "inclusion_reason": "400G相干系统提供欧洲长尾样本",
+      "notes": "AI DCI归因有限",
+      "priority": "P3",
+      "promoted_entity_id": "",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.ekinops.com/images/press-releases/24.01.2023-PM400FR05-C2A_PR_ENG.pdf",
+      "suggested_role": "system_vendor",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_EVG",
+      "capability_scope": "EQ5",
+      "entity_name": "EV Group",
+      "entity_type": "company",
+      "inclusion_reason": "die-to-wafer bonding适合异质集成事件监控",
+      "notes": "应用横跨多行业",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_EVG",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.evgroup.com/fileadmin/media/products/bonding/Die_to_Wafer_bonding_systems/White_Paper_D2W_Bonding.pdf",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_EXFO",
+      "capability_scope": "EQ7",
+      "entity_name": "EXFO",
+      "entity_type": "company",
+      "inclusion_reason": "800G实验室与制造测试适合事件监控",
+      "notes": "电信测试需与AI内部互联区分",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_EXFO",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.exfo.com/en/products/lab-manufacturing-testing/network-protocol-testing/ethernet-testing/ftbx-88800-series/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_FICONTEC",
+      "capability_scope": "EQ3/EQ4/EQ7",
+      "entity_name": "ficonTEC",
+      "entity_type": "company",
+      "inclusion_reason": "光子装配与测试自动化适合订单事件监控",
+      "notes": "私企",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_FICONTEC",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.ficontec.com/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_FORM",
+      "capability_scope": "EQ7",
+      "entity_name": "FormFactor",
+      "entity_type": "company",
+      "inclusion_reason": "硅光与CPO晶圆级测试覆盖量产测试缺口",
+      "notes": "公司主业还包括存储探针卡",
+      "priority": "P1",
+      "promoted_entity_id": "FORM",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.formfactor.com/product/probe-systems/autonomous-assistants/autonomous-silicon-photonics/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_FREIBERGER",
+      "capability_scope": "M1",
+      "entity_name": "Freiberger Compound Materials",
+      "entity_type": "company",
+      "inclusion_reason": "GaAs与InP晶圆提供材料端事件信号",
+      "notes": "私企不承担季度义务",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_FREIBERGER",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://freiberger.com/en/technology/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_FUJIKURA",
+      "capability_scope": "M4/D9",
+      "entity_name": "Fujikura",
+      "entity_type": "company",
+      "inclusion_reason": "光纤与高密度连接补足无源互联约束",
+      "notes": "直接信号存在但最新英文季度直链覆盖不足",
+      "priority": "P2",
+      "promoted_entity_id": "WATCH_FUJIKURA",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.fujikura.co.jp/eng/ir/library/briefing/doc01.pdf",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_FUJITSUOC",
+      "capability_scope": "C6/MOD2",
+      "entity_name": "Fujitsu Optical Components",
+      "entity_type": "company",
+      "inclusion_reason": "相干收发器和调制接收器适合事件监控",
+      "notes": "母公司季度难归因",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_FUJITSUOC",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.fujitsu.com/jp/group/foc/imagesgig5/FOC%20Product%20Line-up_20201202.pdf",
+      "suggested_role": "core_peer",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_FURUKAWA",
+      "capability_scope": "C1/C6/D9",
+      "entity_name": "Furukawa Electric",
+      "entity_type": "company",
+      "inclusion_reason": "DFB EML ITLA与数据中心光连接链条完整",
+      "notes": "正式材料持续提供通信解决方案信号",
+      "priority": "P2",
+      "promoted_entity_id": "FURUKAWA",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.furukawa.co.jp/en/solution/datacenter/index.html",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_GFS",
+      "capability_scope": "C4/P1",
+      "entity_name": "GlobalFoundries",
+      "entity_type": "company",
+      "inclusion_reason": "硅光代工与CPO平台可验证设计到量产节奏",
+      "notes": "业务宽需隔离硅光口径",
+      "priority": "P1",
+      "promoted_entity_id": "GFS",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://gf.com/technologies/silicon-photonics/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_GLW",
+      "capability_scope": "M4/D9",
+      "entity_name": "Corning",
+      "entity_type": "company",
+      "inclusion_reason": "AI数据中心光纤连接和CPO补足被动互联",
+      "notes": "季度光通信分部口径可持续验证",
+      "priority": "P2",
+      "promoted_entity_id": "GLW",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.corning.com/optical-communications/worldwide/en/home/solutions/glassworks-ai.html",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_GOOGL",
+      "capability_scope": "T019/T020",
+      "entity_name": "Alphabet",
+      "entity_type": "company",
+      "inclusion_reason": "云侧高带宽与容量需求只做需求验证",
+      "notes": "一般capex不能映射MOD1",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_GOOGL",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://abc.xyz/investor/events/event-details/2025/Thomas-Kurian-CEO-of-Google-Cloud-at-the-Goldman-Sachs-Communacopia--Technology-Conference-on-September-9-2025Thomas-Kurian-CEO-of-Google-Cloud-at-the-Goldman-Sachs-Communacopia--Technology-Conference-on-September-9-2025/default.aspx",
+      "suggested_role": "downstream",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_HAMAMATSU",
+      "capability_scope": "C3",
+      "entity_name": "Hamamatsu Photonics",
+      "entity_type": "company",
+      "inclusion_reason": "InGaAs探测器可能补足接收器件",
+      "notes": "数据中心收入不透明；两期tier review为零结果故不升watch",
+      "priority": "P3",
+      "promoted_entity_id": "",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.hamamatsu.com/eu/en/news/featured-products_and_technologies/2024/meeting-optical-communication-demands.html",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_HPE",
+      "capability_scope": "MOD1/MOD2",
+      "entity_name": "HPE",
+      "entity_type": "company",
+      "inclusion_reason": "Juniper并入后提供AI网络与1.6T-ready系统信号",
+      "notes": "并购后口径复杂",
+      "priority": "P3",
+      "promoted_entity_id": "",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.hpe.com/us/en/juniper-data-center-interconnect.html",
+      "suggested_role": "system_vendor",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_JBL",
+      "capability_scope": "EMS1/MOD1",
+      "entity_name": "Jabil",
+      "entity_type": "company",
+      "inclusion_reason": "承接硅光模块业务并推出1.6T可观察制造交付",
+      "notes": "AI收入不能等同光模块收入",
+      "priority": "P1",
+      "promoted_entity_id": "JBL",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.jabil.com/news/jabil-launches-1.6t-pluggable-transceiver.html",
+      "suggested_role": "core_peer",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_KEYS",
+      "capability_scope": "EQ7",
+      "entity_name": "Keysight",
+      "entity_type": "company",
+      "inclusion_reason": "224G与1.6T验证进度领先于量产",
+      "notes": "季度通信测试口径过宽只做事件监控",
+      "priority": "P2",
+      "promoted_entity_id": "WATCH_KEYS",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.keysight.com/au/en/about/newsroom/news-releases/2026/0313-pr26-049-keysight-introduces-new-224g-test-solutions-to-enable-1-6t-optical-network-validation.html",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_LIGHTMATTER",
+      "capability_scope": "D12",
+      "entity_name": "Lightmatter",
+      "entity_type": "company",
+      "inclusion_reason": "Passage NPO与OBO适合商业采用监控",
+      "notes": "路线风险",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_LIGHTMATTER",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://lightmatter.co/products/passage",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_LWLG",
+      "capability_scope": "M3/C4",
+      "entity_name": "Lightwave Logic",
+      "entity_type": "company",
+      "inclusion_reason": "电光聚合物调制器提供新材料路线",
+      "notes": "四期SEC正式材料逐槽登记；商业化规模极小与量产最早2027年需分层跟踪",
+      "priority": "P3",
+      "promoted_entity_id": "LWLG",
+      "reviewed_at": "2026-08-15",
+      "source_ref": "https://www.sec.gov/Archives/edgar/data/1325964/000107997326001097/lwlg_10q-063026.htm",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_MCHP",
+      "capability_scope": "C5",
+      "entity_name": "Microchip",
+      "entity_type": "company",
+      "inclusion_reason": "高速Ethernet PHY可能提供电侧信号",
+      "notes": "两期正式材料仅电侧相邻信号；晋级watch且不建光侧事件",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_MCHP",
+      "reviewed_at": "2026-08-15",
+      "source_ref": "https://www.microchip.com/en-us/products/high-speed-networking-and-video/ethernet/ethernet-phys/meta-dx-family",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_MELCO",
+      "capability_scope": "C1",
+      "entity_name": "Mitsubishi Electric",
+      "entity_type": "company",
+      "inclusion_reason": "EML覆盖800G至3.2T并可观察光源扩产",
+      "notes": "两期集团材料均无可分离光学经营信号",
+      "priority": "P2",
+      "promoted_entity_id": "WATCH_MELCO",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.mitsubishielectric.com/en/pr/2026/pdf/0529_co5.pdf",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_MOLEX",
+      "capability_scope": "D9",
+      "entity_name": "Molex",
+      "entity_type": "company",
+      "inclusion_reason": "CPO连接和OCS适合新品并购事件监控",
+      "notes": "Koch私有子公司",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_MOLEX",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.molex.com/en-us/news/molex-accelerates-ai-cluster-deployment-with-one-stop-optical-interconnect-architecture-and-debut-of-high-radix-optical-circuit-switch-platform",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_MSFT",
+      "capability_scope": "T020",
+      "entity_name": "Microsoft",
+      "entity_type": "company",
+      "inclusion_reason": "AI数据中心容量和资本开支只做需求验证",
+      "notes": "不补光学四季度槽",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_MSFT",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+      "suggested_role": "downstream",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_MXL",
+      "capability_scope": "C5",
+      "entity_name": "MaxLinear",
+      "entity_type": "company",
+      "inclusion_reason": "200G TIA与PAM4 DSP补足LPO和DSP路线",
+      "notes": "四季度采用SEC法定披露连续覆盖；不等同电话会",
+      "priority": "P1",
+      "promoted_entity_id": "MXL",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.maxlinear.com/dcc",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_MYCRONIC",
+      "capability_scope": "EQ3/EQ4",
+      "entity_name": "Mycronic",
+      "entity_type": "company",
+      "inclusion_reason": "高精度die bonding可观察封装节拍",
+      "notes": "两期正式材料均明确光通信设备需求",
+      "priority": "P2",
+      "promoted_entity_id": "MYCRONIC",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.mycronic.com/product-areas/die-bonding/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_NTTID",
+      "capability_scope": "C5/C6",
+      "entity_name": "NTT Innovative Devices",
+      "entity_type": "company",
+      "inclusion_reason": "相干DSP产品适合按发布与合作监控",
+      "notes": "NTT子公司",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_NTTID",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.ntt-innovative-devices.com/en/optical_communications/dsp_products.html",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_OPENLIGHT",
+      "capability_scope": "C1/C4",
+      "entity_name": "OpenLight",
+      "entity_type": "company",
+      "inclusion_reason": "集成激光硅光平台适合跟踪PDK与量产事件",
+      "notes": "私企",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_OPENLIGHT",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://openlightphotonics.com/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_ORCL",
+      "capability_scope": "T020",
+      "entity_name": "Oracle",
+      "entity_type": "company",
+      "inclusion_reason": "OCI容量与具名合作可做客户侧验证",
+      "notes": "订单与光模块消耗非一一对应",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_ORCL",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/",
+      "suggested_role": "downstream",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_OXIG",
+      "capability_scope": "EQ2",
+      "entity_name": "Oxford Instruments",
+      "entity_type": "company",
+      "inclusion_reason": "InP激光与探测器等离子工艺交叉验证制造卡点",
+      "notes": "用正式半年及全年材料观察设备订单",
+      "priority": "P2",
+      "promoted_entity_id": "OXIG",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://plasma.oxinst.com/media-centre/wp/plasma-solutions-for-inp-lasers-and-photodiodes",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_PI",
+      "capability_scope": "EQ4",
+      "entity_name": "PI",
+      "entity_type": "company",
+      "inclusion_reason": "光子对准适合产品和订单事件监控",
+      "notes": "订单应用不可分",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_PI",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.pi-usa.us/en/products/photonics-alignment-solutions",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_POET",
+      "capability_scope": "D12/P1",
+      "entity_name": "POET Technologies",
+      "entity_type": "company",
+      "inclusion_reason": "晶圆级1.6T光引擎信号纯度高",
+      "notes": "商业化与实际收入需分层跟踪",
+      "priority": "P2",
+      "promoted_entity_id": "POET",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.poet-technologies.com/products/poet-teralight",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_RANOVUS",
+      "capability_scope": "D12",
+      "entity_name": "Ranovus",
+      "entity_type": "company",
+      "inclusion_reason": "Odin CPO适合跟踪合作演示与量产迁移",
+      "notes": "演示与量产需分开",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_RANOVUS",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://ranovus.com/wp-content/uploads/2024/03/Ranovus-CPO-3.0-MediaTek-announcement-March-20-2024-Final.pdf",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_RBBN",
+      "capability_scope": "MOD2",
+      "entity_name": "Ribbon Communications",
+      "entity_type": "company",
+      "inclusion_reason": "IP optical networking提供传输长尾样本",
+      "notes": "AI光互联信号偏弱",
+      "priority": "P3",
+      "promoted_entity_id": "",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://ribboncommunications.com/solutions/service-provider-solutions/ip-optical/ribbons-automated-ip-routing-and-optical-networking",
+      "suggested_role": "system_vendor",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_SAMCO",
+      "capability_scope": "EQ2",
+      "entity_name": "Samco",
+      "entity_type": "company",
+      "inclusion_reason": "InP设备补充日本制造设备样本",
+      "notes": "两期正式材料未拆光通信客户或收入",
+      "priority": "P2",
+      "promoted_entity_id": "WATCH_SAMCO",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.samco.co.jp/whatsnew/products/2026/03/ExpandingLineupInPEquipment.php",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_SANM",
+      "capability_scope": "EMS1/P1",
+      "entity_name": "Sanmina",
+      "entity_type": "company",
+      "inclusion_reason": "光子设计封装制造可验证制造端",
+      "notes": "按云AI制造信号跟踪而不归因光学收入",
+      "priority": "P2",
+      "promoted_entity_id": "SANM",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.sanmina.com/solutions-contract-manufacturing-design/optical/",
+      "suggested_role": "core_peer",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_SCINTIL",
+      "capability_scope": "C1/C4",
+      "entity_name": "SCINTIL Photonics",
+      "entity_type": "company",
+      "inclusion_reason": "异质集成硅光提供新路线样本",
+      "notes": "融资与量产不确定",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_SCINTIL",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.scintil-photonics.com/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_SENKO",
+      "capability_scope": "D9",
+      "entity_name": "SENKO Advanced Components",
+      "entity_type": "company",
+      "inclusion_reason": "高密度连接适合产品与合作事件监控",
+      "notes": "私企",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_SENKO",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.senko.com/mpc-series/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_SICOYA",
+      "capability_scope": "C4/D12",
+      "entity_name": "Sicoya",
+      "entity_type": "company",
+      "inclusion_reason": "硅光芯片与收发组件适合事件监控",
+      "notes": "客户量产透明度低",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_SICOYA",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://sicoya.com/en/silicon-photonic-components/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_SIVERS",
+      "capability_scope": "C1",
+      "entity_name": "Sivers Semiconductors",
+      "entity_type": "company",
+      "inclusion_reason": "DFB与CW laser提供新进入者样本",
+      "notes": "规模融资和跨期更正单列",
+      "priority": "P2",
+      "promoted_entity_id": "SIVERS",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.sivers-semiconductors.com/wp-content/uploads/2026/05/Sivers_annualreport_2025_2.pdf",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_SMARTOPTICS",
+      "capability_scope": "MOD1/MOD2",
+      "entity_name": "Smartoptics",
+      "entity_type": "company",
+      "inclusion_reason": "OSFP与开放光传输提供欧洲长尾样本",
+      "notes": "四期Oslo Bors季度报告逐槽登记；财务愿景为前瞻不当作已实现收入",
+      "priority": "P3",
+      "promoted_entity_id": "SMOP",
+      "reviewed_at": "2026-08-15",
+      "source_ref": "https://smartoptics.com/cision-post/smartoptics-group-asa-smop-q2-2026-financial-results/",
+      "suggested_role": "system_vendor",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_SMTC",
+      "capability_scope": "C5",
+      "entity_name": "Semtech",
+      "entity_type": "company",
+      "inclusion_reason": "200G每通道PMD与TIA/driver补足高速模拟前端",
+      "notes": "非光业务稀释口径",
+      "priority": "P1",
+      "promoted_entity_id": "SMTC",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.semtech.com/technology/fiberedge-directedge",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_SOI",
+      "capability_scope": "M1/C4",
+      "entity_name": "Soitec",
+      "entity_type": "company",
+      "inclusion_reason": "Photonics-SOI是硅光底座并已形成AI增长信号",
+      "notes": "两期正式材料持续出现直接光子信号",
+      "priority": "P2",
+      "promoted_entity_id": "SOI",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.soitec.com/home/products/product-platforms/photonics-soi",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_SOURCEPHOTONICS",
+      "capability_scope": "MOD1",
+      "entity_name": "Source Photonics",
+      "entity_type": "company",
+      "inclusion_reason": "800G与1.6T PAM4模块适合产品产能事件监控",
+      "notes": "无连续公开财报",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_SOURCEPHOTONICS",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.sourcephotonics.com/news/source-photonics-announce-the-product-availability-of-its-200g-per-lane-based-1-6t-and-800g-pam4-transceiver-family-products-at-ofc25/",
+      "suggested_role": "core_peer",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_SUMITOMO",
+      "capability_scope": "M1/C1/D9",
+      "entity_name": "Sumitomo Electric",
+      "entity_type": "company",
+      "inclusion_reason": "InP EML CW laser和FAU同时覆盖光源与光耦",
+      "notes": "按信息通信分部而非集团总额跟踪",
+      "priority": "P2",
+      "promoted_entity_id": "SUMITOMO",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://sumitomoelectric.com/products/FlexBeamGuidE-SC",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_SUSS",
+      "capability_scope": "EQ5",
+      "entity_name": "SUSS MicroTec",
+      "entity_type": "company",
+      "inclusion_reason": "永久键合覆盖异质集成",
+      "notes": "正式材料只支持半导体设备相邻信号",
+      "priority": "P2",
+      "promoted_entity_id": "WATCH_SUSS",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.suss.com/en/products-solutions/bonding-solutions/permanent-bonding?languageChanged=en",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_TEL",
+      "capability_scope": "D9",
+      "entity_name": "TE Connectivity",
+      "entity_type": "company",
+      "inclusion_reason": "数据中心与CPO连接提供连接器长尾样本",
+      "notes": "光互联收入难分拆",
+      "priority": "P3",
+      "promoted_entity_id": "",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.te.com/en/about-te/news-center/te-ofc-2026.html",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_TERAMOUNT",
+      "capability_scope": "D9/P1",
+      "entity_name": "Teramount",
+      "entity_type": "company",
+      "inclusion_reason": "PhotonicPlug与并购事件适合监控",
+      "notes": "并购状态待持续核",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_TERAMOUNT",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.molex.com/en-us/news/agreement-to-acquire-teramount-to-accelerate-scalable-co-packaged-optics-adoption",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_TSEM",
+      "capability_scope": "C4/C5/P1",
+      "entity_name": "Tower Semiconductor",
+      "entity_type": "company",
+      "inclusion_reason": "SiPho与模拟混合信号代工并有1.6T量产披露",
+      "notes": "客户披露受保密限制",
+      "priority": "P1",
+      "promoted_entity_id": "TSEM",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://ir.towersemi.com/financial-information/quarterly-results/",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_VECO",
+      "capability_scope": "EQ1/EQ2",
+      "entity_name": "Veeco",
+      "entity_type": "company",
+      "inclusion_reason": "InP设备订单是激光产能的领先指标",
+      "notes": "订单应用归因仍需核",
+      "priority": "P1",
+      "promoted_entity_id": "VECO",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://ir.veeco.com/news-and-events/news-details/2026/Veeco-Books-Multi-System-Lumina-and-Spector-Orders-for-Manufacturing-Indium-Phosphide-InP-based-Optical-Components/default.aspx",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_VIAV",
+      "capability_scope": "EQ7",
+      "entity_name": "VIAVI",
+      "entity_type": "company",
+      "inclusion_reason": "1.6T OSFP测试观察验证瓶颈",
+      "notes": "正式季度材料持续确认数据中心测试需求",
+      "priority": "P2",
+      "promoted_entity_id": "VIAV",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.viavisolutions.com/en-us/products/one-1600er-osfp-1600gb-s-test-module",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_WIWYNN",
+      "capability_scope": "MOD1",
+      "entity_name": "Wiwynn",
+      "entity_type": "company",
+      "inclusion_reason": "机柜级CPO生态与高速互联集成",
+      "notes": "CPO投资关系不自动解释为采购关系",
+      "priority": "P2",
+      "promoted_entity_id": "WIWYNN",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.wiwynn.com/technology/high-speed-interconnect",
+      "suggested_role": "system_vendor",
+      "suggested_tier": "quarterly",
+      "verification_status": "promoted"
+    },
+    {
+      "candidate_id": "CAND_XSCAPE",
+      "capability_scope": "C1/C4/D12",
+      "entity_name": "Xscape Photonics",
+      "entity_type": "company",
+      "inclusion_reason": "多波长光引擎适合跟踪客户采用",
+      "notes": "路线新",
+      "priority": "P3",
+      "promoted_entity_id": "WATCH_XSCAPE",
+      "reviewed_at": "2026-08-13",
+      "source_ref": "https://www.xscapephotonics.com/falconx",
+      "suggested_role": "upstream_enabler",
+      "suggested_tier": "watch",
+      "verification_status": "promoted"
+    }
+  ],
+  "company_tier_reviews": [
+    {
+      "candidate_id": "CAND_ACCTON",
+      "material_type": "regulatory_filing",
+      "notes": "未拆LPO与光交换收入",
+      "period_label": "FY2025",
+      "published_date": "2026-07-08",
+      "review_id": "TR_ACCTON_2025",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "股东报告提供网络交换设备经营结构与AI基础设施投入",
+      "source_ref": "https://www.accton.com/shareholder/"
+    },
+    {
+      "candidate_id": "CAND_ACCTON",
+      "material_type": "regulatory_filing",
+      "notes": "适合展示与新品事件监控",
+      "period_label": "2025H1",
+      "published_date": "2025-09-04",
+      "review_id": "TR_ACCTON_2025H1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "no_relevant_signal",
+      "signal_summary": "法定半年材料未给出光学产品采用或规模",
+      "source_ref": "https://www.accton.com/wp-content/uploads/2025/09/20250904014725.pdf"
+    },
+    {
+      "candidate_id": "CAND_ADTN",
+      "material_type": "earnings_release",
+      "notes": "产品采用仍需客户或出货证据",
+      "period_label": "2025Q4",
+      "published_date": "2026-02-25",
+      "review_id": "TR_ADTN_2025Q4",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "全年结果提供光网络业务与需求基线",
+      "source_ref": "https://investors.adtran.com/news/news-details/2026/ADTRAN-Holdings-Inc--reports-fourth-quarter-and-full-year-2025-financial-results/default.aspx"
+    },
+    {
+      "candidate_id": "CAND_ADTN",
+      "material_type": "earnings_release",
+      "notes": "运营商光传输与AI集群内互联分开",
+      "period_label": "2026Q1",
+      "published_date": "2026-05-04",
+      "review_id": "TR_ADTN_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度材料明确LiteWave800面向AI数据中心内部互联",
+      "source_ref": "https://investors.adtran.com/news/news-details/2026/ADTRAN-Holdings-Inc--reports-first-quarter-2026-financial-results/default.aspx"
+    },
+    {
+      "candidate_id": "CAND_AIXA",
+      "material_type": "regulatory_filing",
+      "notes": "欧洲等价正式材料",
+      "period_label": "2026H1",
+      "published_date": "2026-07-30",
+      "review_id": "TR_AIXA_2026H1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "半年报覆盖AsP与datacom laser设备需求",
+      "source_ref": "https://www.aixtron.com/investoren/publikationen/2026/englisch/Half-Year%20Group%20Financial%20Report_2026.pdf"
+    },
+    {
+      "candidate_id": "CAND_AIXA",
+      "material_type": "regulatory_filing",
+      "notes": "不将全部设备订单归因InP",
+      "period_label": "2026Q1",
+      "published_date": "2026-04-30",
+      "review_id": "TR_AIXA_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "三个月报告持续披露光电子设备订单与展望",
+      "source_ref": "https://www.aixtron.com/investoren/publikationen/2026/englisch/3-Months-Report-2026.pdf"
+    },
+    {
+      "candidate_id": "CAND_ASE",
+      "material_type": "regulatory_filing",
+      "notes": "不得把先进封装总额当硅光收入",
+      "period_label": "2025Q4",
+      "published_date": "2026-02-05",
+      "review_id": "TR_ASE_2025Q4",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "no_relevant_signal",
+      "signal_summary": "连续正式材料仍以集团OSAT口径为主",
+      "source_ref": "https://ir.aseglobal.com/html/ir_financial.php"
+    },
+    {
+      "candidate_id": "CAND_ASE",
+      "material_type": "regulatory_filing",
+      "notes": "技术能力保留在事件监控层",
+      "period_label": "2026Q1",
+      "published_date": "2026-04-30",
+      "review_id": "TR_ASE_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "no_relevant_signal",
+      "signal_summary": "正式季度入口未提供可独立归因的硅光封装经营数据",
+      "source_ref": "https://ir.aseglobal.com/html/ir_financial.php"
+    },
+    {
+      "candidate_id": "CAND_ASMPT",
+      "material_type": "regulatory_filing",
+      "notes": "AI订单不能自动归因光子封装",
+      "period_label": "2026H1",
+      "published_date": "2026-07-29",
+      "review_id": "TR_ASMPT_2026H1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "正式半年结果提供先进封装与AI设备需求信号",
+      "source_ref": "https://www.asmpt.com/site/assets/files/85463/asmpt_2026_q2_press_release.pdf"
+    },
+    {
+      "candidate_id": "CAND_ASMPT",
+      "material_type": "regulatory_filing",
+      "notes": "CPO展示与量产收入分开",
+      "period_label": "2026Q1",
+      "published_date": "2026-04-22",
+      "review_id": "TR_ASMPT_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "正式季度结果持续覆盖先进封装设备业务",
+      "source_ref": "https://www.asmpt.com/site/assets/files/85243/e0522_results_announcement_2026_q1.pdf"
+    },
+    {
+      "candidate_id": "CAND_AXT",
+      "material_type": "earnings_release",
+      "notes": "2026Q2缺口不影响历史两期晋级复核",
+      "period_label": "2025Q4",
+      "published_date": "2026-02-19",
+      "review_id": "TR_AXTI_2025Q4",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "披露InP出口许可与当年扩产目标",
+      "source_ref": "https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results/default.aspx"
+    },
+    {
+      "candidate_id": "CAND_AXT",
+      "material_type": "earnings_release",
+      "notes": "第一方经营披露；出口许可与需求需分开",
+      "period_label": "2026Q1",
+      "published_date": "2026-04-30",
+      "review_id": "TR_AXTI_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "披露InP对AI基础设施的需求与产能进展",
+      "source_ref": "https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-First-Quarter-2026-Financial-Results/default.aspx"
+    },
+    {
+      "candidate_id": "CAND_CLS",
+      "material_type": "earnings_release",
+      "notes": "系统收入与光学BOM分开",
+      "period_label": "2026Q1",
+      "published_date": "2026-04-27",
+      "review_id": "TR_CLS_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "季度材料持续提供Connectivity与Cloud Solutions交付信号",
+      "source_ref": "https://corporate.celestica.com/node/17386/pdf"
+    },
+    {
+      "candidate_id": "CAND_CLS",
+      "material_type": "earnings_release",
+      "notes": "兼容光模块不等于自产模块",
+      "period_label": "2026Q2",
+      "published_date": "2026-07-27",
+      "review_id": "TR_CLS_2026Q2",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "结果材料包含高速网络项目与800G至1.6T需求假设",
+      "source_ref": "https://corporate.celestica.com/news-releases/news-release-details/celestica-announces-second-quarter-2026-financial-results"
+    },
+    {
+      "candidate_id": "CAND_FORM",
+      "material_type": "regulatory_filing",
+      "notes": "具体采用需客户侧验证",
+      "period_label": "2026Q1",
+      "published_date": "2026-05-05",
+      "review_id": "TR_FORM_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度材料可追踪硅光与CPO测试业务进展",
+      "source_ref": "https://www.sec.gov/Archives/edgar/data/1039399/000103939926000023/form-20260328.htm"
+    },
+    {
+      "candidate_id": "CAND_FORM",
+      "material_type": "regulatory_filing",
+      "notes": "需隔离存储探针卡主业",
+      "period_label": "2026Q2",
+      "published_date": "2026-08-04",
+      "review_id": "TR_FORM_2026Q2",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "10-Q提供先进封装测试和客户资本开支信号",
+      "source_ref": "https://www.sec.gov/Archives/edgar/data/1039399/000103939926000033/form-20260627.htm"
+    },
+    {
+      "candidate_id": "CAND_FUJIKURA",
+      "material_type": "earnings_presentation",
+      "notes": "材料超过十二个月仅证明可跟踪性不证明当前状态",
+      "period_label": "FY2024Q1",
+      "published_date": "2024-08-08",
+      "review_id": "TR_FUJIKURA_FY2024Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "历史同季结果提供通信系统连续口径",
+      "source_ref": "https://www.fujikura.co.jp/eng/resource/pdf/presentation20240808.pdf"
+    },
+    {
+      "candidate_id": "CAND_FUJIKURA",
+      "material_type": "earnings_presentation",
+      "notes": "公开英文直链滞后故暂不晋级季度层",
+      "period_label": "FY2024Q3",
+      "published_date": "2025-02-10",
+      "review_id": "TR_FUJIKURA_FY2024Q3",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "业绩材料明确拆分通信系统并讨论数据中心需求",
+      "source_ref": "https://www.fujikura.co.jp/eng/resource/pdf/presentation250210.pdf"
+    },
+    {
+      "candidate_id": "CAND_FURUKAWA",
+      "material_type": "earnings_presentation",
+      "notes": "英文历史材料可追溯但不替代最新电话会",
+      "period_label": "FY2025Q1",
+      "published_date": "2025-08-07",
+      "review_id": "TR_FURUKAWA_FY2025Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "上一年度同季材料持续披露通信解决方案变化",
+      "source_ref": "https://www.furukawa.co.jp/en/ir/library/finalreport/pdf/2026/20250807_pre.pdf"
+    },
+    {
+      "candidate_id": "CAND_FURUKAWA",
+      "material_type": "regulatory_filing",
+      "notes": "需按通信段而非集团总额解读",
+      "period_label": "FY2026Q1",
+      "published_date": "2026-08-06",
+      "review_id": "TR_FURUKAWA_FY2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度结果可跟踪通信解决方案与光纤器件业务",
+      "source_ref": "https://www.furukawaelectric.com/en/ir/library/finalreport/pdf/2027/20260806.pdf"
+    },
+    {
+      "candidate_id": "CAND_GFS",
+      "material_type": "earnings_release",
+      "notes": "只记录材料中的明确光学表述",
+      "period_label": "2026Q1",
+      "published_date": "2026-05-05",
+      "review_id": "TR_GFS_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "正式季度材料覆盖硅光平台商业进展",
+      "source_ref": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-first-quarter-2026-financial-results"
+    },
+    {
+      "candidate_id": "CAND_GFS",
+      "material_type": "earnings_release",
+      "notes": "集团口径宽；不将总收入归因硅光",
+      "period_label": "2026Q2",
+      "published_date": "2026-08-05",
+      "review_id": "TR_GFS_2026Q2",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "管理层明确点名AI数据中心光网络与硅光SiGe",
+      "source_ref": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-second-quarter-2026-financial-results"
+    },
+    {
+      "candidate_id": "CAND_GLW",
+      "material_type": "earnings_release",
+      "notes": "光纤连接不等同主动光模块",
+      "period_label": "2026Q1",
+      "published_date": "2026-04-28",
+      "review_id": "TR_GLW_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度材料明确光通信销售增长及超大规模客户协议",
+      "source_ref": "https://investor.corning.com/investor-relations/financials/quarterly-results/default.aspx?source=news_body_link"
+    },
+    {
+      "candidate_id": "CAND_GLW",
+      "material_type": "earnings_release",
+      "notes": "具名长期协议需独立事件去重",
+      "period_label": "2026Q2",
+      "published_date": "2026-07-28",
+      "review_id": "TR_GLW_2026Q2",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度结果拆分Optical Communications并披露AI数据中心项目",
+      "source_ref": "https://investor.corning.com/news-and-events/news/news-details/2026/Cornings-Strong-Second-Quarter-2026-Financial-Results1-Demonstrate-Progress-on-Recently-Upgraded-Springboard-Plan/default.aspx"
+    },
+    {
+      "candidate_id": "CAND_HAMAMATSU",
+      "material_type": "regulatory_filing",
+      "notes": "两期不同正式披露互为零结果通道",
+      "period_label": "FY2026H1",
+      "published_date": "2026-05-14",
+      "review_id": "TR_HAMAMATSU_FY2026H1",
+      "reviewed_at": "2026-08-15",
+      "signal_class": "no_relevant_signal",
+      "signal_summary": "半年报仅出现工业业务受生成式AI投资支持表述；光通信未单列且无接收器件经营信号",
+      "source_ref": "https://www.hamamatsu.com/jp/en/news/investor-relations/2026/20260514000000.html"
+    },
+    {
+      "candidate_id": "CAND_HAMAMATSU",
+      "material_type": "earnings_presentation",
+      "notes": "官网产品页90天复核无光通信采用事件（第二通道）",
+      "period_label": "FY2026Q1",
+      "published_date": "2026-02-11",
+      "review_id": "TR_HAMAMATSU_FY2026Q1",
+      "reviewed_at": "2026-08-15",
+      "signal_class": "no_relevant_signal",
+      "signal_summary": "业绩简报全文复核无光通信销售额或探测器订单信号",
+      "source_ref": "https://www.hamamatsu.com/content/dam/hamamatsu-photonics/sites/documents/01_HQ/ir/financial-information/results-briefing/h_ir_260211_se_en.pdf"
+    },
+    {
+      "candidate_id": "CAND_JBL",
+      "material_type": "regulatory_filing",
+      "notes": "具体1.6T产品另用官方产品事件",
+      "period_label": "FY2026Q2",
+      "published_date": "2026-04-08",
+      "review_id": "TR_JBL_2026Q2",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "连续季度可观察数据中心制造需求与供应链",
+      "source_ref": "https://www.sec.gov/Archives/edgar/data/898293/000162828026024148/jbl-20260228.htm"
+    },
+    {
+      "candidate_id": "CAND_JBL",
+      "material_type": "regulatory_filing",
+      "notes": "AI收入不能等同光模块收入",
+      "period_label": "FY2026Q3",
+      "published_date": "2026-06-30",
+      "review_id": "TR_JBL_2026Q3",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "法定季度材料覆盖智能基础设施与制造交付",
+      "source_ref": "https://www.sec.gov/Archives/edgar/data/898293/000162828026046138/jbl-20260531.htm"
+    },
+    {
+      "candidate_id": "CAND_KEYS",
+      "material_type": "earnings_release",
+      "notes": "1.6T具体进度另由产品事件承载",
+      "period_label": "FY2026Q1",
+      "published_date": "2026-02-23",
+      "review_id": "TR_KEYS_FY2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "连续季度可观察通信测试景气与订单",
+      "source_ref": "https://investor.keysight.com/investor-news-and-events/financial-press-releases/press-release-details/2026/Keysight-Technologies-Reports-First-Quarter-2026-Results/default.aspx"
+    },
+    {
+      "candidate_id": "CAND_KEYS",
+      "material_type": "earnings_release",
+      "notes": "商业通信增长不能等同光模块验证收入",
+      "period_label": "FY2026Q2",
+      "published_date": "2026-05-19",
+      "review_id": "TR_KEYS_FY2026Q2",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "季度材料提供商业通信测试需求的上层信号",
+      "source_ref": "https://investor.keysight.com/investor-news-and-events/financial-press-releases/press-release-details/2026/Keysight-Technologies-Reports-Second-Quarter-2026-Results/default.aspx"
+    },
+    {
+      "candidate_id": "CAND_LWLG",
+      "material_type": "regulatory_filing",
+      "notes": "官网90天复核仅有播客研讨会等媒体内容；PDK公告(2026-03-03)在窗口外且为第一方asserted",
+      "period_label": "2026Q1",
+      "published_date": "2026-05-15",
+      "review_id": "TR_LWLG_2026Q1",
+      "reviewed_at": "2026-08-15",
+      "signal_class": "direct_optical",
+      "signal_summary": "10-Q确认MOA于2026年1月执行且Phase1对价已确认；硅光EO聚合物调制器商业化框架下的开发阶段",
+      "source_ref": "https://www.sec.gov/Archives/edgar/data/1325964/000155335026000087/lwlg_10q-033126.htm"
+    },
+    {
+      "candidate_id": "CAND_LWLG",
+      "material_type": "regulatory_filing",
+      "notes": "收入极小且单客户依赖；JDA Phase2待客户验收；产品阶段为开发早期",
+      "period_label": "2026Q2",
+      "published_date": "2026-08-14",
+      "review_id": "TR_LWLG_2026Q2",
+      "reviewed_at": "2026-08-15",
+      "signal_class": "direct_optical",
+      "signal_summary": "10-Q披露EO聚合物调制材料唯一许可协议收入与2026年1月签署的硅光调制器JDA；公司明确量产收入最早2027年",
+      "source_ref": "https://www.sec.gov/Archives/edgar/data/1325964/000107997326001097/lwlg_10q-063026.htm"
+    },
+    {
+      "candidate_id": "CAND_MCHP",
+      "material_type": "regulatory_filing",
+      "notes": "官网新闻页90天复核最高价值事件仍为电侧PCIe6/CXL3.1 retimer",
+      "period_label": "FY2026Q4",
+      "published_date": "2026-05-07",
+      "review_id": "TR_MCHP_FY2026Q4",
+      "reviewed_at": "2026-08-15",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "正式业绩附件含data center/AI engagement与Gen6 retimer电侧表述；明确非光模块采用",
+      "source_ref": "https://ir.microchip.com/sec-filings/all-sec-filings/content/0000827054-26-000012/exhibit991q4fy26.htm"
+    },
+    {
+      "candidate_id": "CAND_MCHP",
+      "material_type": "earnings_release",
+      "notes": "design wins为第一方宣称无独立验证",
+      "period_label": "FY2027Q1",
+      "published_date": "2026-08-06",
+      "review_id": "TR_MCHP_FY2027Q1",
+      "reviewed_at": "2026-08-15",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "PCIe Gen6 connectivity design wins由6增至12；属电侧连接信号，非光模块采用",
+      "source_ref": "https://ir.microchip.com/news-events/press-releases/detail/1409/microchip-technology-announces-financial-results-for-first-quarter-of-fiscal-year-2027"
+    },
+    {
+      "candidate_id": "CAND_MELCO",
+      "material_type": "regulatory_filing",
+      "notes": "适合事件监控而非季度趋势层",
+      "period_label": "FY2026",
+      "published_date": "2026-04-28",
+      "review_id": "TR_MELCO_FY2026",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "no_relevant_signal",
+      "signal_summary": "全年结果仍无法分离数据中心光器件进展",
+      "source_ref": "https://www.mitsubishielectric.com/en/pr/2026/pdf/0428_co1.pdf"
+    },
+    {
+      "candidate_id": "CAND_MELCO",
+      "material_type": "regulatory_filing",
+      "notes": "EML产品存在但集团财务披露稀释",
+      "period_label": "FY2027Q1",
+      "published_date": "2026-07-31",
+      "review_id": "TR_MELCO_FY2027Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "no_relevant_signal",
+      "signal_summary": "完整结果材料未提供可独立归因的光器件经营信号",
+      "source_ref": "https://www.mitsubishielectric.com/en/pr/2026/pdf/0731_co1.pdf"
+    },
+    {
+      "candidate_id": "CAND_MXL",
+      "material_type": "regulatory_filing",
+      "notes": "需另行锚定具体光学主张",
+      "period_label": "2026Q1",
+      "published_date": "2026-04-23",
+      "review_id": "TR_MXL_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "10-Q持续覆盖高速互连产品与风险",
+      "source_ref": "https://www.sec.gov/Archives/edgar/data/1288469/000128846926000029/mxl-20260331.htm"
+    },
+    {
+      "candidate_id": "CAND_MXL",
+      "material_type": "regulatory_filing",
+      "notes": "监管材料不等于电话会问答",
+      "period_label": "2026Q2",
+      "published_date": "2026-07-23",
+      "review_id": "TR_MXL_2026Q2",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "10-Q提供DSP与光学连接业务的法定披露入口",
+      "source_ref": "https://www.sec.gov/Archives/edgar/data/1288469/000128846926000051/mxl-20260630.htm"
+    },
+    {
+      "candidate_id": "CAND_MYCRONIC",
+      "material_type": "regulatory_filing",
+      "notes": "中国光模块需求与海外需求分区观察",
+      "period_label": "2026Q1",
+      "published_date": "2026-04-24",
+      "review_id": "TR_MYCRONIC_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度材料明确由AI数据中心扩建驱动光通信封装设备需求",
+      "source_ref": "https://www.mycronic.com/news-events/our-press-releases/interim-report-january-march-2026/"
+    },
+    {
+      "candidate_id": "CAND_MYCRONIC",
+      "material_type": "regulatory_filing",
+      "notes": "设备订单领先模块产出但不是模块产量",
+      "period_label": "2026Q2",
+      "published_date": "2026-07-14",
+      "review_id": "TR_MYCRONIC_2026Q2",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度材料明确披露光通信die bonder需求持续强劲",
+      "source_ref": "https://www.mycronic.com/news-events/our-press-releases/interim-report-january-june-2026/"
+    },
+    {
+      "candidate_id": "CAND_OXIG",
+      "material_type": "regulatory_filing",
+      "notes": "应用横跨功率射频和光电子",
+      "period_label": "FY2026",
+      "published_date": "2026-06-09",
+      "review_id": "TR_OXIG_FY2026",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "全年结果披露化合物半导体设备订单与长交期",
+      "source_ref": "https://www.oxinst.com/assets/uploads/Oxford_Instruments_plc_preliminary_FY26_results_9_June_2026.pdf"
+    },
+    {
+      "candidate_id": "CAND_OXIG",
+      "material_type": "earnings_presentation",
+      "notes": "不把全部化合物半导体订单归因InP激光",
+      "period_label": "FY2026H1",
+      "published_date": "2025-11-11",
+      "review_id": "TR_OXIG_FY2026H1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "半年结果持续提供Advanced Technologies设备需求",
+      "source_ref": "https://www.oxinst.com/assets/uploads/Oxford_Instruments_plc_FY26_half_year_results_investor_presentation_111125.pdf"
+    },
+    {
+      "candidate_id": "CAND_POET",
+      "material_type": "earnings_release",
+      "notes": "公司自述商业验证仍需客户侧证据",
+      "period_label": "2025Q4",
+      "published_date": "2026-03-31",
+      "review_id": "TR_POET_2025Q4",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "全年结果直接讨论从研发向商业执行迁移",
+      "source_ref": "https://www.poet-technologies.com/news/poet-technologies-reports-fourth-quarter-2025-financial-results"
+    },
+    {
+      "candidate_id": "CAND_POET",
+      "material_type": "earnings_release",
+      "notes": "前瞻产能与已实现收入严格分开",
+      "period_label": "2026Q1",
+      "published_date": "2026-05-14",
+      "review_id": "TR_POET_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度材料直接覆盖光引擎光模块与马来西亚产能迁移",
+      "source_ref": "https://www.poet-technologies.com/news/poet-technologies-reports-first-quarter-2026-financial-results"
+    },
+    {
+      "candidate_id": "CAND_SAMCO",
+      "material_type": "regulatory_filing",
+      "notes": "适合产品事件监控",
+      "period_label": "FY2026H1",
+      "published_date": "2026-03-12",
+      "review_id": "TR_SAMCO_FY2026H1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "no_relevant_signal",
+      "signal_summary": "半年结果仍无法识别数据中心客户或收入",
+      "source_ref": "https://www.samco.co.jp/en/disclosure/"
+    },
+    {
+      "candidate_id": "CAND_SAMCO",
+      "material_type": "regulatory_filing",
+      "notes": "产品事件有价值但财务口径不足",
+      "period_label": "FY2026Q3",
+      "published_date": "2026-06-12",
+      "review_id": "TR_SAMCO_FY2026Q3",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "no_relevant_signal",
+      "signal_summary": "正式九个月结果未独立披露InP光通信设备贡献",
+      "source_ref": "https://www.samco.co.jp/en/disclosure/"
+    },
+    {
+      "candidate_id": "CAND_SANM",
+      "material_type": "earnings_release",
+      "notes": "光子设计能力另由产品事件验证",
+      "period_label": "FY2026Q2",
+      "published_date": "2026-04-27",
+      "review_id": "TR_SANM_FY2026Q2",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "连续季度可观察通信网络与云AI制造景气",
+      "source_ref": "https://ir.sanmina.com/news/news-details/2026/Sanmina-Reports-Second-Quarter-Fiscal-2026-Financial-Results/default.aspx"
+    },
+    {
+      "candidate_id": "CAND_SANM",
+      "material_type": "earnings_release",
+      "notes": "集团订单不能归因光学制造",
+      "period_label": "FY2026Q3",
+      "published_date": "2026-07-27",
+      "review_id": "TR_SANM_FY2026Q3",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "季度材料提供云与AI基础设施制造需求和产能信号",
+      "source_ref": "https://ir.sanmina.com/news/news-details/2026/Sanmina-Reports-Third-Quarter-Fiscal-2026-Financial-Results/default.aspx"
+    },
+    {
+      "candidate_id": "CAND_SIVERS",
+      "material_type": "regulatory_filing",
+      "notes": "年报曾调整跨期收入需保留更正边界",
+      "period_label": "FY2025",
+      "published_date": "2026-05-13",
+      "review_id": "TR_SIVERS_2025",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "年报持续披露DFB与CW激光器商业化路径",
+      "source_ref": "https://www.sivers-semiconductors.com/wp-content/uploads/2026/05/Sivers_annualreport_2025_2.pdf"
+    },
+    {
+      "candidate_id": "CAND_SIVERS",
+      "material_type": "regulatory_filing",
+      "notes": "规模与融资条件单列",
+      "period_label": "2026Q1",
+      "published_date": "2026-05-29",
+      "review_id": "TR_SIVERS_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度报告提供光子业务设计赢单与量产窗口",
+      "source_ref": "https://www.sivers-semiconductors.com/wp-content/uploads/2026/05/Sivers-Interim-report-Q126_FINAL_ENG.pdf"
+    },
+    {
+      "candidate_id": "CAND_SMARTOPTICS",
+      "material_type": "regulatory_filing",
+      "notes": "开放光传输与DCI为直接光学业务；收入与客户均为第一方披露",
+      "period_label": "2026Q1",
+      "published_date": "2026-05-07",
+      "review_id": "TR_SMOP_2026Q1",
+      "reviewed_at": "2026-08-15",
+      "signal_class": "direct_optical",
+      "signal_summary": "Q1正式报告收入2290万美元同比+59.6%；明确AI驱动网络扩容与数据中心互联及供应链挑战",
+      "source_ref": "https://smartoptics.com/cision-post/smartoptics-group-asa-smop-q1-2026-financial-results/"
+    },
+    {
+      "candidate_id": "CAND_SMARTOPTICS",
+      "material_type": "regulatory_filing",
+      "notes": "愿景与可寻址市场为前瞻；Netnod合作(2026-06-18)为具名伙伴选择但单方公告",
+      "period_label": "2026Q2",
+      "published_date": "2026-07-13",
+      "review_id": "TR_SMOP_2026Q2",
+      "reviewed_at": "2026-08-15",
+      "signal_class": "direct_optical",
+      "signal_summary": "Q2正式报告收入2890万美元同比+54.6%创历史新高；间接超大规模与AI数据中心业务贡献增长；发布新财务愿景",
+      "source_ref": "https://smartoptics.com/cision-post/smartoptics-group-asa-smop-q2-2026-financial-results/"
+    },
+    {
+      "candidate_id": "CAND_SMTC",
+      "material_type": "earnings_release",
+      "notes": "不把公司总增长等同光学增长",
+      "period_label": "FY2026Q4",
+      "published_date": "2026-03-16",
+      "review_id": "TR_SMTC_2026Q4",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "正式业绩材料持续披露数据中心连接业务",
+      "source_ref": "https://investors.semtech.com/news/semtech-announces-fourth-quarter-and-fiscal-year-2026-results/21cc5cf3-f51f-4f27-88d7-4023516e7840"
+    },
+    {
+      "candidate_id": "CAND_SMTC",
+      "material_type": "earnings_release",
+      "notes": "非光业务需隔离",
+      "period_label": "FY2027Q1",
+      "published_date": "2026-05-26",
+      "review_id": "TR_SMTC_2027Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度材料含数据中心网络与200G每通道信号",
+      "source_ref": "https://investors.semtech.com/news/semtech-announces-first-quarter-of-fiscal-year-2027-results/0634b869-19f6-4e90-9a0b-110fecf1d2db"
+    },
+    {
+      "candidate_id": "CAND_SOI",
+      "material_type": "regulatory_filing",
+      "notes": "材料收入与终端模块需求不可一一对应",
+      "period_label": "FY2026",
+      "published_date": "2026-05-25",
+      "review_id": "TR_SOI_FY2026",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "全年结果提供Photonics-SOI需求与库存节奏",
+      "source_ref": "https://www.soitec.com/docs/default-source/financial-documents/2025-2026/en/soitec-fy%2726-pr---en.pdf?Status=Master&sfvrsn=a4e6d7e6_1"
+    },
+    {
+      "candidate_id": "CAND_SOI",
+      "material_type": "regulatory_filing",
+      "notes": "只采用明确光子口径不分摊集团收入",
+      "period_label": "FY2027Q1",
+      "published_date": "2026-07-22",
+      "review_id": "TR_SOI_FY2027Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "正式季度收入材料持续披露Photonics-SOI所在连接业务",
+      "source_ref": "https://www.soitec.com/home/group/resource-library/content/docs/default-source/financial-documents/2026-2027/en/soitec---cp-q1%2727---en"
+    },
+    {
+      "candidate_id": "CAND_SUMITOMO",
+      "material_type": "regulatory_filing",
+      "notes": "不把信息通信总额等同光模块收入",
+      "period_label": "FY2025",
+      "published_date": "2026-05-12",
+      "review_id": "TR_SUMITOMO_FY2025",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "全年结果持续提供光器件与光纤需求信号",
+      "source_ref": "https://sumitomoelectric.com/sites/default/files/2026-05/download_documents/2025_allv.pdf"
+    },
+    {
+      "candidate_id": "CAND_SUMITOMO",
+      "material_type": "regulatory_filing",
+      "notes": "集团多业务口径需锁定光通信段",
+      "period_label": "FY2026Q1",
+      "published_date": "2026-07-31",
+      "review_id": "TR_SUMITOMO_FY2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度结果覆盖信息通信与数据中心相关业务",
+      "source_ref": "https://sumitomoelectric.com/sites/default/files/2026-07/download_documents/2026_1g.pdf"
+    },
+    {
+      "candidate_id": "CAND_SUSS",
+      "material_type": "regulatory_filing",
+      "notes": "未拆硅光收入故不进入季度主层",
+      "period_label": "2026H1",
+      "published_date": "2026-08-06",
+      "review_id": "TR_SUSS_2026H1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "半年正式披露提供键合设备订单与交付节奏",
+      "source_ref": "https://www.suss.com/de/events/financial-calendar/2026/veroeffentlichung-halbjahresfinanzbericht"
+    },
+    {
+      "candidate_id": "CAND_SUSS",
+      "material_type": "regulatory_filing",
+      "notes": "半导体总需求不能归因光子异质集成",
+      "period_label": "2026Q1",
+      "published_date": "2026-05-07",
+      "review_id": "TR_SUSS_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "季度报告可观察永久键合设备需求",
+      "source_ref": "https://www.suss.com/jp/content/download/3330/53284?version=3"
+    },
+    {
+      "candidate_id": "CAND_TSEM",
+      "material_type": "earnings_release",
+      "notes": "产能投入不等于客户量产",
+      "period_label": "2025Q4",
+      "published_date": "2026-02-11",
+      "review_id": "TR_TSEM_2025Q4",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度材料披露SiPho增长与产能投资",
+      "source_ref": "https://ir.towersemi.com/news-releases/news-release-details/tower-semiconductor-reports-record-revenue-fourth-quarter-2025/"
+    },
+    {
+      "candidate_id": "CAND_TSEM",
+      "material_type": "earnings_release",
+      "notes": "客户通常未具名",
+      "period_label": "2026Q1",
+      "published_date": "2026-05-13",
+      "review_id": "TR_TSEM_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度材料持续披露SiPho与SiGe业务",
+      "source_ref": "https://ir.towersemi.com/news-releases/news-release-details/tower-semiconductor-reports-first-quarter-2026-financial-results/"
+    },
+    {
+      "candidate_id": "CAND_VECO",
+      "material_type": "regulatory_filing",
+      "notes": "设备订单不是模块产量",
+      "period_label": "2026Q1",
+      "published_date": "2026-05-05",
+      "review_id": "TR_VECO_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度材料含硅光与InP设备需求信号",
+      "source_ref": "https://www.sec.gov/Archives/edgar/data/103145/000110465926055672/veco-20260331x10q.htm"
+    },
+    {
+      "candidate_id": "CAND_VECO",
+      "material_type": "regulatory_filing",
+      "notes": "应用横跨光通信和其他市场",
+      "period_label": "2026Q2",
+      "published_date": "2026-08-05",
+      "review_id": "TR_VECO_2026Q2",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "10-Q可跟踪化合物半导体设备订单与风险",
+      "source_ref": "https://www.sec.gov/Archives/edgar/data/103145/000110465926091158/veco-20260630x10q.htm"
+    },
+    {
+      "candidate_id": "CAND_VIAV",
+      "material_type": "earnings_release",
+      "notes": "并购带来的收入变化需单列",
+      "period_label": "FY2026Q2",
+      "published_date": "2026-01-28",
+      "review_id": "TR_VIAV_FY2026Q2",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "连续季度确认数据中心测试需求动能",
+      "source_ref": "https://investor.viavisolutions.com/news-events/news-releases/news-details/2026/VIAVI-Announces-Second-Quarter-Fiscal-2026-Results/"
+    },
+    {
+      "candidate_id": "CAND_VIAV",
+      "material_type": "earnings_release",
+      "notes": "测试收入与模块出货量不可等量",
+      "period_label": "FY2026Q3",
+      "published_date": "2026-04-29",
+      "review_id": "TR_VIAV_FY2026Q3",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度结果明确数据中心生态需求是增长来源",
+      "source_ref": "https://investor.viavisolutions.com/news-events/news-releases/news-details/2026/VIAVI-Announces-Third-Quarter-Fiscal-2026-Results/default.aspx"
+    },
+    {
+      "candidate_id": "CAND_WIWYNN",
+      "material_type": "earnings_presentation",
+      "notes": "一般服务器增长不能映射光模块消耗",
+      "period_label": "2025Q4",
+      "published_date": "2026-02-26",
+      "review_id": "TR_WIWYNN_2025Q4",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "adjacent_segment",
+      "signal_summary": "全年材料持续提供AI服务器与高速互连需求背景",
+      "source_ref": "https://www.wiwynn.com/hubfs/Investors/Shareholders_Services/Investor_Conference/25Q4_ENG_20260226.pdf"
+    },
+    {
+      "candidate_id": "CAND_WIWYNN",
+      "material_type": "earnings_presentation",
+      "notes": "投资关系不等同采购或供货",
+      "period_label": "2026Q1",
+      "published_date": "2026-05-07",
+      "review_id": "TR_WIWYNN_2026Q1",
+      "reviewed_at": "2026-08-13",
+      "signal_class": "direct_optical",
+      "signal_summary": "季度材料明确投资Ayar Labs并布局机架级CPO",
+      "source_ref": "https://www.wiwynn.com/hubfs/Investors/Shareholders_Services/Investor_Conference/26Q1_ENG_20260507.pdf"
+    }
+  ],
   "company_timelines": [
     {
       "events": [
@@ -87,6 +1867,53 @@
         }
       ],
       "primary_subject_id": "AVGO"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [
+            "LITE"
+          ],
+          "date_precision": "exact",
+          "event_category": "supply_chain_arrangement",
+          "event_id": "EV022",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "opening paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_AXTI_20260729_LITE",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL024",
+              "evidence_id": "EE024",
+              "independence_class": "first_party",
+              "origin_group": "OG_AXTI_20260729_LITE",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-29",
+              "quote": "entered into a definitive agreement with Lumentum Operations LLC for the supply and capacity reservation of indium phosphide wafer substrates",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "AXT announces long-term supplier agreement with Lumentum",
+              "url": "https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-Long-Term-Supplier-Agreement-with-Lumentum/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-07-29",
+          "occurred_start": "2026-07-29",
+          "previous_event_id": "",
+          "primary_subject_id": "AXTI",
+          "program_id": "PRG_AXTI_LITE_INP",
+          "summary": "AXT称与Lumentum签署InP晶圆供给和产能预留协议",
+          "theme_ids": [
+            "T007",
+            "T016"
+          ]
+        }
+      ],
+      "primary_subject_id": "AXTI"
     },
     {
       "events": [
@@ -287,6 +2114,94 @@
         }
       ],
       "primary_subject_id": "CIEN"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "supply_chain_arrangement",
+          "event_id": "EV030",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_COHR_20260302_NVDA",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL033",
+              "evidence_id": "EE033",
+              "independence_class": "first_party",
+              "origin_group": "OG_COHR_20260302_NVDA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-02",
+              "quote": "The nonexclusive agreement includes an NVIDIA multibillion-dollar purchase commitment and future access and capacity rights for advanced laser and optical networking products.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "fact_assertion",
+              "title": "NVIDIA and Coherent Announce Strategic Partnership",
+              "url": "https://www.coherent.com/news/press-releases/nvidia-and-coherent-announce-strategic-partnership"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-02",
+          "occurred_start": "2026-03-02",
+          "previous_event_id": "",
+          "primary_subject_id": "COHR",
+          "program_id": "PRG_COHR_NVDA_20260302",
+          "summary": "Coherent披露与NVIDIA签署含采购承诺及未来产能权的非独家多年协议",
+          "theme_ids": [
+            "T007",
+            "T016"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV031",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_COHR_20260302_NVDA",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL034",
+              "evidence_id": "EE034",
+              "independence_class": "first_party",
+              "origin_group": "OG_COHR_20260302_NVDA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-02",
+              "quote": "NVIDIA is investing $2 billion in Coherent to support research and development, future capacity and operations",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "forward_looking",
+              "title": "NVIDIA and Coherent Announce Strategic Partnership",
+              "url": "https://www.coherent.com/news/press-releases/nvidia-and-coherent-announce-strategic-partnership"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-02",
+          "occurred_start": "2026-03-02",
+          "previous_event_id": "",
+          "primary_subject_id": "COHR",
+          "program_id": "PRG_COHR_NVDA_20260302",
+          "summary": "Coherent披露NVIDIA将投资20亿美元",
+          "theme_ids": [
+            "T017"
+          ]
+        }
+      ],
+      "primary_subject_id": "COHR"
     },
     {
       "events": [
@@ -494,6 +2409,222 @@
     },
     {
       "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV023",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "opening paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_GFS_20260729_CHIPS",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL025",
+              "evidence_id": "EE025",
+              "independence_class": "first_party",
+              "origin_group": "OG_GFS_20260729_CHIPS",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-29",
+              "quote": "entered into a letter of intent with the U.S. Department of Commerce to accelerate research and development of next-generation silicon photonics",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "GlobalFoundries signs CHIPS R&D letter of intent for silicon photonics",
+              "url": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-signs-letter-intent-us-department-commerce-300"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-07-29",
+          "occurred_start": "2026-07-29",
+          "previous_event_id": "",
+          "primary_subject_id": "GFS",
+          "program_id": "PRG_GFS_US_SIPHO",
+          "summary": "GlobalFoundries称签署3亿美元硅光研发资助LOI",
+          "theme_ids": [
+            "T013",
+            "T015",
+            "T017"
+          ]
+        }
+      ],
+      "primary_subject_id": "GFS"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV027",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_GLW_20260506_NVDA",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL029",
+              "evidence_id": "EE029",
+              "independence_class": "first_party",
+              "origin_group": "OG_GLW_NVDA_20260506",
+              "provenance_class": "first_party",
+              "published_at": "2026-05-06",
+              "quote": "Corning will increase its U.S.-based optical connectivity manufacturing capacity by 10x and expand its U.S. fiber production capacity by more than 50%",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "forward_looking",
+              "title": "NVIDIA and Corning announce long-term optical manufacturing partnership",
+              "url": "https://investor.corning.com/news-and-events/news/news-details/2026/NVIDIA-and-Corning-Announce-Long-Term-Partnership-To-Strengthen-U-S--Manufacturing-for-AI-Infrastructure/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-05-06",
+          "occurred_start": "2026-05-06",
+          "previous_event_id": "",
+          "primary_subject_id": "GLW",
+          "program_id": "PRG_GLW_NVDA_OPTICAL",
+          "summary": "Corning提出美国光连接产能十倍和光纤产能提升逾50%的目标",
+          "theme_ids": [
+            "T017",
+            "T019"
+          ]
+        }
+      ],
+      "primary_subject_id": "GLW"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "supply_chain_arrangement",
+          "event_id": "EV032",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_LITE_20260302_NVDA",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL035",
+              "evidence_id": "EE035",
+              "independence_class": "first_party",
+              "origin_group": "OG_LITE_20260302_NVDA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-02",
+              "quote": "The nonexclusive agreement includes an NVIDIA multibillion purchase commitment and future capacity access rights for advanced laser components.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "fact_assertion",
+              "title": "NVIDIA Announces Strategic Partnership With Lumentum to Develop State-of-the-Art Optics Technology",
+              "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-02",
+          "occurred_start": "2026-03-02",
+          "previous_event_id": "",
+          "primary_subject_id": "LITE",
+          "program_id": "PRG_LITE_NVDA_20260302",
+          "summary": "Lumentum披露与NVIDIA签署含采购承诺及未来产能权的非独家多年协议",
+          "theme_ids": [
+            "T007",
+            "T016"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV033",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_LITE_20260302_NVDA",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL036",
+              "evidence_id": "EE036",
+              "independence_class": "first_party",
+              "origin_group": "OG_LITE_20260302_NVDA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-02",
+              "quote": "NVIDIA is investing $2 billion in Lumentum to support R&D, future capacity and operations",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "forward_looking",
+              "title": "NVIDIA Announces Strategic Partnership With Lumentum to Develop State-of-the-Art Optics Technology",
+              "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-02",
+          "occurred_start": "2026-03-02",
+          "previous_event_id": "",
+          "primary_subject_id": "LITE",
+          "program_id": "PRG_LITE_NVDA_20260302",
+          "summary": "Lumentum披露NVIDIA将投资20亿美元",
+          "theme_ids": [
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV026",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "capacity expansion paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_LITE_20260326_GREENSBORO",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL028",
+              "evidence_id": "EE028",
+              "independence_class": "first_party",
+              "origin_group": "OG_LITE_20260326_GREENSBORO",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-26",
+              "quote": "The facility is expected to ramp production in mid-2028",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "forward_looking",
+              "title": "Lumentum announces new U.S. InP manufacturing facility",
+              "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-New-U-S--Manufacturing-Facility-to-Produce-Advanced-Lasers-for-the-Worlds-Largest-AI-Data-Centers/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-03-26",
+          "occurred_start": "2026-03-26",
+          "previous_event_id": "",
+          "primary_subject_id": "LITE",
+          "program_id": "PRG_LITE_GREENSBORO_INP",
+          "summary": "Lumentum提出Greensboro美国InP工厂2028年中爬坡目标",
+          "theme_ids": [
+            "T007",
+            "T008"
+          ]
+        },
         {
           "counterparty_ids": [],
           "date_precision": "exact",
@@ -906,19 +3037,453 @@
         }
       ],
       "primary_subject_id": "NOK"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV029",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning SAN JOSE CA April 27 2026",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_POET_20260427_CELESTIAL_CANCEL",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL032",
+              "evidence_id": "EE032",
+              "independence_class": "first_party",
+              "origin_group": "OG_POET_20260427_CELESTIAL_CANCEL",
+              "provenance_class": "first_party",
+              "published_at": "2026-04-27",
+              "quote": "announced the cancellation of all purchase orders received by the Company from Celestial AI",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "fact_assertion",
+              "title": "POET Technologies Provides Purchase Order Update",
+              "url": "https://www.poet-technologies.com/news/poet-technologies-provides-purchase-order-update"
+            }
+          ],
+          "lifecycle_stage": "withdrawn",
+          "occurred_end": "2026-04-23",
+          "occurred_start": "2026-04-23",
+          "previous_event_id": "",
+          "primary_subject_id": "POET",
+          "program_id": "PRG_POET_CELESTIAL",
+          "summary": "POET披露Marvell/Celestial AI于2026-04-23书面取消此前全部purchase orders",
+          "theme_ids": [
+            "T010",
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_LUMILENS"
+          ],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV028",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "notable business highlights supply agreement bullet",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_POET_20260514_LUMILENS",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL031",
+              "evidence_id": "EE031",
+              "independence_class": "first_party",
+              "origin_group": "OG_POET_20260514_LUMILENS",
+              "provenance_class": "first_party",
+              "published_at": "2026-05-14",
+              "quote": "Lumilens has placed an initial purchase order with the Company for the manufacturing of EOI-based engines valued at $50 million",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "POET first-quarter 2026 results and Lumilens purchase order",
+              "url": "https://www.poet-technologies.com/news/poet-technologies-reports-first-quarter-2026-financial-results"
+            }
+          ],
+          "lifecycle_stage": "volume_order",
+          "occurred_end": "2026-05-14",
+          "occurred_start": "2026-05-14",
+          "previous_event_id": "",
+          "primary_subject_id": "POET",
+          "program_id": "PRG_POET_LUMILENS",
+          "summary": "POET称获得Lumilens价值5000万美元EOI光引擎初始采购订单",
+          "theme_ids": [
+            "T010",
+            "T017"
+          ]
+        }
+      ],
+      "primary_subject_id": "POET"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV024",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "track one paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_TSEM_20260714_JAPAN",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL026",
+              "evidence_id": "EE026",
+              "independence_class": "first_party",
+              "origin_group": "OG_TSEM_20260714_JAPAN",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-14",
+              "quote": "full production readiness expected during the fourth quarter of 2027",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "forward_looking",
+              "title": "Tower announces dual-track silicon photonics capacity expansion in Japan",
+              "url": "https://ir.towersemi.com/news-releases/news-release-details/tower-semiconductor-meti-support-announces-strategic-capacity"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-07-14",
+          "occurred_start": "2026-07-14",
+          "previous_event_id": "",
+          "primary_subject_id": "TSEM",
+          "program_id": "PRG_TSEM_JP_SIPHO",
+          "summary": "Tower提出日本300mm硅光产能2027Q4生产准备目标",
+          "theme_ids": [
+            "T013",
+            "T015",
+            "T017"
+          ]
+        }
+      ],
+      "primary_subject_id": "TSEM"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [
+            "WATCH_ENNOSTAR"
+          ],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV025",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "opening paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_VECO_20260611_ENNOSTAR",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL027",
+              "evidence_id": "EE027",
+              "independence_class": "first_party",
+              "origin_group": "OG_VECO_20260611_ENNOSTAR",
+              "provenance_class": "first_party",
+              "published_at": "2026-06-11",
+              "quote": "first commercial acceptance and qualification of its LUMINA+ metal organic chemical vapor deposition system by Ennostar Corporation",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "Ennostar qualifies Veeco LUMINA+ MOCVD system",
+              "url": "https://ir.veeco.com/news-and-events/news-details/2026/Ennostar-Qualifies-Veecos-New-LUMINA-MOCVD-System-for-Advanced-Product-Applications/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "qualifying",
+          "occurred_end": "2026-06-11",
+          "occurred_start": "2026-06-11",
+          "previous_event_id": "",
+          "primary_subject_id": "VECO",
+          "program_id": "PRG_VECO_LUMINAPLUS",
+          "summary": "Veeco称LUMINA+ MOCVD获Ennostar商业验收与生产资格",
+          "theme_ids": [
+            "T007",
+            "T008"
+          ]
+        }
+      ],
+      "primary_subject_id": "VECO"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [
+            "WATCH_TERAMOUNT"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV034",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "公告标题",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_MOLEX_20260507_TERAMOUNT",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL037",
+              "evidence_id": "EE037",
+              "independence_class": "first_party",
+              "origin_group": "OG_MOLEX_20260507_TERAMOUNT",
+              "provenance_class": "first_party",
+              "published_at": "2026-05-07",
+              "quote": "Molex Completes Acquisition of Teramount Ltd.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "fact_assertion",
+              "title": "Molex Completes Acquisition of Teramount Ltd.",
+              "url": "https://www.molex.com/en-us/news/molex-completes-acquisition-of-teramount-ltd"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-05-07",
+          "occurred_start": "2026-05-07",
+          "previous_event_id": "",
+          "primary_subject_id": "WATCH_MOLEX",
+          "program_id": "PRG_MOLEX_TERAMOUNT",
+          "summary": "Molex完成对Teramount Ltd.的收购",
+          "theme_ids": [
+            "T017"
+          ]
+        }
+      ],
+      "primary_subject_id": "WATCH_MOLEX"
     }
   ],
   "coverage_summary": {
-    "disclosure_count": 38,
+    "active_watch_entity_count": 37,
+    "candidate_status_counts": {
+      "promoted": 57,
+      "source_verified": 7
+    },
+    "disclosure_count": 50,
+    "four_available_slot_complete_count": 36,
+    "four_slot_complete_count": 39,
     "latest_disclosure_at": "2026-08-06",
-    "latest_retrieved_at": "2026-08-11",
-    "latest_reviewed_at": "2026-08-11",
+    "latest_retrieved_at": "2026-08-22",
+    "latest_reviewed_at": "2026-08-22",
     "processing_status_counts": {
-      "anchor_reviewed": 30,
+      "anchor_reviewed": 42,
       "no_relevant_claims": 8
-    }
+    },
+    "quarterly_company_count": 39,
+    "tier_review_count": 68,
+    "tier_reviewed_candidate_count": 34
   },
-  "discovery_queue": [],
+  "discovery_queue": [
+    {
+      "candidate_id": "CAND_AMKR",
+      "entity_name": "Amkor",
+      "priority": "P3",
+      "queue_type": "company_candidate_review",
+      "source_ref": "https://amkor.com/technology/",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_DELTA",
+      "entity_name": "Delta Electronics",
+      "priority": "P3",
+      "queue_type": "company_candidate_review",
+      "source_ref": "https://landing.deltaww.com/en-US/news/12998",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_EKI",
+      "entity_name": "Ekinops",
+      "priority": "P3",
+      "queue_type": "company_candidate_review",
+      "source_ref": "https://www.ekinops.com/images/press-releases/24.01.2023-PM400FR05-C2A_PR_ENG.pdf",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_HAMAMATSU",
+      "entity_name": "Hamamatsu Photonics",
+      "priority": "P3",
+      "queue_type": "company_candidate_review",
+      "source_ref": "https://www.hamamatsu.com/eu/en/news/featured-products_and_technologies/2024/meeting-optical-communication-demands.html",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_HPE",
+      "entity_name": "HPE",
+      "priority": "P3",
+      "queue_type": "company_candidate_review",
+      "source_ref": "https://www.hpe.com/us/en/juniper-data-center-interconnect.html",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_RBBN",
+      "entity_name": "Ribbon Communications",
+      "priority": "P3",
+      "queue_type": "company_candidate_review",
+      "source_ref": "https://ribboncommunications.com/solutions/service-provider-solutions/ip-optical/ribbons-automated-ip-routing-and-optical-networking",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    },
+    {
+      "candidate_id": "CAND_TEL",
+      "entity_name": "TE Connectivity",
+      "priority": "P3",
+      "queue_type": "company_candidate_review",
+      "source_ref": "https://www.te.com/en/about-te/news-center/te-ofc-2026.html",
+      "suggested_tier": "quarterly",
+      "verification_status": "source_verified"
+    }
+  ],
+  "entity_relationships": [
+    {
+      "effective_from": "2021-03-01",
+      "effective_to": "",
+      "notes": "历史身份保留但不重复计票",
+      "object_entity_id": "CSCO",
+      "relationship_id": "REL_ACACIA_CSCO",
+      "relationship_type": "acquired_by",
+      "review_status": "reviewed",
+      "source_ref": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2021/m03/cisco-completes-acquisition-of-acac-1.html",
+      "subject_entity_id": "WATCH_ACACIA"
+    },
+    {
+      "effective_from": "2023-11-07",
+      "effective_to": "",
+      "notes": "历史身份保留但不重复计票",
+      "object_entity_id": "LITE",
+      "relationship_id": "REL_CLOUDLIGHT_LITE",
+      "relationship_type": "acquired_by",
+      "review_status": "reviewed",
+      "source_ref": "https://investor.lumentum.com/financial-news-releases/news-details/2023/Lumentum-Announces-Completion-of-Cloud-Light-Acquisition/default.aspx",
+      "subject_entity_id": "WATCH_CLOUDLIGHT"
+    },
+    {
+      "effective_from": "2026-05-28",
+      "effective_to": "",
+      "notes": "只用于身份与历史事件去重；不证明产品整合或收入目标兑现",
+      "object_entity_id": "CRDO",
+      "relationship_id": "REL_DUST_CRDO",
+      "relationship_type": "acquired_by",
+      "review_status": "reviewed",
+      "source_ref": "https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Completes-Acquisition-of-DustPhotonics/default.aspx",
+      "subject_entity_id": "WATCH_DUST"
+    },
+    {
+      "effective_from": "2019-09-24",
+      "effective_to": "",
+      "notes": "收购时主体名为II-VI；现归当前Coherent身份",
+      "object_entity_id": "COHR",
+      "relationship_id": "REL_FINISAR_COHR",
+      "relationship_type": "acquired_by",
+      "review_status": "reviewed",
+      "source_ref": "https://www.coherent.com/content/dam/coherent/site/en/documents/investors/annual-filings/2020/ii-vi-2020-annual-report.pdf",
+      "subject_entity_id": "WATCH_FINISAR"
+    },
+    {
+      "effective_from": "2025-09-29",
+      "effective_to": "",
+      "notes": "正文明确closing；历史身份保留但不重复计票",
+      "object_entity_id": "CRDO",
+      "relationship_id": "REL_HYPERLUME_CRDO",
+      "relationship_type": "acquired_by",
+      "review_status": "reviewed",
+      "source_ref": "https://investors.credosemi.com/news-events/news/news-details/2025/Credo-to-Acquire-Hyperlume-Inc-/default.aspx",
+      "subject_entity_id": "WATCH_HYPERLUME"
+    },
+    {
+      "effective_from": "2022-09-08",
+      "effective_to": "",
+      "notes": "同一经营主体更名而非新增公司",
+      "object_entity_id": "COHR",
+      "relationship_id": "REL_IIVI_COHR",
+      "relationship_type": "predecessor_of",
+      "review_status": "reviewed",
+      "source_ref": "https://www.coherent.com/news/press-releases/ii-vi-changes-name-to-coherent-and-launches-new-brand",
+      "subject_entity_id": "WATCH_IIVI"
+    },
+    {
+      "effective_from": "2025-02-28",
+      "effective_to": "",
+      "notes": "历史身份保留但不重复计票",
+      "object_entity_id": "NOK",
+      "relationship_id": "REL_INFINERA_NOK",
+      "relationship_type": "acquired_by",
+      "review_status": "reviewed",
+      "source_ref": "https://www.nokia.com/newsroom/nokia-completes-acquisition-of-infinera-to-create-innovation-powerhouse-in-optical-networks-with-the-scale-to-power-the-data-center-revolution/",
+      "subject_entity_id": "WATCH_INFINERA"
+    },
+    {
+      "effective_from": "2021-04-20",
+      "effective_to": "",
+      "notes": "历史身份保留但不重复计票",
+      "object_entity_id": "MRVL",
+      "relationship_id": "REL_INPHI_MRVL",
+      "relationship_type": "acquired_by",
+      "review_status": "reviewed",
+      "source_ref": "https://www.marvell.com/company/newsroom/marvell-completes-acquisition-of-inphi.html",
+      "subject_entity_id": "WATCH_INPHI"
+    },
+    {
+      "effective_from": "2022-08-03",
+      "effective_to": "",
+      "notes": "历史身份保留但不重复计票",
+      "object_entity_id": "LITE",
+      "relationship_id": "REL_NEOPHOTONICS_LITE",
+      "relationship_type": "acquired_by",
+      "review_status": "reviewed",
+      "source_ref": "https://investor.lumentum.com/financial-news-releases/news-details/2022/Lumentum-Announces-Completion-of-NeoPhotonics-Acquisition/default.aspx",
+      "subject_entity_id": "WATCH_NEOPHOTONICS"
+    },
+    {
+      "effective_from": "2025-10-07",
+      "effective_to": "",
+      "notes": "历史身份保留但不重复计票",
+      "object_entity_id": "CIEN",
+      "relationship_id": "REL_NUBIS_CIEN",
+      "relationship_type": "acquired_by",
+      "review_status": "reviewed",
+      "source_ref": "https://investor.ciena.com/static-files/11dd73c3-c17b-44d3-8018-844fe6979976",
+      "subject_entity_id": "WATCH_NUBIS"
+    },
+    {
+      "effective_from": "2018-12-10",
+      "effective_to": "",
+      "notes": "历史身份保留但不重复计票",
+      "object_entity_id": "LITE",
+      "relationship_id": "REL_OCLARO_LITE",
+      "relationship_type": "acquired_by",
+      "review_status": "reviewed",
+      "source_ref": "https://investor.lumentum.com/financial-news-releases/news-details/2018/Lumentum-Announces-Completion-Of-Oclaro-Acquisition-2018-12-10/default.aspx",
+      "subject_entity_id": "WATCH_OCLARO"
+    },
+    {
+      "effective_from": "2026-05-07",
+      "effective_to": "",
+      "notes": "历史身份保留但不重复计票；不证明产品整合",
+      "object_entity_id": "WATCH_MOLEX",
+      "relationship_id": "REL_TERAMOUNT_MOLEX",
+      "relationship_type": "acquired_by",
+      "review_status": "reviewed",
+      "source_ref": "https://www.molex.com/en-us/news/molex-completes-acquisition-of-teramount-ltd",
+      "subject_entity_id": "WATCH_TERAMOUNT"
+    }
+  ],
   "radar_events": [
     {
       "counterparty_ids": [],
@@ -1786,6 +4351,543 @@
       "theme_ids": [
         "T021"
       ]
+    },
+    {
+      "counterparty_ids": [
+        "LITE"
+      ],
+      "date_precision": "exact",
+      "event_category": "supply_chain_arrangement",
+      "event_id": "EV022",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "opening paragraph",
+          "claim_reviewed_at": "2026-08-13",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_AXTI_20260729_LITE",
+          "disclosure_reviewed_at": "2026-08-13",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL024",
+          "evidence_id": "EE024",
+          "independence_class": "first_party",
+          "origin_group": "OG_AXTI_20260729_LITE",
+          "provenance_class": "first_party",
+          "published_at": "2026-07-29",
+          "quote": "entered into a definitive agreement with Lumentum Operations LLC for the supply and capacity reservation of indium phosphide wafer substrates",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-13",
+          "statement_kind": "fact_assertion",
+          "title": "AXT announces long-term supplier agreement with Lumentum",
+          "url": "https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-Long-Term-Supplier-Agreement-with-Lumentum/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "not_applicable",
+      "occurred_end": "2026-07-29",
+      "occurred_start": "2026-07-29",
+      "previous_event_id": "",
+      "primary_subject_id": "AXTI",
+      "program_id": "PRG_AXTI_LITE_INP",
+      "summary": "AXT称与Lumentum签署InP晶圆供给和产能预留协议",
+      "theme_ids": [
+        "T007",
+        "T016"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "capacity_constraint",
+      "event_id": "EV023",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "opening paragraph",
+          "claim_reviewed_at": "2026-08-13",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_GFS_20260729_CHIPS",
+          "disclosure_reviewed_at": "2026-08-13",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL025",
+          "evidence_id": "EE025",
+          "independence_class": "first_party",
+          "origin_group": "OG_GFS_20260729_CHIPS",
+          "provenance_class": "first_party",
+          "published_at": "2026-07-29",
+          "quote": "entered into a letter of intent with the U.S. Department of Commerce to accelerate research and development of next-generation silicon photonics",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-13",
+          "statement_kind": "fact_assertion",
+          "title": "GlobalFoundries signs CHIPS R&D letter of intent for silicon photonics",
+          "url": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-signs-letter-intent-us-department-commerce-300"
+        }
+      ],
+      "lifecycle_stage": "announced",
+      "occurred_end": "2026-07-29",
+      "occurred_start": "2026-07-29",
+      "previous_event_id": "",
+      "primary_subject_id": "GFS",
+      "program_id": "PRG_GFS_US_SIPHO",
+      "summary": "GlobalFoundries称签署3亿美元硅光研发资助LOI",
+      "theme_ids": [
+        "T013",
+        "T015",
+        "T017"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "capacity_constraint",
+      "event_id": "EV024",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "track one paragraph",
+          "claim_reviewed_at": "2026-08-13",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_TSEM_20260714_JAPAN",
+          "disclosure_reviewed_at": "2026-08-13",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL026",
+          "evidence_id": "EE026",
+          "independence_class": "first_party",
+          "origin_group": "OG_TSEM_20260714_JAPAN",
+          "provenance_class": "first_party",
+          "published_at": "2026-07-14",
+          "quote": "full production readiness expected during the fourth quarter of 2027",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-13",
+          "statement_kind": "forward_looking",
+          "title": "Tower announces dual-track silicon photonics capacity expansion in Japan",
+          "url": "https://ir.towersemi.com/news-releases/news-release-details/tower-semiconductor-meti-support-announces-strategic-capacity"
+        }
+      ],
+      "lifecycle_stage": "announced",
+      "occurred_end": "2026-07-14",
+      "occurred_start": "2026-07-14",
+      "previous_event_id": "",
+      "primary_subject_id": "TSEM",
+      "program_id": "PRG_TSEM_JP_SIPHO",
+      "summary": "Tower提出日本300mm硅光产能2027Q4生产准备目标",
+      "theme_ids": [
+        "T013",
+        "T015",
+        "T017"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "WATCH_ENNOSTAR"
+      ],
+      "date_precision": "exact",
+      "event_category": "product_stage",
+      "event_id": "EV025",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "opening paragraph",
+          "claim_reviewed_at": "2026-08-13",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_VECO_20260611_ENNOSTAR",
+          "disclosure_reviewed_at": "2026-08-13",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL027",
+          "evidence_id": "EE027",
+          "independence_class": "first_party",
+          "origin_group": "OG_VECO_20260611_ENNOSTAR",
+          "provenance_class": "first_party",
+          "published_at": "2026-06-11",
+          "quote": "first commercial acceptance and qualification of its LUMINA+ metal organic chemical vapor deposition system by Ennostar Corporation",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-13",
+          "statement_kind": "fact_assertion",
+          "title": "Ennostar qualifies Veeco LUMINA+ MOCVD system",
+          "url": "https://ir.veeco.com/news-and-events/news-details/2026/Ennostar-Qualifies-Veecos-New-LUMINA-MOCVD-System-for-Advanced-Product-Applications/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "qualifying",
+      "occurred_end": "2026-06-11",
+      "occurred_start": "2026-06-11",
+      "previous_event_id": "",
+      "primary_subject_id": "VECO",
+      "program_id": "PRG_VECO_LUMINAPLUS",
+      "summary": "Veeco称LUMINA+ MOCVD获Ennostar商业验收与生产资格",
+      "theme_ids": [
+        "T007",
+        "T008"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "capacity_constraint",
+      "event_id": "EV026",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "capacity expansion paragraph",
+          "claim_reviewed_at": "2026-08-13",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_LITE_20260326_GREENSBORO",
+          "disclosure_reviewed_at": "2026-08-13",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL028",
+          "evidence_id": "EE028",
+          "independence_class": "first_party",
+          "origin_group": "OG_LITE_20260326_GREENSBORO",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-26",
+          "quote": "The facility is expected to ramp production in mid-2028",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-13",
+          "statement_kind": "forward_looking",
+          "title": "Lumentum announces new U.S. InP manufacturing facility",
+          "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-New-U-S--Manufacturing-Facility-to-Produce-Advanced-Lasers-for-the-Worlds-Largest-AI-Data-Centers/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "announced",
+      "occurred_end": "2026-03-26",
+      "occurred_start": "2026-03-26",
+      "previous_event_id": "",
+      "primary_subject_id": "LITE",
+      "program_id": "PRG_LITE_GREENSBORO_INP",
+      "summary": "Lumentum提出Greensboro美国InP工厂2028年中爬坡目标",
+      "theme_ids": [
+        "T007",
+        "T008"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "NVDA"
+      ],
+      "date_precision": "exact",
+      "event_category": "capacity_constraint",
+      "event_id": "EV027",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "second paragraph",
+          "claim_reviewed_at": "2026-08-13",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_GLW_20260506_NVDA",
+          "disclosure_reviewed_at": "2026-08-13",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL029",
+          "evidence_id": "EE029",
+          "independence_class": "first_party",
+          "origin_group": "OG_GLW_NVDA_20260506",
+          "provenance_class": "first_party",
+          "published_at": "2026-05-06",
+          "quote": "Corning will increase its U.S.-based optical connectivity manufacturing capacity by 10x and expand its U.S. fiber production capacity by more than 50%",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-13",
+          "statement_kind": "forward_looking",
+          "title": "NVIDIA and Corning announce long-term optical manufacturing partnership",
+          "url": "https://investor.corning.com/news-and-events/news/news-details/2026/NVIDIA-and-Corning-Announce-Long-Term-Partnership-To-Strengthen-U-S--Manufacturing-for-AI-Infrastructure/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "announced",
+      "occurred_end": "2026-05-06",
+      "occurred_start": "2026-05-06",
+      "previous_event_id": "",
+      "primary_subject_id": "GLW",
+      "program_id": "PRG_GLW_NVDA_OPTICAL",
+      "summary": "Corning提出美国光连接产能十倍和光纤产能提升逾50%的目标",
+      "theme_ids": [
+        "T017",
+        "T019"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "WATCH_LUMILENS"
+      ],
+      "date_precision": "exact",
+      "event_category": "commercial_adoption",
+      "event_id": "EV028",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "notable business highlights supply agreement bullet",
+          "claim_reviewed_at": "2026-08-13",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_POET_20260514_LUMILENS",
+          "disclosure_reviewed_at": "2026-08-13",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL031",
+          "evidence_id": "EE031",
+          "independence_class": "first_party",
+          "origin_group": "OG_POET_20260514_LUMILENS",
+          "provenance_class": "first_party",
+          "published_at": "2026-05-14",
+          "quote": "Lumilens has placed an initial purchase order with the Company for the manufacturing of EOI-based engines valued at $50 million",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-13",
+          "statement_kind": "fact_assertion",
+          "title": "POET first-quarter 2026 results and Lumilens purchase order",
+          "url": "https://www.poet-technologies.com/news/poet-technologies-reports-first-quarter-2026-financial-results"
+        }
+      ],
+      "lifecycle_stage": "volume_order",
+      "occurred_end": "2026-05-14",
+      "occurred_start": "2026-05-14",
+      "previous_event_id": "",
+      "primary_subject_id": "POET",
+      "program_id": "PRG_POET_LUMILENS",
+      "summary": "POET称获得Lumilens价值5000万美元EOI光引擎初始采购订单",
+      "theme_ids": [
+        "T010",
+        "T017"
+      ]
+    },
+    {
+      "counterparty_ids": [],
+      "date_precision": "exact",
+      "event_category": "commercial_adoption",
+      "event_id": "EV029",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "lead paragraph beginning SAN JOSE CA April 27 2026",
+          "claim_reviewed_at": "2026-08-22",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_POET_20260427_CELESTIAL_CANCEL",
+          "disclosure_reviewed_at": "2026-08-22",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL032",
+          "evidence_id": "EE032",
+          "independence_class": "first_party",
+          "origin_group": "OG_POET_20260427_CELESTIAL_CANCEL",
+          "provenance_class": "first_party",
+          "published_at": "2026-04-27",
+          "quote": "announced the cancellation of all purchase orders received by the Company from Celestial AI",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-22",
+          "statement_kind": "fact_assertion",
+          "title": "POET Technologies Provides Purchase Order Update",
+          "url": "https://www.poet-technologies.com/news/poet-technologies-provides-purchase-order-update"
+        }
+      ],
+      "lifecycle_stage": "withdrawn",
+      "occurred_end": "2026-04-23",
+      "occurred_start": "2026-04-23",
+      "previous_event_id": "",
+      "primary_subject_id": "POET",
+      "program_id": "PRG_POET_CELESTIAL",
+      "summary": "POET披露Marvell/Celestial AI于2026-04-23书面取消此前全部purchase orders",
+      "theme_ids": [
+        "T010",
+        "T017"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "NVDA"
+      ],
+      "date_precision": "exact",
+      "event_category": "supply_chain_arrangement",
+      "event_id": "EV030",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "second paragraph",
+          "claim_reviewed_at": "2026-08-22",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_COHR_20260302_NVDA",
+          "disclosure_reviewed_at": "2026-08-22",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL033",
+          "evidence_id": "EE033",
+          "independence_class": "first_party",
+          "origin_group": "OG_COHR_20260302_NVDA",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-02",
+          "quote": "The nonexclusive agreement includes an NVIDIA multibillion-dollar purchase commitment and future access and capacity rights for advanced laser and optical networking products.",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-22",
+          "statement_kind": "fact_assertion",
+          "title": "NVIDIA and Coherent Announce Strategic Partnership",
+          "url": "https://www.coherent.com/news/press-releases/nvidia-and-coherent-announce-strategic-partnership"
+        }
+      ],
+      "lifecycle_stage": "not_applicable",
+      "occurred_end": "2026-03-02",
+      "occurred_start": "2026-03-02",
+      "previous_event_id": "",
+      "primary_subject_id": "COHR",
+      "program_id": "PRG_COHR_NVDA_20260302",
+      "summary": "Coherent披露与NVIDIA签署含采购承诺及未来产能权的非独家多年协议",
+      "theme_ids": [
+        "T007",
+        "T016"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "NVDA"
+      ],
+      "date_precision": "exact",
+      "event_category": "capital_relationship",
+      "event_id": "EV031",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "second paragraph",
+          "claim_reviewed_at": "2026-08-22",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_COHR_20260302_NVDA",
+          "disclosure_reviewed_at": "2026-08-22",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL034",
+          "evidence_id": "EE034",
+          "independence_class": "first_party",
+          "origin_group": "OG_COHR_20260302_NVDA",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-02",
+          "quote": "NVIDIA is investing $2 billion in Coherent to support research and development, future capacity and operations",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-22",
+          "statement_kind": "forward_looking",
+          "title": "NVIDIA and Coherent Announce Strategic Partnership",
+          "url": "https://www.coherent.com/news/press-releases/nvidia-and-coherent-announce-strategic-partnership"
+        }
+      ],
+      "lifecycle_stage": "not_applicable",
+      "occurred_end": "2026-03-02",
+      "occurred_start": "2026-03-02",
+      "previous_event_id": "",
+      "primary_subject_id": "COHR",
+      "program_id": "PRG_COHR_NVDA_20260302",
+      "summary": "Coherent披露NVIDIA将投资20亿美元",
+      "theme_ids": [
+        "T017"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "NVDA"
+      ],
+      "date_precision": "exact",
+      "event_category": "supply_chain_arrangement",
+      "event_id": "EV032",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "second paragraph",
+          "claim_reviewed_at": "2026-08-22",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_LITE_20260302_NVDA",
+          "disclosure_reviewed_at": "2026-08-22",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL035",
+          "evidence_id": "EE035",
+          "independence_class": "first_party",
+          "origin_group": "OG_LITE_20260302_NVDA",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-02",
+          "quote": "The nonexclusive agreement includes an NVIDIA multibillion purchase commitment and future capacity access rights for advanced laser components.",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-22",
+          "statement_kind": "fact_assertion",
+          "title": "NVIDIA Announces Strategic Partnership With Lumentum to Develop State-of-the-Art Optics Technology",
+          "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "not_applicable",
+      "occurred_end": "2026-03-02",
+      "occurred_start": "2026-03-02",
+      "previous_event_id": "",
+      "primary_subject_id": "LITE",
+      "program_id": "PRG_LITE_NVDA_20260302",
+      "summary": "Lumentum披露与NVIDIA签署含采购承诺及未来产能权的非独家多年协议",
+      "theme_ids": [
+        "T007",
+        "T016"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "NVDA"
+      ],
+      "date_precision": "exact",
+      "event_category": "capital_relationship",
+      "event_id": "EV033",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "second paragraph",
+          "claim_reviewed_at": "2026-08-22",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_LITE_20260302_NVDA",
+          "disclosure_reviewed_at": "2026-08-22",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL036",
+          "evidence_id": "EE036",
+          "independence_class": "first_party",
+          "origin_group": "OG_LITE_20260302_NVDA",
+          "provenance_class": "first_party",
+          "published_at": "2026-03-02",
+          "quote": "NVIDIA is investing $2 billion in Lumentum to support R&D, future capacity and operations",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-22",
+          "statement_kind": "forward_looking",
+          "title": "NVIDIA Announces Strategic Partnership With Lumentum to Develop State-of-the-Art Optics Technology",
+          "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx"
+        }
+      ],
+      "lifecycle_stage": "not_applicable",
+      "occurred_end": "2026-03-02",
+      "occurred_start": "2026-03-02",
+      "previous_event_id": "",
+      "primary_subject_id": "LITE",
+      "program_id": "PRG_LITE_NVDA_20260302",
+      "summary": "Lumentum披露NVIDIA将投资20亿美元",
+      "theme_ids": [
+        "T017"
+      ]
+    },
+    {
+      "counterparty_ids": [
+        "WATCH_TERAMOUNT"
+      ],
+      "date_precision": "exact",
+      "event_category": "capital_relationship",
+      "event_id": "EV034",
+      "event_status": "asserted",
+      "evidence": [
+        {
+          "anchor": "公告标题",
+          "claim_reviewed_at": "2026-08-22",
+          "content_class": "commercial_disclosure",
+          "disclosure_id": "D_MOLEX_20260507_TERAMOUNT",
+          "disclosure_reviewed_at": "2026-08-22",
+          "disclosure_type": "official_release",
+          "event_claim_id": "ECL037",
+          "evidence_id": "EE037",
+          "independence_class": "first_party",
+          "origin_group": "OG_MOLEX_20260507_TERAMOUNT",
+          "provenance_class": "first_party",
+          "published_at": "2026-05-07",
+          "quote": "Molex Completes Acquisition of Teramount Ltd.",
+          "relationship": "reports",
+          "retrieved_at": "2026-08-22",
+          "statement_kind": "fact_assertion",
+          "title": "Molex Completes Acquisition of Teramount Ltd.",
+          "url": "https://www.molex.com/en-us/news/molex-completes-acquisition-of-teramount-ltd"
+        }
+      ],
+      "lifecycle_stage": "not_applicable",
+      "occurred_end": "2026-05-07",
+      "occurred_start": "2026-05-07",
+      "previous_event_id": "",
+      "primary_subject_id": "WATCH_MOLEX",
+      "program_id": "PRG_MOLEX_TERAMOUNT",
+      "summary": "Molex完成对Teramount Ltd.的收购",
+      "theme_ids": [
+        "T017"
+      ]
     }
   ],
   "theme_impacts": [
@@ -1875,6 +4977,306 @@
     {
       "events": [
         {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "supply_chain_arrangement",
+          "event_id": "EV030",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_COHR_20260302_NVDA",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL033",
+              "evidence_id": "EE033",
+              "independence_class": "first_party",
+              "origin_group": "OG_COHR_20260302_NVDA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-02",
+              "quote": "The nonexclusive agreement includes an NVIDIA multibillion-dollar purchase commitment and future access and capacity rights for advanced laser and optical networking products.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "fact_assertion",
+              "title": "NVIDIA and Coherent Announce Strategic Partnership",
+              "url": "https://www.coherent.com/news/press-releases/nvidia-and-coherent-announce-strategic-partnership"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-02",
+          "occurred_start": "2026-03-02",
+          "previous_event_id": "",
+          "primary_subject_id": "COHR",
+          "program_id": "PRG_COHR_NVDA_20260302",
+          "summary": "Coherent披露与NVIDIA签署含采购承诺及未来产能权的非独家多年协议",
+          "theme_ids": [
+            "T007",
+            "T016"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "supply_chain_arrangement",
+          "event_id": "EV032",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_LITE_20260302_NVDA",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL035",
+              "evidence_id": "EE035",
+              "independence_class": "first_party",
+              "origin_group": "OG_LITE_20260302_NVDA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-02",
+              "quote": "The nonexclusive agreement includes an NVIDIA multibillion purchase commitment and future capacity access rights for advanced laser components.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "fact_assertion",
+              "title": "NVIDIA Announces Strategic Partnership With Lumentum to Develop State-of-the-Art Optics Technology",
+              "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-02",
+          "occurred_start": "2026-03-02",
+          "previous_event_id": "",
+          "primary_subject_id": "LITE",
+          "program_id": "PRG_LITE_NVDA_20260302",
+          "summary": "Lumentum披露与NVIDIA签署含采购承诺及未来产能权的非独家多年协议",
+          "theme_ids": [
+            "T007",
+            "T016"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV026",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "capacity expansion paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_LITE_20260326_GREENSBORO",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL028",
+              "evidence_id": "EE028",
+              "independence_class": "first_party",
+              "origin_group": "OG_LITE_20260326_GREENSBORO",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-26",
+              "quote": "The facility is expected to ramp production in mid-2028",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "forward_looking",
+              "title": "Lumentum announces new U.S. InP manufacturing facility",
+              "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-New-U-S--Manufacturing-Facility-to-Produce-Advanced-Lasers-for-the-Worlds-Largest-AI-Data-Centers/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-03-26",
+          "occurred_start": "2026-03-26",
+          "previous_event_id": "",
+          "primary_subject_id": "LITE",
+          "program_id": "PRG_LITE_GREENSBORO_INP",
+          "summary": "Lumentum提出Greensboro美国InP工厂2028年中爬坡目标",
+          "theme_ids": [
+            "T007",
+            "T008"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_ENNOSTAR"
+          ],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV025",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "opening paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_VECO_20260611_ENNOSTAR",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL027",
+              "evidence_id": "EE027",
+              "independence_class": "first_party",
+              "origin_group": "OG_VECO_20260611_ENNOSTAR",
+              "provenance_class": "first_party",
+              "published_at": "2026-06-11",
+              "quote": "first commercial acceptance and qualification of its LUMINA+ metal organic chemical vapor deposition system by Ennostar Corporation",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "Ennostar qualifies Veeco LUMINA+ MOCVD system",
+              "url": "https://ir.veeco.com/news-and-events/news-details/2026/Ennostar-Qualifies-Veecos-New-LUMINA-MOCVD-System-for-Advanced-Product-Applications/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "qualifying",
+          "occurred_end": "2026-06-11",
+          "occurred_start": "2026-06-11",
+          "previous_event_id": "",
+          "primary_subject_id": "VECO",
+          "program_id": "PRG_VECO_LUMINAPLUS",
+          "summary": "Veeco称LUMINA+ MOCVD获Ennostar商业验收与生产资格",
+          "theme_ids": [
+            "T007",
+            "T008"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "LITE"
+          ],
+          "date_precision": "exact",
+          "event_category": "supply_chain_arrangement",
+          "event_id": "EV022",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "opening paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_AXTI_20260729_LITE",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL024",
+              "evidence_id": "EE024",
+              "independence_class": "first_party",
+              "origin_group": "OG_AXTI_20260729_LITE",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-29",
+              "quote": "entered into a definitive agreement with Lumentum Operations LLC for the supply and capacity reservation of indium phosphide wafer substrates",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "AXT announces long-term supplier agreement with Lumentum",
+              "url": "https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-Long-Term-Supplier-Agreement-with-Lumentum/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-07-29",
+          "occurred_start": "2026-07-29",
+          "previous_event_id": "",
+          "primary_subject_id": "AXTI",
+          "program_id": "PRG_AXTI_LITE_INP",
+          "summary": "AXT称与Lumentum签署InP晶圆供给和产能预留协议",
+          "theme_ids": [
+            "T007",
+            "T016"
+          ]
+        }
+      ],
+      "theme_id": "T007"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV026",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "capacity expansion paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_LITE_20260326_GREENSBORO",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL028",
+              "evidence_id": "EE028",
+              "independence_class": "first_party",
+              "origin_group": "OG_LITE_20260326_GREENSBORO",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-26",
+              "quote": "The facility is expected to ramp production in mid-2028",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "forward_looking",
+              "title": "Lumentum announces new U.S. InP manufacturing facility",
+              "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-New-U-S--Manufacturing-Facility-to-Produce-Advanced-Lasers-for-the-Worlds-Largest-AI-Data-Centers/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-03-26",
+          "occurred_start": "2026-03-26",
+          "previous_event_id": "",
+          "primary_subject_id": "LITE",
+          "program_id": "PRG_LITE_GREENSBORO_INP",
+          "summary": "Lumentum提出Greensboro美国InP工厂2028年中爬坡目标",
+          "theme_ids": [
+            "T007",
+            "T008"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_ENNOSTAR"
+          ],
+          "date_precision": "exact",
+          "event_category": "product_stage",
+          "event_id": "EV025",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "opening paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_VECO_20260611_ENNOSTAR",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL027",
+              "evidence_id": "EE027",
+              "independence_class": "first_party",
+              "origin_group": "OG_VECO_20260611_ENNOSTAR",
+              "provenance_class": "first_party",
+              "published_at": "2026-06-11",
+              "quote": "first commercial acceptance and qualification of its LUMINA+ metal organic chemical vapor deposition system by Ennostar Corporation",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "Ennostar qualifies Veeco LUMINA+ MOCVD system",
+              "url": "https://ir.veeco.com/news-and-events/news-details/2026/Ennostar-Qualifies-Veecos-New-LUMINA-MOCVD-System-for-Advanced-Product-Applications/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "qualifying",
+          "occurred_end": "2026-06-11",
+          "occurred_start": "2026-06-11",
+          "previous_event_id": "",
+          "primary_subject_id": "VECO",
+          "program_id": "PRG_VECO_LUMINAPLUS",
+          "summary": "Veeco称LUMINA+ MOCVD获Ennostar商业验收与生产资格",
+          "theme_ids": [
+            "T007",
+            "T008"
+          ]
+        }
+      ],
+      "theme_id": "T008"
+    },
+    {
+      "events": [
+        {
           "counterparty_ids": [],
           "date_precision": "exact",
           "event_category": "product_stage",
@@ -1955,6 +5357,46 @@
         {
           "counterparty_ids": [],
           "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV029",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning SAN JOSE CA April 27 2026",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_POET_20260427_CELESTIAL_CANCEL",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL032",
+              "evidence_id": "EE032",
+              "independence_class": "first_party",
+              "origin_group": "OG_POET_20260427_CELESTIAL_CANCEL",
+              "provenance_class": "first_party",
+              "published_at": "2026-04-27",
+              "quote": "announced the cancellation of all purchase orders received by the Company from Celestial AI",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "fact_assertion",
+              "title": "POET Technologies Provides Purchase Order Update",
+              "url": "https://www.poet-technologies.com/news/poet-technologies-provides-purchase-order-update"
+            }
+          ],
+          "lifecycle_stage": "withdrawn",
+          "occurred_end": "2026-04-23",
+          "occurred_start": "2026-04-23",
+          "previous_event_id": "",
+          "primary_subject_id": "POET",
+          "program_id": "PRG_POET_CELESTIAL",
+          "summary": "POET披露Marvell/Celestial AI于2026-04-23书面取消此前全部purchase orders",
+          "theme_ids": [
+            "T010",
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
           "event_category": "product_stage",
           "event_id": "EV002",
           "event_status": "asserted",
@@ -1989,6 +5431,48 @@
           "summary": "Lumentum第一方博客披露1.6T 2xDR4现场演示",
           "theme_ids": [
             "T010"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_LUMILENS"
+          ],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV028",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "notable business highlights supply agreement bullet",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_POET_20260514_LUMILENS",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL031",
+              "evidence_id": "EE031",
+              "independence_class": "first_party",
+              "origin_group": "OG_POET_20260514_LUMILENS",
+              "provenance_class": "first_party",
+              "published_at": "2026-05-14",
+              "quote": "Lumilens has placed an initial purchase order with the Company for the manufacturing of EOI-based engines valued at $50 million",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "POET first-quarter 2026 results and Lumilens purchase order",
+              "url": "https://www.poet-technologies.com/news/poet-technologies-reports-first-quarter-2026-financial-results"
+            }
+          ],
+          "lifecycle_stage": "volume_order",
+          "occurred_end": "2026-05-14",
+          "occurred_start": "2026-05-14",
+          "previous_event_id": "",
+          "primary_subject_id": "POET",
+          "program_id": "PRG_POET_LUMILENS",
+          "summary": "POET称获得Lumilens价值5000万美元EOI光引擎初始采购订单",
+          "theme_ids": [
+            "T010",
+            "T017"
           ]
         }
       ],
@@ -2082,6 +5566,93 @@
         {
           "counterparty_ids": [],
           "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV024",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "track one paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_TSEM_20260714_JAPAN",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL026",
+              "evidence_id": "EE026",
+              "independence_class": "first_party",
+              "origin_group": "OG_TSEM_20260714_JAPAN",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-14",
+              "quote": "full production readiness expected during the fourth quarter of 2027",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "forward_looking",
+              "title": "Tower announces dual-track silicon photonics capacity expansion in Japan",
+              "url": "https://ir.towersemi.com/news-releases/news-release-details/tower-semiconductor-meti-support-announces-strategic-capacity"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-07-14",
+          "occurred_start": "2026-07-14",
+          "previous_event_id": "",
+          "primary_subject_id": "TSEM",
+          "program_id": "PRG_TSEM_JP_SIPHO",
+          "summary": "Tower提出日本300mm硅光产能2027Q4生产准备目标",
+          "theme_ids": [
+            "T013",
+            "T015",
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV023",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "opening paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_GFS_20260729_CHIPS",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL025",
+              "evidence_id": "EE025",
+              "independence_class": "first_party",
+              "origin_group": "OG_GFS_20260729_CHIPS",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-29",
+              "quote": "entered into a letter of intent with the U.S. Department of Commerce to accelerate research and development of next-generation silicon photonics",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "GlobalFoundries signs CHIPS R&D letter of intent for silicon photonics",
+              "url": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-signs-letter-intent-us-department-commerce-300"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-07-29",
+          "occurred_start": "2026-07-29",
+          "previous_event_id": "",
+          "primary_subject_id": "GFS",
+          "program_id": "PRG_GFS_US_SIPHO",
+          "summary": "GlobalFoundries称签署3亿美元硅光研发资助LOI",
+          "theme_ids": [
+            "T013",
+            "T015",
+            "T017"
+          ]
+        }
+      ],
+      "theme_id": "T013"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
           "event_category": "commercial_adoption",
           "event_id": "EV001",
           "event_status": "asserted",
@@ -2117,12 +5688,178 @@
           "theme_ids": [
             "T015"
           ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV024",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "track one paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_TSEM_20260714_JAPAN",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL026",
+              "evidence_id": "EE026",
+              "independence_class": "first_party",
+              "origin_group": "OG_TSEM_20260714_JAPAN",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-14",
+              "quote": "full production readiness expected during the fourth quarter of 2027",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "forward_looking",
+              "title": "Tower announces dual-track silicon photonics capacity expansion in Japan",
+              "url": "https://ir.towersemi.com/news-releases/news-release-details/tower-semiconductor-meti-support-announces-strategic-capacity"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-07-14",
+          "occurred_start": "2026-07-14",
+          "previous_event_id": "",
+          "primary_subject_id": "TSEM",
+          "program_id": "PRG_TSEM_JP_SIPHO",
+          "summary": "Tower提出日本300mm硅光产能2027Q4生产准备目标",
+          "theme_ids": [
+            "T013",
+            "T015",
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV023",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "opening paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_GFS_20260729_CHIPS",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL025",
+              "evidence_id": "EE025",
+              "independence_class": "first_party",
+              "origin_group": "OG_GFS_20260729_CHIPS",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-29",
+              "quote": "entered into a letter of intent with the U.S. Department of Commerce to accelerate research and development of next-generation silicon photonics",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "GlobalFoundries signs CHIPS R&D letter of intent for silicon photonics",
+              "url": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-signs-letter-intent-us-department-commerce-300"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-07-29",
+          "occurred_start": "2026-07-29",
+          "previous_event_id": "",
+          "primary_subject_id": "GFS",
+          "program_id": "PRG_GFS_US_SIPHO",
+          "summary": "GlobalFoundries称签署3亿美元硅光研发资助LOI",
+          "theme_ids": [
+            "T013",
+            "T015",
+            "T017"
+          ]
         }
       ],
       "theme_id": "T015"
     },
     {
       "events": [
+        {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "supply_chain_arrangement",
+          "event_id": "EV030",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_COHR_20260302_NVDA",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL033",
+              "evidence_id": "EE033",
+              "independence_class": "first_party",
+              "origin_group": "OG_COHR_20260302_NVDA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-02",
+              "quote": "The nonexclusive agreement includes an NVIDIA multibillion-dollar purchase commitment and future access and capacity rights for advanced laser and optical networking products.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "fact_assertion",
+              "title": "NVIDIA and Coherent Announce Strategic Partnership",
+              "url": "https://www.coherent.com/news/press-releases/nvidia-and-coherent-announce-strategic-partnership"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-02",
+          "occurred_start": "2026-03-02",
+          "previous_event_id": "",
+          "primary_subject_id": "COHR",
+          "program_id": "PRG_COHR_NVDA_20260302",
+          "summary": "Coherent披露与NVIDIA签署含采购承诺及未来产能权的非独家多年协议",
+          "theme_ids": [
+            "T007",
+            "T016"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "supply_chain_arrangement",
+          "event_id": "EV032",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_LITE_20260302_NVDA",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL035",
+              "evidence_id": "EE035",
+              "independence_class": "first_party",
+              "origin_group": "OG_LITE_20260302_NVDA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-02",
+              "quote": "The nonexclusive agreement includes an NVIDIA multibillion purchase commitment and future capacity access rights for advanced laser components.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "fact_assertion",
+              "title": "NVIDIA Announces Strategic Partnership With Lumentum to Develop State-of-the-Art Optics Technology",
+              "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-02",
+          "occurred_start": "2026-03-02",
+          "previous_event_id": "",
+          "primary_subject_id": "LITE",
+          "program_id": "PRG_LITE_NVDA_20260302",
+          "summary": "Lumentum披露与NVIDIA签署含采购承诺及未来产能权的非独家多年协议",
+          "theme_ids": [
+            "T007",
+            "T016"
+          ]
+        },
         {
           "counterparty_ids": [],
           "date_precision": "exact",
@@ -2322,6 +6059,48 @@
           "theme_ids": [
             "T016"
           ]
+        },
+        {
+          "counterparty_ids": [
+            "LITE"
+          ],
+          "date_precision": "exact",
+          "event_category": "supply_chain_arrangement",
+          "event_id": "EV022",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "opening paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_AXTI_20260729_LITE",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL024",
+              "evidence_id": "EE024",
+              "independence_class": "first_party",
+              "origin_group": "OG_AXTI_20260729_LITE",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-29",
+              "quote": "entered into a definitive agreement with Lumentum Operations LLC for the supply and capacity reservation of indium phosphide wafer substrates",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "AXT announces long-term supplier agreement with Lumentum",
+              "url": "https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-Long-Term-Supplier-Agreement-with-Lumentum/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-07-29",
+          "occurred_start": "2026-07-29",
+          "previous_event_id": "",
+          "primary_subject_id": "AXTI",
+          "program_id": "PRG_AXTI_LITE_INP",
+          "summary": "AXT称与Lumentum签署InP晶圆供给和产能预留协议",
+          "theme_ids": [
+            "T007",
+            "T016"
+          ]
         }
       ],
       "theme_id": "T016"
@@ -2369,6 +6148,88 @@
         },
         {
           "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV031",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_COHR_20260302_NVDA",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL034",
+              "evidence_id": "EE034",
+              "independence_class": "first_party",
+              "origin_group": "OG_COHR_20260302_NVDA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-02",
+              "quote": "NVIDIA is investing $2 billion in Coherent to support research and development, future capacity and operations",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "forward_looking",
+              "title": "NVIDIA and Coherent Announce Strategic Partnership",
+              "url": "https://www.coherent.com/news/press-releases/nvidia-and-coherent-announce-strategic-partnership"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-02",
+          "occurred_start": "2026-03-02",
+          "previous_event_id": "",
+          "primary_subject_id": "COHR",
+          "program_id": "PRG_COHR_NVDA_20260302",
+          "summary": "Coherent披露NVIDIA将投资20亿美元",
+          "theme_ids": [
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV033",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_LITE_20260302_NVDA",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL036",
+              "evidence_id": "EE036",
+              "independence_class": "first_party",
+              "origin_group": "OG_LITE_20260302_NVDA",
+              "provenance_class": "first_party",
+              "published_at": "2026-03-02",
+              "quote": "NVIDIA is investing $2 billion in Lumentum to support R&D, future capacity and operations",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "forward_looking",
+              "title": "NVIDIA Announces Strategic Partnership With Lumentum to Develop State-of-the-Art Optics Technology",
+              "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/NVIDIA-Announces-Strategic-Partnership-With-Lumentum-to-Develop-State-of-the-Art-Optics-Technology/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-03-02",
+          "occurred_start": "2026-03-02",
+          "previous_event_id": "",
+          "primary_subject_id": "LITE",
+          "program_id": "PRG_LITE_NVDA_20260302",
+          "summary": "Lumentum披露NVIDIA将投资20亿美元",
+          "theme_ids": [
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [
             "WATCH_DUST"
           ],
           "date_precision": "exact",
@@ -2405,6 +6266,171 @@
           "program_id": "PRG_CRDO_DUST",
           "summary": "Credo签署收购DustPhotonics的确定性协议",
           "theme_ids": [
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV029",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "lead paragraph beginning SAN JOSE CA April 27 2026",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_POET_20260427_CELESTIAL_CANCEL",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL032",
+              "evidence_id": "EE032",
+              "independence_class": "first_party",
+              "origin_group": "OG_POET_20260427_CELESTIAL_CANCEL",
+              "provenance_class": "first_party",
+              "published_at": "2026-04-27",
+              "quote": "announced the cancellation of all purchase orders received by the Company from Celestial AI",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "fact_assertion",
+              "title": "POET Technologies Provides Purchase Order Update",
+              "url": "https://www.poet-technologies.com/news/poet-technologies-provides-purchase-order-update"
+            }
+          ],
+          "lifecycle_stage": "withdrawn",
+          "occurred_end": "2026-04-23",
+          "occurred_start": "2026-04-23",
+          "previous_event_id": "",
+          "primary_subject_id": "POET",
+          "program_id": "PRG_POET_CELESTIAL",
+          "summary": "POET披露Marvell/Celestial AI于2026-04-23书面取消此前全部purchase orders",
+          "theme_ids": [
+            "T010",
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV027",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_GLW_20260506_NVDA",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL029",
+              "evidence_id": "EE029",
+              "independence_class": "first_party",
+              "origin_group": "OG_GLW_NVDA_20260506",
+              "provenance_class": "first_party",
+              "published_at": "2026-05-06",
+              "quote": "Corning will increase its U.S.-based optical connectivity manufacturing capacity by 10x and expand its U.S. fiber production capacity by more than 50%",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "forward_looking",
+              "title": "NVIDIA and Corning announce long-term optical manufacturing partnership",
+              "url": "https://investor.corning.com/news-and-events/news/news-details/2026/NVIDIA-and-Corning-Announce-Long-Term-Partnership-To-Strengthen-U-S--Manufacturing-for-AI-Infrastructure/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-05-06",
+          "occurred_start": "2026-05-06",
+          "previous_event_id": "",
+          "primary_subject_id": "GLW",
+          "program_id": "PRG_GLW_NVDA_OPTICAL",
+          "summary": "Corning提出美国光连接产能十倍和光纤产能提升逾50%的目标",
+          "theme_ids": [
+            "T017",
+            "T019"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_TERAMOUNT"
+          ],
+          "date_precision": "exact",
+          "event_category": "capital_relationship",
+          "event_id": "EV034",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "公告标题",
+              "claim_reviewed_at": "2026-08-22",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_MOLEX_20260507_TERAMOUNT",
+              "disclosure_reviewed_at": "2026-08-22",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL037",
+              "evidence_id": "EE037",
+              "independence_class": "first_party",
+              "origin_group": "OG_MOLEX_20260507_TERAMOUNT",
+              "provenance_class": "first_party",
+              "published_at": "2026-05-07",
+              "quote": "Molex Completes Acquisition of Teramount Ltd.",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-22",
+              "statement_kind": "fact_assertion",
+              "title": "Molex Completes Acquisition of Teramount Ltd.",
+              "url": "https://www.molex.com/en-us/news/molex-completes-acquisition-of-teramount-ltd"
+            }
+          ],
+          "lifecycle_stage": "not_applicable",
+          "occurred_end": "2026-05-07",
+          "occurred_start": "2026-05-07",
+          "previous_event_id": "",
+          "primary_subject_id": "WATCH_MOLEX",
+          "program_id": "PRG_MOLEX_TERAMOUNT",
+          "summary": "Molex完成对Teramount Ltd.的收购",
+          "theme_ids": [
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [
+            "WATCH_LUMILENS"
+          ],
+          "date_precision": "exact",
+          "event_category": "commercial_adoption",
+          "event_id": "EV028",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "notable business highlights supply agreement bullet",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_POET_20260514_LUMILENS",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL031",
+              "evidence_id": "EE031",
+              "independence_class": "first_party",
+              "origin_group": "OG_POET_20260514_LUMILENS",
+              "provenance_class": "first_party",
+              "published_at": "2026-05-14",
+              "quote": "Lumilens has placed an initial purchase order with the Company for the manufacturing of EOI-based engines valued at $50 million",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "POET first-quarter 2026 results and Lumilens purchase order",
+              "url": "https://www.poet-technologies.com/news/poet-technologies-reports-first-quarter-2026-financial-results"
+            }
+          ],
+          "lifecycle_stage": "volume_order",
+          "occurred_end": "2026-05-14",
+          "occurred_start": "2026-05-14",
+          "previous_event_id": "",
+          "primary_subject_id": "POET",
+          "program_id": "PRG_POET_LUMILENS",
+          "summary": "POET称获得Lumilens价值5000万美元EOI光引擎初始采购订单",
+          "theme_ids": [
+            "T010",
             "T017"
           ]
         },
@@ -2448,9 +6474,138 @@
           "theme_ids": [
             "T017"
           ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV024",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "track one paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_TSEM_20260714_JAPAN",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL026",
+              "evidence_id": "EE026",
+              "independence_class": "first_party",
+              "origin_group": "OG_TSEM_20260714_JAPAN",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-14",
+              "quote": "full production readiness expected during the fourth quarter of 2027",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "forward_looking",
+              "title": "Tower announces dual-track silicon photonics capacity expansion in Japan",
+              "url": "https://ir.towersemi.com/news-releases/news-release-details/tower-semiconductor-meti-support-announces-strategic-capacity"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-07-14",
+          "occurred_start": "2026-07-14",
+          "previous_event_id": "",
+          "primary_subject_id": "TSEM",
+          "program_id": "PRG_TSEM_JP_SIPHO",
+          "summary": "Tower提出日本300mm硅光产能2027Q4生产准备目标",
+          "theme_ids": [
+            "T013",
+            "T015",
+            "T017"
+          ]
+        },
+        {
+          "counterparty_ids": [],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV023",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "opening paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_GFS_20260729_CHIPS",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL025",
+              "evidence_id": "EE025",
+              "independence_class": "first_party",
+              "origin_group": "OG_GFS_20260729_CHIPS",
+              "provenance_class": "first_party",
+              "published_at": "2026-07-29",
+              "quote": "entered into a letter of intent with the U.S. Department of Commerce to accelerate research and development of next-generation silicon photonics",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "fact_assertion",
+              "title": "GlobalFoundries signs CHIPS R&D letter of intent for silicon photonics",
+              "url": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-signs-letter-intent-us-department-commerce-300"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-07-29",
+          "occurred_start": "2026-07-29",
+          "previous_event_id": "",
+          "primary_subject_id": "GFS",
+          "program_id": "PRG_GFS_US_SIPHO",
+          "summary": "GlobalFoundries称签署3亿美元硅光研发资助LOI",
+          "theme_ids": [
+            "T013",
+            "T015",
+            "T017"
+          ]
         }
       ],
       "theme_id": "T017"
+    },
+    {
+      "events": [
+        {
+          "counterparty_ids": [
+            "NVDA"
+          ],
+          "date_precision": "exact",
+          "event_category": "capacity_constraint",
+          "event_id": "EV027",
+          "event_status": "asserted",
+          "evidence": [
+            {
+              "anchor": "second paragraph",
+              "claim_reviewed_at": "2026-08-13",
+              "content_class": "commercial_disclosure",
+              "disclosure_id": "D_GLW_20260506_NVDA",
+              "disclosure_reviewed_at": "2026-08-13",
+              "disclosure_type": "official_release",
+              "event_claim_id": "ECL029",
+              "evidence_id": "EE029",
+              "independence_class": "first_party",
+              "origin_group": "OG_GLW_NVDA_20260506",
+              "provenance_class": "first_party",
+              "published_at": "2026-05-06",
+              "quote": "Corning will increase its U.S.-based optical connectivity manufacturing capacity by 10x and expand its U.S. fiber production capacity by more than 50%",
+              "relationship": "reports",
+              "retrieved_at": "2026-08-13",
+              "statement_kind": "forward_looking",
+              "title": "NVIDIA and Corning announce long-term optical manufacturing partnership",
+              "url": "https://investor.corning.com/news-and-events/news/news-details/2026/NVIDIA-and-Corning-Announce-Long-Term-Partnership-To-Strengthen-U-S--Manufacturing-for-AI-Infrastructure/default.aspx"
+            }
+          ],
+          "lifecycle_stage": "announced",
+          "occurred_end": "2026-05-06",
+          "occurred_start": "2026-05-06",
+          "previous_event_id": "",
+          "primary_subject_id": "GLW",
+          "program_id": "PRG_GLW_NVDA_OPTICAL",
+          "summary": "Corning提出美国光连接产能十倍和光纤产能提升逾50%的目标",
+          "theme_ids": [
+            "T017",
+            "T019"
+          ]
+        }
+      ],
+      "theme_id": "T019"
     },
     {
       "events": [

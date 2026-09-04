@@ -1,6 +1,6 @@
-# Marvell：季度电话会卡
+# Oxford Instruments：季度电话会卡
 
-角色：`upstream_enabler`。纳入理由：光DSP、硅光、交换芯片与定制互连平台
+角色：`upstream_enabler`。纳入理由：化合物半导体等离子设备订单与交期观察方
 
 ## 五级覆盖（本公司在该公司数中可复算）
 
@@ -10,16 +10,16 @@
 - 可用来源：4/4 个季度槽有 `available` 材料
 - 陈述登记：0 条 `claims.csv` 陈述（含 candidate/rejected）
 - 已核陈述：0 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：1 条已审核雷达事件（asserted 1 / corroborated 0）
+- 已核事件：0 条已审核雷达事件（asserted 0 / corroborated 0）
 
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
-| FY2027Q1 | [S_MRVL_2027Q1](https://investor.marvell.com/news-events/press-releases/detail/1023/marvell-technology-inc-reports-first-quarter-of-fiscal-year-2027-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
-| FY2026Q4 | [S_MRVL_2026Q4](https://investor.marvell.com/news-events/press-releases/detail/1011/marvell-technology-inc-reports-fourth-quarter-and-fiscal-year-2026-financial-results) | A | available | 公司官方季度及全年业绩与电话会入口 |
-| FY2026Q3 | [S_MRVL_2026Q3](https://investor.marvell.com/news-events/press-releases/detail/999/marvell-technology-inc-reports-third-quarter-of-fiscal-year-2026-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
-| FY2026Q2 | [S_MRVL_2026Q2](https://investor.marvell.com/news-events/press-releases/detail/989/marvell-technology-inc-reports-second-quarter-of-fiscal-year-2026-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
+| FY2026 | [S_OXIG_2026FY](https://www.oxinst.com/assets/uploads/Oxford_Instruments_plc_preliminary_FY26_results_9_June_2026.pdf) | A | available | 公司正式全年结果 |
+| FY2026H1 | [S_OXIG_2026H1](https://www.oxinst.com/assets/uploads/Oxford_Instruments_plc_FY26_half_year_results_investor_presentation_111125.pdf) | A | available | 公司正式半年投资者材料 |
+| FY2025 | [S_OXIG_2025FY](https://www.oxinst.com/investors/financial-reports-and-presentations) | A | available | 公司官方归档中的FY25正式全年结果 |
+| FY2025H1 | [S_OXIG_2025H1](https://www.oxinst.com/investors/financial-reports-and-presentations) | A | available | 公司官方归档中的FY25正式半年结果 |
 
 ## 已审核管理层陈述
 

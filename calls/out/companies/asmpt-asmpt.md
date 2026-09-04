@@ -1,6 +1,6 @@
-# Marvell：季度电话会卡
+# ASMPT：季度电话会卡
 
-角色：`upstream_enabler`。纳入理由：光DSP、硅光、交换芯片与定制互连平台
+角色：`upstream_enabler`。纳入理由：光子芯片贴装、耦合、键合与CPO装配设备观察方
 
 ## 五级覆盖（本公司在该公司数中可复算）
 
@@ -10,16 +10,16 @@
 - 可用来源：4/4 个季度槽有 `available` 材料
 - 陈述登记：0 条 `claims.csv` 陈述（含 candidate/rejected）
 - 已核陈述：0 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：1 条已审核雷达事件（asserted 1 / corroborated 0）
+- 已核事件：0 条已审核雷达事件（asserted 0 / corroborated 0）
 
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
-| FY2027Q1 | [S_MRVL_2027Q1](https://investor.marvell.com/news-events/press-releases/detail/1023/marvell-technology-inc-reports-first-quarter-of-fiscal-year-2027-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
-| FY2026Q4 | [S_MRVL_2026Q4](https://investor.marvell.com/news-events/press-releases/detail/1011/marvell-technology-inc-reports-fourth-quarter-and-fiscal-year-2026-financial-results) | A | available | 公司官方季度及全年业绩与电话会入口 |
-| FY2026Q3 | [S_MRVL_2026Q3](https://investor.marvell.com/news-events/press-releases/detail/999/marvell-technology-inc-reports-third-quarter-of-fiscal-year-2026-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
-| FY2026Q2 | [S_MRVL_2026Q2](https://investor.marvell.com/news-events/press-releases/detail/989/marvell-technology-inc-reports-second-quarter-of-fiscal-year-2026-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
+| 2026H1 | [S_ASMPT_2026H1](https://www.asmpt.com/site/assets/files/85463/asmpt_2026_q2_press_release.pdf) | A | available | 公司正式H1/Q2业绩新闻稿；不标transcript |
+| 2026Q1 | [S_ASMPT_2026Q1](https://www.asmpt.com/site/assets/files/85243/e0522_results_announcement_2026_q1.pdf) | A | available | 公司与HKEX正式业绩公告 |
+| FY2025 | [S_ASMPT_2025FY](https://www.asmpt.com/site/assets/files/84503/e0522_results_announcement_2025_q4.pdf) | A | available | 公司经审核全年业绩公告 |
+| 2025Q3-9M | [S_ASMPT_2025Q3](https://www.asmpt.com/site/assets/files/84017/e0522_results_announcement_2025_q3.pdf) | A | available | 公司与HKEX正式业绩公告 |
 
 ## 已审核管理层陈述
 

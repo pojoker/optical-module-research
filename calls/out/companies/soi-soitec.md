@@ -1,6 +1,6 @@
-# Marvell：季度电话会卡
+# Soitec：季度电话会卡
 
-角色：`upstream_enabler`。纳入理由：光DSP、硅光、交换芯片与定制互连平台
+角色：`upstream_enabler`。纳入理由：Photonics-SOI材料平台与硅光底座需求观察方
 
 ## 五级覆盖（本公司在该公司数中可复算）
 
@@ -10,16 +10,16 @@
 - 可用来源：4/4 个季度槽有 `available` 材料
 - 陈述登记：0 条 `claims.csv` 陈述（含 candidate/rejected）
 - 已核陈述：0 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：1 条已审核雷达事件（asserted 1 / corroborated 0）
+- 已核事件：0 条已审核雷达事件（asserted 0 / corroborated 0）
 
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
-| FY2027Q1 | [S_MRVL_2027Q1](https://investor.marvell.com/news-events/press-releases/detail/1023/marvell-technology-inc-reports-first-quarter-of-fiscal-year-2027-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
-| FY2026Q4 | [S_MRVL_2026Q4](https://investor.marvell.com/news-events/press-releases/detail/1011/marvell-technology-inc-reports-fourth-quarter-and-fiscal-year-2026-financial-results) | A | available | 公司官方季度及全年业绩与电话会入口 |
-| FY2026Q3 | [S_MRVL_2026Q3](https://investor.marvell.com/news-events/press-releases/detail/999/marvell-technology-inc-reports-third-quarter-of-fiscal-year-2026-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
-| FY2026Q2 | [S_MRVL_2026Q2](https://investor.marvell.com/news-events/press-releases/detail/989/marvell-technology-inc-reports-second-quarter-of-fiscal-year-2026-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
+| FY2027Q1 | [S_SOI_2027Q1](https://www.soitec.com/home/group/resource-library/content/docs/default-source/financial-documents/2026-2027/en/soitec---cp-q1%2727---en) | A | available | 公司正式季度收入公告 |
+| FY2026 | [S_SOI_2026FY](https://www.soitec.com/home/group/resource-library/content/docs/default-source/financial-documents/2025-2026/en/soitec-fy%2726-pr---en) | A | available | 公司正式全年业绩公告 |
+| FY2026Q3 | [S_SOI_2026Q3](https://www.soitec.com/home/group/resource-library/content/docs/default-source/financial-documents/2025-2026/en/soitec-q3%2726-pr---en) | A | available | 公司正式季度收入公告 |
+| FY2026H1 | [S_SOI_2026H1](https://www.soitec.com/docs/default-source/financial-documents/2025-2026/en/soitec-h1%2726-pr---en.pdf?Status=Master&sfvrsn=e62e24bf_1) | A | available | 公司正式半年业绩公告 |
 
 ## 已审核管理层陈述
 

@@ -105,9 +105,9 @@ class AdmissionSemanticsTest(unittest.TestCase):
         self.assertEqual(report.admission_rank("某个没见过的路径"), report.UNKNOWN_ADMISSION_RANK)
         self.assertEqual(report.admission_path(""), "")
 
-    def test_output_column_expresses_admission_not_evidence_grade(self) -> None:
-        self.assertIn("准入依据", report.FIELDNAMES)
-        self.assertNotIn("证据等级", report.FIELDNAMES)
+    def test_canonical_output_schema_is_not_changed(self) -> None:
+        self.assertIn("证据等级", report.FIELDNAMES)
+        self.assertNotIn("准入依据", report.FIELDNAMES)
 
     def test_pdf_label_does_not_call_it_evidence_grade(self) -> None:
         source = inspect.getsource(report.build_pdf)
@@ -136,13 +136,13 @@ class RowBuildingTest(unittest.TestCase):
         self.points = points
         return {(row["公司"], row["cell_id"]): row for row in report.granular_rows()}
 
-    def test_row_keeps_admission_path_and_drops_process_note(self) -> None:
+    def test_row_keeps_canonical_value_while_reader_can_extract_path(self) -> None:
         rows = self.rows_for(
             [point("P1", "测试公司甲", "C4", "判定闸-生产中(子代理起草;锚待复核)")]
         )
         row = rows[("测试公司甲", "C4")]
-        self.assertEqual(row["准入依据"], "判定闸-生产中")
-        self.assertNotIn("锚待复核", row["准入依据"])
+        self.assertIn("锚待复核", row["证据等级"])
+        self.assertEqual(report.admission_path(row["证据等级"]), "判定闸-生产中")
 
     def test_bracketed_point_wins_over_weaker_unbracketed_point(self) -> None:
         rows = self.rows_for(
@@ -152,12 +152,14 @@ class RowBuildingTest(unittest.TestCase):
             ]
         )
         row = rows[("测试公司甲", "C4")]
-        self.assertEqual(row["准入依据"], "判定闸-生产中")
+        self.assertEqual(report.admission_path(row["证据等级"]), "判定闸-生产中")
         self.assertEqual(row["证据日期"], "2026-07-26")
 
     def test_unlabelled_point_is_not_presented_as_a_grade(self) -> None:
         rows = self.rows_for([point("P1", "测试公司甲", "C4", "")])
-        self.assertEqual(rows[("测试公司甲", "C4")]["准入依据"], report.UNKNOWN_ADMISSION_LABEL)
+        row = rows[("测试公司甲", "C4")]
+        self.assertEqual(row["证据等级"], "")
+        self.assertEqual(report.admission_path(row["证据等级"]) or report.UNKNOWN_ADMISSION_LABEL, report.UNKNOWN_ADMISSION_LABEL)
 
     def test_coarse_cell_does_not_inherit_node_enumeration_as_product(self) -> None:
         rows = self.rows_for(
@@ -250,7 +252,7 @@ class ReaderOutputTest(unittest.TestCase):
             "规格与应用": "800G",
             "当前阶段": "生产中",
             "产业角色": "芯片设计或制造",
-            "准入依据": "判定闸-生产中",
+            "证据等级": "判定闸-生产中(过程备注不应展示)",
             "证据日期": "2026-07-26",
             "来源锚点": "https://example.com/report.pdf",
             "原始披露摘要": "自研DSP芯片已发货",

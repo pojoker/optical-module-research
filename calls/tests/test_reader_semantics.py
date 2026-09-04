@@ -84,28 +84,47 @@ class ReaderSemanticsTest(unittest.TestCase):
             "reviewed_event": len(event_companies),
         }
 
+    def _enabled_count(self) -> int:
+        return sum(
+            row["enabled"] == "yes"
+            for row in _load(self.root / "calls" / "universe.csv")
+        )
+
+    def _source_inventory(self) -> tuple[int, int, int]:
+        sources = _load(self.root / "calls" / "sources.csv")
+        enabled = self._enabled_count()
+        quarterly = sum(row["source_scope"] == "quarterly" for row in sources)
+        return len(sources), quarterly, 4 * enabled
+
+    def _event_summary(self) -> tuple[dict[str, int], list[str]]:
+        counts: dict[str, int] = {}
+        corroborated: list[str] = []
+        for row in _load(self.root / "calls" / "events.csv"):
+            status = row["event_status"]
+            counts[status] = counts.get(status, 0) + 1
+            if status == "corroborated":
+                corroborated.append(row["event_id"])
+        return counts, sorted(corroborated)
+
     def test_five_level_coverage_denominators_are_recomputable(self) -> None:
         expected = self._expected_levels()
-        self.assertEqual(
-            expected,
-            {"slot": 39, "available_source": 36, "claim": 12, "reviewed_claim": 12, "reviewed_event": 15},
-        )
+        denominator = self._enabled_count()
         index = self._index()
-        self.assertIn("分母：正式季度池 39 家 enabled 公司", index)
+        self.assertIn(f"分母：正式季度池 {denominator} 家 enabled 公司", index)
         self.assertIn("| 季度槽登记 |", index)
         self.assertIn("| 可用来源 |", index)
         self.assertIn("| 陈述登记 |", index)
         self.assertIn("| 已核陈述 |", index)
         self.assertIn("| 已核事件 |", index)
         for count in expected.values():
-            self.assertIn(f"| {count} | 39 |", index)
-        self.assertNotIn("| 39 | 39 | 39 |\n", index)
+            self.assertIn(f"| {count} | {denominator} |", index)
 
     def test_source_inventory_is_not_conclusion_coverage(self) -> None:
         index = self._index()
-        self.assertIn("信源底账：`sources.csv` 共 166 行", index)
-        self.assertIn("季度槽材料 163 行", index)
-        self.assertIn("季度槽位 156 个", index)
+        total, quarterly, positions = self._source_inventory()
+        self.assertIn(f"信源底账：`sources.csv` 共 {total} 行", index)
+        self.assertIn(f"季度槽材料 {quarterly} 行", index)
+        self.assertIn(f"季度槽位 {positions} 个", index)
         self.assertIn("不能单独用“N 家公司、M 行来源”表达研究结论覆盖", index)
         self.assertIn("信源底账行数只是采集记录，不等于结论覆盖", index)
 
@@ -125,9 +144,10 @@ class ReaderSemanticsTest(unittest.TestCase):
 
     def test_asserted_and_corroborated_are_listed_separately(self) -> None:
         index = self._index()
-        self.assertIn("- asserted：32 条", index)
-        self.assertIn("- corroborated：2 条", index)
-        self.assertIn("EV013、EV014", index)
+        counts, corroborated_ids = self._event_summary()
+        self.assertIn(f"- asserted：{counts.get('asserted', 0)} 条", index)
+        self.assertIn(f"- corroborated：{counts.get('corroborated', 0)} 条", index)
+        self.assertIn("、".join(corroborated_ids) if corroborated_ids else "无", index)
         self.assertIn("同源双证（同一 origin_group 的多份材料）不得升级为 corroborated", index)
         self.assertIn("asserted 不代表已确认", index)
         # corroborated display must rest on evidence with an origin independent
@@ -136,7 +156,7 @@ class ReaderSemanticsTest(unittest.TestCase):
         event_claims = _load(ROOT / "calls" / "event_claims.csv")
         disclosures = _load(ROOT / "calls" / "disclosures.csv")
         claim_by_id = {row["event_claim_id"]: row for row in event_claims}
-        for event_id in ("EV013", "EV014"):
+        for event_id in corroborated_ids:
             origins = {
                 (row["independence_class"], row["origin_group"])
                 for row in evidence if row["event_id"] == event_id

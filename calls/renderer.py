@@ -9,7 +9,7 @@ import shutil
 from collections import defaultdict
 from pathlib import Path
 
-from .event_intelligence import INDEPENDENT_CLASSES, derive_event_projection, load_event_facts
+from .event_intelligence import derive_event_projection, load_event_facts
 from .positioning import derive_positioning, load_positioning_facts
 from .schema import FILES, PANORAMA_FIELDS
 

@@ -2,17 +2,29 @@
 
 角色：`core_peer`。纳入理由：800G与1.6T模块供给和产能信息密度高
 
+## 五级覆盖（本公司在该公司数中可复算）
+
+> 覆盖边界：信源底账行数只是采集记录，不等于结论覆盖；结论覆盖必须逐级看“季度槽 → 可用来源 → 陈述 → 已核陈述 → 已核事件”五级。`reviewed` / `anchor_reviewed` 仅表示原文已核；`corroborated` 才表示存在与第一方不同来源（不同 origin_group 且独立于第一方）的交叉支持；同源双证（同一 origin_group 的多份材料）不得升级为 corroborated。
+
+- 季度槽登记：4/4 个季度槽已登记（含未采集槽位）
+- 可用来源：2/4 个季度槽有 `available` 材料
+- 陈述登记：10 条 `claims.csv` 陈述（含 candidate/rejected）
+- 已核陈述：9 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
+- 已核事件：1 条已审核雷达事件（asserted 1 / corroborated 0）
+
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
+| 2026Q2 | [S_AAOI_2026Q2](https://investors.ao-inc.com/news-releases/news-release-details/applied-optoelectronics-reports-second-quarter-2026-results) | A | available | 公司官方季度业绩新闻稿 |
 | 2026Q1 | [S_AAOI_Q1_RESULT_A](https://investors.ao-inc.com/node/17011) | A | available | 公司官方季度业绩材料；与C级逐字稿并列登记 |
 | 2026Q1 | [S_AAOI_2026Q1_C](https://www.fool.com/earnings/call-transcripts/2026/05/07/aaoi-q1-2026-earnings-call-transcript/) | C | available | 免费公开第三方逐字稿；仅保存短引文和定位 |
 | 2025Q4 | S_AAOI_2025Q4 | unknown | not_collected | MVP尚未完成逐字稿人工核验 |
 | 2025Q3 | S_AAOI_2025Q3 | unknown | not_collected | MVP尚未完成逐字稿人工核验 |
-| 2025Q2 | S_AAOI_2025Q2 | unknown | not_collected | MVP尚未完成逐字稿人工核验 |
 
 ## 已审核管理层陈述
+
+> `reviewed` 仅表示原文已核（说话人、原文、锚点经人工复核），不代表独立来源交叉证实。
 
 - `CL001` · fact · first_shipment · [S_AAOI_Q1_RESULT_A](https://investors.ao-inc.com/node/17011) `CEO quote paragraph`
   - 归纳：AAOI称Q1完成对一家大型超大规模客户的首次800G批量交付

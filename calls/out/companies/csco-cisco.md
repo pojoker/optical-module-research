@@ -2,6 +2,16 @@
 
 角色：`downstream`。纳入理由：交换系统及光学产品需求验证方
 
+## 五级覆盖（本公司在该公司数中可复算）
+
+> 覆盖边界：信源底账行数只是采集记录，不等于结论覆盖；结论覆盖必须逐级看“季度槽 → 可用来源 → 陈述 → 已核陈述 → 已核事件”五级。`reviewed` / `anchor_reviewed` 仅表示原文已核；`corroborated` 才表示存在与第一方不同来源（不同 origin_group 且独立于第一方）的交叉支持；同源双证（同一 origin_group 的多份材料）不得升级为 corroborated。
+
+- 季度槽登记：4/4 个季度槽已登记（含未采集槽位）
+- 可用来源：4/4 个季度槽有 `available` 材料
+- 陈述登记：5 条 `claims.csv` 陈述（含 candidate/rejected）
+- 已核陈述：5 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
+- 已核事件：0 条已审核雷达事件（asserted 0 / corroborated 0）
+
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
@@ -12,6 +22,8 @@
 | FY2025Q4 | [S_CSCO_2025Q4_A](https://investor.cisco.com/files/doc_events/2025/08/1/Q4FY25-Prepared-Remarks.pdf) | A | available | 公司官方prepared remarks PDF |
 
 ## 已审核管理层陈述
+
+> `reviewed` 仅表示原文已核（说话人、原文、锚点经人工复核），不代表独立来源交叉证实。
 
 - `CL007` · fact · volume_order · [S_CSCO_2026Q2_A](https://investor.cisco.com/files/doc_events/2026/02/Q2FY26-Prepared-Remarks-1.pdf) `Q2 FY26 prepared remarks p.4`
   - 归纳：Cisco披露Q2来自超大规模客户的AI基础设施合计订单为21亿美元

@@ -51,7 +51,7 @@ def _fmt_anchor(v):
     "同上"显式声明沿用上一行锚点、非独立锚，不伪装成独立锚点。"""
     a=(v or '').strip()
     if not a: return '（锚点空——待补锚）'
-    if a.startswith('http://') or a.startswith('https://'): return f'[锚]({a})'
+    if re.fullmatch(r'https?://[^\s，；。<>\[\]]+', a): return f'[锚]({a})'
     if a=='同上': return '锚点为“同上”——沿用上一行锚点，**非独立锚点**，不可独立核验'
     # 说明文本：转义 [] 与 |，防止 markdown/表格把占位、描述性引用或内嵌链接重新解释成可用超链接
     esc=a.replace('\\','\\\\').replace('[','\\[').replace(']','\\]').replace('|','\\|')
@@ -77,8 +77,8 @@ def _shipments_section(ships, names):
         rs=[r for r in ships if ((r.get('单位') or '').strip() or '（单位空）')==u]
         L.append(f'### 单位：{u}（{len(rs)} 行）')
         L.append('')
-        L.append('| row_id | 公司 | 业务范围(cell) | 期间 | 出货量（原值+单位） | 证据等级 | 情景标记 |')
-        L.append('|---|---|---|---|---|---|---|')
+        L.append('| row_id | 公司 | 业务范围(cell) | 业务口径（推导式原文） | 收入锚 | 期间 | 出货量（原值+单位） | 证据等级 | 情景标记 |')
+        L.append('|---|---|---|---|---|---|---|---|---|')
         for r in rs:
             c=(r.get('cell_id') or '').strip()
             scope=names.get(c,c)
@@ -86,7 +86,10 @@ def _shipments_section(ships, names):
             scm=(r.get('情景标记') or '').strip()
             if scm and scm!='base': mark+=' ⚠非base'
             qty=((r.get('出货量') or '').strip()+' '+(r.get('单位') or '').strip()).strip()
-            L.append(f"| {r.get('row_id','')} | {r.get('公司','')} | {c} {scope}{mark} | {r.get('期间','')} | {qty} | {r.get('证据等级','')} | {scm} |")
+            basis=(r.get('推导式') or '').strip().replace('|','\\|') or '未注明'
+            income_anchor=(r.get('收入锚') or '').strip()
+            income_anchor_text=_fmt_anchor(income_anchor) if income_anchor else '—'
+            L.append(f"| {r.get('row_id','')} | {r.get('公司','')} | {c} {scope}{mark} | {basis} | {income_anchor_text} | {r.get('期间','')} | {qty} | {r.get('证据等级','')} | {scm} |")
         L.append('')
     return L
 
@@ -528,7 +531,7 @@ def build(outdir):
         sc,dc=pid2cell.get(e.get('供方point_id','')),pid2cell.get(e.get('需方point_id',''))
         if sc and dc and sc!=dc: cnt[(sc,dc)]=cnt.get((sc,dc),0)+1
     L+=['---','## BOM流向（骨架=常识层免锚；括号=关系观察边数，来自edges.csv）','',
-        '> 边界：计入的每条边是 edges.csv 里的一条**关系观察**（客户集中度占比、代工/供货等混合口径，产品范围以该边备注为准，如备注“3D传感/消费端非光通信”的边就不是光模块供货），',
+        '> 边界：计入的每条边是 edges.csv 里的一条**关系观察**（客户集中度占比、代工/供货等混合口径；备注若有只能用于收窄产品范围，备注为空时产品范围仍为 UNKNOWN，如备注“3D传感/消费端非光通信”的边就不是光模块供货），',
         '> **不默认等价于“光模块供货”**；边数是观察计数，不是供货强度、份额或排名。','']
     skel=set()
     for f in tr.get('flows',[]):

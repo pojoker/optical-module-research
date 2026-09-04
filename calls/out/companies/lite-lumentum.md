@@ -2,17 +2,29 @@
 
 角色：`core_peer`。纳入理由：激光器与光通信器件核心同业
 
+## 五级覆盖（本公司在该公司数中可复算）
+
+> 覆盖边界：信源底账行数只是采集记录，不等于结论覆盖；结论覆盖必须逐级看“季度槽 → 可用来源 → 陈述 → 已核陈述 → 已核事件”五级。`reviewed` / `anchor_reviewed` 仅表示原文已核；`corroborated` 才表示存在与第一方不同来源（不同 origin_group 且独立于第一方）的交叉支持；同源双证（同一 origin_group 的多份材料）不得升级为 corroborated。
+
+- 季度槽登记：4/4 个季度槽已登记（含未采集槽位）
+- 可用来源：2/4 个季度槽有 `available` 材料
+- 陈述登记：12 条 `claims.csv` 陈述（含 candidate/rejected）
+- 已核陈述：12 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
+- 已核事件：4 条已审核雷达事件（asserted 4 / corroborated 0）
+
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
+| FY2026Q4 | [S_LITE_2026Q4](https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-Fourth-Quarter-and-Full-Fiscal-Year-2026-Results/default.aspx) | A | available | 公司官方季度及全年业绩新闻稿 |
 | FY2026Q3 | [S_LITE_2026Q3_C](https://www.fool.com/earnings/call-transcripts/2026/05/06/lumentum-lite-q3-2026-earnings-transcript/) | C | available | 免费公开第三方完整逐字稿；保留短引文和行号锚 |
 | FY2026Q3 | [S_LITE_2026Q3](https://s21.q4cdn.com/377324469/files/doc_financials/2026/q3/Q3-FY26-Earnings-Presentation_final.pdf) | A | available | 公司官方Q3 FY26 earnings presentation |
 | FY2026Q2 | S_LITE_2026Q2 | unknown | not_collected | MVP尚未采集并人工核验该槽位 |
 | FY2026Q1 | S_LITE_2026Q1 | unknown | not_collected | MVP尚未采集并人工核验该槽位 |
-| FY2025Q4 | S_LITE_2025Q4 | unknown | not_collected | MVP尚未采集并人工核验该槽位 |
 
 ## 已审核管理层陈述
+
+> `reviewed` 仅表示原文已核（说话人、原文、锚点经人工复核），不代表独立来源交叉证实。
 
 - `CL020` · fact · scaled · [S_LITE_2026Q3](https://s21.q4cdn.com/377324469/files/doc_financials/2026/q3/Q3-FY26-Earnings-Presentation_final.pdf) `Q3 FY26 earnings presentation p.3`
   - 归纳：Lumentum披露200G EML收入环比增长超过一倍
