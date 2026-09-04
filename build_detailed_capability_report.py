@@ -157,13 +157,41 @@ SPEC_PATTERNS = [
     ("相干/DCI/骨干", r"相干|ZR\+?|DCI|骨干|城域|WSS|OXC"),
 ]
 
-EVIDENCE_RANK = {
+# `points.csv.判定等级` is an admission path plus an optional parenthesized
+# process note ("判定闸-生产中(kimi取证;锚待复核)"). Ranking must key on the
+# path alone, otherwise the 195 bracketed rows miss the enumeration and fall
+# back to the unknown default rank.
+ADMISSION_RANK = {
     "判定闸-生产中": 5,
     "node_wide_gate": 5,
     "edge_backed": 4,
     "cross_reference": 3,
     "context_only": 2,
 }
+UNKNOWN_ADMISSION_RANK = 1
+UNKNOWN_ADMISSION_LABEL = "未标注准入路径"
+PARENTHETICAL = re.compile(r"[（(][^)）]*[)）]")
+
+# Coarse tree cells merge sub-capabilities whose design difficulty and route
+# relevance differ: C5 merges several kinds of electrical chip, M1 merges
+# several substrate/epitaxy platforms, MOD1 merges several rate generations
+# (the enumerations live in tree.yaml and are never reproduced here). Their
+# parenthetical enumeration is a navigation aid, not evidence: matching
+# products or materials against it credits every company in the cell with every
+# sub-capability. Overlap with a coarse cell is a navigation fact only — it
+# never implies product supply or full route capability, so neither the cell's
+# member list nor any undisclosed sub-capability may reach the product field.
+# Splitting the cells themselves is an architecture decision, not done here.
+COARSE_CELLS = {
+    "C5": "多类电芯片子能力同格",
+    "M1": "多种衬底与外延平台同格",
+    "MOD1": "多个速率代际同格",
+}
+COARSE_CELL_BOUNDARY = (
+    "粗粒度格：本行只表示公司能力与该格发生交集，"
+    "不推出具体产品供货，也不构成完整路线能力"
+)
+COARSE_CELL_REQUIREMENT = "子能力须逐条披露支撑"
 
 FIELDNAMES = [
     "公司代码",
@@ -180,7 +208,8 @@ FIELDNAMES = [
     "规格与应用",
     "当前阶段",
     "产业角色",
-    "证据等级",
+    # 准入路径（判定闸 / 边支持 / 交叉引用…），不是 A–D 证据等级。
+    "准入依据",
     "证据日期",
     "来源锚点",
     "原始披露摘要",
@@ -227,6 +256,41 @@ def unique_matches(text: str, patterns: list[tuple[str, str]]) -> list[str]:
         if re.search(pattern, text, flags=re.I) and label not in found:
             found.append(label)
     return found
+
+
+def admission_path(value: str) -> str:
+    """Admission path without the parenthesized review-process note.
+
+    The note is trailing and may itself contain brackets, so everything from
+    the first bracket is dropped instead of matching a balanced pair — a
+    balanced match would leave a nested note's tail glued to the path.
+    """
+    text = clean(value)
+    return re.split(r"[（(]", text, maxsplit=1)[0].strip() or text
+
+
+def admission_rank(value: str) -> int:
+    return ADMISSION_RANK.get(admission_path(value), UNKNOWN_ADMISSION_RANK)
+
+
+def coarse_cell_note(cell_id: str) -> str:
+    """Fixed boundary line for coarse cells.
+
+    Names the cell but never its members: reproducing the merged sub-capability
+    enumeration here would put undisclosed tokens (e.g. MCU next to a
+    disclosure-backed DSP) into the product field.
+    """
+    merged = COARSE_CELLS.get(cell_id)
+    if not merged:
+        return ""
+    return f"{COARSE_CELL_BOUNDARY}（{cell_id} {merged}；{COARSE_CELL_REQUIREMENT}）"
+
+
+def cell_label(cell_id: str, node_name: str) -> str:
+    """Node name with the sub-capability enumeration of coarse cells removed."""
+    if cell_id not in COARSE_CELLS:
+        return node_name
+    return PARENTHETICAL.sub("", node_name).strip() or node_name
 
 
 def stage_detail(text: str, point_status: str) -> str:
@@ -321,22 +385,24 @@ def granular_rows() -> list[dict[str, str]]:
             if quote and quote not in quotes:
                 quotes.append(quote)
         quote_text = "；".join(quotes)
-        combined = f"{node['name']} {node['process_note']} {quote_text}"
+        label = cell_label(cell_id, node["name"])
+        combined = f"{label} {node['process_note']} {quote_text}"
         evidence_and_process = f"{node['process_note']} {quote_text}"
         products = unique_matches(combined, PRODUCT_PATTERNS)
         processes = unique_matches(evidence_and_process, PROCESS_PATTERNS)
         specs = unique_matches(quote_text, SPEC_PATTERNS)
         if not products:
-            products = [node["name"]]
+            products = [label]
         if not processes and node["process_note"]:
             processes = [node["process_note"]]
-        best_point = max(
-            points,
-            key=lambda point: EVIDENCE_RANK.get(point.get("判定等级", ""), 1),
-        )
+        best_point = max(points, key=lambda point: admission_rank(point.get("判定等级", "")))
         anchors = [extract_url(point.get("锚点URL", "")) for point in points]
         anchor = next((value for value in anchors if value), clean(best_point.get("锚点URL", "")))
         dates = [point.get("检索日期", "") for point in points if point.get("检索日期")]
+        product_value = "、".join(products)
+        note = coarse_cell_note(cell_id)
+        if note:
+            product_value = f"{product_value}｜{note}"
         result.append(
             {
                 "公司代码": company_meta["代码"],
@@ -347,13 +413,13 @@ def granular_rows() -> list[dict[str, str]]:
                 "cell_id": cell_id,
                 "细分节点": node["name"],
                 "技术路线": node["route"],
-                "具体产品": "、".join(products),
-                "材料与技术": material_technology(combined, node["name"]),
+                "具体产品": product_value,
+                "材料与技术": material_technology(combined, label),
                 "工艺能力": "、".join(processes) if processes else "披露未细分",
                 "规格与应用": "、".join(specs) if specs else "披露未细分",
                 "当前阶段": stage_detail(quote_text, best_point.get("状态", "")),
                 "产业角色": role_for(cell_id, combined),
-                "证据等级": best_point.get("判定等级", "已过闸"),
+                "准入依据": admission_path(best_point.get("判定等级", "")) or UNKNOWN_ADMISSION_LABEL,
                 "证据日期": max(dates) if dates else "",
                 "来源锚点": anchor,
                 "原始披露摘要": quote_text,
@@ -791,7 +857,9 @@ def build_pdf(path: Path, rows: list[dict[str, str]]) -> None:
         stat_table,
         Spacer(1, 11 * mm),
         Paragraph(
-            "阅读口径：只展示已进入“生产中”证据闸的公司；字段未被原始披露支撑时明确写“披露未细分”。本报告不讨论谁向谁供货。",
+            "阅读口径：只展示已进入“生产中”证据闸的公司；字段未被原始披露支撑时明确写“披露未细分”。本报告不讨论谁向谁供货。"
+            "“准入依据”只说明该点以何种路径进入账本（判定闸 / 边支持 / 交叉引用等），不是 A–D 证据等级；"
+            "C5 / M1 / MOD1 为粗粒度格，卡片只表示公司能力与该格发生交集，不推出具体产品供货或完整路线能力。",
             styles["subtitle"],
         ),
         PageBreak(),
@@ -882,7 +950,7 @@ def build_pdf(path: Path, rows: list[dict[str, str]]) -> None:
             story += [
                 cap_table,
                 Paragraph(
-                    f"证据等级：{esc(cap['证据等级'])}　|　证据日期：{esc(cap['证据日期'] or '—')}　|　"
+                    f"准入依据：{esc(cap['准入依据'])}　|　证据日期：{esc(cap['证据日期'] or '—')}　|　"
                     + (
                         f'<link href="{esc(cap["来源锚点"])}" color="#165DFF">查看来源</link>'
                         if cap["来源锚点"].startswith(("http://", "https://"))
@@ -929,7 +997,7 @@ def capability_section(
                     <dt>阶段与角色</dt><dd>{esc(cap['当前阶段'])} · {esc(cap['产业角色'])}</dd>
                     <dt>披露摘要</dt><dd class="quote">{esc(cap['原始披露摘要'])}</dd>
                   </dl>
-                  <div class="cap-source">{esc(cap['证据等级'])} · {esc(cap['证据日期'])} · {source}</div>
+                  <div class="cap-source">{esc(cap['准入依据'])} · {esc(cap['证据日期'])} · {source}</div>
                 </div>
                 """
             )
@@ -1000,7 +1068,7 @@ def capability_section(
     return f"""
     <div class="sec" id="s7">
       <h2><span class="tag">能力卡</span>公司 × 细分节点能力明细</h2>
-      <div class="desc">公司清单已并入能力卡，不再单列“企业越多越完整”的重复图谱。每项能力包含产品、技术、工艺、规格、阶段、角色与证据；卡片顶部仅叠加少量实名、原文核验供货实边，不由公司同处一条产业链推断供货关系。</div>
+      <div class="desc">公司清单已并入能力卡，不再单列“企业越多越完整”的重复图谱。每项能力包含产品、技术、工艺、规格、阶段、角色与证据；卡片顶部仅叠加少量实名、原文核验供货实边，不由公司同处一条产业链推断供货关系。<br>“准入依据”只说明该点以何种路径进入账本（判定闸 / 边支持 / 交叉引用等），不是 A–D 证据等级；能力末尾的“准入依据 · 日期 · 来源”同理。<br>C5、M1 与 MOD1 是粗粒度格（各合入多种设计难度不同的子能力，成员枚举见 tree.yaml）：卡片上的产品与材料标签只来自原始披露，不来自格名枚举，边界提示也不复述成员；能力与该格发生交集不推出具体产品供货，也不构成完整路线能力。</div>
       <div class="cap-summary">
         <div><b>{len(companies)}</b><span>已确认公司</span></div>
         <div><b>{len(rows)}</b><span>能力记录</span></div>
