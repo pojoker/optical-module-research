@@ -17,7 +17,7 @@ objective:
 baseline:
   repository: pojoker/optical-module-research
   branch: main
-  commit: 7ff3b25cfd0ff3b13fa834a0d775ae2879195
+  commit: 7ff3b25cfd0ff3b137ec55471c7ad33dd5060510
   audit_as_of: 2026-09-04
 
 reader_visible_deliverables:
