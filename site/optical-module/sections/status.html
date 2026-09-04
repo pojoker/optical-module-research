@@ -1,12 +1,26 @@
 <section class="section" id="status" data-certainty="open">
-        <div class="kicker">阅读说明 · 先看确定性</div><h2>这不是一张“所有句子都同样确定”的百科页</h2>
-        <p class="intro">每一段结论都要先回答：它是可以用于入门解释的稳定骨架，还是只对某个产品成立？它是工程机理候选，还是仍缺数据的未知？颜色不是好坏评分，而是告诉你这句话可以被用到哪里。</p>
-        <div class="certainty-key">
-          <article class="certainty-card"><span class="certainty stable">稳定解释</span><h3>先用它建立骨架</h3><p>基础功能、信号方向、技术选项所在维度。仍可被新规范修正，但不依赖某一只具体产品。</p></article>
-          <article class="certainty-card"><span class="certainty object">对象级候选</span><h3>只对具名对象成立</h3><p>产品页、演示、规范版本或公司披露。离开料号、版本和成熟度就不能泛化。</p></article>
-          <article class="certainty-card"><span class="certainty mechanism">机理候选</span><h3>解释为什么可能有效</h3><p>说明约束、优势与代价之间的工程关系；缺少同边界数据时不能排胜负。</p></article>
-          <article class="certainty-card"><span class="certainty open">未知 / 阻断</span><h3>明确保留空格</h3><p>市场份额、exact BOM、客户供货、系统净功耗等没有合格分母或直接证据。</p></article>
-        </div>
-        <div class="knowledge-rails"><div class="rail"><strong>物理知识</strong><span>功能 → 组件 → 接口 → 制造 → 装配 → 测试</span></div><div class="rail-arrow">通过<br>WHY</div><div class="rail"><strong>技术路线</strong><span>需求 → 约束 → 六个选择轴 → 路线画像 → 成熟度</span></div><div class="rail-arrow">再投影到</div><div class="rail"><strong>公司与产业</strong><span>能力格 → 具名产品 → 路线服务候选；禁止偷渡供货</span></div></div>
-        <div class="reader-rule"><b>重要边界：</b>KN008–KN010 已正式写入 canonical；其他“稳定解释”、对象候选和机理候选并不会因此自动晋升，仍须连同范围、反证条件与未知一起阅读。</div>
-      </section>
+  <div class="kicker">阅读说明 · 先看确定性与证据层级</div><h2>这不是一张“所有句子都同样确定”的百科页</h2>
+  <p class="intro">每一段结论都要先核查其证据级别与推导边界：它是有一手证据核验的事实，还是经显式模型推导的派生？它是待授权复核的候选，还是留白的未知？颜色与标签不是优劣评级，而是标定该主张可被引用的法定边界。</p>
+  <div class="certainty-key">
+    <article class="certainty-card"><span class="certainty stable">事实 / 稳定解释</span><h3>先用它建立骨架</h3><p>基础物理功能、接口定义、已核财报披露。有一手证据逐字核验，不脱离原文外推。</p></article>
+    <article class="certainty-card"><span class="certainty mechanism">派生 / 机理推导</span><h3>解释因果与约束</h3><p>从已知事实经显式工程约束推导（如 WHY 桥、Pareto 前沿）。依赖前提，不可脱离约束当无条件事实。</p></article>
+    <article class="certainty-card"><span class="certainty object">候选 / 对象观察</span><h3>只对具名对象成立</h3><p>单方送样、演示样机、未授权知识草案（KN011+）。未获用户明确授权绝不自动晋升为 canonical 事实。</p></article>
+    <article class="certainty-card"><span class="certainty open">UNKNOWN / 阻断</span><h3>明确保留空格</h3><p>真实市场份额、全系统净功耗、真实供货比例等无统一分母或独立证据。留白呈现，严禁模糊措辞掩盖。</p></article>
+  </div>
+  <div class="subhead"><b>证据与知识层级读法指南</b>（事实、派生、候选与 UNKNOWN 严格分列，不互相冒充）</div>
+  <div class="bullet-grid">
+    <div class="bullet"><b>事实（Fact）读法</b><span>必须具备一手证据锚且经逐字独立核验（如年报产销表直接披露、经显式批准晋升的原子知识 KN008–KN010）。事实仅在其原文出处与适用边界内成立，不可将过程型判定备注或口头陈述混作事实。</span></div>
+    <div class="bullet"><b>派生（Derived）读法</b><span>从已知事实经显式因果链或标准物理约束推导出的结论（如 WHY 桥权衡、Pareto 前沿反转条件）。推导链条必须完整公开，结论严格受制于输入约束，不可脱离适用条件表述为无条件事实。</span></div>
+    <div class="bullet"><b>候选（Candidate）读法</b><span>处于研究与复核通道中的假说、对象级观察或机理草案（如未获晋升授权的 KN011+ 知识批次、单一客户验证）。离开具名料号、时点与成熟度不能泛化，未获用户明确授权绝不自动晋升为 canonical 事实。</span></div>
+    <div class="bullet"><b>UNKNOWN（未知 / 阻断）读法</b><span>证据链缺失、统计分母不可比或机理尚无闭环的领域空白（如各路线实际市场份额、全系统净功耗、真实供货份额）。必须明确保留留白与阻断状态，严禁使用“未来可期”“行业领先”等模糊词粉饰。</span></div>
+  </div>
+  <div class="subhead"><b>审计后四大不可外推边界</b>（说明四类数据分别不能推出什么）</div>
+  <div class="bullet-grid">
+    <div class="bullet"><b>能力格重合（Capability Overlap）不能推出供货或路线能力</b><span>C5（电芯片）、M1（衬底）、MOD1（速率）等粗粒度分类节点仅用于宏观导航，同格共现绝对不能推出具名产品供货、器件类别替代（如主控 MCU 不等于 DSP/TIA）或完整路线能力。</span></div>
+    <div class="bullet"><b>来源槽位（Source Slot）不能推出研究结论覆盖</b><span>海外跟踪池中 39 家启用公司与 166 个来源槽位仅代表存在公开资料入口或检索管道（slot/retrieved），绝对不能代表已形成实质研究结论；零 claim 槽位不等于已完成研究，禁止用槽位数夸大覆盖。</span></div>
+    <div class="bullet"><b>已核事件（Reviewed Event）不能推出独立证实或真实出货</b><span>第一方披露或新闻稿原文经核验（reviewed）仅证明原文属实，绝对不能推出已获得对手方或独立第三方交叉证实（corroborated）；单方商业订单预期（如“预计2026Q3交付”）不能读为已实现出货。</span></div>
+    <div class="bullet"><b>出货量观测（Shipment Observation）不能推出横向比较或市场份额</b><span>出货表混合了万只、万件、台套、千克、万平米等 15 种异构单位及多层聚合口径，绝对不能用于跨公司横向排名、总出货量求和或推算全市场份额；直接披露与推断行必须严格分立。</span></div>
+  </div>
+  <div class="knowledge-rails"><div class="rail"><strong>物理知识</strong><span>功能 → 组件 → 接口 → 制造 → 装配 → 测试</span></div><div class="rail-arrow">通过<br>WHY</div><div class="rail"><strong>技术路线</strong><span>需求 → 约束 → 六个选择轴 → 路线画像 → 成熟度</span></div><div class="rail-arrow">再投影到</div><div class="rail"><strong>公司与产业</strong><span>能力格 → 具名产品 → 路线服务候选；禁止偷渡供货</span></div></div>
+  <div class="reader-rule"><b>重要边界：</b>KN008–KN010 已正式写入 canonical；其他“稳定解释”、对象候选和机理候选并不会因此自动晋升，仍须连同范围、反证条件与未知一起阅读。系统不设自动状态机，不把机器门通过等同于领域结论完成。</div>
+</section>

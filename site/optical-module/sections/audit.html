@@ -1,6 +1,37 @@
 <section class="section" id="audit" data-certainty="open">
-        <div class="statusline"><span class="certainty open">边界审计</span><small>PQ001 首批已写入</small></div>
-        <div class="kicker">研究边界</div><h2>这一版已经回答了什么，还有什么不能下结论？</h2>
-        <p class="intro">这不是一份假装什么都已经确定的行业百科。它先把工作原理、零件、制造、提速压力、技术选择和公司位置连成一条可读主线；遇到缺少统一数据或具体产品证据的地方，仍然明确保留“不知道”。PQ001 的三条基础知识已经正式写入，其余内容继续按候选或未知管理。</p>
-        <div class="audit"><article class="auditcard"><h3>已经连起来的内容</h3><p>从“光模块是什么”出发，依次解释 9 类功能零件、6 个关键连接环节、4 类代表性制造过程、800G 到 3.2T 的提速压力、六个技术选择轴、3 个产品路线样例和 WHY 桥；另有 7 个公司—产品—路线只读投影、12 条受限研究候选，以及 30 个专家问题的实际调度状态。PQ001 父批的 KN008–KN010 已按原子策略整体晋升，正式闭合基本功能、CMIS 条件化接口骨架和机械边界；PQ002 的 KN011–KN013、PQ003 的 KN014 及后续对象候选仍停在候选层。</p><div class="links"><a href="../docs/research/光模块知识体系-历史综合-v1.30.md">历史综合底稿（非当前任务控制）</a><a href="../docs/research/knowledge-append-candidate-pq001-v1.yaml">PQ001 已晋升批次</a><a href="../docs/research/knowledge-append-candidate-pq002-v1.yaml">PQ002 下一批</a><a href="../docs/research/knowledge-append-candidate-pq003-v1.yaml">PQ003 样机候选</a><a href="../docs/research/company-route-projection-seeds-v1.yaml">公司—路线投影</a><a href="../docs/research/expert-question-portfolio-v1.yaml">专家问题组合</a></div></article><article class="auditcard"><h3>仍然不能确定的内容</h3><p>不同光子平台在相同速率、距离和工作条件下的完整比较；换路线以后设备数量、成本和良率究竟怎样变化；具名产品内部器件如何集成、由谁实体制造、向谁供货；以及同一统计范围内各种路线各占多少市场份额。教学样机只提供受限产品上下文，不能回答这些问题。原先 5 条外审通过的 stable explanation 仍是研究治理规则，不能冒充领域知识；KN011 之后的知识候选也没有因 PQ001 晋升而自动获得用户授权。</p><div class="links"><a href="../docs/reviews/2026-08-31-kimi-review-knowledge-append-pq003-v1.md">PQ003 Kimi 审核</a><a href="../docs/research/cursor-proposal-assessment-2026-08-31.md">Cursor 建议独立审计</a><a href="../docs/research/web-semantic-snapshot-pilot-v1.yaml">动态网页语义快照</a></div></article></div>
-      </section>
+  <div class="statusline"><span class="certainty open">边界审计</span><small>PQ001 首批已写入 · 数据质量双审复核</small></div>
+  <div class="kicker">研究边界</div><h2>这一版已经回答了什么，还有什么不能下结论？</h2>
+  <p class="intro">这不是一份假装什么都已经确定的行业百科。系统在经 Kimi 领域语义审计与 Cursor 数据契约审计后，进一步明确当前能回答、不能回答与证据层级的读法。PQ001 的三条基础知识（KN008–KN010）已正式写入，其余内容继续按事实、派生、候选与 UNKNOWN 严格分列管理。</p>
+  <div class="audit">
+    <article class="auditcard">
+      <h3>已经连起来的内容（当前能回答什么）</h3>
+      <p><b>物理原理与因果链：</b>从双向光电转换出发，依次解释 9 类功能零件、6 个关键连接环节、4 类代表性制造过程、800G 到 3.2T 的提速压力、六个技术选择轴、3 个主流产品路线样例与 WHY 桥工程折中；另有 7 个公司—产品—路线只读投影、12 条受限研究候选，以及 30 个专家问题的实际调度状态。</p>
+      <p><b>条件化权衡与 Pareto 前沿：</b>清晰揭示不同损耗、热密度、通道数与故障域约束下的 Pareto 权衡与反转条件，不设脱离约束的无条件最优路线。</p>
+      <p><b>具名对象客观事实：</b>公开财报产销表已核数据、监管披露、经逐字核验的一手规格与标准组织（IEEE/OIF）接口定义。</p>
+      <p><b>正式原子知识骨架：</b>PQ001 父批的 KN008–KN010 已按原子策略整体晋升写入 canonical，正式闭合基本功能、CMIS 条件化接口骨架和机械形态边界。</p>
+      <div class="links">
+        <a href="../docs/research/光模块知识体系-历史综合-v1.30.md">历史综合底稿（非当前任务控制）</a>
+        <a href="../docs/research/knowledge-append-candidate-pq001-v1.yaml">PQ001 已晋升批次</a>
+        <a href="../docs/research/company-route-projection-seeds-v1.yaml">公司—路线投影</a>
+        <a href="../docs/research/expert-question-portfolio-v1.yaml">专家问题组合</a>
+      </div>
+    </article>
+    <article class="auditcard">
+      <h3>仍然不能确定的内容（当前不能回答与不可外推）</h3>
+      <p><b>四大不可外推边界（红线原则）：</b></p>
+      <p>1. <b>能力格重合（Capability Overlap）：</b>C5（电芯片）、M1（衬底）、MOD1（速率）等粗粒度分类格共现<b>不能推出</b>具体产品供货关系、量产成熟度或完整路线能力（如主控 MCU 绝不等于 DSP/TIA 供货能力）。</p>
+      <p>2. <b>海外来源槽位（Source Slot）：</b>跟踪池 39 家启用公司与 166 个来源槽位多数为资料入口（slot/retrieved），<b>不能推出</b>实质研究结论或业务主张覆盖；零 claim 槽位不等于已完成研究，禁止用槽位数夸大覆盖。</p>
+      <p>3. <b>已核事件（Reviewed Event）：</b>单方公告或管理层陈述经核验（reviewed）仅代表原文属实，<b>不能推出</b>获得对手方或独立第三方交叉证实（corroborated）；单方订单交付预期<b>不能推出</b>已实现出货。</p>
+      <p>4. <b>出货量观测（Shipment Observation）：</b>出货表混合了万只、万件、台套、千克、万平米等 15 种异构单位及聚合口径，<b>不能推出</b>跨公司横向排名、总出货量求和或全市场份额推算。</p>
+      <p><b>宏观未知与候选限制：</b>不同光子平台在相同边界条件下的全系统净功耗、综合良率与真实市场份额明确保留 UNKNOWN；PQ002（KN011–KN013）、PQ003（KN014）等后续知识候选未获用户明确授权绝不自动晋升为 canonical；三方数据质量审计的假设（H1–H10）仅属审查契约输入，不作为 canonical 事实。</p>
+      <div class="links">
+        <a href="../docs/reviews/2026-09-04-data-quality-ablation-independent-review-brief.md">数据质量双审委托书</a>
+        <a href="../docs/reviews/2026-09-04-kimi-data-quality-semantic-audit.md">Kimi 领域语义审计</a>
+        <a href="../docs/reviews/2026-09-04-cursor-data-quality-contract-ablation-audit.md">Cursor 数据契约审计</a>
+        <a href="../docs/plans/2026-09-04-lights-out-remediation-outsourcing-plan.md">关灯工场外包方案</a>
+      </div>
+    </article>
+  </div>
+  <div class="scope-lock"><b>数据质量与契约审计共识：</b>过程型判定备注不冒充证据等级；粗粒度能力重合不冒充供货；来源槽位不冒充结论覆盖；已核单方陈述不冒充独立交叉证实；异构经营量不作横向比较。任何结论晋升与架构消融均须人工复核与用户显式授权。</div>
+  <div class="reader-rule"><b>证据层级读法：</b>事实（Fact，有锚可逐字核验）、派生（Derived，显式推导与约束前提）、候选（Candidate，具名对象待授权）、UNKNOWN（未知留白）严格分列，互不冒充。机器门测试通过仅证明结构与引用闭合，不等于领域结论完成。</div>
+</section>
