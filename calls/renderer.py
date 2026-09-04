@@ -9,9 +9,18 @@ import shutil
 from collections import defaultdict
 from pathlib import Path
 
-from .event_intelligence import derive_event_projection, load_event_facts
+from .event_intelligence import INDEPENDENT_CLASSES, derive_event_projection, load_event_facts
 from .positioning import derive_positioning, load_positioning_facts
 from .schema import FILES, PANORAMA_FIELDS
+
+
+REVIEW_SEMANTICS_NOTE = (
+    "> 覆盖边界：信源底账行数只是采集记录，不等于结论覆盖；结论覆盖必须逐级看"
+    "“季度槽 → 可用来源 → 陈述 → 已核陈述 → 已核事件”五级。"
+    "`reviewed` / `anchor_reviewed` 仅表示原文已核；`corroborated` 才表示存在"
+    "与第一方不同来源（不同 origin_group 且独立于第一方）的交叉支持；"
+    "同源双证（同一 origin_group 的多份材料）不得升级为 corroborated。"
+)
 
 
 def _load(path: Path) -> list[dict[str, str]]:
@@ -47,6 +56,9 @@ def render(project_root: Path) -> list[Path]:
     for claim in tables["claims.csv"]:
         claims_by_company[sources[claim["source_id"]]["company_id"]].append(claim)
 
+    event_projection = derive_event_projection(load_event_facts(project_root))
+    coverage = _compute_coverage(tables, sources, event_projection)
+
     written: list[Path] = []
     for company in sorted(tables["universe.csv"], key=lambda row: row["company_id"]):
         company_sources = sorted(
@@ -54,14 +66,30 @@ def render(project_root: Path) -> list[Path]:
             key=lambda row: (row["period_end"], row["source_id"]), reverse=True,
         )
         company_claims = claims_by_company[company["company_id"]]
-        lines = [f"# {company['company_name']}：季度电话会卡", "", f"角色：`{company['role']}`。纳入理由：{company['inclusion_reason']}", "", "## 四季度覆盖", "", "| 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |", "|---|---|---:|---|---|"]
+        state = coverage["company_states"][company["company_id"]]
+        lines = [
+            f"# {company['company_name']}：季度电话会卡", "",
+            f"角色：`{company['role']}`。纳入理由：{company['inclusion_reason']}",
+            "",
+            "## 五级覆盖（本公司在该公司数中可复算）",
+            "",
+            REVIEW_SEMANTICS_NOTE,
+            "",
+            f"- 季度槽登记：{state['slots']}/4 个季度槽已登记（含未采集槽位）",
+            f"- 可用来源：{state['available']}/4 个季度槽有 `available` 材料",
+            f"- 陈述登记：{state['claims']} 条 `claims.csv` 陈述（含 candidate/rejected）",
+            f"- 已核陈述：{state['reviewed_claims']} 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）",
+            f"- 已核事件：{state['events']} 条已审核雷达事件（asserted {state['asserted_events']} / corroborated {state['corroborated_events']}）",
+            "",
+            "## 四季度覆盖", "", "| 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |", "|---|---|---:|---|---|",
+        ]
         for source in company_sources:
             lines.append(f"| {_md(source['slot_label'])} | {_link_source(source)} | {_md(source['source_grade'])} | {_md(source['availability'])} | {_md(source['missing_reason'] or source['acquisition_note'])} |")
         reviewed_management = [row for row in company_claims if row["review_status"] == "reviewed" and row["speaker_role"] == "management"]
         reviewed_technical = [row for row in company_claims if row["review_status"] == "reviewed" and row["speaker_role"] == "corporate_author"]
         analyst = [row for row in company_claims if row["speaker_role"] == "analyst"]
         other = [row for row in company_claims if row not in reviewed_management and row not in reviewed_technical and row not in analyst]
-        lines.extend(["", "## 已审核管理层陈述", ""])
+        lines.extend(["", "## 已审核管理层陈述", "", "> `reviewed` 仅表示原文已核（说话人、原文、锚点经人工复核），不代表独立来源交叉证实。", ""])
         if reviewed_management:
             for claim in sorted(reviewed_management, key=lambda row: row["claim_id"]):
                 source = sources[claim["source_id"]]
@@ -180,20 +208,118 @@ def render(project_root: Path) -> list[Path]:
     written.append(positioning_path)
 
     event_path = out / "event-intelligence.json"
-    event_projection = derive_event_projection(load_event_facts(project_root))
     event_path.write_text(
         json.dumps(event_projection, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
     written.append(event_path)
 
-    index = ["# 海外电话会与官网技术情报层 MVP", "", "数据源仅为 `calls/*.csv`；本目录全部由渲染器重建。", "", "## 输出", "", "- [公司事件雷达（JSON）](event-intelligence.json)", "- [跨公司议题矩阵](theme-matrix.md)", "- [受限需求链](limited-demand-chains.md)", "- [承诺—兑现账本](commitments.md)", "- [技术陈述—商业反馈](technology-feedback.md)", "- [全景情报投影（CSV）](panorama-intelligence.csv)", "- [国内能力定位投影（JSON）](positioning.json)", "", "## 公司季度卡", ""]
+    index = ["# 海外电话会与官网技术情报层 MVP", "", "数据源仅为 `calls/*.csv`；本目录全部由渲染器重建。", "", REVIEW_SEMANTICS_NOTE, "", "## 覆盖分级（五级，分母与公司数可复算）", "", coverage["denominator_line"], "", "| 覆盖级别 | 定义 | 公司数 | 分母 |", "|---|---|---:|---:|"]
+    for level_id, label, definition in (
+        ("slot", "季度槽登记", "4 个季度槽均已登记（含 not_collected/unavailable 槽位）"),
+        ("available_source", "可用来源", "4 个季度槽均有 `available` 材料"),
+        ("claim", "陈述登记", "在 `claims.csv` 有至少 1 条陈述（含 candidate/rejected）"),
+        ("reviewed_claim", "已核陈述", "有至少 1 条 `reviewed` 陈述（reviewed 仅表示原文已核）"),
+        ("reviewed_event", "已核事件", "有至少 1 条已审核雷达事件（证据经 `anchor_reviewed`）"),
+    ):
+        level = coverage["levels"][level_id]
+        index.append(f"| {label} | {definition} | {level} | {coverage['enabled_company_count']} |")
+    inventory = coverage["slot_inventory"]
+    index.extend([
+        "",
+        f"信源底账：`sources.csv` 共 {inventory['total_source_rows']} 行（季度槽材料 {inventory['quarterly_source_rows']} 行、"
+        f"季度槽位 {inventory['quarterly_slot_positions']} 个）。这些行数是采集底账，"
+        "不能单独用“N 家公司、M 行来源”表达研究结论覆盖；结论覆盖以上表五级为准。",
+        "",
+        "## 事件状态（asserted / corroborated 分列）",
+        "",
+        f"- asserted：{coverage['event_status_counts'].get('asserted', 0)} 条 —— 第一方主张，原文已核，但没有独立来源交叉支持。",
+        f"- corroborated：{coverage['event_status_counts'].get('corroborated', 0)} 条 —— 存在与第一方不同 origin_group 且独立于第一方的来源支持"
+        f"（{coverage['corroborated_event_ids'] or '无'}）。",
+        "- 同源双证（同一 origin_group 的多份材料）不得升级为 corroborated；asserted 不代表已确认，corroborated 也不代表产能或卡点变化。",
+        "",
+        "## 输出", "", "- [公司事件雷达（JSON）](event-intelligence.json)", "- [跨公司议题矩阵](theme-matrix.md)", "- [受限需求链](limited-demand-chains.md)", "- [承诺—兑现账本](commitments.md)", "- [技术陈述—商业反馈](technology-feedback.md)", "- [全景情报投影（CSV）](panorama-intelligence.csv)", "- [国内能力定位投影（JSON）](positioning.json)", "", "## 公司季度卡", "",
+    ])
     for company in sorted(tables["universe.csv"], key=lambda row: row["company_name"]):
         index.append(f"- [{company['company_name']}](companies/{company['company_id'].lower()}-{_slug(company['company_name'])}.md)")
     index_path = out / "README.md"
     index_path.write_text("\n".join(index) + "\n", encoding="utf-8")
     written.append(index_path)
     return written
+
+
+def _compute_coverage(
+    tables: dict[str, list[dict[str, str]]],
+    sources: dict[str, dict[str, str]],
+    event_projection: dict,
+) -> dict:
+    enabled = [
+        row for row in tables["universe.csv"] if row["enabled"] == "yes"
+    ]
+    enabled_ids = {row["company_id"] for row in enabled}
+    slots: dict[str, set[str]] = defaultdict(set)
+    available: dict[str, set[str]] = defaultdict(set)
+    quarterly_rows = 0
+    for source in sources.values():
+        if source["company_id"] not in enabled_ids or source["source_scope"] != "quarterly":
+            continue
+        slots[source["company_id"]].add(source["slot_label"])
+        if source["availability"] == "available":
+            available[source["company_id"]].add(source["slot_label"])
+        quarterly_rows += 1
+    claims_count: dict[str, int] = defaultdict(int)
+    reviewed_count: dict[str, int] = defaultdict(int)
+    for claim in tables["claims.csv"]:
+        company_id = sources[claim["source_id"]]["company_id"]
+        if company_id not in enabled_ids:
+            continue
+        claims_count[company_id] += 1
+        if claim["review_status"] == "reviewed":
+            reviewed_count[company_id] += 1
+    events_by_subject: dict[str, list[dict]] = defaultdict(list)
+    for row in event_projection["radar_events"]:
+        events_by_subject[row["primary_subject_id"]].append(row)
+    status_counts: dict[str, int] = defaultdict(int)
+    corroborated_ids: list[str] = []
+    for row in event_projection["radar_events"]:
+        status_counts[row["event_status"]] += 1
+        if row["event_status"] == "corroborated":
+            corroborated_ids.append(row["event_id"])
+    company_states: dict[str, dict[str, int]] = {}
+    for company_id in sorted(enabled_ids):
+        subject_events = events_by_subject.get(company_id, [])
+        company_states[company_id] = {
+            "slots": len(slots[company_id]),
+            "available": len(available[company_id]),
+            "claims": claims_count[company_id],
+            "reviewed_claims": reviewed_count[company_id],
+            "events": len(subject_events),
+            "asserted_events": sum(row["event_status"] == "asserted" for row in subject_events),
+            "corroborated_events": sum(row["event_status"] == "corroborated" for row in subject_events),
+        }
+    levels = {
+        "slot": sum(len(slots[c]) == 4 for c in enabled_ids),
+        "available_source": sum(len(available[c]) == 4 for c in enabled_ids),
+        "claim": sum(claims_count[c] > 0 for c in enabled_ids),
+        "reviewed_claim": sum(reviewed_count[c] > 0 for c in enabled_ids),
+        "reviewed_event": sum(bool(events_by_subject.get(c)) for c in enabled_ids),
+    }
+    return {
+        "enabled_company_count": len(enabled_ids),
+        "levels": levels,
+        "slot_inventory": {
+            "total_source_rows": len(sources),
+            "quarterly_source_rows": quarterly_rows,
+            "quarterly_slot_positions": 4 * len(enabled_ids),
+        },
+        "event_status_counts": dict(sorted(status_counts.items())),
+        "corroborated_event_ids": "、".join(sorted(corroborated_ids)),
+        "company_states": company_states,
+        "denominator_line": (
+            f"分母：正式季度池 {len(enabled_ids)} 家 enabled 公司"
+            "（`universe.csv` 中 `enabled=yes`）；watch 实体与发现候选不计入本表。"
+        ),
+    }
 
 
 def _write_panorama(
