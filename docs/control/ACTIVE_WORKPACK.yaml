@@ -32,6 +32,8 @@ reader_visible_deliverables:
   - docs/reviews/2026-09-04-cursor-fable-5-1-product-direction-review.md
 
 allowed_write_paths:
+  - AGENTS.md
+  - docs/control/PROJECT_CHARTER.md
   - docs/control/ACTIVE_WORKPACK.yaml
   - docs/plans/2026-09-04-lights-out-remediation-outsourcing-plan.md
   - build_detailed_capability_report.py
@@ -130,7 +132,7 @@ non_goals:
   - 不合并海外 sources/claims 与 event 链 schema
   - 不删除 canonical/legacy 表或执行真正消融
   - 不新增状态机、receipt、manifest、snapshot lineage 或自动 close/reopen
-  - 不自动提交到远端、合并 PR 或推送 main
+  - 未获授权不提交到远端；本次控制文档更新按下方明确授权推送工作分支，不合并 PR 或推送 main
   - 不把机器门通过表述为领域结论完成
 
 acceptance_criteria:
@@ -155,3 +157,23 @@ stop_and_escalate:
   - 并行分支无法在不改变领域语义的情况下集成
   - 机器门失败且修复会扩大工作包
   - 复核需要登录、验证码、付费来源或绕过访问控制
+
+# 保留上方修复任务的现有状态；本次不据此宣告其完成或重启多代理任务。
+control_document_update:
+  approved_at: 2026-09-05
+  authorization: 用户确认更新 AGENTS.md 建议，并纠正目标仓库为 pojoker/optical-module-research，明确要求重新推送。
+  scope:
+    - AGENTS.md
+    - docs/control/PROJECT_CHARTER.md
+    - docs/control/ACTIVE_WORKPACK.yaml
+  deliverable: 明确授权延续、局部暂停、只读审阅、隔离 worktree、精简交接与按影响验证规则。
+  constraints:
+    - 保留北极星、证据类型边界、canonical 晋升及新架构的人工裁决。
+    - 不修改代码、canonical、网页或原修复任务的完成状态。
+    - 仅提交本次三份文档并推送当前工作分支，不合并 main。
+  push_target:
+    repository: https://github.com/pojoker/optical-module-research.git
+    branch: codex/remediate-data-semantics-20260904
+  verification:
+    - 检查文档规则一致性、YAML 可解析及 git diff --check。
+    - 核对暂存区仅包含本次三份文档；执行仓库提交钩子要求的验证。
