@@ -8,6 +8,8 @@ flows/input/corpus-v1/
 # v2 语料本体不入库
 corpus/annual/
 corpus/annual-*/
+corpus/annual
+corpus/annual-*
 corpus/ir/
 corpus/legacy-input/**/*.pdf
 .DS_Store
