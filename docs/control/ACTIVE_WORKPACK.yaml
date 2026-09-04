@@ -1,35 +1,71 @@
 # ACTIVE_WORKPACK — 当前唯一工作包（人工控制，无自动状态机）
 
 workpack:
-  id: AUDIT-DQ-002
-  title: Kimi 与 Cursor 数据质量及消融独立双审
-  status: completed
+  id: REMEDIATE-DQ-001
+  title: 四路关灯工场数据语义修复与产品方向复核
+  status: in_progress
   approved_at: 2026-09-04
-  completed_at: 2026-09-04
   owner: 用户
-  authorization: 用户确认授权在 cmux 分屏独立运行 Kimi 和 Cursor 审核
+  authorization: 用户明确要求基于三方审计制定外包方案，由 CodeBuddy/OpenCode/Pi/AGY 开发，Codex 集成审核，再由 Kimi K3 与 Cursor Fable 5.1 复核
 
 objective:
-  - 以审计委托书为唯一任务合同，分别执行领域语义审计与数据契约/消融审计。
-  - 保持两位审阅者相互独立，完成前不得读取对方报告。
-  - 只生成审计报告，不修改 canonical、代码、测试、网页或日更状态。
+  - 修复审计已确认的读者侧语义误导和派生层合同错误，不修改 canonical 数据。
+  - 通过四个隔离 worktree 并行实现四个互不重叠的低风险切片。
+  - 集成后由 Codex 审核代码、测试与产品语义，并形成当前产品方向报告。
+  - 由 Kimi K3 与 Cursor Fable 5.1 对集成结果和方向报告独立复核。
 
 baseline:
   repository: pojoker/optical-module-research
   branch: main
-  instruction_commit: 43d1d6cfa335e8693f33fa834a0d775ae2879195
-  canonical_snapshot_commit: 63d426b15b4c2e842ac9569f09febd6dd2d8ff5f
-  audit_brief: docs/reviews/2026-09-04-data-quality-ablation-independent-review-brief.md
+  commit: 7ff3b25cfd0ff3b137ec55471c7ad33dd5060510
   audit_as_of: 2026-09-04
 
 reader_visible_deliverables:
-  - docs/reviews/2026-09-04-kimi-data-quality-semantic-audit.md
-  - docs/reviews/2026-09-04-cursor-data-quality-contract-ablation-audit.md
+  - 能力明细不再把过程型判定串冒充证据等级，且不把粗粒度 cell overlap 表述成产品/路线能力
+  - 海外输出显式区分 slot/source/claim/reviewed/event 覆盖及 asserted/corroborated
+  - 出货量、锚点和关系边的页面展示明确不可比范围与证据边界
+  - 九页前端的审计与状态区说明当前可回答、不可回答和证据限制
+  - docs/plans/2026-09-04-lights-out-remediation-outsourcing-plan.md
+  - docs/reviews/2026-09-04-post-remediation-codex-review.md
+  - docs/reviews/2026-09-04-product-direction-after-remediation.md
+  - docs/reviews/2026-09-04-kimi-k3-product-direction-review.md
+  - docs/reviews/2026-09-04-cursor-fable-5-1-product-direction-review.md
 
 allowed_write_paths:
   - docs/control/ACTIVE_WORKPACK.yaml
-  - docs/reviews/2026-09-04-kimi-data-quality-semantic-audit.md
-  - docs/reviews/2026-09-04-cursor-data-quality-contract-ablation-audit.md
+  - docs/plans/2026-09-04-lights-out-remediation-outsourcing-plan.md
+  - build_detailed_capability_report.py
+  - tests/test_capability_report_semantics.py
+  - calls/renderer.py
+  - calls/README.md
+  - calls/tests/test_reader_semantics.py
+  - render.py
+  - tests/test_render_data_quality_boundaries.py
+  - site/optical-module/sections/audit.html
+  - site/optical-module/sections/status.html
+  - tests/site/test_optical_module_reader.py
+  - calls/out/**
+  - out/光模块知识体系/**
+  - docs/reviews/2026-09-04-post-remediation-codex-review.md
+  - docs/reviews/2026-09-04-product-direction-after-remediation.md
+  - docs/reviews/2026-09-04-kimi-k3-product-direction-review.md
+  - docs/reviews/2026-09-04-cursor-fable-5-1-product-direction-review.md
+
+worker_write_scopes:
+  codebuddy_hy4:
+    - build_detailed_capability_report.py
+    - tests/test_capability_report_semantics.py
+  opencode_omen_alpha:
+    - calls/renderer.py
+    - calls/README.md
+    - calls/tests/test_reader_semantics.py
+  pi_glm_5_3_flash:
+    - render.py
+    - tests/test_render_data_quality_boundaries.py
+  agy_gemini_3_8_flash:
+    - site/optical-module/sections/audit.html
+    - site/optical-module/sections/status.html
+    - tests/site/test_optical_module_reader.py
 
 read_scope:
   allowed:
@@ -37,14 +73,23 @@ read_scope:
     - docs/control/PROJECT_CHARTER.md
     - docs/control/ACTIVE_WORKPACK.yaml
     - docs/reviews/2026-09-04-data-quality-ablation-independent-review-brief.md
-    - 委托书中为 Kimi 与 Cursor 分别列出的文件和测试
-    - 为验证公开证据而访问的一手来源
+    - docs/reviews/2026-09-04-kimi-data-quality-semantic-audit.md
+    - docs/reviews/2026-09-04-cursor-data-quality-contract-ablation-audit.md
+    - docs/plans/2026-09-04-lights-out-remediation-outsourcing-plan.md
+    - README.md
+    - 每个 worker 写入路径及其直接依赖、fixtures 和测试
+    - canonical CSV/YAML 只读输入
+    - site/optical-module/**
+    - tools/site/**
+    - calls/out/**
+    - out/光模块知识体系/**
+    - 本工作包明确创建的四个 worktree
   forbidden:
     - archive/**
-    - 旧分支和其他 worktree
     - closure-pilot 与状态机材料
+    - 旧 worktree 和无关分支
     - 完整 agent 轨迹和旧会话全量日志
-    - 对方尚未提交的审计报告
+    - 并行开发者的终端记录和未完成输出
 
 canonical_policy:
   writable: false
@@ -58,30 +103,43 @@ canonical_policy:
     - shipments.csv
     - macro_evidence.csv
     - company_segment_revenue.csv
+    - capability_details.csv
     - calls/*.csv
 
-execution_plan:
-  - 启动前记录仓库 HEAD、工作树和 canonical 指纹。
-  - 在 cmux 右侧拆分两个终端，分别运行 Kimi 与 Cursor。
-  - 等待两路完成；若任一请求扩大范围，停止该路并升级。
-  - 检查只产生两份允许报告，并验证 canonical 指纹不变。
-  - 执行机器门；机器门只证明结构未受损，不代替审计裁决。
-  - 汇总一致结论、分歧与 UNKNOWN，不实施修复或消融。
+worker_models:
+  codebuddy: hy4-preview
+  opencode: omen-alpha（启动前以本机模型列表确认精确 ID，不得静默替代）
+  pi: glm-5.3-flash（启动前确认 provider/model）
+  agy: gemini-3.8-flash（启动前确认精确 ID）
+  kimi_reviewer: kimi-k3（启动前确认精确 alias）
+  cursor_reviewer: fable-5.1（启动前确认精确 ID）
+
+execution_order:
+  - 固定基线并建立外包方案
+  - 建立四个隔离 worktree 和 cmux 可视窗格
+  - 四路并行开发并各自提交
+  - Codex 逐分支代码审核、运行测试并选择性集成
+  - 生成 reader outputs 并执行全仓机器门
+  - Codex 输出产品方向与理解报告
+  - Kimi K3 与 Cursor Fable 5.1 独立复核报告
+  - 汇总分歧与 UNKNOWN，等待用户决定是否推送
 
 non_goals:
-  - 不修复被发现的数据问题
-  - 不执行任何消融、schema 合并或迁移
-  - 不修改或重新生成九页网页
-  - 不修改日更自动化
-  - 不把审阅者结论自动晋升为 canonical 事实
-  - 不要求两位审阅者形成一致结论
+  - 不修改任何 canonical 数据
+  - 不拆分 C5/M1/MOD1 或新增关系类型
+  - 不合并海外 sources/claims 与 event 链 schema
+  - 不删除 canonical/legacy 表或执行真正消融
+  - 不新增状态机、receipt、manifest、snapshot lineage 或自动 close/reopen
+  - 不自动提交到远端、合并 PR 或推送 main
+  - 不把机器门通过表述为领域结论完成
 
 acceptance_criteria:
-  - 两份报告均按共同输出合同覆盖 B01-B12 与 H1-H10。
-  - 每份报告包含证据、反例、依赖影响、回滚考虑和未解决问题。
-  - 两位审阅者在完成前未读取对方输出。
-  - 仓库除当前工作包和两份报告外无新改动，canonical 指纹前后相同。
-  - 最终汇总明确区分一致结论、分歧、证据不足和后续待用户裁决事项。
+  - 四个开发分支从同一基线建立且写入范围互不重叠。
+  - 每个切片有针对性测试，并明确 reader-visible 行为变化。
+  - Codex 审核未发现越级推导、canonical 写入或无依据 schema 扩张。
+  - 集成后 scan/render/participation/calls 机器门和站点测试通过。
+  - 产品方向报告区分已修复、仍属数据问题、需架构裁决和 UNKNOWN。
+  - Kimi 与 Cursor 复核完成前互不读取对方报告。
 
 architecture_budget:
   new_relation_types: []
@@ -90,19 +148,10 @@ architecture_budget:
   new_engines: []
 
 stop_and_escalate:
-  - 任一审阅者尝试修改允许报告以外的文件
-  - 任一审阅者要求读取禁读材料或对方报告
-  - 仓库 HEAD 不以固定 instruction commit 为起点
-  - canonical 指纹发生变化
-  - 审核需要登录、验证码、付费来源或绕过访问控制
-  - 审阅者建议直接实施修复而不是提交审计结论
-
-completion_evidence:
-  kimi_report: docs/reviews/2026-09-04-kimi-data-quality-semantic-audit.md
-  cursor_report: docs/reviews/2026-09-04-cursor-data-quality-contract-ablation-audit.md
-  baseline_observations_recomputed: 12
-  hypotheses_adjudicated_per_reviewer: 10
-  canonical_aggregate_sha256_before: 72245127392937e184b712114e9354f4e883791c861da1960bb65fb4fe497a5a
-  canonical_aggregate_sha256_after: 72245127392937e184b712114e9354f4e883791c861da1960bb65fb4fe497a5a
-  canonical_unchanged: true
-  implementation_performed: false
+  - 任一指定模型在本地不可用，且只能通过替换模型继续
+  - 任一 worker 需要修改其写入范围之外的文件
+  - 任一 worker 修改 canonical 或依赖禁读材料
+  - 修复需要新增 schema、关系类型或状态机
+  - 并行分支无法在不改变领域语义的情况下集成
+  - 机器门失败且修复会扩大工作包
+  - 复核需要登录、验证码、付费来源或绕过访问控制

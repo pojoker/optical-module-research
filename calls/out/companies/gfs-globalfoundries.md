@@ -1,6 +1,6 @@
-# Marvell：季度电话会卡
+# GlobalFoundries：季度电话会卡
 
-角色：`upstream_enabler`。纳入理由：光DSP、硅光、交换芯片与定制互连平台
+角色：`upstream_enabler`。纳入理由：硅光代工、SiGe与CPO平台的设计到量产观察方
 
 ## 五级覆盖（本公司在该公司数中可复算）
 
@@ -16,10 +16,10 @@
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
-| FY2027Q1 | [S_MRVL_2027Q1](https://investor.marvell.com/news-events/press-releases/detail/1023/marvell-technology-inc-reports-first-quarter-of-fiscal-year-2027-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
-| FY2026Q4 | [S_MRVL_2026Q4](https://investor.marvell.com/news-events/press-releases/detail/1011/marvell-technology-inc-reports-fourth-quarter-and-fiscal-year-2026-financial-results) | A | available | 公司官方季度及全年业绩与电话会入口 |
-| FY2026Q3 | [S_MRVL_2026Q3](https://investor.marvell.com/news-events/press-releases/detail/999/marvell-technology-inc-reports-third-quarter-of-fiscal-year-2026-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
-| FY2026Q2 | [S_MRVL_2026Q2](https://investor.marvell.com/news-events/press-releases/detail/989/marvell-technology-inc-reports-second-quarter-of-fiscal-year-2026-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
+| 2026Q2 | [S_GFS_2026Q2](https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-second-quarter-2026-financial-results) | A | available | 公司IR直接业绩稿与电话会入口；同日SEC 6-K |
+| 2026Q1 | [S_GFS_2026Q1](https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-first-quarter-2026-financial-results) | A | available | 公司IR直接业绩稿与电话会入口 |
+| 2025Q4 | [S_GFS_2025Q4](https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-fourth-quarter-2025-and-fiscal-year-2025) | A | available | 公司IR直接业绩稿与电话会入口 |
+| 2025Q3 | [S_GFS_2025Q3](https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-third-quarter-2025-financial-results) | A | available | 公司IR直接业绩稿与电话会入口 |
 
 ## 已审核管理层陈述
 

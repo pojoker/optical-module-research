@@ -61,6 +61,23 @@ python3 -m unittest discover -s calls/tests -v
 CSV 是事实源，`out/` 只由渲染器生成，禁止手改。`raw/` 可保存合法取得的材料，
 但默认被 Git 忽略；不得绕过付费墙或登录。
 
+## 覆盖分级与证实力度语义（读者必读）
+
+- **五级覆盖**：`out/README.md` 与每张公司卡显式分列「季度槽登记 → 可用来源 →
+  陈述登记 → 已核陈述 → 已核事件」五级，分母固定为 `universe.csv` 中
+  `enabled=yes` 的正式季度池公司数，watch 实体与发现候选不计入。每级公司数
+  可从 `calls/*.csv` 直接复算。
+- **信源底账 ≠ 结论覆盖**：`sources.csv` 的总行数（例如“39 家公司、166 行来源”）
+  只是采集底账，不得单独用来表达研究结论覆盖；结论覆盖必须逐级看上表。
+- **reviewed / anchor_reviewed 仅表示原文已核**：说话人、原文短引与锚点经人工
+  复核；它不表示独立来源交叉证实。
+- **corroborated 才表示独立来源交叉**：只有存在与第一方不同 `origin_group` 且
+  独立于第一方（counterparty/regulator/observable_result）的已核证据支持时，
+  事件才可标 `corroborated`；同一 `origin_group` 的多份材料（同源双证）不得
+  升级为 corroborated。`asserted` 事件是第一方主张，不得表述为“已确认”。
+- 事件状态在 `out/README.md` 和 `event-intelligence.json` 中 asserted/corroborated
+  分列计数，corroborated 事件逐条列出 event_id 供复算。
+
 ## 如何补齐季度材料与事件证据
 
 1. 先把 `sources.csv` 中 `not_collected` 槽位替换或追加为真实 A/B/C 来源；同一

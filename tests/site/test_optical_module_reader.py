@@ -11,6 +11,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "out" / "光模块知识体系"
 SITE_PAGES = ROOT / "site" / "optical-module" / "pages.yaml"
+SITE_SECTIONS = ROOT / "site" / "optical-module" / "sections"
 
 
 class PageParser(HTMLParser):
@@ -172,6 +173,125 @@ class OpticalModuleReaderTest(unittest.TestCase):
         for filename in self.manifest["pages"]:
             text = (OUTPUT / filename).read_text(encoding="utf-8")
             self.assertEqual(text.count('class="active"'), 1, filename)
+
+    def test_status_section_semantics_and_evidence_tiers(self) -> None:
+        status_path = SITE_SECTIONS / "status.html"
+        self.assertTrue(status_path.is_file(), "status.html must exist")
+        text = status_path.read_text(encoding="utf-8")
+
+        # Verify section ID and data certainty
+        self.assertIn('id="status"', text)
+        self.assertIn('data-certainty="open"', text)
+
+        # Verify four certainty/knowledge reading tiers are explicitly explained
+        for token in ["事实（Fact）", "派生（Derived）", "候选（Candidate）", "UNKNOWN（未知"]:
+            self.assertIn(token, text)
+
+        # Verify four "cannot infer" boundaries are explicitly articulated
+        self.assertIn("Capability Overlap", text)
+        self.assertIn("不能推出供货或路线能力", text)
+        self.assertIn("Source Slot", text)
+        self.assertIn("不能推出研究结论覆盖", text)
+        self.assertIn("Reviewed Event", text)
+        self.assertIn("不能推出独立证实或真实出货", text)
+        self.assertIn("Shipment Observation", text)
+        self.assertIn("不能推出横向比较或市场份额", text)
+
+        # Verify no state machine or automated control plane keywords
+        self.assertNotIn("auto-close", text)
+        self.assertNotIn("auto-reopen", text)
+        self.assertNotIn("snapshot_lineage", text)
+        self.assertNotIn("receipt", text)
+
+    def test_audit_section_semantics_and_boundaries(self) -> None:
+        audit_path = SITE_SECTIONS / "audit.html"
+        self.assertTrue(audit_path.is_file(), "audit.html must exist")
+        text = audit_path.read_text(encoding="utf-8")
+
+        # Verify section ID and data certainty
+        self.assertIn('id="audit"', text)
+        self.assertIn('data-certainty="open"', text)
+
+        # Verify distinction between what can be answered and what cannot be answered
+        self.assertIn("已经连起来的内容", text)
+        self.assertIn("当前能回答什么", text)
+        self.assertIn("仍然不能确定的内容", text)
+        self.assertIn("当前不能回答与不可外推", text)
+
+        # Verify four "cannot infer" boundaries
+        self.assertIn("Capability Overlap", text)
+        self.assertIn("Source Slot", text)
+        self.assertIn("Reviewed Event", text)
+        self.assertIn("Shipment Observation", text)
+        self.assertIn("corroborated", text)
+
+        # Verify audit hypotheses are not asserted as canonical facts
+        self.assertIn("仅属审查契约输入", text)
+        self.assertNotIn("H1已成立为事实", text)
+        self.assertNotIn("H2已成立为事实", text)
+
+        # Verify knowledge reading rules and canonical boundary
+        self.assertIn("KN008–KN010", text)
+        self.assertIn("KN011", text)
+        self.assertIn("候选", text)
+        self.assertIn("UNKNOWN", text)
+
+        # Verify links to audit documents
+        self.assertIn("data-quality-ablation-independent-review-brief.md", text)
+        self.assertIn("kimi-data-quality-semantic-audit.md", text)
+        self.assertIn("cursor-data-quality-contract-ablation-audit.md", text)
+        self.assertIn("lights-out-remediation-outsourcing-plan.md", text)
+
+    def test_site_contract_nine_pages_and_twenty_seven_sections(self) -> None:
+        page_config = yaml.safe_load(SITE_PAGES.read_text(encoding="utf-8"))
+        # 8 modular pages + 1 home page (index.html) = 9 pages
+        pages = page_config["pages"]
+        self.assertEqual(len(pages), 8, "Expected exactly 8 modular pages in pages.yaml")
+        total_pages = len(pages) + 1
+        self.assertEqual(total_pages, 9, "Total reader site must have exactly 9 pages (no 10th page)")
+
+        # Total sections across all modular pages must be exactly 27
+        all_sections = [sec for page in pages for sec in page.get("sections", [])]
+        self.assertEqual(len(all_sections), 27, "Total section count must remain exactly 27")
+        self.assertEqual(len(all_sections), len(set(all_sections)), "Section IDs must be strictly unique")
+
+        # Confirm research page contains both status and audit sections
+        research_page = next((p for p in pages if p["id"] == "research"), None)
+        self.assertIsNotNone(research_page)
+        self.assertEqual(
+            research_page["sections"],
+            ["status", "candidate-foundation", "questions", "sources", "audit"],
+        )
+
+    def test_modular_sections_build_cleanly(self) -> None:
+        import sys
+
+        sys.path.insert(0, str(ROOT / "tools" / "site"))
+        import build_optical_module_site as site_builder
+
+        config = site_builder.load_config()
+        sections = site_builder.load_sections(config)
+        self.assertEqual(len(sections), 27)
+
+        pages = config["pages"]
+        section_to_page = {
+            section: page["file"] for page in pages for section in page["sections"]
+        }
+        research_page = next(p for p in pages if p["id"] == "research")
+        body = "\n".join(
+            site_builder.rewrite_links(sections[s_id], research_page, section_to_page)
+            for s_id in research_page["sections"]
+        )
+        self.assertIn('id="status"', body)
+        self.assertIn('id="audit"', body)
+        self.assertIn("Capability Overlap", body)
+        self.assertIn("Source Slot", body)
+        self.assertIn("Reviewed Event", body)
+        self.assertIn("Shipment Observation", body)
+        self.assertIn("事实（Fact）", body)
+        self.assertIn("派生（Derived）", body)
+        self.assertIn("候选（Candidate）", body)
+        self.assertIn("UNKNOWN", body)
 
 
 if __name__ == "__main__":

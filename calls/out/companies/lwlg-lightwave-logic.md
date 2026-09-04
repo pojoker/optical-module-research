@@ -1,6 +1,6 @@
-# Marvell：季度电话会卡
+# Lightwave Logic：季度电话会卡
 
-角色：`upstream_enabler`。纳入理由：光DSP、硅光、交换芯片与定制互连平台
+角色：`upstream_enabler`。纳入理由：电光聚合物调制器新材料路线与硅光集成商业化观察方
 
 ## 五级覆盖（本公司在该公司数中可复算）
 
@@ -10,16 +10,16 @@
 - 可用来源：4/4 个季度槽有 `available` 材料
 - 陈述登记：0 条 `claims.csv` 陈述（含 candidate/rejected）
 - 已核陈述：0 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：1 条已审核雷达事件（asserted 1 / corroborated 0）
+- 已核事件：0 条已审核雷达事件（asserted 0 / corroborated 0）
 
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
-| FY2027Q1 | [S_MRVL_2027Q1](https://investor.marvell.com/news-events/press-releases/detail/1023/marvell-technology-inc-reports-first-quarter-of-fiscal-year-2027-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
-| FY2026Q4 | [S_MRVL_2026Q4](https://investor.marvell.com/news-events/press-releases/detail/1011/marvell-technology-inc-reports-fourth-quarter-and-fiscal-year-2026-financial-results) | A | available | 公司官方季度及全年业绩与电话会入口 |
-| FY2026Q3 | [S_MRVL_2026Q3](https://investor.marvell.com/news-events/press-releases/detail/999/marvell-technology-inc-reports-third-quarter-of-fiscal-year-2026-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
-| FY2026Q2 | [S_MRVL_2026Q2](https://investor.marvell.com/news-events/press-releases/detail/989/marvell-technology-inc-reports-second-quarter-of-fiscal-year-2026-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
+| 2026Q2 | [S_LWLG_2026Q2](https://www.sec.gov/Archives/edgar/data/1325964/000107997326001097/lwlg_10q-063026.htm) | A | available | SEC 10-Q直接文件；不冒充电话会 |
+| 2026Q1 | [S_LWLG_2026Q1](https://www.sec.gov/Archives/edgar/data/1325964/000155335026000087/lwlg_10q-033126.htm) | A | available | SEC 10-Q直接文件；不冒充电话会 |
+| 2025FY | [S_LWLG_2025FY](https://www.sec.gov/Archives/edgar/data/1325964/000107997326000348/lwlg_10k-123125.htm) | A | available | SEC 10-K直接文件；不冒充电话会 |
+| 2025Q3 | [S_LWLG_2025Q3](https://www.sec.gov/Archives/edgar/data/1325964/000107997325001745/lwlg_10q-093025.htm) | A | available | SEC 10-Q直接文件；不冒充电话会 |
 
 ## 已审核管理层陈述
 

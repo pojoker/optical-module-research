@@ -2,6 +2,16 @@
 
 角色：`upstream_enabler`。纳入理由：交换ASIC、SerDes、光DSP、EML与CPO上游平台
 
+## 五级覆盖（本公司在该公司数中可复算）
+
+> 覆盖边界：信源底账行数只是采集记录，不等于结论覆盖；结论覆盖必须逐级看“季度槽 → 可用来源 → 陈述 → 已核陈述 → 已核事件”五级。`reviewed` / `anchor_reviewed` 仅表示原文已核；`corroborated` 才表示存在与第一方不同来源（不同 origin_group 且独立于第一方）的交叉支持；同源双证（同一 origin_group 的多份材料）不得升级为 corroborated。
+
+- 季度槽登记：4/4 个季度槽已登记（含未采集槽位）
+- 可用来源：4/4 个季度槽有 `available` 材料
+- 陈述登记：4 条 `claims.csv` 陈述（含 candidate/rejected）
+- 已核陈述：4 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
+- 已核事件：1 条已审核雷达事件（asserted 1 / corroborated 0）
+
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
@@ -12,6 +22,8 @@
 | FY2025Q3 | [S_AVGO_2025Q3](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2025-financial) | A | available | 公司官方季度业绩与电话会入口 |
 
 ## 已审核管理层陈述
+
+> `reviewed` 仅表示原文已核（说话人、原文、锚点经人工复核），不代表独立来源交叉证实。
 
 - `CL045` · fact · unknown · [S_AVGO_2025Q3](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2025-financial) `CEO quote in official FY2025 Q3 results`
   - 归纳：Broadcom称FY2025Q3 AI收入同比增长63%至52亿美元；只作为非光学需求背景
