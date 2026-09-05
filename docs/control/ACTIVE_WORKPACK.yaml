@@ -1,179 +1,101 @@
-# ACTIVE_WORKPACK — 当前唯一工作包（人工控制，无自动状态机）
-
+# 当前授权：日更可靠性修复。旧修复任务记录保留在 Git 历史，不据此判定其完成。
 workpack:
-  id: REMEDIATE-DQ-001
-  title: 四路关灯工场数据语义修复与产品方向复核
+  id: DAILY-RELIABILITY-001
+  title: 国内海外日更可靠性三包修复
   status: in_progress
-  approved_at: 2026-09-04
+  approved_at: 2026-09-05
   owner: 用户
-  authorization: 用户明确要求基于三方审计制定外包方案，由 CodeBuddy/OpenCode/Pi/AGY 开发，Codex 集成审核，再由 Kimi K3 与 Cursor Fable 5.1 复核
-
+  authorization: 用户要求关注日更逻辑问题、分包给其他人修复，由主代理检查结果；此前已授权限定项目内容发送给 CodeBuddy/OpenCode/Pi，并允许隔离 worktree 编辑、测试和本地提交。
 objective:
-  - 修复审计已确认的读者侧语义误导和派生层合同错误，不修改 canonical 数据。
-  - 通过四个隔离 worktree 并行实现四个互不重叠的低风险切片。
-  - 集成后由 Codex 审核代码、测试与产品语义，并形成当前产品方向报告。
-  - 由 Kimi K3 与 Cursor Fable 5.1 对集成结果和方向报告独立复核。
-
+  - 国内日更避免无条件历史全量重抓，运行中断可观察且后续重跑不会丢数据。
+  - 海外采集正确识别文章、发布日期和抓取失败，修正已配置失效端点。
+  - 日报明确区分运行完成、部分失败、未运行与覆盖不足，不将零提取当作零新闻。
 baseline:
   repository: pojoker/optical-module-research
-  branch: main
-  commit: 7ff3b25cfd0ff3b137ec55471c7ad33dd5060510
-  audit_as_of: 2026-09-04
-
+  commit: c695614ae1587168dd31d98d5eed8a9521ada94f
+  integration_branch: codex/fix-daily-reliability-20260905
 reader_visible_deliverables:
-  - 能力明细不再把过程型判定串冒充证据等级，且不把粗粒度 cell overlap 表述成产品/路线能力
-  - 海外输出显式区分 slot/source/claim/reviewed/event 覆盖及 asserted/corroborated
-  - 出货量、锚点和关系边的页面展示明确不可比范围与证据边界
-  - 九页前端的审计与状态区说明当前可回答、不可回答和证据限制
-  - docs/plans/2026-09-04-lights-out-remediation-outsourcing-plan.md
-  - docs/reviews/2026-09-04-post-remediation-codex-review.md
-  - docs/reviews/2026-09-04-product-direction-after-remediation.md
-  - docs/reviews/2026-09-04-kimi-k3-product-direction-review.md
-  - docs/reviews/2026-09-04-cursor-fable-5-1-product-direction-review.md
-
+  - 可复核的国内与海外采集结果及诚实的合并日报
+  - docs/plans/2026-09-05-daily-reliability-packages.md
+  - docs/reviews/2026-09-05-daily-reliability-review.md
 allowed_write_paths:
-  - AGENTS.md
-  - docs/control/PROJECT_CHARTER.md
   - docs/control/ACTIVE_WORKPACK.yaml
-  - docs/plans/2026-09-04-lights-out-remediation-outsourcing-plan.md
-  - build_detailed_capability_report.py
-  - tests/test_capability_report_semantics.py
-  - calls/renderer.py
-  - calls/README.md
-  - calls/tests/test_reader_semantics.py
-  - render.py
-  - tests/test_render_data_quality_boundaries.py
-  - site/optical-module/sections/audit.html
-  - site/optical-module/sections/status.html
-  - tests/site/test_optical_module_reader.py
-  - calls/out/**
-  - out/光模块知识体系/**
-  - docs/reviews/2026-09-04-post-remediation-codex-review.md
-  - docs/reviews/2026-09-04-product-direction-after-remediation.md
-  - docs/reviews/2026-09-04-kimi-k3-product-direction-review.md
-  - docs/reviews/2026-09-04-cursor-fable-5-1-product-direction-review.md
-
-worker_write_scopes:
-  codebuddy_hy4:
-    - build_detailed_capability_report.py
-    - tests/test_capability_report_semantics.py
-  opencode_omen_alpha:
-    - calls/renderer.py
-    - calls/README.md
-    - calls/tests/test_reader_semantics.py
-  pi_glm_5_3_flash:
-    - render.py
-    - tests/test_render_data_quality_boundaries.py
-  agy_gemini_3_8_flash:
-    - site/optical-module/sections/audit.html
-    - site/optical-module/sections/status.html
-    - tests/site/test_optical_module_reader.py
-
+  - docs/plans/2026-09-05-daily-reliability-packages.md
+  - docs/reviews/2026-09-05-daily-reliability-*.md
+  - domestic_daily/core.py
+  - domestic_daily/cli.py
+  - corpus/_fetch_qa.py
+  - tests/test_domestic_daily.py
+  - calls/http_discovery.py
+  - calls/daily_discovery.py
+  - calls/discovery_config.json
+  - calls/tests/test_http_discovery.py
+  - calls/tests/test_daily_discovery.py
+  - daily_intelligence/core.py
+  - daily_intelligence/cli.py
+  - tests/test_daily_intelligence.py
 read_scope:
   allowed:
     - AGENTS.md
     - docs/control/PROJECT_CHARTER.md
     - docs/control/ACTIVE_WORKPACK.yaml
-    - docs/reviews/2026-09-04-data-quality-ablation-independent-review-brief.md
-    - docs/reviews/2026-09-04-kimi-data-quality-semantic-audit.md
-    - docs/reviews/2026-09-04-cursor-data-quality-contract-ablation-audit.md
-    - docs/plans/2026-09-04-lights-out-remediation-outsourcing-plan.md
+    - docs/plans/2026-09-05-daily-reliability-packages.md
     - README.md
-    - 每个 worker 写入路径及其直接依赖、fixtures 和测试
-    - canonical CSV/YAML 只读输入
-    - site/optical-module/**
-    - tools/site/**
-    - calls/out/**
-    - out/光模块知识体系/**
-    - 本工作包明确创建的四个 worktree
+    - 当前分包文件及其直接依赖、针对性测试与 fixtures
+    - calls/*.csv 与根级 CSV/YAML 作为只读输入
+    - CONTEXT.md 与相关 docs/adr
+    - 当前任务三个隔离 worktree 与其 diff
+    - /Users/jowang/Downloads/workflow-rehearsal-daily-state 的运行摘要与失败清单（只读）
+    - 公开官方网站（只读请求）
   forbidden:
     - archive/**
     - closure-pilot 与状态机材料
     - 旧 worktree 和无关分支
-    - 完整 agent 轨迹和旧会话全量日志
-    - 并行开发者的终端记录和未完成输出
-
+    - 完整 agent 轨迹、旧会话全量日志与其他 worker 未完成输出
 canonical_policy:
   writable: false
-  protected:
-    - knowledge.yaml
-    - points.csv
-    - edges.csv
-    - triage.csv
-    - route_bom.csv
-    - tree.yaml
-    - shipments.csv
-    - macro_evidence.csv
-    - company_segment_revenue.csv
-    - capability_details.csv
-    - calls/*.csv
-
+worker_write_scopes:
+  codebuddy:
+    - domestic_daily/core.py
+    - domestic_daily/cli.py
+    - corpus/_fetch_qa.py
+    - tests/test_domestic_daily.py
+    - docs/reviews/2026-09-05-daily-reliability-codebuddy.md
+  opencode:
+    - calls/http_discovery.py
+    - calls/daily_discovery.py
+    - calls/discovery_config.json
+    - calls/tests/test_http_discovery.py
+    - calls/tests/test_daily_discovery.py
+    - docs/reviews/2026-09-05-daily-reliability-opencode.md
+  pi:
+    - daily_intelligence/core.py
+    - daily_intelligence/cli.py
+    - tests/test_daily_intelligence.py
+    - docs/reviews/2026-09-05-daily-reliability-pi.md
 worker_models:
   codebuddy: hy4-preview
-  opencode: omen-alpha（启动前以本机模型列表确认精确 ID，不得静默替代）
-  pi: glm-5.3-flash（启动前确认 provider/model）
-  agy: gemini-3.8-flash（启动前确认精确 ID）
-  kimi_reviewer: kimi-k3（启动前确认精确 alias）
-  cursor_reviewer: fable-5.1（启动前确认精确 ID）
-
-execution_order:
-  - 固定基线并建立外包方案
-  - 建立四个隔离 worktree 和 cmux 可视窗格
-  - 四路并行开发并各自提交
-  - Codex 逐分支代码审核、运行测试并选择性集成
-  - 生成 reader outputs 并执行全仓机器门
-  - Codex 输出产品方向与理解报告
-  - Kimi K3 与 Cursor Fable 5.1 独立复核报告
-  - 汇总分歧与 UNKNOWN，等待用户决定是否推送
-
+  opencode: opencode-go/omen-alpha
+  pi: opencode-go/glm-5.3-flash
 non_goals:
-  - 不修改任何 canonical 数据
-  - 不拆分 C5/M1/MOD1 或新增关系类型
-  - 不合并海外 sources/claims 与 event 链 schema
-  - 不删除 canonical/legacy 表或执行真正消融
-  - 不新增状态机、receipt、manifest、snapshot lineage 或自动 close/reopen
-  - 未获授权不提交到远端；本次控制文档更新按下方明确授权推送工作分支，不合并 PR 或推送 main
-  - 不把机器门通过表述为领域结论完成
-
+  - 不晋升候选，不修改 canonical，不重建正式网页或 calls/out
+  - 不扩充其余 74 个监控实体端点，不改变公司宇宙
+  - 不改系统调度设置，不读密钥，不绕过登录或反爬
+  - 不新增通用状态机、控制平面或领域 schema
+  - 不自动推送，不合并 main，不删除旧 worktree 或运行数据
 acceptance_criteria:
-  - 四个开发分支从同一基线建立且写入范围互不重叠。
-  - 每个切片有针对性测试，并明确 reader-visible 行为变化。
-  - Codex 审核未发现越级推导、canonical 写入或无依据 schema 扩张。
-  - 集成后 scan/render/participation/calls 机器门和站点测试通过。
-  - 产品方向报告区分已修复、仍属数据问题、需架构裁决和 UNKNOWN。
-  - Kimi 与 Cursor 复核完成前互不读取对方报告。
-
+  - 每包有针对实际失败模式的回归测试、范围内实现及简短交付报告。
+  - 国内覆盖成功增量、首轮回填、失败不推进水位、重跑去重和中断可观察。
+  - 海外覆盖导航误选、日期来源、详情失败报告和真实端点核验。
+  - 合并日报对缺失、过期、部分失败与覆盖不足显式降级，不输出误导的无新闻结论。
+  - 主代理审核 diff、运行针对性及整合机器门，canonical 前后不变。
 architecture_budget:
   new_relation_types: []
   new_state_machines: []
   new_canonical_schemas: []
   new_engines: []
-
+  note: 仅允许现有采集器的轻量进度、水位、错误记录与候选输出字段兼容扩展。
 stop_and_escalate:
-  - 任一指定模型在本地不可用，且只能通过替换模型继续
-  - 任一 worker 需要修改其写入范围之外的文件
-  - 任一 worker 修改 canonical 或依赖禁读材料
-  - 修复需要新增 schema、关系类型或状态机
-  - 并行分支无法在不改变领域语义的情况下集成
-  - 机器门失败且修复会扩大工作包
-  - 复核需要登录、验证码、付费来源或绕过访问控制
-
-# 保留上方修复任务的现有状态；本次不据此宣告其完成或重启多代理任务。
-control_document_update:
-  approved_at: 2026-09-05
-  authorization: 用户确认更新 AGENTS.md 建议，并纠正目标仓库为 pojoker/optical-module-research，明确要求重新推送。
-  scope:
-    - AGENTS.md
-    - docs/control/PROJECT_CHARTER.md
-    - docs/control/ACTIVE_WORKPACK.yaml
-  deliverable: 明确授权延续、局部暂停、只读审阅、隔离 worktree、精简交接与按影响验证规则。
-  constraints:
-    - 保留北极星、证据类型边界、canonical 晋升及新架构的人工裁决。
-    - 不修改代码、canonical、网页或原修复任务的完成状态。
-    - 仅提交本次三份文档并推送当前工作分支，不合并 main。
-  push_target:
-    repository: https://github.com/pojoker/optical-module-research.git
-    branch: codex/remediate-data-semantics-20260904
-  verification:
-    - 检查文档规则一致性、YAML 可解析及 git diff --check。
-    - 核对暂存区仅包含本次三份文档；执行仓库提交钩子要求的验证。
+  - 超出分包写入范围时暂停对应修改并反馈
+  - 缺指定模型、需密钥或登录时反馈，不静默换模型
+  - 需要改 canonical、领域语义或新增架构时提交用户裁决
