@@ -112,18 +112,229 @@ def _require_disjoint_output(output_root: Path, *input_roots: Path) -> None:
             )
 
 
+def _int_field(mapping: dict[str, Any] | None, key: str) -> int | None:
+    if not isinstance(mapping, dict) or key not in mapping:
+        return None
+    value = mapping[key]
+    if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+        return None
+    return value
+
+
+RUN_STATUSES = ("running", "complete", "partial", "failed")
+_COLLECTION_SEVERITY = {"complete": 0, "unknown": 1, "partial": 2, "failed": 3}
+
+
+def _worse_collection(left: str, right: str) -> str:
+    return left if _COLLECTION_SEVERITY[left] >= _COLLECTION_SEVERITY[right] else right
+
+
+NONFAILURE_FAILURE_TYPES = {"no_relevant_content"}
+COVERAGE_FIELDS = (
+    "endpoint_count",
+    "endpoint_failed",
+    "configured_entity_count",
+    "monitored_entity_count",
+    "missing_endpoint_count",
+)
+
+
+def _domestic_collection_state(
+    manifest: dict[str, Any] | None,
+    run_status: dict[str, Any] | None,
+    report_present: bool,
+) -> dict[str, Any]:
+    manifest_status = manifest.get("run_status") if manifest else None
+    if manifest_status not in RUN_STATUSES or manifest_status == "running":
+        manifest_status = None
+    doc_status = run_status.get("status") if isinstance(run_status, dict) else None
+    if doc_status not in RUN_STATUSES:
+        doc_status = None
+    doc_errors = 0
+    if isinstance(run_status, dict):
+        raw_errors = run_status.get("errors")
+        if isinstance(raw_errors, (list, tuple)):
+            doc_errors = len(raw_errors)
+        elif isinstance(raw_errors, int) and not isinstance(raw_errors, bool):
+            doc_errors = raw_errors
+    manifest_log_failures = 0
+    if isinstance(manifest, dict) and isinstance(manifest.get("logs"), list):
+        manifest_log_failures = sum(
+            1 for entry in manifest["logs"] if isinstance(entry, str) and "失败" in entry
+        )
+    processed = _int_field(run_status, "processed")
+    total = _int_field(run_status, "total")
+    updated_at = run_status.get("updated_at") if isinstance(run_status, dict) else None
+    if not isinstance(updated_at, str):
+        updated_at = None
+    notes: list[str] = []
+
+    if doc_status == "running":
+        # 遗留/当前 running 只证明未完成，不能被 manifest 的 complete 声明覆盖。
+        status = "unknown" if report_present else "partial"
+        if not report_present:
+            notes.append(
+                "国内采集未完成：run-status=running；遗留 running 只证明未完成，"
+                "不能推断进程仍在运行或已被终止"
+            )
+        elif manifest_status == "complete":
+            notes.append(
+                "manifest 声称 complete 但当前 run-status=running："
+                "running 只证明未完成，完成度存疑"
+            )
+        else:
+            notes.append("当日报告已存在但 run-status 仍为 running：完成度无法确认")
+    else:
+        claims = [s for s in (manifest_status, doc_status) if s is not None]
+        if not claims:
+            status = "unknown"
+            notes.append(
+                "缺少当日国内日报且无采集完成信息，不推断采集成功"
+                if not report_present
+                else "国内输入未提供 run_status 完成字段，不推断采集成功"
+            )
+        else:
+            status = max(claims, key=lambda s: _COLLECTION_SEVERITY[s])
+            if len(set(claims)) > 1:
+                notes.append(
+                    f"manifest run_status={manifest_status} 与 run-status status={doc_status} "
+                    "冲突，按更保守结果记录"
+                )
+            if not report_present:
+                if status == "complete":
+                    status = "unknown"
+                    notes.append("存在 complete 声明但当日报告缺失，完成度存疑")
+                elif status == "unknown":
+                    notes.append("缺少当日国内日报且无采集完成信息，不推断采集成功")
+                else:
+                    notes.append("当日国内日报缺失，按 run 状态记录为未完成")
+
+    if doc_errors:
+        if status == "complete":
+            status = "partial"
+        notes.append(f"run-status 记录 {doc_errors} 条错误摘要，完成度存疑")
+    if manifest_log_failures:
+        if status == "complete":
+            status = "partial"
+        notes.append(f"manifest logs 记录 {manifest_log_failures} 条失败条目，完成度存疑")
+
+    progress = None
+    if processed is not None or total is not None:
+        progress = f"{processed if processed is not None else '?'}/{total if total is not None else '?'}"
+    return {
+        "status": status,
+        "manifest_run_status": manifest_status,
+        "run_status_file": doc_status,
+        "processed": processed,
+        "total": total,
+        "updated_at": updated_at,
+        "progress": progress,
+        "notes": notes,
+    }
+
+
+def _overseas_collection_state(summary: dict[str, Any]) -> dict[str, Any]:
+    state: dict[str, Any] = {
+        "status": "unknown",
+        "endpoint_count": None,
+        "endpoint_failed": None,
+        "endpoint_succeeded": None,
+        "configured_entity_count": None,
+        "monitored_entity_count": None,
+        "missing_endpoint_count": None,
+        "article_fetch_failure": None,
+        "invalid_item": None,
+        "notes": [],
+    }
+    if not summary:
+        state["notes"] = ["缺少海外 run-summary，采集健康度未知，不推断采集成功"]
+        return state
+    state["endpoint_count"] = _int_field(summary, "endpoint_count")
+    state["endpoint_failed"] = _int_field(summary, "endpoint_failed")
+    state["endpoint_succeeded"] = _int_field(summary, "endpoint_succeeded")
+    state["configured_entity_count"] = _int_field(summary, "configured_entity_count")
+    state["monitored_entity_count"] = _int_field(summary, "monitored_entity_count")
+    state["missing_endpoint_count"] = _int_field(summary, "missing_endpoint_count")
+    if "failure_types" not in summary:
+        failure_types: dict[str, Any] = {}
+        failure_types_unknown = True
+    elif isinstance(summary["failure_types"], dict):
+        failure_types = summary["failure_types"]
+        failure_types_unknown = False
+    else:
+        failure_types = {}
+        failure_types_unknown = True
+    state["article_fetch_failure"] = _int_field(summary, "article_fetch_failure")
+    if state["article_fetch_failure"] is None:
+        state["article_fetch_failure"] = _int_field(failure_types, "article_fetch_failure")
+    state["invalid_item"] = _int_field(failure_types, "invalid_item")
+
+    notes: list[str] = []
+    degraded = False
+    unknown = False
+    if state["endpoint_failed"] is None:
+        unknown = True
+        notes.append("run-summary 缺少 endpoint_failed，不能默认端点全部成功")
+    elif state["endpoint_failed"] > 0:
+        degraded = True
+    if state["endpoint_succeeded"] is None:
+        notes.append("endpoint_succeeded 未提供：端点成功数为 UNKNOWN（已配置不等于成功）")
+    for field in COVERAGE_FIELDS:
+        if _int_field(summary, field) is None:
+            unknown = True
+            notes.append(f"run-summary 缺少 {field}，采集覆盖不完整程度未知")
+    if state["missing_endpoint_count"] and state["missing_endpoint_count"] > 0:
+        degraded = True
+    if (
+        state["configured_entity_count"] is not None
+        and state["monitored_entity_count"] is not None
+        and state["configured_entity_count"] < state["monitored_entity_count"]
+    ):
+        degraded = True
+        notes.append(
+            f"仅 {state['configured_entity_count']}/{state['monitored_entity_count']} 个监控实体配置了端点；"
+            "这是配置覆盖，不代表采集成功或研究覆盖"
+        )
+    if state["article_fetch_failure"]:
+        degraded = True
+    if state["invalid_item"]:
+        degraded = True
+    for failure_type, count in failure_types.items():
+        if failure_type in NONFAILURE_FAILURE_TYPES:
+            continue
+        if _int_field(failure_types, str(failure_type)):
+            degraded = True
+            notes.append(f"failure_types 记录 {failure_type}×{count}，采集存在未归类的获取失败")
+    if failure_types_unknown:
+        unknown = True
+        notes.append("run-summary 缺少 failure_types 或格式异常，失败诊断未知，不推断无失败")
+    state["status"] = "partial" if degraded else ("unknown" if unknown else "complete")
+    state["notes"] = notes
+    return state
+
+
 def _load_domestic(root: Path, run_date: str) -> dict[str, Any]:
     report_path = root / "daily" / f"{run_date}.txt"
     manifest_path = root / "manifest.json"
+    run_status_path = root / "run-status.json"
     report, report_error = _read_text(report_path)
     manifest, manifest_error = _read_json(manifest_path)
+    run_status, run_status_error = _read_json(run_status_path)
     errors = [error for error in (report_error, manifest_error) if error]
-
+    if run_status_error and not run_status_error.startswith("missing:"):
+        errors.append(f"run-status.json invalid: {run_status_error}")
+        run_status = None
+    if run_status is not None and run_status.get("run_date") != run_date:
+        errors.append(
+            f"run-status date mismatch: expected {run_date}, got {run_status.get('run_date')!r}"
+        )
+        run_status = None
     if manifest is not None and manifest.get("date") != run_date:
         errors.append(
             f"manifest date mismatch: expected {run_date}, got {manifest.get('date')!r}"
         )
         manifest = None
+    collection = _domestic_collection_state(manifest, run_status, report is not None)
 
     digest = manifest.get("digest", {}) if manifest else {}
     if not isinstance(digest, dict):
@@ -155,6 +366,8 @@ def _load_domestic(root: Path, run_date: str) -> dict[str, Any]:
         "report": report,
         "report_path": str(report_path.resolve()),
         "manifest_path": str(manifest_path.resolve()),
+        "run_status_path": str(run_status_path.resolve()),
+        "collection": collection,
         "summary": summary,
         "errors": errors,
     }
@@ -173,12 +386,14 @@ def _load_overseas(root: Path, run_date: str) -> dict[str, Any]:
             f"run-summary date mismatch: expected {run_date}, got {summary.get('run_date')!r}"
         )
         summary = None
+    collection = _overseas_collection_state(summary or {})
     return {
         "available": report is not None,
         "report": report,
         "report_path": str(report_path.resolve()),
         "summary_path": str(summary_path.resolve()),
         "candidates_path": str(candidates_path.resolve()),
+        "collection": collection,
         "summary": summary or {},
         "candidates": candidates or {},
         "errors": errors,
@@ -220,11 +435,38 @@ def _overseas_event_line(event: dict[str, Any]) -> str:
     )
 
 
-def _render_markdown(run_date: str, domestic: dict[str, Any], overseas: dict[str, Any]) -> str:
+def _fmt_count(value: int | None) -> str:
+    return "UNKNOWN" if value is None else str(value)
+
+
+def _domestic_collection_lines(collection: dict[str, Any]) -> list[str]:
+    details: list[str] = []
+    if collection.get("run_status_file"):
+        details.append(f"run-status={collection['run_status_file']}")
+    if collection.get("manifest_run_status"):
+        details.append(f"manifest run_status={collection['manifest_run_status']}")
+    if collection.get("progress"):
+        details.append(f"已处理 {collection['progress']}")
+    if collection.get("updated_at"):
+        details.append(f"更新于 {collection['updated_at']}")
+    line = f"- 国内采集状态：{collection['status']}"
+    if details:
+        line += f"（{'，'.join(details)}）"
+    return [line] + [f"- {note}" for note in collection["notes"]]
+
+
+def _render_markdown(
+    run_date: str,
+    domestic: dict[str, Any],
+    overseas: dict[str, Any],
+    assembly_status: str,
+) -> str:
+    domestic_collection = domestic["collection"]
+    overseas_collection = overseas["collection"]
+    collection_status = _worse_collection(
+        domestic_collection["status"], overseas_collection["status"]
+    )
     overseas_summary = overseas["summary"]
-    configured = _count(overseas_summary.get("configured_entity_count"))
-    monitored = _count(overseas_summary.get("monitored_entity_count"))
-    missing_endpoints = _count(overseas_summary.get("missing_endpoint_count"))
     if domestic["report"] is None:
         lines = [f"# 日报 {run_date}", "", f"> 国内日报未生成：`{domestic['report_path']}`"]
     else:
@@ -250,7 +492,10 @@ def _render_markdown(run_date: str, domestic: dict[str, Any], overseas: dict[str
             lines.append(f"> 海外数据模式：{fetch_mode}，来源模式未确认。")
         lines.extend(_overseas_event_line(event) for event in events)
         if not events:
-            lines.append("- 无事件增量")
+            if overseas_collection["status"] == "complete":
+                lines.append("- 无事件增量")
+            else:
+                lines.append("- 本次未提取到事件，采集不完整，不能判断无新消息")
         lines.extend(
             [
                 "",
@@ -260,11 +505,38 @@ def _render_markdown(run_date: str, domestic: dict[str, Any], overseas: dict[str
                     f"原子主张 {_count(overseas_summary.get('claim_candidates'))} 条 / "
                     f"证据 {_count(overseas_summary.get('evidence_candidates'))} 条"
                 ),
-                f"- 覆盖 {configured}/{monitored} 个监控实体；缺端点 {missing_endpoints} 个；抓取失败 {_count(overseas_summary.get('endpoint_failed'))} 个",
+                (
+                    f"- 端点 {_fmt_count(overseas_collection['endpoint_count'])} 个："
+                    f"成功 {_fmt_count(overseas_collection['endpoint_succeeded'])} / "
+                    f"失败 {_fmt_count(overseas_collection['endpoint_failed'])}"
+                ),
+                (
+                    f"- 已配置端点覆盖 {_fmt_count(overseas_collection['configured_entity_count'])}/"
+                    f"{_fmt_count(overseas_collection['monitored_entity_count'])} 个监控实体"
+                    "（配置覆盖，不代表采集成功或研究覆盖）；"
+                    f"缺端点 {_fmt_count(overseas_collection['missing_endpoint_count'])} 个"
+                ),
+                (
+                    f"- 详情抓取失败 {_fmt_count(overseas_collection['article_fetch_failure'])} 条；"
+                    f"格式拒收（invalid_item）{_fmt_count(overseas_collection['invalid_item'])} 条"
+                ),
                 f"- 交叉确认建议 {_count(overseas_summary.get('corroboration_suggestions'))} 条，等待人工批准",
                 "> 海外自动结果均为候选，未写入正式账本。",
             ]
         )
+    lines.extend(
+        [
+            "",
+            "## 汇总状态",
+            f"- 组装状态 assembly_status：{assembly_status}"
+            "（两份日报与输入文件是否齐全、可读、日期匹配）",
+            f"- 采集状态 collection_status：{collection_status}"
+            "（采集健康度，与组装完整性分开评估；unknown 表示字段缺失、不推断成功）",
+        ]
+    )
+    lines.extend(_domestic_collection_lines(domestic_collection))
+    lines.append(f"- 海外采集状态：{overseas_collection['status']}")
+    lines.extend(f"- {note}" for note in overseas_collection["notes"])
     for error in domestic["errors"]:
         lines.append(f"- 国内输入异常：{error}")
     for error in overseas["errors"]:
@@ -297,16 +569,26 @@ def combine_daily_reports(
         and not overseas["errors"]
         else "partial"
     )
+    collection_status = _worse_collection(
+        domestic["collection"]["status"], overseas["collection"]["status"]
+    )
 
     payload = {
         "run_date": run_date,
         "assembly_status": assembly_status,
+        "collection_status": collection_status,
+        "collection": {
+            "domestic": domestic["collection"],
+            "overseas": overseas["collection"],
+        },
         "domestic": {key: value for key, value in domestic.items() if key != "report"},
         "overseas": {
             key: value for key, value in overseas.items() if key not in {"report", "candidates"}
         },
     }
-    _atomic_write(markdown_path, _render_markdown(run_date, domestic, overseas))
+    _atomic_write(
+        markdown_path, _render_markdown(run_date, domestic, overseas, assembly_status)
+    )
     _atomic_write(
         json_path,
         json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
