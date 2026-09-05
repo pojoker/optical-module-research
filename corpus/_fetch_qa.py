@@ -21,7 +21,17 @@ H={'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537
    'Referer':'https://irm.cninfo.com.cn/'}
 EMPTY_PAT=re.compile(r'^(尊敬的投资者[，,]?)?(您好[！!。]?)?(感谢您?的?(关注|提问)[和与及]?(支持)?[！!。，,]?)*(请|敬请)?(您)?(关注|参考|以)公司?(定期报告|公告|披露)(为准)?[。！!]?(谢谢[！!。]?)?$')
 MIN_INTERVAL=1.25
+MAX_PAGES=40
 _LAST_REQUEST=0.0
+FULL_SNAPSHOT_SINCE='2023-01-01'  # 该起点视为全量快照；增量窗口不做"快照缩水"比较
+_trunc={'v':False,'reason':''}    # 本轮分页被截断(达上限/重复页)：结果不完整，必须报错不能当成功
+
+class FetchFailure(RuntimeError):
+    """所有通道都没有产出，与"真实零条"区分开。
+
+    事故教训(2026-09-05): fetch() 曾把"主通道不可用 + p5w 兜底也无产出"返回成 None/0,
+    调用方 `or []` 之后与"确实没有新问答"不可区分, 抓取失败被当成成功无增量。
+    """
 
 def request(method,url,**kwargs):
     """全站统一限速；HTTP/连接失败抛错，不能与“真实零结果”混淆。"""
@@ -106,15 +116,23 @@ def fetch_p5w(code,since):
             o=choices[0]
             pid=o.get('pid') or o.get('companyBaseinfoId') or o.get('id')
     if not pid: print(f'[{code}] p5w pid未找到(页面+建议接口均无)'); return None
-    items=[];page=1;seen=set()
-    while page<=60:
+    items=[];page=1;seen=set();prev_sig=None
+    while page<=MAX_PAGES:
         r=request('POST','https://ir.p5w.net/interaction/getNewR.shtml',
             data={'companyBaseinfoId':pid,'isPagination':'1','page':page,'rows':10},headers=HP,timeout=20)
         rows=(r.json().get('rows') or [])
         new=[x for x in rows if x.get('pid') not in seen]
+        sig=tuple(str(x.get('pid')) for x in rows)
+        if sig and sig==prev_sig:
+            _trunc['v']=True; _trunc['reason']=f'p5w第{page}页与上一页重复,服务端未翻页'
+            print(f'[{code}] {_trunc["reason"]},结果不完整')
+            break
+        prev_sig=sig
         if not new: break
         for x in new: seen.add(x.get('pid'))
         items+=new; page+=1; time.sleep(1.5)
+    else:
+        _trunc['v']=True; _trunc['reason']=f'p5w分页达到上限{MAX_PAGES}页'
     out=[];today=datetime.date.today().isoformat();name=''
     for a in items:
         name=a.get('companyShortname') or name
@@ -146,7 +164,10 @@ def fetch_sse(code,since):
         chunk=re.split(r'id="item-\d+"',rr.text)[1:]
         if not chunk: break
         items+=chunk; page+=1; time.sleep(2)
-        if page>40: break
+        if page>MAX_PAGES:
+            _trunc['v']=True; _trunc['reason']=f'上证e互动分页达到上限{MAX_PAGES}页'
+            print(f'[{code}] {_trunc["reason"]},结果不完整')
+            break
     out=[];today=datetime.date.today().isoformat()
     DATE=re.compile(r'(\d{4})年(\d{2})月(\d{2})日')
     for it in items:
@@ -175,7 +196,7 @@ def fetch_irm(code,since):
     secid,name=secid_of(code)
     if not secid:
         print(f'[{code}] secid未找到'); return None
-    rows=[];page=1
+    rows=[];page=1;prev_sig=None
     while True:
         r=request('GET','https://irm.cninfo.com.cn/newircs/search/searchResult',params={
             'stockCodes':f'{secid}_{code}','keywords':'','infoTypes':'11',
@@ -185,7 +206,20 @@ def fetch_irm(code,since):
         d=r.json().get('data') or {}
         res=d.get('results') or []
         rows+=res
-        if page>=int(d.get('totalPage') or 0) or not res: break
+        if not res: break
+        # 服务端不翻页(重复返回同一页)时立即停止，避免 40 页 × 睡眠拖垮日更
+        sig=tuple(str(x.get('indexId') or '') for x in res)
+        if sig and sig==prev_sig:
+            _trunc['v']=True; _trunc['reason']=f'主通道第{page}页与上一页重复,服务端未翻页'
+            print(f'[{code}] {_trunc["reason"]},结果不完整')
+            break
+        prev_sig=sig
+        total=int(d.get('totalPage') or 0)
+        if total and page>=total: break
+        if page>=MAX_PAGES:
+            _trunc['v']=True; _trunc['reason']=f'主通道分页达到上限{MAX_PAGES}页(totalPage={total or "未知"})'
+            print(f'[{code}] {_trunc["reason"]},结果不完整')
+            break
         page+=1; time.sleep(2)
     out=[]
     today=datetime.date.today().isoformat()
@@ -210,40 +244,72 @@ def fetch_irm(code,since):
     print(f'[{code} {name}] {len(out)}条(空回答{n_empty}) → {fp}')
     return len(out)
 
-_p5w_down = {'v': False}  # 熔断: p5w首个连接失败后本轮跳过(2026-08-21: p5w不可达×重试预算→日更60min超时事故)
+_p5w_down = {'v': False, 'reason': ''}  # 熔断: p5w首个连接失败后本轮跳过(2026-08-21: p5w不可达×重试预算→日更60min超时事故)
 
 def _p5w_guarded(code, since):
-    """p5w调用带熔断; 失败置down并记日志, 本轮后续直接跳过。"""
+    """p5w调用带熔断; 失败置down并记原因, 本轮后续直接跳过。返回 None=无产出(不等于零条)。"""
     if _p5w_down['v']:
-        print(f'[{code}] p5w已熔断,跳过')
+        print(f'[{code}] p5w已熔断,跳过({_p5w_down.get("reason","")})')
         return None
     try:
         return fetch_p5w(code, since)
     except Exception as e:
         _p5w_down['v'] = True
+        _p5w_down['reason'] = f'{type(e).__name__}: {str(e)[:60]}'
         print(f'[{code}] p5w失败触发熔断,本轮后续跳过: {str(e)[:60]}')
         return None
+
+def _primary(code,since):
+    """主通道按市场分派。返回 (条数或None, 失败原因)：None=通道未产出(不可用), int=产出条数。"""
+    if code.startswith('6'):
+        return fetch_sse(code,since),'上证e互动uid未找到'
+    if code.startswith('0') or code.startswith('3'):
+        return fetch_irm(code,since),'互动易secid未找到'
+    return None,'交易所归属未知'
 
 def fetch(code,since):
     """主通道按市场分派；0条/失败时全景网兜底(全市场镜像,含沪深,纪律9双通道)。
     2026-08-15勘误: 主通道"部分返回"(非零但远低于历史)也会绕过兜底并覆盖写入丢历史;
     故非零也按"缩水"判定走p5w, 且各通道改并集合并落盘(见_merge_write)。
-    2026-08-21: p5w调用改经_p5w_guarded熔断(连接失败一次本轮不再尝试)。"""
-    if code.startswith('6'):
-        n=fetch_sse(code,since)
-    elif code.startswith('92') or code.startswith('8'):
-        return _p5w_guarded(code,since)   # 勘误2026-07-28:北交所有平台=全景网ir.p5w.net(原生通道即此)
-    else:
-        n=fetch_irm(code,since)
+    2026-08-21: p5w调用改经_p5w_guarded熔断(连接失败一次本轮不再尝试)。
+    2026-09-05勘误: 通道全部无产出(返回None)时抛 FetchFailure, 不再返回 0/None——
+    否则调用方无法区分"抓取失败"和"确实没有新问答", 会把失败当成成功无增量。"""
+    _trunc['v']=False; _trunc['reason']=''
+    if code.startswith('92') or code.startswith('8'):
+        n=_p5w_guarded(code,since)   # 勘误2026-07-28:北交所有平台=全景网ir.p5w.net(原生通道即此)
+        if n is None:
+            raise FetchFailure(f'[{code}] 北交所原生通道p5w无产出({_p5w_down.get("reason") or "pid未找到"})')
+        if _trunc['v']:
+            raise FetchFailure(f'[{code}] 北交所原生通道分页被截断({_trunc["reason"]}): 已抓{n}条已落盘,但不完整')
+        return n
+    n,reason=_primary(code,since)
+    if _trunc['v']:
+        raise FetchFailure(f'[{code}] 主通道分页被截断({_trunc["reason"]}): 已抓{n}条已落盘,但不完整,不得推进水位')
     if not n:
         m=_p5w_guarded(code,since)
-        if m: print(f'[{code}] 主通道{n},p5w兜底{m}条(前科:002792/600641/688079主通道假阴性)')
-        return m if m is not None else n
-    # 兜底加宽: 主通道非零但缩水(<现有快照50%且快照>20)也走p5w, 两通道并集合并落盘
-    snap=_snapshot_count(code)
-    if snap>20 and n<0.5*snap:
-        m=_p5w_guarded(code,since)
-        if m: print(f'[{code}] 主通道{n}条缩水触发p5w兜底{m}条(前科:002792/600641/688079主通道假阴性)')
+        # 截断检查放在判断 m 之前：p5w 抓到历史但 since 过滤后 m=0 时，
+        # 不能因 m 为假而漏过 _trunc（2026-09-05 第三稿预检漏网）。
+        if _trunc['v']:
+            raise FetchFailure(f'[{code}] p5w兜底分页被截断({_trunc["reason"]}): 已抓{m}条已落盘,但不完整,不得推进水位')
+        if m:
+            print(f'[{code}] 主通道{n},p5w兜底{m}条(前科:002792/600641/688079主通道假阴性)')
+            return m
+        if n is None:
+            raise FetchFailure(f'[{code}] 无通道产出: {reason}; p5w兜底({_p5w_down.get("reason") or "无产出或pid未找到"})')
+        return 0
+    # 缩水兜底只在全量快照请求时比较: 增量窗口天然远小于历史快照, 不能当成缩水(2026-09-05)
+    if str(since)<=FULL_SNAPSHOT_SINCE:
+        snap=_snapshot_count(code)
+        if snap>20 and n<0.5*snap:
+            m=_p5w_guarded(code,since)
+            if _trunc['v']:
+                raise FetchFailure(f'[{code}] p5w兜底分页被截断({_trunc["reason"]}): 已抓{m}条已落盘,但不完整,不得推进水位')
+            if m:
+                print(f'[{code}] 主通道{n}条缩水触发p5w兜底{m}条(前科:002792/600641/688079主通道假阴性)')
+            elif _p5w_down['v']:
+                raise FetchFailure(f'[{code}] 主通道{n}条较快照{snap}条缩水,且p5w兜底不可用({_p5w_down["reason"]}): 增量不完整')
+            else:
+                print(f'[{code}] 主通道{n}条较快照{snap}条缩水,p5w兜底无更多数据(已尽力,并非失败)')
     return n
 
 if __name__=='__main__':
