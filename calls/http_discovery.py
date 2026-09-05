@@ -406,56 +406,30 @@ def _json_object_binds(obj_text: str, canonical_url: str, title: str) -> bool:
 
 
 def _enclosing_json_object(body: str, pos: int) -> str:
-    """返回包含 pos 的最内层 JSON 对象文本（字符串感知的括号平衡，
-    忽略字符串字面量内的引号与花括号），用于把日期绑定到其所属节点。"""
+    """返回包含 pos 的最内层 JSON 对象文本，用于把日期绑定到其所属节点。
+    括号平衡不解析字符串字面量；无法闭合时返回短窗（调用方按无法识别处理）。"""
     depth = 0
-    in_string = False
-    start = -1
-    index = pos
-    while index >= 0:
-        char = body[index]
-        if in_string:
-            if char == '"' and not _escaped_at(body, index):
-                in_string = False
-        elif char == '"':
-            in_string = True
-        elif char == "}":
+    start = pos
+    while start >= 0:
+        char = body[start]
+        if char == "}":
             depth += 1
         elif char == "{":
             if depth == 0:
-                start = index
                 break
             depth -= 1
-        index -= 1
+        start -= 1
     if start < 0:
         return ""
     level = 0
-    in_string = False
-    for index in range(start, min(len(body), start + 200_000)):
-        char = body[index]
-        if in_string:
-            if char == '"' and not _escaped_at(body, index):
-                in_string = False
-            continue
-        if char == '"':
-            in_string = True
-        elif char == "{":
+    for index in range(start, min(len(body), start + 40_000)):
+        if body[index] == "{":
             level += 1
-        elif char == "}":
+        elif body[index] == "}":
             level -= 1
             if level == 0:
                 return body[start:index + 1]
     return body[start:start + 2000]
-
-
-def _escaped_at(body: str, index: int) -> bool:
-    """body[index] 处的引号是否被反斜杠转义（处理连续反斜杠的奇偶）。"""
-    backslashes = 0
-    cursor = index - 1
-    while cursor >= 0 and body[cursor] == "\\":
-        backslashes += 1
-        cursor -= 1
-    return backslashes % 2 == 1
 
 
 def _json_field_date(body: str, canonical_url: str, title: str) -> str:
