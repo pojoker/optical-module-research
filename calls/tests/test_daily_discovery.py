@@ -454,6 +454,48 @@ class TestPermissionGuards(DailyDiscoveryTestCase):
         self.assertEqual(suggested[0]["event_status"], "asserted")
 
 
+class TestArticleFetchFailures(DailyDiscoveryTestCase):
+    """HttpFetcher 的逐篇详情失败必须可见，端点级失败与文章级失败分列。"""
+
+    class _StubFetcher:
+        fetch_mode = "stub"
+
+        def __init__(self, *, article_failures=()) -> None:
+            self.article_failures = article_failures
+
+        def fetch(self, endpoint):
+            from types import SimpleNamespace
+            return SimpleNamespace(
+                endpoint_id=endpoint.endpoint_id, items=(), failure="",
+                article_failures=self.article_failures,
+            )
+
+    def test_article_fetch_failures_are_recorded_and_reach_queue_and_summary(self) -> None:
+        failures = ({"url": "https://ir.example/a", "detail": "article GET failed: TimeoutError: timed out"},)
+        summary = dd.run_daily_discovery(
+            self.source, self.state, RUN_DATE, CONFIG, self._StubFetcher(article_failures=failures)
+        )
+        rows = [
+            row for row in _read_csv(self.state / "staging" / RUN_DATE / "failures.csv")
+            if row["failure_type"] == "article_fetch_failure"
+        ]
+        self.assertTrue(rows)
+        self.assertEqual(rows[0]["detail"], "article GET failed: TimeoutError: timed out")
+        queue = json.loads((self.state / "queue-latest.json").read_text(encoding="utf-8"))
+        self.assertIn("article_fetch_failure", {entry["queue_type"] for entry in queue["entries"]})
+        self.assertEqual(summary["failure_types"].get("article_fetch_failure"), len(rows))
+        # endpoint_succeeded 是真实成功的端点数，不能把 configured 数冒充为成功。
+        self.assertEqual(summary["endpoint_succeeded"], summary["endpoint_count"] - summary["endpoint_failed"])
+
+    def test_results_without_article_failures_field_stay_compatible(self) -> None:
+        # 旧结果形状（FixtureFetcher 的 FetchResult）没有 article_failures 字段时必须兼容。
+        summary = dd.run_daily_discovery(
+            self.source, self.state, RUN_DATE, CONFIG, dd.FixtureFetcher(FIXTURES)
+        )
+        self.assertNotIn("article_fetch_failure", summary["failure_types"])
+        self.assertIn("endpoint_succeeded", summary)
+
+
 class TestExplicitFailures(DailyDiscoveryTestCase):
     def setUp(self) -> None:
         super().setUp()

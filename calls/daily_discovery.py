@@ -316,6 +316,8 @@ class Endpoint:
     content_class: str
     provenance_class: str
     corroborates: tuple[str, ...]
+    # 已证实为 JS 渲染、无法静态采集的列表：显式 unsupported，不得冒充健康零增量。
+    unsupported_listing: bool = False
 
 
 def load_discovery_config(path: Path, registry: EntityRegistry) -> tuple[Endpoint, ...]:
@@ -393,6 +395,7 @@ def load_discovery_config(path: Path, registry: EntityRegistry) -> tuple[Endpoin
                 content_class=content_class,
                 provenance_class=provenance,
                 corroborates=corroborates,
+                unsupported_listing=bool(raw.get("unsupported_listing", False)),
             ))
     if not endpoints:
         raise DailyDiscoveryError("discovery config: no endpoints declared")
@@ -739,9 +742,17 @@ def _build_candidates(
         result = fetcher.fetch(endpoint)
         if result.failure:
             endpoint_stats["failed"] += 1
-            failure("fetch_failure", endpoint.endpoint_id, endpoint.url, endpoint.entity_id, result.failure)
+            failure_type = ("unsupported_listing"
+                            if result.failure.startswith("unsupported_listing")
+                            else "fetch_failure")
+            failure(failure_type, endpoint.endpoint_id, endpoint.url, endpoint.entity_id, result.failure)
             continue
         endpoint_stats["ok"] += 1
+        # HttpFetcher 逐篇追踪详情抓取/解析失败；FixtureFetcher 等旧结果无该字段则无失败。
+        for item_failure in getattr(result, "article_failures", ()):
+            failure("article_fetch_failure", endpoint.endpoint_id,
+                    str(item_failure.get("url", "")), endpoint.entity_id,
+                    str(item_failure.get("detail", "")))
         for index, raw in enumerate(result.items, 1):
             item_total += 1
             where = f"{endpoint.endpoint_id}[{index}]"
@@ -1335,6 +1346,7 @@ def run_daily_discovery(
             "run_date": run_date,
             "fetch_mode": outcome.details["fetch_mode"],
             "endpoint_count": outcome.details["endpoint_count"],
+            "endpoint_succeeded": outcome.details["endpoint_ok"],
             "endpoint_failed": outcome.details["endpoint_failed"],
             "monitored_entity_count": outcome.details["monitored_entity_count"],
             "configured_entity_count": outcome.details["configured_entity_count"],
