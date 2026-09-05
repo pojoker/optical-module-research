@@ -2,7 +2,9 @@
 workpack:
   id: DAILY-RELIABILITY-001
   title: 国内海外日更可靠性三包修复
-  status: in_progress
+  status: completed_with_followups
+  completed_at: 2026-09-05
+  completion_note: 三包限定修复已本地整合并通过253项测试和机器门；生产全量日更恢复尚未验收，静态入口、长停补抓与分页效率限制见主代理报告；未推送、未合并main。
   approved_at: 2026-09-05
   owner: 用户
   authorization: 用户要求关注日更逻辑问题、分包给其他人修复，由主代理检查结果；此前已授权限定项目内容发送给 CodeBuddy/OpenCode/Pi，并允许隔离 worktree 编辑、测试和本地提交。
