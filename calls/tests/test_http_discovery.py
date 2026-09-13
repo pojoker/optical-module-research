@@ -2,12 +2,133 @@ from __future__ import annotations
 
 import json
 import unittest
+from unittest.mock import patch
+from urllib.error import URLError, HTTPError
+import ssl
+import signal
+import time
 
 from calls.daily_discovery import Endpoint
 from calls.http_discovery import HttpFetcher, discover_article_links, parse_feed, parse_html_item
 
 
 class HttpDiscoveryTest(unittest.TestCase):
+    def endpoint(self, url="https://example.com/news"):
+        return Endpoint(entity_id="LITE", endpoint_id="LITE_IR_RELEASES", endpoint_kind="official_ir",
+                        url=url, disclosure_type="official_release", content_class="corporate_narrative",
+                        provenance_class="first_party", corroborates=())
+
+    def test_large_json_node_and_braces_in_body_preserve_bound_date(self):
+        node = {"body": "quoted { brace } and escaped quote \" " * 1600,
+                "path": {"alias": "/blog/large"}, "field_date": "2026-08-25"}
+        body = '<script>window.DATA=' + json.dumps({"node": node}) + ';</script>'
+        self.assertEqual(parse_html_item(body, "https://www.lumentum.com/en/blog/large")["published_at"],
+                         "2026-08-25")
+
+    def test_tools_and_calendar_navigation_are_not_articles(self):
+        body = '''<a href="/investors/share-price-tools">Share price tools</a>
+        <a href="/investors/ir-calendar">IR Calendar</a>
+        <a href="/news/live-events">Live events</a>
+        <a href="/news/new-chip">Company launches new chip</a>'''
+        self.assertEqual(discover_article_links(body, "https://example.com/news"),
+                         [("https://example.com/news/new-chip", "Company launches new chip")])
+
+    def test_q4_public_json_carries_article_date_and_body(self):
+        endpoint = self.endpoint("https://investor.lumentum.com/feed/PressRelease.svc/GetPressReleaseList")
+        payload = {"GetPressReleaseListResult": [{"Headline": "Company announces new chip",
+            "PressReleaseDate": "09/01/2026 08:00:00", "LinkToDetailPage": "/news-details/2026/new-chip/default.aspx",
+            "Body": "<style>noise</style><p>Company announces volume production of its new chip.</p>"}]}
+        fetcher = HttpFetcher("2026-09-09")
+        fetcher._get = lambda u: (json.dumps(payload), "application/json", u)
+        result = fetcher.fetch(endpoint)
+        self.assertFalse(result.failure)
+        self.assertEqual(len(result.items), 1)
+        self.assertEqual(result.items[0]["published_at"], "2026-09-01")
+        self.assertIn("volume production", result.items[0]["paragraphs"][0]["text"])
+
+    def test_cisco_embedded_press_release_is_fetched_without_executing_js(self):
+        url = "https://newsroom.cisco.com/c/r/newsroom/en/us/index.html"
+        article = "/c/r/newsroom/en/us/a/y2026/m08/release.html"
+        content = [{"path": article, "title": "Cisco announces new chip", "releaseDate": "2026-08-31T20:30:00Z"}]
+        encoded = json.dumps(json.dumps(content)).replace('\\\\\"', '\\x22')
+        listing = '<script>const element = document.getElementById("pressRelease"); const content = JSON.parse(' + encoded + ');</script>'
+        fetcher = HttpFetcher("2026-09-09")
+        fetcher._get = lambda u: ((listing if u == url else '<p>Cisco announces volume production of its new chip.</p>'), "text/html", u)
+        result = fetcher.fetch(self.endpoint(url))
+        self.assertFalse(result.failure)
+        self.assertEqual(len(result.items), 1)
+        self.assertEqual(result.items[0]["published_at"], "2026-08-31")
+        self.assertEqual(result.items[0]["url"], "https://newsroom.cisco.com" + article)
+
+    def test_transient_ssl_eof_is_retried_once_but_http_denial_is_not(self):
+        fetcher = HttpFetcher("2026-09-09")
+        with patch.object(fetcher, "_get", side_effect=[URLError(ssl.SSLEOFError("EOF")),
+                ('{"items": []}', "application/json", "https://example.com/news")]) as get:
+            self.assertFalse(fetcher.fetch(self.endpoint()).failure)
+            self.assertEqual(get.call_count, 2)
+        with patch.object(fetcher, "_get", side_effect=HTTPError("https://example.com/news", 403, "denied", {}, None)) as get:
+            self.assertTrue(fetcher.fetch(self.endpoint()).failure)
+            self.assertEqual(get.call_count, 1)
+
+    def test_budget_exhaustion_preserves_completed_articles_and_marks_partial(self):
+        fetcher = HttpFetcher("2026-09-09", endpoint_budget=5)
+        tick = [0.0]
+        listing = '<a href="/news/first">Company announces first chip</a><a href="/news/second">Company announces second chip</a>'
+        def get(url):
+            if url.endswith("/news"):
+                return listing, "text/html", url
+            tick[0] += 1 if url.endswith("/first") else 6
+            return '<meta name="date" content="2026-09-01"><p>Company begins production of the new chip.</p>', "text/html", url
+        fetcher._get = get
+        with patch("calls.http_discovery.time.monotonic", side_effect=lambda: tick[0]):
+            result = fetcher.fetch(self.endpoint())
+        self.assertEqual(len(result.items), 1)
+        self.assertIn("budget", result.article_failures[0]["detail"])
+
+    @unittest.skipUnless(hasattr(signal, "setitimer"), "POSIX CLI deadline")
+    def test_deadline_interrupts_blocked_request_and_does_not_retry(self):
+        fetcher = HttpFetcher("2026-09-09", endpoint_budget=0.05, timeout=1)
+        previous = signal.getsignal(signal.SIGALRM)
+        with patch.object(fetcher, "_get", side_effect=lambda _: time.sleep(2)) as get:
+            started = time.monotonic()
+            result = fetcher.fetch(self.endpoint())
+            self.assertLess(time.monotonic() - started, 1)
+            self.assertEqual(get.call_count, 1)
+        self.assertIn("budget", result.failure)
+        self.assertEqual(signal.getsignal(signal.SIGALRM), previous)
+        self.assertEqual(signal.getitimer(signal.ITIMER_REAL)[0], 0)
+
+    def test_certificate_verification_failure_is_never_retried(self):
+        fetcher = HttpFetcher("2026-09-09")
+        with patch.object(fetcher, "_get", side_effect=URLError(ssl.SSLCertVerificationError("invalid certificate"))) as get:
+            self.assertTrue(fetcher.fetch(self.endpoint()).failure)
+            self.assertEqual(get.call_count, 1)
+
+    def test_nonfinite_timeout_and_budget_are_rejected(self):
+        for value in (float("inf"), float("nan"), 0, -1):
+            for key in ("timeout", "endpoint_budget"):
+                with self.subTest(key=key, value=value), self.assertRaises(ValueError):
+                    HttpFetcher("2026-09-09", **{key: value})
+
+    @unittest.skipUnless(hasattr(signal, "setitimer"), "POSIX CLI deadline")
+    def test_timer_setup_failure_restores_handler(self):
+        fetcher = HttpFetcher("2026-09-09")
+        previous = signal.getsignal(signal.SIGALRM)
+        with patch.object(fetcher, "_remaining", side_effect=TimeoutError("deadline raced")):
+            with self.assertRaises(TimeoutError), fetcher._request_timer():
+                self.fail("timer setup must fail before request")
+        self.assertEqual(signal.getsignal(signal.SIGALRM), previous)
+
+    def test_q4_missing_body_is_explicit_article_failure(self):
+        endpoint = self.endpoint("https://investor.lumentum.com/feed/PressRelease.svc/GetPressReleaseList")
+        fetcher = HttpFetcher("2026-09-09")
+        payload = {"GetPressReleaseListResult": [{"Headline": "Quarterly report",
+                   "LinkToDetailPage": "/news-details/report", "PressReleaseDate": "09/01/2026 08:00:00"}]}
+        fetcher._get = lambda u: (json.dumps(payload), "application/json", u)
+        result = fetcher.fetch(endpoint)
+        self.assertEqual(result.items, ())
+        self.assertEqual(len(result.article_failures), 1)
+
     def test_html_article_keeps_canonical_date_title_and_anchors(self):
         body = """
         <html><head><link rel="canonical" href="/news/release-1">

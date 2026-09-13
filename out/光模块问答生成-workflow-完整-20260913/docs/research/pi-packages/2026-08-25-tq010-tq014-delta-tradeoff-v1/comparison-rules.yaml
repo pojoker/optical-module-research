@@ -1,0 +1,17 @@
+meta:
+  mode: draft_only
+  purpose: explicit_semantic_overrides_for_deterministic_comparison
+  canonical_write_performed: false
+
+overrides:
+  - comparison_id: CMP-D02-D03
+    field: tq006_electrical_responsibility.raw_architecture_label
+    field_status: not_comparable
+    reason: >-
+      LRO is an electrical architecture/responsibility label, while 3 nm DSP is a
+      component plus process-node description. Both values are observed, but they
+      do not answer the same field-level question and therefore cannot be treated
+      as a direct route difference.
+    evidence_refs:
+      - S3#D02
+      - S3#D03

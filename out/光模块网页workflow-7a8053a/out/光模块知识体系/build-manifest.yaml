@@ -1,0 +1,20 @@
+schema_version: optical_module_reader_manifest_v1
+source: site/optical-module
+output: out/光模块知识体系
+page_count: 9
+section_count: 27
+canonical_write: false
+asset_versions:
+  content.css: 98f63f49a89c
+  site-shell.css: cc86a9dc06c3
+  site.js: 5d2cebaa45c6
+pages:
+- index.html
+- 01-foundation.html
+- 02-demand.html
+- 03-routes.html
+- 04-cases.html
+- 05-companies.html
+- 06-research.html
+- 07-decision-dossier.html
+- 08-concept-primer.html

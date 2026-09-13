@@ -1,0 +1,912 @@
+{
+  "source": "https://ir.p5w.net/c/000988/questionlist.shtml",
+  "captured_on": "2026-09-11",
+  "projection": "Original totals, IDs, ask/reply timestamps; text omitted. Full capture: diagnosis-20260911/p5w/live-aug7-result.json",
+  "requests": [
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 0,
+        "rows": 10,
+        "questionerTimeBegin": "2026-08-07",
+        "questionerTimeEnd": "2026-08-07"
+      },
+      "response": {
+        "success": true,
+        "total": 69,
+        "rows": [
+          {
+            "pid": "00016EE490B9057940D98496EB674C70CF79",
+            "questionerTimeStr": "2026-08-07 21:49:54",
+            "replyerTimeStr": "2026-08-07 21:49:54"
+          },
+          {
+            "pid": "0001C9D4CED1D0304BE6AF0358BD2363A6F3",
+            "questionerTimeStr": "2026-08-07 21:34:38",
+            "replyerTimeStr": "2026-08-07 21:34:38"
+          },
+          {
+            "pid": "0001A7279A0D35994A0C9C1CEBFFCF268035",
+            "questionerTimeStr": "2026-08-07 21:33:11",
+            "replyerTimeStr": "2026-08-07 21:33:11"
+          },
+          {
+            "pid": "000117D6E3D449BA4D3DAF50788F4FEA9ABC",
+            "questionerTimeStr": "2026-08-07 21:29:26",
+            "replyerTimeStr": "2026-08-07 21:29:26"
+          },
+          {
+            "pid": "00017333B8B81059464A8F830F6BBB619C0F",
+            "questionerTimeStr": "2026-08-07 21:26:14",
+            "replyerTimeStr": "2026-08-07 21:26:14"
+          },
+          {
+            "pid": "0001331E9C5BB7494BDF81D5C7A08F031EE0",
+            "questionerTimeStr": "2026-08-07 21:24:59",
+            "replyerTimeStr": "2026-08-07 21:24:59"
+          },
+          {
+            "pid": "0001BAF9A45F92754695B7BAD35600CBD0A2",
+            "questionerTimeStr": "2026-08-07 21:24:25",
+            "replyerTimeStr": "2026-08-07 21:24:25"
+          },
+          {
+            "pid": "0001D2C256BD99DC42169F815339061FD19A",
+            "questionerTimeStr": "2026-08-07 21:23:52",
+            "replyerTimeStr": "2026-08-07 21:23:52"
+          },
+          {
+            "pid": "00015EEF217A1ECA4ED7B5648A4F3F1DFFC2",
+            "questionerTimeStr": "2026-08-07 21:22:22",
+            "replyerTimeStr": "2026-08-07 21:22:22"
+          },
+          {
+            "pid": "0001A9E9BF5C5B9C40199DBA5C43ABED9AB9",
+            "questionerTimeStr": "2026-08-07 21:19:49",
+            "replyerTimeStr": "2026-08-07 21:19:49"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 1,
+        "rows": 10,
+        "questionerTimeBegin": "2026-08-07",
+        "questionerTimeEnd": "2026-08-07"
+      },
+      "response": {
+        "success": true,
+        "total": 69,
+        "rows": [
+          {
+            "pid": "00019F02B3EF397B4084BA92848D8F6B692F",
+            "questionerTimeStr": "2026-08-07 21:19:26",
+            "replyerTimeStr": "2026-08-07 21:19:26"
+          },
+          {
+            "pid": "000114F2F420277F4EF2BA4050F78C377059",
+            "questionerTimeStr": "2026-08-07 21:18:03",
+            "replyerTimeStr": "2026-08-07 21:18:03"
+          },
+          {
+            "pid": "000183EA4DEC239F4C46B33C51C63672BEC1",
+            "questionerTimeStr": "2026-08-07 21:16:25",
+            "replyerTimeStr": "2026-08-07 21:16:25"
+          },
+          {
+            "pid": "0001D5726D78408B40228471F02935A90042",
+            "questionerTimeStr": "2026-08-07 21:06:13",
+            "replyerTimeStr": "2026-08-07 21:06:13"
+          },
+          {
+            "pid": "000112264D117524452F990C0AE1761218BA",
+            "questionerTimeStr": "2026-08-07 21:04:51",
+            "replyerTimeStr": "2026-08-07 21:04:51"
+          },
+          {
+            "pid": "0001181B6FC813B94959987964BAF5C3A4A1",
+            "questionerTimeStr": "2026-08-07 21:03:18",
+            "replyerTimeStr": "2026-08-07 21:03:18"
+          },
+          {
+            "pid": "00016BE2FB20F5EC414391549A6EAC9E14B1",
+            "questionerTimeStr": "2026-08-07 21:02:09",
+            "replyerTimeStr": "2026-08-07 21:02:09"
+          },
+          {
+            "pid": "0001255591AFB1514E77B81E2E69C8188E9B",
+            "questionerTimeStr": "2026-08-07 21:01:34",
+            "replyerTimeStr": "2026-08-07 21:01:34"
+          },
+          {
+            "pid": "0001BD5112FFA58442BFB7FFAE662991F2FB",
+            "questionerTimeStr": "2026-08-07 20:59:48",
+            "replyerTimeStr": "2026-08-07 20:59:48"
+          },
+          {
+            "pid": "0001897F857E5F84496CA3DCA958020C82E2",
+            "questionerTimeStr": "2026-08-07 20:59:31",
+            "replyerTimeStr": "2026-08-07 20:59:31"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 2,
+        "rows": 10,
+        "questionerTimeBegin": "2026-08-07",
+        "questionerTimeEnd": "2026-08-07"
+      },
+      "response": {
+        "success": true,
+        "total": 69,
+        "rows": [
+          {
+            "pid": "00017C70C7565A554E0AA0099676FC03242F",
+            "questionerTimeStr": "2026-08-07 20:58:22",
+            "replyerTimeStr": "2026-08-07 20:58:22"
+          },
+          {
+            "pid": "0001CE45B958AB394F509336EF1BD81965F9",
+            "questionerTimeStr": "2026-08-07 20:57:01",
+            "replyerTimeStr": "2026-08-07 20:57:01"
+          },
+          {
+            "pid": "0001899E277A840741598C29AF6E8B901F92",
+            "questionerTimeStr": "2026-08-07 20:52:24",
+            "replyerTimeStr": "2026-08-07 20:52:24"
+          },
+          {
+            "pid": "0001983F27886DD54FE6B14B60D93DA79859",
+            "questionerTimeStr": "2026-08-07 20:49:16",
+            "replyerTimeStr": "2026-08-07 20:49:16"
+          },
+          {
+            "pid": "00018B7AE53F25924855BC928539E31C997C",
+            "questionerTimeStr": "2026-08-07 20:03:24",
+            "replyerTimeStr": "2026-08-07 20:03:24"
+          },
+          {
+            "pid": "0001945BBDB623674AD5B461AD8561CC1A79",
+            "questionerTimeStr": "2026-08-07 20:02:38",
+            "replyerTimeStr": "2026-08-07 20:02:38"
+          },
+          {
+            "pid": "00019E13B3A128094F1CA11E311A3AB4A821",
+            "questionerTimeStr": "2026-08-07 19:50:30",
+            "replyerTimeStr": "2026-08-07 19:50:30"
+          },
+          {
+            "pid": "00019769037E50204E91B6D4A29CE84A6D26",
+            "questionerTimeStr": "2026-08-07 19:49:57",
+            "replyerTimeStr": "2026-08-07 19:49:57"
+          },
+          {
+            "pid": "0001781A8CBA83C94BAAA1CEE5D5BF211F8C",
+            "questionerTimeStr": "2026-08-07 19:49:17",
+            "replyerTimeStr": "2026-08-07 19:49:17"
+          },
+          {
+            "pid": "000113400BE4798E432CB272D2AAF0E2EE97",
+            "questionerTimeStr": "2026-08-07 19:47:14",
+            "replyerTimeStr": "2026-08-07 19:47:14"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 3,
+        "rows": 10,
+        "questionerTimeBegin": "2026-08-07",
+        "questionerTimeEnd": "2026-08-07"
+      },
+      "response": {
+        "success": true,
+        "total": 69,
+        "rows": [
+          {
+            "pid": "0001C2C76956651641258184FD10A41C1389",
+            "questionerTimeStr": "2026-08-07 19:45:52",
+            "replyerTimeStr": "2026-08-07 19:45:52"
+          },
+          {
+            "pid": "0001C9EDBFC96EA24FE59C3DFB76D6671405",
+            "questionerTimeStr": "2026-08-07 19:40:30",
+            "replyerTimeStr": "2026-08-07 19:40:30"
+          },
+          {
+            "pid": "0001DB9D7FA418B947C3A269371A8D5FF143",
+            "questionerTimeStr": "2026-08-07 19:22:56",
+            "replyerTimeStr": "2026-08-07 19:22:56"
+          },
+          {
+            "pid": "000165281654803248258F6F7D0166A59EE5",
+            "questionerTimeStr": "2026-08-07 19:22:37",
+            "replyerTimeStr": "2026-08-07 19:22:37"
+          },
+          {
+            "pid": "0001857212FFFEC643EDAB59EC5FA2789213",
+            "questionerTimeStr": "2026-08-07 19:22:12",
+            "replyerTimeStr": "2026-08-07 19:22:12"
+          },
+          {
+            "pid": "0001813DB3E3250A4D989ACAB866FA0383C1",
+            "questionerTimeStr": "2026-08-07 19:21:26",
+            "replyerTimeStr": "2026-08-07 19:21:26"
+          },
+          {
+            "pid": "000127B026BE80CA46F1BF1F6FA3BEB931B2",
+            "questionerTimeStr": "2026-08-07 19:18:23",
+            "replyerTimeStr": "2026-08-07 19:18:23"
+          },
+          {
+            "pid": "0001C783815273D04CA080690D4FD0F6AAD1",
+            "questionerTimeStr": "2026-08-07 19:16:51",
+            "replyerTimeStr": "2026-08-07 19:16:51"
+          },
+          {
+            "pid": "000169E9D5D392DA490CB925CE5C95D65C46",
+            "questionerTimeStr": "2026-08-07 19:16:41",
+            "replyerTimeStr": "2026-08-07 19:16:41"
+          },
+          {
+            "pid": "000131562C770BFD4D3B91B470C6C1E150FC",
+            "questionerTimeStr": "2026-08-07 19:14:29",
+            "replyerTimeStr": "2026-08-07 19:14:29"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 4,
+        "rows": 10,
+        "questionerTimeBegin": "2026-08-07",
+        "questionerTimeEnd": "2026-08-07"
+      },
+      "response": {
+        "success": true,
+        "total": 69,
+        "rows": [
+          {
+            "pid": "0001F0988742B76D418482A29004F2E1E2F2",
+            "questionerTimeStr": "2026-08-07 19:14:10",
+            "replyerTimeStr": "2026-08-07 19:14:10"
+          },
+          {
+            "pid": "0001E0C3A92990B14E6A9353C2DC8A76178B",
+            "questionerTimeStr": "2026-08-07 19:13:40",
+            "replyerTimeStr": "2026-08-07 19:13:40"
+          },
+          {
+            "pid": "00010E9F97F36B9A4DAB901393B8A51474C6",
+            "questionerTimeStr": "2026-08-07 19:13:12",
+            "replyerTimeStr": "2026-08-07 19:13:12"
+          },
+          {
+            "pid": "000110EF9D5FF2F744148E50D0A5DBB8F160",
+            "questionerTimeStr": "2026-08-07 19:12:01",
+            "replyerTimeStr": "2026-08-07 19:12:01"
+          },
+          {
+            "pid": "0001930F1A7C92694EC7BAD283DE19EB5EE0",
+            "questionerTimeStr": "2026-08-07 19:11:41",
+            "replyerTimeStr": "2026-08-07 19:11:41"
+          },
+          {
+            "pid": "00010E340E72876B4DF2B398F4185884E542",
+            "questionerTimeStr": "2026-08-07 19:10:33",
+            "replyerTimeStr": "2026-08-07 19:10:33"
+          },
+          {
+            "pid": "000175E259AADC0748E88C8EBB005564073C",
+            "questionerTimeStr": "2026-08-07 19:10:06",
+            "replyerTimeStr": "2026-08-07 19:10:06"
+          },
+          {
+            "pid": "0001A670A7D6D8724916802D678B482493E9",
+            "questionerTimeStr": "2026-08-07 19:09:21",
+            "replyerTimeStr": "2026-08-07 19:09:21"
+          },
+          {
+            "pid": "000132D2547DC513434AAE9B91C3C899190F",
+            "questionerTimeStr": "2026-08-07 19:08:43",
+            "replyerTimeStr": "2026-08-07 19:08:43"
+          },
+          {
+            "pid": "00011F124C83966C42679D8DD899C50F1EF4",
+            "questionerTimeStr": "2026-08-07 19:08:00",
+            "replyerTimeStr": "2026-08-07 19:08:00"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 5,
+        "rows": 10,
+        "questionerTimeBegin": "2026-08-07",
+        "questionerTimeEnd": "2026-08-07"
+      },
+      "response": {
+        "success": true,
+        "total": 69,
+        "rows": [
+          {
+            "pid": "0001769BF916DE5C49CCB68B692CE6499540",
+            "questionerTimeStr": "2026-08-07 19:05:32",
+            "replyerTimeStr": "2026-08-07 19:05:32"
+          },
+          {
+            "pid": "000100713BCC59314A93818F7264DBF0B099",
+            "questionerTimeStr": "2026-08-07 19:02:25",
+            "replyerTimeStr": "2026-08-07 19:02:25"
+          },
+          {
+            "pid": "000135F1AD128C124CACB970710E0E0CF6F1",
+            "questionerTimeStr": "2026-08-07 19:01:02",
+            "replyerTimeStr": "2026-08-07 19:01:02"
+          },
+          {
+            "pid": "579f0f90cfbf4a42877cfdcc072656a8",
+            "questionerTimeStr": "2026-08-07 19:00:45",
+            "replyerTimeStr": "2026-08-07 19:00:45"
+          },
+          {
+            "pid": "0001213F961C05C0422DB417B745FBAD8B21",
+            "questionerTimeStr": "2026-08-07 18:58:28",
+            "replyerTimeStr": "2026-08-07 18:58:28"
+          },
+          {
+            "pid": "00012835EA212A4743C0A5A6152BAF6C930C",
+            "questionerTimeStr": "2026-08-07 18:57:59",
+            "replyerTimeStr": "2026-08-07 18:57:59"
+          },
+          {
+            "pid": "0001E924FF97DA91438297F5CE1DBA9CFB12",
+            "questionerTimeStr": "2026-08-07 18:56:59",
+            "replyerTimeStr": "2026-08-07 18:56:59"
+          },
+          {
+            "pid": "0001538B38378BC944D0AFD5B2816924B5CA",
+            "questionerTimeStr": "2026-08-07 18:55:24",
+            "replyerTimeStr": "2026-08-07 18:55:24"
+          },
+          {
+            "pid": "0001C8B9C4AC68C64133B4F6D47F4BE3D294",
+            "questionerTimeStr": "2026-08-07 18:54:04",
+            "replyerTimeStr": "2026-08-07 18:54:04"
+          },
+          {
+            "pid": "00018F456D1247B846029363AD17D6B331D2",
+            "questionerTimeStr": "2026-08-07 18:53:30",
+            "replyerTimeStr": "2026-08-07 18:53:30"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 6,
+        "rows": 10,
+        "questionerTimeBegin": "2026-08-07",
+        "questionerTimeEnd": "2026-08-07"
+      },
+      "response": {
+        "success": true,
+        "total": 69,
+        "rows": [
+          {
+            "pid": "0001871440ECE29F4D2FBCEF743F7D969255",
+            "questionerTimeStr": "2026-08-07 18:52:38",
+            "replyerTimeStr": "2026-08-07 18:52:38"
+          },
+          {
+            "pid": "00012BD81DCFB86B4BF9B667364827D5FB48",
+            "questionerTimeStr": "2026-08-07 18:51:33",
+            "replyerTimeStr": "2026-08-07 18:51:33"
+          },
+          {
+            "pid": "0001E2F1376ED38B490BA98CF061B4DB3F6E",
+            "questionerTimeStr": "2026-08-07 18:50:49",
+            "replyerTimeStr": "2026-08-07 18:50:49"
+          },
+          {
+            "pid": "0001A5F347855FD649F1BF831613D49D3AD3",
+            "questionerTimeStr": "2026-08-07 18:50:08",
+            "replyerTimeStr": "2026-08-07 18:50:08"
+          },
+          {
+            "pid": "00016A308ED7479B4431B2C677E56C68FF6A",
+            "questionerTimeStr": "2026-08-07 18:47:33",
+            "replyerTimeStr": "2026-08-07 18:47:33"
+          },
+          {
+            "pid": "00013C5D530D18B24CDC9516B12F7FA590FA",
+            "questionerTimeStr": "2026-08-07 18:46:03",
+            "replyerTimeStr": "2026-08-07 18:46:03"
+          },
+          {
+            "pid": "000124928DCCB40341459358FBB3FEA29BCA",
+            "questionerTimeStr": "2026-08-07 18:44:21",
+            "replyerTimeStr": "2026-08-07 18:44:21"
+          },
+          {
+            "pid": "00018C871947884E4B91BCB8A2158E79AE25",
+            "questionerTimeStr": "2026-08-07 18:41:49",
+            "replyerTimeStr": "2026-08-07 18:41:49"
+          },
+          {
+            "pid": "00014D97FFB23E31498B8106A6B6630AA50B",
+            "questionerTimeStr": "2026-08-07 18:40:41",
+            "replyerTimeStr": "2026-08-07 18:40:41"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 0,
+        "rows": 10
+      },
+      "response": {
+        "success": true,
+        "total": 100,
+        "rows": [
+          {
+            "pid": "00016EE490B9057940D98496EB674C70CF79",
+            "questionerTimeStr": "2026-08-07 21:49:54",
+            "replyerTimeStr": "2026-08-07 21:49:54"
+          },
+          {
+            "pid": "0001C9D4CED1D0304BE6AF0358BD2363A6F3",
+            "questionerTimeStr": "2026-08-07 21:34:38",
+            "replyerTimeStr": "2026-08-07 21:34:38"
+          },
+          {
+            "pid": "0001A7279A0D35994A0C9C1CEBFFCF268035",
+            "questionerTimeStr": "2026-08-07 21:33:11",
+            "replyerTimeStr": "2026-08-07 21:33:11"
+          },
+          {
+            "pid": "000117D6E3D449BA4D3DAF50788F4FEA9ABC",
+            "questionerTimeStr": "2026-08-07 21:29:26",
+            "replyerTimeStr": "2026-08-07 21:29:26"
+          },
+          {
+            "pid": "00017333B8B81059464A8F830F6BBB619C0F",
+            "questionerTimeStr": "2026-08-07 21:26:14",
+            "replyerTimeStr": "2026-08-07 21:26:14"
+          },
+          {
+            "pid": "0001331E9C5BB7494BDF81D5C7A08F031EE0",
+            "questionerTimeStr": "2026-08-07 21:24:59",
+            "replyerTimeStr": "2026-08-07 21:24:59"
+          },
+          {
+            "pid": "0001BAF9A45F92754695B7BAD35600CBD0A2",
+            "questionerTimeStr": "2026-08-07 21:24:25",
+            "replyerTimeStr": "2026-08-07 21:24:25"
+          },
+          {
+            "pid": "0001D2C256BD99DC42169F815339061FD19A",
+            "questionerTimeStr": "2026-08-07 21:23:52",
+            "replyerTimeStr": "2026-08-07 21:23:52"
+          },
+          {
+            "pid": "00015EEF217A1ECA4ED7B5648A4F3F1DFFC2",
+            "questionerTimeStr": "2026-08-07 21:22:22",
+            "replyerTimeStr": "2026-08-07 21:22:22"
+          },
+          {
+            "pid": "0001A9E9BF5C5B9C40199DBA5C43ABED9AB9",
+            "questionerTimeStr": "2026-08-07 21:19:49",
+            "replyerTimeStr": "2026-08-07 21:19:49"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 1,
+        "rows": 10
+      },
+      "response": {
+        "success": true,
+        "total": 100,
+        "rows": [
+          {
+            "pid": "00019F02B3EF397B4084BA92848D8F6B692F",
+            "questionerTimeStr": "2026-08-07 21:19:26",
+            "replyerTimeStr": "2026-08-07 21:19:26"
+          },
+          {
+            "pid": "000114F2F420277F4EF2BA4050F78C377059",
+            "questionerTimeStr": "2026-08-07 21:18:03",
+            "replyerTimeStr": "2026-08-07 21:18:03"
+          },
+          {
+            "pid": "000183EA4DEC239F4C46B33C51C63672BEC1",
+            "questionerTimeStr": "2026-08-07 21:16:25",
+            "replyerTimeStr": "2026-08-07 21:16:25"
+          },
+          {
+            "pid": "0001D5726D78408B40228471F02935A90042",
+            "questionerTimeStr": "2026-08-07 21:06:13",
+            "replyerTimeStr": "2026-08-07 21:06:13"
+          },
+          {
+            "pid": "000112264D117524452F990C0AE1761218BA",
+            "questionerTimeStr": "2026-08-07 21:04:51",
+            "replyerTimeStr": "2026-08-07 21:04:51"
+          },
+          {
+            "pid": "0001181B6FC813B94959987964BAF5C3A4A1",
+            "questionerTimeStr": "2026-08-07 21:03:18",
+            "replyerTimeStr": "2026-08-07 21:03:18"
+          },
+          {
+            "pid": "00016BE2FB20F5EC414391549A6EAC9E14B1",
+            "questionerTimeStr": "2026-08-07 21:02:09",
+            "replyerTimeStr": "2026-08-07 21:02:09"
+          },
+          {
+            "pid": "0001255591AFB1514E77B81E2E69C8188E9B",
+            "questionerTimeStr": "2026-08-07 21:01:34",
+            "replyerTimeStr": "2026-08-07 21:01:34"
+          },
+          {
+            "pid": "0001BD5112FFA58442BFB7FFAE662991F2FB",
+            "questionerTimeStr": "2026-08-07 20:59:48",
+            "replyerTimeStr": "2026-08-07 20:59:48"
+          },
+          {
+            "pid": "0001897F857E5F84496CA3DCA958020C82E2",
+            "questionerTimeStr": "2026-08-07 20:59:31",
+            "replyerTimeStr": "2026-08-07 20:59:31"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 2,
+        "rows": 10
+      },
+      "response": {
+        "success": true,
+        "total": 100,
+        "rows": [
+          {
+            "pid": "00017C70C7565A554E0AA0099676FC03242F",
+            "questionerTimeStr": "2026-08-07 20:58:22",
+            "replyerTimeStr": "2026-08-07 20:58:22"
+          },
+          {
+            "pid": "0001CE45B958AB394F509336EF1BD81965F9",
+            "questionerTimeStr": "2026-08-07 20:57:01",
+            "replyerTimeStr": "2026-08-07 20:57:01"
+          },
+          {
+            "pid": "0001899E277A840741598C29AF6E8B901F92",
+            "questionerTimeStr": "2026-08-07 20:52:24",
+            "replyerTimeStr": "2026-08-07 20:52:24"
+          },
+          {
+            "pid": "0001983F27886DD54FE6B14B60D93DA79859",
+            "questionerTimeStr": "2026-08-07 20:49:16",
+            "replyerTimeStr": "2026-08-07 20:49:16"
+          },
+          {
+            "pid": "00018B7AE53F25924855BC928539E31C997C",
+            "questionerTimeStr": "2026-08-07 20:03:24",
+            "replyerTimeStr": "2026-08-07 20:03:24"
+          },
+          {
+            "pid": "0001945BBDB623674AD5B461AD8561CC1A79",
+            "questionerTimeStr": "2026-08-07 20:02:38",
+            "replyerTimeStr": "2026-08-07 20:02:38"
+          },
+          {
+            "pid": "00019E13B3A128094F1CA11E311A3AB4A821",
+            "questionerTimeStr": "2026-08-07 19:50:30",
+            "replyerTimeStr": "2026-08-07 19:50:30"
+          },
+          {
+            "pid": "00019769037E50204E91B6D4A29CE84A6D26",
+            "questionerTimeStr": "2026-08-07 19:49:57",
+            "replyerTimeStr": "2026-08-07 19:49:57"
+          },
+          {
+            "pid": "0001781A8CBA83C94BAAA1CEE5D5BF211F8C",
+            "questionerTimeStr": "2026-08-07 19:49:17",
+            "replyerTimeStr": "2026-08-07 19:49:17"
+          },
+          {
+            "pid": "000113400BE4798E432CB272D2AAF0E2EE97",
+            "questionerTimeStr": "2026-08-07 19:47:14",
+            "replyerTimeStr": "2026-08-07 19:47:14"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 3,
+        "rows": 10
+      },
+      "response": {
+        "success": true,
+        "total": 100,
+        "rows": [
+          {
+            "pid": "0001C2C76956651641258184FD10A41C1389",
+            "questionerTimeStr": "2026-08-07 19:45:52",
+            "replyerTimeStr": "2026-08-07 19:45:52"
+          },
+          {
+            "pid": "0001C9EDBFC96EA24FE59C3DFB76D6671405",
+            "questionerTimeStr": "2026-08-07 19:40:30",
+            "replyerTimeStr": "2026-08-07 19:40:30"
+          },
+          {
+            "pid": "0001DB9D7FA418B947C3A269371A8D5FF143",
+            "questionerTimeStr": "2026-08-07 19:22:56",
+            "replyerTimeStr": "2026-08-07 19:22:56"
+          },
+          {
+            "pid": "000165281654803248258F6F7D0166A59EE5",
+            "questionerTimeStr": "2026-08-07 19:22:37",
+            "replyerTimeStr": "2026-08-07 19:22:37"
+          },
+          {
+            "pid": "0001857212FFFEC643EDAB59EC5FA2789213",
+            "questionerTimeStr": "2026-08-07 19:22:12",
+            "replyerTimeStr": "2026-08-07 19:22:12"
+          },
+          {
+            "pid": "0001813DB3E3250A4D989ACAB866FA0383C1",
+            "questionerTimeStr": "2026-08-07 19:21:26",
+            "replyerTimeStr": "2026-08-07 19:21:26"
+          },
+          {
+            "pid": "000127B026BE80CA46F1BF1F6FA3BEB931B2",
+            "questionerTimeStr": "2026-08-07 19:18:23",
+            "replyerTimeStr": "2026-08-07 19:18:23"
+          },
+          {
+            "pid": "0001C783815273D04CA080690D4FD0F6AAD1",
+            "questionerTimeStr": "2026-08-07 19:16:51",
+            "replyerTimeStr": "2026-08-07 19:16:51"
+          },
+          {
+            "pid": "000169E9D5D392DA490CB925CE5C95D65C46",
+            "questionerTimeStr": "2026-08-07 19:16:41",
+            "replyerTimeStr": "2026-08-07 19:16:41"
+          },
+          {
+            "pid": "000131562C770BFD4D3B91B470C6C1E150FC",
+            "questionerTimeStr": "2026-08-07 19:14:29",
+            "replyerTimeStr": "2026-08-07 19:14:29"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 4,
+        "rows": 10
+      },
+      "response": {
+        "success": true,
+        "total": 100,
+        "rows": [
+          {
+            "pid": "0001F0988742B76D418482A29004F2E1E2F2",
+            "questionerTimeStr": "2026-08-07 19:14:10",
+            "replyerTimeStr": "2026-08-07 19:14:10"
+          },
+          {
+            "pid": "0001E0C3A92990B14E6A9353C2DC8A76178B",
+            "questionerTimeStr": "2026-08-07 19:13:40",
+            "replyerTimeStr": "2026-08-07 19:13:40"
+          },
+          {
+            "pid": "00010E9F97F36B9A4DAB901393B8A51474C6",
+            "questionerTimeStr": "2026-08-07 19:13:12",
+            "replyerTimeStr": "2026-08-07 19:13:12"
+          },
+          {
+            "pid": "000110EF9D5FF2F744148E50D0A5DBB8F160",
+            "questionerTimeStr": "2026-08-07 19:12:01",
+            "replyerTimeStr": "2026-08-07 19:12:01"
+          },
+          {
+            "pid": "0001930F1A7C92694EC7BAD283DE19EB5EE0",
+            "questionerTimeStr": "2026-08-07 19:11:41",
+            "replyerTimeStr": "2026-08-07 19:11:41"
+          },
+          {
+            "pid": "00010E340E72876B4DF2B398F4185884E542",
+            "questionerTimeStr": "2026-08-07 19:10:33",
+            "replyerTimeStr": "2026-08-07 19:10:33"
+          },
+          {
+            "pid": "000175E259AADC0748E88C8EBB005564073C",
+            "questionerTimeStr": "2026-08-07 19:10:06",
+            "replyerTimeStr": "2026-08-07 19:10:06"
+          },
+          {
+            "pid": "0001A670A7D6D8724916802D678B482493E9",
+            "questionerTimeStr": "2026-08-07 19:09:21",
+            "replyerTimeStr": "2026-08-07 19:09:21"
+          },
+          {
+            "pid": "000132D2547DC513434AAE9B91C3C899190F",
+            "questionerTimeStr": "2026-08-07 19:08:43",
+            "replyerTimeStr": "2026-08-07 19:08:43"
+          },
+          {
+            "pid": "00011F124C83966C42679D8DD899C50F1EF4",
+            "questionerTimeStr": "2026-08-07 19:08:00",
+            "replyerTimeStr": "2026-08-07 19:08:00"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 5,
+        "rows": 10
+      },
+      "response": {
+        "success": true,
+        "total": 100,
+        "rows": [
+          {
+            "pid": "0001769BF916DE5C49CCB68B692CE6499540",
+            "questionerTimeStr": "2026-08-07 19:05:32",
+            "replyerTimeStr": "2026-08-07 19:05:32"
+          },
+          {
+            "pid": "000100713BCC59314A93818F7264DBF0B099",
+            "questionerTimeStr": "2026-08-07 19:02:25",
+            "replyerTimeStr": "2026-08-07 19:02:25"
+          },
+          {
+            "pid": "000135F1AD128C124CACB970710E0E0CF6F1",
+            "questionerTimeStr": "2026-08-07 19:01:02",
+            "replyerTimeStr": "2026-08-07 19:01:02"
+          },
+          {
+            "pid": "579f0f90cfbf4a42877cfdcc072656a8",
+            "questionerTimeStr": "2026-08-07 19:00:45",
+            "replyerTimeStr": "2026-08-07 19:00:45"
+          },
+          {
+            "pid": "0001213F961C05C0422DB417B745FBAD8B21",
+            "questionerTimeStr": "2026-08-07 18:58:28",
+            "replyerTimeStr": "2026-08-07 18:58:28"
+          },
+          {
+            "pid": "00012835EA212A4743C0A5A6152BAF6C930C",
+            "questionerTimeStr": "2026-08-07 18:57:59",
+            "replyerTimeStr": "2026-08-07 18:57:59"
+          },
+          {
+            "pid": "0001E924FF97DA91438297F5CE1DBA9CFB12",
+            "questionerTimeStr": "2026-08-07 18:56:59",
+            "replyerTimeStr": "2026-08-07 18:56:59"
+          },
+          {
+            "pid": "0001538B38378BC944D0AFD5B2816924B5CA",
+            "questionerTimeStr": "2026-08-07 18:55:24",
+            "replyerTimeStr": "2026-08-07 18:55:24"
+          },
+          {
+            "pid": "0001C8B9C4AC68C64133B4F6D47F4BE3D294",
+            "questionerTimeStr": "2026-08-07 18:54:04",
+            "replyerTimeStr": "2026-08-07 18:54:04"
+          },
+          {
+            "pid": "00018F456D1247B846029363AD17D6B331D2",
+            "questionerTimeStr": "2026-08-07 18:53:30",
+            "replyerTimeStr": "2026-08-07 18:53:30"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "companyBaseinfoId": "B4547B865B1611E6AC91D89D67297B20",
+        "isPagination": "1",
+        "page": 6,
+        "rows": 10
+      },
+      "response": {
+        "success": true,
+        "total": 100,
+        "rows": [
+          {
+            "pid": "0001871440ECE29F4D2FBCEF743F7D969255",
+            "questionerTimeStr": "2026-08-07 18:52:38",
+            "replyerTimeStr": "2026-08-07 18:52:38"
+          },
+          {
+            "pid": "00012BD81DCFB86B4BF9B667364827D5FB48",
+            "questionerTimeStr": "2026-08-07 18:51:33",
+            "replyerTimeStr": "2026-08-07 18:51:33"
+          },
+          {
+            "pid": "0001E2F1376ED38B490BA98CF061B4DB3F6E",
+            "questionerTimeStr": "2026-08-07 18:50:49",
+            "replyerTimeStr": "2026-08-07 18:50:49"
+          },
+          {
+            "pid": "0001A5F347855FD649F1BF831613D49D3AD3",
+            "questionerTimeStr": "2026-08-07 18:50:08",
+            "replyerTimeStr": "2026-08-07 18:50:08"
+          },
+          {
+            "pid": "00016A308ED7479B4431B2C677E56C68FF6A",
+            "questionerTimeStr": "2026-08-07 18:47:33",
+            "replyerTimeStr": "2026-08-07 18:47:33"
+          },
+          {
+            "pid": "00013C5D530D18B24CDC9516B12F7FA590FA",
+            "questionerTimeStr": "2026-08-07 18:46:03",
+            "replyerTimeStr": "2026-08-07 18:46:03"
+          },
+          {
+            "pid": "000124928DCCB40341459358FBB3FEA29BCA",
+            "questionerTimeStr": "2026-08-07 18:44:21",
+            "replyerTimeStr": "2026-08-07 18:44:21"
+          },
+          {
+            "pid": "00018C871947884E4B91BCB8A2158E79AE25",
+            "questionerTimeStr": "2026-08-07 18:41:49",
+            "replyerTimeStr": "2026-08-07 18:41:49"
+          },
+          {
+            "pid": "00014D97FFB23E31498B8106A6B6630AA50B",
+            "questionerTimeStr": "2026-08-07 18:40:41",
+            "replyerTimeStr": "2026-08-07 18:40:41"
+          },
+          {
+            "pid": "00014128272794DB4D1AA44A8C8CE9247B1A",
+            "questionerTimeStr": "2026-07-31 17:35:16",
+            "replyerTimeStr": "2026-07-31 17:35:16"
+          }
+        ]
+      }
+    }
+  ]
+}

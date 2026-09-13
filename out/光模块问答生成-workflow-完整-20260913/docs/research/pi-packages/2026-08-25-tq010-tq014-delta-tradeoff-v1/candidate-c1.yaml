@@ -1,0 +1,213 @@
+meta:
+  generator_id: C1
+  mode: draft_only
+  canonical_write_performed: false
+physical_delta_candidates:
+- delta_id: C1-D02D03-1
+  comparison_id: CMP-D02-D03
+  basis_fields:
+  - tq006_electrical_responsibility.raw_architecture_label
+  - tq006_electrical_responsibility.normalized_architecture
+  - tq006_electrical_responsibility.tx_retiming
+  - tq006_electrical_responsibility.rx_retiming
+  left_observation: "D02 disclosed as LRO with Tx-retimed / Rx-linear split; raw label 'LRO' (S3#D02)."
+  right_observation: "D03 disclosed only as incorporating next-generation 3 nm DSPs; raw label '3 nm DSP'; normalized architecture, Tx/Rx retiming, FEC/DAC/ADC/host-SerDes responsibilities UNKNOWN (S3#D03)."
+  delta_status: observed_difference
+  existing_physical_cells:
+  - C5
+  candidate_facets:
+  - dsp_process_node_raw
+  - tx_retiming_scope
+  - rx_retiming_scope
+  unmodeled_dimension: electrical_responsibility
+  component_delta: UNKNOWN
+  interface_delta: "8x200G electrical and 8x200G optical lane interfaces observed for both sides; comparative Tx/Rx/responsibility delta UNKNOWN."
+  process_delta: UNKNOWN
+  equipment_delta: UNKNOWN
+  test_delta: UNKNOWN
+  evidence_refs:
+  - S3#D02
+  - S3#D03
+- delta_id: C1-D04D05-1
+  comparison_id: CMP-D04-D05
+  basis_fields:
+  - tq008_placement.form_factor
+  left_observation: "D04 endpoint disclosed form factor QSFP-DD800 (S4#D04)."
+  right_observation: "D05 endpoint disclosed form factor OSFP (S4#D05)."
+  delta_status: observed_difference
+  existing_physical_cells: []
+  candidate_facets:
+  - form_factor_taxonomy
+  unmodeled_dimension: form_factor
+  component_delta: UNKNOWN
+  interface_delta: UNKNOWN
+  process_delta: UNKNOWN
+  equipment_delta: UNKNOWN
+  test_delta: UNKNOWN
+  evidence_refs:
+  - S4#D04
+  - S4#D05
+- delta_id: C1-D04D05-2
+  comparison_id: CMP-D04-D05
+  basis_fields:
+  - tq007_photonics.platform
+  - tq007_photonics.modulator_or_emitter_type
+  - tq007_photonics.light_source_type
+  - tq007_photonics.detector_type
+  - tq007_photonics.device_integration
+  left_observation: "D04 endpoint disclosed as silicon-photonics MZM PIC; MZM modulator observed, platform SiPh; light source and detector UNKNOWN (S4#D04)."
+  right_observation: "D05 endpoint disclosed as 1310 nm raw EML laser and generic photodetector; light source 'laser (raw: EML laser)' and 1310 nm observed, detector 'photodetector'; platform and independent modulator/emitter type and integration UNKNOWN (S4#D05)."
+  delta_status: observed_difference
+  existing_physical_cells:
+  - C4
+  - C1
+  - C3
+  candidate_facets:
+  - mzm_modulator_type
+  - eml_laser_raw
+  - photodetector_generic
+  unmodeled_dimension: photonic_device_detail
+  component_delta: UNKNOWN
+  interface_delta: UNKNOWN
+  process_delta: UNKNOWN
+  equipment_delta: UNKNOWN
+  test_delta: UNKNOWN
+  evidence_refs:
+  - S4#D04
+  - S4#D05
+tradeoff_cards:
+- comparison_id: CMP-D02-D03
+  comparison_status: partially_comparable
+  scenario_constraints:
+    aggregate_rate: "same; 1.6T observed"
+    reach: UNKNOWN
+    media: UNKNOWN
+    fec_ber: UNKNOWN
+    temperature: UNKNOWN
+    power_boundary: UNKNOWN
+    density_boundary: UNKNOWN
+    cost_boundary: UNKNOWN
+    maintenance_boundary: UNKNOWN
+  advantages: []
+  costs_and_disadvantages: []
+  new_bottlenecks: []
+  alternatives: []
+  validation_questions:
+  - "Obtain same-condition modulation, symbol-rate, PMD/FEC/BER, media, reach, wavelength, and connector/fiber-mapping controls."
+  - "Obtain D03 Tx/Rx retiming, FEC, DAC/ADC, and host-SerDes responsibilities."
+  - "Obtain measured power with a common boundary, workload, temperature, instrumentation, and uncertainty."
+  - "Obtain common density/thermal, cost, reliability, and maintenance definitions."
+  feedback_to_tq003: []
+  unknowns:
+  - "D03 normalized architecture and electrical responsibility"
+  - "all listed non-rate/non-lane comparison controls"
+  no_unconditional_ranking: true
+- comparison_id: CMP-D04-D05
+  comparison_status: partially_comparable
+  scenario_constraints:
+    aggregate_rate: "same link traffic; 800 Gbps observed"
+    reach: UNKNOWN
+    media: UNKNOWN
+    fec_ber: UNKNOWN
+    temperature: UNKNOWN
+    power_boundary: UNKNOWN
+    density_boundary: UNKNOWN
+    cost_boundary: UNKNOWN
+    maintenance_boundary: UNKNOWN
+  advantages: []
+  costs_and_disadvantages: []
+  new_bottlenecks: []
+  alternatives: []
+  validation_questions:
+  - "Obtain endpoint direction/role and a symmetric test topology for an alternative-design comparison."
+  - "Obtain host/media lane count and rate, modulation/symbol rate, formal PMD/FEC/BER, media, reach, wavelength range, connector, and fiber mapping for each endpoint."
+  - "Obtain Tx/Rx/FEC/DAC/ADC/host-SerDes responsibilities for both endpoints."
+  - "Obtain common temperature, measured power, density/thermal, cost, reliability, and maintenance boundaries."
+  - "Obtain equal-grain light-source, modulator, detector, material, and integration disclosures for both endpoints."
+  feedback_to_tq003: []
+  unknowns:
+  - "whether opposite interoperability endpoints are substitutable under the same directional role"
+  - "all listed controls except shared 800 Gbps traffic and normalized front-panel placement"
+  no_unconditional_ranking: true
+capability_requirement_candidates:
+- requirement_id: C1-REQ-1
+  comparison_id: CMP-D02-D03
+  basis_type: engineering_inference
+  basis_fields:
+  - tq006_electrical_responsibility.normalized_architecture
+  - tq006_electrical_responsibility.tx_retiming
+  - tq006_electrical_responsibility.rx_retiming
+  - tq006_electrical_responsibility.fec_location
+  - tq006_electrical_responsibility.dac_adc_location
+  - tq006_electrical_responsibility.host_serdes_role
+  target_physical_cell: C5
+  candidate_facet: electrical_responsibility_unmodeled
+  capability_action: test
+  requirement_statement: "Establish a characterization/test capability to determine D03's Tx/Rx retiming, FEC, DAC/ADC, and host-SerDes responsibilities under conditions comparable to D02's disclosed LRO split."
+  acceptance_metric_state: unknown
+  existing_points_matchable: no
+  match_basis: "No existing points.csv entry models an electrical-responsibility disclosure test for a 3 nm DSP module whose architecture is undisclosed."
+  evidence_refs: []
+- requirement_id: C1-REQ-2
+  comparison_id: CMP-D04-D05
+  basis_type: delta_direct
+  basis_fields:
+  - tq008_placement.form_factor
+  target_physical_cell: UNMODELED
+  candidate_facet: form_factor_taxonomy
+  capability_action: integrate
+  requirement_statement: "Establish an integration/assessment capability covering the OSFP versus QSFP-DD800 form-factor taxonomy, which is currently UNMODELED in the physical tree."
+  acceptance_metric_state: unknown
+  existing_points_matchable: no
+  match_basis: "No existing points.csv entry models the OSFP/QSFP-DD800 form-factor taxonomy as a comparison dimension."
+  evidence_refs: []
+- requirement_id: C1-REQ-3
+  comparison_id: CMP-D04-D05
+  basis_type: delta_direct
+  basis_fields:
+  - tq007_photonics.platform
+  - tq007_photonics.modulator_or_emitter_type
+  - tq007_photonics.light_source_type
+  - tq007_photonics.detector_type
+  - tq007_photonics.device_integration
+  target_physical_cell: C4
+  candidate_facet: mzm_modulator_type
+  capability_action: test
+  requirement_statement: "Establish a characterization/test capability to obtain equal-grain light-source, modulator, detector, material, and integration disclosures for both interoperability endpoints."
+  acceptance_metric_state: defined_but_value_missing
+  existing_points_matchable: partial
+  match_basis: "tree.yaml cells C4 (SiPh PIC), C1 (laser), C3 (detector) exist, but modulator/emitter subtype and detector subtype facets are absent, so only partial matching is possible without new facet definitions."
+  evidence_refs: []
+validation_questions:
+- comparison_id: CMP-D02-D03
+  basis_fields:
+  - tq006_electrical_responsibility.normalized_architecture
+  - tq006_electrical_responsibility.tx_retiming
+  - tq006_electrical_responsibility.rx_retiming
+  requirement_id: C1-REQ-1
+  question: "Obtain D03 Tx/Rx retiming, FEC, DAC/ADC, and host-SerDes responsibilities under the same disclosed conditions as D02."
+- comparison_id: CMP-D02-D03
+  basis_fields:
+  - tq005_external_link.reach
+  - tq005_external_link.fec_code
+  - power_boundary
+  question: "Obtain measured power with a common boundary, workload, temperature, instrumentation, and uncertainty for both D02 and D03 before any power conclusion."
+- comparison_id: CMP-D04-D05
+  basis_fields:
+  - tq008_placement.form_factor
+  requirement_id: C1-REQ-2
+  question: "Obtain a symmetric test topology and directional-role definition to compare QSFP-DD800 and OSFP endpoints as alternative designs rather than opposite interoperating ends."
+- comparison_id: CMP-D04-D05
+  basis_fields:
+  - tq007_photonics.modulator_or_emitter_type
+  - tq007_photonics.light_source_type
+  - tq007_photonics.detector_type
+  - tq007_photonics.device_integration
+  requirement_id: C1-REQ-3
+  question: "Obtain equal-grain light-source, modulator, detector, material, and integration disclosures for both interoperability endpoints."
+- comparison_id: CMP-D04-D05
+  basis_fields:
+  - tq005_external_link.host_lane_count
+  - tq005_external_link.media_lane_count
+  - tq005_external_link.fec_code
+  question: "Obtain host/media lane count and rate, modulation/symbol rate, and formal PMD/FEC/BER for each endpoint."

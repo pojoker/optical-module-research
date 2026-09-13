@@ -1,0 +1,71 @@
+workpack:
+  id: FOUNDATION-BEGINNER-20260912
+  title: 基础页增加初中物理起点的术语问答
+  status: delivered_for_review
+  authorization: 用户要求对页面所有超出初中物理水平的词提供额外问题和解释。
+objective:
+- 扫描基础页正文和图示术语，添加白话问题、解释和原有来源入口
+- 正文就地点击查看，提供完整术语问答目录及无脚本阅读入口
+allowed_write_paths:
+- docs/control/ACTIVE_WORKPACK.yaml
+- site/optical-module/sections/answer.html
+- site/optical-module/sections/physical-gallery.html
+- site/optical-module/sections/physical.html
+- site/optical-module/sections/connections.html
+- site/optical-module/sections/manufacturing.html
+- out/光模块知识体系/**
+read_scope:
+  allowed:
+  - 基础页、原有来源与研究稿、网站构建器及模板、README与章程
+non_goals:
+- 不改其他专题，不改canonical，不发布，不自动重发飞书
+acceptance_criteria:
+- 保留原文和24题、提供术语解释与对应问题来源入口
+- 点击可打开和关闭解释、键盘可用、无脚本可读
+- 检查术语匹配、链接、构建与既有机器门
+canonical_policy:
+  writable: false
+
+validation:
+- 基础页新增105个术语问答及763处解释链接，保留原有24题、图片与来源。
+- 正文点击术语打开解释对话框；完整问答目录为原生details，可无脚本阅读；提供关闭按钮及相关正文与原有来源入口。
+- ID唯一、所有内部锚点和解释对应关系通过；JavaScript语法检查通过；HTTP200。
+- 网站构建、scan、render --verify、participation --check和calls check通过；canonical未改。
+- 未做浏览器交互或视觉测试，初中读者理解程度尚待实际阅读反馈；飞书附件保持原发送版本，未自动重发。
+
+share_update:
+  authorization: 用户要求将含105个入门问答的最新版更新发送至飞书产业案头。
+  scope: 更新独立HTML附件并通过现有机器人发送到指定群。
+
+legacy_integration:
+  authorization: 用户要求比较workflow-rehearsal旧基础页与当前页，并合并其解释逻辑。
+  read_scope: workflow-rehearsal/out/光模块知识体系/01-foundation.html及所引公开图源。
+  objective: 恢复实物图与读图问题、功能总览、连接逻辑；保留24题和105个术语解释。
+  write_scope: 既有五个基础页片段及生成目录；不修改workflow-rehearsal旧页。
+  limitations: 外部图保持原URL；图源不可访问时标明，不下载绕过限制，不自动重发飞书。
+
+legacy_validation:
+- 已恢复8张外链实物或架构图；每张包含对象、读图问题、来源与边界，当前基础页共10张图。
+- 新增功能总览、5类连接路径和制造到装配的衔接解释；新文沿用术语点击解释。
+- 24题、105个术语问答保留；其他专题及已发送HTML逐文件哈希不变。
+- ID、锚点和HTTP200检查通过，构建及README四项机器门通过；旧workflow-rehearsal文件未修改。
+- AddOn原产品页本次403，保留旧图源并注明未重核内部配置；外链图片实际渲染未做浏览器验证。
+- 未晋升canonical、未发布或重发飞书。
+
+merged_share:
+  authorization: 用户要求将当前合并版发送到先前指定的飞书产业案头群。
+  scope: 生成合并版独立HTML并使用现有机器人发送文件；远程图片保留原链接。
+
+github_update:
+  authorization: 用户明确要求将当前版本更新到GitHub。
+  scope: 从origin/main建立隔离分支，提交本次网页、图示、引用研究稿和原始问答语料、最新版独立附件；推送并创建PR。
+  allowed_write_paths:
+  - /tmp/optical-reader-publish-20260912/**
+  - Git branch codex/reader-foundation-20260912
+  - GitHub pojoker/optical-module-research branch and pull request
+  non_goals: 不混入本地采集代码及旧分支提交，不强推、不合并main、不启用网站部署。
+
+github_validation:
+- 隔离分支基于origin/main，仅携带网页与所需来源，未混入采集器改动。
+- 网页构建、10图105术语24主体问题、锚点与diff检查通过。
+- render --verify与calls check通过；scan及participation借助未提交的本地年报只读链接通过。

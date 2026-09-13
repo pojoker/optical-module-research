@@ -1,0 +1,35 @@
+run_id: 2026-08-25-tq010-tq014-delta-tradeoff-v1
+question_ids: [TQ010, TQ014]
+mode: draft_only
+status: reviewed_draft_ready
+python_interpreter: /Users/jowang/miniconda3/bin/python3
+pi:
+  provider: opencode-go
+  model: deepseek-v4-flash
+  thinking: high
+  tools: disabled
+  context_files: disabled
+  session: disabled
+  independent_candidates: [P1, P2, P3]
+codebuddy:
+  model: hy3
+  fallback_allowed: false
+  independent_candidates: [C1]
+  semantic_verifier: completed
+reviewers:
+  kimi:
+    model: kimi-code/k3
+    status: pass
+    review: docs/reviews/2026-08-25-kimi-rereview-tq010-tq014-company-placeable-graph.md
+  cursor:
+    model: auto
+    mode: ask
+    status: pass
+    review: docs/reviews/2026-08-25-cursor-rereview-tq010-tq014-company-placeable-graph.md
+validation:
+  status: pass
+  report: validation-final.yaml
+canonical_write_performed: false
+coverage_status_changed: false
+new_question_ids_created: false
+company_groups_created: false

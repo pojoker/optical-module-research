@@ -1,103 +1,40 @@
-# 当前授权：日更可靠性修复。旧修复任务记录保留在 Git 历史，不据此判定其完成。
 workpack:
-  id: DAILY-RELIABILITY-001
-  title: 国内海外日更可靠性三包修复
-  status: completed_with_followups
-  completed_at: 2026-09-05
-  completion_note: 三包限定修复已本地整合并通过253项测试和机器门；生产全量日更恢复尚未验收，静态入口、长停补抓与分页效率限制见主代理报告；未推送、未合并main。
-  approved_at: 2026-09-05
-  owner: 用户
-  authorization: 用户要求关注日更逻辑问题、分包给其他人修复，由主代理检查结果；此前已授权限定项目内容发送给 CodeBuddy/OpenCode/Pi，并允许隔离 worktree 编辑、测试和本地提交。
+  id: QA-PROVENANCE-SHARE-20260913
+  title: 打包14个主问题来源说明并发送飞书产业案头
+  status: delivered
+  authorization: 用户明确要求“打包一下 这个回答，发送到 飞书的产业案头”。
 objective:
-  - 国内日更避免无条件历史全量重抓，运行中断可观察且后续重跑不会丢数据。
-  - 海外采集正确识别文章、发布日期和抓取失败，修正已配置失效端点。
-  - 日报明确区分运行完成、部分失败、未运行与覆盖不足，不将零提取当作零新闻。
-baseline:
-  repository: pojoker/optical-module-research
-  commit: c695614ae1587168dd31d98d5eed8a9521ada94f
-  integration_branch: codex/fix-daily-reliability-20260905
-reader_visible_deliverables:
-  - 可复核的国内与海外采集结果及诚实的合并日报
-  - docs/plans/2026-09-05-daily-reliability-packages.md
-  - docs/reviews/2026-09-05-daily-reliability-review.md
+- 将本轮已给出的三段对话40轮提问到14个主问题的解释整理成可独立阅读的附件
+- 保留对应表、Q1来源区别、主题归属不等于逐子问覆盖的边界，以及可核对的原始提问索引
+- 使用现有飞书机器人发送到名称核对为产业案头的群，并核验发送结果
 allowed_write_paths:
-  - docs/control/ACTIVE_WORKPACK.yaml
-  - docs/plans/2026-09-05-daily-reliability-packages.md
-  - docs/reviews/2026-09-05-daily-reliability-*.md
-  - domestic_daily/core.py
-  - domestic_daily/cli.py
-  - corpus/_fetch_qa.py
-  - tests/test_domestic_daily.py
-  - calls/http_discovery.py
-  - calls/daily_discovery.py
-  - calls/discovery_config.json
-  - calls/tests/test_http_discovery.py
-  - calls/tests/test_daily_discovery.py
-  - daily_intelligence/core.py
-  - daily_intelligence/cli.py
-  - tests/test_daily_intelligence.py
+- docs/control/ACTIVE_WORKPACK.yaml
+- out/光模块14问来源说明-20260913/**
 read_scope:
   allowed:
-    - AGENTS.md
-    - docs/control/PROJECT_CHARTER.md
-    - docs/control/ACTIVE_WORKPACK.yaml
-    - docs/plans/2026-09-05-daily-reliability-packages.md
-    - README.md
-    - 当前分包文件及其直接依赖、针对性测试与 fixtures
-    - calls/*.csv 与根级 CSV/YAML 作为只读输入
-    - CONTEXT.md 与相关 docs/adr
-    - 当前任务三个隔离 worktree 与其 diff
-    - /Users/jowang/Downloads/workflow-rehearsal-daily-state 的运行摘要与失败清单（只读）
-    - 公开官方网站（只读请求）
-  forbidden:
-    - archive/**
-    - closure-pilot 与状态机材料
-    - 旧 worktree 和无关分支
-    - 完整 agent 轨迹、旧会话全量日志与其他 worker 未完成输出
+  - docs/source-conversations/README.md及三段原文Markdown
+  - site/optical-qa/index.html及本轮回答
+  - README.md、章程、工作包及本次差异
+  - 飞书技能与现有CLI身份状态、目标群查询、本次发送结果
+  - 原始语料已发布链接的精确Git远端及对应文件核验
+non_goals:
+- 不修改网页正文、原始对话或canonical账本
+- 不补充领域研究、不将索引对应视为全部子问题已回答
+- 不推送代码、不发布网站、不发送到其他群
+acceptance_criteria:
+- 附件保留14题对应关系和40轮提问的完整索引
+- Q1明确为基础导入，无独立同名原始用户提问
+- 文档能脱离本地绝对路径阅读，无脚本或外部资源依赖
+- 飞书API返回目标群消息ID，随后读取确认附件存在
 canonical_policy:
   writable: false
-worker_write_scopes:
-  codebuddy:
-    - domestic_daily/core.py
-    - domestic_daily/cli.py
-    - corpus/_fetch_qa.py
-    - tests/test_domestic_daily.py
-    - docs/reviews/2026-09-05-daily-reliability-codebuddy.md
-  opencode:
-    - calls/http_discovery.py
-    - calls/daily_discovery.py
-    - calls/discovery_config.json
-    - calls/tests/test_http_discovery.py
-    - calls/tests/test_daily_discovery.py
-    - docs/reviews/2026-09-05-daily-reliability-opencode.md
-  pi:
-    - daily_intelligence/core.py
-    - daily_intelligence/cli.py
-    - tests/test_daily_intelligence.py
-    - docs/reviews/2026-09-05-daily-reliability-pi.md
-worker_models:
-  codebuddy: hy4-preview
-  opencode: opencode-go/omen-alpha
-  pi: opencode-go/glm-5.3-flash
-non_goals:
-  - 不晋升候选，不修改 canonical，不重建正式网页或 calls/out
-  - 不扩充其余 74 个监控实体端点，不改变公司宇宙
-  - 不改系统调度设置，不读密钥，不绕过登录或反爬
-  - 不新增通用状态机、控制平面或领域 schema
-  - 不自动推送，不合并 main，不删除旧 worktree 或运行数据
-acceptance_criteria:
-  - 每包有针对实际失败模式的回归测试、范围内实现及简短交付报告。
-  - 国内覆盖成功增量、首轮回填、失败不推进水位、重跑去重和中断可观察。
-  - 海外覆盖导航误选、日期来源、详情失败报告和真实端点核验。
-  - 合并日报对缺失、过期、部分失败与覆盖不足显式降级，不输出误导的无新闻结论。
-  - 主代理审核 diff、运行针对性及整合机器门，canonical 前后不变。
-architecture_budget:
-  new_relation_types: []
-  new_state_machines: []
-  new_canonical_schemas: []
-  new_engines: []
-  note: 仅允许现有采集器的轻量进度、水位、错误记录与候选输出字段兼容扩展。
-stop_and_escalate:
-  - 超出分包写入范围时暂停对应修改并反馈
-  - 缺指定模型、需密钥或登录时反馈，不静默换模型
-  - 需要改 canonical、领域语义或新增架构时提交用户裁决
+validation:
+- 生成独立HTML和Markdown，包含14题对应表、40轮原始提问及4条已核对来源链接。
+- 40轮页面索引与源文件用户消息忽略空白后逐条一致；HTML有55个唯一锚点，内部链接全部有效，无脚本或外部资源依赖。
+- 三份原文及当前问答页与GitHub提交7a8053a3dce96b40d0a5998eb35702931f787637对应blob一致。
+- 以现有机器人codex yiji发送富文本说明并附HTML至产业案头，目标群oc_5d884e05d5da81aca3f809bb923fab6e。
+- 发送API返回成功；随后mget确认消息未删除、群ID一致、正文及HTML附件存在。
+- 未修改网页、原始对话或canonical；未推送或发布。
+delivery:
+  message_id: om_x100b656bbb3ec4a0b04fd350786d7dc
+  message_url: https://applink.feishu.cn/client/chat/open?openChatId=oc_5d884e05d5da81aca3f809bb923fab6e&position=145

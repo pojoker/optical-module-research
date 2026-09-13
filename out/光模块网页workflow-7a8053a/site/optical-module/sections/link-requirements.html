@@ -1,0 +1,39 @@
+<section class="section" id="link-requirements" data-certainty="stable">
+  <div class="statusline"><span class="certainty stable">稳定解释骨架</span><small>示例帮助理解；精确数值仍须绑定完整标准或产品</small></div>
+  <div class="kicker">第一条选择轴展开 · Link requirements</div>
+  <h2>“传多快、多远”不是一句规格，而是六个必须同时回答的问题</h2>
+  <p class="intro">把它想成运输任务会更直观：总速率是每秒要搬多少货，lane 是把货分给几条车道，每 lane 速率是每条车道跑多快，距离是路有多长，光纤类型是走哪种路，BER/FEC 则规定途中允许出现多少错误、由谁负责纠正。六项合在一起，才形成一份可以选方案的链路任务书。</p>
+
+  <div class="link-mission">
+    <div class="mission-label"><span>示例任务</span><b>把 800G 数据送到 500 米外</b></div>
+    <div class="mission-flow" aria-label="800G五百米单模链路任务">
+      <span>交换 ASIC</span><i>→</i><span>光模块 A</span><i>⇢ 500 m 单模光纤 ⇢</i><span>光模块 B</span><i>→</i><span>另一台交换机</span>
+    </div>
+    <p>这句话还不够下单：800G 是端口总速率，不说明模块内部有几条 lane，也不说明这些 lane 靠多根光纤还是多个波长区分，更没有说明错误校正放在哪里。</p>
+  </div>
+
+  <div class="requirement-grid">
+    <article class="requirement-card"><span class="req-num">01</span><div><small>Total rate</small><h3>总速率：一只端口合计搬多少</h3><p><b>800G</b>描述端口汇总能力，不代表“有一颗 800G 激光器”。真实实现会把数据拆到多条电 lane 和光 lane。</p><footer>先问：这是单个 800G 端口，还是两组 400G 业务装在同一个模块里？</footer></div></article>
+    <article class="requirement-card"><span class="req-num">02</span><div><small>Lane count</small><h3>lane 数：把总任务拆成几路</h3><p>lane 是一条并行数据通道。必须分别记录<b>主机侧电 lane</b>和<b>光纤侧光 lane</b>；两边可以通过 gearbox、DSP 或复用结构重新组织，不能默认数量相同。</p><footer>先问：8 条电 lane 进入模块后，光侧仍是 8 条，还是变成 4 条？</footer></div></article>
+    <article class="requirement-card"><span class="req-num">03</span><div><small>Per-lane rate</small><h3>每 lane 速率：每一路承担多少</h3><p>同为 800G，可以理解为 <b>8×约100G</b>，也可以是 <b>4×约200G</b> 等组织。lane 更少会降低接口数量，但每一路更快，电与光器件带宽更难。</p><footer>取舍：更多较慢 lane 增加密度；更少较快 lane 压缩信号余量。</footer></div></article>
+    <article class="requirement-card"><span class="req-num">04</span><div><small>Reach</small><h3>距离：光要在衰减和失真后仍能识别</h3><p>100 m、500 m、2 km 不只是线缆长度不同。距离增加会消耗更多光功率预算，并让色散、反射和连接损耗更值得关注；不能简单理解成“换一颗更强激光器”。</p><footer>先问：标称距离是否包含连接器、配线架和工程余量？</footer></div></article>
+    <article class="requirement-card"><span class="req-num">05</span><div><small>Fiber medium</small><h3>光纤类型：多模还是单模，几根纤芯</h3><p><b>MMF 多模光纤</b>常服务较短距离；<b>SMF 单模光纤</b>适合把高速信号送得更远。还要继续记录是一条收、一条发，还是多根并行收发光纤。</p><footer>光纤类型会联动波长、耦合方式、连接器和布线成本。</footer></div></article>
+    <article class="requirement-card"><span class="req-num">06</span><div><small>BER &amp; FEC</small><h3>误码与 FEC：允许错多少，在哪里纠错</h3><p>高速链路允许出现少量原始错误。<b>BER</b>衡量错误比例；<b>FEC</b>加入冗余信息来纠错。必须分清纠错前、纠错后指标，以及 FEC 位于 Host、模块还是协议规定的其他位置。</p><footer>更强纠错也有代价：冗余、处理时延、功耗和端到端验证责任。</footer></div></article>
+  </div>
+
+  <h3 class="subhead">同一个“800G、500 米、单模”任务，仍可能长成不同物理方案</h3>
+  <div class="same-demand" aria-label="相同链路需求的三种组织示意">
+    <div class="same-demand-input"><small>共同任务</small><b>800G · 500 m · SMF</b><span>再叠加完整 BER/FEC、温度和损耗边界</span></div>
+    <div class="demand-branch"><span class="branch-code">A</span><div><b>8 条约100G光 lane · 空间并行</b><p>可形成 DR8 类组织：单 lane 压力相对较低，但收发纤芯、阵列耦合和极性管理更多。</p></div></div>
+    <div class="demand-branch"><span class="branch-code">B</span><div><b>4 条约200G光 lane · 空间并行</b><p>可形成 DR4 类组织：光 lane 和纤芯减少，但每 lane 的调制、探测与电互连带宽提高。</p></div></div>
+    <div class="demand-branch"><span class="branch-code">C</span><div><b>4 条约200G光 lane · 波长复用</b><p>可形成 FR4 类组织：多路波长共用一对光纤，同时引入合分波、波长控制与相应测试。</p></div></div>
+  </div>
+  <div class="warn"><b>DR8、DR4、FR4 不能脱离完整名称使用。</b>这里是在 800G 示例中解释组织差异；正式判断还要写明标准组织、完整规范名、版本/成熟度、reach 与 FEC。裸写“DR4”并不能唯一确定一个产品。</div>
+
+  <div class="requirement-boundary">
+    <article><small>链路需求可以先筛掉什么</small><h3>不满足速率、距离、光纤和误码边界的方案</h3><p>例如目标只有双工两芯布线，就不能直接采用依赖多根并行光纤的实现而不改变基础设施。</p></article>
+    <i>→</i>
+    <article><small>链路需求还不能决定什么</small><h3>EML 还是 SiPh、Retimed 还是 LPO、Pluggable 还是 CPO</h3><p>这些属于后续不同选择轴。它们要在链路任务确定后，再结合功耗、Host 能力、封装、制造和维护要求选择。</p></article>
+  </div>
+  <div class="reader-rule"><b>正确阅读顺序：</b>先得到“速率 × lane × 距离 × 光纤 × BER/FEC”的链路画像，再选择 Parallel/WDM；之后才讨论电职责、EML/SiPh、Pluggable/NPO/CPO 和产品外形。</div>
+</section>

@@ -8,6 +8,8 @@ import json
 import os
 import re
 import shutil
+import signal
+import time
 import subprocess
 import sys
 import tempfile
@@ -50,6 +52,40 @@ def _json_bytes(value):
 
 def _now_iso():
     return dt.datetime.now().astimezone().isoformat(timespec="seconds")
+
+
+class CompanyTimeout(BaseException):
+    """Not swallowed by network adapters' Exception handlers."""
+
+
+@contextmanager
+def company_budget(seconds):
+    old_handler = signal.getsignal(signal.SIGALRM)
+    old_timer = signal.getitimer(signal.ITIMER_REAL)
+    started = time.monotonic()
+    def expire(signum, frame):
+        raise CompanyTimeout(f"单公司抓取超过 {seconds:g} 秒预算")
+    signal.signal(signal.SIGALRM, expire)
+    signal.setitimer(signal.ITIMER_REAL, seconds)
+    try:
+        yield
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, old_handler)
+        if old_timer[0]:
+            signal.setitimer(signal.ITIMER_REAL, max(0.000001, old_timer[0] - (time.monotonic() - started)), old_timer[1])
+
+
+@contextmanager
+def termination_handler():
+    old = signal.getsignal(signal.SIGTERM)
+    def interrupt(signum, frame):
+        raise KeyboardInterrupt("收到 SIGTERM")
+    signal.signal(signal.SIGTERM, interrupt)
+    try:
+        yield
+    finally:
+        signal.signal(signal.SIGTERM, old)
 
 
 class RequestsClient:
@@ -101,6 +137,7 @@ class RequestsClient:
     def fetch_qa(self, code, since, existing):
         """Run the repository's exact SSE/IRM/P5W fetcher against an isolated seed."""
         module = self._fetch_module()
+        module.PROGRESS_CALLBACK = getattr(self, "progress_callback", None)
         with tempfile.TemporaryDirectory(prefix="domestic-qa-") as temp:
             isolated_root = Path(temp)
             qpath = isolated_root / "corpus/qa" / code / "qa.jsonl"
@@ -110,7 +147,13 @@ class RequestsClient:
                 encoding="utf-8",
             )
             module.ROOT = str(isolated_root)
-            module.fetch(code, since)
+            try:
+                module.fetch(code, since)
+            except (Exception, CompanyTimeout) as exc:
+                # Adapter may have merged partial pages before raising truncation.
+                # Carry these rows out before TemporaryDirectory removes them.
+                exc.partial_rows = DailyMirror._read_qa(qpath)
+                raise
             return DailyMirror._read_qa(qpath)
 
     def query_announcements(self, code, since, until):
@@ -158,12 +201,15 @@ class FixtureClient:
 
 
 class DailyMirror:
-    def __init__(self, source_root, state_root, client):
+    def __init__(self, source_root, state_root, client, qa_timeout=60):
         self.source = Path(source_root).resolve()
         self.state = Path(state_root).resolve()
         if self.state == self.source or self.source in self.state.parents:
             raise ValueError("state_root must be outside source_root")
         self.client = client
+        if not 0 < qa_timeout < float("inf"):
+            raise ValueError("qa_timeout must be positive and finite")
+        self.qa_timeout = qa_timeout
         self.frozen = {r["代码"]: r["名称"] for r in _rows(self.source / "corpus/_frozen.csv")}
         self.watch = []
         for row in _rows(self.source / "corpus/_restart_watchlist.csv"):
@@ -259,12 +305,15 @@ class DailyMirror:
     def _read_qa(path):
         rows = []
         if path.exists():
-            for line in path.read_text(encoding="utf-8").splitlines():
-                try:
-                    row = json.loads(line)
-                    if all(k in row for k in QA_KEYS): rows.append(row)
-                except json.JSONDecodeError:
-                    continue
+            # JSON strings may contain U+0085/U+2028/U+2029. They are not
+            # JSONL record boundaries; str.splitlines() silently loses rows.
+            with path.open(encoding="utf-8") as stream:
+                for line in stream:
+                    try:
+                        row = json.loads(line)
+                        if all(k in row for k in QA_KEYS): rows.append(row)
+                    except json.JSONDecodeError:
+                        continue
         return rows
 
     def _old_qa(self, code):
@@ -367,6 +416,10 @@ class DailyMirror:
         self._errors.append(message)
         self._flush_logs()
 
+    def _request_progress(self, request):
+        self._current_request = dict(request, started_at=_now_iso())
+        self._write_run_status("running")
+
     def _write_run_status(self, status, extra=None):
         progress = getattr(self, "_progress", None) or {"processed": 0, "total": 0, "stage": "启动"}
         payload = {
@@ -376,6 +429,9 @@ class DailyMirror:
             "processed": progress.get("processed", 0),
             "total": progress.get("total", 0),
             "stage": progress.get("stage", "启动"),
+            "current_company": getattr(self, "_current_company", None),
+            "current_request": getattr(self, "_current_request", None),
+            "pid": os.getpid(),
             "error_count": len(getattr(self, "_errors", [])),
             "errors": list(getattr(self, "_errors", [])),
             "prior_run_interrupted": bool(getattr(self, "_interrupted", False)),
@@ -414,11 +470,13 @@ class DailyMirror:
         today, since = day.isoformat(), (day - dt.timedelta(days=3)).isoformat()
         if backfill_since:
             backfill_since = dt.date.fromisoformat(str(backfill_since)).isoformat()
-        with self._lock():
+        with self._lock(), termination_handler():
             before = self._protected_fingerprint()
             staging = Path(tempfile.mkdtemp(prefix=".run-", dir=self.state))
             try:
                 self._run_date = today
+                self._current_company = None
+                self._current_request = None
                 self._logs = []
                 self._errors = []
                 self._progress = {"processed": 0, "total": 0, "stage": "启动"}
@@ -426,14 +484,25 @@ class DailyMirror:
                 errors = self._errors
                 ir_tabs = (("relation", "category_dyhd_szdy"), ("fulltext", ""))
                 prior_status = self._read_json("run-status.json")
-                self._interrupted = bool(prior_status and prior_status.get("status") == "running")
+                self._interrupted = bool(prior_status and (prior_status.get("status") == "running" or prior_status.get("interrupted")))
                 if self._interrupted:
-                    logs.append(f"[运行状态] 上一次运行遗留 running(run_date={prior_status.get('run_date')})：仅证明上次未正常结束，不据此推断终止原因")
+                    logs.append(f"[运行状态] 上一次运行未正常结束(run_date={prior_status.get('run_date')})：仅证明上次未正常结束，不据此推断终止原因")
                 self._flush_logs()
                 prior_manifest = self._read_json("manifest.json")
                 codes = self.watched_codes(); digest = {"ir_new": [], "qa_new": [], "ann": [], "q_delta_new": [], "q_delta_gone": []}
                 qa_watermarks = self._read_json("qa_watermarks.json") or {}
                 qa_failed = []; qa_backfill = []
+                adapter_hash = hashlib.sha256(Path(__file__).read_bytes())
+                fetcher_path = self.source / "corpus/_fetch_qa.py"
+                if fetcher_path.exists():
+                    adapter_hash.update(fetcher_path.read_bytes())
+                resume_key = {"run_date": today, "source_fingerprint": before,
+                              "adapter_fingerprint": adapter_hash.hexdigest(), "backfill_since": backfill_since}
+                resume = self._read_json("qa-resume.json") or {}
+                if resume.get("key") != resume_key:
+                    resume = {"key": resume_key, "companies": {}}
+                completed = resume.get("companies", {})
+                self.client.progress_callback = self._request_progress
                 new_ir = []; added_qa = []; outliers = []
                 seen = set(); seen_outliers = set()
                 self._progress = {"processed": 0, "total": len(ir_tabs) + 2 * len(codes), "stage": "投关表"}
@@ -491,14 +560,25 @@ class DailyMirror:
                     qa_since = backfill_since or self._qa_since(qa_watermarks.get(code), day)
                     if code not in qa_watermarks:
                         qa_backfill.append(code)
+                    self._current_company = code
+                    self._current_request = None
+                    self._write_run_status("running")
                     try:
-                        fetched = self.client.fetch_qa(code, qa_since, existing) or []
-                    except Exception as exc:
-                        self._emit(f"[互动易] {code} 抓取失败(since={qa_since}): {str(exc)[:80]}")
+                        if code in completed:
+                            fetched = completed[code]
+                        else:
+                            with company_budget(self.qa_timeout):
+                                fetched = self.client.fetch_qa(code, qa_since, existing) or []
+                    except (Exception, CompanyTimeout) as exc:
+                        fetched = getattr(exc, "partial_rows", [])
+                        partial_new = sum(_key(row) not in prior for row in fetched)
+                        self._emit(f"[互动易] {code} 抓取失败(since={qa_since}, request={self._current_request}); 部分保留新增{partial_new}条、不推进水位: {type(exc).__name__}: {exc}")
                         qa_failed.append(code)
-                        fetched = []
                     else:
                         qa_watermarks[code] = today
+                        completed[code] = fetched
+                        resume["companies"] = completed
+                        self._write_json("qa-resume.json", resume)
                     merged = { _key(x): x for x in existing }
                     for row in fetched:
                         if _key(row) not in merged: added_qa.append((code, row))
@@ -508,6 +588,8 @@ class DailyMirror:
                     qpath.write_text("".join(json.dumps(v, ensure_ascii=False, sort_keys=True) + "\n" for v in merged.values()), encoding="utf-8")
                     self._progress["processed"] += 1
                     self._write_run_status("running", {"qa_failed": qa_failed, "qa_backfill": qa_backfill})
+                self._current_company = None
+                self._current_request = None
                 self._progress["stage"] = "公告流"
                 self._write_run_status("running", {"qa_failed": qa_failed, "qa_backfill": qa_backfill})
                 for code in codes:
@@ -594,6 +676,7 @@ class DailyMirror:
                     self._progress["processed"] = self._progress["total"]
                     self._write_json("qa_watermarks.json", qa_watermarks)
                     self._write_run_status("complete", {"qa_failed": qa_failed, "qa_backfill": qa_backfill, "unchanged_replay": True})
+                    (self.state / "qa-resume.json").unlink(missing_ok=True)
                     return {"daily_path": str(self.state / "daily" / f"{today}.txt"), "manifest_path": str(self.state / "manifest.json"),
                             "manifest": dict(prior_manifest, run_status="complete", errors=errors, qa_failed_codes=qa_failed)}
                 evidence = bool(digest["ir_new"] or digest["qa_new"] or digest["ann"] or digest["q_delta_new"] or restart)
@@ -630,10 +713,11 @@ class DailyMirror:
                 if before != after: raise RuntimeError("source_root changed during run")
                 self._progress["processed"] = self._progress["total"]
                 self._write_run_status(run_status, {"qa_failed": qa_failed, "qa_backfill": qa_backfill, "daily_path": str(self.state / "daily" / f"{today}.txt")})
+                (self.state / "qa-resume.json").unlink(missing_ok=True)
                 return {"daily_path": str(self.state / "daily" / f"{today}.txt"), "manifest_path": str(self.state / "manifest.json"), "manifest": manifest}
-            except Exception:
+            except BaseException as exc:
                 try:
-                    self._write_run_status("failed")
+                    self._write_run_status("failed", {"interrupted": isinstance(exc, (KeyboardInterrupt, SystemExit)), "termination_reason": f"{type(exc).__name__}: {exc}"})
                 except Exception:
                     pass
                 raise

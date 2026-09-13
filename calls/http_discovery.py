@@ -9,15 +9,23 @@ endpoint failure for the human queue.
 from __future__ import annotations
 
 import json
+import math
 import re
+import signal
+import ssl
+import threading
+import time
 import xml.etree.ElementTree as ET
+from contextlib import contextmanager
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
+from html import escape
 from typing import Any, TYPE_CHECKING
 from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
 
 if TYPE_CHECKING:
     from .daily_discovery import Endpoint
@@ -39,9 +47,9 @@ ARTICLE_HINT = re.compile(
 )
 # 导航/索引/辅助页与附件，不得因同域被当作文章链接。
 ARTICLE_PATH_EXCLUDE = re.compile(
-    r"(?:^|/)(?:faq|faqs|index|overview|search|events?|webinars?|webcasts?|presentations?"
+    r"(?:^|/)(?:home|faq|faqs|index|overview|search|events?|webinars?|webcasts?|presentations?"
     r"|tag|category|privacy|terms|conditions|contact|careers|login|signin|subscribe|newsletters?"
-    r"|disclaimer|share-price|news-events|annual-reports|quarterly-results)"
+    r"|latest-news|impressum|press-coverage|disclaimer|share-price(?:-tools)?|ir-calendar|live-events|news-events|annual-reports|quarterly-results)"
     r"(?:\.aspx?|\.html?)?/?$"
     r"|(?:^|/)(?:sec-filings|email-alerts|investor-faqs|financial-information|financial-reports"
     r"|rss-feeds|analyst-reports|analyst-relations|filter-results|articles|blogs|company|artificial-intelligence"
@@ -49,7 +57,6 @@ ARTICLE_PATH_EXCLUDE = re.compile(
     r"|collaboration|observability)(?:\.aspx?|\.html?)?/?$"
     r"|(?:^|/)(?:press-releases|news-releases|financial-news-releases|media|investors?"
     r"|blog|newsroom|news|regulatory-news)(?:\.aspx?|\.html?)?/?$"
-    r"|/(?:investor-relations|financial-information)/"
     r"|/(?:events?|webinars?|webcasts?|presentations?)/"
     r"|default\.aspx$"
     r"|\.(?:jpe?g|png|gif|zip|pdf|css|js)$",
@@ -60,7 +67,7 @@ ARTICLE_TITLE_EXCLUDE = re.compile(
     r"|presentations?|search|contact(?: us)?|privacy|terms|careers|log ?in|subscribe|newsletters?"
     r"|rss(?: feed)?|blog|blogs?|resources|about(?: us)?|support|leadership|strategy"
     r"|strategic review|investment case|business model|summary financials|regulatory news"
-    r"|view all|analyst relations|aim rule|advisers|financial calendar|results, reports"
+    r"|view all|analyst relations|aim rule|advisers|financial calendar|ir calendar|live events|share price tools|results, reports"
     r"|investor relations(?: home)?|investor faqs?|investor email alerts?|email alerts?"
     r"|sec filings?|financial results|financial reports|news releases?|press releases?)\b",
     re.I,
@@ -154,13 +161,17 @@ class _HTML(HTMLParser):
             if key and values.get("content"):
                 self.meta[key] = values["content"].strip()
         elif tag == "link" and "canonical" in values.get("rel", "").lower():
-            self.canonical = urljoin(self.base_url, values.get("href", ""))
+            try:
+                self.canonical = urljoin(self.base_url, values.get("href", ""))
+            except ValueError:
+                pass  # malformed external markup must not abort the page
         elif tag == "time" and values.get("datetime"):
             self.time_values.append((values["datetime"], values.get("class", "")))
         # 发布日期常出现在 class 含 date 的短元素中；只有可信的日期类 token 才收
         # （如 "Type--Date"、"blog-post-header2_date"），行情/更新时间类 class 不收。
         if not self._date_capture_tag and not values.get("datetime") \
-                and _trusted_date_class(values.get("class", "")):
+                and (_trusted_date_class(values.get("class", "")) or
+                     (tag == "time" and not MARKER_CLASS_HINT.search(values.get("class", "")))):
             self._date_capture_tag = tag
             self._date_depth = 1
             self._date_buffer = []
@@ -213,8 +224,10 @@ class _HTML(HTMLParser):
                 self._date_buffer = []
         if tag == "a" and self._href:
             text = re.sub(r"\s+", " ", "".join(self._link_buffer)).strip()
-            if text:
+            try:
                 self.links.append((urljoin(self.base_url, self._href), text))
+            except ValueError:
+                pass  # e.g. real ficonTEC href https://masstart.eu]
             self._href = ""
             self._link_buffer = []
         if tag != self._capture:
@@ -406,30 +419,38 @@ def _json_object_binds(obj_text: str, canonical_url: str, title: str) -> bool:
 
 
 def _enclosing_json_object(body: str, pos: int) -> str:
-    """返回包含 pos 的最内层 JSON 对象文本，用于把日期绑定到其所属节点。
-    括号平衡不解析字符串字面量；无法闭合时返回短窗（调用方按无法识别处理）。"""
-    depth = 0
-    start = pos
-    while start >= 0:
-        char = body[start]
-        if char == "}":
-            depth += 1
+    """Locate the enclosing object without counting braces inside JSON strings.
+
+    Real Drupal article nodes exceed 40k. Decode the complete object instead of
+    returning a truncated prefix, while retaining the caller's URL binding gate.
+    """
+    script = body.rfind("<script", 0, pos)
+    begin = body.find(">", script) + 1 if script >= 0 else 0
+    stack: list[int] = []
+    quoted = escaped = False
+    for index in range(begin, pos):
+        char = body[index]
+        if quoted:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                quoted = False
+        elif char == '"':
+            quoted = True
         elif char == "{":
-            if depth == 0:
-                break
-            depth -= 1
-        start -= 1
-    if start < 0:
+            stack.append(index)
+        elif char == "}" and stack:
+            stack.pop()
+    if not stack:
         return ""
-    level = 0
-    for index in range(start, min(len(body), start + 40_000)):
-        if body[index] == "{":
-            level += 1
-        elif body[index] == "}":
-            level -= 1
-            if level == 0:
-                return body[start:index + 1]
-    return body[start:start + 2000]
+    start = stack[-1]
+    try:
+        _, end = json.JSONDecoder().raw_decode(body, start)
+    except (ValueError, RecursionError):
+        return ""
+    return body[start:end] if end > pos else ""
 
 
 def _json_field_date(body: str, canonical_url: str, title: str) -> str:
@@ -493,6 +514,140 @@ def _dateline_date(paragraphs: list[str]) -> str:
     return ""
 
 
+
+def _publication_region(body: str, tag: str, class_name: str) -> list[str]:
+    """Read one publisher's visible date/body container, preserving nesting."""
+    class Region(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=False)
+            self.depth = 0
+            self.chunks = []
+            self.regions = []
+
+        def handle_starttag(self, name, attrs):
+            if name == tag and (self.depth or class_name in dict(attrs).get('class', '').split()):
+                self.depth += 1
+            if self.depth:
+                self.chunks.append(self.get_starttag_text())
+
+        def handle_endtag(self, name):
+            if self.depth:
+                self.chunks.append(f'</{name}>')
+                if name == tag:
+                    self.depth -= 1
+                    if not self.depth:
+                        self.regions.append(''.join(self.chunks))
+                        self.chunks = []
+
+        def handle_data(self, value):
+            if self.depth:
+                self.chunks.append(value)
+
+        def handle_entityref(self, value):
+            self.handle_data('&' + value + ';')
+
+        def handle_charref(self, value):
+            self.handle_data('&#' + value + ';')
+
+    parser = Region()
+    parser.feed(body)
+    return parser.regions
+
+
+def _sourcephotonics_publication_date(body: str, url: str) -> str:
+    regions = _publication_region(body, 'div', 'entry-content')
+    if len(regions) != 1:
+        return ''
+    parser = _HTML(url)
+    parser.feed(regions[0])
+    parser._finalize()
+    dates = set()
+    for paragraph in parser.paragraphs[:8]:
+        # Only release datelines, not the adjacent "When: ..." event dates.
+        match = re.match(
+            r'(?:Los Angeles, California|West Hills and (?:San Francisco|Los Angeles), California'
+            r'|Copenhagen, Denmark and West Hills, CA),\s*([A-Za-z]+ \d{1,2}, 20\d{2})'
+            r'(?:\s*[–—-]\s*Source Photonics|\s*$)', paragraph)
+        release = re.match(r'([A-Za-z]+ \d{1,2}, 20\d{2})\s+\d{1,2}:\d{2}\s+ET\s*\|\s*Source:\s*Source Photonics', paragraph)
+        if match or release:
+            dates.add(_date_only((match or release).group(1)))
+    return next(iter(dates)) if len(dates) == 1 else ''
+
+
+def _site_publication_date(body: str, url: str, paragraphs: list[str]) -> str:
+    """Known official release templates only; never infer dates from URL paths."""
+    parsed = urlparse(url)
+    patterns = []
+    if parsed.hostname == "newsroom.ao-inc.com" and parsed.path.startswith("/news-releases/"):
+        patterns = [r'<p[^>]*class=["\']post-date-author["\'][^>]*>\s*([A-Za-z]+ \d{1,2}, 20\d{2})']
+    elif parsed.hostname in {"www.evgroup.com", "evgroup.com"} and parsed.path.startswith("/company/news/detail/"):
+        for paragraph in paragraphs:
+            specific = re.match(r'(?:LEUVEN \(Belgium\),\s*|Toronto, ON\s*\|\s*)([A-Za-z]+ \d{1,2}(?:st|nd|rd|th)?, 20\d{2})', paragraph)
+            if specific:
+                return _date_only(re.sub(r'(\d)(?:st|nd|rd|th)\b', r'\1', specific.group(1)))
+            match = re.match(r"[A-Z .,-]+[a-zA-Z .,-]*\b(?:Austria|Germany|USA|Taiwan),\s*([A-Za-z]+ \d{1,2}, 20\d{2})", paragraph)
+            if match:
+                return _date_only(match.group(1))
+    elif parsed.hostname in {"www.furukawaelectric.com", "www.furukawa.co.jp"} and re.search(r"/en/release/20\d{2}/", parsed.path):
+        patterns = [r'<div[^>]*class=["\'][^"\']*\btext-right\b[^"\']*["\'][^>]*>\s*<p[^>]*>([^<]+)</p>']
+    elif parsed.hostname == "sumitomoelectric.com" and parsed.path.startswith("/press/"):
+        patterns = [r'<h1[^>]*class=["\'][^"\']*\ba-subheadline\b[^"\']*["\'][^>]*>([^<]+)</h1>']
+    elif parsed.hostname == "www.ff-opticalcomponents.com" and parsed.path.startswith("/en/information/"):
+        patterns = [r'<div[^>]*class=["\']m_page-meta["\'][^>]*>\s*<p>([^<]+)</p>']
+    elif parsed.hostname == "lumilens.com" and parsed.path.startswith("/news-insights/"):
+        for paragraph in paragraphs:
+            match = re.match(r"SAN JOSE,\s*Calif\.\s*[—–-]\s*([A-Za-z]+ \d{1,2}, 20\d{2})", paragraph)
+            if match:
+                return _date_only(match.group(1))
+    elif parsed.hostname in {"soitec.com", "www.soitec.com"} and "/press-releases/content/" in parsed.path:
+        patterns = [r'<div[^>]*class=["\'][^"\']*\btext-gray-400\b[^"\']*["\'][^>]*>\s*<span>\s*([A-Za-z]+ \d{1,2}, 20\d{2})\s*</s(?:pan|oan)>']
+    elif parsed.hostname in {"www.mycronic.com", "mycronic.com"} and parsed.path.startswith("/news-events/our-press-releases/"):
+        patterns = [r'<div[^>]*class=["\']c-listing-item__meta-info-item["\'][^>]*>\s*<svg\b[^>]*>.*?calendar-day.*?</svg>\s*(\d{1,2} [A-Z]+ 20\d{2})\s*</div>']
+    elif parsed.hostname in {"www.suss.com", "suss.com"} and parsed.path.startswith("/en/news/"):
+        headers = _publication_region(body, 'header', 'article-header')
+        if len(headers) == 1 and re.search(r'<h1\b', headers[0]):
+            matches = re.findall(r'<p[^>]*class=["\']mb-2["\'][^>]*>\s*([A-Za-z]+ \d{1,2}, 20\d{2} \d{2}:\d{2}:\d{2})\s*</p>', headers[0])
+            if len(matches) == 1:
+                return _date_only(matches[0])
+        match = re.search(r'(\d{2}\.\d{2}\.20\d{2}) / \d{2}:\d{2} CET/CEST\s*<br\s*/?>\s*The issuer is solely responsible', body)
+        if match:
+            return datetime.strptime(match.group(1), "%d.%m.%Y").date().isoformat()
+    elif parsed.hostname in {"www.ntt-innovative-devices.com", "www.ntt-id.com"} and re.search(r"/en/news/20\d{2}/", parsed.path):
+        patterns = [r'<span[^>]*class=["\']text_s["\'][^>]*>([^<]+)</span>']
+    elif parsed.hostname == "abc.xyz" and "/news-details/" in parsed.path:
+        patterns = [r'<span[^>]*class=["\']evergreen-news-date-text["\'][^>]*>([^<]+)</span>']
+    elif parsed.hostname == "www.aseglobal.com" and parsed.path.startswith("/press-room/"):
+        patterns = [r'<div[^>]*class=["\']blog-mini-time["\'][^>]*>([^<]+)</div>']
+    elif parsed.hostname == "www.semtech.com" and parsed.path.startswith("/company/press/"):
+        for paragraph in paragraphs:
+            match = re.match(r"CAMARILLO, Calif\.,\s*([A-Za-z]+)\.?\s+(\d{1,2}, 20\d{2})", paragraph)
+            if match:
+                return _date_only(match.group(1) + " " + match.group(2))
+    elif parsed.hostname in {'www.sourcephotonics.com', 'sourcephotonics.com'} and parsed.path.startswith('/news/'):
+        return _sourcephotonics_publication_date(body, url)
+    elif parsed.hostname in {'www.te.com', 'te.com'} and re.fullmatch(r'/en/about-te/news-center/[^/]+\.html', parsed.path):
+        regions = _publication_region(body, 'div', 'published-date')
+        if len(regions) == 1 and re.search(r'<h4[^>]*>\s*Published\s*</h4>', regions[0]):
+            dates = re.findall(r'<p[^>]*>\s*(\d{2}/\d{2}/\d{2})\s*</p>', regions[0])
+            if len(dates) == 1:
+                return datetime.strptime(dates[0], '%m/%d/%y').date().isoformat()
+    elif parsed.hostname == "www.aixtron.com" and "/press/press-releases/" in parsed.path:
+        german = re.search(r'<p[^>]*>\s*(\d{1,2})\.\s*([A-Za-zÄä]+)\s+(20\d{2})\s*\|[^<]+</p>\s*<h1\b', body)
+        if german:
+            months = {"Januar": 1, "Februar": 2, "März": 3, "April": 4, "Mai": 5, "Juni": 6, "Juli": 7, "August": 8, "September": 9, "Oktober": 10, "November": 11, "Dezember": 12}
+            if german.group(2) in months:
+                return date(int(german.group(3)), months[german.group(2)], int(german.group(1))).isoformat()
+        for paragraph in paragraphs:
+            match = re.match(r"Herzogenrath, Germany,\s*([A-Za-z]+ \d{1,2}, 20\d{2})", paragraph)
+            if match:
+                return _date_only(match.group(1))
+    for pattern in patterns:
+        match = re.search(pattern, body, re.I | re.S)
+        if match:
+            return _date_only(match.group(1))
+    return ""
+
+
 def parse_html_item(body: str, url: str, fallback_title: str = "") -> dict[str, Any]:
     parser = _HTML(url)
     parser.feed(body)
@@ -503,8 +658,11 @@ def parse_html_item(body: str, url: str, fallback_title: str = "") -> dict[str, 
         parser.meta.get("og:title") or parser.meta.get("twitter:title")
         or parser.meta.get("h1") or fallback_title or parser.meta.get("title") or ""
     )
-    published = ""
+    published = (_site_publication_date(body, canonical, parser.paragraphs)
+                 if urlparse(canonical).hostname in {'www.te.com', 'te.com'} else '')
     for key, value in parser.meta.items():
+        if published:
+            break
         if key in DATE_KEYS:
             published = _date_only(value)
             if published:
@@ -521,12 +679,60 @@ def parse_html_item(body: str, url: str, fallback_title: str = "") -> dict[str, 
                 break
     if not published:
         published = _json_ld_date(parser.json_ld, canonical, title)
+    if (not published and urlparse(canonical).hostname in {"openlightphotonics.com", "www.openlightphotonics.com"}
+            and re.fullmatch(r"/newsroom/[^/]+/?", urlparse(canonical).path)):
+        bound_dates = []
+        for block in parser.json_ld:
+            try:
+                payload = json.loads(block)
+            except ValueError:
+                continue
+            for node, _primary in _collect_ld_nodes(payload):
+                locators = [node.get(key) for key in ('url', 'mainEntityOfPage') if node.get(key)]
+                locators = [value.get('@id') or value.get('url') if isinstance(value, dict) else value for value in locators]
+                if (_node_types(node) == {"website"} and _title_binds(str(node.get("headline", "")), parser.meta.get('h1') or title)
+                        and locators and all(_url_binds(value, canonical) for value in locators)):
+                    bound_dates.append(_date_only(str(node["datePublished"])))
+        if len(bound_dates) == 1:
+            published = bound_dates[0]
     if not published:
         published = _json_field_date(body, canonical, title)
     if not published:
         published = next((found for found in map(_date_only, parser.date_values) if found), "")
     if not published:
         published = _dateline_date(parser.paragraphs)
+    if not published:
+        published = _site_publication_date(body, canonical, parser.paragraphs)
+    if (urlparse(canonical).hostname in {'www.sourcephotonics.com', 'sourcephotonics.com'}
+            and urlparse(canonical).path.startswith('/news/')):
+        # A short dateline must not bypass disagreement with the release-time line.
+        published = _sourcephotonics_publication_date(body, canonical)
+    # Delta official numeric press pages contain their release body in one
+    # inline srcdoc iframe. Decode attributes with HTMLParser (no remote iframe
+    # fetching); reject ambiguous bodies/dates instead of reading navigation.
+    if (urlparse(url).hostname == "www.deltaww.com"
+            and re.fullmatch(r"/en-US/press/\d+/?", urlparse(url).path)):
+        class DeltaBody(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.bodies = []
+            def handle_starttag(self, tag, attrs):
+                values = dict(attrs)
+                if tag == "iframe" and values.get("srcdoc"):
+                    self.bodies.append(values["srcdoc"])
+        delta = DeltaBody()
+        delta.feed(body)
+        dates = re.findall(r'<span\s+class=["\']empty:hidden["\'][^>]*>\s*(\d{2}/\d{2}/\d{4})\s*</span>', body)
+        if len(delta.bodies) == 1 and len(dates) == 1 and parser.meta.get("h1"):
+            release = _HTML(url)
+            release.feed(delta.bodies[0])
+            release.close()
+            release._finalize()
+            parser.paragraphs = release.paragraphs
+            published = datetime.strptime(dates[0], "%m/%d/%Y").date().isoformat()
+        else:
+            parser.paragraphs = []
+            published = ""
     # 注意：不做全文首个日期兜底——正文首个日期可能是版权年份、其他文章或作者注册日期。
     return {
         "url": canonical,
@@ -540,7 +746,7 @@ def parse_html_item(body: str, url: str, fallback_title: str = "") -> dict[str, 
     }
 
 
-def discover_article_links(body: str, url: str, limit: int = 20) -> list[tuple[str, str]]:
+def discover_article_links(body: str, url: str, limit: int = 20, path_pattern: str = "") -> list[tuple[str, str]]:
     parser = _HTML(url)
     parser.feed(body)
     origin = urlparse(url).netloc.lower()
@@ -551,7 +757,9 @@ def discover_article_links(body: str, url: str, limit: int = 20) -> list[tuple[s
         normalized = link.split("#", 1)[0].rstrip("/")
         if parsed.scheme not in {"http", "https"} or parsed.netloc.lower() != origin:
             continue
-        if normalized in seen or len(title) < 8 or not ARTICLE_HINT.search(parsed.path + " " + title):
+        if path_pattern and not re.search(path_pattern, parsed.path):
+            continue
+        if normalized in seen or (not path_pattern and (len(title) < 8 or not ARTICLE_HINT.search(parsed.path + " " + title))):
             continue
         has_article_id_query = False
         if "?" in normalized:
@@ -568,13 +776,140 @@ def discover_article_links(body: str, url: str, limit: int = 20) -> list[tuple[s
         path_excluded = bool(ARTICLE_PATH_EXCLUDE.search(parsed.path)) \
             and "news-details" not in parsed.path.lower() \
             and not has_article_id_query
-        if path_excluded or ARTICLE_TITLE_EXCLUDE.search(title):
+        if (path_excluded or ARTICLE_TITLE_EXCLUDE.search(title)
+                or (not path_pattern and re.search(r"/(?:investor-relations|financial-information)/", parsed.path, re.I))):
             continue
         seen.add(normalized)
         found.append((normalized, title))
         if len(found) >= limit:
             break
     return found
+
+
+class _DatedListingHTML(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.root = {'tag': '', 'attrs': {}, 'children': [], 'text': []}
+        self.stack = [self.root]
+
+    def handle_starttag(self, tag, attrs):
+        node = {'tag': tag, 'attrs': dict(attrs), 'children': [], 'text': []}
+        self.stack[-1]['children'].append(node)
+        if tag not in {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}:
+            self.stack.append(node)
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+        self.handle_endtag(tag)
+
+    def handle_endtag(self, tag):
+        for i in range(len(self.stack) - 1, 0, -1):
+            if self.stack[i]['tag'] == tag:
+                del self.stack[i:]
+                break
+
+    def handle_data(self, data):
+        for node in self.stack:
+            node['text'].append(data)
+
+
+def discover_dated_article_links(body, url):
+    """Return card-bound dates; None means this URL has no supported template."""
+    origin = urlparse(url)
+    host, path = origin.hostname, origin.path.rstrip('/')
+    if host == 'www.asmpt.com' and path == '/en/investor-relations/news-events':
+        site, pattern = 'asmpt', r'/en/investor-relations/news-events/[^/]+/?'
+    elif host == 'www.accton.com' and path == '/express':
+        site, pattern = 'accton', r'/[^/]+/?'
+    elif host == 'www.semtech.com' and path == '/company/press':
+        site, pattern = 'semtech', r'/company/press/(?!P\d+/?$)[^/]+'
+    else:
+        return None
+    parser = _DatedListingHTML()
+    parser.feed(body)
+
+    def walk(node):
+        yield node
+        for child in node['children']:
+            yield from walk(child)
+
+    def has(node, cls):
+        return cls in node['attrs'].get('class', '').split()
+
+    def text(node):
+        return ' '.join(' '.join(node['text']).split())
+
+    def target(node):
+        try:
+            link = urljoin(url, node['attrs'].get('href', ''))
+            parsed = urlparse(link)
+            if (node['tag'] == 'a' and parsed.scheme in {'https', 'http'}
+                    and parsed.hostname == host and re.fullmatch(pattern, parsed.path)
+                    and (site != 'accton' or has(node, 'story-link'))
+                    and not parsed.query and not parsed.fragment):
+                return link.rstrip('/')
+        except ValueError:
+            pass
+        return ''
+
+    def date_value(value, formats):
+        for fmt in formats:
+            try:
+                return datetime.strptime(value.strip(), fmt).date().isoformat()
+            except ValueError:
+                pass
+        return ''
+
+    records = {}
+    def add(card, heading, published):
+        anchors = [n for n in walk(heading) if target(n)]
+        if not anchors:
+            anchors = [n for n in walk(card) if target(n)]
+        if not anchors:
+            return
+        link = target(anchors[0])
+        title = text(heading) or anchors[0]['attrs'].get('title', '') or text(anchors[0])
+        if title:
+            records[link] = {'url': link, 'title': title, 'published_at': published}
+
+    if site == 'accton':
+        for timeline in (n for n in walk(parser.root) if has(n, 'ctl-timeline')):
+            year = ''
+            for node in walk(timeline):
+                if has(node, 'ctl-year-container'):
+                    marker = node['attrs'].get('data-section-title', '')
+                    year = marker if re.fullmatch(r'\d{4}', marker) else ''
+                if has(node, 'ctl-story'):
+                    children = list(walk(node))
+                    markers = [n for n in children if has(n, 'ctl-year-container')]
+                    if markers:
+                        marker = markers[0]['attrs'].get('data-section-title', '')
+                        year = marker if re.fullmatch(r'\d{4}', marker) else ''
+                    headings = [n for n in children if has(n, 'ctl-title')]
+                    dates = [n for n in children if has(n, 'story-date')]
+                    published = date_value(text(dates[0]) + ' ' + year, ('%b %d %Y',)) if len(dates) == 1 and year else ''
+                    if headings:
+                        add(node, headings[0], published)
+    else:
+        for node in walk(parser.root):
+            if not has(node, 'card' if site == 'asmpt' else 'row'):
+                continue
+            children = list(walk(node))
+            headings = [n for n in children if has(n, 'card-title')] if site == 'asmpt' else [n for n in children if n['tag'] == 'h3']
+            dates = [n for n in children if has(n, 'text-muted' if site == 'asmpt' else 'entry-meta')]
+            # A surrounding layout row cannot donate its first date to another link.
+            if len(headings) != 1:
+                continue
+            raw = text(dates[0]) if len(dates) == 1 else ''
+            published = date_value(raw.split('|')[0], ('%Y-%m-%d',)) if site == 'asmpt' else date_value(raw, ('%B %d, %Y', '%b %d, %Y'))
+            add(node, headings[0], published)
+    # A real detail URL outside cards is still an unknown-date candidate.
+    for node in walk(parser.root):
+        link = target(node)
+        title = text(node) or node['attrs'].get('title', '')
+        if link and title and link not in records:
+            records[link] = {'url': link, 'title': title, 'published_at': ''}
+    return list(records.values())
 
 
 def _strip_html(value: str) -> str:
@@ -619,24 +954,198 @@ def parse_feed(body: str, base_url: str) -> list[dict[str, Any]]:
     return items
 
 
+
+def _publisher_press_cards(body: str, url: str) -> list[tuple[str, str]] | None:
+    """Lumilens cards mix media and blogs: only explicit Press release cards."""
+    if urlparse(url).hostname == "www.senko.com" and urlparse(url).path.rstrip("/") == "/news":
+        links = []
+        for card in re.split(r'<div\s+class=["\']split-cont2[^"\']*["\'][^>]*>', body)[1:]:
+            aside = re.search(r'<div\s+class=["\']aside["\'][^>]*>(.*?)</div>', card, re.S)
+            if not aside:
+                continue
+            heading = re.search(r'<h3[^>]*>(.*?)</h3>', aside.group(1), re.S)
+            if not heading:
+                continue
+            parser = _HTML(url)
+            parser.feed(aside.group(1))
+            for link, _label in parser.links:
+                if (urlparse(link).hostname == "www.senko.com"
+                        and re.fullmatch(r"/[^/]+/?", urlparse(link).path)):
+                    links.append((link.rstrip("/"), _strip_html(heading.group(1))))
+                    break
+        return links
+    if urlparse(url).hostname != "lumilens.com":
+        return None
+    starts = list(re.finditer(r'<div\b[^>]*class=["\'][^"\']*\bnews-content\b[^"\']*["\'][^>]*>', body, re.I))
+    links = []
+    for index, match in enumerate(starts):
+        card = body[match.start():starts[index + 1].start() if index + 1 < len(starts) else len(body)]
+        if not re.search(r'class=["\']refrence-text["\'][^>]*>\s*Press release\s*<', card, re.I):
+            continue
+        parser = _HTML(url)
+        parser.feed(card)
+        heading = re.search(r'<h3\b[^>]*>(.*?)</h3>', card, re.I | re.S)
+        for link, title in parser.links:
+            if urlparse(link).hostname == "lumilens.com" and urlparse(link).path.startswith("/news-insights/"):
+                links.append((link, _strip_html(heading.group(1)) if heading else title))
+                break
+    return links
+
+
+def _cisco_releases(body: str, url: str) -> list[dict[str, str]]:
+    """Decode only the official pressRelease component, never execute scripts."""
+    if urlparse(url).hostname != "newsroom.cisco.com":
+        return []
+    for script in re.findall(r"<script\b[^>]*>(.*?)</script>", body, re.I | re.S):
+        if not re.search(r'getElementById\([\"\x27]pressRelease[\"\x27]\)', script):
+            continue
+        match = re.search(r'JSON\.parse\(("(?:\\.|[^"\\])*")\)', script)
+        if not match:
+            continue
+        literal = re.sub(r"\\x([0-9a-fA-F]{2})", r"\\u00\1", match.group(1))
+        records = json.loads(json.loads(literal))
+        if not isinstance(records, list):
+            raise ValueError("Cisco pressRelease data is not a list")
+        items = []
+        for record in records:
+            link = urljoin(url, str(record.get("path", "")))
+            if urlparse(link).hostname != "newsroom.cisco.com" or "/a/y" not in urlparse(link).path:
+                continue
+            items.append({"url": link, "title": str(record.get("title", "")),
+                          "published_at": _date_only(str(record.get("releaseDate", "")))})
+        return items
+    return []
+
+
+def _q4_items(payload: dict[str, Any], url: str,
+              article_failures: list[dict[str, str]] | None = None) -> list[dict[str, Any]]:
+    records = payload["GetPressReleaseListResult"]
+    if not isinstance(records, list):
+        raise ValueError("Q4 press release data is not a list")
+    items = []
+    for index, record in enumerate(records):
+        link = url
+        try:
+            if not isinstance(record, dict):
+                raise ValueError("Q4 press release record is not an object")
+            raw_link = record.get("LinkToDetailPage")
+            if not isinstance(raw_link, str) or not raw_link.strip():
+                raise ValueError("Q4 press release has no article URL")
+            link = urljoin(url, raw_link)
+            parsed = urlparse(link)
+            if parsed.scheme not in {"http", "https"} or parsed.netloc != urlparse(url).netloc:
+                raise ValueError("Q4 press release has no same-origin article URL")
+            if re.search(r"\.(?:pdf|zip|docx?)$", parsed.path, re.I):
+                raise ValueError("Q4 release points to an unsupported attachment")
+            item = parse_html_item(str(record.get("Body") or ""), link, str(record.get("Headline", "")))
+            # Q4 explicitly dates each release; numeric US dates are local here.
+            stamp = str(record.get("PressReleaseDate", ""))
+            try:
+                item["published_at"] = datetime.strptime(stamp, "%m/%d/%Y %H:%M:%S").date().isoformat()
+            except ValueError:
+                item["published_at"] = _date_only(stamp)
+            items.append(item)
+        except (ValueError, TypeError) as exc:
+            if article_failures is None:
+                raise
+            article_failures.append({"url": link, "detail": f"invalid Q4 item at index {index}: {exc}"})
+    return items
+
+
+class EndpointBudgetExceeded(TimeoutError):
+    pass
+
+
 class HttpFetcher:
     """Fetch public entity endpoints and normalize them to fixture-shaped items."""
 
     fetch_mode = "http"
 
-    def __init__(self, run_date: str, timeout: int = 30, lookback_days: int = 14, max_items: int = 20) -> None:
+    def __init__(self, run_date: str, timeout: float = 15, lookback_days: int = 14,
+                 max_items: int = 20, endpoint_budget: float = 60) -> None:
+        if not all(math.isfinite(value) and value > 0 for value in (timeout, endpoint_budget)):
+            raise ValueError("request timeout and endpoint budget must be positive")
         self.run_date = date.fromisoformat(run_date)
         self.timeout = timeout
         self.lookback_days = lookback_days
         self.max_items = max_items
+        self.endpoint_budget = endpoint_budget
+        self._deadline: float | None = None
+
+    def _remaining(self) -> float:
+        remaining = self.timeout if self._deadline is None else self._deadline - time.monotonic()
+        if remaining <= 0:
+            raise EndpointBudgetExceeded("endpoint time budget exhausted")
+        return remaining
+
+    @contextmanager
+    def _request_timer(self, *, parsing: bool = False):
+        """Bound DNS/headers as well as reads for the macOS/Linux CLI main thread.
+
+        Library callers on other threads retain socket timeouts and deadline
+        checks. Never overwrite another caller's active alarm.
+        """
+        can_arm = hasattr(signal, "setitimer") and threading.current_thread() is threading.main_thread()
+        if not can_arm or signal.getitimer(signal.ITIMER_REAL)[0]:
+            yield
+            return
+        previous = signal.getsignal(signal.SIGALRM)
+        def expired(_signum, _frame):
+            if parsing:
+                raise EndpointBudgetExceeded("endpoint time budget exhausted during parsing")
+            self._remaining()  # a deadline exception must not enter retry
+            raise TimeoutError("public GET request timeout")
+        signal.signal(signal.SIGALRM, expired)
+        try:
+            signal.setitimer(signal.ITIMER_REAL, self._remaining() if parsing else min(self.timeout, self._remaining()))
+            yield
+        finally:
+            signal.setitimer(signal.ITIMER_REAL, 0)
+            signal.signal(signal.SIGALRM, previous)
+
+    def _parse(self, function, *args):
+        self._remaining()
+        with self._request_timer(parsing=True):
+            result = function(*args)
+        self._remaining()
+        return result
+
+    def _request(self, url: str) -> tuple[str, str, str]:
+        for attempt in range(2):
+            self._remaining()
+            try:
+                with self._request_timer():
+                    return self._get(url)
+            except EndpointBudgetExceeded:
+                raise
+            except Exception as exc:
+                reason = exc.reason if isinstance(exc, URLError) else exc
+                transient = isinstance(reason, (TimeoutError, ConnectionError, ssl.SSLEOFError))
+                if isinstance(exc, HTTPError):
+                    transient = exc.code in {408, 502, 503, 504}
+                    exc.close()
+                if attempt or not transient:
+                    raise
+        raise AssertionError("unreachable")
 
     def _get(self, url: str) -> tuple[str, str, str]:
         request = Request(url, headers={
             "User-Agent": "Mozilla/5.0 (compatible; calls-daily-discovery/1.0)",
             "Accept": "text/html,application/xhtml+xml,application/json,application/rss+xml,application/atom+xml",
         })
-        with urlopen(request, timeout=self.timeout) as response:
-            body = response.read(8_000_000)
+        with urlopen(request, timeout=min(self.timeout, self._remaining())) as response:
+            chunks: list[bytes] = []
+            size = 0
+            while size < 8_000_000:
+                self._remaining()
+                chunk = response.read1(min(64_000, 8_000_000 - size))
+                if not chunk:
+                    break
+                chunks.append(chunk)
+                size += len(chunk)
+            if size == 8_000_000:
+                raise ValueError("public response exceeds 8 MB limit; refusing truncated content")
+            body = b"".join(chunks)
             content_type = response.headers.get_content_type()
             charset = response.headers.get_content_charset() or "utf-8"
             return body.decode(charset, errors="replace"), content_type, response.geturl()
@@ -649,6 +1158,7 @@ class HttpFetcher:
         return self.run_date - timedelta(days=self.lookback_days) <= when <= self.run_date
 
     def fetch(self, endpoint: "Endpoint") -> HttpFetchResult:
+        self._deadline = time.monotonic() + self.endpoint_budget
         if getattr(endpoint, "unsupported_listing", False):
             # 已证实 JS 渲染、无法静态采集的端点：显式 unsupported，不冒充健康零增量。
             return HttpFetchResult(
@@ -657,35 +1167,98 @@ class HttpFetcher:
                 "listing; not statically collectable",
             )
         try:
-            body, content_type, final_url = self._get(endpoint.url)
+            body, content_type, final_url = self._request(endpoint.url)
         except Exception as exc:
             return HttpFetchResult(endpoint.endpoint_id, (), f"public GET failed: {type(exc).__name__}: {exc}")
+        if urlparse(final_url).hostname == "www.sivers-semiconductors.com" and "/wp-json/sivers/v1/news-press" in urlparse(final_url).path:
+            try:
+                envelope = self._parse(json.loads, body)
+                if envelope.get("success") is not True or not isinstance(envelope.get("html"), str):
+                    raise ValueError("invalid Sivers press-list response")
+                body, content_type = envelope["html"], "text/html"
+            except (ValueError, AttributeError, EndpointBudgetExceeded) as exc:
+                return HttpFetchResult(endpoint.endpoint_id, (), f"invalid Sivers listing: {exc}")
+        if (urlparse(final_url).hostname == "www.mitsubishielectric.com"
+                and urlparse(final_url).path == "/global/common/mel25/news-data/gws-news/global/www/en/news-article.json"):
+            try:
+                records = self._parse(json.loads, body)["news"]
+                if not isinstance(records, list) or not records:
+                    raise ValueError("missing Mitsubishi release records")
+                if any(not isinstance(row, dict) or not isinstance(row.get("url"), str)
+                       or not isinstance(row.get("title"), str) for row in records):
+                    raise ValueError("malformed Mitsubishi release record")
+                body = "".join('<a href="' + escape(row["url"], quote=True) + '">' + escape(row["title"]) + '</a>' for row in records)
+                content_type = "text/html"
+            except (ValueError, KeyError, TypeError, EndpointBudgetExceeded) as exc:
+                return HttpFetchResult(endpoint.endpoint_id, (), f"invalid Mitsubishi listing: {exc}")
         stripped = body.lstrip()
         article_failures: list[dict[str, str]] = []
+        items: list[dict[str, Any]] = []
         try:
             if content_type == "application/json" or stripped.startswith(("{", "[")):
-                payload = json.loads(body)
-                raw_items = payload.get("items", ()) if isinstance(payload, dict) else payload
-                items = [dict(item) for item in raw_items if isinstance(item, dict)]
+                payload = self._parse(json.loads, body)
+                if isinstance(payload, dict) and "GetPressReleaseListResult" in payload:
+                    items = self._parse(_q4_items, payload, final_url, article_failures)
+                    for item in items:
+                        if not item["paragraphs"]:
+                            article_failures.append({"url": item["url"], "detail": "Q4 release has no usable article body"})
+                    items = [item for item in items if item["paragraphs"]]
+                else:
+                    if isinstance(payload, dict) and "items" not in payload:
+                        raise ValueError("unsupported JSON listing format (no items array)")
+                    raw_items = payload["items"] if isinstance(payload, dict) else payload
+                    if not isinstance(raw_items, list):
+                        raise ValueError("JSON items must be a list")
+                    items = []
+                    for index, item in enumerate(raw_items):
+                        if isinstance(item, dict):
+                            items.append(dict(item))
+                        else:
+                            article_failures.append({"url": final_url, "detail": f"invalid JSON item at index {index}: expected object"})
             elif "xml" in content_type or stripped.startswith("<?xml") or "<rss" in stripped[:200].lower():
-                items = parse_feed(body, final_url)
+                items = self._parse(parse_feed, body, final_url)
             else:
                 items = []
-                article_links = discover_article_links(body, final_url, self.max_items)
-                page = parse_html_item(body, final_url)
+                press_cards = self._parse(_publisher_press_cards, body, final_url)
+                embedded = self._parse(_cisco_releases, body, final_url)
+                embedded_dates = {item["url"]: item["published_at"] for item in embedded}
+                dated = self._parse(discover_dated_article_links, body, final_url)
+                if dated is not None:
+                    dated = [row for row in dated if not endpoint.article_path_pattern
+                             or re.search(endpoint.article_path_pattern, urlparse(row['url']).path, re.I)]
+                    eligible = [row for row in dated if self._in_window(row)]
+                    if dated and not eligible:
+                        return HttpFetchResult(endpoint.endpoint_id, (), '')
+                    article_links = [(row['url'], row['title']) for row in eligible[:self.max_items]]
+                    embedded_dates.update({row['url']: row['published_at'] for row in dated})
+                else:
+                    article_links = ([(item["url"], item["title"]) for item in embedded[:self.max_items]]
+                                     if embedded else self._parse(discover_article_links, body, final_url, self.max_items, endpoint.article_path_pattern))
+                    if press_cards is not None:
+                        article_links = press_cards[:self.max_items]
+                page = self._parse(parse_html_item, body, final_url)
                 # 页面自身只有在没有其他文章链接时才可入候选（单篇文章页形状）；
                 # 列表页的页面级 meta 日期不属于任何一篇文章，不得把列表页当文章。
-                if not article_links and page["published_at"] and page["paragraphs"]:
+                if not article_links and not endpoint.article_path_pattern and page["published_at"] and page["paragraphs"]:
                     items.append(page)
                 for link, title in article_links:
                     if endpoint.endpoint_kind != "official_blog" \
-                            and "/blog/" in urlparse(link).path.lower():
+                            and "/blog/" in urlparse(link).path.lower() \
+                            and not endpoint.allow_blog_release_path:
                         # 博客文章只能来自声明的 official_blog 端点；
                         # 从新闻/IR 列表混入的博客不得冒充官方公告的披露类型。
                         continue
                     try:
-                        article_body, article_type, article_url = self._get(link)
+                        article_body, article_type, article_url = self._request(link)
+                    except EndpointBudgetExceeded as exc:
+                        article_failures.append({"url": link, "detail": str(exc) + "; remaining articles not fetched"})
+                        return HttpFetchResult(endpoint.endpoint_id, tuple(item for item in items if self._in_window(item)), "", tuple(article_failures))
                     except Exception as exc:
+                        if isinstance(exc, HTTPError) and exc.code == 429:
+                            retry_after = exc.headers.get('Retry-After', '') if exc.headers else ''
+                            article_failures.append({"url": link,
+                                "detail": "article HTTP 429; remaining articles not requested" + (f"; Retry-After={retry_after}" if retry_after else "")})
+                            return HttpFetchResult(endpoint.endpoint_id, tuple(item for item in items if self._in_window(item)), "", tuple(article_failures))
                         article_failures.append({
                             "url": link,
                             "detail": f"article GET failed: {type(exc).__name__}: {exc}",
@@ -693,7 +1266,21 @@ class HttpFetcher:
                         continue
                     if "json" in article_type:
                         continue
-                    item = parse_html_item(article_body, article_url, title)
+                    item = self._parse(parse_html_item, article_body, article_url, title)
+                    if item["url"].rstrip("/") == link.rstrip("/"):
+                        card_date = embedded_dates.get(link, '')
+                        if dated is not None and card_date:
+                            # The site's posting date and the release dateline may
+                            # differ. Keep both; the daily window uses the former.
+                            date_note = f"页面发布日期 {card_date} 取自官网同一文章 URL 的列表卡片"
+                            if item['published_at'] and item['published_at'] != card_date:
+                                item['detail_date_observed'] = item['published_at']
+                                date_note += f"；详情另有日期 {item['published_at']}，不以页面发布日推定事件发生日"
+                            item['published_at'] = card_date
+                            item['published_at_basis'] = 'official_listing_card'
+                            item['note'] = '；'.join(filter(None, (item.get('note', ''), date_note)))
+                        elif not item['published_at']:
+                            item['published_at'] = card_date
                     if item["paragraphs"]:
                         items.append(item)
                     else:
@@ -701,6 +1288,9 @@ class HttpFetcher:
                             "url": link,
                             "detail": "article fetched but no usable paragraphs extracted",
                         })
+                if article_links and not items and not article_failures:
+                    return HttpFetchResult(endpoint.endpoint_id, (),
+                        "unsupported_listing: no article matches the configured disclosure type")
                 if not items and not article_links:
                     # 结构性零：静态 HTML 无任何可解析文章链接且页面自身不是日期化文章。
                     # 如实报 unsupported，不把 JS 渲染的空列表冒充为成功的零增量。
@@ -709,7 +1299,11 @@ class HttpFetcher:
                         "unsupported_listing: no parseable article link or dated page item "
                         "in static HTML; listing may be JavaScript-rendered",
                     )
+            self._remaining()
             filtered = tuple(item for item in items if self._in_window(item))
             return HttpFetchResult(endpoint.endpoint_id, filtered, "", tuple(article_failures))
+        except EndpointBudgetExceeded as exc:
+            article_failures.append({"url": final_url, "detail": str(exc) + "; remaining parsing skipped"})
+            return HttpFetchResult(endpoint.endpoint_id, tuple(item for item in items if self._in_window(item)), "", tuple(article_failures))
         except Exception as exc:
             return HttpFetchResult(endpoint.endpoint_id, (), f"public response parse failed: {type(exc).__name__}: {exc}")

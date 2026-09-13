@@ -19,7 +19,7 @@ python3 -m unittest discover -s calls/tests -v
 
 ## 数据账本
 
-- `universe.csv`：可调整的 14 家核心同业、上游使能方、系统设备商与下游验证公司池。
+- `universe.csv`：可调整的 39 家核心同业、上游使能方、系统设备商与下游验证公司池。
 - `company_candidates.csv`：尚未晋级的发现候选。候选可以完成一手来源核验，但不进入
   公司时间线、主事件雷达或四季度覆盖率；只有人工批准后才迁移到 `universe.csv` 或
   `watch_entities.csv`。
@@ -108,3 +108,68 @@ CSV 是事实源，`out/` 只由渲染器生成，禁止手改。`raw/` 可保�
 中的送样、GA、出货和试验默认仍是第一方 `asserted`；只有不同起源的独立来源支持才提升为
 `corroborated`，且不代表有效产能增加或卡点解除。Lumentum 样本继续区分官网技术作者演示、
 官方业绩材料和第三方逐字稿；系统没有独立验证 AAOI 所称的 MOCVD backlog。
+
+
+## 日更抓取入口与覆盖边界（2026-09-09）
+
+`daily_discovery.py` 从季度池、active watch 和未晋升候选读取监控名单，再按已核实体关系
+归一化；抓取入口独立登记在 `discovery_config.json`。名单登记不会自动生成 URL。
+此次配置覆盖 78/81 个归一化主体：39 个季度主体、32 个 watch 主体、7 个候选主体。
+缺口为 Freiberger（未找到官方新闻目录）、Polariton（原域名跳转 Marvell，未冒充自有发行者）、
+Xscape（混合媒体/博客栏目，已核公告详情缺正文）。配置数不能代替真实获取成功数或研究结论覆盖率。
+
+IQE 和 Cisco 的具名对手方端点按每篇材料解析：命中已配置目标时保留 counterparty 路径；
+未命中时仅这两个显式启用 `publisher_fallback` 的发行者来源回到自身 first_party。
+同一篇 URL 不重复产生两份披露，第一方候选不会变成独立确认；所有结果仍需人工核验。
+独立佐证还要求实际引句唯一点名目标，且不混有发行者自身名称或第一人称；全文其他段落提及
+不构成支持。归属不清的引句保留主张候选并报告 `unresolved_claim_subject`，不产生独立证据。
+`customer sampling` 可进入送样候选，`demonstrated our ability` 等经营措辞不再当作技术演示。
+
+新列表优先设置 `article_path_pattern`，在截取前排除导航；设置该规则的列表不能用自身
+meta 日期冒充文章。新闻栏目混博客而无符合配置类型的文章、未知 JSON 结构、缺少可解析
+文章入口均显式报告失败，不作为健康零增量；窗口外的合法文章仍可产生真正的零增量。
+Lumilens 只收官方卡片标记 Press release 的同域文章；Sivers 使用官方 press-only JSON
+封装中的 HTML。季度 PDF 目录与 SEC submissions 没有冒充受支持的通用 JSON 数据源。
+
+AAOI 改用实测可采的官方 newsroom，只代表该站公告；IR 财报覆盖仍需单独验证。
+POET 使用公司专属 GlobeNewswire 原始发行托管列表，限定其 organization 和新闻详情路径，
+不使用泛新闻聚合。FOC 和 Lumilens 按已核自有网站迁移入口，未更改监控实体或 CSV 关系账本。
+
+HTTP 运行会输出逐端点 START/结果；`missing_endpoint`、列表失败、文章失败继续分列。
+完整实跑与人工审阅之前，不得把本节的配置修复表述为全池有效覆盖或领域问题已回答。
+离线演练使用 `calls/tests/daily_discovery_config.json` 对应固定测试实体；真实配置加载另有测试，
+扩池不会要求原来的八份离线样本假装覆盖所有新端点。
+
+首轮 79 端点实跑暴露的动态 IR 列表，按已核官方导航/接口切换 Q4 或 RSS；
+显式文章路径可穿过 investor-relations 目录并允许空卡片链接，详情仍须提供标题、日期与正文。
+坏 href 单条跳过，避免 ficonTEC 的外部链接拼写错误终止整页。Delta 仅解析官方数字 press
+详情中的唯一 srcdoc 正文和发布日期；Mitsubishi 仅展开官网声明的新闻 JSON 数组，再取详情。
+ASE、Semtech 的日期使用各自官方文章模板，未放宽为全文任意日期。网络超时、未支持列表、
+文章缺日期仍是失败或待审，配置替换和本地回归通过不代表这些站点已全部恢复。
+
+HTTP 请求成功数不等于有效采集数：缺发布日期或正文的响应仍会进入 invalid_item / 失败队列；
+只有有效文章落在窗口内才计入披露候选，合法文章全部在窗口外时允许健康零项。
+endpoint 总预算同时约束网络与解析；耗尽时保留已完成文章并标记 partial。
+
+### 页面发布日期与详情请求（2026-09-10）
+
+ASMPT、Accton、Semtech 按官网逐篇卡片绑定 URL 和发布日期，在详情请求以及条数截断之前
+筛选时间窗口；日期未知的真实详情仍保留。Accton 的年标记只在同一时间轴内沿用，月报所属月
+不当作发布日期；Semtech 的 P10/P20 分页和 AAOI 的 home 导航不当作文章。
+429 会停止该端点本批后续文章，保留已完成记录及 Retry-After；此改动没有新增跨批冷却调度。
+预算耗尽直接返回 partial，不再把同一次耗尽重复记为详情和列表解析两次事故。
+
+补充 SUSS 文章标题区时间、EVG 具名发布稿日期、Source Photonics 正文发布行，以及 TE 明确
+标注 Published 的时间。Source Photonics 同一篇发布行年份冲突时保留 UNKNOWN。
+OpenLight 的站点专用 JSON-LD 规则用完整 h1 绑定标题，仍要求显式 URL 归属于当前文章；
+读取本页面 datePublished 不表示外部媒体原文或活动在同日发布、发生。
+
+页面发布时间与正文稿件日期可不同。三个受支持列表中的同 URL 卡片日期用于日更窗口；
+不同的详情日期保存在原始结果 detail_date_observed，并写入现有 note，进入披露候选备注。
+TE 的明确 Published 字段优先于正文日期。不得用图片路径、展会日程或全文第一个数字补日期。
+现有事件候选仍按披露日期分组，其事件日期需要人工核验；本次没有重构事件日期模型。
+
+本次 43 条旧拒收中核验到 38 个文章日期（HTTP 页面/列表 29 个、浏览器可见内容 9 个），
+全在原 2026-08-26 至 2026-09-09 窗口外；另有 2 个分页、3 个日期未知或不适用的页面。
+TE 当前 HTTP403 而普通浏览器可读，浏览器取证未接入定时任务；Sicoya403、Scintil限流及
+Semtech间歇超时仍需分别观察。详见 `../docs/reviews/2026-09-10-overseas-details-dates.md`。

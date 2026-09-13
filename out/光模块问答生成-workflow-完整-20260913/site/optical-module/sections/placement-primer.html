@@ -1,0 +1,21 @@
+<section class="section" id="placement-primer" data-certainty="stable" aria-labelledby="placement-primer-title">
+  <div class="statusline"><span class="certainty stable">零基础入口</span><small>先看位置，再看缩写</small></div>
+  <div class="kicker">Placement primer · 光学放在哪里</div>
+  <h2 id="placement-primer-title">Front-panel、NPO、CPO：都是“电变光、光变电”，主要差在放置位置</h2>
+  <p class="intro">先把交换 ASIC 想成机器的大脑，把光引擎想成电信号和光信号之间的翻译器。三种方案不是三个不同任务，而是把同一个翻译器放在不同地方。位置变化以后，高速电线要走多远、光纤从哪里开始、谁负责散热和维修，也会跟着变化。</p>
+
+  <figure class="reference-figure"><a class="figure-link" href="assets/figures/05-placement-primer.svg" target="_blank" rel="noreferrer" aria-label="打开Front-panel、NPO与CPO位置示意图"><img src="assets/figures/05-placement-primer.svg" alt="Front-panel、NPO和CPO中光引擎相对交换ASIC的位置差别"></a><figcaption>参考图 5 · 深蓝是交换 ASIC，黄色是光引擎；位置越靠近并不自动代表整体越好。点击查看原图。</figcaption></figure>
+
+  <div class="component-grid">
+    <article class="component-card"><div class="statusline"><span class="certainty stable">Front-panel</span></div><h3>翻译器放在机器前面板</h3><p>常见实例是 OSFP、QSFP-DD 等可插拔模块。ASIC 先用高速电信号穿过封装、主板走线和连接器到达前面板模块，模块再把电变成光送进光纤。</p><span class="examples"><b>好理解的价值：</b>模块边界清楚，整只模块通常是一个独立产品和更换单元。<br><b>代价去向：</b>高速电路径较长，连接器、走线、模块功耗和前面板散热要共同闭合。<br><b>边界：</b>“可插拔”不自动等于带电可换、无流量中断或所有人都可维修。</span></article>
+    <article class="component-card"><div class="statusline"><span class="certainty mechanism">NPO / OBO</span></div><h3>翻译器搬到 ASIC 附近或主板上</h3><p>NPO 常展开为 Near-Packaged Optics，OBO 是 On-Board Optics。共同直觉是：不再把高速电信号一路送到前面板，而是让光引擎更靠近 ASIC，然后用光纤把信号带到机箱边界。</p><span class="examples"><b>好理解的价值：</b>潜在缩短高速电路径，缓解电损耗和面板密度压力。<br><b>代价去向：</b>光纤管理、冷板、安装返工、校准和维修更多进入主板与系统设计。<br><b>边界：</b>NPO 没有一个通吃所有产品的毫米线，也不自动等于 socket、LPO、无 DSP 或现场可更换。</span></article>
+    <article class="component-card"><div class="statusline"><span class="certainty mechanism">CPO</span></div><h3>翻译器进入 ASIC 的一级封装边界</h3><p>CPO 是 Co-Packaged Optics。以本项目采用的 OIF 边界理解，光引擎与 Host ASIC 位于同一 first-level substrate；它们仍可以是不同对象，并不意味着做成一整颗不可分的芯片。</p><span class="examples"><b>好理解的价值：</b>高速电路径进一步靠近 ASIC，有机会缓解 package I/O 与系统密度压力。<br><b>代价去向：</b>封装、热、内部光纤、光源、故障影响范围和维修权限变成系统级问题。<br><b>边界：</b>CPO 不自动规定 socket/焊接、集成/外置激光器、DSP 架构或能否现场维修。</span></article>
+  </div>
+
+  <h3 class="subhead">一句话记忆</h3>
+  <div class="walkthrough"><div class="walk-flow"><span class="walk-step">Front-panel：光在机箱前面开始</span><span class="arrow">→</span><span class="walk-step">NPO/OBO：光在主板、ASIC 附近开始</span><span class="arrow">→</span><span class="walk-step">CPO：光在 ASIC 的一级封装边界开始</span></div></div>
+
+  <div class="warn"><b>“更近”只说明责任迁移，不说明赢家。</b>电路径可能缩短，但光纤、散热、装配、故障隔离和维修会更深入系统。最终要比较的是同一速率、距离、温度、可用性和维护目标下的整体结果。</div>
+  <div class="foundation-note"><b>正式知识边界：</b>KN010 已正式确认 OSFP 前面板实例与 OIF 3.2T CPO 实例具有不同机械边界；NPO/CPO 更完整的 attach、功耗、可靠性和服务性比较目前仍是候选研究，不能从本页类比直接晋升。</div>
+</section>
+

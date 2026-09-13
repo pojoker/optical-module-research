@@ -1,0 +1,785 @@
+meta:
+  mode: draft_only
+  method: deterministic_field_evidence_comparison
+  physical_delta_inferred: false
+  canonical_write_performed: false
+comparisons:
+- comparison_id: CMP-D02-D03
+  left_seed: RPS-D02
+  right_seed: RPS-D03
+  counts:
+    not_comparable: 1
+    same: 8
+    unknown_both: 24
+    unknown_right: 3
+  rows:
+  - field: tq005_external_link.nominal_aggregate_rate
+    left:
+      value: 1.6T
+      observation_state: observed
+      source_ids:
+      - S3
+    right:
+      value: 1.6T
+      observation_state: observed
+      source_ids:
+      - S3
+    field_status: same
+  - field: tq005_external_link.reported_aggregate_or_line_rate
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.host_lane_count
+    left:
+      value: 8
+      observation_state: observed
+      source_ids:
+      - S3
+    right:
+      value: 8
+      observation_state: observed
+      source_ids:
+      - S3
+    field_status: same
+  - field: tq005_external_link.host_lane_rate
+    left:
+      value: 200G
+      observation_state: observed
+      source_ids:
+      - S3
+    right:
+      value: 200G
+      observation_state: observed
+      source_ids:
+      - S3
+    field_status: same
+  - field: tq005_external_link.media_lane_count
+    left:
+      value: 8
+      observation_state: observed
+      source_ids:
+      - S3
+    right:
+      value: 8
+      observation_state: observed
+      source_ids:
+      - S3
+    field_status: same
+  - field: tq005_external_link.media_lane_rate
+    left:
+      value: 200G
+      observation_state: observed
+      source_ids:
+      - S3
+    right:
+      value: 200G
+      observation_state: observed
+      source_ids:
+      - S3
+    field_status: same
+  - field: tq005_external_link.modulation_format
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.symbol_rate
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.fec_code
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.pmd_or_application_reference
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.media_type
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.reach
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.nominal_wavelength
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.wavelength_range
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.lane_organization
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.optical_connector
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.fiber_mapping
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq006_electrical_responsibility.normalized_architecture
+    left:
+      value: Tx-retimed / Rx-linear
+      observation_state: company-stated
+      source_ids:
+      - S3
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_right
+  - field: tq006_electrical_responsibility.raw_architecture_label
+    left:
+      value: LRO
+      observation_state: company-stated
+      source_ids:
+      - S3
+    right:
+      value: 3 nm DSP
+      observation_state: company-stated
+      source_ids:
+      - S3
+    field_status: not_comparable
+    comparison_override:
+      reason: LRO is an electrical architecture/responsibility label, while 3 nm DSP is a component plus process-node description. Both values are observed, but they
+        do not answer the same field-level question and therefore cannot be treated as a direct route difference.
+      evidence_refs:
+      - S3#D02
+      - S3#D03
+  - field: tq006_electrical_responsibility.tx_retiming
+    left:
+      value: retimed (transmit direction)
+      observation_state: company-stated
+      source_ids:
+      - S3
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_right
+  - field: tq006_electrical_responsibility.rx_retiming
+    left:
+      value: linear (no retiming)
+      observation_state: company-stated
+      source_ids:
+      - S3
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_right
+  - field: tq006_electrical_responsibility.fec_location
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq006_electrical_responsibility.dac_adc_location
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq006_electrical_responsibility.host_serdes_role
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.platform
+    left:
+      value: silicon photonics
+      observation_state: company-stated
+      source_ids:
+      - S3
+    right:
+      value: silicon photonics
+      observation_state: company-stated
+      source_ids:
+      - S3
+    field_status: same
+  - field: tq007_photonics.material
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.light_source_type
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.light_source_wavelength
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.light_source_location
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.modulator_or_emitter_type
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.detector_type
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.device_integration
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.pic_eic_integration
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.laser_pic_integration
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq008_placement.placement_class
+    left:
+      value: front-panel pluggable
+      observation_state: normalized
+      source_ids:
+      - S3
+    right:
+      value: front-panel pluggable
+      observation_state: normalized
+      source_ids:
+      - S3
+    field_status: same
+  - field: tq008_placement.form_factor
+    left:
+      value: OSFP
+      observation_state: observed
+      source_ids:
+      - S3
+    right:
+      value: OSFP
+      observation_state: observed
+      source_ids:
+      - S3
+    field_status: same
+- comparison_id: CMP-D04-D05
+  left_seed: RPS-D04
+  right_seed: RPS-D05
+  counts:
+    different: 1
+    same: 2
+    unknown_both: 26
+    unknown_left: 4
+    unknown_right: 3
+  rows:
+  - field: tq005_external_link.nominal_aggregate_rate
+    left:
+      value: 800 Gbps
+      observation_state: observed
+      source_ids:
+      - S4
+    right:
+      value: 800 Gbps
+      observation_state: observed
+      source_ids:
+      - S4
+    field_status: same
+  - field: tq005_external_link.reported_aggregate_or_line_rate
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.host_lane_count
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.host_lane_rate
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.media_lane_count
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.media_lane_rate
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.modulation_format
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.symbol_rate
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.fec_code
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.pmd_or_application_reference
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.media_type
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.reach
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.nominal_wavelength
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: 1310 nm
+      observation_state: observed
+      source_ids:
+      - S4
+    field_status: unknown_left
+  - field: tq005_external_link.wavelength_range
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.lane_organization
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.optical_connector
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq005_external_link.fiber_mapping
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq006_electrical_responsibility.normalized_architecture
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq006_electrical_responsibility.raw_architecture_label
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq006_electrical_responsibility.tx_retiming
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq006_electrical_responsibility.rx_retiming
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq006_electrical_responsibility.fec_location
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq006_electrical_responsibility.dac_adc_location
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq006_electrical_responsibility.host_serdes_role
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.platform
+    left:
+      value: silicon photonics
+      observation_state: company-stated
+      source_ids:
+      - S4
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_right
+  - field: tq007_photonics.material
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.light_source_type
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: 'laser (raw instance phrase: EML laser)'
+      observation_state: observed
+      source_ids:
+      - S4
+    field_status: unknown_left
+  - field: tq007_photonics.light_source_wavelength
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: 1310 nm
+      observation_state: observed
+      source_ids:
+      - S4
+    field_status: unknown_left
+  - field: tq007_photonics.light_source_location
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.modulator_or_emitter_type
+    left:
+      value: MZM
+      observation_state: observed
+      source_ids:
+      - S4
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_right
+  - field: tq007_photonics.detector_type
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: photodetector
+      observation_state: observed
+      source_ids:
+      - S4
+    field_status: unknown_left
+  - field: tq007_photonics.device_integration
+    left:
+      value: MZM PIC
+      observation_state: company-stated
+      source_ids:
+      - S4
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_right
+  - field: tq007_photonics.pic_eic_integration
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq007_photonics.laser_pic_integration
+    left:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    right:
+      value: UNKNOWN
+      observation_state: unknown
+      source_ids: []
+    field_status: unknown_both
+  - field: tq008_placement.placement_class
+    left:
+      value: front-panel pluggable
+      observation_state: normalized
+      source_ids:
+      - S4
+    right:
+      value: front-panel pluggable
+      observation_state: normalized
+      source_ids:
+      - S4
+    field_status: same
+  - field: tq008_placement.form_factor
+    left:
+      value: QSFP-DD800
+      observation_state: observed
+      source_ids:
+      - S4
+    right:
+      value: OSFP
+      observation_state: observed
+      source_ids:
+      - S4
+    field_status: different
