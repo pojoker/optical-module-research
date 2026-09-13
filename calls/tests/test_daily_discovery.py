@@ -18,6 +18,7 @@ import json
 import shutil
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 from calls import daily_discovery as dd
@@ -26,7 +27,7 @@ from calls.schema import CANONICAL_FILES, FILES
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CALLS_DIR = Path(__file__).resolve().parents[1]
 FIXTURES = CALLS_DIR / "fixtures" / "daily_discovery"
-CONFIG = CALLS_DIR / "discovery_config.json"
+CONFIG = Path(__file__).with_name("daily_discovery_config.json")
 RUN_DATE = "2026-09-01"
 
 CANDIDATE_FILES = (
@@ -250,7 +251,7 @@ class TestDiscoveryConfig(DailyDiscoveryTestCase):
             dd.load_discovery_config(path, dd.load_entity_registry(self.source))
 
     def test_shipped_config_loads(self) -> None:
-        endpoints = dd.load_discovery_config(CONFIG, dd.load_entity_registry(REPO_ROOT))
+        endpoints = dd.load_discovery_config(CALLS_DIR / "discovery_config.json", dd.load_entity_registry(REPO_ROOT))
         self.assertTrue(endpoints)
         self.assertEqual({item.endpoint_kind for item in endpoints} <= set(dd.ENDPOINT_KINDS), True)
 
@@ -310,7 +311,20 @@ class TestDedupe(DailyDiscoveryTestCase):
 class TestPermissionGuards(DailyDiscoveryTestCase):
     def setUp(self) -> None:
         super().setUp()
-        self.summary = _run(self.source, self.state)
+        # Positive corroboration cases use a quote with one explicit actor.
+        # Original multi-actor fixtures are now retained for failure/queue tests.
+        self.clear_fixtures = self.tmp / "clear-subject-fixtures"
+        shutil.copytree(FIXTURES, self.clear_fixtures)
+        for name, quote in (
+            ("CSCO_IR_RELEASES.json", "Lumentum began shipping 1.6T optical modules this quarter."),
+            ("IQE_RNS_RELEASES.json", "MACOM has qualified its 200G/lane EML driver platform for epiwafer supply."),
+        ):
+            path = self.clear_fixtures / name
+            payload = json.loads(path.read_text())
+            payload["items"][0]["paragraphs"][0]["text"] = quote
+            path.write_text(json.dumps(payload))
+        self.summary = dd.run_daily_discovery(self.source, self.state, RUN_DATE, CONFIG,
+                                             dd.FixtureFetcher(self.clear_fixtures))
         self.staging = self.state / "staging" / RUN_DATE
         self.details = json.loads((self.staging / "candidates.json").read_text(encoding="utf-8"))
 
@@ -437,7 +451,7 @@ class TestPermissionGuards(DailyDiscoveryTestCase):
 
     def test_independent_confirmation_on_later_date_can_only_suggest_corroboration(self) -> None:
         fixtures = self.tmp / "fixtures"
-        shutil.copytree(FIXTURES, fixtures)
+        shutil.copytree(self.clear_fixtures, fixtures)
         path = fixtures / "CSCO_IR_RELEASES.json"
         payload = json.loads(path.read_text(encoding="utf-8"))
         payload["items"][0]["published_at"] = "2026-08-28"
@@ -454,6 +468,48 @@ class TestPermissionGuards(DailyDiscoveryTestCase):
         self.assertEqual(suggested[0]["event_status"], "asserted")
 
 
+class TestArticleFetchFailures(DailyDiscoveryTestCase):
+    """HttpFetcher 的逐篇详情失败必须可见，端点级失败与文章级失败分列。"""
+
+    class _StubFetcher:
+        fetch_mode = "stub"
+
+        def __init__(self, *, article_failures=()) -> None:
+            self.article_failures = article_failures
+
+        def fetch(self, endpoint):
+            from types import SimpleNamespace
+            return SimpleNamespace(
+                endpoint_id=endpoint.endpoint_id, items=(), failure="",
+                article_failures=self.article_failures,
+            )
+
+    def test_article_fetch_failures_are_recorded_and_reach_queue_and_summary(self) -> None:
+        failures = ({"url": "https://ir.example/a", "detail": "article GET failed: TimeoutError: timed out"},)
+        summary = dd.run_daily_discovery(
+            self.source, self.state, RUN_DATE, CONFIG, self._StubFetcher(article_failures=failures)
+        )
+        rows = [
+            row for row in _read_csv(self.state / "staging" / RUN_DATE / "failures.csv")
+            if row["failure_type"] == "article_fetch_failure"
+        ]
+        self.assertTrue(rows)
+        self.assertEqual(rows[0]["detail"], "article GET failed: TimeoutError: timed out")
+        queue = json.loads((self.state / "queue-latest.json").read_text(encoding="utf-8"))
+        self.assertIn("article_fetch_failure", {entry["queue_type"] for entry in queue["entries"]})
+        self.assertEqual(summary["failure_types"].get("article_fetch_failure"), len(rows))
+        # endpoint_succeeded 是真实成功的端点数，不能把 configured 数冒充为成功。
+        self.assertEqual(summary["endpoint_succeeded"], summary["endpoint_count"] - summary["endpoint_failed"])
+
+    def test_results_without_article_failures_field_stay_compatible(self) -> None:
+        # 旧结果形状（FixtureFetcher 的 FetchResult）没有 article_failures 字段时必须兼容。
+        summary = dd.run_daily_discovery(
+            self.source, self.state, RUN_DATE, CONFIG, dd.FixtureFetcher(FIXTURES)
+        )
+        self.assertNotIn("article_fetch_failure", summary["failure_types"])
+        self.assertIn("endpoint_succeeded", summary)
+
+
 class TestExplicitFailures(DailyDiscoveryTestCase):
     def setUp(self) -> None:
         super().setUp()
@@ -466,7 +522,7 @@ class TestExplicitFailures(DailyDiscoveryTestCase):
             {
                 "fetch_failure", "invalid_item", "future_published_at",
                 "no_relevant_content", "unresolved_entity",
-                "low_confidence_entity_mapping", "permission_denied",
+                "low_confidence_entity_mapping", "permission_denied", "unresolved_claim_subject",
             },
         )
 
@@ -477,7 +533,8 @@ class TestExplicitFailures(DailyDiscoveryTestCase):
         for failure_type in _failure_types(self.state):
             self.assertIn(failure_type, types)
         self.assertIn("claim_candidate_pending_anchor_review", types)
-        self.assertIn("corroboration_suggestion_pending_approval", types)
+        self.assertIn("unresolved_claim_subject", types)
+        self.assertNotIn("corroboration_suggestion_pending_approval", types)
 
     def test_unresolved_entity_still_keeps_a_disclosure_candidate(self) -> None:
         disclosures = _read_csv(self.staging / "disclosure_candidates.csv")
@@ -700,11 +757,35 @@ class TestVerifyStaging(DailyDiscoveryTestCase):
 
 
 class TestCli(DailyDiscoveryTestCase):
-    def test_run_and_verify_commands_succeed(self) -> None:
+    def test_no_event_signal_alone_is_not_a_collection_failure(self) -> None:
+        summary = {"disclosure_candidates": 1, "claim_candidates": 0, "event_candidates": 0,
+                   "evidence_candidates": 0, "corroboration_suggestions": 0,
+                   "endpoint_failed": 0, "failure_types": {"no_relevant_content": 1}}
+        with patch.object(dd, "run_daily_discovery", return_value=summary):
+            self.assertEqual(dd.main(["run", "--source-root", str(self.source),
+                "--state-root", str(self.state), "--date", RUN_DATE, "--config", str(CONFIG)]), 0)
+
+    def test_cli_rejects_nonfinite_time_limits(self) -> None:
+        for flag in ("--request-timeout", "--endpoint-budget"):
+            for value in ("nan", "inf"):
+                self.assertEqual(dd.main(["run", "--source-root", str(self.source),
+                    "--state-root", str(self.state), "--date", RUN_DATE,
+                    "--config", str(CONFIG), flag, value]), 1)
+
+    def test_run_returns_partial_for_endpoint_and_article_failures(self) -> None:
+        for kind in ("fetch_failure", "article_fetch_failure", "missing_endpoint", "invalid_item"):
+            summary = {"disclosure_candidates": 1, "claim_candidates": 0, "event_candidates": 0,
+                       "evidence_candidates": 0, "corroboration_suggestions": 0,
+                       "endpoint_failed": int(kind == "fetch_failure"), "failure_types": {kind: 1}}
+            with self.subTest(kind=kind), patch.object(dd, "run_daily_discovery", return_value=summary):
+                self.assertEqual(dd.main(["run", "--source-root", str(self.source),
+                    "--state-root", str(self.state), "--date", RUN_DATE, "--config", str(CONFIG)]), 2)
+
+    def test_partial_run_keeps_outputs_and_verify_succeeds(self) -> None:
         self.assertEqual(dd.main([
             "run", "--source-root", str(self.source), "--state-root", str(self.state),
             "--date", RUN_DATE, "--config", str(CONFIG), "--fixtures", str(FIXTURES),
-        ]), 0)
+        ]), 2)
         self.assertEqual(dd.main([
             "verify", "--source-root", str(self.source), "--state-root", str(self.state),
             "--date", RUN_DATE,

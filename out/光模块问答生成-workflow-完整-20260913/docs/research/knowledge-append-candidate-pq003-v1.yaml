@@ -1,0 +1,159 @@
+schema_version: knowledge_append_candidate_v1
+status: draft_only
+canonical_write_allowed: false
+canonical_write_performed: false
+target_file: knowledge.yaml
+prepared_at: '2026-08-31'
+
+dependency_candidate_files:
+  - docs/research/knowledge-append-candidate-pq002-v1.yaml
+
+source_package:
+  path: docs/research/pi-packages/2026-08-31-pq003-reference-sample-v1
+  adjudication: docs/research/pi-packages/2026-08-31-pq003-reference-sample-v1/adjudication.md
+  adjudication_sha256: 33dbd3d24a441eb71adf71db829816c0019d2ca9675e27762284876235e84587
+  adjudication_outcome: usable_draft_after_explicit_boundary_errata
+  effective_text: docs/research/pi-packages/2026-08-31-pq003-reference-sample-v1/research.md
+  effective_text_sha256: 77ebf899dfbabe1e7e42d16622535505e3ee36fee8aac775481621c9a2b7a66a
+  frozen_manifest: docs/research/pi-packages/2026-08-31-pq003-reference-sample-v1/snapshot-manifest.md
+  frozen_manifest_sha256: c65f3fd12fa6676b601e27f52f7e1980c2b301daf25f7ab9769b5cb5b91ce4e0
+  consumption_rule: adjudication_boundaries_override_research_text
+
+target_contract:
+  target_class: physical_domain_knowledge
+  target_system: 物理知识
+  batch_write_policy: atomic_after_dependency
+  dependency_semantics: PQ003_batch_may_only_be_materialized_after_PQ001_and_PQ002_candidate_batches
+  canonical_write_requires_explicit_user_approval: true
+  current_canonical_sha256: ecb9f6efefaba2085bf0e3f6121de17ab56e107953b3649e6bb07e64288b5c22
+  current_canonical_max_id: KN010
+  materialized_dependency_max_id: KN013
+  proposed_ids: [KN014]
+  proposed_ids_are_reserved: false
+  question_acceptance_effect:
+    PQ003:
+      proposed_status: acceptance_complete_if_full_batch_promoted
+      required_candidate_ids: [PQ003-KN-C01]
+      acceptance_criteria:
+        - criterion_id: PQ003-AC01
+          requirement: 选择一个具名真实产品族并绑定可复验一手来源
+          status: met
+          satisfied_by_candidate_ids: [PQ003-KN-C01]
+        - criterion_id: PQ003-AC02
+          requirement: 列明后续可以继承的形态_接口_reach与器件标签字段
+          status: met
+          satisfied_by_candidate_ids: [PQ003-KN-C01]
+        - criterion_id: PQ003-AC03
+          requirement: 禁止从教学样机外推市场主流_通用BOM_exact_SKU_成熟度与内部拓扑
+          status: met
+          satisfied_by_candidate_ids: [PQ003-KN-C01]
+        - criterion_id: PQ003-AC04
+          requirement: 给出样机选择可被撤销或替换的反证条件
+          status: met
+          satisfied_by_candidate_ids: [PQ003-KN-C01]
+    PQ004:
+      proposed_status: unchanged_unresearched
+      required_candidate_ids: []
+    PQ005:
+      proposed_status: unchanged_unresearched
+      required_candidate_ids: []
+    PQ009:
+      proposed_status: unchanged_unresearched
+      required_candidate_ids: []
+
+items:
+  - candidate_id: PQ003-KN-C01
+    proposed_knowledge_id: KN014
+    target_contract:
+      target_class: physical_domain_knowledge
+      knowledge_yaml_eligible: true
+      research_question_ids: [PQ003]
+      physical_cell_ids: []
+      route_item_ids: []
+    entailment_contract:
+      atomic_claim: 本项目选择Coherent_Finisar_FTCE4517E1PxM产品族作为800G短距直检前面板可插拔教学参考样机_因为同一冻结产品上下文同时披露host电接口_media光接口_管理接口_形态_reach和EML_PIN标签_该选择不证明市场主流或通用BOM
+      claim_class: object_level_candidate
+      applies_when: 需要用一个真实800G_short_reach_direct_detect_front_panel_pluggable对象继续拆解PQ004_PQ005_PQ009
+      does_not_apply_when: coherent_NPO_CPO_其他速率或reach_市场主流判断_全部光模块统一BOM_商业成熟度或客户供货
+      proposed_disposition: ready_for_object_level_candidate_review
+      evidence:
+        - source_id: PQ003-S1
+          source_type: vendor_product_specification_web_snapshot
+          locator: corpus/web/2026-08-23/coherent.com__FTCE4517E1PxM_800G_DR8_OSFP.pdf#PDF第1页及III至V节
+          supports: FTCE4517E1PxM产品族_OSFP_850Gbps_8x100G_retimed_PAM4_MPO16_I2C_500m_SMF_逐lane电光规格
+          does_not_support: exact_orderable_SKU_独立DSP_driver_TIA_lens_FAU_TEC_市场份额_量产或客户采用
+        - source_id: PQ003-S2
+          source_type: vendor_product_page_web_snapshot
+          locator: corpus/web/2026-08-23/coherent.com__FTCE4517E1PxM_product.html#标题及FTCE4517E1PxM规格表
+          supports: 产品族身份_800G_DR_plus_OSFP_500m_EML_transmitter_PIN_receiver_MPO16
+          does_not_support: EML_PIN数量与拓扑_完整photonic_platform_内部连线_市场主流或供货
+      falsifier: 冻结资料被证明误绑产品族_官方修订否定已观察字段_研究目标离开800G短距直检前面板可插拔_或出现同一一手证据单元覆盖更多下游必需字段且对象歧义更低的替代样机
+    append_payload:
+      id: KN014
+      体系: 物理知识
+      研究问题: [PQ003]
+      格: []
+      标题: 本项目的教学参考样机——FTCE4517E1PxM 只代表一个受限产品族
+      一句话: |
+        后续拆组件和接口时，以 Coherent/Finisar FTCE4517E1PxM 800G-DR8 OSFP 产品族为教学样机。
+        它的价值是公开字段在同一产品上下文中较完整，不代表它是市场最主流或所有光模块的统一结构。
+      说细点: |
+        冻结规格书把这个产品族描述为 hot-pluggable OSFP transceiver，支持 850 Gb/s aggregate bit rate、
+        8×100G retimed PAM4 electrical interface、parallel MPO-16、I2C management 和最长 500 m G.652 SMF；
+        冻结产品页另把 transmitter 标为 EML、receiver 标为 PIN。
+
+        这些字段让我们可以在同一真实对象上继续追问：主机电接口怎样进入模块、光接口怎样接到介质、
+        管理和供电怎样分层，以及已披露器件标签与未知内部实现之间的边界。
+
+        产品族模式仍含温度占位后缀（x = C/L），所以这里不虚构 exact orderable SKU。规格书也没有披露
+        独立 DSP、driver、TIA、lens、FAU、TEC、完整内部连线、商业成熟度或客户采用。教学参考角色只是一项
+        可撤销的研究基线，不能被写成“行业最主流”或“所有光模块都这样”。
+      怎么用它判断: |
+        研究后续组件或接口时，先确认事实是否来自同一 FTCE4517E1PxM 产品上下文；只有已披露字段可以继承。
+        遇到完整 BOM、器件数量/位置、量产或市场份额时保持 UNKNOWN。若研究对象改为 coherent、NPO、CPO
+        或其他速率/reach，应重新选样机，而不是强行沿用本卡。
+      证据:
+        - 谁: Coherent Corp. / Finisar
+          原话: （忠实转述，非逐字引文）FTCE4517E1PxM 是 800G-DR8 OSFP 产品族，支持 850 Gb/s、8×100G retimed PAM4 电接口、MPO-16、I2C 和最长 500 m 单模光纤。
+          出处: FTCE4517E1PxM Product Specification·Rev B3·第1页及III至V节
+          锚型: web_snapshot
+          锚:
+            原URL: https://www.coherent.com/content/dam/coherent/site/en/resources/datasheet/networking/optical-transceivers/osfp/ftce4517e1pxm-transceiver-ds.pdf
+            存档路径: corpus/web/2026-08-23/coherent.com__FTCE4517E1PxM_800G_DR8_OSFP.pdf
+            抓取日期: '2026-08-23'
+            SHA256: 82aa77513e788205ceae163a40fe5d7c1788a43b2bdad886267b3c8d40ae6621
+          说明: 支撑产品族及接口边界_不支撑内部完整BOM或市场主流
+        - 谁: Coherent Corp.
+          原话: （忠实转述，非逐字引文）产品页规格表将 FTCE4517E1PxM 标为 500 m、EML transmitter、PIN receiver 和 MPO16 的 800G-DR+ OSFP 产品。
+          出处: Coherent FTCE4517E1PxM 产品页·规格表
+          锚型: web_snapshot
+          锚:
+            原URL: https://www.coherent.com/networking/transceivers/datacom/FTCE4517E1PxM
+            存档路径: corpus/web/2026-08-23/coherent.com__FTCE4517E1PxM_product.html
+            抓取日期: '2026-08-23'
+            SHA256: 019247e5a9881f6b4663ad7d3d99738b492f490d0ba6cb6114e2e10ae80771dd
+          说明: 只支撑该产品族的器件标签和接口字段_不支撑数量拓扑商业成熟度或客户采用
+      录入日期: '2026-08-31'
+
+question_growth:
+  new_formal_question_ids_created: false
+  principle: 样机选择闭合后只把未披露字段路由到既有PQ004_PQ005_PQ009_不创造平行问题树
+  routed_gaps:
+    - existing_question_id: PQ004
+      gap: 已披露EML_PIN标签之外_内部功能分别由哪些独立组件或集成实体实现
+    - existing_question_id: PQ005
+      gap: OSFP_MPO16_I2C_供电_机械_热边界在该产品族上怎样衔接
+    - existing_question_id: PQ009
+      gap: 逐lane电光规格怎样转成接口验收与故障定位测试
+
+review_state:
+  machine_preflight: pass
+  machine_checker: tools/research/check_knowledge_append_candidates.py
+  materialized_scan: pass_with_recursive_dependencies_on_temporary_copy
+  canonical_knowledge_file_mutated: false
+  external_semantic_review: pass_after_product_suffix_fix
+  external_reviewer: Kimi
+  continuity_handle: session_9b3c8af2-d10c-4713-a573-ed0e37e69a03
+  external_review_record: docs/reviews/2026-08-31-kimi-review-knowledge-append-pq003-v1.md
+  user_decision: not_requested
+  canonical_changes: 0

@@ -1,0 +1,155 @@
+schema_version: expert_question_coverage_audit_v1
+status: draft_only
+canonical_write_allowed: false
+formal_question_ids_created: false
+purpose: audit_existing_question_portfolio_across_physical_route_and_why_coordinates
+
+source_files:
+  - docs/research/pi-packages/2026-08-31-q-up-05-npo-cpo-boundaries-v1/expert-questions-candidate.yaml
+  - docs/research/pi-packages/2026-08-31-q-mid-01-retimed-vs-lpo-v1/expert-questions-candidate.yaml
+  - docs/research/pi-packages/2026-08-30-q-up-06-parallel-vs-wdm-v1/expert-questions-candidate.yaml
+
+primary_domain_enum: [physical, route, why, evidence_governance]
+physical_cell_enum:
+  - system_function
+  - component_architecture
+  - electrical_interface
+  - optical_interface
+  - mechanical_and_thermal
+  - manufacturing_and_assembly
+  - test_and_validation
+  - serviceability_and_reliability
+route_axis_enum:
+  - link_requirement
+  - optical_organization
+  - electrical_responsibility
+  - photonic_implementation
+  - placement_and_packaging
+  - product_form_factor
+  - maturity_and_company_role
+why_stage_enum:
+  - upstream_constraint
+  - selection_mechanism
+  - advantage_or_value
+  - cost_or_tradeoff
+  - responsibility_transfer
+  - downstream_physical_change
+  - validation_or_falsifier
+  - company_or_market_consequence
+
+coverage_rules:
+  - every_portfolio_question_must_appear_exactly_once
+  - every_mapping_must_resolve_to_its_source_question
+  - every_mapping_must_have_at_least_one_coordinate
+  - empty_cells_are_valid_results_and_must_not_be_filled_to_satisfy_a_quota
+  - a_blind_spot_does_not_automatically_create_a_question
+  - stable_foundation_cells_may_intentionally_have_no_expert_question
+  - blocked_questions_must_not_be_repackaged_as_public_search_questions
+
+question_mappings:
+  - {question_id: QUP05-NQ01, primary_domain: physical, physical_cells: [electrical_interface, test_and_validation], route_axes: [placement_and_packaging], why_stages: [downstream_physical_change, validation_or_falsifier]}
+  - {question_id: QUP05-NQ02, primary_domain: physical, physical_cells: [mechanical_and_thermal, serviceability_and_reliability], route_axes: [placement_and_packaging], why_stages: [responsibility_transfer, downstream_physical_change, validation_or_falsifier]}
+  - {question_id: QUP05-NQ03, primary_domain: why, physical_cells: [mechanical_and_thermal, test_and_validation], route_axes: [placement_and_packaging], why_stages: [cost_or_tradeoff, validation_or_falsifier]}
+  - {question_id: QUP05-NQ04, primary_domain: why, physical_cells: [manufacturing_and_assembly], route_axes: [placement_and_packaging], why_stages: [cost_or_tradeoff, downstream_physical_change, validation_or_falsifier]}
+  - {question_id: QUP05-NQ05, primary_domain: why, physical_cells: [component_architecture, mechanical_and_thermal, serviceability_and_reliability], route_axes: [photonic_implementation, placement_and_packaging], why_stages: [upstream_constraint, selection_mechanism, cost_or_tradeoff, validation_or_falsifier]}
+  - {question_id: QUP05-NQ06, primary_domain: physical, physical_cells: [serviceability_and_reliability], route_axes: [placement_and_packaging], why_stages: [responsibility_transfer, downstream_physical_change, validation_or_falsifier]}
+  - {question_id: QUP05-NQ07, primary_domain: route, physical_cells: [], route_axes: [maturity_and_company_role], why_stages: [validation_or_falsifier, company_or_market_consequence]}
+  - {question_id: QUP05-NQ08, primary_domain: route, physical_cells: [component_architecture, electrical_interface, serviceability_and_reliability], route_axes: [electrical_responsibility, photonic_implementation, placement_and_packaging, maturity_and_company_role], why_stages: [validation_or_falsifier]}
+  - {question_id: QUP05-NQ09, primary_domain: route, physical_cells: [], route_axes: [maturity_and_company_role], why_stages: [validation_or_falsifier, company_or_market_consequence]}
+
+  - {question_id: QMID01-NQ01, primary_domain: why, physical_cells: [electrical_interface, mechanical_and_thermal, test_and_validation], route_axes: [electrical_responsibility], why_stages: [cost_or_tradeoff, validation_or_falsifier]}
+  - {question_id: QMID01-NQ02, primary_domain: why, physical_cells: [test_and_validation], route_axes: [electrical_responsibility], why_stages: [advantage_or_value, cost_or_tradeoff, validation_or_falsifier]}
+  - {question_id: QMID01-NQ03, primary_domain: why, physical_cells: [electrical_interface, test_and_validation], route_axes: [electrical_responsibility], why_stages: [upstream_constraint, selection_mechanism, responsibility_transfer, validation_or_falsifier]}
+  - {question_id: QMID01-NQ04, primary_domain: physical, physical_cells: [electrical_interface, test_and_validation], route_axes: [electrical_responsibility], why_stages: [validation_or_falsifier]}
+  - {question_id: QMID01-NQ05, primary_domain: physical, physical_cells: [mechanical_and_thermal, test_and_validation], route_axes: [electrical_responsibility], why_stages: [cost_or_tradeoff, validation_or_falsifier]}
+  - {question_id: QMID01-NQ06, primary_domain: why, physical_cells: [test_and_validation, serviceability_and_reliability], route_axes: [electrical_responsibility], why_stages: [responsibility_transfer, validation_or_falsifier]}
+  - {question_id: QMID01-NQ07, primary_domain: why, physical_cells: [manufacturing_and_assembly, test_and_validation], route_axes: [electrical_responsibility], why_stages: [cost_or_tradeoff, downstream_physical_change, validation_or_falsifier]}
+  - {question_id: QMID01-NQ08, primary_domain: route, physical_cells: [], route_axes: [electrical_responsibility, maturity_and_company_role], why_stages: [validation_or_falsifier, company_or_market_consequence]}
+  - {question_id: QMID01-NQ09, primary_domain: why, physical_cells: [electrical_interface, mechanical_and_thermal, test_and_validation, serviceability_and_reliability], route_axes: [electrical_responsibility], why_stages: [upstream_constraint, selection_mechanism, advantage_or_value, cost_or_tradeoff, responsibility_transfer, validation_or_falsifier]}
+
+  - {question_id: QX-01, primary_domain: route, physical_cells: [], route_axes: [link_requirement, optical_organization], why_stages: [validation_or_falsifier]}
+  - {question_id: QX-02, primary_domain: route, physical_cells: [optical_interface, test_and_validation], route_axes: [link_requirement, optical_organization], why_stages: [selection_mechanism, cost_or_tradeoff, validation_or_falsifier]}
+  - {question_id: QX-03, primary_domain: physical, physical_cells: [component_architecture, optical_interface], route_axes: [optical_organization, photonic_implementation], why_stages: [downstream_physical_change, validation_or_falsifier]}
+  - {question_id: QX-04, primary_domain: why, physical_cells: [component_architecture, mechanical_and_thermal, test_and_validation], route_axes: [photonic_implementation], why_stages: [upstream_constraint, selection_mechanism, cost_or_tradeoff, validation_or_falsifier]}
+  - {question_id: QX-05, primary_domain: physical, physical_cells: [optical_interface, manufacturing_and_assembly, test_and_validation], route_axes: [optical_organization, photonic_implementation], why_stages: [cost_or_tradeoff, downstream_physical_change, validation_or_falsifier]}
+  - {question_id: QX-06, primary_domain: why, physical_cells: [manufacturing_and_assembly, test_and_validation], route_axes: [optical_organization], why_stages: [cost_or_tradeoff, responsibility_transfer, downstream_physical_change, validation_or_falsifier]}
+  - {question_id: QX-07, primary_domain: physical, physical_cells: [test_and_validation], route_axes: [optical_organization], why_stages: [cost_or_tradeoff, downstream_physical_change, validation_or_falsifier]}
+  - {question_id: QX-08, primary_domain: physical, physical_cells: [optical_interface, serviceability_and_reliability], route_axes: [optical_organization], why_stages: [cost_or_tradeoff, downstream_physical_change, validation_or_falsifier]}
+  - {question_id: QX-09, primary_domain: why, physical_cells: [optical_interface, serviceability_and_reliability], route_axes: [optical_organization], why_stages: [cost_or_tradeoff, validation_or_falsifier, company_or_market_consequence]}
+  - {question_id: QX-10, primary_domain: why, physical_cells: [component_architecture, manufacturing_and_assembly, test_and_validation], route_axes: [optical_organization, photonic_implementation], why_stages: [cost_or_tradeoff, downstream_physical_change, validation_or_falsifier]}
+  - {question_id: QX-11, primary_domain: evidence_governance, physical_cells: [component_architecture, manufacturing_and_assembly], route_axes: [optical_organization, photonic_implementation], why_stages: [validation_or_falsifier]}
+  - {question_id: QX-12, primary_domain: evidence_governance, physical_cells: [], route_axes: [optical_organization, maturity_and_company_role], why_stages: [validation_or_falsifier, company_or_market_consequence]}
+
+blind_spots:
+  - blind_spot_id: BS-STABLE-SYSTEM-FUNCTION
+    coordinate: physical.system_function
+    classification: intentional_empty
+    reason: basic_TX_RX_function_is_stable_foundation_not_an_expert_research_frontier
+    action: do_not_generate_question
+
+  - blind_spot_id: BS-PHOTONIC-IMPLEMENTATION-COMPARISON
+    coordinate: route.photonic_implementation_x_physical.component_architecture
+    classification: undercovered_by_current_30
+    reason: current_questions_cover_mux_and_external_laser_but_not_exact_object_EML_vs_SiPh_function_allocation
+    existing_unadmitted_questions: [Q-MID-03, Q-DOWN-01]
+    action: reuse_and_upgrade_existing_questions_before_creating_new_id
+
+  - blind_spot_id: BS-SYSTEM-DEMAND-TO-ROUTE
+    coordinate: why.upstream_constraint_x_route.placement_and_packaging
+    classification: genuine_gap
+    reason: current_placement_questions_start_at_electrical_thermal_or_service_constraints_not_at_named_system_topology_and_port_budget
+    action: prepare_one_candidate_question_without_portfolio_admission
+    candidate_artifact: docs/research/expert-question-coverage-gap-candidate-v1.yaml
+    candidate_state: externally_reviewed_waiting_separate_user_admission_decision
+
+  - blind_spot_id: BS-PRODUCT-FORM-FACTOR
+    coordinate: route.product_form_factor
+    classification: undercovered_but_not_yet_actionable
+    reason: Q_UP_02_covers_common_front_panel_constraints_but_no_same_system_OSFP_QSFP_DD_choice_object_is_bound
+    action: wait_for_exact_comparison_object_and_do_not_generate_generic_question
+
+  - blind_spot_id: BS-MAINSTREAM-DENOMINATOR
+    coordinate: why.company_or_market_consequence_x_route.maturity_and_company_role
+    classification: known_blocked_outside_30
+    reason: route_share_requires_a_common_denominator_source
+    existing_unadmitted_questions: [Q-DOWN-04, Q-DOWN-05]
+    action: do_not_duplicate_until_denominator_source_exists
+
+audit_summary:
+  total_questions: 30
+  mapped_questions: 30
+  primary_domain_counts:
+    physical: 9
+    route: 6
+    why: 13
+    evidence_governance: 2
+  physical_cell_counts:
+    system_function: 0
+    component_architecture: 6
+    electrical_interface: 6
+    optical_interface: 5
+    mechanical_and_thermal: 7
+    manufacturing_and_assembly: 6
+    test_and_validation: 16
+    serviceability_and_reliability: 8
+  route_axis_counts:
+    link_requirement: 2
+    optical_organization: 11
+    electrical_responsibility: 10
+    photonic_implementation: 7
+    placement_and_packaging: 7
+    product_form_factor: 0
+    maturity_and_company_role: 5
+  why_stage_counts:
+    upstream_constraint: 4
+    selection_mechanism: 5
+    advantage_or_value: 2
+    cost_or_tradeoff: 16
+    responsibility_transfer: 6
+    downstream_physical_change: 11
+    validation_or_falsifier: 30
+    company_or_market_consequence: 5
+  intentional_empty_cells: [physical.system_function]
+  genuine_gap_count: 1
+  new_question_ids_created: 0
+  portfolio_admissions: 0

@@ -1,0 +1,27 @@
+workpack:
+  id: FOUNDATION-BEGINNER-20260912
+  title: 基础页增加初中物理起点的术语问答
+  status: in_progress
+  authorization: 用户要求对页面所有超出初中物理水平的词提供额外问题和解释。
+objective:
+- 扫描基础页正文和图示术语，添加白话问题、解释和原有来源入口
+- 正文就地点击查看，提供完整术语问答目录及无脚本阅读入口
+allowed_write_paths:
+- docs/control/ACTIVE_WORKPACK.yaml
+- site/optical-module/sections/answer.html
+- site/optical-module/sections/physical-gallery.html
+- site/optical-module/sections/physical.html
+- site/optical-module/sections/connections.html
+- site/optical-module/sections/manufacturing.html
+- out/光模块知识体系/**
+read_scope:
+  allowed:
+  - 基础页、原有来源与研究稿、网站构建器及模板、README与章程
+non_goals:
+- 不改其他专题，不改canonical，不发布，不自动重发飞书
+acceptance_criteria:
+- 保留原文和24题、提供术语解释与对应问题来源入口
+- 点击可打开和关闭解释、键盘可用、无脚本可读
+- 检查术语匹配、链接、构建与既有机器门
+canonical_policy:
+  writable: false

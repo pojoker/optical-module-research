@@ -1,0 +1,1 @@
+pi --provider opencode-go --model deepseek-v4-flash --thinking high --no-tools --no-context-files --no-session --print @contract.md @sources.md @source-discovery.md @../2026-08-24-tq004-route-axes-v1/post-adjudication-effective-text.md '严格执行 TQ005–TQ008 四轴展开合同。只输出中文 Markdown。每个事实必须引用 S1–S13；证据标签必须准确；细化问题不得创建新 QID；不要进入 TQ009、WHY、公司归群、路线优劣或落库。'

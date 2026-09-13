@@ -1,0 +1,1415 @@
+meta:
+  mode: draft_only
+  method: deterministic_keyword_proposal
+  python_interpreter: /Users/jowang/miniconda3/bin/python3
+  canonical_write_performed: false
+  warning: keyword hits are proposals, not company-route service conclusions
+  maturity_warning: point_status is not inherited by individual facets; mixed in-production and in-development quotes require facet-level review
+summary:
+  target_point_count: 56
+  unique_company_count: 40
+  facet_explicit_point_count: 39
+  cell_only_point_count: 17
+  candidate_match_point_count: 6
+  related_facet_only_point_count: 14
+  blocked_subject_scope_point_count: 1
+requirement_coverage:
+- requirement_id: PCR-D02-C5-001
+  exact_keyword_candidate_points: 0
+  generic_scope_candidate_points: 0
+  attribute_exact_candidate_points: 0
+  related_facet_only_points: 3
+  unique_candidate_companies: 0
+  gap_status: no_candidate_point
+- requirement_id: PCR-D03-C5-001
+  exact_keyword_candidate_points: 0
+  generic_scope_candidate_points: 0
+  attribute_exact_candidate_points: 0
+  related_facet_only_points: 2
+  unique_candidate_companies: 0
+  gap_status: no_candidate_point
+- requirement_id: PCR-D04-C4-001
+  exact_keyword_candidate_points: 0
+  generic_scope_candidate_points: 0
+  attribute_exact_candidate_points: 0
+  related_facet_only_points: 5
+  unique_candidate_companies: 0
+  gap_status: no_candidate_point
+- requirement_id: PCR-D05-C1-001
+  exact_keyword_candidate_points: 0
+  generic_scope_candidate_points: 0
+  attribute_exact_candidate_points: 0
+  related_facet_only_points: 6
+  unique_candidate_companies: 0
+  gap_status: no_candidate_point
+- requirement_id: PCR-D05-C3-001
+  exact_keyword_candidate_points: 0
+  generic_scope_candidate_points: 5
+  attribute_exact_candidate_points: 0
+  related_facet_only_points: 0
+  unique_candidate_companies: 5
+  gap_status: candidate_points_need_review
+- requirement_id: RPA-D04-FORM-001
+  exact_keyword_candidate_points: 0
+  generic_scope_candidate_points: 0
+  attribute_exact_candidate_points: 0
+  related_facet_only_points: 0
+  unique_candidate_companies: 0
+  gap_status: no_candidate_point
+- requirement_id: RPA-D05-FORM-001
+  exact_keyword_candidate_points: 0
+  generic_scope_candidate_points: 0
+  attribute_exact_candidate_points: 1
+  related_facet_only_points: 0
+  unique_candidate_companies: 1
+  gap_status: candidate_points_need_review
+point_facet_proposals:
+- point_id: P003
+  company: Marvell
+  physical_cell: C5
+  point_status: 生产中
+  quote: DSP+Driver+TIA全覆盖："interconnect products include PAM, coherent and coherent-lite DSPs, laser drivers, TIAs, silicon phot
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - component_type.DSP
+  - component_type.Driver
+  - component_type.TIA
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D02-C5-001
+    relation: related_facet_only
+    matched_facets:
+    - component_type.DSP
+    limitation: related DSP/retiming evidence does not establish the Tx-retimed/Rx-linear split
+    promotion_status: not_a_requirement_match
+  - requirement_id: PCR-D03-C5-001
+    relation: related_facet_only
+    matched_facets:
+    - component_type.DSP
+    limitation: generic DSP evidence does not establish 3 nm or D03 architecture
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P014
+  company: 优迅股份
+  physical_cell: C5
+  point_status: 生产中
+  quote: '"优迅股份作为国内光通信电芯片领域的领军企业……专注于光通信前端收发电芯片的研发、设计与销售"；核心技术集群表自述"高带宽、低噪声、宽动态跨阻放大器设计技术"技术来源=自研/技术所处阶段=成熟应用/对应产品类型="高速率跨阻放大器芯片"；5'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - component_type.IC_generic
+  - component_type.TIA
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 研发
+    - 设计
+    - 自研
+  - role: product_offer
+    basis_patterns:
+    - 销售
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P016
+  company: 光迅科技
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: 光收发模块、有源光缆、光放大器、波长管理器件、光通信器件、子系统等
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P020
+  company: 博通(Broadcom)
+  physical_cell: C5
+  point_status: 生产中
+  quote: PHY/光组件："AI semiconductor solutions include…physical layer devices (PHYs) and optical components"；"We supply a wide arra
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - component_type.PHY
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - (?i)\bsupply
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P036
+  company: 武汉云岭光电有限公司
+  physical_cell: C3
+  point_status: 生产中
+  quote: 光通信用激光器和探测器芯片（含封装类产品）
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - detector_type.generic_detector
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches:
+  - requirement_id: PCR-D05-C3-001
+    match_level: generic_scope_candidate
+    matched_facets:
+    - detector_type.generic_detector
+    limitation: route requirement is generic photodetector; subtype evidence must not be transferred to RPS-D05
+    promotion_status: needs_human_review
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P037
+  company: 武汉云岭光电股份有限公司
+  physical_cell: C3
+  point_status: 生产中
+  quote: 光通信用激光器和探测器芯片（含封装类产品）
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - detector_type.generic_detector
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches:
+  - requirement_id: PCR-D05-C3-001
+    match_level: generic_scope_candidate
+    matched_facets:
+    - detector_type.generic_detector
+    limitation: route requirement is generic photodetector; subtype evidence must not be transferred to RPS-D05
+    promotion_status: needs_human_review
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P039
+  company: 武汉钧恒科技有限公司
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: '"武汉钧恒为公司的控股子公司，武汉钧恒2012年成立，总部位于武汉光谷，专业从事以光模块为主的光通信产品的研发、制造和销售"；"光模块业务的营业收入比重大于50%"'
+  subject_scope: direct_named_subsidiary
+  attachment_eligible: true
+  scope_note: quote directly names the row company 武汉钧恒 as the subsidiary carrying the module business
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 销售
+  - role: module_integrate
+    basis_patterns:
+    - (?:光模块|光收发模块).{0,50}(?:研发|开发|生产|制造|量产)
+    - (?:研发|开发|生产|制造|量产).{0,50}(?:光模块|光收发模块)
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P052
+  company: 源杰科技
+  physical_cell: C1
+  point_status: 生产中
+  quote: 光芯片的研发、设计、生产与销售（激光器芯片系列）
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 研发
+    - 设计
+  - role: component_manufacture
+    basis_patterns:
+    - 生产
+  - role: product_offer
+    basis_patterns:
+    - 销售
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P066
+  company: 长光华芯
+  physical_cell: C1
+  point_status: 生产中
+  quote: 半导体激光芯片、器件及模块等激光行业核心元器件的研发、生产与销售
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 研发
+  - role: component_manufacture
+    basis_patterns:
+    - 生产
+  - role: product_offer
+    basis_patterns:
+    - 销售
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P073
+  company: 新易盛
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: 指引第4号——创业板行业信息披露》中的“通信相关业务”的披露要求（一）主要业务、主要产品及用途目前，公司系光互联解决方案领域的全球领先企业，业务主要涵盖全系列光通信应用的光模块的研发、生产和销售，产品服务于人工智能算力集
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 销售
+  - role: module_integrate
+    basis_patterns:
+    - (?:光模块|光收发模块).{0,50}(?:研发|开发|生产|制造|量产)
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P074
+  company: 中际旭创
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: 公司主营业务为高端光通信收发模块的研发、生产及销售，产品服务于云计算数据中心、数据通信、5G无线网络、电信传输和固网接入等领
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 销售
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P077
+  company: 剑桥科技
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: 主营业务为从事电信、数通、企业网络与家庭网络领域通信连接的终端设备（包括电信宽带、无线网络与边缘计算）以及高速光模块产品的研发、生产与销售
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 销售
+  - role: module_integrate
+    basis_patterns:
+    - (?:光模块|光收发模块).{0,50}(?:研发|开发|生产|制造|量产)
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P088
+  company: 光迅科技
+  physical_cell: C4
+  point_status: 生产中
+  quote: '"公司一直重视硅光芯片的自主设计与开发，自研硅光芯片的流片采用外部代工的方式"(业绩说明会2026-001号)'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - platform.silicon_photonics
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 开发
+    - 设计
+    - 自研
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D04-C4-001
+    relation: related_facet_only
+    matched_facets:
+    - platform.silicon_photonics
+    limitation: generic SiPh evidence does not establish MZM PIC
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P089
+  company: 国民技术
+  physical_cell: C5
+  point_status: 在建
+  quote: '"N32H493系列MCU主要适配800G/1.6T可插拔高速光模块，承担控制、监控、协议处理等功能，目前正在推进客户导入验证工作"(互动易2026-06-18)'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - component_type.MCU
+  - electrical_function.control_monitor_protocol
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P101
+  company: 燕东微
+  physical_cell: C4
+  point_status: 生产中
+  quote: '"建成国内领先的8英寸SiN平台量产生产线…产能达3000片/月,年内累计产出1.48万片;建成12英寸SOI硅光工艺平台"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - platform.SOI
+  - platform.SiN
+  - platform.silicon_photonics
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_manufacture
+    basis_patterns:
+    - 生产
+    - 量产
+  - role: process_enable
+    basis_patterns:
+    - 工艺平台
+    - 产线
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D04-C4-001
+    relation: related_facet_only
+    matched_facets:
+    - platform.silicon_photonics
+    limitation: generic SiPh evidence does not establish MZM PIC
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P102
+  company: 新易盛
+  physical_cell: C4
+  point_status: 生产中
+  quote: '"硅光PIC技术产业化…推出完全自主研发的PIC技术相关产品并实现产业化…进入小批量生产阶段"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - platform.silicon_photonics
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 研发
+  - role: component_manufacture
+    basis_patterns:
+    - 生产
+    - 批量
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D04-C4-001
+    relation: related_facet_only
+    matched_facets:
+    - platform.silicon_photonics
+    limitation: generic SiPh evidence does not establish MZM PIC
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P109
+  company: 德科立
+  physical_cell: MOD1
+  point_status: 在建
+  quote: '"初步完成硅光技术平台的搭建,完成800G和1.6T基于硅光芯片的光收发模块开发,正在推向量产"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - aggregate_rate.1.6T
+  - aggregate_rate.800G
+  - photonics_platform.silicon_photonics
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: module_integrate
+    basis_patterns:
+    - (?:光模块|光收发模块).{0,50}(?:研发|开发|生产|制造|量产)
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P118
+  company: 优迅股份
+  physical_cell: C5
+  point_status: 生产中
+  quote: '"国内光通信电芯片领域的领军企业…专注于光通信前端收发电芯片的研发、设计与销售…承担着对光通信电信号进行放大、驱动、重定时…产品广泛应用于光模组中"(国家级制造业单项冠军)'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - component_type.Driver
+  - component_type.IC_generic
+  - electrical_function.retiming
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 研发
+    - 设计
+  - role: product_offer
+    basis_patterns:
+    - 销售
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D02-C5-001
+    relation: related_facet_only
+    matched_facets:
+    - electrical_function.retiming
+    limitation: related DSP/retiming evidence does not establish the Tx-retimed/Rx-linear split
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P119
+  company: 长芯博创
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: '"多模400GSR4、800GSR8产品具备批量供货能力"(原博创科技,业务覆盖光电芯片、光电模组、光模块、AOC)'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 供货
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P128
+  company: 三安光电
+  physical_cell: C1
+  point_status: 生产中
+  quote: '"光通讯类：主要适用于5G网络、接入光通讯芯片、CW光源、EML、DFB、FP、VCSEL、网、数据中心以及AI应用场景"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - laser_type.CW
+  - laser_type.DFB
+  - laser_type.EML
+  - laser_type.FP
+  - laser_type.VCSEL
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D05-C1-001
+    relation: related_facet_only
+    matched_facets:
+    - laser_type.EML
+    limitation: EML without 1310 nm is partial; no DFB+EAM or InP expansion
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P129
+  company: 上海贝岭
+  physical_cell: C5
+  point_status: 生产中
+  quote: '"网络通信领域存储器、专用SoC、电源等产品在接入网及中低速光模块市场份额持续提升，并积极向高速数通场景渗透"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P130
+  company: 东山精密
+  physical_cell: C1
+  point_status: 生产中
+  quote: '"索尔思光电拥有覆盖磷化铟衬底、外延材料至光芯片的全流程研发与工艺体系，技术壁垒持续夯实。目前CWlaser已实现规模化量产"'
+  subject_scope: controlled_subsidiary_or_acquired_business
+  attachment_eligible: true
+  scope_note: quote attributes the capability to acquired Source Photonics; keep group-level attachment under human review and do not infer direct parent manufacturing
+  proposed_facets:
+  - laser_type.CW
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 研发
+  - role: component_manufacture
+    basis_patterns:
+    - 量产
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P133
+  company: 东山精密
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: '"通过收购索尔思光电，公司跻身全球光模块核心供应商行列，构建起“光模块（含光芯片）+AIPCB”的AI算力核心硬件产品的布局，成为全球唯一一家具备PCB、光芯片及光模块从研发、设计到量产全流程能力的企业"'
+  subject_scope: group_claim_via_acquisition
+  attachment_eligible: true
+  scope_note: quote is a parent-company group claim explicitly framed as capability obtained through the Source Photonics acquisition
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: module_integrate
+    basis_patterns:
+    - (?:光模块|光收发模块).{0,50}(?:研发|开发|生产|制造|量产)
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P134
+  company: 中兴通讯
+  physical_cell: C5
+  point_status: 生产中
+  quote: '"800G相干DSP芯片等，已在运营商或互联网等多个行业发货"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - component_type.DSP
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D02-C5-001
+    relation: related_facet_only
+    matched_facets:
+    - component_type.DSP
+    limitation: related DSP/retiming evidence does not establish the Tx-retimed/Rx-linear split
+    promotion_status: not_a_requirement_match
+  - requirement_id: PCR-D03-C5-001
+    relation: related_facet_only
+    matched_facets:
+    - component_type.DSP
+    limitation: generic DSP evidence does not establish 3 nm or D03 architecture
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P135
+  company: 中天科技
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: '"智算中心相关业务营收大幅提升，其中高速光模块产品实现规模出货"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 出货
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P140
+  company: 亨通光电
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: '"面向算力中心应用场景，可提供从10G到800G全系列AOC产品以及高速光模块产品，多款超低功耗AOC产品助力国内超算中心建设获得了客户的好评"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - aggregate_rate.800G
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 提供
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P141
+  company: 仕佳光子
+  physical_cell: C1
+  point_status: 生产中
+  quote: '"公司DFB激光器芯片在接入网实现稳定批量供货，是接入网领域的重要芯片供应商。公司数据中心硅光用连续波激光CWDFB光源及器件已实现小批量供货。"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - laser_type.CW
+  - laser_type.DFB
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_manufacture
+    basis_patterns:
+    - 批量
+  - role: product_offer
+    basis_patterns:
+    - 供货
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P147
+  company: 光迅科技
+  physical_cell: C1
+  point_status: 生产中
+  quote: '"公司拥有多种类型激光器芯片（FP、DFB、EML、VCSEL等）、探测器芯片（PD、APD）以及SiP芯片平台，为直接调制和相干调制方案提供坚实支撑"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - laser_type.DFB
+  - laser_type.EML
+  - laser_type.FP
+  - laser_type.VCSEL
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 提供
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D05-C1-001
+    relation: related_facet_only
+    matched_facets:
+    - laser_type.EML
+    limitation: EML without 1310 nm is partial; no DFB+EAM or InP expansion
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P148
+  company: 光迅科技
+  physical_cell: C3
+  point_status: 生产中
+  quote: '"公司拥有多种类型激光器芯片（FP、DFB、EML、VCSEL等）、探测器芯片（PD、APD）以及SiP芯片平台，为直接调制和相干调制方案提供坚实支撑"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - detector_type.APD
+  - detector_type.PD
+  - detector_type.generic_detector
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 提供
+  role_promotion_status: needs_human_review
+  requirement_matches:
+  - requirement_id: PCR-D05-C3-001
+    match_level: generic_scope_candidate
+    matched_facets:
+    - detector_type.APD
+    - detector_type.PD
+    - detector_type.generic_detector
+    limitation: route requirement is generic photodetector; subtype evidence must not be transferred to RPS-D05
+    promotion_status: needs_human_review
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P161
+  company: 思瑞浦
+  physical_cell: C5
+  point_status: 生产中
+  quote: '"光模块控制芯片主要用于激光器和调制器的电压、电流偏置"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - component_type.IC_generic
+  - electrical_function.control_monitor_protocol
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P165
+  company: 永鼎股份
+  physical_cell: C1
+  point_status: 生产中
+  quote: '"推进70mW、100mWCW-DFB及100GEML产品的批量化生产与性能迭代"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - laser_type.CW
+  - laser_type.DFB
+  - laser_type.EML
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_manufacture
+    basis_patterns:
+    - 生产
+    - 批量
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D05-C1-001
+    relation: related_facet_only
+    matched_facets:
+    - laser_type.EML
+    limitation: EML without 1310 nm is partial; no DFB+EAM or InP expansion
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P174
+  company: 联特科技
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: '"基于单波100G的800G/400G产品已完成多技术方案的开发，并实现规模化量产"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - aggregate_rate.400G
+  - aggregate_rate.800G
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P183
+  company: 铭普光磁
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: '"为数据中心/智算中心客户提供从10G到800G的全系列数通光模块；为电信设备商客户提供4G和5G网络承载传输的光模块；以及固网接入FTTx应用光模块"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - aggregate_rate.800G
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 提供
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P185
+  company: 长飞光纤
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: '"除空芯光纤外，公司亦推出包括多芯光纤、高品质多模光纤、800G/1.6T高速光模块、绿色布线系统等产品与服务在内的综合解决方案，为智算中心提供高可靠、高性能、高扩展的全光底座"'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - aggregate_rate.1.6T
+  - aggregate_rate.800G
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 提供
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P187
+  company: 锐捷网络
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: '"公司自研的400G/800G高速光模块产品主要是面向有高性能计算网络组网需求的互联网厂商，适配其采购的数据中心交换机产品及整体解决方案进行销售。目前，400GLPO光模块已实现规模量产交付；800G光模块处于样机小规模适配阶段"(互动易2026-07-10董秘回答)'
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - aggregate_rate.400G
+  - aggregate_rate.800G
+  - electrical_architecture.LPO
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 销售
+    - 交付
+  - role: module_integrate
+    basis_patterns:
+    - (?:光模块|光收发模块).{0,50}(?:研发|开发|生产|制造|量产)
+    - (?:研发|开发|生产|制造|量产).{0,50}(?:光模块|光收发模块)
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P193
+  company: 通宇通讯
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: 参股公司四川光为近期在高速光模块领域取得重要突破，首批 800G OSFP 2×DR4 光模块已成功实现小批量交付。该产品采用行业领先的硅光技术和低功耗设计，具有高带宽、高可靠性等特点，主要应用于 800G 以太网、数据中心、人工智能（AI）及云计算网络等前沿领域。
+  subject_scope: affiliate_only
+  attachment_eligible: false
+  scope_note: quote concerns the investee 四川光为 rather than the row company 通宇通讯; no stable affiliate entity is attached in this pilot
+  proposed_facets:
+  - aggregate_rate.800G
+  - form_factor.OSFP
+  - photonics_platform.silicon_photonics
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles: []
+  role_promotion_status: blocked_subject_scope
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: blocked_subject_scope
+- point_id: P195
+  company: 国民技术
+  physical_cell: C5
+  point_status: 在建
+  quote: 公司光模块专用 MCU 正处于客户导入验证阶段，暂未形成实际销售订单。公司采用 Fabless 运营模式，产能依托晶圆代工厂保障，可支撑当前市场推广与客户导入节奏。公司光模块 MCU 具备大容量存储、双 Bank Flash 等特色设计。
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: quote explicitly says no actual sales orders have formed
+  proposed_facets:
+  - component_type.MCU
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 设计
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P199
+  company: 赛微电子
+  physical_cell: C4
+  point_status: 在建
+  quote: 赛莱克斯北京持续推动 MEMS 硅麦克风、惯性器件、气体流量开关、BAW（含 FBAR）滤波器、微振镜、气体、微流控、硅光子、振荡器、MEMS-OCS、3D 硅电容等不同类别、不同型号产品的工艺开发及产品验证
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - platform.silicon_photonics
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 开发
+  - role: process_enable
+    basis_patterns:
+    - 工艺开发
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D04-C4-001
+    relation: related_facet_only
+    matched_facets:
+    - platform.silicon_photonics
+    limitation: generic SiPh evidence does not establish MZM PIC
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P200
+  company: 索尔思(Source Photonics)
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: 400G、800G 等新型数据中心高速光模块产品已实现规模量产
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - aggregate_rate.400G
+  - aggregate_rate.800G
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: module_integrate
+    basis_patterns:
+    - (?:光模块|光收发模块).{0,50}(?:研发|开发|生产|制造|量产)
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P201
+  company: 索尔思(Source Photonics)
+  physical_cell: C1
+  point_status: 生产中
+  quote: 在芯片制造上，索尔思光电拥有受业内关注的 25G、53G 及 106G EML 芯片设计、制造与规模交付能力，以及 25G 高速 DFB 芯片设计、制造与规模交付能力
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - laser_type.DFB
+  - laser_type.EML
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 设计
+  - role: component_manufacture
+    basis_patterns:
+    - 制造
+  - role: product_offer
+    basis_patterns:
+    - 交付
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D05-C1-001
+    relation: related_facet_only
+    matched_facets:
+    - laser_type.EML
+    limitation: EML without 1310 nm is partial; no DFB+EAM or InP expansion
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P209
+  company: 华工科技
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: 公司实现全球第一梯队规模化交付800G硅光LPO系列和1.6T光模块产品
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - aggregate_rate.1.6T
+  - aggregate_rate.800G
+  - electrical_architecture.LPO
+  - photonics_platform.silicon_photonics
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 交付
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P212
+  company: 华工科技
+  physical_cell: C4
+  point_status: 生产中
+  quote: 自研硅光芯片已应用于400G、800G及1.6T光模块交付
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - platform.silicon_photonics
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 自研
+  - role: product_offer
+    basis_patterns:
+    - 交付
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D04-C4-001
+    relation: related_facet_only
+    matched_facets:
+    - platform.silicon_photonics
+    limitation: generic SiPh evidence does not establish MZM PIC
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P220
+  company: Coherent
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: We not only design and manufacture our transceivers internally, but we also design and manufacture many of the materials and components, including lasers, detectors, ICs, and
+    passive optics.
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: module_integrate
+    basis_patterns:
+    - (?i)(?:transceivers?|optical modules?).{0,50}(?:design|develop|manufactur)
+    - (?i)(?:design|develop|manufactur).{0,50}(?:transceivers?|optical modules?)
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P222
+  company: Coherent
+  physical_cell: C1
+  point_status: 生产中
+  quote: We have in-house laser design and manufacturing capability for GaAs-based VCSELs, InP-based DMLs, EMLs, and CW lasers.
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - laser_type.CW
+  - laser_type.DML
+  - laser_type.EML
+  - laser_type.VCSEL
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - (?i)\bdesign\b
+  - role: component_manufacture
+    basis_patterns:
+    - (?i)\bmanufactur
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D05-C1-001
+    relation: related_facet_only
+    matched_facets:
+    - laser_type.EML
+    limitation: EML without 1310 nm is partial; no DFB+EAM or InP expansion
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P224
+  company: Coherent
+  physical_cell: C3
+  point_status: 生产中
+  quote: We are also one of the very few companies that have shipped InP diode lasers and photodiodes in high volume
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - detector_type.photodiode
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - (?i)\bship
+  role_promotion_status: needs_human_review
+  requirement_matches:
+  - requirement_id: PCR-D05-C3-001
+    match_level: generic_scope_candidate
+    matched_facets:
+    - detector_type.photodiode
+    limitation: route requirement is generic photodetector; subtype evidence must not be transferred to RPS-D05
+    promotion_status: needs_human_review
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P225
+  company: Coherent
+  physical_cell: C5
+  point_status: 生产中
+  quote: including lasers, detectors, ICs, and passive optics.
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - component_type.IC_generic
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P229
+  company: Applied Optoelectronics(AAOI)
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: our 800G products in particular are used to interconnect AI compute infrastructure
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - aggregate_rate.800G
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P230
+  company: Applied Optoelectronics(AAOI)
+  physical_cell: C1
+  point_status: 生产中
+  quote: We design, manufacture and integrate our own analog and digital lasers using proprietary Molecular Beam Epitaxy
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - (?i)\bdesign\b
+  - role: component_manufacture
+    basis_patterns:
+    - (?i)\bmanufactur
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P233
+  company: Lumentum
+  physical_cell: C1
+  point_status: 生产中
+  quote: We also manufacture key components used in optical transceivers and data interconnect solutions, including high-speed laser transmitters, photonic integrated circuits, and photodiodes,
+    high-power laser light sources, as well as VCSELs and VCSEL arrays for short-reach data transmission.
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - laser_type.VCSEL
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_manufacture
+    basis_patterns:
+    - (?i)\bmanufactur
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P235
+  company: Lumentum
+  physical_cell: C3
+  point_status: 生产中
+  quote: including high-speed laser transmitters, photonic integrated circuits, and photodiodes
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - detector_type.photodiode
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches:
+  - requirement_id: PCR-D05-C3-001
+    match_level: generic_scope_candidate
+    matched_facets:
+    - detector_type.photodiode
+    limitation: route requirement is generic photodetector; subtype evidence must not be transferred to RPS-D05
+    promotion_status: needs_human_review
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P237
+  company: Lumentum
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: Lumentum is a leading provider of high-speed optical transceivers and optical components that underpin today's AI and cloud computing applications.
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - (?i)\bprovide
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P246
+  company: 四川九州光电子技术有限公司
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: 主要从事光器件、光通信装备的研发制造及销售，光芯片后工序加工及光模块的专业制造，产品广泛应用于光纤入户、数据中心、5G等领域
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: product_offer
+    basis_patterns:
+    - 销售
+  - role: module_integrate
+    basis_patterns:
+    - (?:光模块|光收发模块).{0,50}(?:研发|开发|生产|制造|量产)
+    - (?:研发|开发|生产|制造|量产).{0,50}(?:光模块|光收发模块)
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P253
+  company: 青岛海信宽带多媒体技术有限公司
+  physical_cell: C1
+  point_status: 生产中
+  quote: 成功开发并批量生产DFB激光芯片，包括75mW大功率连续波DFB (CW-DFB）激光芯片。正在开发100G/200G EML激光芯片及100mW及以上大功率CW-DFB激光芯片和 50G EML激光芯片
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - laser_type.CW
+  - laser_type.DFB
+  - laser_type.EML
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_design
+    basis_patterns:
+    - 开发
+  - role: component_manufacture
+    basis_patterns:
+    - 生产
+    - 批量
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence:
+  - requirement_id: PCR-D05-C1-001
+    relation: related_facet_only
+    matched_facets:
+    - laser_type.EML
+    limitation: EML without 1310 nm is partial; no DFB+EAM or InP expansion
+    promotion_status: not_a_requirement_match
+  promotion_status: needs_human_review
+- point_id: P254
+  company: 青岛海信宽带多媒体技术有限公司
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: 2024年9月11日，青岛海信宽带多媒体技术有限公司（简称海信宽带）宣布推出用于满足下一代人工智能和云网络的1.6T OSFP DR8光模块……同时采用SiPh和EML两个平台进行开发
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets:
+  - aggregate_rate.1.6T
+  - form_factor.OSFP
+  - photonics_platform.EML_raw
+  - photonics_platform.silicon_photonics
+  facet_specificity: facet_explicit
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: module_integrate
+    basis_patterns:
+    - (?:光模块|光收发模块).{0,50}(?:研发|开发|生产|制造|量产)
+  role_promotion_status: needs_human_review
+  requirement_matches:
+  - requirement_id: RPA-D05-FORM-001
+    match_level: attribute_exact_candidate
+    matched_facets:
+    - form_factor.OSFP
+    limitation: matches only the product attribute, not the full route profile; same point states 1.6T while RPS-D05 is an 800 Gbps demo endpoint
+    promotion_status: needs_human_review
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P256
+  company: 苏州星钥光子科技有限公司
+  physical_cell: C4
+  point_status: 在建
+  quote: 公司通过全资子公司出资成立苏州星钥光子科技有限公司（简称"星钥光子"），已提前布局这下一代技术路线。根据星钥光子的产线建设进度，有望在2026年年底实现工艺通线，2027年正式投入生产。
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: component_manufacture
+    basis_patterns:
+    - 生产
+  - role: process_enable
+    basis_patterns:
+    - 产线
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review
+- point_id: P263
+  company: 泰科电子(含关联方)
+  physical_cell: MOD1
+  point_status: 生产中
+  quote: TE Connectivity (TE) is expanding its high-speed connectivity portfolio with new optical transceivers, complementing our Active Optical Cables (AOCs) and copper solutions.
+  subject_scope: direct_or_unresolved
+  attachment_eligible: true
+  scope_note: null
+  proposed_facets: []
+  facet_specificity: cell_only
+  facet_maturity_state: not_inferred_from_point_status
+  proposed_roles:
+  - role: role_unknown
+    basis_patterns: []
+  role_promotion_status: needs_human_review
+  requirement_matches: []
+  related_facet_evidence: []
+  promotion_status: needs_human_review

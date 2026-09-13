@@ -1,16 +1,18 @@
 {
   "version": 1,
-  "note": "日更镜像的按实体 discovery 端点登记。只允许公司 IR/官网、监管或交易所托管文件、具名客户/交易对手、政府记录等可追溯页面；media/generic_news/aggregator/macro_news 会被 load_discovery_config 拒绝。本文件只声明端点，不写任何 canonical 数据。",
+  "note": "2026-09-09：官方目录分批接入；配置覆盖不等于获取成功。每次运行仍报告缺端点、网络失败和不支持列表；只产生候选，不写 canonical。未支持的 SEC submissions、纯 PDF 目录、主页/产品页和发行者归属不明的来源不用于凑覆盖。",
   "entities": {
     "AAOI": {
       "endpoints": [
         {
           "endpoint_id": "AAOI_IR_RELEASES",
           "endpoint_kind": "official_ir",
-          "url": "https://investors.ao-inc.com/press-releases",
+          "url": "https://newsroom.ao-inc.com/news-releases/",
+          "note": "2026-09-09 本机验证官方 newsroom 列表及同域文章日期正文；仅覆盖该站公告，跨域 IR 财报未证明恢复。",
           "disclosure_type": "official_release",
           "content_class": "commercial_disclosure",
-          "provenance_class": "first_party"
+          "provenance_class": "first_party",
+          "article_path_pattern": "^/news-releases/[^/]+/?$"
         }
       ]
     },
@@ -19,7 +21,8 @@
         {
           "endpoint_id": "LITE_IR_RELEASES",
           "endpoint_kind": "official_ir",
-          "url": "https://investor.lumentum.com/financial-news-releases",
+          "url": "https://investor.lumentum.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "note": "2026-09-09 核验官方 Q4 widget 公开 GET：返回逐篇 Headline/PressReleaseDate/LinkToDetailPage/Body；不执行网页脚本。",
           "disclosure_type": "official_release",
           "content_class": "corporate_narrative",
           "provenance_class": "first_party"
@@ -39,11 +42,16 @@
         {
           "endpoint_id": "CSCO_IR_RELEASES",
           "endpoint_kind": "counterparty_release",
-          "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m09",
+          "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/index.html",
+          "note": "2026-09-09 核验主页 pressRelease 组件的内嵌 JSON：含文章 path/releaseDate，详情可取得日期正文；只解码指定组件，不执行网页脚本。",
           "disclosure_type": "customer_release",
           "content_class": "commercial_disclosure",
           "provenance_class": "counterparty",
-          "corroborates_entity_ids": ["AAOI", "LITE"]
+          "corroborates_entity_ids": [
+            "AAOI",
+            "LITE"
+          ],
+          "publisher_fallback": true
         }
       ]
     },
@@ -52,7 +60,7 @@
         {
           "endpoint_id": "MTSI_IR_RELEASES",
           "endpoint_kind": "official_ir",
-          "url": "https://investors.macom.com/news-releases",
+          "url": "https://ir.macom.com/news-releases",
           "disclosure_type": "official_release",
           "content_class": "commercial_disclosure",
           "provenance_class": "first_party"
@@ -64,11 +72,16 @@
         {
           "endpoint_id": "IQE_RNS_RELEASES",
           "endpoint_kind": "counterparty_release",
-          "url": "https://www.iqep.com/media/press-releases/2026",
+          "url": "https://www.iqep.com/media/press-releases",
           "disclosure_type": "official_release",
           "content_class": "commercial_disclosure",
           "provenance_class": "counterparty",
-          "corroborates_entity_ids": ["MTSI", "LITE"]
+          "corroborates_entity_ids": [
+            "MTSI",
+            "LITE"
+          ],
+          "publisher_fallback": true,
+          "article_path_pattern": "^/media/press-releases/20\\d{2}/[^/]+/?$"
         }
       ]
     },
@@ -77,7 +90,7 @@
         {
           "endpoint_id": "HAMAMATSU_IR_RELEASES",
           "endpoint_kind": "official_ir",
-          "url": "https://www.hamamatsu.com/jp/en/newsroom.html",
+          "url": "https://www.hamamatsu.com/jp/en/news.html",
           "disclosure_type": "official_release",
           "content_class": "corporate_narrative",
           "provenance_class": "first_party"
@@ -89,10 +102,987 @@
         {
           "endpoint_id": "POET_IR_RELEASES",
           "endpoint_kind": "official_ir",
-          "url": "https://investors.poet-technologies.com/news-releases",
+          "url": "https://rss.globenewswire.com/en/search/organization/POET%2520Technologies%2520Inc%C2%A7",
           "disclosure_type": "official_release",
           "content_class": "commercial_disclosure",
-          "provenance_class": "first_party"
+          "provenance_class": "first_party",
+          "article_path_pattern": "^/news-release/",
+          "note": "2026-09-09 实测公司专属原始发行托管列表，详情Source: POET Technologies Inc.且与官网9/4公告对应；非泛新闻搜索；仅允许该organization发现的原稿。"
+        }
+      ]
+    },
+    "ADTN": {
+      "endpoints": [
+        {
+          "endpoint_id": "ADTN_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.adtran.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09：官方列表 q4Api 对应的公开 Q4 GET 原始发布接口，已核日期及正文；HTML 动态列表无静态文章入口。"
+        }
+      ]
+    },
+    "AXTI": {
+      "endpoints": [
+        {
+          "endpoint_id": "AXTI_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.axt.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09：官方列表 q4Api 对应的公开 Q4 GET 原始发布接口，已核日期及正文；HTML 动态列表无静态文章入口。"
+        }
+      ]
+    },
+    "CIEN": {
+      "endpoints": [
+        {
+          "endpoint_id": "CIEN_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investor.ciena.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09：官方 Q4 GET 原始发布接口已核日期正文；修复动态 HTML 列表无静态文章入口。"
+        }
+      ]
+    },
+    "CLS": {
+      "endpoints": [
+        {
+          "endpoint_id": "CLS_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://corporate.celestica.com/news-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "/news-release-details/"
+        }
+      ]
+    },
+    "COHR": {
+      "endpoints": [
+        {
+          "endpoint_id": "COHR_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://ir.coherent.com/news-events/news-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "/news-release-details/"
+        }
+      ]
+    },
+    "CRDO": {
+      "endpoints": [
+        {
+          "endpoint_id": "CRDO_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.credosemi.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09：官方 Q4 GET 原始发布接口已核日期正文；修复动态 HTML 列表无静态文章入口。"
+        }
+      ]
+    },
+    "FORM": {
+      "endpoints": [
+        {
+          "endpoint_id": "FORM_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.formfactor.com/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "/news-release-details/"
+        }
+      ]
+    },
+    "GLW": {
+      "endpoints": [
+        {
+          "endpoint_id": "GLW_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investor.corning.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09：官方 Q4 GET 原始发布接口已核日期正文；修复动态 HTML 列表无静态文章入口。"
+        }
+      ]
+    },
+    "LWLG": {
+      "endpoints": [
+        {
+          "endpoint_id": "LWLG_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.lightwavelogic.com/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "/press-release/|/news-releases/|/press-releases/[^/]+"
+        }
+      ]
+    },
+    "MRVL": {
+      "endpoints": [
+        {
+          "endpoint_id": "MRVL_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investor.marvell.com/news-events/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/news-events/press-releases/detail/"
+        }
+      ]
+    },
+    "MXL": {
+      "endpoints": [
+        {
+          "endpoint_id": "MXL_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.maxlinear.com/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/(?:news-events/)?press-releases/detail/"
+        }
+      ]
+    },
+    "MYCRONIC": {
+      "endpoints": [
+        {
+          "endpoint_id": "MYCRONIC_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.mycronic.com/news-events/our-press-releases/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/news-events/our-press-releases/[^/]+/?$"
+        }
+      ]
+    },
+    "NOK": {
+      "endpoints": [
+        {
+          "endpoint_id": "NOK_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.nokia.com/newsroom/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/newsroom/[^/]+/?$"
+        }
+      ]
+    },
+    "SANM": {
+      "endpoints": [
+        {
+          "endpoint_id": "SANM_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://ir.sanmina.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09：官方 Q4 GET 原始发布接口已核日期正文；修复动态 HTML 列表无静态文章入口。"
+        }
+      ]
+    },
+    "SMTC": {
+      "endpoints": [
+        {
+          "endpoint_id": "SMTC_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.semtech.com/company/press",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方主站Press目录替代IR动态壳；日期按CAMARILLO发行电头提取。",
+          "article_path_pattern": "^/company/press/[^/]+/?$"
+        }
+      ]
+    },
+    "TSEM": {
+      "endpoints": [
+        {
+          "endpoint_id": "TSEM_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://ir.towersemi.com/news-and-events/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "/news-release-details/"
+        }
+      ]
+    },
+    "VIAV": {
+      "endpoints": [
+        {
+          "endpoint_id": "VIAV_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investor.viavisolutions.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方 Q4 GET 原始发布接口已核验，替代动态 HTML 列表。"
+        }
+      ]
+    },
+    "WATCH_AVICENA": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_AVICENA_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://avicena.tech/press-releases/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/[^/]*(?:avicena|lightbundle)[^/]+/?$"
+        }
+      ]
+    },
+    "WATCH_ENNOSTAR": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_ENNOSTAR_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.ennostar.com/en/news/news",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/en/news/news/[a-z0-9]+/?$"
+        }
+      ]
+    },
+    "WATCH_EVG": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_EVG_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.evgroup.com/company/news",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/company/news/detail/"
+        }
+      ]
+    },
+    "WATCH_EXFO": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_EXFO_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.exfo.com/en/corporate/news-events/press-releases/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/en/corporate/news-events/press-releases/[^/]+/?$"
+        }
+      ]
+    },
+    "WATCH_FICONTEC": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_FICONTEC_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.ficontec.com/news/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。"
+        }
+      ]
+    },
+    "WATCH_LIGHTMATTER": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_LIGHTMATTER_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://lightmatter.co/press-releases/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/press-release/|^/press-releases/[^/]+"
+        }
+      ]
+    },
+    "WATCH_NTTID": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_NTTID_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.ntt-innovative-devices.com/en/news/index.html",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/en/news/(?!index)[^/]+"
+        }
+      ]
+    },
+    "WATCH_OPENLIGHT": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_OPENLIGHT_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://openlightphotonics.com/newsroom",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方自有Newsroom栏目及同路径公告；避开/news-2的媒体报道。",
+          "article_path_pattern": "^/newsroom/[^/]+/?$"
+        }
+      ]
+    },
+    "WATCH_PI": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_PI_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.pi-usa.us/en/news-events/news",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/en/news-events/news/detail/"
+        }
+      ]
+    },
+    "WATCH_RANOVUS": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_RANOVUS_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://ranovus.com/news/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。"
+        }
+      ]
+    },
+    "WATCH_SCINTIL": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_SCINTIL_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.scintil-photonics.com/blog/categories/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/post/",
+          "allow_blog_release_path": true
+        }
+      ]
+    },
+    "WATCH_SENKO": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_SENKO_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.senko.com/news/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。"
+        }
+      ]
+    },
+    "WATCH_SICOYA": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_SICOYA_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://sicoya.com/news/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。"
+        }
+      ]
+    },
+    "CAND_AMKR": {
+      "endpoints": [
+        {
+          "endpoint_id": "CAND_AMKR_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://ir.amkor.com/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "/news-release-details/"
+        }
+      ]
+    },
+    "CAND_EKI": {
+      "endpoints": [
+        {
+          "endpoint_id": "CAND_EKI_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.ekinops.com/news",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/news/[^/]+"
+        }
+      ]
+    },
+    "CAND_RBBN": {
+      "endpoints": [
+        {
+          "endpoint_id": "CAND_RBBN_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.ribboncommunications.com/press-and-events/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "/news-release-details/|/press-releases/[^/]+"
+        }
+      ]
+    },
+    "CAND_TEL": {
+      "endpoints": [
+        {
+          "endpoint_id": "CAND_TEL_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.te.com/en/about-te/news-center.html",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "article_path_pattern": "^/en/about-te/news-center/[^/]+\\.html$"
+        }
+      ]
+    },
+    "ANET": {
+      "endpoints": [
+        {
+          "endpoint_id": "ANET_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.arista.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09：官方列表 q4Api 对应的公开 Q4 GET 原始发布接口，已核日期及正文；HTML 动态列表无静态文章入口。"
+        }
+      ]
+    },
+    "AVGO": {
+      "endpoints": [
+        {
+          "endpoint_id": "AVGO_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.broadcom.com/financial-information/financial-news-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "/news-release-details/"
+        }
+      ]
+    },
+    "FN": {
+      "endpoints": [
+        {
+          "endpoint_id": "FN_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investor.fabrinet.com/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "/news-release-details/|^/node/\\d+/?$"
+        }
+      ]
+    },
+    "GFS": {
+      "endpoints": [
+        {
+          "endpoint_id": "GFS_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.gf.com/investor-relations/news-events/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "/news-release-details/"
+        }
+      ]
+    },
+    "JBL": {
+      "endpoints": [
+        {
+          "endpoint_id": "JBL_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.jabil.com/rss/pressrelease.aspx",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。"
+        }
+      ]
+    },
+    "META": {
+      "endpoints": [
+        {
+          "endpoint_id": "META_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investor.atmeta.com/rss/pressrelease.aspx",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方 email-alerts-and-rss 导航指向 RSS，已核日期及详情链接。"
+        }
+      ]
+    },
+    "NVDA": {
+      "endpoints": [
+        {
+          "endpoint_id": "NVDA_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://nvidianews.nvidia.com/cats/press_release.xml",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。"
+        }
+      ]
+    },
+    "OXIG": {
+      "endpoints": [
+        {
+          "endpoint_id": "OXIG_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.oxinst.com/news/?group_site=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "^/news/[^/]+/?$"
+        }
+      ]
+    },
+    "SMOP": {
+      "endpoints": [
+        {
+          "endpoint_id": "SMOP_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://smartoptics.com/investor-relations/press-releases/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "^/cision-post/[^/]+/?$"
+        }
+      ]
+    },
+    "WIWYNN": {
+      "endpoints": [
+        {
+          "endpoint_id": "WIWYNN_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.wiwynn.com/news/tag/corporate",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "^/news/(?!tag/|page/)[^/]+/?$"
+        }
+      ]
+    },
+    "VECO": {
+      "endpoints": [
+        {
+          "endpoint_id": "VECO_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://ir.veeco.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。"
+        }
+      ]
+    },
+    "WATCH_ACCTON": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_ACCTON_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.accton.com/express/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 express卡片仅已核月度营收文章路径；这是月报切片，不代表其他公告目录全量覆盖。",
+          "article_path_pattern": "^/accton-[^/]+-sales-revenue-report/?$"
+        }
+      ]
+    },
+    "WATCH_AMD": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_AMD_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://ir.amd.com/news-events/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "/press-releases/detail/"
+        }
+      ]
+    },
+    "WATCH_AMZN": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_AMZN_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://ir.aboutamazon.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方 Q4 GET 原始发布接口已核验，替代动态 HTML 列表。"
+        }
+      ]
+    },
+    "WATCH_ASE": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_ASE_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.aseglobal.com/press-room",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "^/press-room/[^/]+"
+        }
+      ]
+    },
+    "WATCH_AYAR": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_AYAR_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://ayarlabs.com/news/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "^/news/[^/]+/?$"
+        }
+      ]
+    },
+    "WATCH_FUJIKURA": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_FUJIKURA_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.fujikura.co.jp/en/news/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "^/en/news/[^/]+/[^/]+"
+        }
+      ]
+    },
+    "WATCH_FUJITSUOC": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_FUJITSUOC_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.ff-opticalcomponents.com/en/information/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 实测自有继任官网与署名Fujitsu Optical Components的历史产品公告；官网2025-04-01改名为Furukawa FITEL Optical Components。仅迁移来源入口，原监控ID和CSV关系均不变，不使用母公司整站冒充。",
+          "article_path_pattern": "^/en/information/(?:releases|info)_\\d+\\.html$"
+        }
+      ]
+    },
+    "WATCH_KEYS": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_KEYS_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investor.keysight.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方Q4公开GET日期正文已核验。"
+        }
+      ]
+    },
+    "WATCH_MCHP": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_MCHP_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://ir.microchip.com/news-events/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "/press-releases/detail/"
+        }
+      ]
+    },
+    "WATCH_MELCO": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_MELCO_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.mitsubishielectric.com/global/common/mel25/news-data/gws-news/global/www/en/news-article.json",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方/en/pr/页面data-js-prod-newsjsonpath指向的公开新闻数组；限定官方/en/pr年度详情，不直接把索引当正文。",
+          "article_path_pattern": "^/en/pr/20\\d{2}/[^/]+"
+        }
+      ]
+    },
+    "WATCH_MOLEX": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_MOLEX_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.molex.com/en-us/news",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "^/en-us/news/[^/]+/?$"
+        }
+      ]
+    },
+    "WATCH_MSFT": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_MSFT_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://news.microsoft.com/source/tag/press-releases/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "^/source/20\\d{2}/\\d{2}/\\d{2}/"
+        }
+      ]
+    },
+    "WATCH_ORCL": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_ORCL_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investor.oracle.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方Q4公开GET已验证日期正文，替代动态HTML列表。"
+        }
+      ]
+    },
+    "WATCH_SAMCO": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_SAMCO_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.samco.co.jp/en/whatsnew/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "^/en/whatsnew/(?:products|event|sustainability|topics)/20\\d{2}/\\d{2}/[^/]+\\.php$"
+        }
+      ]
+    },
+    "WATCH_SOURCEPHOTONICS": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_SOURCEPHOTONICS_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.sourcephotonics.com/newspage/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "^/news/[^/]+/?$"
+        }
+      ]
+    },
+    "WATCH_SUSS": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_SUSS_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.suss.com/en/newsroom/news-archive",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。"
+        }
+      ]
+    },
+    "CAND_DELTA": {
+      "endpoints": [
+        {
+          "endpoint_id": "CAND_DELTA_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.deltaww.com/en-US/press",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方旧 news 目录已迁至 press；数字公告详情日期及唯一内嵌 srcdoc 正文已实测。",
+          "article_path_pattern": "^/en-US/press/\\d+/?$"
+        }
+      ]
+    },
+    "CAND_HPE": {
+      "endpoints": [
+        {
+          "endpoint_id": "CAND_HPE_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.hpe.com/us/en/newsroom/press-hub.html/restype/press-release_news-advisory",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
+          "article_path_pattern": "^/us/en/newsroom/press-release/"
+        }
+      ]
+    },
+    "AIXA": {
+      "endpoints": [
+        {
+          "endpoint_id": "AIXA_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.aixtron.com/en/press/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "article_path_pattern": "/en/press/press-releases/.*_n\\d+",
+          "note": "2026-09-09 官方列表/样稿核验；配置不等于成功，缺日期或正文按条目失败保留。"
+        }
+      ]
+    },
+    "ASMPT": {
+      "endpoints": [
+        {
+          "endpoint_id": "ASMPT_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.asmpt.com/en/investor-relations/news-events/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "article_path_pattern": "^/en/investor-relations/news-events/[^/]+/?$",
+          "note": "2026-09-09 官方列表/样稿核验；配置不等于成功，缺日期或正文按条目失败保留。"
+        }
+      ]
+    },
+    "FURUKAWA": {
+      "endpoints": [
+        {
+          "endpoint_id": "FURUKAWA_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.furukawaelectric.com/en/release/",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "article_path_pattern": "^/en/release/20\\d{2}/[^/]+\\.html$",
+          "note": "2026-09-09 官方列表/样稿核验；配置不等于成功，缺日期或正文按条目失败保留。"
+        }
+      ]
+    },
+    "SUMITOMO": {
+      "endpoints": [
+        {
+          "endpoint_id": "SUMITOMO_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://sumitomoelectric.com/pr-news-articles",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "article_path_pattern": "^/press/20\\d{2}/\\d{2}/[^/]+/?$",
+          "note": "2026-09-09 官方列表/样稿核验；配置不等于成功，缺日期或正文按条目失败保留。"
+        }
+      ]
+    },
+    "SOI": {
+      "endpoints": [
+        {
+          "endpoint_id": "SOI_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.soitec.com/home/group/newsroom/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "article_path_pattern": "/press-releases/content/20\\d{2}/\\d{2}/\\d{2}/",
+          "note": "2026-09-09 官方列表/样稿核验；配置不等于成功，缺日期或正文按条目失败保留。"
+        }
+      ]
+    },
+    "SIVERS": {
+      "endpoints": [
+        {
+          "endpoint_id": "SIVERS_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.sivers-semiconductors.com/wp-json/sivers/v1/news-press?page=1&per_page=20&post_types=press&product=&language=&year=",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "article_path_pattern": "^/press/[^/]+/?$",
+          "note": "2026-09-09 官方列表/样稿核验；配置不等于成功，缺日期或正文按条目失败保留。"
+        }
+      ]
+    },
+    "WATCH_GOOGL": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_GOOGL_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://abc.xyz/investor/news/default.aspx",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "article_path_pattern": "/news-details/",
+          "note": "2026-09-09 官方列表/样稿核验；配置不等于成功，缺日期或正文按条目失败保留。"
+        }
+      ]
+    },
+    "WATCH_LUMILENS": {
+      "endpoints": [
+        {
+          "endpoint_id": "WATCH_LUMILENS_OFFICIAL_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://lumilens.com/news-insights",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party",
+          "article_path_pattern": "^/news-insights/[^/]+/?$",
+          "note": "2026-09-09 自有新域名和具名创始人/投资人/产品体系与POET具名公告核对；仅采集卡片标Press release的同域详情，排除Blog/Media。原监控ID不变，不自动生成POET交叉确认。"
         }
       ]
     }

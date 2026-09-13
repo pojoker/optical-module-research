@@ -1,0 +1,28 @@
+run_id: 2026-08-26-agy-route-field-fill-v2
+status: reviewed_draft_ready
+search_agent: agy
+model: gemini-3.7-flash-high
+effort: high
+targets:
+  - 800G_EML_exact_instance_recheck
+  - 800G_SiPh_exact_instance_retry
+canonical_write_allowed: false
+canonical_write_performed: false
+coverage_status_changed: false
+knowledge_write_allowed: false
+why_write_allowed: false
+promotion_allowed: false
+reviewers:
+  kimi:
+    model: kimi-code/k3
+    verdict: PASS_WITH_FIXES
+    review: docs/reviews/2026-08-26-kimi-review-agy-route-field-fill-v2.md
+  cursor:
+    model: auto
+    mode: ask
+    verdict: PASS_WITH_FIXES
+    review: docs/reviews/2026-08-26-cursor-review-agy-route-field-fill-v2.md
+notes:
+  - AGY is used for public-source discovery and retrieval, not canonical question mapping.
+  - A fluent AGY answer is not evidence; only independently retrievable source anchors may be consumed downstream.
+  - Failure to find a single exact instance is an allowed and preferred outcome over cross-SKU synthesis.
