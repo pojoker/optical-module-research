@@ -1,0 +1,193 @@
+<section id="task">
+<p class="eyebrow">01 / 先看数据怎样变成光</p><h2>一只光模块究竟在做什么？</h2>
+<p class="intro">光模块负责在电信号和光信号之间转换。设备内部用电信号处理数据，光纤则传送光。发送时，模块让光携带数据；接收时，模块把收到的光信号变回电信号。 </p>
+<p>要用光传数据，发送端必须让光随数据变化。两台设备通过光纤通信时，发送端控制这种变化，接收端再测量它。发光、调制和探测因此成为光模块的基本工作。 <a class="cite" href="#source-28">[28]</a></p>
+<div class="flow"><b>设备 A<small>输出电信号</small></b><span>→</span><b>发送部分<small>让光随数据变化</small></b><span>→</span><b>光纤<small>传送这束光</small></b><span>→</span><b>接收部分<small>把光的变化变回电信号</small></b><span>→</span><b>设备 B</b></div>
+<p class="caption">图 1 · 通用工作流程，尚未选择技术路线或零件。只画一个方向；收发模块同时包含发送与接收功能，反向通信另有一条对应路径。</p>
+<h3>“光随数据变化”，接收端怎样读懂？</h3>
+<p>两端先约定怎样用光的<strong>强弱</strong>表示数据。例如，在每个规定的时间段内，弱的一档代表 0，强的一档代表 1。发送端依次送出“弱、强、强、弱”，接收端按同样的时间段测量，就能读出 0110。这是两档状态的教学示例，具体产品可以采用其他约定。 </p>
+<p>接收端能读出数据，靠的是两端使用同一套规则：测量光的什么性质、每种状态代表什么，以及何时读取。发送端按照数据控制光的变化，这个过程叫作<strong>调制</strong>。本页先讲用光强变化传送数据的方案。 <a class="cite" href="#source-29">[29]</a></p>
+<p>理解传输过程后，我们还需要知道每一步由谁完成。先把图 1 拆成几项具体工作，再比较它们的实现方式，才能逐步确定需要哪些零件。 </p>
+<p class="origin">原始问题：“光模块是由什么构成的？” · <a href="{{old}}#qa-1">原 Q01</a>、<a href="{{old}}#qa-2">原 Q02</a></p>
+</section>
+<section id="functions">
+<p class="eyebrow">02 / 从流程拆出必须完成的工作</p><h2>还不认识零件，能先知道需要哪些功能吗？</h2>
+<p class="intro">发送端需要提供光、让光携带数据，并把光送进光纤。接收端需要检测收到的光，再交出设备可用的电信号。先说清这些工作，就能在不熟悉零件名称时理解模块的基本功能。 </p>
+<div class="table-wrap"><table><thead><tr><th>图 1 的哪一步</th><th>具体要完成的工作</th><th>为什么不能跳过</th></tr></thead><tbody>
+<tr><td>发送：先有光</td><td>提供可用于传输的光。</td><td>没有光，就没有后面要控制、传送和检测的对象。</td></tr>
+<tr><td>发送：让光携带数据</td><td>把数据变成控制条件，使光按约定变化。</td><td>只有持续发光，接收端还不能区分不同的数据内容。</td></tr>
+<tr><td>发送：把光送出去</td><td>引导光进入光纤；多路传输时，还要安排各路怎样走。</td><td>器件有光输出，不等于光已经进入了目标光纤。</td></tr>
+<tr><td>接收：取出光中的变化</td><td>让收到的光到达探测位置，将它的变化转为电信号变化。</td><td>设备后面的电路不能直接处理光纤里的光。</td></tr>
+<tr><td>接收：交出可用信号</td><td>将检测到的电信号转换、放大和处理到后级需要的形式。</td><td>刚检测到的信号不一定已经适合直接交给设备。</td></tr>
+</tbody></table></div>
+<p class="caption">沿信号路径作的功能分解，依据原 Q02–Q04 及 Cisco 光收发原理。表格的五行不是五颗芯片。<a href="{{old}}#qa-2">原 Q02</a> <a href="{{old}}#qa-4">原 Q04</a> <a class="cite" href="#source-28">[28]</a></p>
+<h3>功能确定了，为什么零件还不能确定？</h3>
+<p><strong>同一项功能可以有不同实现，同一个器件也可以承担多项功能。</strong>例如，提供光和调制光是两项工作，EML 却把发光段与调制段做在同一器件里。另一种实现可以把调制结构做进光子芯片。功能相同，承担功能的器件和连接方式仍可能不同。 </p>
+<p>技术路线决定这些工作怎样实现。多路光怎样传送，决定各路光的连接方式；发光与调制结构放在哪里，决定谁承担这两项功能。选定具体产品后，我们就可以把功能逐项对应到器件和结构。 </p>
+<div class="bridge">图 1 给出流程 → 本节拆出功能 → 下一节比较实现 → 选定产品后，把功能对应到零件。</div>
+<h3 id="route-map">技术路线分别决定什么？</h3><p>一只产品需要同时决定怎样发光和调制、多路光怎样传送、谁处理电信号，以及光电转换放在哪里。下面每行回答一个不同的问题；把这些选择放在一起，还要检查速率、波长、光纤和接口能否配合。</p><div class="table-wrap"><table><thead><tr><th>选择哪一层</th><th>本页比较的实现</th><th>它主要改变什么</th></tr></thead><tbody><tr><td>发光与调制</td><td>EML；直接调制 VCSEL；激光器配合硅光调制结构</td><td>数据控制哪个部位，以及光源、调制结构与驱动电路怎样连接。</td></tr><tr><td>多路传输</td><td>并行；波分</td><td>各路分别使用纤芯，或增加合波、分波功能。</td></tr><tr><td>电信号处理分工</td><td>带 DSP；LPO；LRO</td><td>主机与模块各承担哪些处理，收、发方向是否相同。</td></tr><tr><td>安装与封装位置</td><td>面板可插拔；CPO</td><td>光电转换与主芯片的距离，以及电连接、散热和光纤引出安排。</td></tr></tbody></table></div><p class="caption">按本页已有实例归纳。硅光描述集成平台，EML 描述器件；表中比较的是具体发射路径。各行不能自由拼成未经验证的产品。<a class="cite" href="#source-2">[2]</a> <a class="cite" href="#source-3">[3]</a> <a class="cite" href="#source-28">[28]</a> <a class="cite" href="#source-30">[30]</a> <a class="cite" href="#source-34">[34]</a> <a class="cite" href="#source-36">[36]</a></p><aside class="product" id="product-preview"><strong>先记住后面要追踪的产品</strong><p>Coherent FTCE4527E1PCA 是本页的 800G-DR8+ OSFP 参考模块：公开采用 EML 发射、PIN 接收、双 MPO-12 光接口，以及带重定时的电接口。下面比较其他实现时，可以随时回到这组已知选择。</p><p class="caption">器件类别与外部规格已有披露；内部芯片数量、光耦合与固定方式仍为 UNKNOWN。本页选择该型号作为例子，是因为公开资料可定位；厂家的完整选型理由仍未披露。<a class="cite" href="#source-1">[1]</a> <a class="cite" href="#source-6">[6]</a></p><p><a href="#product">先看产品的五项功能分配 →</a>　<a href="#route">逐步比较其他实现 →</a></p></aside>
+</section>
+<section id="route">
+<p class="eyebrow">03 / 沿五项功能选择实现与零件</p><h2>每一步有哪些实现，分别需要什么零件？</h2>
+<p class="intro">沿用 02 的顺序：先有光，让光携带数据，把光送出去，再在另一端取出变化、交出可用信号。下面逐步看实现方式怎样改变器件和连接。五步是功能划分，同一个器件可以承担多步工作；不同步骤的选项还要符合同一产品的速率、波长和接口要求。</p>
+<p>每步从两个角度阅读：<strong>功能实现</strong>看器件接收什么、怎样处理、输出什么；<strong>技术路线中的配合</strong>看它在什么方案中使用，前后接谁。比如 EML 路径让 DFB 供光、EAM 调制；直接调制 VCSEL 路径由同一激光器完成这两步。它们都要继续连接光路与接收端，但后续器件必须按同一产品规格匹配，不能随意拼接。</p>
+
+<nav aria-label="五项功能导航"><a href="#route-light">1 先有光</a><a href="#route-modulation">2 让光携带数据</a><a href="#route-coupling">3 把光送出去</a><a href="#route-detection">4 取出光中的变化</a><a href="#route-electrical">5 交出可用信号</a></nav>
+<h3 id="route-light">第一步：先有光——由什么器件供光？</h3>
+<p>先看光由谁提供。下面用 VCSEL 和 EML 中的 DFB 激光段作例子：前者本身就是发光器件，后者是 EML 内部负责发光的部分。两者都需要电路供电，产生的光再进入后续光路。</p>
+<div class="table-wrap"><table><thead><tr><th>用到的器件</th><th>哪一部分提供光？</th><th>这一步怎样完成？</th></tr></thead><tbody>
+<tr><td>VCSEL 激光器</td><td>VCSEL 本身提供光，光从芯片表面射出。</td><td>驱动电路向 VCSEL 提供电流，使它发光。“表面发射”描述的是光从哪里出来。 <a class="cite" href="#source-34">[34]</a></td></tr>
+<tr><td>EML 器件</td><td>EML 内部的 DFB 激光段提供光。</td><td>DFB 激光段在供电后产生光，再把光送到同一器件内的 EAM 调制段。这里先看供光，下一步再解释调制。 <a class="cite" href="#source-2">[2]</a></td></tr>
+</tbody></table></div>
+<p>VCSEL 常见于短距离的多模光纤连接；后文的参考产品则采用 EML。这些例子帮助我们认识供光器件，具体选哪一种还要结合产品的速率、传输距离和光纤类型。 <a class="cite" href="#source-32">[32]</a> <a class="cite" href="#source-1">[1]</a></p>
+<p>确定激光器类型之后，还要确认它与后续光路怎样连接。给硅光电路供光可以采用不同的集成布局：Cisco 描述激光器向芯片供光的路径，Intel 的实例则集成片上激光器。“用什么激光器”和“把光源集成在哪里”需要分别确认。 <a class="cite" href="#source-28">[28]</a> <a class="cite" href="#source-37">[37]</a></p>
+<details><summary>延伸：VCSEL 阵列与短距多模连接</summary><p>VCSEL 的表面出光和直接调制会改变发射器件及其光学装配。VCSEL 可以在一块芯片上排成阵列，圆形出光也便于耦合；驱动电路和把光送进光纤的结构仍然需要。Coherent 在 2023 年公布的八单元 VCSEL 阵列及配套探测器阵列，就是面向 800G 短距模块和有源光缆的器件实例。 <a class="cite" href="#source-34">[34]</a> <a class="cite" href="#source-35">[35]</a></p>
+<p>短距多模方案常采用 VCSEL。多模光纤允许光沿不同模式传播，但不同模式的到达时间会拉开，使相邻信号更难分辨，因此距离是选型条件之一。是否采用这套器件，要连同速率、光纤和距离一起判断；不能直接拿它替换后文 2 km 单模模块里的 EML。 <a class="cite" href="#source-32">[32]</a></p>
+
+
+</details>
+<p class="bridge">有了光，还要让光随数据变化。光源是否直接参与调制，决定下一步的驱动电路接到哪里。</p>
+<h3 id="route-modulation">第二步：让光携带数据——改变激光器输出，还是控制已有的光？</h3>
+<p>下面三条路径分别把电信号接到激光器、EML 的调制段或硅光芯片上的调制器。它们改变的是同一件事：输出光怎样随数据变化。图中的光源接续第一步，不是再增加一套光源。</p>
+<div class="compare three-options"><article><span class="pill">发射路径 A · DFB 激光段 + EAM 调制段</span><h3>发光段和调制段做在一起</h3><div class="stack">光路：DFB 激光段 → EAM 调制段 → 输出<br/>电路：电源接 DFB；驱动电信号接 EAM</div><p class="caption">实物：EML。此处解释调制段；供光是同一器件的另一部分功能。</p><p>EML 把发光段 DFB 与调制段 EAM 集成在同一器件里。DFB 持续提供光，EAM 的吸收随电压变化，从而改变通过的光强。外部驱动电路向 EAM 提供与数据对应的电信号。 <a class="cite" href="#source-2">[2]</a></p></article><article><span class="pill">发射路径 B · 激光器 + 硅光芯片上的调制器</span><h3>激光器供光，芯片上的调制器加载数据</h3><div class="stack">光路：激光器 → 硅光芯片内波导与调制器 → 光纤<br/>电路：驱动电信号接芯片上的调制器</div><p class="caption">实物：硅光芯片（硅光 PIC）。该方案还需要供光的激光器、配合的电子电路和光纤连接；芯片内可包含波导、调制器、探测器及耦合结构。这里先解释其中的调制功能，后两步再接着看导光与探测。</p><p>硅光把波导、调制器等光学结构做在硅基光子芯片上。这里按 Cisco 白皮书展示的结构解释：激光器向硅光芯片供光，波导把光引到调制器；驱动电信号控制调制器，让输出光携带数据，再送入光纤。 <a class="cite" href="#source-28">[28]</a></p></article><article><span class="pill">发射路径 C · 直接调制 VCSEL</span><h3>直接改变激光器的发光强度</h3><div class="stack">数据 → 驱动电流变化 → VCSEL 光强变化<br/>光从芯片表面射出 → 耦合结构 → 光纤</div><p>VCSEL 可以直接通过驱动电流的变化调制光强。这样，发光与承载数据由同一个激光器完成，无需像上面的 EML 那样再经过 EAM 调制段。“面发射”指光从芯片表面射出。 <a class="cite" href="#source-34">[34]</a></p></article></div>
+<p class="caption">图 2 · 三种发射实现的功能示意，不表示芯片数量或精确布局。硅光图依据 Cisco《Silicon Photonics in Pluggable Optics》的光源与硅光芯片分工；具体产品的光源位置和集成方式还需查看其设计。 <a class="cite" href="#source-28">[28]</a></p>
+<p>硅光是集成技术平台，并不指定唯一的调制器或光源结构。这里比较的是“激光器 + 芯片上的调制器”这条功能路径；它怎样供光见第一步，光怎样进出芯片见下一步。具体产品仍须给出实际器件设计。 <a class="cite" href="#source-28">[28]</a></p>
+
+<aside class="unknown"><strong>怎样理解这三条发射路径的选择？</strong><p>参考产品用 EML 的两个功能段完成供光与调制。VCSEL 实例面向短距多模连接，并由激光器本身直接调制；硅光实例把调制等结构放进光子芯片，再安排供光、驱动与光纤连接。比较时先固定距离、光纤和速率，再核对器件能否完成任务。现有材料解释了各自怎样工作，尚不能给出同条件的成本或性能排名。</p><a class="cite" href="#source-1">[1]</a> <a class="cite" href="#source-2">[2]</a> <a class="cite" href="#source-28">[28]</a> <a class="cite" href="#source-32">[32]</a> <a class="cite" href="#source-34">[34]</a> <a class="cite" href="#source-35">[35]</a></aside>
+<p class="bridge">完成调制后，器件出口已经有携带数据的光。接下来要把这束光准确送进传输光纤。</p>
+<h3 id="route-coupling">第三步：把光送出去——怎样耦合，多路光怎样传送</h3>
+<p>光耦合负责把一个器件输出的光送入下一个光路或光纤。硅光芯片可以从表面的光栅耦合结构进出光，也可以从芯片边缘耦合；它们改变光纤与芯片相接的位置。装配需要对准相应接口，具体是否使用透镜、怎样固定光纤，要看产品结构。 <a class="cite" href="#source-28">[28]</a> <a class="cite" href="#source-22">[22]</a></p>
+<p><strong>这一功能对应的实物可以是光学件，也可以是硅光芯片。</strong>前者需要把器件出光与光纤对准；后者利用芯片内部的波导及耦合结构导光、接光。这里讲的是硅光芯片的导光与耦合功能，它还可以同时承担上一节的调制功能。 <a class="cite" href="#source-28">[28]</a></p>
+<p>如果有多路光，还要确定各路分别用光纤，还是按波长合到同一根。耦合解决“怎样接进去”，合波解决“几路怎样共用”，两项功能不能混为一谈。</p>
+<div class="compare"><article><span class="pill">并行传输</span><h3>各走各的光纤</h3><div class="lanes"><div>光通道 1 ━━━━━ 光纤 1</div><div>光通道 2 ━━━━━ 光纤 2</div><div>光通道 3 ━━━━━ 光纤 3</div><div>光通道 4 ━━━━━ 光纤 4</div></div><p>并行传输让四路光分别经过四根光纤，接收端也分别接收。装配时需要安排好各路光纤的位置和连接；这四路各有通道，无需为共用一根纤芯而合波。 </p></article><article><span class="pill">波分复用 · WDM</span><h3>不同波长合到同一根</h3><div class="stack">四路不同波长的光<br/>↓<br/>合波器 MUX → 一根光纤 → 分波器 DEMUX</div><p>波分传输用不同波长区分四路光。发送端把它们合进同一根光纤，接收端再按波长拆开。这种方式减少了所需纤芯，同时增加合波与分波功能。 </p></article></div>
+<p>可以借用“颜色”理解波长的区别，不过这里的通信光通常肉眼不可见。<strong>MUX 表示合波功能</strong>；这个功能由独立零件还是芯片内结构承担，要看具体设计。 </p>
+<p>Cisco 的两种 400G 产品展示了这项区别：DR4 使用并行单模光纤和 MPO-12 连接，FR4 使用波长复用、双工光纤和 LC 连接。两者的距离规格也不同，因此这个例子只说明光路与连接怎样变化，不能把全部性能差异归因于合波。 <a class="cite" href="#source-30">[30]</a></p>
+<p class="caption">图 3 · 上图统一画四路的单向原理，便于比较；不是后文八路参考模块的内部图。</p>
+
+
+<p><strong>什么时候需要合波？</strong>当设计希望让多路不同波长的光共用一根纤芯时，就需要安排合波与分波。独立纤芯并行传输则分别连接各路。选择改变了光路组织和接口任务；具体纤芯数量还要区分发送、接收及连接器中实际使用的位置。不能只按连接器孔位数统计数据通道。<a class="cite" href="#source-30">[30]</a></p>
+<p class="bridge">光经过链路到达另一端后，要先进入接收光路。采用波分时，接收端先分波，再把各路光送到对应探测器。</p>
+<h3 id="route-detection">第四步：取出光中的变化——让探测器把光变成电流</h3>
+<p>探测器吸收光后产生电信号，使收到的光强变化变成电流变化。这一步还没有恢复出完整数据；下一步的电路要继续转换、放大和处理。 <a class="cite" href="#source-33">[33]</a></p>
+<p>探测器后通常接跨阻放大器（TIA），把电流转换并放大为电压。先看探测器怎样产生电流，下一步再看转换放大与后续处理。</p>
+<div class="compare"><article><span class="pill">PIN 光电二极管</span><h3>产生光电流，交给后级放大</h3><div class="stack">收到的光 → PIN → 光电流 → TIA</div><p>PIN 不靠雪崩倍增提供内部增益。后面的 TIA 承担电流到电压的转换与放大。后文的 Coherent 参考模块公开选择了 PIN，说明必须回到产品规格确认采用的器件。 <a class="cite" href="#source-6">[6]</a> <a class="cite" href="#source-38">[38]</a></p></article><article><span class="pill">APD · 雪崩光电二极管</span><h3>在探测器内部先产生增益</h3><div class="stack">收到的光 → APD 内部倍增 → 电流 → 后级放大</div><p>APD 在反向偏压下产生内部增益，可用于弱光检测。实现时还要考虑偏压供电和增益随温度的变化；Hamamatsu 的 APD 模块实例就配有高压电源与温度补偿电路。它并没有省掉后级放大。 <a class="cite" href="#source-38">[38]</a></p></article></div>
+<p><strong>硅光芯片也可以承担这一探测功能。</strong>收到的光沿片内波导到达集成探测器，再输出电信号。承担功能的零件是硅光芯片，执行探测的是片内探测器；探测只是这颗芯片的一部分功能。集成位置与是否采用雪崩倍增是两个需要分别确认的设计问题。 <a class="cite" href="#source-28">[28]</a></p>
+
+<p><strong>接收器怎样选？</strong>先核对波长、速度和接收光功率，再看探测器输出与后级电路能否配合。APD 的内部增益同时带来偏压与温度控制要求；它仍需要后级电路。参考产品已公开选用 PIN，但公开材料没有说明厂家的全部取舍过程。<a class="cite" href="#source-1">[1]</a> <a class="cite" href="#source-6">[6]</a> <a class="cite" href="#source-38">[38]</a></p>
+<p class="bridge">现在得到的是微弱电流。它要经过转换和放大，才适合后面的信号处理电路。</p>
+
+<h3 id="route-electrical">第五步：交出可用信号——先转换放大，再决定谁恢复数据</h3>
+<p>TIA 是跨阻放大器：把探测器输出的电流转换并放大为电压信号。它接在探测器后面；“用 PIN 还是其他探测器”和“模块要不要 DSP”是不同问题。Marvell 的 LPO 芯片组仍包含 TIA，说明省去数字处理芯片后，前面的转换放大功能依然需要。 <a class="cite" href="#source-26">[26]</a> <a class="cite" href="#source-10">[10]</a></p>
+<p>下面的分工也影响发送路径，因此示意同时画出收发两端。电信号经过连接线和器件后会失真，接收端需要补偿失真、识别数据。这里的选择是：模块也做一轮数字处理，还是让主机承担端到端的主要补偿工作。 <a class="cite" href="#source-3">[3]</a></p>
+<div class="compare"><article><span class="pill">带 DSP 的可插拔模块</span><h3>模块内再处理一次信号</h3><div class="stack">发送：主机 → 模块内 DSP → 驱动器 → 发光／调制器件<br/>接收：探测器 → TIA → 模块内 DSP → 主机</div><p>DSP 是数字信号处理芯片。此类模块在发送和接收路径中进行数字处理，并通过重定时恢复信号的时间节奏。这增加了一层信号处理，也带来芯片功耗和处理延迟。 <a class="cite" href="#source-3">[3]</a></p></article><article><span class="pill">LPO · 线性可插拔光学</span><h3>模块保留转换和放大，主机负责主要补偿</h3><div class="stack">发送：主机 → 线性驱动器 → 发光／调制器件<br/>接收：探测器 → 线性 TIA → 主机</div><p>LPO 去掉模块内的 DSP／重定时功能，利用主机芯片的均衡能力补偿整条链路的失真。模块仍要驱动光器件；接收端也仍需要 TIA，把探测器产生的微弱电流转换并放大为电压信号。 <a class="cite" href="#source-3">[3]</a> <a class="cite" href="#source-10">[10]</a></p></article></div>
+<p>LPO 的动机是省去这一层数字处理的功耗与延迟，代价是主机能力和连接质量必须配合。“线性”要求信号幅度的变化在转换和放大后仍能保持对应关系。Marvell 在 2024 年公布的 LPO 芯片组仍包含线性 TIA 和激光驱动器，并提供均衡来补偿通道损耗；它针对的是较短、特性可控的主机连接。 <a class="cite" href="#source-3">[3]</a> <a class="cite" href="#source-10">[10]</a></p>
+<p class="caption">示意 · 上图只画主要信号路径，不表示完整电路或芯片数量。LPO 仍是可插拔模块；能否与某台主机配合，需要符合相应链路条件。</p>
+<p class="origin">原题延伸：<a href="{{old}}#qa-20">Q20：LPO / LRO</a>。LRO 只在接收侧采用线性路径，发送侧保留重定时。 <a class="cite" href="#source-3">[3]</a></p>
+
+
+<h3 id="route-product-boundaries">把功能链做成产品：两端怎样连接，整只模块怎样安装？</h3>
+<p>前五步解释内部怎样完成光电转换。产品还必须接入主机和光纤，并装进设备规定的位置。因此，规格表除了写发射器和接收器，还会列出电接口、安装形态和光接口。这三项是产品边界上的要求，会影响连接器、电路板和结构件的设计。</p>
+<div class="flow" aria-label="模块与外部接口"><b>主机芯片</b><span>⇄</span><b>电接口<small>电通道与信号要求</small></b><span>⇄</span><b>模块内部收发链<small>装在指定形态的模块中</small></b><span>⇄</span><b>光接口<small>连接外部光纤</small></b></div>
+<div class="table-wrap"><table><thead><tr><th>规格表的字段</th><th>它回答什么</th><th>怎样关联前面的实现与零件</th></tr></thead><tbody>
+<tr><td id="route-transmitter">发射器</td><td>采用什么器件提供并调制光？</td><td>对应第一、二步；例如 EML 的两个功能段，或直接调制 VCSEL。这里是器件类别，不是完整发射端 BOM。</td></tr>
+<tr><td id="route-receiver">接收器</td><td>用什么探测器把光变成电流？</td><td>对应第四步；例如 PIN、APD。后面仍需第五步的转换放大与处理，不能把探测器等同整个接收电路。</td></tr>
+<tr><td id="route-electrical-interface">电接口</td><td>模块与主机之间，用几条电通道、每路传多快，以什么信号要求交接？</td><td>连接发送端的输入与接收端的输出。电通道数量和速率是接口规格；重定时或 LPO 是处理分工，二者都要确认。通道是信号路径，不等于芯片数量。</td></tr>
+<tr><td id="route-form-factor">安装形态</td><td>模块用什么外形和插接方式装进设备？</td><td>OSFP 是可插拔模块形态。选择它时，需要与主机插槽及电连接配合，并按模块结构安排散热；它本身不指定必须使用 EML、VCSEL 或硅光。</td></tr>
+<tr><td id="route-optical-interface">光接口</td><td>外部光纤用什么连接器接到模块？</td><td>MPO 是多纤连接器，LC 是另一类光连接器。第三步的内部耦合把光接进光路，这里的外部连接器负责与线缆对接；二者不是同一零件。</td></tr>
+</tbody></table></div>
+<p>下一节的参考产品就同时列出了这五类信息：EML、PIN、八路电接口、OSFP 和双 MPO-12。Cisco 的 DR4 / FR4 产品则展示了并行与波分设计下 MPO / LC 光连接的不同组合。应逐项核对产品规格，不能只凭某种连接器或外壳名称反推全部内部器件。 <a class="cite" href="#source-1">[1]</a> <a class="cite" href="#source-6">[6]</a> <a class="cite" href="#source-30">[30]</a></p>
+<details><summary>布局延伸：CPO 把这条功能链放在哪里？</summary><h3>走完整条链之后：CPO 改变这些功能放在哪里</h3>
+<p>前五步说明了要做什么、由谁来做。CPO 讨论整条链的布局：把承担光电转换的器件放到哪里。搬近主芯片不会消除供光、调制、耦合和探测这些工作，但会改变电连接、封装和散热安排。</p>
+<p>可插拔模块位于设备面板，主机芯片通常位于电路板内部，两者之间要走一段高速电连接。速率提高后，这段连接的损耗和驱动功耗更难处理。CPO 的思路是把光电转换移近主芯片，缩短电信号需要走的距离。 <a class="cite" href="#source-28">[28]</a> <a class="cite" href="#source-36">[36]</a></p>
+<div class="compare"><article><span class="pill">面板可插拔</span><h3>电信号先走到面板，再转为光</h3><div class="stack">主芯片 → 板上电连接 → 面板光模块 → 光纤</div><p>光电转换集中在可插拔模块中。模块通过电接口连接主机，通过光接口连接外部光纤。刚才的带 DSP 模块和 LPO 都可以采用这种位置安排。</p></article><article><span class="pill">CPO · 共封装光学</span><h3>在主芯片所在封装内完成光电转换</h3><div class="stack">同一封装：主芯片 → 短电连接 → 光引擎<br/>光引擎 → 光纤 → 面板光连接</div><p>光引擎是承担光电转换的一组器件。CPO 把它与主芯片放进同一封装，使高速电连接变短，后面的距离由光纤承担。Cisco 的 OFC 2023 演示把硅光光引擎布置在交换芯片封装上，展示了这种安排。 <a class="cite" href="#source-36">[36]</a></p></article></div>
+<p>变化最大的是封装与连接：光引擎要做得足够小，封装内要同时安排供电、散热和光纤引出。光源也不一定放在主芯片旁；Cisco 的这套演示把激光器留在远离热芯片的位置，通过光连接供光，并允许从面板更换光源。 <a class="cite" href="#source-36">[36]</a></p>
+<p>CPO 有机会减少高速电连接的功耗，但会把更多器件集中到主芯片周围，增加局部散热和封装设计难度。这是系统布局与制造方式的选择；VCSEL、EML 则是在讨论光怎样产生和调制，不能把它们当成同一层的互斥选项。 <a class="cite" href="#source-36">[36]</a></p>
+<p class="caption">示意 · CPO 图解释连接位置；外置光源采用 Cisco 2023 年演示实例，不代表所有 CPO 的光源安排，也不表示当前部署规模。</p>
+<p class="origin">原题延伸：<a href="{{old}}#qa-21">Q21：CPO</a>。</p>
+
+</details>
+<h3 id="route-combinations">这些选择怎样组成一条完整技术路线？</h3>
+<p><strong>一条完整路线由几层选择共同组成；前一层有时会限定后一层，有时会留下多个分支。</strong>先看光怎样产生和调制，再看多路光怎样传送，接着确定电处理分工与安装位置。器件名通常只说明其中一部分，所以只知道“用了 EML”或“采用硅光”，还不能画出整只产品。</p>
+<h4>供光与调制往往连在一起选择，光路组织仍可能分叉</h4>
+<p>选择 EML，就选择了同一器件内 DFB 供光、EAM 调制的关系；选择直接调制 VCSEL，则由同一个激光器承担供光与调制。选择“激光器＋硅光调制结构”时，还要安排光怎样进入调制结构。这一层先确定数据加到光上的位置，以及驱动电路接到哪里。<a class="cite" href="#source-2">[2]</a> <a class="cite" href="#source-28">[28]</a> <a class="cite" href="#source-34">[34]</a></p>
+<p>完成调制后，EML、VCSEL 和硅光方案都存在不同的光路组织实例。下面逐条列出已公开的组合；各例速率和年代不同，用来说明分支，不能直接比较性能或成本。</p><div class="table-wrap"><table><thead><tr><th>发光与调制路线</th><th>并行：各通道分别走光纤</th><th>波分：不同波长共用光纤</th></tr></thead><tbody><tr><td>EML：DFB 供光、EAM 调制</td><td>本页 Coherent 800G DR8+：EML → 并行单模光路 → PIN 接收；公开双 MPO-12，内部耦合结构未知。<a class="cite" href="#source-1">[1]</a> <a class="cite" href="#source-6">[6]</a></td><td>三菱2019年 TOSA：不同波长 EML → 透镜、滤光片等空间合波结构 → 共同输出。该资料只披露发射子组件。<a class="cite" href="#source-15">[15]</a></td></tr><tr><td>VCSEL：激光器直接调制</td><td>Coherent 2023年八单元、每单元100G PAM4 VCSEL 阵列面向800G SR模块/AOC，配套探测器阵列。阵列各通道形成并行短距路径；公告不提供某只模块的完整装配清单。<a class="cite" href="#source-35">[35]</a></td><td>Coherent SWDM 白皮书：850/880/910/940 nm 四路 VCSEL → MUX → 一根多模发送光纤；另一端 DEMUX → PIN。每路10G或25G，组成40G或100G；双向使用一对多模光纤。<a class="cite" href="#source-39">[39]</a></td></tr><tr><td>硅光：光源配合片上调制结构</td><td>Intel 硅光100G PSM4：四路25G信号经四根发送光纤并行传输。硅光平台因此不限定必须合波。<a class="cite" href="#source-40">[40]</a> <a class="cite" href="#source-41">[41]</a></td><td>Intel 2017年 CWDM4 实例：四个不同波长激光器、四个调制器和光 MUX 集成于同一硅芯片，合波输出。这里采用混合集成激光器，不能套用为全部硅光方案的光源布局。<a class="cite" href="#source-41">[41]</a></td></tr></tbody></table></div><p><strong>这些分支由波长与接口条件连接起来。</strong>并行方案要安排每路的光纤映射；波分方案要同时安排不同载波波长、合波器通带和接收侧分波。由此可推得：给一组同波长发射器加上普通波分 MUX，不能得到上述波分链路。VCSEL 的短波多模 SWDM、EML 或硅光的单模波分实例也不能直接互换，必须重新核对波段、光纤、功率、速率及接收端。这里说明组合条件，不表示所有器件能任意拼装。</p><h4>处理分工与安装位置还要继续选，但会反过来约束接口</h4>
+<p>确定光怎样传送后，仍需说明电信号由谁处理。LPO 的选择会把主要补偿交给主机，要求模块驱动器、TIA 与主机连接共同满足线性链路条件；“用了 EML”或“用了硅光”本身都没有回答这些问题。<a class="cite" href="#source-3">[3]</a> <a class="cite" href="#source-10">[10]</a></p>
+<p>安装位置又是另一项决定。CPO 把光引擎移近主芯片，会改变电连接、散热与光纤引出；Cisco 的演示同时采用硅光光引擎，说明“硅光”与“CPO”可以描述同一套设计的不同层面。这里不据此推定所有发射路线都已有对应的 LPO 或 CPO 产品。<a class="cite" href="#source-36">[36]</a></p>
+<p class="bridge">所以，读一款产品时应把“发光与调制 → 光路组织 → 电处理分工 → 安装位置”逐项填完整。已知选择会约束波长、功率、速率和接口，未披露的选择留空。下面用参考产品完成这张对应关系。</p>
+
+<p class="origin">原问题：<a href="{{old}}#qa-2">Q02</a> · <a href="{{old}}#qa-4">Q04</a> · <a href="{{old}}#qa-19">Q19：路线差异</a>；原题与来源编号保留。</p>
+</section>
+<section id="product">
+<p class="eyebrow">04 / 把路线落到一个产品</p><h2>现在看一只真实的 800G 模块</h2>
+<p class="intro">本页以 Coherent FTCE4527E1PCA 为例，沿着它公开的技术选择解释零件。型号用于定位资料，阅读时记住它是一只 800G 可插拔收发模块即可。 </p>
+<div class="product"><span class="pill">参考产品 · Coherent FTCE4527E1PCA</span><h3>800G-DR8+ OSFP</h3><p>800G 可插拔收发模块，用于最长 2 km 的单模光纤链路。下面沿 02、03 的同一套五步，填写这只产品已经公开的选择。 <a class="cite" href="#source-1">[1]</a> <a class="cite" href="#source-6">[6]</a></p></div>
+<div class="table-wrap"><table><thead><tr><th>五项功能</th><th>本例采用的实现</th><th>对应器件与已知范围</th></tr></thead><tbody>
+<tr><td>先有光</td><td>EML 的 DFB 段供光</td><td rowspan="2">产品确认发射器为 EML；供光和调制是同一器件的两个功能段。分段作用依据 EML 原理资料。 <a class="cite" href="#source-2">[2]</a></td></tr>
+<tr><td>让光携带数据</td><td>EML 的 EAM 段接受电驱动、改变光强</td></tr>
+<tr><td>把光送出去</td><td>多路光连接，外部采用双 MPO-12</td><td>光连接器已公开；内部透镜、光纤耦合及固定方式尚未披露。</td></tr>
+<tr><td>取出光中的变化</td><td>PIN 探测光并输出电流</td><td>产品确认接收器为 PIN；具体芯片型号未披露。</td></tr>
+<tr><td>交出可用信号</td><td>接收信号经转换放大与后续处理，交给主机</td><td>规格书确认带重定时的电接口。TIA 用于解释所需功能，但其具体芯片及集成方式仍未知。</td></tr>
+</tbody></table></div>
+<p class="caption">产品选择依据官方产品表及系列规格书 [1][6]。本表区分公开配置与功能解释，不推定完整内部 BOM。 <a class="cite" href="#source-1">[1]</a> <a class="cite" href="#source-6">[6]</a></p>
+<h3>这条功能链怎样接入设备？</h3>
+<div class="table-wrap"><table><thead><tr><th>产品边界</th><th>本例规格</th><th>怎样理解</th></tr></thead><tbody>
+<tr><td><a href="#route-electrical-interface">电接口</a></td><td>八路 100G 级，带重定时</td><td>描述主机与模块之间的电信号交接。重定时按恢复的时序输出信号，不能据此确定处理芯片颗数。</td></tr>
+<tr><td><a href="#route-form-factor">安装形态</a></td><td>OSFP 可插拔</td><td>整只模块与主机插槽、电连接和机械结构配合。</td></tr>
+<tr><td><a href="#route-optical-interface">光接口</a></td><td>双 MPO-12</td><td>外部光缆的连接形式；与内部光耦合结构分别确认。</td></tr>
+</tbody></table></div>
+<p>这里已经选定 EML 发射、PIN 接收的具体产品。03 中的 VCSEL、硅光芯片和其他探测方案留作比较，不再混入这条产品链。接下来还要知道，本例约定光怎样表示数据。 <a class="cite" href="#source-6">[6]</a></p>
+<h3>这只产品怎样用四档光强表示数据？</h3>
+<p>本例用<strong>四档状态</strong>表示数据，这种方式叫 PAM4（四电平脉冲幅度调制）。在这里的光信号中，四档对应四种可区分的光强。第一节的两档示例每次表示一位信息；四档可以对应两位二进制数的四种组合，因此每个符号时间能承载两位信息。 <a class="cite" href="#source-6">[6]</a> <a class="cite" href="#source-29">[29]</a></p>
+<div aria-label="PAM4 四种光强状态示意，不指定实际比特映射" class="levels" role="img"><div><i style="height:22px"></i><small>光强 1</small></div><div><i style="height:42px"></i><small>光强 2</small></div><div><i style="height:62px"></i><small>光强 3</small></div><div><i style="height:82px"></i><small>光强 4</small></div></div>
+<p class="caption">图 4 · 本例采用四档状态的概念图，柱高不代表实际功率，最低档也不必完全熄灭；不指定实际比特映射。</p>
+<p>四档状态增加了每个符号携带的信息，也提高了接收端的辨别要求。在相同总幅度范围内，档位间隔更小，噪声更容易造成误判。发送光强、接收电路和时序恢复因此需要配合。<strong>PAM4 是信号的编码约定，不是模块中的零件。</strong> <a class="cite" href="#source-29">[29]</a></p>
+<p class="bridge">现在已知道本例采用哪些器件类别、怎样与外部连接，以及怎样用光强表示数据。下一节只追踪这些器件之间的交接：电压怎样到达调制段，光怎样到达探测器，电流怎样交给后级。</p>
+<details><summary>这只产品确认到哪一层？</summary><p>官方资料已确认器件类别和外部规格。完整零件清单（BOM）、独立芯片及光学件数量、材料和具体装配工艺仍为 UNKNOWN，已有型号检索尚未找到可采用的一手完整披露。因此，后面的图解释功能关系，制造部分采用明确标注的同类器件实例。 </p><p>规格书给出的每路线路比特率为 106.25 Gb/s，八路合计 850 Gb/s；“800G”不能直接等同于这项线路比特率，更不能把 850 Gb/s 当作有效用户吞吐。<a class="cite" href="#source-6">[6]</a></p></details>
+<p class="origin">原始问题：“只需要一种……产品的构件。” · <a href="{{old}}#qa-1">原 Q01</a></p>
+</section>
+<section id="parts"><p class="eyebrow">05 / 把选定的器件连接起来</p><h2>已知道用哪些器件，它们之间怎样交接？</h2>
+<p class="intro">沿 04 的 EML 发射、PIN 接收实现，跟踪一条单向通道：设备 A 的发送端把电信号送入光纤，设备 B 的接收端再把光变回电信号。两台设备各自的收发模块都有发送与接收部分，这里只画一次单向传输。</p>
+<div class="flow"><b>设备 A 的发送电路</b> → <b>Driver → EML<small>电驱动到光强变化</small></b> → <b>耦合与光纤<small>传送光</small></b> → <b>设备 B：PIN → TIA<small>光到电流，再到电压</small></b> → <b>后级电处理</b></div>
+<p class="caption">图 5 · 已选器件类别下的功能连接；参考型号的独立芯片数量及具体互连工艺未披露。</p>
+<div class="table-wrap"><table><thead><tr><th>交接位置</th><th>上一环输出什么</th><th>下一环需要什么，连接要解决什么</th></tr></thead><tbody>
+<tr><td>电信号 → Driver → EAM</td><td>表示数据的电信号</td><td>Driver 提供 EAM 所需的驱动电压与工作条件。EML 激光段的供电另有任务，不能与调制驱动混为一谈。 <a class="cite" href="#source-2">[2]</a></td></tr>
+<tr><td>EML → 耦合结构 → 光纤</td><td>携带数据的光</td><td>把出光位置、方向和光场与接收光路匹配，再对准固定。本型号的透镜及耦合结构未知。 <a class="cite" href="#source-22">[22]</a></td></tr>
+<tr><td>光纤 → PIN → TIA</td><td>光先转为微弱电流</td><td>把接收光引到探测器，并将光电流交给 TIA 转换放大为电压。 <a class="cite" href="#source-33">[33]</a> <a class="cite" href="#source-26">[26]</a></td></tr>
+<tr><td>接收电路 → 主机</td><td>经过处理的电信号</td><td>满足 04 中的电接口要求。本例公开重定时描述，具体实现电路仍需内部资料。 <a class="cite" href="#source-6">[6]</a></td></tr>
+</tbody></table></div>
+<h3>信号接通之后，还要让器件稳定工作</h3><p>电源和控制电路维持器件的工作条件；PCB、载体与壳体支撑并连接器件，热接触结构把热量导出。它们没有依次出现在数据路径上，却是模块正常工作的必要组成。具体结构取决于电气、机械与散热设计。 <a href="{{old}}#qa-2">原 Q02</a> <a href="{{old}}#qa-16">原 Q16</a></p>
+<p class="bridge">这些交接提出了制造任务：先做出能工作的器件，再接通电路、对准光路、固定器件和安排散热。下一节沿这些任务看加工与装配。</p>
+<p class="origin">原始问题：“构件是怎么衔接的？” · <a href="{{old}}#qa-3">Q03</a> · <a href="{{old}}#qa-4">Q04</a> · <a href="{{old}}#qa-15">Q15</a></p></section>
+<section id="manufacture">
+<p class="eyebrow">06 / 从材料到器件，再到装配</p><h2>同类器件怎样制造，再怎样装成模块？</h2>
+<p class="intro">这里按器件分别说明怎样制造、设备在做什么，再看如何装配。EML、VCSEL 和硅光 PIC 对应不同发射实现；探测器、电子芯片、光学件、光纤阵列与承载结构也需要各自加工。以下资料来自历史合并版及其原始来源，只有部分工序得到公开披露，不能合成参考模块的完整生产配方。 </p>
+<h3>EML：先形成能发光与调制的材料，再做出光路和电极</h3>
+<p>NTT 在 2010 年公开的 EML 工艺展示了材料怎样成为器件。<strong>外延</strong>在基底上生长所需晶体层，<strong>刻蚀</strong>通过选择性去除材料形成局部结构，电极则提供供电和驱动的连接位置。下表简化了这一历史实例的步骤，不代表参考 800G 模块的配方。 <a class="cite" href="#source-4">[4]</a></p>
+<div class="table-wrap"><table><thead><tr><th>顺着做什么</th><th>为什么要做</th><th>设备在处理什么</th></tr></thead><tbody>
+<tr><td>① 生长功能层</td><td>准备激光段、调制段所需的材料结构。</td><td>MOVPE 外延设备控制晶体生长。</td></tr>
+<tr><td>② 局部去层、再生长</td><td>让两个功能区域形成所需层结构。</td><td>选择性刻蚀与外延设备处理指定区域。</td></tr>
+<tr><td>③ 形成波导、表面和接触</td><td>给光提供路径，并给电信号留下接入位置。</td><td>干湿法刻蚀、表面处理、接触制作。</td></tr>
+<tr><td>④ 减薄、解理、端面镀膜</td><td>分出器件，并处理光学端面。</td><td>减薄、分离与镀膜设备。</td></tr>
+</tbody></table></div>
+<p><strong>器件结构决定哪些工序可以省去。</strong>NTT 比较的两种 EML 结构中，一种省去调制区量子阱再生长，另一种提供更独立的设计空间。这个实例把技术选择与具体工序联系起来。 <a class="cite" href="#source-4">[4]</a></p>
+<h3 id="make-vcsel">氧化孔径 VCSEL 实例：先刻蚀，再氧化形成孔径</h3><p>历史 Q09 保留了 Oxford Instruments 的氧化孔径实例：干法刻蚀先暴露富铝层，高温氧化再形成孔径。设备必须控制刻蚀停在哪一层；公开介绍只覆盖这一关键环节，不能据此列出所有 VCSEL 的完整工艺。</p><div class="table-wrap"><table><thead><tr><th>器件制造动作</th><th>对应设备类别与任务</th><th>已知边界</th></tr></thead><tbody><tr><td>刻蚀 p-mesa，暴露目标层</td><td>带终点控制的等离子体干法刻蚀设备：控制去除深度。</td><td>Oxford 公开正文已说明；完整白皮书需表单，本次只采用公开段落。<a class="cite" href="#source-20">[20]</a></td></tr><tr><td>氧化富铝层，形成孔径</td><td>高温氧化炉：控制氧化形成的区域。</td><td>属于氧化孔径路线；不能推广到所有 VCSEL。<a class="cite" href="#source-20">[20]</a></td></tr><tr><td>另一种孔径实现</td><td>Coherent 公布光刻孔径研发方向；光刻用于定义孔径结构。</td><td>仅采用2024年厂商研发披露，不据此断言成熟度、量产良率或设备型号。<a class="cite" href="#source-21">[21]</a></td></tr></tbody></table></div>
+<h3 id="make-siph">硅光 PIC：在晶圆上形成光路、探测及电连接结构</h3><p>AIM Photonics 的工艺设计套件列出波导、注入层、锗探测器和金属布线等可用结构。结合通用芯片制造说明，可以理解以下设备任务；这份对应表是工序解释，不是 AIM 的完整设备清单。</p><div class="table-wrap"><table><thead><tr><th>要形成的结构</th><th>制造动作与设备任务</th><th>仍需确认</th></tr></thead><tbody><tr><td>波导与光学图形</td><td>光刻设备定义图形，刻蚀设备把图形转移到材料中。</td><td>具体层结构、掩膜与刻蚀配方取决于平台。<a class="cite" href="#source-5">[5]</a> <a class="cite" href="#source-8">[8]</a></td></tr><tr><td>材料层与局部电学区域</td><td>沉积、生长及掺杂相关设备按工艺形成所需区域。</td><td>这里按功能归类，不证明每一层均采用相同方法或设备。<a class="cite" href="#source-5">[5]</a> <a class="cite" href="#source-8">[8]</a></td></tr><tr><td>电连接与外部光连接</td><td>金属层加工形成电连接；芯片完成后再与光源、电子电路、光纤连接和测试。</td><td>激光器可采用不同集成安排；不能从“硅光”推定固定裸片数。<a class="cite" href="#source-5">[5]</a> <a class="cite" href="#source-28">[28]</a> <a class="cite" href="#source-37">[37]</a></td></tr></tbody></table></div>
+<h3 id="make-detector">探测器：先做出吸收光和收集电荷的区域</h3><p>历史 Q06 引用 Ho 等人在1995年的 InGaAs/InP PIN 实例，公开了 MOVPE 外延、掩膜下局部 Zn 扩散、接触窗口刻蚀、金属化及表面膜层。它能说明制造动作，但不能作为现代高速 PIN 或 APD 的通用配方。</p><div class="table-wrap"><table><thead><tr><th>动作</th><th>设备类别与作用</th><th>依据与范围</th></tr></thead><tbody><tr><td>外延与局部扩散</td><td>MOVPE 外延设备形成材料层；扩散设备配合掩膜定义电学区域。</td><td>1995年 PIN 样品实例。<a class="cite" href="#source-9">[9]</a></td></tr><tr><td>刻蚀、接触及表面处理</td><td>刻蚀设备形成窗口和隔离；金属化设备形成电接触；镀膜设备形成钝化、增透层。</td><td>设备类别由论文公开动作对应；不是现代器件产线确认。<a class="cite" href="#source-9">[9]</a></td></tr><tr><td>APD 的制造</td><td>当前材料只确认其内部增益和配套偏压、温度控制要求，尚未取得可用的具体制造流程。</td><td>APD 材料结构、工序和设备清单为 UNKNOWN；不套用 PIN 工艺。<a class="cite" href="#source-38">[38]</a></td></tr></tbody></table></div>
+<h3 id="make-ic">Driver、TIA、DSP：先制造电路，再装配芯片</h3><p>这些器件承担不同电功能。借 ASML 的硅芯片制造说明，先区分晶圆加工与后段装配；具体 Driver、TIA、DSP 的材料和制程节点仍要由型号资料确认。</p><div class="table-wrap"><table><thead><tr><th>制造任务</th><th>设备类别与作用</th><th>适用边界</th></tr></thead><tbody><tr><td>形成电路层与图形</td><td>薄膜沉积设备形成材料层；涂胶、曝光设备定义图形；刻蚀设备去除指定区域。</td><td>通用硅芯片工序族，不是三类器件共用的完整配方。<a class="cite" href="#source-8">[8]</a></td></tr><tr><td>调整电学性质并完成芯片</td><td>离子注入等设备改变局部电学性质；完成加工后切割、封装。</td><td>不能从800G/1.6T模块速率反推出制程。<a class="cite" href="#source-8">[8]</a></td></tr><tr><td>连接已做好的裸片</td><td>固晶、引线键合或倒装设备根据芯片与载体接口完成固定和电连接。</td><td>后段装配不代替前面的晶圆制造。<a class="cite" href="#source-27">[27]</a></td></tr></tbody></table></div>
+<h3 id="make-optical-parts">光学件、FAU 与板卡：它们也有自己的制造过程</h3><div class="table-wrap"><table><thead><tr><th>零件或组件</th><th>怎样做、用哪些设备</th><th>检验与证据边界</th></tr></thead><tbody><tr><td>FAU 光纤阵列</td><td>基座研磨、V槽切割、放置光纤和 UV 粘接；对应研磨、精密切割、排纤定位及UV固化设备。</td><td>Corning 实例列出纤芯间距测量。先测阵列几何，再检查与芯片连接后的耦合；两步不能互代。<a class="cite" href="#source-12">[12]</a></td></tr><tr><td>透镜</td><td>以非球面实例说明：玻璃模压设备用模具成形；另一条路线用精密研磨、抛光设备去除材料形成曲面。</td><td>用轮廓或干涉测量检查形状；不能推定所有模块微透镜都这样制造。<a class="cite" href="#source-24">[24]</a></td></tr><tr><td>合波结构</td><td>空间光学方案装配透镜、滤光片、反射镜；波导式方案加工波导合波结构，并连接光源和输出端。</td><td>已知两种结构实例；精确镀膜、波导加工配方及全套设备未披露。第07节继续比较。<a class="cite" href="#source-15">[15]</a> <a class="cite" href="#source-23">[23]</a></td></tr><tr><td>裸 PCB</td><td>成像与蚀刻设备做线路；压合设备叠层；钻孔、电镀设备做层间连接。</td><td>AOI 与电测检查裸板；随后装器件是另一阶段。普通多层板流程不证明特定高速板能力。<a class="cite" href="#source-11">[11]</a></td></tr><tr><td>壳体与散热接触面</td><td>先按尺寸、表面几何与热设计要求确定加工和装配任务。</td><td>OSFP Rev5.0规定部分要求，但未指定必须CNC或压铸；参考产品加工设备和内部导热材料 UNKNOWN。<a class="cite" href="#source-7">[7]</a></td></tr></tbody></table></div>
+<h3 id="make-assembly">不同路线怎样装配，各自需要什么设备？</h3><p>装配要先确定光从哪个器件出来、要接到哪里。下表沿发射端展开：分立 EML 接光学件，VCSEL 阵列对应多模通道，硅光 PIC 则需要安排光源接口和芯片到光纤的接口。<strong>设备栏列出完成这些接口所需的任务与设备类别；除明确注明的厂商披露外，不是某款模块的实际产线清单。</strong></p><div class="table-wrap"><table><thead><tr><th>路线与装配对象</th><th>光、电连接怎样安排</th><th>对应设备任务与证据边界</th></tr></thead><tbody><tr><td>EML＋并行单模光路</td><td>各 EML 输出分别连接光纤通道；驱动电路接 EAM。参考 DR8+ 公开并行接口，但未公开用什么透镜、载体或键合方式。<a class="cite" href="#source-2">[2]</a> <a class="cite" href="#source-6">[6]</a></td><td>按接口推导：若以裸片装配，固定需固晶/贴装；光路需精密定位、耦合功率测量与固定。若采用主动对准，需运动台和反馈测光；不能据此断定参考模块用了主动对准或某种焊接。<a class="cite" href="#source-19">[19]</a> <a class="cite" href="#source-22">[22]</a> <a class="cite" href="#source-27">[27]</a></td></tr><tr><td>EML＋空间光学合波</td><td>三菱 TOSA 将不同波长 EML 与透镜、滤光片等空间光学件装成共同输出路径，比并行方案多了合波光学件之间的位置关系。<a class="cite" href="#source-15">[15]</a></td><td>按接口推导：除了芯片固定，还需光学件取放、精密角度/位置调整，检查各波长耦合与合波结果，并验证固定后的光学性能；具体测量与固定顺序依工艺。三菱资料未列完整设备型号，胶粘或焊接不能凭示意图确定。<a class="cite" href="#source-15">[15]</a> <a class="cite" href="#source-22">[22]</a></td></tr><tr><td>VCSEL＋并行多模通道</td><td>将表面出光的 VCSEL 阵列各通道映射到多模光纤通道，接收侧安排探测器阵列；驱动器直接调制 VCSEL。具体中间透镜和互连形式依封装。<a class="cite" href="#source-34">[34]</a> <a class="cite" href="#source-35">[35]</a></td><td>按接口推导：阵列贴装、阵列与光纤位置/间距对准、各通道测光和固定。ficonTEC 披露阵列耦合设备能力，但不证明上述800G器件采用其设备；不能从表面出光推断无需对准。<a class="cite" href="#source-42">[42]</a></td></tr><tr><td>VCSEL＋SWDM</td><td>四种波长的 VCSEL 接 MUX 后汇入发送多模光纤；接收光纤先接 DEMUX，再到各 PIN。相较并行通道，多了合波/分波组件及波长对应关系。<a class="cite" href="#source-39">[39]</a></td><td>按接口推导：增设 MUX/DEMUX 定位、通带与逐通道光功率检查；驱动与接收电路分别连接。白皮书的框图未披露合波件内部结构、键合方式或实际设备，不能指定为某种滤光片装配。</td></tr><tr><td>硅光 PIC＋光源＋光纤接口</td><td>先区分光源：片外供光须建立光源到 PIC 的光连接；已集成激光器的实例不再外接同样的供光路径。PIC 输出可采用边缘或表面光栅耦合；并行需多通道纤芯对应，片上 MUX 可先合波再输出。<a class="cite" href="#source-28">[28]</a> <a class="cite" href="#source-41">[41]</a></td><td>按接口推导：PIC/电子芯片贴装与电互连，光纤或 FAU 的精密定位、测光与固定。边缘与表面接口的夹持方向和装配空间不同；主动/被动对准、引线/倒装须查具体封装。不能因片内集成就省略光纤连接。<a class="cite" href="#source-12">[12]</a> <a class="cite" href="#source-22">[22]</a> <a class="cite" href="#source-27">[27]</a></td></tr><tr><td>混合集成 EML＋波导合波：POET 实例</td><td>厂商披露四组2×200G EML阵列倒装到光学中介层，配合八路驱动器、两个 AWG 和光斑尺寸转换结构。它是本页另一种集成方法，不等同于所有硅光 PIC。<a class="cite" href="#source-23">[23]</a></td><td>本实例明确披露倒装与被动晶圆级装配，并称无需透镜及主动对准。对应倒装贴装/键合任务；不能照搬上面空间光学方案逐个透镜主动对准的流程，也不能据此证明量产良率或所有外部接口均免对准。<a class="cite" href="#source-23">[23]</a></td></tr></tbody></table></div><h4>电处理和封装位置，会在上述装配上增加哪些条件？</h4><p><strong>LPO：</strong>仍要装配驱动器、TIA 和所选光器件，但线性链路把主机通道也纳入性能验证。它不单独规定 EML 或 VCSEL 应当引线键合还是倒装；应先按实际光路线确定装配，再验证主机与模块的整体链路。<a class="cite" href="#source-3">[3]</a> <a class="cite" href="#source-10">[10]</a> <a class="cite" href="#source-18">[18]</a></p><p><strong>CPO：</strong>Cisco 2023年演示将光引擎移到 ASIC 附近，并采用远置可更换光源。因此除了光引擎内部连接，还要安排封装内短电连接、供电散热和光纤引出，以及远置光源到光引擎的供光。该演示未公开完整键合及装配设备清单，具体机型和工序仍未知。<a class="cite" href="#source-36">[36]</a></p><p><strong>最后按路线验证：</strong>并行路径逐通道检查输出与映射；波分路径增加波长、通带及串扰检查；阵列/PIC 光纤接口检查耦合与固定后的稳定性，随后进行接收与误码测试。这些是由接口和链路功能推导的测试任务，不是统一的产测配方或时长。<a class="cite" href="#source-6">[6]</a> <a class="cite" href="#source-12">[12]</a> <a class="cite" href="#source-18">[18]</a> <a class="cite" href="#source-39">[39]</a></p><p class="caption">恢复依据：历史合并版 <a href="{{old}}#qa-6">Q06–Q09 器件制造</a>、<a href="{{old}}#qa-10">Q10–Q13 光学件与PCB</a>、<a href="{{old}}#qa-14">Q14–Q16 装配与结构</a>、<a href="{{old}}#qa-23">Q23 验证</a>。LPO 改变电处理分工，CPO 改变布局与封装；所采用的器件仍各有制造与装配过程；具体执行哪些步骤取决于实际器件和封装设计，新增封装与系统条件须另行核对。</p>
+<p class="bridge">器件结构决定加工对象，连接方式决定装配动作。下一节回到 03 的合波分支，看同一功能换一种实现之后，这些对象和动作怎样改变。</p>
+<p class="origin">原始问题：“这些部件需要哪些设备制造？”“衔接需要哪些设备？” · <a href="{{old}}#qa-5">原 Q05</a>、<a href="{{old}}#qa-14">Q14</a>、<a href="{{old}}#qa-15">Q15</a></p>
+</section>
+<section id="compare">
+<p class="eyebrow">07 / 扩展：换一种光路，零件与制造怎样变</p><h2>改用波分时，合波功能可以怎样实现？</h2>
+<p class="intro">这一节接回 03 第三步的波分分支。主线产品已经讲完；下面换用两份合波组件实例，看同一项功能怎样由一组光学件或芯片内结构承担，以及制造和装配为什么随之改变。 </p>
+<p>下面比较两份已披露内部结构的发射子组件资料，追踪不同波长的光怎样合到一起。这两个实例与前面的 DR8+ 参考模块分别讨论。 </p>
+<div class="compare"><article><span class="pill">实例 A · 三菱 EML-TOSA</span><h3>把光学件装成一条合波光路</h3><p>三菱 2019 年介绍的 TOSA 用透镜、滤光片和反射镜组织合波光路。EML 发出的光先经过透镜，再进入滤光片与反射镜组成的结构。TOSA 是发射光学子组件，只承担完整模块的一部分功能。 </p><p>滤光片按波长表现出不同的透射和反射特性。设计者利用这种选择性安排光路，让原本分开的光到达同一输出方向。 <a class="cite" href="#source-15">[15]</a></p><div class="stack">EML → 透镜 → 滤光片与反射镜 → 合波输出</div></article><article><span class="pill">实例 B · POET 发射 PIC</span><h3>让波导结构承担合波</h3><p>POET 的 1.6T 2×FR4 发射 PIC 用两个 AWG 承担合波。AWG 是阵列波导光栅，通过波导结构按波长分合光。这个组件同时保留了 EML 阵列和驱动芯片。 </p><p>在这个实例中，波导结构承担了合波功能。厂商还披露了光斑尺寸转换结构，以及无透镜、被动装配的设计。 <a class="cite" href="#source-23">[23]</a></p><div class="stack">EML 阵列 → AWG 波导合波 → 光斑匹配 → 输出</div></article></div>
+<p class="caption">图 6 · 功能次序示意。实例 A 属于 400GBASE-LR8 相关 TOSA 设计，实例 B 是 1.6T 发射 PIC；它们不是同规格整机对比。POET 是混合集成实例，不能直接拿来代表03 中 Cisco 所述的硅光实现。</p>
+<p><strong>合波的实现方式改变了加工和装配对象。</strong>实例 A 需要先制造光学件，再将它们定位、固定成光路。实例 B 需要加工、测试波导合波结构，并完成它与 EML 及光纤接口的连接。 </p>
+<p>集成可能减少独立装配件，但功能数、独立裸片数和光通道数仍需分别统计。总成本或设备需求是否下降，还取决于同条件下的节拍、良率和产量，这组实例尚不能回答。 </p>
+<div class="bridge">回看整条阅读路径：功能告诉我们要做什么，产品结构告诉我们由谁完成，连接与制造再决定怎样做出来。参考模块的 EML、PIN 与外部接口已公开；完整零件数量、内部连接和实际工艺仍需进一步资料。</div>
+<h3 id="route-manufacturing-changes">路线改变后，制造与验证要追踪什么？</h3><p>下面沿已有实例整理需要继续核对的任务。它是一份分析顺序，具体工序是否增加、减少及采用哪台设备，仍须对应实际产品。</p><div class="table-wrap"><table><thead><tr><th>结构或分工的变化</th><th>加工与连接对象</th><th>需要验证什么；目前缺什么</th></tr></thead><tbody><tr><td>光学件合波 → 波导合波</td><td>从透镜、滤光片和反射镜的定位，转向波导合波结构的加工，以及与光源、输出端的连接。<a class="cite" href="#source-15">[15]</a> <a class="cite" href="#source-23">[23]</a></td><td>需核对光路损耗和输出性能。两例规格不同，同条件节拍、良率与成本 UNKNOWN。</td></tr><tr><td>部分光学功能集成进 PIC</td><td>按平台形成波导、调制或探测结构，再连接光源、电子电路和光纤。<a class="cite" href="#source-5">[5]</a> <a class="cite" href="#source-28">[28]</a></td><td>需同时确认芯片结构与片外连接的性能；平台能力不证明某型号的实际工艺。</td></tr><tr><td>模块内重定时 → LPO</td><td>处理分工改变，线性驱动器和 TIA 仍在；主机连接成为整条链路的一部分。<a class="cite" href="#source-3">[3]</a> <a class="cite" href="#source-10">[10]</a></td><td>需联合核对主机、模块和链路条件；同条件整机节电量 UNKNOWN。</td></tr><tr><td>面板模块 → 共封装光学</td><td>光引擎移近主芯片，重新安排短电连接、光纤引出、供电与散热。<a class="cite" href="#source-36">[36]</a></td><td>需核对系统连接与热设计。Cisco 演示只说明该实例，不能证明通用量产良率。</td></tr></tbody></table></div>
+<p class="origin">原始问题：“MUX 是一个独立零件吗？技术路线怎样改变它？” · <a href="{{old}}#qa-12">原 Q12</a>、<a href="{{old}}#qa-19">Q19</a></p>
+</section>

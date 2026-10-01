@@ -1,40 +1,279 @@
 workpack:
-  id: QA-PROVENANCE-SHARE-20260913
-  title: 打包14个主问题来源说明并发送飞书产业案头
+  id: OPTICAL-ROUTE-PRODUCT-READER-20260914
+  title: 从路线到产品与零件的独立问答页
   status: delivered
-  authorization: 用户明确要求“打包一下 这个回答，发送到 飞书的产业案头”。
+  authorization: 用户要求以指定图文合并版及原有问答为资料源，按任务、路线、产品、零件连接、制造、路线差异生成独立页面；缺资料处定向检索。
 objective:
-- 将本轮已给出的三段对话40轮提问到14个主问题的解释整理成可独立阅读的附件
-- 保留对应表、Q1来源区别、主题归属不等于逐子问覆盖的边界，以及可核对的原始提问索引
-- 使用现有飞书机器人发送到名称核对为产业案头的群，并核验发送结果
+  - 走通一个具体产品的解释链，完成一个边界明确的路线差异比较；复用现有资料并保留原问题和证据定位。
 allowed_write_paths:
-- docs/control/ACTIVE_WORKPACK.yaml
-- out/光模块14问来源说明-20260913/**
+  - AGENTS.md
+  - docs/control/ACTIVE_WORKPACK.yaml
+  - out/光模块路线到零件-20260914/**
+  - refs/问题信源路由表.md
+  - docs/research/光通信研究机构近三月公开资料-20261001.md
 read_scope:
-  allowed:
-  - docs/source-conversations/README.md及三段原文Markdown
-  - site/optical-qa/index.html及本轮回答
-  - README.md、章程、工作包及本次差异
-  - 飞书技能与现有CLI身份状态、目标群查询、本次发送结果
-  - 原始语料已发布链接的精确Git远端及对应文件核验
+  - AGENTS.md、docs/control/PROJECT_CHARTER.md、当前工作包、项目技能
+  - out/光模块知识体系/光模块基础知识-图文合并版-10图105问.html 及其直接引用的图片与来源
+  - site/optical-module/sections/ 中直接相关问答和路线内容
+  - 定向检索所得的厂商原始资料和标准
 non_goals:
-- 不修改网页正文、原始对话或canonical账本
-- 不补充领域研究、不将索引对应视为全部子问题已回答
-- 不推送代码、不发布网站、不发送到其他群
+  - 不改原页面、canonical、问题树，不提交、推送或发布，不建立新研究架构。
 acceptance_criteria:
-- 附件保留14题对应关系和40轮提问的完整索引
-- Q1明确为基础导入，无独立同名原始用户提问
-- 文档能脱离本地绝对路径阅读，无脚本或外部资源依赖
-- 飞书API返回目标群消息ID，随后读取确认附件存在
+  - 单独 HTML 可离线阅读正文；按解释依赖组织，产品对象和制造实例不混淆。
+  - 现有内容有原题定位；新增资料有外部证据锚；未披露信息明确保留 UNKNOWN。
+  - 检查本地链接、页面结构与浏览器显示；不以机器检查代替领域复核。
 canonical_policy:
   writable: false
-validation:
-- 生成独立HTML和Markdown，包含14题对应表、40轮原始提问及4条已核对来源链接。
-- 40轮页面索引与源文件用户消息忽略空白后逐条一致；HTML有55个唯一锚点，内部链接全部有效，无脚本或外部资源依赖。
-- 三份原文及当前问答页与GitHub提交7a8053a3dce96b40d0a5998eb35702931f787637对应blob一致。
-- 以现有机器人codex yiji发送富文本说明并附HTML至产业案头，目标群oc_5d884e05d5da81aca3f809bb923fab6e。
-- 发送API返回成功；随后mget确认消息未删除、群ID一致、正文及HTML附件存在。
-- 未修改网页、原始对话或canonical；未推送或发布。
-delivery:
-  message_id: om_x100b656bbb3ec4a0b04fd350786d7dc
-  message_url: https://applink.feishu.cn/client/chat/open?openChatId=oc_5d884e05d5da81aca3f809bb923fab6e&position=145
+architecture_budget: 无新框架与依赖；手写静态页面。
+stop_conditions:
+  - 未披露的内部 BOM 或工艺不猜测；完成限定切片后停止扩展。
+
+revision_authorization: 用户指出页面仍难懂，明确允许外部资料补充；继续在同一独立页修订因果解释和图示。
+revision_acceptance:
+  - 先解释并行和波分、EML 和硅光的实际工作差异，再绑定产品和零件。
+  - 正文解释术语背后的动作，制造段包含动作、作用对象和结果；新增内容有一手来源。
+  - 不把不同产品和平台拼成完整 BOM；适用边界集中到来源说明，具体未知保持可见。
+
+current_revision:
+  date: 2026-09-15
+  authorization: 用户要求补足上轮指出的功能分解与产品功能分配，并后移 PAM4 介绍。
+  scope: 同一独立页面、正文源及构建脚本，沿用既有授权路径。
+  acceptance:
+    - 第一题先解释光的可测变化和数据约定，不提前引入 PAM4。
+    - 功能分解先于路线选项；选定产品后给出功能到器件的对应关系。
+    - 图 1 明示为通用流程；原题、来源及功能示意的证据边界保留。
+
+verification:
+  - 2026-09-15 已补充功能分解章节和选定产品的功能器件对应表；PAM4 首次出现在具体产品章节。
+  - 已重建同一页面并检查 8 个章节、导航顺序、所有本地链接和锚点，无重复 ID。
+  - 本轮沿用 16 项已有来源；未增加或修改 canonical，未改原合并版。
+  - 本轮未重复尝试已被浏览器策略阻止的本地文件预览；视觉显示未验证。
+
+delivery_authorization:
+  date: 2026-09-15
+  request: 用户明确要求将当前独立页面发送至飞书产业案头。
+  target: 产业案头群
+  artifact: out/光模块路线到零件-20260914/index.html
+  method: 既有应用机器人发送 HTML 文件，读取消息核验送达。
+
+delivery_result:
+  status: sent_and_read_back
+  message_id: om_x100b65bde305e4b0b49982dc6ee71dc
+  file_name: 光模块问答-路线到零件-20260915.html
+  sha256: 24d0e8479d5cb8c2417dad844dfdd9a2c35e78411b9a656b701e1cdebaf6c17a
+  verification: 发送时副本与当时 index.html 字节一致；消息回读确认目标群、附件文件名、未删除状态。
+
+editorial_revision:
+  date: 2026-09-16
+  authorization: 用户要求按清楚简洁的段落、主旨前置、具体动词与连续解释的写作规则调整当前页面文字。
+  scope: 同一页面正文与构建脚本文案；保留技术结论、学习顺序、来源和证据边界。
+  non_goals: 不新增研究，不改变已发送的 20260915 文件，不再次发送或发布。
+  acceptance: 逐段润色并检查语义和来源保留；保留确有比较或顺序作用的表格与列表。
+
+editorial_verification:
+  - 2026-09-16：润色 48 段正文及页首、资料说明；保留 16 项来源和全部原题引用。
+  - 8 个章节与学习顺序保持；本地链接和锚点检查通过，无重复 ID 和嵌套列表。
+  - 保留比较与顺序所需的表格和列表；已发送 HTML 副本 SHA-256 未变。
+  - 本轮为文字修改，未重复尝试受策略限制的浏览器视觉预览；未发送、发布或修改 canonical。
+
+route_expansion:
+  date: 2026-09-16
+  authorization: 用户要求第 03 节展开 VCSEL、LPO、CPO，采用前两项的解释方式并保留来源。
+  scope: 同一页面正文与构建脚本，定向补充一手来源。
+  non_goals: 不改 canonical、原合并版、已发送副本；不发送或发布。
+  acceptance: 功能到实现再到零件变化，解释适用条件；正文引用与来源表完整；检查结构和链接。
+
+route_expansion_verification:
+  - 已重建同一页面；VCSEL、LPO、CPO 均有功能路径对照、零件变化、适用条件和就近引用。
+  - 21 项来源条目，全部本地链接与锚点检查通过；8 个章节，无重复 ID 或嵌套列表。
+  - PAM4 仍在具体产品章节首次介绍；已发送副本 SHA-256 不变。
+  - 浏览器本地预览此前受策略限制，本轮未重复尝试；视觉显示未验证。未发送、发布或修改 canonical。
+
+three_way_revision:
+  authorization: 用户要求第二项选择合并为多种实现并列，明确硅光表述；修改后发到飞书产业案头。
+  scope: 同一正文与构建脚本、新版 HTML 发送副本；沿用既有机器人发送并回读。
+  acceptance: 三项同组、无重复 EML，硅光结构与来源明确；来源和本地链接保留。
+  non_goals: 不改模型配置、canonical、原合并版或旧发送副本。
+
+three_way_delivery_result:
+  verification: 三项同组、21 项来源、本地链接及锚点检查通过；视觉预览未验证。发送副本与 index 字节一致。
+  message_id: om_x100b65ac70b6ecacb1ca3b6ef18c780
+  target: 产业案头
+  file: 光模块问答-路线到零件-20260916-三种实现并列.html
+  status: 已发送并回读核验群 ID、附件名称和 deleted=false。
+
+silicon_platform_revision:
+  authorization: 用户要求查证硅光是否为具体方案，并据此修改页面。
+  scope: 同一正文与构建脚本；查阅 Cisco 和 Intel 一手来源，纠正比较层级。
+  acceptance: 区分平台、器件、具体发射路径；保留多项比较及来源。
+  non_goals: 不重发飞书，不修改已发送副本、canonical 或模型配置。
+
+silicon_platform_verification:
+  - 已修改并重建当前页面；保留三条具体发射路径，补充光源集成和产品结构的判断步骤。
+  - 22 项来源，三项比较、本地链接及锚点检查通过；未重发或修改已发送文件。
+  - 视觉显示未验证；未修改 canonical。
+
+function_order_revision:
+  authorization: 用户要求按02的五项功能检索并重写03，搜索用agy辅助，授权并行审阅。
+  scope: 当前正文、构建脚本与本目录研究笔记；agy定向检索一手资料，独立代理只读审阅。
+  acceptance: 五步顺序一致；每步有实现、器件和选择条件；CPO作为整体布局；来源可定位。
+  non_goals: 不改canonical、模型配置或已发送文件，不发送飞书。
+
+function_order_verification:
+  - 03 已按02五项功能重写；复用既有来源并补入Hamamatsu APD原理，23项来源。
+  - 独立只读代理复审后修正光源类型与布局混列、耦合与合波先后措辞、TIA首次出现解释。
+  - 五个功能锚点、8个主章节、本地链接和来源锚点检查通过，无重复ID。视觉显示未验证。
+  - agy首次调用因上游EOF失败；缩小范围重试90秒超时，无可用检索结果。新增来源由主代理直接核对官方网站。
+  - 未改canonical、已发送副本或模型配置，未发送飞书。
+
+five_step_delivery_authorization:
+  request: 用户要求把当前五步重组版发送至飞书产业案头，沿用机器人身份。
+  scope: 创建本目录HTML发送副本，发送并回读核验。
+
+five_step_delivery_result:
+  status: sent_and_read_back
+  message_id: om_x100b65acd07e6ca4b177b10d288ec0a
+  file: 光模块问答-路线到零件-20260916-五步功能版.html
+  sha256: a372d283901babb1ab98d8442a2717649a206a56894241520cb25f3a8ea7052f
+  verification: 发送副本与当前index一致；回读核验产业案头群ID、文件名、deleted=false。
+
+agent_instruction_update:
+  authorization: 用户明确要求将提供的写作、行动执行、自主推进、多代理和agy检索提示词加入当前项目AGENTS.md。
+  allowed_write_paths: [AGENTS.md, docs/control/ACTIVE_WORKPACK.yaml]
+  non_goals: 不修改页面、模型配置、canonical或全局指令，不发送消息。
+  acceptance: 原文完整追加，既有内容保留，检查差异和YAML格式。
+  verification: 四段提示词已原文追加至第8节；原有AGENTS内容保留，YAML解析通过。
+
+product_bridge_revision:
+  authorization: 用户要求调整03，并补齐04的发射器、接收器、电接口、安装形态和光接口的前置解释。
+  scope: 当前content.html与build_page.py及index.html；独立只读审阅，复核既有官方产品资料。
+  acceptance: 五步功能保留，技术实现与产品接口分类清楚；04五项参数可跳转回03解释。
+  non_goals: 不发送、不修改已发送副本、canonical或模型配置。
+
+product_bridge_verification:
+  - 03新增产品边界示意及五字段解释，04五项参数逐项链接回03；独立审阅意见已处理。
+  - 复核Coherent官方产品页与系列规格书；沿用23项来源，链接与ID检查通过。
+  - 未验证浏览器视觉显示，未发送或修改已发送副本。
+
+continuity_revision:
+  authorization: 用户要求合并落实整页衔接审阅和硅光实物组成、按功能列器件的意见。
+  scope: 同一正文、构建脚本和index；保留来源，独立只读审阅。
+  acceptance: 硅光方案先说明实物组成，功能行标明部分功能与内部结构；03比较、04选择、05连接、06制造、07扩展分工清楚。
+  non_goals: 不发送、发布或修改canonical及已发送副本。
+
+continuity_revision_verification:
+  - 已修订03到07，保留8个主章节及23项来源；04按五步列选择，接口单列。
+  - 独立审阅后移除写作指令残留，修正EML额外光源误读。
+  - 本地链接与来源锚点、唯一ID、五步表格和术语顺序检查通过。
+  - 浏览器视觉未验证；未改已发送副本或canonical，未发送飞书。
+
+continuity_delivery_authorization:
+  request: 用户要求把当前实物组成与章节衔接修订版发送至飞书产业案头。
+  scope: 在原输出目录创建发送副本，沿用机器人发送并回读核验。
+
+continuity_delivery_result:
+  status: sent_and_read_back
+  message_id: om_x100b65ab8b0de620b1f512ec7c2924e
+  file: 光模块问答-路线到零件-20260916-实物与章节衔接版.html
+  sha256: dfaebb7b3298c2c7ccb9681542b8cfe2eea6d4fb3656e586ee16d13bc9baa39f
+  verification: 副本与当前index一致；回读确认产业案头群ID、附件名称及deleted=false。
+
+light_wording_revision:
+  date: 2026-09-17
+  authorization: 用户指出第一步光源表格不通顺；局部调整表头、两行文字及衔接。
+  scope: 当前正文和重建index；保留技术含义与来源，不发送。
+  verification: 已重建页面，来源锚点与ID检查通过；仅局部文字调整，未重发。
+
+light_wording_delivery:
+  authorization: 用户要求发送最新光源文字修订版到飞书产业案头，沿用机器人身份。
+  scope: 当前输出目录发送副本，发送并回读核验。
+  status: sent_and_read_back
+  message_id: om_x100b6580611f58acb2750a25c9218a0
+  sha256: 1d1e8935de736f46be97ec4c36557ae87ad60b8b0afac79cdde33194169d4051
+  verification: 副本与index一致，回读核验目标群、文件名和deleted=false。
+
+route_reading_revision_20260928:
+  authorization: 用户要求参考已阅读文章与本次建议更新指定路线到零件页面。
+  scope: 当前目录 content.html、build_page.py、index.html，及本工作包。
+  acceptance: 补路线层级、选择理由、产品导读与制造影响；保留来源和UNKNOWN；检查结构链接及显示。
+  non_goals: 不改canonical、原合并版、历史发送副本；不发送或发布。
+  verification:
+    - 已补路线层级表、参考产品导读、选择条件和制造验证任务表；沿用23项来源。
+    - 独立审阅后调整两处跨步衔接，并明确教学选例与厂家选型理由不同。
+    - 8个主章节，本地链接与来源锚点闭合，ID唯一，工作包YAML可解析。
+    - 浏览器安全策略拒绝file协议，视觉显示未验证；未绕过限制。
+
+annotation_revision_20260928:
+  authorization: 用户要求按三条浏览器注释修改，并提供修改前后差异；授权读取相关历史版本补回制造设备信息。
+  scope: 同一页面正文、构建脚本、index及工作包；本会话outputs保存差异交付物，work保留修改前快照。
+  acceptance: 硅光介绍并入路线；解释有条件搭配；恢复历史制造设备内容与来源边界；提供可查看差异。
+  non_goals: 不改canonical、原合并版或旧发送副本，不发送或发布。
+  verification:
+    - 三条注释已落实；32项来源，恢复历史Q06–Q16内容并标明本轮复核范围。
+    - 独立审阅后限定VCSEL标题为氧化孔径实例，避免暗示所有路线执行全部工序。
+    - 已生成实际正文前后差异HTML、更新页面副本及源文件patch；本地链接与ID检查通过。
+    - 未重试已被file协议安全策略阻止的视觉预览；视觉显示未验证。
+
+combination_logic_revision:
+  authorization: 用户指出搭配说明位置突兀且模糊，要求在逻辑上说明路线组合可能。
+  scope: 当前正文与重建页面、交付副本和本次前后差异。
+  changes: 将说明从第三步开头移至第03节末；用EML的并行和波分实例解释分支，用LPO及CPO说明其他层的选择与约束。
+  boundaries: 沿用既有来源，不推定全部排列均为已实现产品。
+
+route_assembly_revision:
+  authorization: 用户要求补充非EML路线组合，区分各路线装配并提供前后差异。
+  scope: 当前页面源文件、构建脚本、生成页与本会话交付副本。
+  boundaries: 不改canonical；区分产品披露、历史实例和接口推导设备任务。
+  verification: 已生成完整页和本次实际文字差异；链接锚点无缺失或重复；独立审阅后限定裸片条件及固定顺序；浏览器视觉未验证。
+
+research_source_addition_20261001:
+  authorization: 用户要求审视并加入 TrendForce、Frost & Sullivan、思瀚、GGII、BNEF、Yole 等研究机构来源。
+  objective: 在现有问题信源路由文档记录机构定位、可用公开入口、光模块适用问题和证据边界。
+  allowed_write_paths:
+    - docs/control/ACTIVE_WORKPACK.yaml
+    - refs/问题信源路由表.md
+  read_scope:
+    - AGENTS.md、docs/control/PROJECT_CHARTER.md、当前工作包、README.md
+    - refs/问题信源路由表.md、refs/信源分层总表.md、calls/README.md、calls/discovery_config.json
+    - 机构官网公开页和与光模块相关的现有证据锚
+  non_goals: 不把研究机构设为公司披露实体；不改 canonical、日更采集器或付费报告；不自动晋升结论。
+  acceptance: 六家机构逐项定位并给出公开入口及核验状态；明确 GGII 与 BNEF 独立、国内外属性和数据口径风险；检查文档差异与 YAML 格式。
+
+research_source_followup_20261001:
+  authorization: 用户追问是否有额外机构，并要求获取这些机构最近三个月的资料。
+  objective: 补充直接覆盖光模块或光通信的研究机构，整理 2026-07-01 至 2026-09-30 的公开资料入口与核验状态。
+  allowed_write_paths:
+    - docs/control/ACTIVE_WORKPACK.yaml
+    - refs/问题信源路由表.md
+    - refs/光通信研究机构近三月公开资料-20261001.md
+  read_scope:
+    - AGENTS.md、docs/control/PROJECT_CHARTER.md、当前工作包和既有问题信源路由表
+    - 原有六家及新增机构的公开官网、作者公开发布页与原始报告目录
+  non_goals: 不购买或绕过付费与登录限制；不抓取付费正文；不修改 canonical、日更采集器或 calls/out；不自动晋升机构估计为事实。
+  acceptance: 区分直接光模块市场与相邻需求来源；逐机构给出时间窗内找到的可核对条目或明确缺口；区分官方正文、公开摘要、报告目录及次级线索；检查日期、链接、差异和 YAML 格式。
+
+research_index_relocation_20261001:
+  reason: refs 目录文件数已到 scan.py 上限，新索引需移至研究文档目录才能通过项目提交闸门。
+  scope: 仅移动近三月索引并修正问题信源路由表中的相对链接；索引正文不变。
+  allowed_write_paths:
+    - docs/control/ACTIVE_WORKPACK.yaml
+    - refs/问题信源路由表.md
+    - refs/光通信研究机构近三月公开资料-20261001.md
+    - docs/research/光通信研究机构近三月公开资料-20261001.md
+  non_goals: 不放宽 scan.py 限额，不修改 canonical 或其他研究内容。
+
+dev_package_20261001:
+  authorization: 用户要求把目前收集材料的数据、代码和 prompt 打包更新到 dev 分支。
+  objective: 以现有研究分支为基线新建远端 dev，纳入本地尚未提交的当前研究资料、提示词和路线到零件页面源文件。
+  base_ref: codex/fix-daily-reliability-20260905
+  allowed_write_paths:
+    - AGENTS.md
+    - docs/control/ACTIVE_WORKPACK.yaml
+    - refs/问题信源路由表.md
+    - docs/research/光通信研究机构近三月公开资料-20261001.md
+    - out/光模块路线到零件-20260914/build_page.py
+    - out/光模块路线到零件-20260914/content.html
+    - out/光模块路线到零件-20260914/index.html
+  inherited_content: 现有研究分支已跟踪的 canonical 数据、采集与构建代码、研究 prompt 和九页只读快照随分支继承；不在本次重写。
+  non_goals: 不晋升候选或修改 canonical；不额外纳入仓库外的每日运行状态、本地尚未跟踪的历史发送副本和旧实验目录，不生成或改写 calls/out；不更新 main，不新建 PR。既有研究分支历史文件按原样继承。
+  acceptance: 检查入包文件、安全边界、页面构建与 YAML；远端 dev 指向包含全部指定文件的提交，回读核对；本地 canonical 指纹不变。
