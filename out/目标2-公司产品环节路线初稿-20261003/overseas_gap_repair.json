@@ -1,0 +1,1884 @@
+{
+  "title": "Coherent/Lumentum/Source Photonics产品目录与错误UNKNOWN补漏",
+  "as_of": "2026-10-03",
+  "status": "原厂主张核锚后的独立修订输入，非canonical",
+  "scope": "仅海外三家公司；不修改overseas_verified.json、build或canonical",
+  "search_note": "本轮用原厂网站、原厂公开产品筛选数据与网页嵌入Features核验。agy协搜因headless command权限自动拒绝而无输出；未修改权限或设置。",
+  "interpretation_rules": [
+    "族级路线已公开但SKU未对齐，仍保留已知族实现；未知只留在关联/具体器件字段。",
+    "发布、演示、样品、planned GA、原厂production volume、具体SKU实际出货分别标；官网披露不等于独立证实。",
+    "EML/SiPh/InP PIC/VCSEL是光学平台；FRO/LRO/TRO/LPO是电处理；OSFP/QSFP-DD/CPO是形态/位置，不串成单一排他公司标签。",
+    "未公开MUX器件、光源颗数、PD/TIA料号、制造工艺/供货不能从通用架构或平台能力推定。",
+    "原对话主张字段采用主代理提供摘要；没有把摘要或对话当原厂证据。"
+  ],
+  "sources": [
+    {
+      "id": "OG01",
+      "title": "Coherent数通当前产品筛选器",
+      "url": "https://www.coherent.com/networking/transceivers/datacom",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "页面公开产品筛选器数据；Datacom共118项，800G/1.6T筛选命中14项；仅表示目录登记",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG02",
+      "title": "Coherent FTCE4717E1PCB",
+      "url": "https://www.coherent.com/networking/transceivers/datacom/FTCE4717E1PCB",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "参数表及产品简介",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG03",
+      "title": "Coherent FTCE4717E1PCB规格书",
+      "url": "https://www.coherent.com/resources/datasheet/networking/optical-transceivers/osfp/ftce4717e1pcb-transceiver-ds.pdf",
+      "published_date": "2024-04",
+      "accessed_date": "2026-10-03",
+      "anchor": "Rev B08，PDF第1、3–5页；网页与PDF温度冲突保留",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG04",
+      "title": "Coherent 2x400G FR4 Lite发布",
+      "url": "https://www.coherent.com/news/press-releases/uncooled-silicon-photonics-based-2x400g-fr4-lite",
+      "published_date": "2025-03-20",
+      "accessed_date": "2026-10-03",
+      "anchor": "发布正文：SiPh/CW/PD/无TEC；样品可得，计划2025-04-01 GA",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG05",
+      "title": "Coherent OFC2025产品及演示",
+      "url": "https://www.coherent.com/news/press-releases/coherent-to-showcase-innovative-products-and-technologies-at-ofc2025",
+      "published_date": "2025-03-31",
+      "accessed_date": "2026-10-03",
+      "anchor": "1.6T SiPh三演示、SR8 VCSEL、OCS优化、800G相干GA",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG06",
+      "title": "Coherent ECOC2024 1.6T与800DR4演示",
+      "url": "https://www.coherent.com/news/press-releases/coherent-demonstrates-two-advanced-transceiver-modules",
+      "published_date": "2024-09-23",
+      "accessed_date": "2026-10-03",
+      "anchor": "分别1.6T SiPh/NVIDIA DSP和800DR4差分EML",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG07",
+      "title": "Coherent OFC2026多技术1.6T",
+      "url": "https://www.coherent.com/news/press-releases/coherent-demonstrates-next-gen-pluggable-transceiver-ofc-2026",
+      "published_date": "2026-03-17",
+      "accessed_date": "2026-10-03",
+      "anchor": "1.6T SiPh PIC/InP CW/200G EML/200G GaAs VCSEL及三DSP供应商；未逐SKU配对",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG08",
+      "title": "Coherent AI数通技术说明",
+      "url": "https://www.coherent.com/news/blog/enabling-ai-next-gen-datacenters",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "SiPh需要InP CW；自有800DR8 SiPh与EML产品族；器件平台说明",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG09",
+      "title": "Coherent ECOC2025",
+      "url": "https://www.coherent.com/news/press-releases/coherent-showcases-next-generation-optical-innovations-at-ecoc2025",
+      "published_date": "2025-09-28",
+      "accessed_date": "2026-10-03",
+      "anchor": "1.6T 2FR4 6km演示含小型色散补偿；不能从相邻段移植D-EML",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG10",
+      "title": "Lumentum数通目录",
+      "url": "https://www.lumentum.com/en/products/data-center/datacom-transceivers",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "原厂HTML __NEXT_DATA__中当前产品：8002DR4、1.6全retime、1.6TRO、400GAOC",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG11",
+      "title": "Lumentum800G2DR4",
+      "url": "https://www.lumentum.com/en/products/800g-2dr4-osfp-transceiver-module",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "overview及HTML __NEXT_DATA__.props.pageProps.product.field_list_items；Features/Applications漏于web文字抽取",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG12",
+      "title": "Lumentum1.6T2DR4全retime",
+      "url": "https://www.lumentum.com/en/products/16t-2dr4-osfp-transceiver-module",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "同URL的HTML嵌入Features明确1311nm CW DFB、20–70°C、RSSI/Tx监测",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG13",
+      "title": "Lumentum1.6T2DR4 TRO",
+      "url": "https://www.lumentum.com/en/products/16t-2dr4-tro-osfp-transceiver-module",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "同URL的HTML嵌入Features明确1311nm CW DFB、20–60°C、RSSI/Tx监测",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG14",
+      "title": "Lumentum800ZR+相干模块",
+      "url": "https://www.lumentum.com/en/products/800g-zr-coherent-pluggable-transceivers",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "Overview明确hybrid InP PIC+SiPh；另属DCI/城域相干",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG15",
+      "title": "Lumentum公开文档中心",
+      "url": "https://www.lumentum.com/en/products/product-documentation-center",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "当前HTML嵌入98资源记录，未检得800/1.6T数通模块datasheet；属于本轮检索边界",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG16",
+      "title": "Source800G当前目录",
+      "url": "https://www.sourcephotonics.com/product-category/800g-transceivers/",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "类别正文25条目录行、23个不同标签；有重复标签及详情型号错配",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG17",
+      "title": "Source1.6T当前目录",
+      "url": "https://www.sourcephotonics.com/product-category/1-6t-transceivers/",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "类别正文4条；详情存在标题/距离/接口复制冲突",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG18",
+      "title": "Source OFC2025产品族",
+      "url": "https://www.sourcephotonics.com/news/source-photonics-announce-the-product-availability-of-its-200g-per-lane-based-1-6t-and-800g-pam4-transceiver-family-products-at-ofc25/",
+      "published_date": "2025-04-01",
+      "accessed_date": "2026-10-03",
+      "anchor": "800DR4/FR4/LR4；1.6DR8/2FR4；DR8三光学平台变体",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG19",
+      "title": "Source ECOC2025产品族",
+      "url": "https://www.sourcephotonics.com/news/source-photonics-to-spotlight-its-latest-optical-innovations-at-ecoc-2025/",
+      "published_date": "2025-09-26",
+      "accessed_date": "2026-10-03",
+      "anchor": "1.6T retimed 3nmDSP+200G CWDM EML：DR8/2FR4/4FR2/2LR4；8004x200 DR4/FR4/LR4",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG20",
+      "title": "Source OFC2026产品族",
+      "url": "https://www.sourcephotonics.com/news/source-photonics-to-spotlight-its-latest-optical-innovations-announce-to-receive-two-industry-awards-for-two-product-families-during-ofc26/",
+      "published_date": "2026-03-16",
+      "accessed_date": "2026-10-03",
+      "anchor": "标题时间2026，开场日期误写2025；2DR4/2FR4/2LR4/LRO/AEC及InP PIC retimed/LPO，阶段均按具体句",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG21",
+      "title": "Source与Delta OFC2026联展",
+      "url": "https://www.sourcephotonics.com/news/source-photonics-and-delta-electronics-join-force-to-demo-1-6t-transceiver-and-switch-products-at-ofc26/",
+      "published_date": "2026-03-17",
+      "accessed_date": "2026-10-03",
+      "anchor": "traffic tests清单直接配EML/SiPh/LRO/EBO；DR8 EML/SiPh production volume为厂商自述",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG22",
+      "title": "Source1.6T2DR4 EML页面",
+      "url": "https://www.sourcephotonics.com/product/spq-he8-8do-cob/",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "URL尾COB、正文COD；EML/PIN/3nmDSP；500m与DR8/DR4接口",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG23",
+      "title": "Source1.6T2FR4 EML页面",
+      "url": "https://www.sourcephotonics.com/product/spq-he2-8fo-cob/",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "URL尾COB、正文COD；EML/PIN/3nmDSP；2km标题与500m/DR8特性冲突",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG24",
+      "title": "Source800DR8当前详情",
+      "url": "https://www.sourcephotonics.com/product/spq1-8e8-8d0-coa/",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "标题标签SPQ1-8E8-8DO-COA，正文SPQ-8E8-DR-CDFOA；DR8 EML/PIN/1310/2x400GAUI4",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG25",
+      "title": "Source8002FR4当前详情",
+      "url": "https://www.sourcephotonics.com/product/spq2-8e2-8fo-coa/",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "标签SPQ2-8E2-8FO-COA，正文SPQ-8E2-FR-CDFOB；EML/PIN/CWDM/2km",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG26",
+      "title": "Source8002LR4当前详情",
+      "url": "https://www.sourcephotonics.com/product/spq2-8e2-8lo-coa/",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "标签SPQ2-8E2-8LO-COA，正文SPQ-8E2-LR-CDFOB；EML/PIN/CWDM/10km",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG27",
+      "title": "Coherent800DR8+ EML规格书",
+      "url": "https://www.coherent.com/content/dam/coherent/site/en/resources/datasheet/networking/optical-transceivers/osfp/ftce4527e1pxm-transceiver-ds.pdf",
+      "published_date": "2024-10",
+      "accessed_date": "2026-10-03",
+      "anchor": "Rev B3；MPO16与网页MPO12冲突",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG28",
+      "title": "Coherent1.6T FTCF2519E3PCA",
+      "url": "https://www.coherent.com/networking/transceivers/datacom/FTCF2519E3PCA",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "8x200G host/line、500m、双MPO12；该SKU未直接公开光学平台",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG29",
+      "title": "Coherent1.6T FTCF2519E1PCM",
+      "url": "https://www.coherent.com/networking/transceivers/datacom/FTCF2519E1PCM",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "8x200G host/line、500m、双MPO12；该SKU未直接公开光学平台",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG30",
+      "title": "Source1.6T COE详情",
+      "url": "https://www.sourcephotonics.com/product/spq-he8-8do-coe-2/",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "目录DR8/2km标签，但正文2FR4标题、500m/DR8特性；EML/PIN/3nmDSP",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG31",
+      "title": "Coherent OFC2026投资者产品路线图",
+      "url": "https://www.coherent.com/content/dam/coherent/site/en/documents/investors/investor-presentations/2026/march-17/OFC-2026-Investor%20event-deck-vf.pdf",
+      "published_date": "2026-03-17",
+      "accessed_date": "2026-10-03",
+      "anchor": "PDF第17页：1.6T FRO/TRO三DSP供应商及TRO/LRO演示；家族ramp不是SKU阶段",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG32",
+      "title": "Lumentum800ZR+增强发布",
+      "url": "https://investor.lumentum.com/financial-news-releases/news-details/2024/Lumentum-Enhances-Performance-in-800ZR-Transceivers-for-Broader-Applications/default.aspx",
+      "published_date": "2024-03-26",
+      "accessed_date": "2026-10-03",
+      "anchor": "hybrid InP+SiPh及合作方相干DSP；无型号/具体DSP",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG33",
+      "title": "Source800SR8 QSFP-DD",
+      "url": "https://www.sourcephotonics.com/product/spq-8e8-8so-cqa/",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "VCSEL/PIN、800GAUI8及SR8接口、双MPO12/APC、CMIS5.0、<16W",
+      "evidence_grade": "原厂披露，原文锚已核；不代表独立证实",
+      "short_quote": ""
+    },
+    {
+      "id": "OG34",
+      "title": "Lumentum OFC2026合作演示",
+      "url": "https://www.lumentum.com/en/events/ofc-2026",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "明确区分Lumentum激光器进入NVIDIA1.6T模块的合作演示，与Lumentum自有模块目录",
+      "evidence_grade": "原厂披露，原文锚此前已核；不代表独立证实",
+      "short_quote": ""
+    }
+  ],
+  "claim_repairs": [
+    {
+      "id": "C01",
+      "company": "Coherent",
+      "product_claim": "800G 2FR4 EML/PIN",
+      "original_dialogue_claim": "800G 2FR4已有EML/PIN实现",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿只取DR8+ EML，漏2FR4",
+      "verified_now": "FTCE4717E1PCB：8×100G PAM4 CWDM EML；PIN；8×106.25Gb/s重定时电接口；2km；双LC；3.3V；17W最大值。PDF的15–70°C与网页0–70°C冲突保留。",
+      "source": [
+        "OG02",
+        "OG03"
+      ],
+      "remaining": "DSP品牌/工艺、驱动/TIA型号、MUX/DEMUX器件结构和内部封装未公开",
+      "cause": "代表型号选样遗漏",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "C02",
+      "company": "Coherent",
+      "product_claim": "800G 2×400G FR4 Lite SiPh/CW",
+      "original_dialogue_claim": "FR4 Lite采用SiPh及CW",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿漏整族",
+      "verified_now": "500m；SiPh PIC＋CW激光＋光电探测器＋无源光学；无需TEC；波分型。2025-03-20声称已有样品、GA计划2025-04-01；计划日期不当作已兑现。",
+      "source": [
+        "OG04"
+      ],
+      "remaining": "SKU、CW数量/功率、PD类型、DSP架构、MUX器件、连接器及当前出货量未逐项公开",
+      "cause": "产品族遗漏",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "C03",
+      "company": "Coherent",
+      "product_claim": "1.6T SiPh/CW与FRO/TRO",
+      "original_dialogue_claim": "1.6T有SiPh/CW full-retime路线",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "精确SKU卡把光学全UNKNOWN，缺少旁边产品族层",
+      "verified_now": "OFC26披露1.6T涵盖SiPh PIC＋高功率InP CW等平台；2026-03-17演示第17页直接列FRO/TRO三DSP供应商。保留族级光路线及电处理，不将两条名单拼成某SKU BOM。",
+      "source": [
+        "OG07",
+        "OG31"
+      ],
+      "remaining": "FRO/TRO逐变体与SiPh、EML、VCSEL的配对及FTCF2519E3PCA/E1PCM的型号配对未知",
+      "cause": "产品族事实与SKU事实未分层",
+      "conclusion": "族与SKU未对齐",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "C04",
+      "company": "Coherent",
+      "product_claim": "1.6T DR8 SiPh LRO",
+      "original_dialogue_claim": "1.6T SiPh LRO已公开",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿有演示卡，但没有公司全目录及CW平台上下文",
+      "verified_now": "OFC25明确8×200G电/光、OSFP、SiPh，LRO的DSP仅Tx重定时；同新闻3nmDSP属于另一演示，不能合成LRO=3nm。SiPh需CW属于公司平台说明，具体激光未知。",
+      "source": [
+        "OG05",
+        "OG08"
+      ],
+      "remaining": "该演示SKU、光源数量/波长/功率、接收TIA/PD内部实现、当前认证/出货未知",
+      "cause": "需保留已核族级路线，且防止跨演示拼接",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "C05",
+      "company": "Coherent",
+      "product_claim": "800G DR4差分EML",
+      "original_dialogue_claim": "800G DR4使用200G D-EML",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿已有演示卡，产品目录遗漏",
+      "verified_now": "ECOC24：8×100G电→4×200G光，200G差分EML，500m/4对SMF，OSFP。",
+      "source": [
+        "OG06"
+      ],
+      "remaining": "演示SKU和DSP型号未知；不能与目录404的FTCE3517L1PCM强绑",
+      "cause": "目录整合遗漏，非光路线缺资料",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "C06",
+      "company": "Coherent",
+      "product_claim": "1.6T EML与VCSEL产品族",
+      "original_dialogue_claim": "多光学平台并行，而非单一SiPh",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿列SiPh样本，漏家族其他平台",
+      "verified_now": "OFC26明确200G InP EML和200G GaAs VCSEL；OFC25明确1.6T SR8 OSFP为8×200G电/光VCSEL演示。",
+      "source": [
+        "OG07",
+        "OG05"
+      ],
+      "remaining": "EML版的DR/FR具体族和SKU、VCSEL版SKU/量产阶段未知",
+      "cause": "产品族覆盖遗漏",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "C07",
+      "company": "Coherent",
+      "product_claim": "1.6T 2FR4 6km",
+      "original_dialogue_claim": "1.6T波分长一些的IMDD路线",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿漏族",
+      "verified_now": "ECOC25演示1.6T 2×800G FR4到6km，模块内含小型色散补偿。",
+      "source": [
+        "OG09"
+      ],
+      "remaining": "未直接披露光源/调制、DSP和SKU；不能把同新闻300G/lane的D-EML搬入此卡",
+      "cause": "产品族遗漏；相邻段器件不能借用",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "C08",
+      "company": "Coherent",
+      "product_claim": "精确1.6T SKU内部实现",
+      "original_dialogue_claim": "FTCF2519可代表1.6SiPh全retime",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "族路线未对齐SKU就被全擦除",
+      "verified_now": "FTCF2519E3PCA与E1PCM目录都明示1.6T DR8、8×200G主机/光接口、500m、双MPO12、1310nm、OSFP；网页未将任一SKU绑定SiPh/CW或某DSP。旁设族级已知路线。",
+      "source": [
+        "OG28",
+        "OG29",
+        "OG07",
+        "OG31"
+      ],
+      "remaining": "精确SKU→SiPh/EML、FRO/LRO/TRO和DSP的关联未知",
+      "cause": "源的对象粒度不同；若对话直接强绑为过推",
+      "conclusion": "族与SKU未对齐",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "C09",
+      "company": "Coherent",
+      "product_claim": "800DR8+连接器",
+      "original_dialogue_claim": "并行模块连接器应有确定规格",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "网页MPO12与PDF MPO16矛盾",
+      "verified_now": "FTCE4527E1PxM的矛盾仍在，不能静默择一。",
+      "source": [
+        "OG27",
+        "OG01"
+      ],
+      "remaining": "现售硬件/版本连接器需原厂确认",
+      "cause": "原厂不同资料冲突",
+      "conclusion": "真实缺资料",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "C10",
+      "company": "Coherent",
+      "product_claim": "驱动/TIA/无源组件",
+      "original_dialogue_claim": "Coherent全垂直集成可推出模块内部BOM",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "能力表容易被当某模块用料",
+      "verified_now": "OFC26第16页是公司能力表，列driver/TIA/MUX/DEMUX/探测器，不是SKU用料表；8002FR4只有器件大类EML/PIN获得型号锚。",
+      "source": [
+        "OG31",
+        "OG02"
+      ],
+      "remaining": "具体SKU器件品牌、数量、内部工艺未知",
+      "cause": "把能力误当采用会过推",
+      "conclusion": "对话过推",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "L01",
+      "company": "Lumentum",
+      "product_claim": "800/1.6T自有数通目录",
+      "original_dialogue_claim": "应有按公司展开的产品清单",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿三卡但未给目录覆盖范围",
+      "verified_now": "当前原厂数通目录HTML列800G2DR4、1.6T2DR4全Tx/Rx重定时、1.6T2DR4 TRO；另列400GAOC。三个高速族有明确产品页；SKU未列。",
+      "source": [
+        "OG10",
+        "OG11",
+        "OG12",
+        "OG13"
+      ],
+      "remaining": "该公开目录以外的客户定制版本、SKU与全在售组合未知",
+      "cause": "代表卡片没有转成公司目录",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "L02",
+      "company": "Lumentum",
+      "product_claim": "800G2DR4 SiPh/4CW",
+      "original_dialogue_claim": "四颗1311nm CW DFB＋SiPh＋DSP",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿已填光路线，full-retime/监测漏",
+      "verified_now": "800页及嵌入Features：4×1311nm CW DFB＋SiPh，8×106.25Gb/s电/光，Tx/Rx均重定时；800GAUI8，500m，2×MTP12/APC；CMIS5.2。",
+      "source": [
+        "OG11"
+      ],
+      "remaining": "具体SiPh调制器结构、CW分光方式、PD/TIA/driver及DSP型号未知",
+      "cause": "overview外的Features抽取遗漏",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "L03",
+      "company": "Lumentum",
+      "product_claim": "1.6T全retime光源",
+      "original_dialogue_claim": "1.6T SiPh/CW实现已有",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿CW写UNKNOWN",
+      "verified_now": "同产品页HTML嵌入Features直接披露1311nm CW DFB；SiPh＋DSP与全Tx/Rx重定时已明示。8×212.5Gb/s电/光、500m、双MPO16/APC、CMIS5.3、22W典型、20–70°C。",
+      "source": [
+        "OG12"
+      ],
+      "remaining": "CW颗数、调制器结构、PD/TIA/driver、DSP型号未知；不得移植800G四颗",
+      "cause": "web文字抽取丢Features，属于漏读",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "L04",
+      "company": "Lumentum",
+      "product_claim": "1.6T TRO光源及电处理",
+      "original_dialogue_claim": "1.6T TRO是SiPh/CW且只Tx重定时",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿CW写UNKNOWN",
+      "verified_now": "同产品页HTML嵌入Features直接披露1311nm CW DFB；SiPh＋DSP、仅Tx重定时；8×212.5Gb/s电/光、500m、双MPO16/APC、CMIS5.3、16W典型、20–60°C。",
+      "source": [
+        "OG13"
+      ],
+      "remaining": "CW颗数、PD/TIA、DSP型号未知；22W与16W规格不构成同条件功耗试验",
+      "cause": "web文字抽取丢Features，属于漏读",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "L05",
+      "company": "Lumentum",
+      "product_claim": "监测/管理",
+      "original_dialogue_claim": "资料中控制与监测比概述更细",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿只列CMIS，未列监测功能",
+      "verified_now": "三款Features均披露RSSI与Tx功率监测；800G另披露VDM；CMIS版本为800G5.2、1.6T两款5.3。",
+      "source": [
+        "OG11",
+        "OG12",
+        "OG13"
+      ],
+      "remaining": "MCU/监测芯片、电源IC/电压、偏置控制回路结构未知",
+      "cause": "未读取Features，不能把功能和芯片料号混为一项",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "L06",
+      "company": "Lumentum",
+      "product_claim": "driver、接收与电源内部链",
+      "original_dialogue_claim": "对话仅称datasheet比概述更细，未提供真实datasheet URL；不能当已核资料",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿广义UNKNOWN没有说明是没取得资料",
+      "verified_now": "公开三页Features已复核；资源列表为空，文档中心本轮98资源未检得800/1.6T模块datasheet。保留驱动、PD/TIA、MCU/PMIC/供电的检索缺口；不能宣称原厂从未披露。",
+      "source": [
+        "OG11",
+        "OG12",
+        "OG13",
+        "OG15"
+      ],
+      "remaining": "没有可回核的原对话datasheet URL；驱动、PD/TIA、MCU/PMIC/电源细分待真实型号资料。无需继续从占位符推断。",
+      "cause": "资料取得不全；若用通用块图确定型号BOM则过推",
+      "conclusion": "尚未取得资料",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "L07",
+      "company": "Lumentum",
+      "product_claim": "800ZR+ hybrid",
+      "original_dialogue_claim": "Lumentum800ZR+用InP+SiPh混合集成",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿限数通，未另附相干目录",
+      "verified_now": "800ZR+ QSFP-DD/OSFP，hybrid PIC包含InP PIC与SiPh；合作方相干DSP。用于DCI/城域/区域，400/600模式是同族性能模式。",
+      "source": [
+        "OG14",
+        "OG32"
+      ],
+      "remaining": "SKU、DSP型号、相干调制器/接收器细分、模块出货阶段未知",
+      "cause": "范围界定未另列相干，族事实可补",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "L08",
+      "company": "Lumentum",
+      "product_claim": "NVIDIA1.6T EML合作演示",
+      "original_dialogue_claim": "Lumentum200G EML出现在NVIDIA模块",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "若把合作模块作为Lumentum自有1.6T SKU会错",
+      "verified_now": "Lumentum自有三族产品页明确SiPh/CW；NVIDIA合作EML演示应单列组件采用/合作演示，不能替换自有产品光路线。",
+      "source": [
+        "OG11",
+        "OG12",
+        "OG13",
+        "OG34"
+      ],
+      "remaining": "合作演示供应量、Lumentum内部整模块BOM未知",
+      "cause": "把元件合作演示混成自有模块会过推",
+      "conclusion": "对话过推",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "S01",
+      "company": "Source Photonics",
+      "product_claim": "800G DR4/FR4/LR4 4×200G EML",
+      "original_dialogue_claim": "800DR4/FR4/LR4以200G单波EML实现",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿DR4/FR4有卡，漏LR4和完整族目录",
+      "verified_now": "OFC25与ECOC25明确三族4×200G光、O-band CWDM/LWDM EML、OSFP或QSFP-DD，覆盖至10km。各SKU及具体波长分组未逐一配。",
+      "source": [
+        "OG18",
+        "OG19"
+      ],
+      "remaining": "主机电通道、DSP、PD/TIA、FR/LR具体MUX实现、具体SKU及逐族阶段未知",
+      "cause": "产品族目录遗漏；SKU未知不应抹去EML平台",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "S02",
+      "company": "Source Photonics",
+      "product_claim": "1.6T DR8 EML/SiPh/InP PIC",
+      "original_dialogue_claim": "Source新1.6T有多平台变体",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿只列EML两个型号造成EML排他印象",
+      "verified_now": "OFC25直接列DR8 EML/SiPh/InP PIC三变体；2026-03-17直接列DR8 EML、SiPh测试与DR8 EBO EML；DR8两光学变体production volume为原厂自述。",
+      "source": [
+        "OG18",
+        "OG21"
+      ],
+      "remaining": "三平台SKU未匹配；InP PIC内部激光/调制结构不能等同EML；不能独立确认量产量",
+      "cause": "公司路线标签过窄、产品族遗漏",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "S03",
+      "company": "Source Photonics",
+      "product_claim": "1.6T2FR4 EML与SiPh",
+      "original_dialogue_claim": "1.6T2FR4不仅EML样本",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿型号页冲突致整族实现不完整",
+      "verified_now": "ECOC25列3nmDSP+200G CWDM EML的retimed 2FR4；OFC26 Delta测试清单另外直接列2FR4 SiPh。族实现可分别保留，型号页距离/标准冲突不让整个族归UNKNOWN。",
+      "source": [
+        "OG19",
+        "OG21",
+        "OG23"
+      ],
+      "remaining": "EML/SiPh对应SKU、SiPh光源细节、实际reach和型号PDF需澄清",
+      "cause": "族级新闻与SKU详情冲突未分层",
+      "conclusion": "族与SKU未对齐",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "S04",
+      "company": "Source Photonics",
+      "product_claim": "1.6T2LR4 EML",
+      "original_dialogue_claim": "1.6T2LR4已列产品族",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿漏族",
+      "verified_now": "2025-09-26列retimed OSFP、3nmDSP和200G CWDM EML的2LR4；2026-03-17 traffic tests再次直接列2LR4(EML)。",
+      "source": [
+        "OG19",
+        "OG21"
+      ],
+      "remaining": "SKU、波长/温控、MUX/DEMUX、PD/TIA和当前出货量未知；不把‘至10km’跨段绑定全部1.6族",
+      "cause": "产品族遗漏",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "S05",
+      "company": "Source Photonics",
+      "product_claim": "1.6T4FR2 EML",
+      "original_dialogue_claim": "高速产品目录应避免漏族",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿漏族",
+      "verified_now": "ECOC25明确retimed OSFP、3nmDSP、200G PAM4 CWDM EML支持4FR2。",
+      "source": [
+        "OG19"
+      ],
+      "remaining": "SKU、具体reach/连接器、接收BOM、当前出货未知",
+      "cause": "产品族遗漏；OFC26短列表不证明该族停产",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "S06",
+      "company": "Source Photonics",
+      "product_claim": "1.6T LRO DR8 SiPh",
+      "original_dialogue_claim": "1.6T LRO应区别全DSP",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿未给此族卡",
+      "verified_now": "2026-03-17测试清单明确1.6T LRO DR8 SiPh；此前OFC26目录列2DR4 LRO OSFP。",
+      "source": [
+        "OG20",
+        "OG21"
+      ],
+      "remaining": "LRO具体DSP型号/Tx结构和SKU未披露，不把EML样本3nmDSP搬入",
+      "cause": "产品族及电处理变体遗漏",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "S07",
+      "company": "Source Photonics",
+      "product_claim": "1.6T InP PIC retimed/LPO",
+      "original_dialogue_claim": "公司不能简单标EML派",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿只取EML会遗漏新平台",
+      "verified_now": "OFC26获奖族表列InP PIC的1.6T IMDD retimed与LPO；应作为另一路线族，和DR8 EML/SiPh、LRO分别记。",
+      "source": [
+        "OG20"
+      ],
+      "remaining": "具体PMD/接口、SKU、InP PIC内部实现未知；不能把InP PIC当纯SiPh或一定EML",
+      "cause": "平台名单不能代替SKU，排他公司分类会过推",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "S08",
+      "company": "Source Photonics",
+      "product_claim": "新8004x200族与旧800DR8目录",
+      "original_dialogue_claim": "目录可映射新产品SKU",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "8DO/8FO/8LO标签被误认新DR4/FR4/LR4有风险",
+      "verified_now": "当前800目录多数是8×100G DR8及2×400G FR4/LR4旧族；SPQ1/2标签点入正文更换为SPQ-8E8-DR-CDFO或SPQ-8E2-FR/LR-CDFOB。不能仅凭标签绑定2025年4×200G族。",
+      "source": [
+        "OG16",
+        "OG24",
+        "OG25",
+        "OG26"
+      ],
+      "remaining": "新版4×200G精确SKU未可靠对齐",
+      "cause": "原厂分类/标题/正文料号错配与两代产品混淆",
+      "conclusion": "族与SKU未对齐",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "S09",
+      "company": "Source Photonics",
+      "product_claim": "1.6T SKU规格冲突",
+      "original_dialogue_claim": "1.6T2FR4/DR8有确切EML/PIN实现",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "冲突不能使EML/PIN全部UNKNOWN",
+      "verified_now": "SPQ-HE8-8DO-COD及SPQ-HE2-8FO-COD页一致披露EML、PIN、3nmDSP。2FR4标题2km但特性500m/DR8；COE页也有同类复制冲突，冲突只留在reach/PMD/身份映射。",
+      "source": [
+        "OG22",
+        "OG23",
+        "OG30"
+      ],
+      "remaining": "厂商修正后的PMD/reach/型号身份和PDF；TIA及MUX类型未知",
+      "cause": "矛盾字段需隔离，不能否定一致字段",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "S10",
+      "company": "Source Photonics",
+      "product_claim": "800SR8 VCSEL/PIN",
+      "original_dialogue_claim": "完整目录包括短距类",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "首稿只挑单模EML漏SR类",
+      "verified_now": "SPQ-8E8-8SO-CQA：QSFP-DD SR8，VCSEL＋PIN、8通道电/光标准接口、双MPO12/APC、CMIS5.0，功耗<16W；目录另有OSFP短距标签。",
+      "source": [
+        "OG33",
+        "OG16"
+      ],
+      "remaining": "其他短距标签逐型号核对及生产阶段未知",
+      "cause": "产品族目录遗漏",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    },
+    {
+      "id": "S11",
+      "company": "Source Photonics",
+      "product_claim": "800LPO/LRO与1.6AEC",
+      "original_dialogue_claim": "电处理/铜缆不能等同光学平台",
+      "original_dialogue_basis": "主代理提供的指定对话主张摘要，非本子任务直接引述全文",
+      "previous_gap": "完整族目录未列线性与铜互连",
+      "verified_now": "OFC25/26均列800LPO/LRO演示族，未明确具体PMD/光平台；OFC26列1.6TAEC OSFP铜互连。AEC发射激光、MUX、PD/TIA不适用。",
+      "source": [
+        "OG18",
+        "OG20"
+      ],
+      "remaining": "800LPO/LRO对应SKU/光路线未知；AEC具体规格未知",
+      "cause": "独立维度没有进入公司目录",
+      "conclusion": "已补回",
+      "evidence_status": "原厂披露锚已核，未独立证实"
+    }
+  ],
+  "catalogues": [
+    {
+      "company": "Coherent",
+      "scope": "公开数通800G/1.6T模块；相干/器件/未来速率另附",
+      "coverage_statement": "当前产品筛选器800G/1.6T全部14条标签已摘录，加官方发布/演示的完整已发现产品族。目录标签、产品族、硬件变体互有重叠，不作为可相加产品计数；不声称覆盖未公开客户SKU。",
+      "families": [
+        {
+          "id": "CF01",
+          "name": "800G DR8/DR8+ EML",
+          "kind": "模块",
+          "optical_route": "EML＋PIN，1310nm并行",
+          "electrical_route": "8×100G PAM4；有retimed规格锚",
+          "spec": "DR8 500m；DR8+2km；OSFP或QSFP-DD",
+          "model": "FTCE4517E1PxM / FTCE4527E1PxM / FTCE4516E1PXM",
+          "source": [
+            "OG01",
+            "OG27"
+          ],
+          "stage": "原厂目录/规格书登记；不等于此刻出货",
+          "boundary": "DR8+连接器网页/规格书冲突；DSP型号和TIA未知"
+        },
+        {
+          "id": "CF02",
+          "name": "800G 2×400G DR4/DR4+ EML",
+          "kind": "模块",
+          "optical_route": "EML；PIN大类；1310nm并行",
+          "electrical_route": "8×100G PAM4族",
+          "spec": "500m或2km；OSFP；双MPO12",
+          "model": "FTCE4517E1PxA系列 / FTCE4527E1PxA系列",
+          "source": [
+            "OG01"
+          ],
+          "stage": "原厂产品页登记",
+          "boundary": "个别-2F页Receiver写PIM，保留原文异常，不把网页字样自动纠正为料号"
+        },
+        {
+          "id": "CF03",
+          "name": "800G 2FR4 EML",
+          "kind": "模块",
+          "optical_route": "8×100G CWDM EML＋PIN；波分功能",
+          "electrical_route": "8×106.25Gb/s重定时",
+          "spec": "2km；双LC；3.3V；17W max",
+          "model": "FTCE4717E1PCB及-2N/-2F散热选件",
+          "source": [
+            "OG02",
+            "OG03"
+          ],
+          "stage": "原厂产品页/2024-04规格书",
+          "boundary": "MUX/DEMUX具体器件未知；温度页/DS冲突"
+        },
+        {
+          "id": "CF04",
+          "name": "800G 2×400G FR4 Lite",
+          "kind": "模块",
+          "optical_route": "SiPh PIC＋CW激光＋PD＋无源光学；无TEC",
+          "electrical_route": "处理结构未知",
+          "spec": "500m；波分型",
+          "model": "UNKNOWN",
+          "source": [
+            "OG04"
+          ],
+          "stage": "2025-03-20已有样品，GA计划2025-04-01",
+          "boundary": "没有GA兑现和SKU锚；PD类型/DSP/连接器未知"
+        },
+        {
+          "id": "CF05",
+          "name": "800G DR8 SiPh",
+          "kind": "模块",
+          "optical_route": "SiPh＋InP CW平台",
+          "electrical_route": "处理结构未知",
+          "spec": "并行DR8",
+          "model": "UNKNOWN",
+          "source": [
+            "OG04",
+            "OG08"
+          ],
+          "stage": "2025-03-20称现有SiPh DR8族",
+          "boundary": "不与FTCE4517等EML页强绑；激光颗数未知"
+        },
+        {
+          "id": "CF06",
+          "name": "800G DR4 D-EML",
+          "kind": "模块",
+          "optical_route": "200G差分EML",
+          "electrical_route": "8×100G电→4×200G光",
+          "spec": "500m；4对SMF；OSFP",
+          "model": "UNKNOWN",
+          "source": [
+            "OG06"
+          ],
+          "stage": "ECOC2024演示",
+          "boundary": "演示不自动绑定目录404的FTCE3517L1PCM"
+        },
+        {
+          "id": "CF07",
+          "name": "800G 2×400G SR4",
+          "kind": "模块",
+          "optical_route": "VCSEL＋PIN，850nm",
+          "electrical_route": "主机电处理具体芯片未知",
+          "spec": "OSFP；双MPO12；产品页100m/筛选器50m冲突",
+          "model": "FTCE8627E1PCA",
+          "source": [
+            "OG01"
+          ],
+          "stage": "原厂产品页登记",
+          "boundary": "两处reach冲突不能静默合并"
+        },
+        {
+          "id": "CF08",
+          "name": "1.6T DR8 SiPh常规DSP及FRO/TRO族",
+          "kind": "模块",
+          "optical_route": "SiPh＋高功率InP CW族平台",
+          "electrical_route": "FRO/TRO已列三DSP供应商；具体配对未知",
+          "spec": "8×200G电/光、OSFP；2024 SiPh演示500m",
+          "model": "UNKNOWN；目录FTCF2519E3PCA/E1PCM未与变体对齐",
+          "source": [
+            "OG06",
+            "OG07",
+            "OG31",
+            "OG28",
+            "OG29"
+          ],
+          "stage": "ECOC24/OFC26演示；家族ramp为公司表述",
+          "boundary": "不得将FRO、CW、某DSP强绑成某SKU完整BOM"
+        },
+        {
+          "id": "CF09",
+          "name": "1.6T DR8 SiPh LRO",
+          "kind": "模块",
+          "optical_route": "SiPh；CW平台需求已知，具体光源未知",
+          "electrical_route": "仅Tx由DSP重定时，Rx线性",
+          "spec": "8×200G电/光；OSFP",
+          "model": "UNKNOWN",
+          "source": [
+            "OG05",
+            "OG08"
+          ],
+          "stage": "OFC2025演示",
+          "boundary": "不能借另一个3nmDSP演示补本LRO的工艺"
+        },
+        {
+          "id": "CF10",
+          "name": "1.6T DR8 SiPh 3nmDSP变体",
+          "kind": "模块",
+          "optical_route": "SiPh",
+          "electrical_route": "3nm DSP（供应商及FRO/TRO配对未披露）",
+          "spec": "8×200G电/光；OSFP",
+          "model": "UNKNOWN",
+          "source": [
+            "OG05"
+          ],
+          "stage": "OFC2025演示",
+          "boundary": "不与LRO合并为同配置"
+        },
+        {
+          "id": "CF11",
+          "name": "1.6T 200G InP EML族",
+          "kind": "模块",
+          "optical_route": "200G InP EML",
+          "electrical_route": "三DSP供应商仅族级名单",
+          "spec": "OFC26多技术1.6T平台",
+          "model": "UNKNOWN",
+          "source": [
+            "OG07"
+          ],
+          "stage": "OFC2026演示",
+          "boundary": "具体DR/FR族、PD/TIA、SKU及出货未知"
+        },
+        {
+          "id": "CF12",
+          "name": "1.6T SR8 VCSEL",
+          "kind": "模块",
+          "optical_route": "200G VCSEL；2026平台列GaAs",
+          "electrical_route": "8×200G电/光",
+          "spec": "OSFP，短距多模",
+          "model": "UNKNOWN",
+          "source": [
+            "OG05",
+            "OG07"
+          ],
+          "stage": "OFC2025/2026演示",
+          "boundary": "具体reach、PD/TIA、SKU及出货未知"
+        },
+        {
+          "id": "CF13",
+          "name": "1.6T 2×800G FR4 6km",
+          "kind": "模块",
+          "optical_route": "IMDD波分＋模块内小型色散补偿；光源未披露",
+          "electrical_route": "处理结构未知",
+          "spec": "6km演示",
+          "model": "UNKNOWN",
+          "source": [
+            "OG09"
+          ],
+          "stage": "ECOC2025演示",
+          "boundary": "不能移植同文另一演示的D-EML"
+        },
+        {
+          "id": "CF14",
+          "name": "800G/1.6T OCS优化变体",
+          "kind": "模块",
+          "optical_route": "光学平台未逐族配对",
+          "electrical_route": "未逐族配对",
+          "spec": "QSFP-DD/OSFP；支持OCS额外插损",
+          "model": "UNKNOWN",
+          "source": [
+            "OG05"
+          ],
+          "stage": "2025-03-31列近期产品发布",
+          "boundary": "条件变体，不等于新的独立光平台"
+        }
+      ],
+      "directory_sku_labels": [
+        {
+          "label": "FTCF2519E3PCA",
+          "family": "1.6T DR8",
+          "reach": "500m",
+          "form": "OSFP",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCF2519E1PCM",
+          "family": "1.6T DR8",
+          "reach": "500m",
+          "form": "OSFP",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE8627E1PCA",
+          "family": "800G 2SR4",
+          "reach": "筛选器50m/产品页100m冲突",
+          "form": "OSFP",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE4717E1PCB",
+          "family": "800G 2FR4",
+          "reach": "2km",
+          "form": "OSFP",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE4527E1PxM",
+          "family": "800G DR8+",
+          "reach": "2km",
+          "form": "OSFP",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE4527E1PxA-2N",
+          "family": "800G 2DR4+",
+          "reach": "2km",
+          "form": "OSFP RHS",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE4527E1PxA-2F",
+          "family": "800G 2DR4+",
+          "reach": "2km",
+          "form": "OSFP",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE4527E1PxA （页面尾-）",
+          "family": "标题DR8+但连接器/系列为2DR4+",
+          "reach": "2km",
+          "form": "OSFP",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE4517E1PxM",
+          "family": "800G DR8",
+          "reach": "500m",
+          "form": "OSFP",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE4517E1PxA-2N",
+          "family": "800G 2DR4",
+          "reach": "500m",
+          "form": "OSFP RHS",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE4517E1PxA-2F",
+          "family": "800G 2DR4",
+          "reach": "500m",
+          "form": "OSFP",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE4517E1PXA",
+          "family": "800G 2DR4",
+          "reach": "500m",
+          "form": "OSFP",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE4516E1PXM",
+          "family": "800G DR8",
+          "reach": "500m",
+          "form": "QSFP-DD",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        },
+        {
+          "label": "FTCE3517L1PCM",
+          "family": "800G DR4目录标签",
+          "reach": "筛选器误写500km；详情404，暂不采参数",
+          "form": "OSFP",
+          "source": [
+            "OG01"
+          ],
+          "status": "目录登记标签；非量产SKU验收"
+        }
+      ],
+      "other_categories": [
+        {
+          "name": "100G/400G/800G相干ZR/ZR+ QSFP28/QSFP-DD",
+          "kind": "模块",
+          "route": "InP PIC/IC-TROSA＋相干DSP，和IMDD数通另表",
+          "source": [
+            "OG05",
+            "OG09"
+          ]
+        },
+        {
+          "name": "400G及以下数通、FC等",
+          "kind": "模块",
+          "route": "按具体族VCSEL/EML等；本轮只列大类，未穷尽低速SKU",
+          "source": [
+            "OG01"
+          ]
+        },
+        {
+          "name": "3.2T/6.4T/XPO、CPO/NPO、D-EML/CW/VCSEL组件",
+          "kind": "器件",
+          "route": "未来速率/光引擎与组件不混入800/1.6整模块数量",
+          "source": [
+            "OG07",
+            "OG31"
+          ]
+        }
+      ],
+      "gaps": [
+        "FTCF2519两SKU未对齐光学和FRO/TRO/LRO版本",
+        "目录和网页个别reach/receiver/标题冲突",
+        "PD/TIA/driver/MUX/封装料号并非凭公司能力可知"
+      ]
+    },
+    {
+      "company": "Lumentum",
+      "scope": "当前公开数通800G/1.6T三产品族；相干附表",
+      "coverage_statement": "当前数通目录嵌入数据四项，其中800/1.6T三项全部列出，另400GAOC；这不是未公开客户定制SKU全量证明。",
+      "families": [
+        {
+          "id": "LF01",
+          "name": "800G 2DR4 OSFP",
+          "kind": "模块",
+          "optical_route": "SiPh＋4颗1311nm CW DFB",
+          "electrical_route": "DSP，Tx/Rx全重定时",
+          "spec": "8×106.25Gb/s电/光、500m、2×MTP12/APC、典型15.2W、0–70°C、CMIS5.2/RSSI/Tx监测/VDM",
+          "model": "SKU UNKNOWN；已知产品族",
+          "source": [
+            "OG11"
+          ],
+          "stage": "当前产品页登记",
+          "boundary": "driver、调制器、PD/TIA、MCU/PMIC料号未知"
+        },
+        {
+          "id": "LF02",
+          "name": "1.6T 2DR4 OSFP全retime",
+          "kind": "模块",
+          "optical_route": "SiPh＋1311nm CW DFB（颗数未知）",
+          "electrical_route": "DSP，Tx/Rx全重定时",
+          "spec": "8×212.5Gb/s电/光、500m、双MPO16/APC、22W典型、20–70°C、CMIS5.3/RSSI/Tx监测",
+          "model": "SKU UNKNOWN；已知产品族",
+          "source": [
+            "OG12"
+          ],
+          "stage": "当前产品页登记",
+          "boundary": "CW UNKNOWN已撤回；内部具体芯片未知"
+        },
+        {
+          "id": "LF03",
+          "name": "1.6T 2DR4 TRO OSFP",
+          "kind": "模块",
+          "optical_route": "SiPh＋1311nm CW DFB（颗数未知）",
+          "electrical_route": "DSP，仅Tx重定时",
+          "spec": "8×212.5Gb/s电/光、500m、双MPO16/APC、16W典型、20–60°C、CMIS5.3/RSSI/Tx监测",
+          "model": "SKU UNKNOWN；已知产品族",
+          "source": [
+            "OG13"
+          ],
+          "stage": "当前产品页登记",
+          "boundary": "CW UNKNOWN已撤回；内部具体芯片未知"
+        }
+      ],
+      "directory_sku_labels": [],
+      "other_categories": [
+        {
+          "name": "800ZR/ZR+多速率相干模块",
+          "kind": "模块",
+          "route": "hybrid InP PIC＋SiPh；合作方相干DSP；QSFP-DD/OSFP，另属DCI/城域/区域",
+          "source": [
+            "OG14",
+            "OG32"
+          ]
+        },
+        {
+          "name": "400G QSFP-DD AOC",
+          "kind": "器件",
+          "route": "当前数通目录另列，非800/1.6T本轮主比较",
+          "source": [
+            "OG10"
+          ]
+        },
+        {
+          "name": "EML/DML/CW激光、ELS、OCS、相干调制器与传输组件",
+          "kind": "器件",
+          "route": "组件/系统能力单列，不作为自有整模块BOM证据",
+          "source": [
+            "OG10",
+            "OG34"
+          ]
+        }
+      ],
+      "gaps": [
+        "三族SKU未披露",
+        "1.6T CW颗数和driver/PD/TIA/MCU/PMIC未知",
+        "原对话没有真实datasheet URL；不可用占位符宣布已获得内部资料"
+      ]
+    },
+    {
+      "company": "Source Photonics",
+      "scope": "800G/1.6T现公开分类目录与2025/2026发布族，包括旧100G/lane和新200G/lane；相干等另附",
+      "coverage_statement": "800G类别25行、23个不同标签完整摘录；1.6T类别4标签完整摘录。另用官方新闻补分类页未及时列出的800DR4/FR4/LR4、新1.6多平台、2LR4/4FR2/LRO/LPO/AEC。目录标签和新闻族之间未全部对齐，不能将标签数当独立SKU数或全部EML归类。",
+      "families": [
+        {
+          "id": "SF01",
+          "name": "800G DR4 4×200G EML",
+          "kind": "模块",
+          "optical_route": "O-band200G单波EML；具体CWDM/LWDM组未逐族配",
+          "electrical_route": "主机电通道/DSP型号未知",
+          "spec": "4×200G光；OSFP或QSFP-DD",
+          "model": "新一代SKU未对齐",
+          "source": [
+            "OG18",
+            "OG19"
+          ],
+          "stage": "厂商发布可用性/演示；不可逐SKU推量产",
+          "boundary": "PD/TIA/driver和内部封装未知"
+        },
+        {
+          "id": "SF02",
+          "name": "800G FR4 4×200G EML",
+          "kind": "模块",
+          "optical_route": "200G CWDM/LWDM EML＋波分功能；具体组未知",
+          "electrical_route": "主机电通道/DSP型号未知",
+          "spec": "4×200G光；OSFP或QSFP-DD",
+          "model": "新一代SKU未对齐",
+          "source": [
+            "OG18",
+            "OG19"
+          ],
+          "stage": "厂商发布可用性/演示",
+          "boundary": "MUX器件形式及实际型号规格未知"
+        },
+        {
+          "id": "SF03",
+          "name": "800G LR4 4×200G EML",
+          "kind": "模块",
+          "optical_route": "200G CWDM/LWDM EML＋波分功能；具体组未知",
+          "electrical_route": "主机电通道/DSP型号未知",
+          "spec": "800三族覆盖至10km；OSFP或QSFP-DD",
+          "model": "新一代SKU未对齐",
+          "source": [
+            "OG18",
+            "OG19"
+          ],
+          "stage": "厂商发布可用性/演示",
+          "boundary": "不能把族组至10km当每型号同reach"
+        },
+        {
+          "id": "SF04",
+          "name": "800G DR8/DR8+/DR8++（旧8×100G族）",
+          "kind": "模块",
+          "optical_route": "EML＋PIN，1310nm并行",
+          "electrical_route": "2×400GAUI4，DSP型号未知",
+          "spec": "目录0.5/2/10km；OSFP/QSFP-DD多个标签",
+          "model": "SPQ-8E8-DR-CDFO*/CDFQ*，标签/正文有错配",
+          "source": [
+            "OG16",
+            "OG24"
+          ],
+          "stage": "原厂目录/详情登记",
+          "boundary": "不能混成新4×200G DR4"
+        },
+        {
+          "id": "SF05",
+          "name": "800G 2×400G FR4/LR4（旧8×100G族）",
+          "kind": "模块",
+          "optical_route": "EML＋PIN，CWDM波分",
+          "electrical_route": "2×400GAUI4，DSP型号未知",
+          "spec": "2km/10km；OSFP/QSFP-DD多个标签",
+          "model": "详情SPQ-8E2-FR/LR-CDFOB；分类SPQ2等错配",
+          "source": [
+            "OG16",
+            "OG25",
+            "OG26"
+          ],
+          "stage": "原厂目录/详情登记",
+          "boundary": "MUX具体器件未知，标签不是已验证SKU"
+        },
+        {
+          "id": "SF06",
+          "name": "800G SR8 QSFP-DD",
+          "kind": "模块",
+          "optical_route": "VCSEL＋PIN",
+          "electrical_route": "8通道800GAUI8接口；DSP型号未知",
+          "spec": "双MPO12/APC；CMIS5.0；<16W",
+          "model": "SPQ-8E8-8SO-CQA",
+          "source": [
+            "OG33"
+          ],
+          "stage": "原厂产品页登记",
+          "boundary": "OSFP其他短距标签需逐型匹配"
+        },
+        {
+          "id": "SF07",
+          "name": "800G LPO/LRO",
+          "kind": "模块",
+          "optical_route": "光学平台未逐族明确",
+          "electrical_route": "LPO/LRO族已列；具体芯片未知",
+          "spec": "未逐PMD明确",
+          "model": "UNKNOWN",
+          "source": [
+            "OG18",
+            "OG20"
+          ],
+          "stage": "OFC25/26演示",
+          "boundary": "不可借1.6SiPh路线代替800族"
+        },
+        {
+          "id": "SF08",
+          "name": "1.6T DR8/2DR4 EML retimed",
+          "kind": "模块",
+          "optical_route": "200G EML；型号页PIN",
+          "electrical_route": "retimed族3nmDSP",
+          "spec": "OSFP；型号页500m/8×200G电光标准接口",
+          "model": "SPQ-HE8-8DO-COD；URL为COB，目录另COE",
+          "source": [
+            "OG19",
+            "OG21",
+            "OG22"
+          ],
+          "stage": "原厂EML/SiPh DR8 production volume自述；型号当前出货未知",
+          "boundary": "光源CWDM说法为族级；型号数量及芯片型号未知"
+        },
+        {
+          "id": "SF09",
+          "name": "1.6T DR8/2DR4 SiPh",
+          "kind": "模块",
+          "optical_route": "SiPh PIC；具体激光参数未披露",
+          "electrical_route": "全DSP类与LRO另分；品牌未知",
+          "spec": "OSFP，逐版本规格未公开",
+          "model": "UNKNOWN",
+          "source": [
+            "OG18",
+            "OG20",
+            "OG21"
+          ],
+          "stage": "原厂称DR8 EML/SiPh production volume；未独立证实",
+          "boundary": "不可推定CW颗数或绑定COD型号"
+        },
+        {
+          "id": "SF10",
+          "name": "1.6T DR8 InP PIC变体",
+          "kind": "模块",
+          "optical_route": "InP PIC，内部激光/调制未披露",
+          "electrical_route": "未逐变体明确",
+          "spec": "DR8族",
+          "model": "UNKNOWN",
+          "source": [
+            "OG18"
+          ],
+          "stage": "2025-04-01称可用变体",
+          "boundary": "不能把InP PIC自动等同EML"
+        },
+        {
+          "id": "SF11",
+          "name": "1.6T 2FR4 EML retimed",
+          "kind": "模块",
+          "optical_route": "200G CWDM EML；EML型号页PIN",
+          "electrical_route": "3nmDSP retimed族",
+          "spec": "OSFP；标题2km与型号特性500m冲突",
+          "model": "SPQ-HE2-8FO-COD，URLCOB；详情冲突",
+          "source": [
+            "OG19",
+            "OG21",
+            "OG23"
+          ],
+          "stage": "发布/联展测试",
+          "boundary": "型号冲突仍待澄清，族光学实现已知"
+        },
+        {
+          "id": "SF12",
+          "name": "1.6T 2FR4 SiPh",
+          "kind": "模块",
+          "optical_route": "SiPh PIC",
+          "electrical_route": "具体重定时结构/DSP未知",
+          "spec": "OFC26 traffic tests明确SiPh 2FR4",
+          "model": "UNKNOWN",
+          "source": [
+            "OG21"
+          ],
+          "stage": "联展测试",
+          "boundary": "不能用EML型号页替SiPh填PD/TIA"
+        },
+        {
+          "id": "SF13",
+          "name": "1.6T 2LR4 EML retimed",
+          "kind": "模块",
+          "optical_route": "200G CWDM EML",
+          "electrical_route": "3nmDSP retimed族",
+          "spec": "OSFP，未取得精确reach/连接器",
+          "model": "UNKNOWN",
+          "source": [
+            "OG19",
+            "OG21"
+          ],
+          "stage": "发布/联展测试",
+          "boundary": "SKU/接收BOM未知"
+        },
+        {
+          "id": "SF14",
+          "name": "1.6T 4FR2 EML retimed",
+          "kind": "模块",
+          "optical_route": "200G CWDM EML",
+          "electrical_route": "3nmDSP retimed族",
+          "spec": "OSFP",
+          "model": "UNKNOWN",
+          "source": [
+            "OG19"
+          ],
+          "stage": "ECOC25发布/演示",
+          "boundary": "OFC26未再列不证明停产；SKU未知"
+        },
+        {
+          "id": "SF15",
+          "name": "1.6T LRO DR8/2DR4 SiPh",
+          "kind": "模块",
+          "optical_route": "SiPh",
+          "electrical_route": "LRO；具体DSP型号未知",
+          "spec": "OSFP",
+          "model": "UNKNOWN",
+          "source": [
+            "OG20",
+            "OG21"
+          ],
+          "stage": "OFC26联展测试",
+          "boundary": "不能从retimed EML版借3nmDSP"
+        },
+        {
+          "id": "SF16",
+          "name": "1.6T InP PIC retimed/LPO获奖族",
+          "kind": "模块",
+          "optical_route": "InP PIC，结构未公开",
+          "electrical_route": "retimed与LPO两个处理方向",
+          "spec": "具体PMD未明示",
+          "model": "UNKNOWN",
+          "source": [
+            "OG20"
+          ],
+          "stage": "2026-03-16获奖产品族/展会披露",
+          "boundary": "与SF10的重叠关系未知，不能机械计为额外销量"
+        },
+        {
+          "id": "SF17",
+          "name": "1.6T AEC OSFP",
+          "kind": "器件",
+          "optical_route": "不适用：铜互连",
+          "electrical_route": "有源电缆，具体芯片未知",
+          "spec": "OSFP",
+          "model": "UNKNOWN",
+          "source": [
+            "OG20",
+            "OG21"
+          ],
+          "stage": "OFC26族清单",
+          "boundary": "激光、MUX/DEMUX、PD/TIA均不适用"
+        }
+      ],
+      "directory_sku_labels": [
+        {
+          "label": "SPQ-8E8-DR-CDFQD",
+          "form": "QSFP-DD",
+          "reach": "500m",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E8-8SO-CQA",
+          "form": "QSFP-DD",
+          "reach": "50m",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ1-8E8-8SO-CQA",
+          "form": "QSFP-DD",
+          "reach": "50m",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E2-FR-CDFQA",
+          "form": "QSFP-DD",
+          "reach": "2km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E2-LR-CDFQA",
+          "form": "QSFP-DD",
+          "reach": "10km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E8-DR-CDFQE",
+          "form": "OSFP（目录，可能与料号族冲突）",
+          "reach": "2km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E8-DR-CDFQF",
+          "form": "OSFP（目录，可能与料号族冲突）",
+          "reach": "10km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ1-8E8-8SO-COD",
+          "form": "OSFP",
+          "reach": "500m（短距标签待核）",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ1-8E8-8SO-COE",
+          "form": "OSFP",
+          "reach": "50m",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E8-DR-CDFOD",
+          "form": "OSFP",
+          "reach": "500m",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E8-DR-CDFOE",
+          "form": "OSFP",
+          "reach": "2km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E8-DR-CDFOF",
+          "form": "OSFP",
+          "reach": "10km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E8-DR-CDFOG",
+          "form": "OSFP",
+          "reach": "500m",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E8-8DO-COA",
+          "form": "OSFP",
+          "reach": "500m",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ1-8E8-8FO-COA",
+          "form": "OSFP",
+          "reach": "2km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ1-8E8-8LO-COA",
+          "form": "OSFP",
+          "reach": "10km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E-ELO-EOA",
+          "form": "OSFP",
+          "reach": "UNKNOWN",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ1-8E8-8DO-COA",
+          "form": "OSFP",
+          "reach": "500m",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ2-8E2-8FO-COA",
+          "form": "OSFP",
+          "reach": "2km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ2-8E2-8LO-COA",
+          "form": "OSFP",
+          "reach": "10km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E8-DR-CDFQA",
+          "form": "QSFP-DD800",
+          "reach": "500m",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E8-DR-CDFQB",
+          "form": "QSFP-DD800",
+          "reach": "2km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        },
+        {
+          "label": "SPQ-8E8-DR-CDFQC",
+          "form": "QSFP-DD800",
+          "reach": "10km",
+          "source": [
+            "OG16"
+          ],
+          "status": "仅原厂分类标签和标称距离；非已清洗SKU，不据此绑定新200G/lane族"
+        }
+      ],
+      "directory_1600_sku_labels": [
+        {
+          "label": "SPQ-HE2-8FO-COD",
+          "form": "OSFP",
+          "reach": "2km",
+          "source": [
+            "OG17"
+          ],
+          "status": "目录标签；详情冲突另记，尚非无歧义SKU"
+        },
+        {
+          "label": "SPQ-HE8-8DO-COD",
+          "form": "OSFP",
+          "reach": "500m",
+          "source": [
+            "OG17"
+          ],
+          "status": "目录标签；详情冲突另记，尚非无歧义SKU"
+        },
+        {
+          "label": "SPQ-HE8-8DO-COE",
+          "form": "OSFP",
+          "reach": "2km",
+          "source": [
+            "OG17"
+          ],
+          "status": "目录标签；详情冲突另记，尚非无歧义SKU"
+        },
+        {
+          "label": "SPQ-HE2-8FO-COE",
+          "form": "OSFP",
+          "reach": "500m",
+          "source": [
+            "OG17"
+          ],
+          "status": "目录标签；详情冲突另记，尚非无歧义SKU"
+        }
+      ],
+      "duplicate_catalogue_labels": [
+        "SPQ1-8E8-8FO-COA",
+        "SPQ1-8E8-8LO-COA"
+      ],
+      "other_categories": [
+        {
+          "name": "100G ZR QSFP28相干",
+          "kind": "模块",
+          "route": "相干DSP＋可调激光；独立于数通PAM4",
+          "source": [
+            "OG19"
+          ]
+        },
+        {
+          "name": "400G/100G/40G数通、PON和无线/传输模块",
+          "kind": "模块",
+          "route": "低速、接入、无线与传输大类；本轮不穷尽SKU",
+          "source": [
+            "OG16",
+            "OG17"
+          ]
+        },
+        {
+          "name": "400G/lambda TOSA、ELSFP、6.4/12.8T XPO",
+          "kind": "器件",
+          "route": "未来速率演示/外置光源等另列，不视为现有800/1.6模块",
+          "source": [
+            "OG20"
+          ]
+        }
+      ],
+      "gaps": [
+        "新8004×200G族SKU未对齐；旧DR8标签不能借用",
+        "1.6T EML/SiPh/LRO/InP PIC版本SKU未配对",
+        "1.6T部分页面PMD/reach/标题冲突",
+        "MUX/DEMUX/PD/TIA具体器件和独立量产数量未知"
+      ]
+    }
+  ],
+  "integration_priority": [
+    "将Lumentum1.6T全retime/TRO光源由UNKNOWN改为1311nm CW DFB；颗数仍UNKNOWN，并补20–70/20–60°C及监测功能。",
+    "新增Coherent8002FR4 EML/PIN精确产品和800FR4 Lite SiPh/CW族；保留1.6 FRO/TRO/LRO族与SKU未配对。",
+    "新增Source800LR4、1.6T2LR4/4FR2、SiPh2FR4/LRO DR8及InP PIC retimed/LPO；纠正Source仅EML印象。",
+    "每家公司目录在卡片样本之前；明确公开目录覆盖边界、旧/新lane代际、标签错配及相干另表。"
+  ],
+  "unresolved": [
+    "Lumentum三族内部driver/PD/TIA/电源控制细分资料尚未取得；对话无实际datasheet链接，不能宣布厂商无披露。",
+    "Coherent和Source的族→SKU→硬件版本映射与部分官方字段矛盾仍待型号资料确认。"
+  ],
+  "canonical_write": false
+}

@@ -1,0 +1,57 @@
+{
+  "title": "用户提供的产品技术路线讨论",
+  "read_date": "2026-10-03",
+  "turn_count": 5,
+  "page": {
+    "order": "newest_first",
+    "limit": 10,
+    "nextCursor": null,
+    "hasMore": false
+  },
+  "attachments": [],
+  "all_returned_turns_read": true,
+  "turns": [
+    {
+      "assistant_characters": [
+        6888
+      ],
+      "contains_unresolved_citation_placeholders": true,
+      "research_topic": "主要光模块厂商的现有产品及技术路线"
+    },
+    {
+      "assistant_characters": [
+        2049
+      ],
+      "contains_unresolved_citation_placeholders": true,
+      "research_topic": "技术路线的主要分叉"
+    },
+    {
+      "assistant_characters": [
+        2743
+      ],
+      "contains_unresolved_citation_placeholders": true,
+      "research_topic": "未来路线演进线索"
+    },
+    {
+      "assistant_characters": [
+        6175
+      ],
+      "contains_unresolved_citation_placeholders": true,
+      "research_topic": "路线差异对应的产品环节变化"
+    },
+    {
+      "assistant_characters": [
+        1585
+      ],
+      "contains_unresolved_citation_placeholders": false,
+      "research_topic": "研究需注意的边界与问题"
+    }
+  ],
+  "limitations": [
+    "全部5轮正文已读取，hasMore=false且nextCursor=null。",
+    "读取接口未返回上传附件，也未展开正文中引用占位符对应的URL。",
+    "对话虽题为用户提供的产品技术路线讨论，返回正文没有专利号、权利要求或专利报告；本次不声称审阅了专利文件。",
+    "对话内容仅为问题与核验线索，不是已证实产品事实。"
+  ],
+  "public_copy_note": "同步版本省略本机会话和轮次标识；保留读取范围、问题与证据限制。"
+}

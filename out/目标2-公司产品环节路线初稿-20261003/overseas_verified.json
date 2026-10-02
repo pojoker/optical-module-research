@@ -1,0 +1,1102 @@
+{
+  "title": "目标2：海外公司具体产品各环节技术路线（厂商一手核验初稿）",
+  "as_of": "2026-10-03",
+  "status": "draft_not_canonical",
+  "scope": "Coherent、Lumentum、Source Photonics；仅写本JSON；未改canonical",
+  "method": "官方原始产品页、规格书、发布核锚；字段逐项区分明确披露/工程解释/UNKNOWN；第一方主张不升级独立确认",
+  "search_note": "本轮工具清单未提供agy；使用官方web检索及直读。未读取archive、closure-pilot或历史会话。",
+  "interpretation_rules": [
+    "100G/200G是名义数据档位，106.25/212.5Gbps是资料所列物理线路速率，不能当作矛盾或漏计通道",
+    "EML/CW+SiPh是光学实现，DSP/LRO/TRO/LPO是电处理，OSFP/CPO/NPO是布局，分别记录",
+    "并行光路不等于已核内部没有任何光学组合；FR4功能要求不等于已知MUX工艺",
+    "产品页仅证明列示规格，送样/GA/订单/生产出货须另有产品对象绑定的阶段证据"
+  ],
+  "sources": [
+    {
+      "id": "L800",
+      "title": "800G 2×DR4 OSFP Transceiver Module",
+      "url": "https://www.lumentum.com/en/products/800g-2dr4-osfp-transceiver-module",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "Overview，网页第14–15行",
+      "short_quote": "four 1311 nm CW DFB lasers",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "无公开SKU或页面发布日期；仅规格列示，非该型号送样/订单/出货证明"
+    },
+    {
+      "id": "L1600",
+      "title": "1.6T 2×DR4 OSFP Transceiver Module",
+      "url": "https://www.lumentum.com/en/products/16t-2dr4-osfp-transceiver-module",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "Overview，网页第14–15行",
+      "short_quote": "full Tx and Rx retiming",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "无公开SKU或页面发布日期；光源数量/类型未披露，不能套用800G型号或NVIDIA演示"
+    },
+    {
+      "id": "LTRO",
+      "title": "1.6T 2×DR4 TRO OSFP Transceiver Module",
+      "url": "https://www.lumentum.com/products/16t-2dr4-tro-osfp-transceiver-module",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "Overview，网页第14–15行",
+      "short_quote": "only transmit-side retiming",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "无公开SKU或页面发布日期；16W为typical规格，未披露与完整重定时版本比较的相同测试条件"
+    },
+    {
+      "id": "C800P",
+      "title": "800G-DR8+ OSFP product page FTCE4527E1PxM",
+      "url": "https://www.coherent.com/networking/transceivers/datacom/FTCE4527E1PxM",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "产品参数表，第149–165行",
+      "short_quote": "Transmitter EML",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "网页MPO12与同型号规格书MPO-16矛盾；不能静默合并"
+    },
+    {
+      "id": "C800DS",
+      "title": "FTCE4527E1PxM Product Specification Rev B3",
+      "url": "https://www.coherent.com/content/dam/coherent/site/en/resources/datasheet/networking/optical-transceivers/osfp/ftce4527e1pxm-transceiver-ds.pdf",
+      "published_date": "2024-10",
+      "accessed_date": "2026-10-03",
+      "anchor": "PDF第1页PRODUCT FEATURES；第3–4页Electrical/Optical Characteristics",
+      "short_quote": "Parallel MPO-16 receptacle",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "日期为规格书修订月；保留型号族x=C/L；该PDF公开可访问但带Confidential标记，未推导客户量产或当前库存"
+    },
+    {
+      "id": "C1600P",
+      "title": "1.6T-DR8 OSFP Optical Transceivers FTCF2519E3PCA",
+      "url": "https://www.coherent.com/networking/transceivers/datacom/FTCF2519E3PCA",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "产品描述第120行及参数表第152–161行",
+      "short_quote": "dual MPO-12 interface",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "页面未标光源、DSP或SiPh；不能将2024/2025演示配置自动绑定该SKU"
+    },
+    {
+      "id": "CDEMO24",
+      "title": "Coherent to Demonstrate 1.6T-DR8 and 800G-DR4 Transceivers at ECOC 2024",
+      "url": "https://www.coherent.com/news/press-releases/coherent-demonstrates-two-advanced-transceiver-modules",
+      "published_date": "2024-09-23",
+      "accessed_date": "2026-10-03",
+      "anchor": "1.6T-DR8与800G-DR4小节，第115–119行",
+      "short_quote": "digital signal processor (DSP) provided by NVIDIA",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "发布中to Demonstrate/将演示措辞；不证明批量制造；未公布对应SKU"
+    },
+    {
+      "id": "CDEMO25",
+      "title": "Coherent OFC 2025 technology and product demonstrations",
+      "url": "https://www.coherent.com/news/press-releases/coherent-to-showcase-innovative-products-and-technologies-at-ofc2025",
+      "published_date": "2025-03-31",
+      "accessed_date": "2026-10-03",
+      "anchor": "Silicon Photonics based 1.6T Transceivers小节，第147–148行",
+      "short_quote": "DSP retiming only in the transmit direction",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "三种独立演示配置不能合为一个SKU；本文件只保存线性接收配置，未将3nm归给该配置"
+    },
+    {
+      "id": "S1600DR",
+      "title": "SPQ-HE8-8DO-COD 1.6T-2DR4 OSFP-RHS",
+      "url": "https://www.sourcephotonics.com/product/spq-he8-8do-cob/",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "标题及Features，第164–181行",
+      "short_quote": "3nm DSP, EML",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "URL以COB结尾而正文型号为COD，按正文记录并显式保留矛盾；datasheet链接本轮未获得可读正文"
+    },
+    {
+      "id": "S1600FR",
+      "title": "SPQ-HE2-8FO-COD 1.6T-2FR4 OSFP-RHS",
+      "url": "https://www.sourcephotonics.com/product/spq-he2-8fo-cob/",
+      "published_date": "UNKNOWN",
+      "accessed_date": "2026-10-03",
+      "anchor": "标题与Features，第164–181行",
+      "short_quote": "EML transmitter and PIN PD receiver",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "标题2FR4/2km，Features却复制500m和DR8标准；未解决冲突前，不作准确距离/光路/BOM绑定；URL亦为COB而正文COD"
+    },
+    {
+      "id": "S25",
+      "title": "Source Photonics 200G-per-lane 1.6T and 800G family at OFC25",
+      "url": "https://www.sourcephotonics.com/news/source-photonics-announce-the-product-availability-of-its-200g-per-lane-based-1-6t-and-800g-pam4-transceiver-family-products-at-ofc25/",
+      "published_date": "2025-04-01",
+      "accessed_date": "2026-10-03",
+      "anchor": "首段及产品段，第29–31行",
+      "short_quote": "single-lambda 200G PAM4 technology",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "产品族新闻，无准确SKU；多种EML/SiPh/InP PIC可选只明确覆盖1.6T DR8，不能给每款套全路线；后段OFC24字样与OFC25日期冲突"
+    },
+    {
+      "id": "S26",
+      "title": "Source Photonics OFC26 optical innovations",
+      "url": "https://www.sourcephotonics.com/news/source-photonics-to-spotlight-its-latest-optical-innovations-announce-to-receive-two-industry-awards-for-two-product-families-during-ofc26/",
+      "published_date": "2026-03-16",
+      "accessed_date": "2026-10-03",
+      "anchor": "200G单波800G/1.6T历史出货段；1.6T complete product family段",
+      "short_quote": "began production shipments of 200G single lambda PAM4 based 800G/1.6T transceivers",
+      "evidence_grade": "厂商第一方原始来源；本轮核对网页/规格书锚点；未独立实测或客户确认",
+      "boundary": "页首2026-03-16，开头地点日期误写2025；家族出货主张不能证明每个SKU出货；展会未来式不升级实际完成"
+    }
+  ],
+  "products": [
+    {
+      "id": "LUM8002DR4",
+      "company": "Lumentum",
+      "product": "800G 2×DR4 OSFP",
+      "model": "UNKNOWN：公开来源未提供准确SKU",
+      "object_level": "公开产品配置",
+      "source_ids": [
+        "L800"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "8×106.25 Gb/s PAM4（物理线路速率）",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L800"
+        ]
+      },
+      "optical_channels": {
+        "text": "8×106.25 Gb/s PAM4；产品名义800G；500m单模",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L800"
+        ]
+      },
+      "dsp_electrical_processing": {
+        "text": "集成DSP；芯片型号/工艺及Tx/Rx重定时细节未披露",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L800"
+        ]
+      },
+      "light_source_modulation": {
+        "text": "4颗1311nm CW DFB激光器＋硅光；PIC内具体调制器结构未披露",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L800"
+        ]
+      },
+      "mux_demux": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "pd_tia": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "package_connection": {
+        "text": "OSFP；2×MTP-12/APC；CMIS 5.2；壳温0–70°C",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L800"
+        ]
+      },
+      "stage": {
+        "text": "官网列示产品规格；准确配置当前送样/出货/认证阶段UNKNOWN",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L800"
+        ]
+      },
+      "power": {
+        "text": "典型功耗<15.2 W；未披露详细测量条件",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L800"
+        ]
+      },
+      "evidence_boundary": [
+        "这是Lumentum自有产品页，不是NVIDIA 1.6T合作演示",
+        "MUX/DEMUX、PD/TIA、调制器材料和CW到8通道分光拓扑未披露"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    },
+    {
+      "id": "LUM16002DR4",
+      "company": "Lumentum",
+      "product": "1.6T 2×DR4 OSFP（完整重定时）",
+      "model": "UNKNOWN：公开来源未提供准确SKU",
+      "object_level": "公开产品配置",
+      "source_ids": [
+        "L1600"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "8×212.5 Gb/s PAM4（物理线路速率）",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L1600"
+        ]
+      },
+      "optical_channels": {
+        "text": "8×212.5 Gb/s PAM4；名义1.6T；500m单模",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L1600"
+        ]
+      },
+      "dsp_electrical_processing": {
+        "text": "集成DSP；Tx与Rx均重定时；芯片型号/工艺未知",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L1600"
+        ]
+      },
+      "light_source_modulation": {
+        "text": "硅光平台；该页未披露CW型号/数量及调制器结构",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L1600"
+        ]
+      },
+      "mux_demux": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "pd_tia": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "package_connection": {
+        "text": "OSFP；2×MPO-16/APC；CMIS 5.3",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L1600"
+        ]
+      },
+      "stage": {
+        "text": "官网列示产品规格；准确配置当前商业阶段UNKNOWN",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L1600"
+        ]
+      },
+      "power": {
+        "text": "典型22 W；非独立实测",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "L1600"
+        ]
+      },
+      "evidence_boundary": [
+        "不能套用800G页的4颗1311nm CW到该1.6T配置",
+        "不能用NVIDIA演示的8×200G EML或UHP供光替代自有模块BOM"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    },
+    {
+      "id": "LUM1600TRO",
+      "company": "Lumentum",
+      "product": "1.6T 2×DR4 TRO OSFP",
+      "model": "UNKNOWN：公开来源未提供准确SKU",
+      "object_level": "公开产品配置",
+      "source_ids": [
+        "LTRO"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "8×212.5 Gb/s PAM4",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "LTRO"
+        ]
+      },
+      "optical_channels": {
+        "text": "8×212.5 Gb/s PAM4；500m单模",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "LTRO"
+        ]
+      },
+      "dsp_electrical_processing": {
+        "text": "DSP；TRO只发送侧重定时；接收侧具体模拟器件型号未披露",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "LTRO"
+        ]
+      },
+      "light_source_modulation": {
+        "text": "硅光平台；光源数量/类型及调制器结构未披露",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "LTRO"
+        ]
+      },
+      "mux_demux": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "pd_tia": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "package_connection": {
+        "text": "OSFP；双MPO-16/APC；CMIS 5.3",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "LTRO"
+        ]
+      },
+      "stage": {
+        "text": "官网列示产品规格；准确配置当前商业阶段UNKNOWN",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "LTRO"
+        ]
+      },
+      "power": {
+        "text": "典型16 W；非独立实测",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "LTRO"
+        ]
+      },
+      "evidence_boundary": [
+        "TRO与完整重定时是电处理变化，不能当成不同光学平台",
+        "22W与16W是两页典型规格，缺相同测试条件，不声称单变量实测节省6W或整机收益"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    },
+    {
+      "id": "COHR800DR8EML",
+      "company": "Coherent",
+      "product": "800G-DR8+ OSFP",
+      "model": "FTCE4527E1PxM；x=C/L",
+      "object_level": "准确型号族",
+      "source_ids": [
+        "C800P",
+        "C800DS"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "8×106.25 Gb/s PAM4；53.125 GBd；retimed",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C800DS"
+        ]
+      },
+      "optical_channels": {
+        "text": "8路100GBASE-FR1；每路53.125 GBd PAM4，1304.5–1317.5nm；聚合850Gb/s物理速率，名义800G；2km",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C800DS"
+        ]
+      },
+      "dsp_electrical_processing": {
+        "text": "规格书明确重定时；是否完整DSP/芯片型号/工艺未披露",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C800DS"
+        ]
+      },
+      "light_source_modulation": {
+        "text": "EML发射器；准确裸片型号及封装未知",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C800P"
+        ]
+      },
+      "mux_demux": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "pd_tia": {
+        "text": "PIN接收；TIA芯片型号和工艺未披露",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C800P"
+        ]
+      },
+      "package_connection": {
+        "text": "OSFP；PDF明确MPO-16；网页MPO12冲突未解除；C=0–70°C，L=20–60°C",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C800DS",
+          "C800P"
+        ]
+      },
+      "stage": {
+        "text": "官网列示规格且公开规格书；准确SKU商业阶段UNKNOWN",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C800P",
+          "C800DS"
+        ]
+      },
+      "power": {
+        "text": "规格书<17 W，17W最大值覆盖全温度/供电范围；非典型22W等口径",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C800DS"
+        ]
+      },
+      "evidence_boundary": [
+        "连接器以规格书记录MPO-16，同时保留官网参数表MPO12冲突",
+        "并行单模各路同1310nm波段；不能据此证明内部没有任何合分光组件",
+        "单一产品EML/PIN不证明Coherent所有模块均EML"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    },
+    {
+      "id": "COHR1600EXACT",
+      "company": "Coherent",
+      "product": "1.6T-DR8 OSFP",
+      "model": "FTCF2519E3PCA",
+      "object_level": "准确型号",
+      "source_ids": [
+        "C1600P"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "8×200G PAM4主机接口；页面引用OIF CEI-224G-LR；未列精确线路速率",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C1600P"
+        ]
+      },
+      "optical_channels": {
+        "text": "8×200G PAM4；1310nm；500m并行单模",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C1600P"
+        ]
+      },
+      "dsp_electrical_processing": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "light_source_modulation": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "mux_demux": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "pd_tia": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "package_connection": {
+        "text": "OSFP；dual MPO-12；0–70°C",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C1600P"
+        ]
+      },
+      "stage": {
+        "text": "官网列示准确产品；QSFP-DD版本仅称未来推出，不能写成已有",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "C1600P"
+        ]
+      },
+      "power": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "evidence_boundary": [
+        "该SKU页面未明示SiPh、DSP供应商、CW、EML或PD类型",
+        "以下Coherent展会配置不得自动绑定到此SKU"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    },
+    {
+      "id": "COHR1600SIPHDEMO",
+      "company": "Coherent",
+      "product": "1.6T-DR8 OSFP硅光演示配置",
+      "model": "UNKNOWN：公开来源未提供准确SKU",
+      "object_level": "厂商演示配置；非准确SKU",
+      "source_ids": [
+        "CDEMO24"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "8×200 Gb/s",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO24"
+        ]
+      },
+      "optical_channels": {
+        "text": "8×200 Gb/s；8对单模光纤；500m",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO24"
+        ]
+      },
+      "dsp_electrical_processing": {
+        "text": "NVIDIA提供DSP；未公开芯片型号或工艺",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO24"
+        ]
+      },
+      "light_source_modulation": {
+        "text": "Coherent硅光；同段未公开CW型号/数量与调制器结构",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO24"
+        ]
+      },
+      "mux_demux": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "pd_tia": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "package_connection": {
+        "text": "OSFP；连接器具体规格UNKNOWN",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO24"
+        ]
+      },
+      "stage": {
+        "text": "2024-09-23发布的ECOC演示公告；不能据展会日期自动确认完成，更不能确认量产",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO24"
+        ]
+      },
+      "power": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "evidence_boundary": [
+        "SiPh配置与准确SKUFTC...缺少直接绑定",
+        "未混入OFC25三种SiPh配置的LRO或3nmDSP到此2024配置"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    },
+    {
+      "id": "COHR800DR4DEML",
+      "company": "Coherent",
+      "product": "800G-DR4 OSFP 200G差分EML演示",
+      "model": "UNKNOWN：公开来源未提供准确SKU",
+      "object_level": "厂商演示配置",
+      "source_ids": [
+        "CDEMO24"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "8×100 Gb/s",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO24"
+        ]
+      },
+      "optical_channels": {
+        "text": "4×200 Gb/s；4对单模光纤；500m",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO24"
+        ]
+      },
+      "dsp_electrical_processing": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "light_source_modulation": {
+        "text": "Coherent 200G差分EML；具体芯片与封装型号UNKNOWN",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO24"
+        ]
+      },
+      "mux_demux": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "pd_tia": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "package_connection": {
+        "text": "OSFP；连接器规格未披露",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO24"
+        ]
+      },
+      "stage": {
+        "text": "2024-09-23公布将演示；精确SKU与量产状态未披露",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO24"
+        ]
+      },
+      "power": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "evidence_boundary": [
+        "8电/4光要求速率映射是功能层解释，但DSP/gearbox具体实现未经此段确认",
+        "同篇1.6T演示的NVIDIA DSP不能自动分配到本800G配置"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    },
+    {
+      "id": "COHR1600LRODEMO",
+      "company": "Coherent",
+      "product": "1.6T-DR8 OSFP硅光LRO演示配置",
+      "model": "UNKNOWN：公开来源未提供准确SKU",
+      "object_level": "厂商演示配置",
+      "source_ids": [
+        "CDEMO25"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "8×200G",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO25"
+        ]
+      },
+      "optical_channels": {
+        "text": "8×200G",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO25"
+        ]
+      },
+      "dsp_electrical_processing": {
+        "text": "LRO：DSP只发送方向重定时；芯片型号/工艺未披露",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO25"
+        ]
+      },
+      "light_source_modulation": {
+        "text": "硅光；光源和PIC内部结构未知",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO25"
+        ]
+      },
+      "mux_demux": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "pd_tia": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "package_connection": {
+        "text": "OSFP；连接器/距离未在该段披露",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO25"
+        ]
+      },
+      "stage": {
+        "text": "2025-03-31 OFC技术演示公告；未作为SKU商业阶段",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "CDEMO25"
+        ]
+      },
+      "power": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "evidence_boundary": [
+        "同段另两个演示是ultra-low BER及3nmDSP；不得将3nmDSP归给LRO配置",
+        "路线级对照可用，具体SKU配置绑定UNKNOWN"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    },
+    {
+      "id": "SRC16002DR4",
+      "company": "Source Photonics",
+      "product": "1.6T-2DR4 500m OSFP-RHS",
+      "model": "SPQ-HE8-8DO-COD（按正文；URL为COB）",
+      "object_level": "准确正文型号；网页标识存在差异",
+      "source_ids": [
+        "S1600DR"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "支持1.6TAUI-8 C2M接口；单通道精确Gb/s未在页面写出",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600DR"
+        ]
+      },
+      "optical_channels": {
+        "text": "支持1.6TBASE-DR8与500m；页面未显式列每光通道速率",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600DR"
+        ]
+      },
+      "dsp_electrical_processing": {
+        "text": "3nm DSP；厂商/型号、收发重定时细节未知",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600DR"
+        ]
+      },
+      "light_source_modulation": {
+        "text": "EML发射；准确裸片型号/数量未知",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600DR"
+        ]
+      },
+      "mux_demux": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "pd_tia": {
+        "text": "PIN PD接收；TIA型号未知",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600DR"
+        ]
+      },
+      "package_connection": {
+        "text": "OSFP-RHS/OSFP1600；CMIS 5.3；0–70°C；连接器未披露",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600DR"
+        ]
+      },
+      "stage": {
+        "text": "官网列示配置；无法把产品族出货直接绑定该SKU",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600DR"
+        ]
+      },
+      "power": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "evidence_boundary": [
+        "来源只列标准接口，8电/8光×200G为解释性拆解，未把该推导记为逐字规格",
+        "未将网页URL的COB当作正文COD的另一个确定版本",
+        "精确波长、MUX/DEMUX、封装组件及DSP品牌均UNKNOWN"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    },
+    {
+      "id": "SRC16002FR4CONFLICT",
+      "company": "Source Photonics",
+      "product": "1.6T-2FR4 OSFP-RHS（内部规格冲突待澄清）",
+      "model": "SPQ-HE2-8FO-COD（正文；URL为COB）",
+      "object_level": "冲突条目，不作完整路线绑定",
+      "source_ids": [
+        "S1600FR"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "optical_channels": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "dsp_electrical_processing": {
+        "text": "标题3nm DSP；具体芯片未知",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600FR"
+        ]
+      },
+      "light_source_modulation": {
+        "text": "EML发射（标题与Feature一致）",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600FR"
+        ]
+      },
+      "mux_demux": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "pd_tia": {
+        "text": "PIN PD；TIA未知",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600FR"
+        ]
+      },
+      "package_connection": {
+        "text": "OSFP-RHS/OSFP1600；CMIS5.3；0–70°C；连接器未知",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600FR"
+        ]
+      },
+      "stage": {
+        "text": "官网列示；距离与标准矛盾待原厂规格书确认",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S1600FR"
+        ]
+      },
+      "power": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "evidence_boundary": [
+        "标题为2FR4/2km，Features为500m/DR8；光通道、波长与合分波结构不因标题自动定案",
+        "不采用该页做800G/1.6T FR4明确BOM或量产比较"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    },
+    {
+      "id": "SRC800DR4FAMILY",
+      "company": "Source Photonics",
+      "product": "800G DR4，200G单波EML版本",
+      "model": "UNKNOWN：公开来源未提供准确SKU",
+      "object_level": "官方产品族配置，未精确到SKU",
+      "source_ids": [
+        "S25",
+        "S26"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "optical_channels": {
+        "text": "800G由4×200G光通道组成：来自DR4名称与单波200G的合并解释，非准确SKUdatasheet逐项确认",
+        "status": "engineering_inference_not_product_bom_confirmed",
+        "source_ids": [
+          "S25"
+        ]
+      },
+      "dsp_electrical_processing": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "light_source_modulation": {
+        "text": "产品族明确200G PAM4 EML/O-band；未精确到某裸片或SKU",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S25"
+        ]
+      },
+      "mux_demux": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "pd_tia": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "package_connection": {
+        "text": "800G系列包括OSFP或QSFP-DD；哪个形态对应本版本及连接器未知",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S25"
+        ]
+      },
+      "stage": {
+        "text": "2025-04宣布产品可获得；2026-03称200G单波800G/1.6T产品自2025年开始生产出货，仅家族层级",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S25",
+          "S26"
+        ]
+      },
+      "power": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "evidence_boundary": [
+        "电通道8×100G或4×200G不能自行二选一",
+        "不把2023旧800G DR8具体型号冒充200G/lane DR4",
+        "不把1.6T DR8的多平台可选推广到本800G DR4",
+        "PD/TIA、DSP、连接器与SKU缺失"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    },
+    {
+      "id": "SRC800FR4FAMILY",
+      "company": "Source Photonics",
+      "product": "800G FR4，200G单波EML版本",
+      "model": "UNKNOWN：公开来源未提供准确SKU",
+      "object_level": "官方产品族配置，未精确到SKU",
+      "source_ids": [
+        "S25",
+        "S26"
+      ],
+      "accessed_date": "2026-10-03",
+      "evidence_grade": "原文已核锚的厂商第一方主张；非独立确认；非canonical晋升",
+      "electrical_channels": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "optical_channels": {
+        "text": "FR4名称＋单波200G对应4×200G波长通道；准确SKU光接口待确认",
+        "status": "engineering_inference_not_product_bom_confirmed",
+        "source_ids": [
+          "S25"
+        ]
+      },
+      "dsp_electrical_processing": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "light_source_modulation": {
+        "text": "产品族200G PAM4 EML；披露CWDM/LWDM波长选项，但未把某一组绑定本SKU",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S25"
+        ]
+      },
+      "mux_demux": {
+        "text": "FR4波分功能需要发送合波/接收分波；具体AWG/TFF/自由空间或PIC实现未知",
+        "status": "engineering_inference_not_product_bom_confirmed",
+        "source_ids": [
+          "S25"
+        ]
+      },
+      "pd_tia": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "package_connection": {
+        "text": "800G产品族OSFP或QSFP-DD；该版本具体形态/连接器未知",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S25"
+        ]
+      },
+      "stage": {
+        "text": "2025-04可获得、2026-03出货自述为家族层级，非本SKU独立确认",
+        "status": "official_statement_anchor_checked",
+        "source_ids": [
+          "S25",
+          "S26"
+        ]
+      },
+      "power": {
+        "text": "UNKNOWN：核验来源未披露，未补造内部BOM或供应商",
+        "status": "unknown",
+        "source_ids": []
+      },
+      "evidence_boundary": [
+        "不能将标准所需合分波功能写成已证实使用AWG或某供应商",
+        "不能将新闻列的CWDM与LWDM同时赋给一个模块",
+        "DSP、PD/TIA、准确电通道和SKU待补"
+      ],
+      "unknowns": [
+        "芯片/器件供应商及内部工艺未披露时保持UNKNOWN"
+      ]
+    }
+  ],
+  "unresolved_priority": [
+    {
+      "priority": 1,
+      "item": "Source800G 200G/lane精确SKU与完整datasheet；现有200G EML证据停留产品族，旧DR8型号不得替换"
+    },
+    {
+      "priority": 1,
+      "item": "Coherent 1.6T准确SKU到SiPh/CW/DSP的直接绑定；演示不得拼成SKU"
+    },
+    {
+      "priority": 1,
+      "item": "Coherent FTCE4527E1PxM网页MPO12与规格書MPO16冲突；保留规格书优先及矛盾"
+    },
+    {
+      "priority": 1,
+      "item": "Source HE2-8FO-COD标题2FR4/2km与正文500m/DR8冲突、URLCOB/正文COD"
+    },
+    {
+      "priority": 2,
+      "item": "各准确配置的商业阶段、客户认证、实测比较与发布日期"
+    },
+    {
+      "priority": 2,
+      "item": "Lumentum1.6T自有模块光源、调制器、PD/TIA与PIC工艺；勿套合作演示"
+    },
+    {
+      "priority": 3,
+      "item": "明确MUX/DEMUX实现、封装工艺、连接组件供应商；没有原文则保持UNKNOWN"
+    }
+  ]
+}

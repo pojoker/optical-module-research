@@ -1,0 +1,778 @@
+{
+  "companies": [
+    {
+      "company": "华工科技 / 华工正源",
+      "role": "集团公司华工科技；实际原厂模块产品发布方华工正源。模块、光器件及接入终端供应方。",
+      "catalog": [
+        {
+          "name": "OSFP：800G 2×FR4、SR8、DR8；1.6T/200G per lane",
+          "route": "所核OSFP页4个入口；1.6T正文另列DR8 OSFP AOC与带200G DSP的DR8 OSFP",
+          "sources": [
+            {
+              "url": "https://www.genuine-opto.com/dghfhdfghs/index.jhtml",
+              "title": "华工正源OSFP目录：4条记录；有源产品及智能终端导航",
+              "date": "网页未标日期；2026-10-03读取"
+            },
+            {
+              "url": "https://www.genuine-opto.com/dghfhdfghs/451.jhtml",
+              "title": "华工正源1.6T/200G per lane正文：2024送样计划",
+              "date": "页面未标发布日期；正文为2024送样计划；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "name": "SFP/SFP+/TSFP+/SFP28；QSFP+/QSFP28/QSFP-DD；10G PON",
+          "route": "当前有源产品导航大类，未穷尽每个定制P/N",
+          "sources": [
+            {
+              "url": "https://www.genuine-opto.com/dghfhdfghs/index.jhtml",
+              "title": "华工正源OSFP目录：4条记录；有源产品及智能终端导航",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "name": "800G硅光LPO；1.6T；800G ZR/ZR+Pro；25G PON OLT/ONU",
+          "route": "2025年报产品族交付披露；相干与接入产品未套数通模块内部路线",
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-03-26/1225031509.PDF",
+              "title": "华工科技2025年报；既有P209/P210/P211/P212原文锚",
+              "date": "2026-03-26；既有账本原文锚，本轮未重取其全部正文"
+            }
+          ]
+        },
+        {
+          "name": "光猫、路由器、物联网终端",
+          "route": "系统/终端层级，不能计为光模块型号",
+          "sources": [
+            {
+              "url": "https://www.genuine-opto.com/dghfhdfghs/index.jhtml",
+              "title": "华工正源OSFP目录：4条记录；有源产品及智能终端导航",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "product": "800G OSFP 2×FR4",
+          "model": "MTRO-F6F6C",
+          "bucket": "具体型号/原厂网页规格图",
+          "electrical": "8×106.25Gb/s PAM4",
+          "optical": "8×106.25Gb/s光信号；两组CWDM4波分",
+          "dsp": "UNKNOWN：所核资料未列电处理架构或芯片",
+          "light": "UNKNOWN：所核资料未列光源和调制平台",
+          "mux": "2×CWDM4 MUX/DEMUX设计；具体器件材料/工艺未列",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP MSA 5.0；双duplex LC；CMIS5.2",
+          "power": "最大14W，Tcase=70°C",
+          "reach": "2km SMF",
+          "stage": "原厂目录/规格登记；逐型号当前量产尚未证明",
+          "boundary": [
+            "壳温0–70°C；功耗为原厂规格口径，非独立实测",
+            "图中未列DSP芯片、内部互连、材料设备或制造测试型号映射",
+            "网页日期未标；图片路径的202404不当作正式发布日期"
+          ],
+          "sources": [
+            {
+              "url": "https://www.genuine-opto.com/dghfhdfghs/440.jhtml",
+              "title": "800G OSFP 2×FR4产品页：型号正文",
+              "date": "网页未标日期；2026-10-03读取"
+            },
+            {
+              "url": "https://www.genuine-opto.com/uploadfile/cms/www/202404/18140331xew1.jpg",
+              "title": "800G OSFP 2×FR4原厂规格图Features/Description/Compliance；Chrome视觉读回",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "800G OSFP SR8",
+          "model": "MTRO-12F6C",
+          "bucket": "具体型号/原厂网页规格图",
+          "electrical": "8×53.125GBd PAM4；800GAUI-8 C2M",
+          "optical": "8×53.125GBd PAM4；800G-SR8",
+          "dsp": "UNKNOWN：所核资料未列电处理架构或芯片",
+          "light": "850nm VCSEL阵列＋发射driver",
+          "mux": "并行SR8配置；不需波长合分波是功能解释，内部光路器件未列",
+          "receiver": "PIN光电二极管阵列＋TIA；型号/数量未列",
+          "package": "OSFP；MPO16-APC；CMIS5.2",
+          "power": "<14W",
+          "reach": "OM4/OM5 100m",
+          "stage": "原厂目录/规格登记；逐型号当前量产尚未证明",
+          "boundary": [
+            "壳温0–70°C；功耗为原厂规格口径，非独立实测",
+            "图中未列DSP芯片、内部互连、材料设备或制造测试型号映射",
+            "网页日期未标；图片路径的202404不当作正式发布日期"
+          ],
+          "sources": [
+            {
+              "url": "https://www.genuine-opto.com/dghfhdfghs/439.jhtml",
+              "title": "800G OSFP SR8产品页：型号正文",
+              "date": "网页未标日期；2026-10-03读取"
+            },
+            {
+              "url": "https://www.genuine-opto.com/uploadfile/cms/www/202404/181401276yy2.jpg",
+              "title": "800G OSFP SR8原厂规格图Features/Description/Compliance；Chrome视觉读回",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "800G OSFP DR8",
+          "model": "MTRO-D5F6C",
+          "bucket": "具体型号/原厂网页规格图",
+          "electrical": "8×106.25Gb/s PAM4",
+          "optical": "8×106.25Gb/s光信号；DR8并行",
+          "dsp": "UNKNOWN：所核资料未列电处理架构或芯片",
+          "light": "UNKNOWN：所核资料未列光源和调制平台",
+          "mux": "并行DR8；不需波长合分波是功能解释，内部光路器件未列",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP MSA5.0；2×MPO12-APC；CMIS5.2",
+          "power": "最大14W，Tcase=70°C",
+          "reach": "500m SMF",
+          "stage": "原厂目录/规格登记；逐型号当前量产尚未证明",
+          "boundary": [
+            "壳温0–70°C；功耗为原厂规格口径，非独立实测",
+            "图中未列DSP芯片、内部互连、材料设备或制造测试型号映射",
+            "网页日期未标；图片路径的202404不当作正式发布日期"
+          ],
+          "sources": [
+            {
+              "url": "https://www.genuine-opto.com/dghfhdfghs/438.jhtml",
+              "title": "800G OSFP DR8产品页：型号正文",
+              "date": "网页未标日期；2026-10-03读取"
+            },
+            {
+              "url": "https://www.genuine-opto.com/uploadfile/cms/www/202404/18135648xbhl.jpg",
+              "title": "800G OSFP DR8原厂规格图Features/Description/Compliance；Chrome视觉读回",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "1.6T DR8 OSFP（200G DSP）",
+          "model": "未列P/N",
+          "bucket": "历史送样计划/产品族",
+          "electrical": "UNKNOWN：所核资料未列逐通道电接口",
+          "optical": "1310nm；212.5Gbps PAM4/光通道；正文未列完整通道表",
+          "dsp": "产品名称直接标with 200G DSP；芯片供应商、制程及主机通道映射未列",
+          "light": "自研硅光芯片；TFLN调制器/量子点激光器为兼容平台，不能写成各型号已采用",
+          "mux": "UNKNOWN：所核资料未列内部合分波器件",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP；具体光连接器未列",
+          "power": "UNKNOWN：所核资料未列功耗",
+          "reach": "UNKNOWN：所核资料未列距离",
+          "stage": "正文说2024年准备推出/送样两类样机；不把旧计划升为当前逐型号量产",
+          "boundary": [
+            "同页另列1.6T DR8 OSFP AOC，不能把AOC与可插拔光接口混成一个型号",
+            "2025年报有1.6T家族规模化交付；未证明正好对应本页200G DSP版本",
+            "距离、绝对功耗、PD/TIA、激光规格未列"
+          ],
+          "sources": [
+            {
+              "url": "https://www.genuine-opto.com/dghfhdfghs/451.jhtml",
+              "title": "华工正源1.6T/200G per lane正文：2024送样计划",
+              "date": "页面未标发布日期；正文为2024送样计划；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "800G硅光LPO系列",
+          "model": "年报未列P/N",
+          "bucket": "产品族/交付披露",
+          "electrical": "UNKNOWN：所核资料未列逐通道电接口",
+          "optical": "UNKNOWN：所核资料未列逐通道光接口",
+          "dsp": "LPO产品族直接命名；线性电处理的具体driver/TIA型号未列",
+          "light": "硅光平台直接披露；CW光源型号/数量、调制器结构未列",
+          "mux": "UNKNOWN：所核资料未列内部合分波器件",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "UNKNOWN：所核资料未列封装和连接器",
+          "power": "UNKNOWN：所核资料未列功耗",
+          "reach": "UNKNOWN：所核资料未列距离",
+          "stage": "2025年报直接自述系列规模化交付；不扩展为全部官网800G型号量产",
+          "boundary": [
+            "既有P209与P212支持产品族及自研硅光应用；不能据公司平台把MTRO-F6F6C或MTRO-D5F6C定为该LPO族",
+            "封装、电/光通道、距离和功耗需该族规格书"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-03-26/1225031509.PDF",
+              "title": "华工科技2025年报；既有P209/P210/P211/P212原文锚",
+              "date": "2026-03-26；既有账本原文锚，本轮未重取其全部正文"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "读取范围：复用补充公司产品.json和P209–P212；新读OSFP目录、1.6T正文及3张800G规格图，未穷尽SFP/QSFP等二级目录",
+        "历史送样计划、年报家族交付、当前型号规格三种证据分别记录；未证明各P/N截至2026-10-03的出货状态",
+        "2FR4/DR8规格图未列EML/SiPh或PD/TIA；SR8的VCSEL/PIN/TIA直接已知不能抹成UNKNOWN"
+      ]
+    },
+    {
+      "company": "联特科技",
+      "role": "光模块研发、生产销售及部分加工服务；通用TOSA/ROSA/COC生产工序另属公司能力。",
+      "catalog": [
+        {
+          "name": "800G OSFP：SR8、2FR4、2FR4 SiPho、2FR4 SiPho LPO、2LR4、DR4、2DR4、2DR4 TFLN",
+          "route": "2025年报列示；SiPho/TFLN平台与LPO架构仅绑定有该名称的条目",
+          "sources": [
+            {
+              "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/eca187bd-8949-4a99-a323-fc77b30260b7.pdf",
+              "title": "联特科技2025年报：印刷p12–13产品表，p21研发阶段（PDF页11–12/20）",
+              "date": "2026-04-29；2026-10-03定向读取"
+            }
+          ]
+        },
+        {
+          "name": "800G QSFP-DD：2DR4、SR8；1.6T OSFP：2DR4、2FR4、2DR4 LRO、2FR4 LRO、2DR4 LPO",
+          "route": "原厂表中对应名称，不自动把每种光平台与每种电架构作任意组合",
+          "sources": [
+            {
+              "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/eca187bd-8949-4a99-a323-fc77b30260b7.pdf",
+              "title": "联特科技2025年报：印刷p12–13产品表，p21研发阶段（PDF页11–12/20）",
+              "date": "2026-04-29；2026-10-03定向读取"
+            }
+          ]
+        },
+        {
+          "name": "1G–400G；400G QSFP-DD SR8/FR4/LR4/ER4/DR4及QSFP112 FR4/SR4/LR4/DR4",
+          "route": "年报目录速率大类；未逐项提取低速及历史定制P/N",
+          "sources": [
+            {
+              "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/eca187bd-8949-4a99-a323-fc77b30260b7.pdf",
+              "title": "联特科技2025年报：印刷p12–13产品表，p21研发阶段（PDF页11–12/20）",
+              "date": "2026-04-29；2026-10-03定向读取"
+            }
+          ]
+        },
+        {
+          "name": "ELSFP-VHP、ELSFP-UHP",
+          "route": "外置光源；1311nm/CWDM，属于器件，不计模块配置",
+          "sources": [
+            {
+              "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/eca187bd-8949-4a99-a323-fc77b30260b7.pdf",
+              "title": "联特科技2025年报：印刷p12–13产品表，p21研发阶段（PDF页11–12/20）",
+              "date": "2026-04-29；2026-10-03定向读取"
+            }
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "product": "800G OSFP 2×FR4 SiPho LPO",
+          "model": "年报产品族，无P/N",
+          "bucket": "原厂年报产品表/产品族",
+          "electrical": "UNKNOWN：所核资料未列逐通道电接口",
+          "optical": "两组FR4；表列1271/1291/1311/1331nm",
+          "dsp": "LPO，原厂产品表直接命名；具体线性driver/TIA及主机均衡配合未列",
+          "light": "SiPho硅光平台，原厂产品表直接命名；激光器类型/数量未列",
+          "mux": "两组四波长合分波是命名与波长的功能解释；MUX/DEMUX工艺未列",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP；光连接器/散热版本未在产品表列出",
+          "power": "UNKNOWN：所核资料未列功耗",
+          "reach": "2km",
+          "stage": "2025年报已登记本配置；单波100G的800G/400G多方案族已规模化量产，但未逐项证明本配置量产",
+          "boundary": [
+            "产品表给封装、名称、距离、波长；不据100G/200G光通道速率反推主机电通道",
+            "光源、PD/TIA、芯片型号/制程与工序对应未列",
+            "公司COC/键合/耦合/老化/测试流程为通用能力，不绑定此配置"
+          ],
+          "sources": [
+            {
+              "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/eca187bd-8949-4a99-a323-fc77b30260b7.pdf",
+              "title": "联特科技2025年报：印刷p12–13产品表，p21研发阶段（PDF页11–12/20）",
+              "date": "2026-04-29；2026-10-03定向读取"
+            }
+          ]
+        },
+        {
+          "product": "800G OSFP 2DR4 TFLN",
+          "model": "年报产品族，无P/N",
+          "bucket": "原厂年报产品表/产品族",
+          "electrical": "UNKNOWN：所核资料未列逐通道电接口",
+          "optical": "2DR4并行；表列1311nm",
+          "dsp": "UNKNOWN：所核资料未列电处理架构或芯片",
+          "light": "TFLN薄膜铌酸锂调制平台，表名直接披露；配用CW光源未列",
+          "mux": "并行2DR4；无波长合分波需求是功能解释；内部光学件未列",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP；光连接器/散热版本未在产品表列出",
+          "power": "UNKNOWN：所核资料未列功耗",
+          "reach": "500m",
+          "stage": "2025年报已登记本配置；800G/400G多方案族量产口径未明确拆到TFLN本配置",
+          "boundary": [
+            "产品表给封装、名称、距离、波长；不据100G/200G光通道速率反推主机电通道",
+            "光源、PD/TIA、芯片型号/制程与工序对应未列",
+            "公司COC/键合/耦合/老化/测试流程为通用能力，不绑定此配置"
+          ],
+          "sources": [
+            {
+              "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/eca187bd-8949-4a99-a323-fc77b30260b7.pdf",
+              "title": "联特科技2025年报：印刷p12–13产品表，p21研发阶段（PDF页11–12/20）",
+              "date": "2026-04-29；2026-10-03定向读取"
+            }
+          ]
+        },
+        {
+          "product": "1.6T OSFP 2FR4 LRO",
+          "model": "年报产品族，无P/N",
+          "bucket": "原厂年报产品表/产品族",
+          "electrical": "UNKNOWN：所核资料未列逐通道电接口",
+          "optical": "两组FR4；表列1271/1291/1311/1331nm",
+          "dsp": "LRO路线直接表列；实际Tx DSP/driver、Rx TIA实现未列",
+          "light": "UNKNOWN：所核资料未列光源和调制平台",
+          "mux": "波分功能；具体MUX/DEMUX工艺未列",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP；光连接器/散热版本未在产品表列出",
+          "power": "UNKNOWN：所核资料未列功耗",
+          "reach": "2km",
+          "stage": "2025年报说单波200G的1.6T FRO/LRO/LPO部分项目由样机转小批量试产并送客户验证；本配置未单独给完成阶段",
+          "boundary": [
+            "产品表给封装、名称、距离、波长；不据100G/200G光通道速率反推主机电通道",
+            "光源、PD/TIA、芯片型号/制程与工序对应未列",
+            "公司COC/键合/耦合/老化/测试流程为通用能力，不绑定此配置"
+          ],
+          "sources": [
+            {
+              "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/eca187bd-8949-4a99-a323-fc77b30260b7.pdf",
+              "title": "联特科技2025年报：印刷p12–13产品表，p21研发阶段（PDF页11–12/20）",
+              "date": "2026-04-29；2026-10-03定向读取"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "读取范围：复用补充公司产品.json；本轮定向读取2025年报产品表与研发/交付段落，无逐款datasheet",
+        "1.6T试产与800G/400G家族量产分别保留；不能把产品表所有行都标为已量产",
+        "电接口、PD/TIA、器件型号、功耗和连接器需要具体产品规格书"
+      ]
+    },
+    {
+      "company": "青岛海信宽带多媒体技术有限公司（旧资料名；当前官网入口Ligent/纳真）",
+      "role": "旧海信宽带资料内光模块/光芯片/接入终端供应方；当前旧站跳转Ligent，当前目录列于Ligent名下，不据跳转合并各法律主体与历史资产。",
+      "catalog": [
+        {
+          "name": "1.6T OSFP：DR4、2DR4、2FR4、2DR4 LRO、2FR4 LRO、2LR4",
+          "route": "当前英文1.6T表6类配置与10个P/N；含IHS/RHS版本",
+          "sources": [
+            {
+              "url": "https://www.ligent.com/products/products_module/16t/",
+              "title": "Ligent当前1.6T目录表：Data Rate/PMD/P/N/Power",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "name": "800G OSFP/QSFP-DD：DR4/FR4/LR4，DR8/2DR4/2FR4/2LR4，VR8/SR8/AOC，LPO/LRO/TRO，ZR/ZR+",
+          "route": "首页产品分组；标签不得任意组合成一款BOM",
+          "sources": [
+            {
+              "url": "https://www.ligent.com.cn/",
+              "title": "Ligent/纳真当前产品导航；复用补充公司产品.json",
+              "date": "网页未标日期；2026-10-03目录取回"
+            }
+          ]
+        },
+        {
+          "name": "400G/200G；PON；无线模块；光芯片；光网络终端",
+          "route": "导航大类，芯片与系统不计整模块配置",
+          "sources": [
+            {
+              "url": "https://www.ligent.com.cn/",
+              "title": "Ligent/纳真当前产品导航；复用补充公司产品.json",
+              "date": "网页未标日期；2026-10-03目录取回"
+            }
+          ]
+        },
+        {
+          "name": "历史1.6T OSFP DR8",
+          "route": "2024发布的SiPh/EML双开发平台；非当前LMS型号路线绑定",
+          "sources": [
+            {
+              "url": "https://hbmt.hisense.com/",
+              "title": "海信宽带历史官网；P254保留2024-09-11发布稿摘录，当前跳转Ligent",
+              "date": "事件2024-09-11；账本核锚2026-07-30；本轮未重新取回历史全文"
+            }
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "product": "1.6T OSFP DR4",
+          "model": "LMS3981-PC+",
+          "bucket": "具体P/N/原厂目录表",
+          "electrical": "UNKNOWN：目录Data Rate列为8:4，表中未逐字定义比值对象/逐电通道线速",
+          "optical": "1.6T DR4 PMD；光通道线速和波长本表未列",
+          "dsp": "UNKNOWN：所核资料未列电处理架构或芯片",
+          "light": "UNKNOWN：所核资料未列光源和调制平台",
+          "mux": "DR4/2DR4并行功能为PMD命名解释；内部光学件未列",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP；MPO12",
+          "power": "32W（表列值，非独立实测）",
+          "reach": "500m",
+          "stage": "当前原厂P/N目录登记；表头有LPO/LRO总体量产自述，不能逐P/N套用",
+          "boundary": [
+            "0–70°C；8:4/8:8原值保留，不自动补为8×200G电/4×400G或8×200G光",
+            "PD/TIA、激光/SiPh/EML、DSP型号及内部工艺未在本表披露",
+            "同族IHS/RHS两个P/N共享表列规格；其他内部差异未证明"
+          ],
+          "sources": [
+            {
+              "url": "https://www.ligent.com/products/products_module/16t/",
+              "title": "Ligent当前1.6T目录表：Data Rate/PMD/P/N/Power",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "1.6T OSFP 2DR4",
+          "model": "LMS3831S-PC+（IHS） / LMS3821S-PC2（RHS）",
+          "bucket": "具体P/N/原厂目录表",
+          "electrical": "UNKNOWN：目录Data Rate列为8:8，表中未逐字定义比值对象/逐电通道线速",
+          "optical": "1.6T 2DR4 PMD；光通道线速和波长本表未列",
+          "dsp": "UNKNOWN：所核资料未列电处理架构或芯片",
+          "light": "UNKNOWN：所核资料未列光源和调制平台",
+          "mux": "DR4/2DR4并行功能为PMD命名解释；内部光学件未列",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP IHS/RHS；2×MPO12",
+          "power": "25W（表列值，非独立实测）",
+          "reach": "500m",
+          "stage": "当前原厂P/N目录登记；表头有LPO/LRO总体量产自述，不能逐P/N套用",
+          "boundary": [
+            "0–70°C；8:4/8:8原值保留，不自动补为8×200G电/4×400G或8×200G光",
+            "PD/TIA、激光/SiPh/EML、DSP型号及内部工艺未在本表披露",
+            "同族IHS/RHS两个P/N共享表列规格；其他内部差异未证明"
+          ],
+          "sources": [
+            {
+              "url": "https://www.ligent.com/products/products_module/16t/",
+              "title": "Ligent当前1.6T目录表：Data Rate/PMD/P/N/Power",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "1.6T OSFP 2FR4",
+          "model": "LMS3836S-PC+（IHS） / LMS3826S-PC1（RHS）",
+          "bucket": "具体P/N/原厂目录表",
+          "electrical": "UNKNOWN：目录Data Rate列为8:8分组，表中未逐字定义比值对象/逐电通道线速",
+          "optical": "1.6T 2FR4 PMD；光通道线速和波长本表未列",
+          "dsp": "UNKNOWN：所核资料未列电处理架构或芯片",
+          "light": "UNKNOWN：所核资料未列光源和调制平台",
+          "mux": "2×FR4/LR4波分功能为PMD命名解释；具体合分波器件未列",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP IHS/RHS；双LC",
+          "power": "26.5W（表列值，非独立实测）",
+          "reach": "2km",
+          "stage": "当前原厂P/N目录登记；表头有LPO/LRO总体量产自述，不能逐P/N套用",
+          "boundary": [
+            "0–70°C；8:4/8:8原值保留，不自动补为8×200G电/4×400G或8×200G光",
+            "PD/TIA、激光/SiPh/EML、DSP型号及内部工艺未在本表披露",
+            "同族IHS/RHS两个P/N共享表列规格；其他内部差异未证明"
+          ],
+          "sources": [
+            {
+              "url": "https://www.ligent.com/products/products_module/16t/",
+              "title": "Ligent当前1.6T目录表：Data Rate/PMD/P/N/Power",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "1.6T OSFP 2DR4 LRO（RTLR）",
+          "model": "LMS3831R-PC+（IHS） / LMS3831R-PC2（RHS）",
+          "bucket": "具体P/N/原厂目录表",
+          "electrical": "UNKNOWN：目录Data Rate列为目录所属1.6T分组，表中未逐字定义比值对象/逐电通道线速",
+          "optical": "1.6T 2DR4 LRO（RTLR） PMD；光通道线速和波长本表未列",
+          "dsp": "LRO（RTLR）为本款产品名直接标签；具体DSP/driver/TIA与Tx/Rx拓扑未列",
+          "light": "UNKNOWN：所核资料未列光源和调制平台",
+          "mux": "DR4/2DR4并行功能为PMD命名解释；内部光学件未列",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP IHS/RHS；2×MPO12",
+          "power": "17W（表列值，非独立实测）",
+          "reach": "500m",
+          "stage": "当前原厂P/N目录登记；表头有LPO/LRO总体量产自述，不能逐P/N套用",
+          "boundary": [
+            "0–70°C；8:4/8:8原值保留，不自动补为8×200G电/4×400G或8×200G光",
+            "PD/TIA、激光/SiPh/EML、DSP型号及内部工艺未在本表披露",
+            "同族IHS/RHS两个P/N共享表列规格；其他内部差异未证明"
+          ],
+          "sources": [
+            {
+              "url": "https://www.ligent.com/products/products_module/16t/",
+              "title": "Ligent当前1.6T目录表：Data Rate/PMD/P/N/Power",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "1.6T OSFP 2FR4 LRO（RTLR）",
+          "model": "LMS3836R-PC+（IHS） / LMS3836R-PC1（RHS）",
+          "bucket": "具体P/N/原厂目录表",
+          "electrical": "UNKNOWN：目录Data Rate列为目录所属1.6T分组，表中未逐字定义比值对象/逐电通道线速",
+          "optical": "1.6T 2FR4 LRO（RTLR） PMD；光通道线速和波长本表未列",
+          "dsp": "LRO（RTLR）为本款产品名直接标签；具体DSP/driver/TIA与Tx/Rx拓扑未列",
+          "light": "UNKNOWN：所核资料未列光源和调制平台",
+          "mux": "2×FR4/LR4波分功能为PMD命名解释；具体合分波器件未列",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP IHS/RHS；双LC",
+          "power": "17.5W（表列值，非独立实测）",
+          "reach": "2km",
+          "stage": "当前原厂P/N目录登记；表头有LPO/LRO总体量产自述，不能逐P/N套用",
+          "boundary": [
+            "0–70°C；8:4/8:8原值保留，不自动补为8×200G电/4×400G或8×200G光",
+            "PD/TIA、激光/SiPh/EML、DSP型号及内部工艺未在本表披露",
+            "同族IHS/RHS两个P/N共享表列规格；其他内部差异未证明"
+          ],
+          "sources": [
+            {
+              "url": "https://www.ligent.com/products/products_module/16t/",
+              "title": "Ligent当前1.6T目录表：Data Rate/PMD/P/N/Power",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "1.6T OSFP 2LR4",
+          "model": "LMS3838-PC1",
+          "bucket": "具体P/N/原厂目录表",
+          "electrical": "UNKNOWN：目录Data Rate列为8:8，表中未逐字定义比值对象/逐电通道线速",
+          "optical": "1.6T 2LR4 PMD；光通道线速和波长本表未列",
+          "dsp": "UNKNOWN：所核资料未列电处理架构或芯片",
+          "light": "UNKNOWN：所核资料未列光源和调制平台",
+          "mux": "2×FR4/LR4波分功能为PMD命名解释；具体合分波器件未列",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP；双LC",
+          "power": "29W（表列值，非独立实测）",
+          "reach": "10km",
+          "stage": "当前原厂P/N目录登记；表头有LPO/LRO总体量产自述，不能逐P/N套用",
+          "boundary": [
+            "0–70°C；8:4/8:8原值保留，不自动补为8×200G电/4×400G或8×200G光",
+            "PD/TIA、激光/SiPh/EML、DSP型号及内部工艺未在本表披露",
+            "同族IHS/RHS两个P/N共享表列规格；其他内部差异未证明"
+          ],
+          "sources": [
+            {
+              "url": "https://www.ligent.com/products/products_module/16t/",
+              "title": "Ligent当前1.6T目录表：Data Rate/PMD/P/N/Power",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "1.6T OSFP DR8（2024双光子平台发布）",
+          "model": "原稿未列P/N",
+          "bucket": "历史官方发布/产品族",
+          "electrical": "UNKNOWN：所核资料未列逐通道电接口",
+          "optical": "DR8族；逐通道速率/波长原摘录未给",
+          "dsp": "UNKNOWN：所核资料未列电处理架构或芯片",
+          "light": "SiPh与EML两个开发平台，既有P254官方稿摘录直接披露；单一P/N未对齐",
+          "mux": "UNKNOWN：所核资料未列内部合分波器件",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "OSFP；连接器未取得",
+          "power": "UNKNOWN：所核资料未列功耗",
+          "reach": "UNKNOWN：所核资料未列距离",
+          "stage": "2024-09-11宣布推出/双平台开发；不据集团全品类量产能力推定这款已量产",
+          "boundary": [
+            "旧官网已跳转；本轮复用既有P254摘录，不称当前历史全文重新核验",
+            "不能把SiPh/EML任一平台套入当前LMS383x/398x系列"
+          ],
+          "sources": [
+            {
+              "url": "https://hbmt.hisense.com/",
+              "title": "海信宽带历史官网；P254保留2024-09-11发布稿摘录，当前跳转Ligent",
+              "date": "事件2024-09-11；账本核锚2026-07-30；本轮未重新取回历史全文"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "读取范围：复用补充公司产品.json与P254，当前定向读取英文1.6T目录；未逐项展开800G、PON或芯片规格",
+        "当前型号光平台与电处理芯片未列不等于公司没有SiPh/EML能力；已知历史产品族另保留",
+        "当前P/N量产/出货、品牌迁移后的制造法人及旧SKU承接关系未证明"
+      ]
+    },
+    {
+      "company": "剑桥科技 / CIG",
+      "role": "上海剑桥科技集团高速光模块供应方；具体配置页来自CIG USA，集团目录归集，未逐型号确认制造法人。",
+      "catalog": [
+        {
+          "name": "800G 100G/lane SiPh：DR8/FR8/LR8、2DR4/2FR4/2LR4及LPO/TRO；EML：DR8/FR8/LR8、2FR4/2LR4",
+          "route": "2025年报光平台直接分组；并行、波分及电架构分别保留",
+          "sources": [
+            {
+              "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0402/2026040203300.pdf",
+              "title": "CIG SHANGHAI2025年报：印刷p16/PDF页18产品表",
+              "date": "2026-04-02；2026-10-03定向读取"
+            }
+          ]
+        },
+        {
+          "name": "800G 200G/lane SiPh：DR4/LR4；1.6T 200G/lane SiPh：DR8/2FR4及DR8 LPO/TRO",
+          "route": "年报产品表；发布稿另有200G/Lambda的EML版本，不因表的SiPh分组抹掉其他已披露变体",
+          "sources": [
+            {
+              "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0402/2026040203300.pdf",
+              "title": "CIG SHANGHAI2025年报：印刷p16/PDF页18产品表",
+              "date": "2026-04-02；2026-10-03定向读取"
+            },
+            {
+              "url": "https://www.cigtech.com/cn/Press/Info/11894?year=2021",
+              "title": "剑桥科技OFC2025官方发布：200G/Lambda3nm及100G/Lambda5nm产品族",
+              "date": "2025-04-02（正文事件2025-04-01）；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "name": "400G：100G/lane SiPh DR4/FR4/LR4/4FR1/4LR1、LPO/TRO；50G/lane EML系列",
+          "route": "年报大类；EML分组含SR4名称，未据此推每个SR4使用EML",
+          "sources": [
+            {
+              "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0402/2026040203300.pdf",
+              "title": "CIG SHANGHAI2025年报：印刷p16/PDF页18产品表",
+              "date": "2026-04-02；2026-10-03定向读取"
+            }
+          ]
+        },
+        {
+          "name": "100G单波DR/FR1/LR1及四波长SR4/CWDM4/LR4/ER4/ZR4；2.5G/10G/25G PON",
+          "route": "年报大类；低速/接入未展开各SKU",
+          "sources": [
+            {
+              "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0402/2026040203300.pdf",
+              "title": "CIG SHANGHAI2025年报：印刷p16/PDF页18产品表",
+              "date": "2026-04-02；2026-10-03定向读取"
+            }
+          ]
+        },
+        {
+          "name": "NPO/CPO硅光引擎与高功率激光光源",
+          "route": "初步研究/原型开发；属于光引擎/光源，不计量产整模块",
+          "sources": [
+            {
+              "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0402/2026040203300.pdf",
+              "title": "CIG SHANGHAI2025年报：印刷p16/PDF页18产品表",
+              "date": "2026-04-02；2026-10-03定向读取"
+            }
+          ]
+        }
+      ],
+      "configs": [
+        {
+          "product": "1.6T OSFP-XD 2×DR4 EML",
+          "model": "TRX5J00PNFDMF000",
+          "bucket": "具体型号/原厂产品页",
+          "electrical": "16×53.125GBd PAM4；2×800GAUI-8",
+          "optical": "8×106.25GBd PAM4；2×800GBASE-DR4",
+          "dsp": "UNKNOWN：所核资料未列电处理架构或芯片",
+          "light": "1310nm EA-DFB（产品名EML）",
+          "mux": "UNKNOWN：所核资料未列内部合分波器件",
+          "receiver": "PIN；TIA未列",
+          "package": "OSFP-XD；双MPO12；120-pad电连接器",
+          "power": "TBD（原页明确）",
+          "reach": "500m SMF",
+          "stage": "原厂目录/规格登记；逐型号当前量产尚未证明",
+          "boundary": [
+            "0–70°C；OSFP-XD旧封装配置，不能套2025年新1.6T族3nmDSP",
+            "DSP/driver、内部互连、PD/TIA型号、当前量产未列"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cigtech.us/photonics",
+              "title": "CIG USA Photonics原厂配置页；读取下列具体型号段",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "800G QSFP-DD 2×FR4 EML",
+          "model": "TRD5J10ENFDLF000",
+          "bucket": "具体型号/原厂产品页",
+          "electrical": "2×4路53.125GBd PAM4；400GAUI-4",
+          "optical": "2×4波长53.125GBd PAM4；400GBASE-FR4",
+          "dsp": "UNKNOWN：所核资料未列电处理架构或芯片",
+          "light": "CWDM EA-DFB（EML）",
+          "mux": "双组CWDM波分功能；器件工艺未列",
+          "receiver": "PIN；TIA未列",
+          "package": "QSFP-DD800；双duplex LC；76-pad电连接器",
+          "power": "最大16W",
+          "reach": "2km SMF",
+          "stage": "原厂目录/规格登记；逐型号当前量产尚未证明",
+          "boundary": [
+            "0–70°C；当前页登记不等于截至核对日逐型号量产",
+            "本页多款800G摘要把Aggregate写成425Gb/s，与800G标题/通道描述不一致；保留冲突，不拿该数算总容量",
+            "TOSA/ROSA封装、MUX工艺、DSP/PD/TIA料号、材料设备与测试采用未列"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cigtech.us/photonics",
+              "title": "CIG USA Photonics原厂配置页；读取下列具体型号段",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "800G QSFP-DD DR8 SiPh LPO",
+          "model": "TLD5J0APNFDMF000",
+          "bucket": "具体型号/原厂产品页",
+          "electrical": "8路53.125GBd PAM4线性电接口",
+          "optical": "8路53.125GBd PAM4；800GBASE-DR",
+          "dsp": "线性接口，无DSP；原厂逐型号直接披露",
+          "light": "1310nm CW-LD＋SiP调制器",
+          "mux": "DR8并行；波长合分波不适用为功能解释",
+          "receiver": "PIN；TIA型号未列",
+          "package": "QSFP-DD800；双MPO12",
+          "power": "最大8W",
+          "reach": "500m SMF",
+          "stage": "原厂目录/规格登记；逐型号当前量产尚未证明",
+          "boundary": [
+            "0–70°C；当前页登记不等于截至核对日逐型号量产",
+            "本页多款800G摘要把Aggregate写成425Gb/s，与800G标题/通道描述不一致；保留冲突，不拿该数算总容量",
+            "TOSA/ROSA封装、MUX工艺、DSP/PD/TIA料号、材料设备与测试采用未列"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cigtech.us/photonics",
+              "title": "CIG USA Photonics原厂配置页；读取下列具体型号段",
+              "date": "网页未标日期；2026-10-03读取"
+            }
+          ]
+        },
+        {
+          "product": "2025 1.6T 2×DR4/DR8及2×FR4（200G/Lambda）",
+          "model": "发布稿未列精确P/N",
+          "bucket": "产品族发布/演示",
+          "electrical": "UNKNOWN：所核资料未列逐通道电接口",
+          "optical": "200G/光通道产品族；PAM4物理线速发布稿未列",
+          "dsp": "Retimed；3nm DSP，供应商/芯片型号未列",
+          "light": "SiPh和EML两种设计版本；不是同时装于同一型号",
+          "mux": "UNKNOWN：所核资料未列内部合分波器件",
+          "receiver": "UNKNOWN：所核资料未列PD/TIA",
+          "package": "UNKNOWN：所核资料未列封装和连接器",
+          "power": "官方称相比前代最高降低20%；绝对值与基线未列",
+          "reach": "UNKNOWN：所核资料未列距离",
+          "stage": "OFC2025发布并现场演示；本稿未取得各后缀当前出货证据",
+          "boundary": [
+            "不能把该3nm家族DSP套入上方OSFP-XD具体型号",
+            "硅光/EML家族版本已知；各平台后缀、电通道、连接器与器件料号未配对"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cigtech.com/cn/Press/Info/11894?year=2021",
+              "title": "剑桥科技OFC2025官方发布：200G/Lambda3nm及100G/Lambda5nm产品族",
+              "date": "2025-04-02（正文事件2025-04-01）；2026-10-03读取"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "读取范围：2025年报指定产品表、2025OFC发布稿、CIG USA光子产品页所列3个具体型号；未逐款核完页面全部400G/100G/25G型号",
+        "800G Aggregate=425Gb/s文案异常保留；名义速率、符号率和数据率不混用",
+        "5nm/3nmDSP家族、EML/SiPh版本和LPO/TRO目录已知，不能按型号缺后缀把产品族路线整体标UNKNOWN",
+        "确切芯片型号/内部工艺、各SKU当前量产、匹配条件下性能对比仍缺"
+      ]
+    }
+  ]
+}

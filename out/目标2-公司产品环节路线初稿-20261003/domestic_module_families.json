@@ -1,0 +1,1374 @@
+{
+  "companies": [
+    {
+      "company": "德科立",
+      "role": "电信/接入及数通模块、无源光模块供应商；硅光数通产品正在量产导入",
+      "catalog": [
+        "400G相干光模块",
+        "800G硅光光收发模块",
+        "1.6T硅光光收发模块",
+        "电信传输相干与非相干光收发模块族",
+        "GPON OLT与COMBO PON接入模块族",
+        "10G灰光/彩光无线接入光模块族",
+        "25G灰光/彩光无线接入光模块族",
+        "800G相干模块器件（P087；器件订单交付，非完整模块卡）",
+        "BOSA光组件；前传子系统；光开关/WSS/OXC光背板（器件/系统另层）"
+      ],
+      "configs": [
+        {
+          "product": "400G相干光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "相干传输/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "400G相干传输；光调制器/偏振结构未列",
+          "dsp": "相干处理路线；DSP型号与工艺未列",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "引语称完成小批量试产；不等于型号已规模量产",
+          "boundary": [
+            "同句800G对象是“相干模块器件”，未据此新增完整800G相干模块。",
+            "该条为现有账本引语，未回读2025年报正文。"
+          ],
+          "sources": [
+            {
+              "url": "http://static.cninfo.com.cn/finalpage/2026-03-31/1225064041.PDF",
+              "title": "P087｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-25；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "800G硅光光收发模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "数通/硅光产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "800G光收发模块；通道数/PMD未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "基于硅光芯片；激光器与调制器结构未列",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "硅光平台初建、模块开发完成，正在推向量产（原引语）；不写为已量产",
+          "boundary": [
+            "800G与1.6T共享同一开发主张；未取得各速率的料号、接口和完整实现。",
+            "硅光不自动推出CW颗数、Ge PD、MUX工艺或封装采用。"
+          ],
+          "sources": [
+            {
+              "url": "http://static.cninfo.com.cn/finalpage/2026-03-31/1225064041.PDF",
+              "title": "P109｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-25；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "1.6T硅光光收发模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "数通/硅光产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "1.6T光收发模块；通道数/PMD未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "基于硅光芯片；激光器与调制器结构未列",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "硅光平台初建、模块开发完成，正在推向量产（原引语）；不写为已量产",
+          "boundary": [
+            "800G与1.6T共享同一开发主张；未取得各速率的料号、接口和完整实现。",
+            "硅光不自动推出CW颗数、Ge PD、MUX工艺或封装采用。"
+          ],
+          "sources": [
+            {
+              "url": "http://static.cninfo.com.cn/finalpage/2026-03-31/1225064041.PDF",
+              "title": "P109｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-25；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "电信传输相干与非相干光收发模块族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "电信传输/多配置产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "155M、1.25G、10G、100G、400G及以上；相干/非相干并列，未逐速率配对",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "族级列10/40/80km及以上；未配对型号或调制路线",
+          "stage": "现有资料中的公司自述；本轮未重新验证当前阶段",
+          "boundary": [
+            "P159锚仅记“本地扫描()”，没有可直接回读的原URL。",
+            "各速率、距离与相干/非相干路线是族列表，不能任意拼成SKU。"
+          ],
+          "sources": [
+            {
+              "url": "",
+              "title": "P159｜现有points命中引语｜本地扫描()",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "GPON OLT与COMBO PON接入模块族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "PON接入/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "GPON OLT、COMBO PON接入用途；波长与上下行配比未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "现有资料中的公司自述；本轮未重新验证当前阶段",
+          "boundary": [
+            "P160是本地扫描摘录；GPON/COMBO与BOSA分层，BOSA不作为整模块型号。"
+          ],
+          "sources": [
+            {
+              "url": "",
+              "title": "P160｜现有points命中引语｜本地扫描()",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "10G灰光/彩光无线接入光模块族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "无线接入/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "10G灰光与彩光并列；具体波长/激光器未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "现有资料中的公司自述；本轮未重新验证当前阶段",
+          "boundary": [
+            "P160仅给用途与速率族；灰光/彩光型号与距离没有一一配对。"
+          ],
+          "sources": [
+            {
+              "url": "",
+              "title": "P160｜现有points命中引语｜本地扫描()",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "25G灰光/彩光无线接入光模块族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "无线接入/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "25G灰光与彩光并列；具体波长/激光器未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "现有资料中的公司自述；本轮未重新验证当前阶段",
+          "boundary": [
+            "P160仅给用途与速率族；灰光/彩光型号与距离没有一一配对。"
+          ],
+          "sources": [
+            {
+              "url": "",
+              "title": "P160｜现有points命中引语｜本地扫描()",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "同一记录生产中不代替各相干/硅光型号阶段；内部TX/RX链和材料设备、P159/P160扫描原URL缺失"
+      ]
+    },
+    {
+      "company": "长芯博创",
+      "role": "数通/接入光模块、光纤波导无源及光功率管理器件供应商",
+      "catalog": [
+        "400G SR4多模光模块",
+        "800G SR8多模光模块",
+        "PON光纤接入光收发模块族",
+        "无线前传/中回传光收发模块族",
+        "PLC分路器、AWG/AAWG、VMUX、MEMS VOA（无源/功率管理器件，另层）"
+      ],
+      "configs": [
+        {
+          "product": "400G SR4多模光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "数据中心/多模产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "400G多模SR4族；具体光lane速率、波长未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：原引语仅称多模，未直接列VCSEL",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "引语称具备批量供货能力；逐型号出货状态未列",
+          "boundary": [
+            "不从多模/SR标签补写VCSEL、PIN或某DSP；内部实现待规格书。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF",
+              "title": "P119｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "800G SR8多模光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "数据中心/多模产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "800G多模SR8族；具体光lane速率、波长未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：原引语仅称多模，未直接列VCSEL",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "引语称具备批量供货能力；逐型号出货状态未列",
+          "boundary": [
+            "不从多模/SR标签补写VCSEL、PIN或某DSP；内部实现待规格书。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF",
+              "title": "P119｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "PON光纤接入光收发模块族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "PON接入/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "用于PON光纤接入网；PON代际、速率/波长未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "现有资料中的公司自述；本轮未重新验证当前阶段",
+          "boundary": [
+            "基于现有points直接引语展开产品族；未把账本整条“生产中”继承到每个型号。",
+            "未列型号BOM、器件供应商或采购/制造分工的项目保持未知。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF",
+              "title": "P120｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            },
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF",
+              "title": "P184｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "无线前传/中回传光收发模块族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "无线承载/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "用于无线承载前传、中回传；速率/波长未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "现有资料中的公司自述；本轮未重新验证当前阶段",
+          "boundary": [
+            "基于现有points直接引语展开产品族；未把账本整条“生产中”继承到每个型号。",
+            "未列型号BOM、器件供应商或采购/制造分工的项目保持未知。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF",
+              "title": "P184｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "P184结尾光纤阵引语截断，光纤阵列品名/型号待补；模块内部BOM与材料设备缺失"
+      ]
+    },
+    {
+      "company": "铭普光磁",
+      "role": "数通、电信和接入光模块及光器件供应方",
+      "catalog": [
+        "10G至800G数通光模块族",
+        "4G/5G承载传输光模块族",
+        "FTTx固网接入光模块族",
+        "25G/50G PON ONU、Stick OLT（研发成功；整机/模块/组件层级在引语中未定）",
+        "TOSA/BOSA/TriOSA/QOSA/ComboBOSA（器件另层）"
+      ],
+      "configs": [
+        {
+          "product": "10G至800G数通光模块族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "数据中心/多速率产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "10G至800G数通产品范围；未给各档PMD或光lane实现",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "现有资料中的公司自述；本轮未重新验证当前阶段",
+          "boundary": [
+            "“从10G到800G”是供货范围；不据此编造每个中间速率/料号。",
+            "不把自有TOSA/BOSA产品族自动配为本系列模块采用。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225190103.PDF",
+              "title": "P078｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-25；资料发布日期未核"
+            },
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225190103.PDF",
+              "title": "P183｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "4G/5G承载传输光模块族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "无线承载/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "服务4G/5G无线承载传输；具体速率/波长未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "现有资料中的公司自述；本轮未重新验证当前阶段",
+          "boundary": [
+            "基于现有points直接引语展开产品族；未把账本整条“生产中”继承到每个型号。",
+            "未列型号BOM、器件供应商或采购/制造分工的项目保持未知。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225190103.PDF",
+              "title": "P078｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-25；资料发布日期未核"
+            },
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225190103.PDF",
+              "title": "P183｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "FTTx固网接入光模块族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "固网接入/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "固网FTTx接入用途；具体PON代际与上下行配比未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "现有资料中的公司自述；本轮未重新验证当前阶段",
+          "boundary": [
+            "基于现有points直接引语展开产品族；未把账本整条“生产中”继承到每个型号。",
+            "未列型号BOM、器件供应商或采购/制造分工的项目保持未知。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225190103.PDF",
+              "title": "P078｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-25；资料发布日期未核"
+            },
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225190103.PDF",
+              "title": "P183｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "每一速率/组件的SKU、材料平台与交付阶段需独立对应；不能继承整个公司生产状态。",
+        "ONU与Stick OLT暂不强制套成整模块卡；需产品规格书先确定对象。"
+      ]
+    },
+    {
+      "company": "亨通光电",
+      "role": "接入光模块、AOC及高速光模块产品供应商",
+      "catalog": [
+        "GPON/XGPON/XGSPON/COMBO PON OLT模块族",
+        "50G COMBO PON OLT非对称光模块",
+        "10G至800G AOC有源光缆族",
+        "算力中心高速可插拔/光模块产品族"
+      ],
+      "configs": [
+        {
+          "product": "GPON/XGPON/XGSPON/COMBO PON OLT模块族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "PON接入/多制式产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "族级列GPON/XGPON/XGSPON/COMBO PON OLT；各制式速率波长未配对",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "引语称可提供多类模块解决方案；逐型号交付阶段未列",
+          "boundary": [
+            "基于现有points直接引语展开产品族；未把账本整条“生产中”继承到每个型号。",
+            "未列型号BOM、器件供应商或采购/制造分工的项目保持未知。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225195764.PDF",
+              "title": "P139｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "50G COMBO PON OLT非对称光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "PON接入/已发布产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "50G COMBO PON、非对称上下行；具体上下行数值/波长未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "引语称已发布；没有型号量产锚",
+          "boundary": [
+            "基于现有points直接引语展开产品族；未把账本整条“生产中”继承到每个型号。",
+            "未列型号BOM、器件供应商或采购/制造分工的项目保持未知。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225195764.PDF",
+              "title": "P139｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "10G至800G AOC有源光缆族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "数通/AOC产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "算力中心10G至800G AOC范围；各档光通道、光源未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "AOC有源光缆；两端封装及分支形式未列",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "引语称可提供产品，部分低功耗AOC获超算客户反馈；未逐档映射",
+          "boundary": [
+            "AOC与可插拔光模块分开；超低功耗没有可比测试数值。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225195764.PDF",
+              "title": "P140｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "算力中心高速可插拔/光模块产品族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "数通/高速模块能力范围",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "引语另列高速光模块；本句10G–800G明确修饰AOC，模块逐速率待原表",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "公司产品范围自述；逐速率、型号与交付未列",
+          "boundary": [
+            "不将配图/判定注记的800G DR8当作本命中句直接证明。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225195764.PDF",
+              "title": "P140｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "AOC与可插拔模块需逐型拆；距离、TX/RX及采购/自制分工、逐型交付阶段缺失"
+      ]
+    },
+    {
+      "company": "长飞光纤",
+      "role": "光纤、模块及布线综合解决方案供应商",
+      "catalog": [
+        "800G高速光模块",
+        "1.6T高速光模块",
+        "空芯/多芯/高品质多模光纤；绿色布线系统（材料/系统另层）"
+      ],
+      "configs": [
+        {
+          "product": "800G高速光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "数通/已推出产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "800G高速模块；PMD、通道与光子平台未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "引语称已推出；未给型号量产/出货阶段",
+          "boundary": [
+            "集团产品组合披露，不证明长飞母公司或各内部器件全部自制。",
+            "长芯实体归属来自原记录判定说明，产品原句没有精确型号制造主体。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225048080.PDF",
+              "title": "P185｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "1.6T高速光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "数通/已推出产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "1.6T高速模块；PMD、通道与光子平台未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "引语称已推出；未给型号量产/出货阶段",
+          "boundary": [
+            "集团产品组合披露，不证明长飞母公司或各内部器件全部自制。",
+            "长芯实体归属来自原记录判定说明，产品原句没有精确型号制造主体。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225048080.PDF",
+              "title": "P185｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "公司推出产品不等全部组件自产；光纤各型号与模块配对、量产交付缺失"
+      ]
+    },
+    {
+      "company": "中天科技",
+      "role": "高速光模块与连接器供应方",
+      "catalog": [
+        "智算中心高速光模块族",
+        "MPO连接器（器件另层）"
+      ],
+      "configs": [
+        {
+          "product": "智算中心高速光模块族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "数据中心/高速模块产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "高速光模块；命中句未列具体速率、PMD",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "引语称规模出货/批量供货；未到逐型号阶段",
+          "boundary": [
+            "不使用判定注记中的800G或客户名称补造命中句事实。",
+            "MPO连接器供货不证明某模块采用某芯数/端面MPO。"
+          ],
+          "sources": [
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225177318.PDF",
+              "title": "P135｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            },
+            {
+              "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225177318.PDF",
+              "title": "P136｜现有points命中引语；本轮未回读原PDF/回答",
+              "date": "原账本检索2026-07-26；资料发布日期未核"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "不把判定说明中的800G、客户名作为本次原引语已证内容；型号级速率/平台/客户关系待补。"
+      ]
+    },
+    {
+      "company": "武汉钧恒科技有限公司",
+      "role": "光模块研发制造销售方",
+      "catalog": [
+        "光模块研发制造销售产品族"
+      ],
+      "configs": [
+        {
+          "product": "光模块研发制造销售产品族",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "模块/产品族待规格",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "光模块产品类别明确；数通/电信档位和PMD未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "现有引语明确研发、制造、销售及光模块收入占比>50%；型号阶段未列",
+          "boundary": [
+            "属于汇绿生态控股子公司武汉钧恒；不把集团关系改成无关母公司自制。",
+            "P040为光模块结构定义，不作为其自制TOSA/ROSA/TIA或具体采用的依据。"
+          ],
+          "sources": [
+            {
+              "url": "",
+              "title": "P039｜现有points命中引语｜S0a本地扫描2025年报（001267__em_汇绿生态_em__2025_2025年年度报告.pdf）；管理层讨论与分析·一、报告期内公司从事的主要业务",
+              "date": "原账本检索2026-07-24；资料发布日期未核"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "P040为光模块结构的定义性描述，不能据此新增独立TOSA、ROSA、TIA产品或自制能力。",
+        "发射平台、电处理、器件采购与具体封装待补。",
+        "现有资料只足以展开“光模块族”入口，未给可细分的速率或封装。"
+      ]
+    },
+    {
+      "company": "通宇通讯",
+      "role": "通过参股四川光为布局高速模块；本条产品归属四川光为",
+      "catalog": [
+        "四川光为800G OSFP 2×DR4光模块"
+      ],
+      "configs": [
+        {
+          "product": "四川光为800G OSFP 2×DR4光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "参股公司/数通硅光",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "800G以太网；2×DR4并行族（原产品名）；光lane细节未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "硅光路线（原引语明确）；CW、调制器结构未列",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "OSFP；光连接器芯数/端面未列",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "引语称参股公司首批小批量交付；不升级规模量产",
+          "boundary": [
+            "产品及交付主体为参股公司四川光为，不是通宇母公司直接制造。",
+            "低功耗是公司措辞，缺数值与比较条件；不据硅光推完整BOM。"
+          ],
+          "sources": [
+            {
+              "url": "",
+              "title": "P193｜现有points命中引语｜corpus/qa/002792/qa.jsonl#indexId=0001066DD44C0AAA440281E53DC3E383BF02；ir.p5w.net 全景网投关平台镜像深交所互动易(准披露渠道)",
+              "date": "原账本检索2026-07-30；资料发布日期未核"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "参股公司产品不可改写为通宇母公司直接研发制造。",
+        "低功耗无可比测试条件与数值；不从硅光自动推定完整 CW/调制/BOM。"
+      ]
+    },
+    {
+      "company": "中兴通讯",
+      "role": "光传输系统、相干 DSP 与自用相干模块研发生产商；服务器数通模块为外购",
+      "catalog": [
+        "OTN 100G可插拔相干光模块",
+        "OTN 400G可插拔相干光模块",
+        "OTN 800G可插拔相干光模块",
+        "800G自研相干DSP（芯片另层）",
+        "服务器等数通光模块对外采购（客户应用，非自产模块卡）"
+      ],
+      "configs": [
+        {
+          "product": "OTN 100G可插拔相干光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "自研自用/相干传输产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "100G OTN相干长距光传输；光调制平台未列",
+          "dsp": "搭载中兴自研相干DSP；型号/工艺未列",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "可插拔；具体封装未列",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "长距用途；公里数未列",
+          "stage": "2026-07-08互动易原句称公司研发和生产，自用于光传输设备；逐型号阶段未列",
+          "boundary": [
+            "100G/400G/800G是同一相干族列表，不能用800G DSP主张补所有档位参数。",
+            "用于服务器等数据通信的光模块为对外采购，未登记为中兴自产数通产品。"
+          ],
+          "sources": [
+            {
+              "url": "",
+              "title": "P192｜现有points命中引语｜corpus/qa/000063/qa.jsonl#indexId=2266884917732925440；irm.cninfo.com.cn 互动易(准披露渠道)",
+              "date": "原账本检索2026-07-27；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "OTN 400G可插拔相干光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "自研自用/相干传输产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "400G OTN相干长距光传输；光调制平台未列",
+          "dsp": "搭载中兴自研相干DSP；型号/工艺未列",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "可插拔；具体封装未列",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "长距用途；公里数未列",
+          "stage": "2026-07-08互动易原句称公司研发和生产，自用于光传输设备；逐型号阶段未列",
+          "boundary": [
+            "100G/400G/800G是同一相干族列表，不能用800G DSP主张补所有档位参数。",
+            "用于服务器等数据通信的光模块为对外采购，未登记为中兴自产数通产品。"
+          ],
+          "sources": [
+            {
+              "url": "",
+              "title": "P192｜现有points命中引语｜corpus/qa/000063/qa.jsonl#indexId=2266884917732925440；irm.cninfo.com.cn 互动易(准披露渠道)",
+              "date": "原账本检索2026-07-27；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "OTN 800G可插拔相干光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "自研自用/相干传输产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "800G OTN相干长距光传输；光调制平台未列",
+          "dsp": "搭载中兴自研相干DSP；型号/工艺未列",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "可插拔；具体封装未列",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "长距用途；公里数未列",
+          "stage": "2026-07-08互动易原句称公司研发和生产，自用于光传输设备；逐型号阶段未列",
+          "boundary": [
+            "100G/400G/800G是同一相干族列表，不能用800G DSP主张补所有档位参数。",
+            "用于服务器等数据通信的光模块为对外采购，未登记为中兴自产数通产品。"
+          ],
+          "sources": [
+            {
+              "url": "",
+              "title": "P192｜现有points命中引语｜corpus/qa/000063/qa.jsonl#indexId=2266884917732925440；irm.cninfo.com.cn 互动易(准披露渠道)",
+              "date": "原账本检索2026-07-27；资料发布日期未核"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "相干光传输路线不能套用到外购 800G/1.6T 数通模块；两类产品及供应链分开。",
+        "本组相干模块与 DSP 型号、距离、光源和具体客户配置未知。"
+      ]
+    },
+    {
+      "company": "锐捷网络",
+      "role": "网络系统配套的自研高速光模块方",
+      "catalog": [
+        "400G LPO光模块",
+        "800G高速光模块"
+      ],
+      "configs": [
+        {
+          "product": "400G LPO光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "自研/数通LPO产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "400G族；PMD/光子平台未列",
+          "dsp": "厂商明确LPO线性架构；线性驱动/接收器件与主机分工未列",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "2026-07-10互动易原句称已规模量产交付；本轮未重核当日状态",
+          "boundary": [
+            "与其交换机/整体网络方案配套销售；不把系统采购或ODM猜测代替自研原句。",
+            "LPO标签未给出EML/SiPh、lane配置或Driver/TIA型号。"
+          ],
+          "sources": [
+            {
+              "url": "",
+              "title": "P187｜现有points命中引语｜corpus/qa/301165/qa.jsonl#indexId=2301891159369191424；irm.cninfo.com.cn 互动易(准披露渠道)",
+              "date": "原账本检索2026-07-27；资料发布日期未核"
+            }
+          ]
+        },
+        {
+          "product": "800G高速光模块",
+          "model": "UNKNOWN：现有引语未列具体料号",
+          "bucket": "自研/数通样机产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "800G族；未给PMD、光子平台或线性架构",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "2026-07-10原句称样机小规模适配；不继承400G量产阶段",
+          "boundary": [
+            "该回答只将400G明确标LPO；没有证据把800G也标为LPO。"
+          ],
+          "sources": [
+            {
+              "url": "",
+              "title": "P187｜现有points命中引语｜corpus/qa/301165/qa.jsonl#indexId=2301891159369191424；irm.cninfo.com.cn 互动易(准披露渠道)",
+              "date": "原账本检索2026-07-27；资料发布日期未核"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "该记录来自互动易而非型号数据表；发射平台、通道、接口、SKU及内制/供应商分工待补。"
+      ]
+    },
+    {
+      "company": "四川光恒通信技术有限公司",
+      "role": "本轮原厂页面可确认数通、城域长距与PON模块产品族；公司另有器件/封装能力",
+      "catalog": [
+        "800G OSFP DR8",
+        "800G OSFP SR8",
+        "800G QSFP-DD DR8",
+        "400G QSFP-DD DR4/FR4（配置未逐版配对）",
+        "400G QSFP112 DR4",
+        "200G QSFP56 SR4；100G QSFP28 DR1/FR1",
+        "100G QSFP28 LR4/ER4/ZR4（版本未配对）",
+        "50G/10G/2.5G三模PON OLT"
+      ],
+      "configs": [
+        {
+          "product": "800G OSFP DR8",
+          "model": "UNKNOWN：所核页未取得完整料号",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "8×106.25Gb/s PAM4，53.125GBd",
+          "optical": "8×106.25Gb/s PAM4；G.652单模",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "OSFP；双MPO-12",
+          "power": "<16W；3.3V；壳温0–70°C",
+          "reach": "500m，G.652 SMF，需KP-FEC",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "订货信息为图片，本轮未取得型号文本；没有把标题当料号。",
+            "页面未列EML/SiPh/激光器结构、DSP、PD/TIA；不从公司COB/BOX能力补本模块采用。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cnsunstar.com/chanpinzhongxin/9.html",
+              "title": "四川光恒｜800G OSFP DR8产品特性",
+              "date": "网页未标资料日；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "800G OSFP SR8",
+          "model": "UNKNOWN：所核页未取得完整料号",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "800G SR8短距产品族；具体光lane参数未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "OSFP",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "仅数据中心解决方案列表支持该族；未取得型号详情，不从SR8标题自动填写VCSEL或PIN。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cnsunstar.com/jiejuefangan/5.html",
+              "title": "四川光恒｜数据中心方案产品族清单",
+              "date": "网页未标资料日；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "800G QSFP-DD DR8",
+          "model": "UNKNOWN：所核页未取得完整料号",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "800G DR8短距产品族；具体光lane参数未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "QSFP-DD",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "与OSFP DR8是两个封装族，不继承OSFP页的双MPO12、功耗与接收器件。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cnsunstar.com/jiejuefangan/5.html",
+              "title": "四川光恒｜数据中心方案产品族清单",
+              "date": "网页未标资料日；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "400G QSFP-DD DR4/FR4（配置未逐版配对）",
+          "model": "UNKNOWN：所核页未取得完整料号",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "8×53.125Gb/s PAM4",
+          "optical": "4×106.25Gb/s PAM4；DR4/FR4并列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "QSFP-DD；本页未列外部连接器文本",
+          "power": "页面列<8W、3.3V、0–70°C；未逐版配对",
+          "reach": "页面列最高2km G.652/KP-FEC；不能据此把DR4定为2km",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "标题合列DR4/FR4，页内参数没有逐版映射；型号、光源、合分波器及光口对应仍未知。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cnsunstar.com/chanpinzhongxin/13.html",
+              "title": "四川光恒｜400G QSFP-DD DR4/FR4合并页",
+              "date": "网页未标资料日；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "400G QSFP112 DR4",
+          "model": "UNKNOWN：所核页未取得完整料号",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "400G DR4；目录列聚合最高425Gb/s",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "QSFP112",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "500m G.652 SMF（目录摘要）",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "只回读目录标签，未取得该详情的订货表或内部器件；不借QSFP-DD页补实现。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cnsunstar.com/chanpinzhongxin.html?cid=8",
+              "title": "四川光恒｜模块目录中400G QSFP112 DR4标签",
+              "date": "网页未标资料日；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "200G QSFP56 SR4；100G QSFP28 DR1/FR1",
+          "model": "UNKNOWN：所核页未取得完整料号",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "数据中心列表中两个速率/封装族；内部路线未列",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "200G QSFP56；100G QSFP28",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "导航级族卡，非一件多速率产品；两类模块不共用推定BOM。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cnsunstar.com/jiejuefangan/5.html",
+              "title": "四川光恒｜数据中心方案产品族清单",
+              "date": "网页未标资料日；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "100G QSFP28 LR4/ER4/ZR4（版本未配对）",
+          "model": "UNKNOWN：所核页未取得完整料号",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "聚合103.125Gb/s；LAN-WDM EML方案；页面配置未逐LR/ER/ZR映射",
+          "dsp": "页面列4通道CDR；具体芯片未列",
+          "light": "页面列LAN-WDM EML；不能强配所有距离版",
+          "mux": "LAN-WDM波分功能；具体MUX/DEMUX工艺未列",
+          "receiver": "页面列PIN＋SOA；TIA未列，配置未逐版对应",
+          "package": "QSFP28；页面列BIDI LC（待逐型号确认）",
+          "power": "3.3V；0–70°C；功耗未列",
+          "reach": "页面列最高80km G.652；不是每个LR4/ER4版本都80km",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "LR4/ER4/ZR4合并标题与BIDI LC、SOA配置需型号数据表配对；保留页面原列，未拼成单一SKU。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cnsunstar.com/chanpinzhongxin/10.html",
+              "title": "四川光恒｜100G QSFP28 LR4/ER4/ZR4合并页",
+              "date": "网页未标资料日；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "50G/10G/2.5G三模PON OLT",
+          "model": "UNKNOWN：所核页未取得完整料号",
+          "bucket": "本轮原厂产品页/PON接入",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "50G-PON：1342nm下行49.7664G/1286nm上行24.8832G；XGS：1577/1270nm、9.953G；GPON：1490nm 2.488G/1310nm 1.244G",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "50G和XGS发射EML；GPON发射DFB",
+          "mux": "单纤双向，多制式波长配置；具体滤波/合分波器件未列",
+          "receiver": "三路接收均列APD-TIA；材料、型号与集成位置未列",
+          "package": "SFP-DD；单纤双向，光连接器未列",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "上下行不对称，不能把产品名50G写成双向各50G。",
+            "三制式有各自光源/波长/接收配置；电接口lane、距离、功耗与料号仍未知。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.cnsunstar.com/chanpinzhongxin/17.html",
+              "title": "四川光恒｜50G PON OLT SFP-DD三模产品特性",
+              "date": "网页未标资料日；2026-10-03回读"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "具体SKU订货信息多为图片，当前未取回料号；本轮未无限追溯订货表。",
+        "大型产品手册PDF12.3MB取回被工具拒绝，未作为已读来源。",
+        "DR4/FR4与LR4/ER4/ZR4合并页配置未逐型号配对；官网登记不证明量产。"
+      ]
+    },
+    {
+      "company": "泰科电子(含关联方)",
+      "role": "TE光模块与AOC产品供应商；现有资料未区分自制、代工或委外分工",
+      "catalog": [
+        "800G OSFP-IHS SR8",
+        "800G OSFP-RHS SR8",
+        "800G QSFP-DD SR8",
+        "400G QSFP56-DD SR8",
+        "400G QSFP112 SR4",
+        "200G QSFP56 SR4",
+        "800G OSFP AOC",
+        "1.6T OSFP 2×DR4 SiPh",
+        "800G OSFP-RHS DR8 LPO"
+      ],
+      "configs": [
+        {
+          "product": "800G OSFP-IHS SR8",
+          "model": "2500927-1",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "8×53.125GBd PAM4；800GAUI-8",
+          "optical": "8×53.125GBd PAM4；800G-SR8",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "OSFP-IHS",
+          "power": "<15W；0–70°C",
+          "reach": "OM3 60m；OM4/OM5 100m",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "该三种封装分别有料号和详情；指南未列它们的VCSEL/PIN/DSP器件型号。",
+            "CMIS5.0是管理规范，不证明某个MCU、存储或光电芯片被采用。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.te.com/content/dam/te-com/documents/consumer-devices/global/ddn-optical-transceivers-guide-en.pdf",
+              "title": "TE Optics Solution Guide｜800G SR8模块详情｜PDF第3页",
+              "date": "2025-09（封底09-25）；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "800G OSFP-RHS SR8",
+          "model": "2500932-1",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "8×53.125GBd PAM4；800GAUI-8",
+          "optical": "8×53.125GBd PAM4；800G-SR8",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "OSFP-RHS",
+          "power": "<15W；0–70°C",
+          "reach": "OM3 60m；OM4/OM5 100m",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "该三种封装分别有料号和详情；指南未列它们的VCSEL/PIN/DSP器件型号。",
+            "CMIS5.0是管理规范，不证明某个MCU、存储或光电芯片被采用。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.te.com/content/dam/te-com/documents/consumer-devices/global/ddn-optical-transceivers-guide-en.pdf",
+              "title": "TE Optics Solution Guide｜800G SR8模块详情｜PDF第4页",
+              "date": "2025-09（封底09-25）；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "800G QSFP-DD SR8",
+          "model": "2500931-1",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "8×53.125GBd PAM4；800GAUI-8",
+          "optical": "8×53.125GBd PAM4；800G-SR8",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "QSFP-DD",
+          "power": "<15W；0–70°C",
+          "reach": "OM3 60m；OM4/OM5 100m",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "该三种封装分别有料号和详情；指南未列它们的VCSEL/PIN/DSP器件型号。",
+            "CMIS5.0是管理规范，不证明某个MCU、存储或光电芯片被采用。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.te.com/content/dam/te-com/documents/consumer-devices/global/ddn-optical-transceivers-guide-en.pdf",
+              "title": "TE Optics Solution Guide｜800G SR8模块详情｜PDF第4页",
+              "date": "2025-09（封底09-25）；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "400G QSFP56-DD SR8",
+          "model": "2500930-1",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "聚合425Gb/s；SR8多模族",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "QSFP56-DD；MPO16",
+          "power": "<10W；0–70°C",
+          "reach": "OM3 70m；OM4/OM5 100m",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "电lane结构、光源和PD/TIA未在该详情列出；不从同页800G参数复制。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.te.com/content/dam/te-com/documents/consumer-devices/global/ddn-optical-transceivers-guide-en.pdf",
+              "title": "TE Optics Solution Guide｜400G SR8模块详情｜PDF第4页",
+              "date": "2025-09（封底09-25）；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "400G QSFP112 SR4",
+          "model": "2500929-1",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "指南列4×53.125GBd PAM4，但接口名写800GAUI-8；标注矛盾待确认",
+          "optical": "标题SR4；同栏光口另写800G-SR8，与产品标题不一致",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "QSFP112；MPO12/APC（指南）",
+          "power": "<9W；0–70°C",
+          "reach": "OM3 60m；OM4/OM5 100m",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "指南同栏电/光接口标签与400G标题不一致；本卡不擅自改写为已证正确接口。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.te.com/content/dam/te-com/documents/consumer-devices/global/ddn-optical-transceivers-guide-en.pdf",
+              "title": "TE Optics Solution Guide｜400G SR4模块详情｜PDF第5页",
+              "date": "2025-09（封底09-25）；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "200G QSFP56 SR4",
+          "model": "2500928-1",
+          "bucket": "本轮原厂资料/产品族",
+          "electrical": "200GAUI-4；聚合212.5Gb/s（指南）；每电lane速率未另列",
+          "optical": "200GBASE-SR4；四路全双工",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "QSFP56；MPO12/UPC",
+          "power": "<4.5W；0–70°C",
+          "reach": "OM3 70m/OM4 100m（需FEC）",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "产品资料登记不等于逐型号量产；器件型号、供应商与制造工艺未列不补造。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.te.com/content/dam/te-com/documents/consumer-devices/global/ddn-optical-transceivers-guide-en.pdf",
+              "title": "TE Optics Solution Guide｜200G SR4模块详情｜PDF第5页",
+              "date": "2025-09（封底09-25）；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "800G OSFP AOC",
+          "model": "2497177-1至-8（1/2/3/5/10/15/20/30m）",
+          "bucket": "本轮原厂指南/AOC",
+          "electrical": "800GAUI-8；每通道最高106Gb/s PAM4",
+          "optical": "850nm多模有源光缆；具体端内lane配对未给",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "集成850nm VCSEL阵列",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "集成PD阵列；结构/材料、TIA未列",
+          "package": "OSFP两端AOC",
+          "power": "3.3V；该段未列功耗",
+          "reach": "订货长度1–30m",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "AOC长度后缀为指南登记，非1–30m每米一种料号；没有将分支AOC功耗复制到直连AOC。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.te.com/content/dam/te-com/documents/consumer-devices/global/ddn-optical-transceivers-guide-en.pdf",
+              "title": "TE Optics Solution Guide｜800G OSFP AOC详情与长度料号｜PDF第7页",
+              "date": "2025-09（封底09-25）；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "1.6T OSFP 2×DR4 SiPh",
+          "model": "UNKNOWN：概览图料号与该标签未可靠配对",
+          "bucket": "本轮原厂指南/概览产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "1.6T；2×DR4",
+          "dsp": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "light": "SiPh硅光（概览标签）；激光器未列",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "OSFP",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "本轮PDF文本取回可见产品标签；概览图中的具体料号未可靠配对，不能借SR8详情补通道/功耗/距离。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.te.com/content/dam/te-com/documents/consumer-devices/global/ddn-optical-transceivers-guide-en.pdf",
+              "title": "TE Optics Solution Guide｜产品组合概览中的SiPh标签｜PDF第2页",
+              "date": "2025-09（封底09-25）；2026-10-03回读"
+            }
+          ]
+        },
+        {
+          "product": "800G OSFP-RHS DR8 LPO",
+          "model": "UNKNOWN：概览图料号与该标签未可靠配对",
+          "bucket": "本轮原厂指南/概览LPO产品族",
+          "electrical": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "optical": "800G DR8",
+          "dsp": "LPO线性架构（概览标签）；具体驱动/接收芯片及主机分工未列",
+          "light": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "mux": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "receiver": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "package": "OSFP-RHS",
+          "power": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "reach": "UNKNOWN：当前所用资料未给出该项型号实现",
+          "stage": "本轮原厂产品页/指南登记；未给当前量产或订单验收",
+          "boundary": [
+            "LPO与800G SR8常规模块是不同配置；不复制SR8通道、光源、功耗和距离。"
+          ],
+          "sources": [
+            {
+              "url": "https://www.te.com/content/dam/te-com/documents/consumer-devices/global/ddn-optical-transceivers-guide-en.pdf",
+              "title": "TE Optics Solution Guide｜产品组合概览中的LPO标签｜PDF第2页",
+              "date": "2025-09（封底09-25）；2026-10-03回读"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        "TE属于连接产品与光学产品组合；不能据销售目录推定激光器/芯片或整机全部自产。",
+        "指南概览有1.6T SiPh与800G DR8 LPO，料号尚未配对；400G QSFP112详情接口标注矛盾保留。",
+        "速率、光学路线、内部BOM与当前订单阶段需逐型号规格书补充。"
+      ]
+    }
+  ]
+}

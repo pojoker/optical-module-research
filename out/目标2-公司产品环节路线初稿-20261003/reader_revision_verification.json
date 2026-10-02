@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-03",
+  "reference_reports": [
+    "浙商证券-20260612-光模块技术路线梳理 p6/p10",
+    "浙商证券-20260630-光芯片产业梳理 p6/p17"
+  ],
+  "h1_count": 1,
+  "product_records": 118,
+  "company_records": 227,
+  "nonmodule_records": 417,
+  "company_to_module_links": 31,
+  "duplicate_ids": [],
+  "broken_local_links": [],
+  "canonical_unchanged": 24,
+  "independent_content_source_review": "passed; loop title and company navigation repaired",
+  "js_validation": "syntax + source review; browser interaction not executed",
+  "visual_acceptance": "not verified; browser explicitly blocked file protocol; no workaround attempted"
+}

@@ -1,0 +1,1031 @@
+{
+  "generated_on": "2026-10-03",
+  "scope": "三家公司当前可得官网目录与原对话内部实现差异补核；独立研究交付，未修改canonical或上轮verified文件",
+  "status": "本轮定向补核完成；目录覆盖限于列示原厂入口/表/发布稿，未知与冲突保留",
+  "evidence_rules": [
+    "产品族直接披露可以成立，完整SKU/平台后缀映射待补不得抹为公司产品族UNKNOWN。",
+    "目录列示、发布演示、样品可询、量产分别记录；不同日期/代际不自动合为同一P/N。",
+    "缓存原厂表单独保留：它支持历史或最近缓存配置，不证明本次实时取回；功能架构解释单列。"
+  ],
+  "sources": {
+    "I0": {
+      "url": "https://www.innolight.com/data-center-networking",
+      "checked": "2026-10-03",
+      "status": "web当前取回",
+      "date": "未标"
+    },
+    "I1": {
+      "url": "https://www.innolight.com/data-center-networking/800g-osfp112",
+      "checked": "2026-10-03",
+      "status": "web当前取回",
+      "date": "未标",
+      "anchor": "型号分段"
+    },
+    "I2": {
+      "url": "https://www.innolight.com/data-center-networking/800g-qsfp112-dd",
+      "checked": "2026-10-03",
+      "status": "web当前取回",
+      "date": "未标",
+      "anchor": "型号分段"
+    },
+    "I3": {
+      "url": "https://www.innolight.com/data-center-networking/800g-osfp224",
+      "checked": "2026-10-03",
+      "status": "web当前取回；DR4与CWDM描述冲突",
+      "date": "未标"
+    },
+    "I4": {
+      "url": "https://www.innolight.com/data-center-networking/1.6t-osfp224",
+      "checked": "2026-10-03",
+      "status": "上轮本日web核验",
+      "date": "未标"
+    },
+    "IC": {
+      "url": "https://products.zj-innolight.com/en/goods/solution/cid/18.html",
+      "checked": "2026-10-03",
+      "status": "旧官网搜索缓存支持/当前取回失败；web502、Chrome连接关闭",
+      "date": "未标，搜索引擎示上月抓取"
+    },
+    "IM": {
+      "url": "https://www.innolight.com/mobile-networking",
+      "checked": "2026-10-03",
+      "status": "web当前取回",
+      "date": "未标"
+    },
+    "IH": {
+      "url": "https://www.innolight.com/metro-networking",
+      "checked": "2026-10-03",
+      "status": "web当前取回",
+      "date": "未标"
+    },
+    "E0": {
+      "url": "https://www.eoptolink.com/product-solutions",
+      "checked": "2026-10-03",
+      "status": "Chrome当前可读",
+      "date": "未标"
+    },
+    "E8": {
+      "url": "https://www.eoptolink.com/product-solutions/800g",
+      "checked": "2026-10-03",
+      "status": "Chrome当前可读",
+      "date": "未标"
+    },
+    "E16": {
+      "url": "https://www.eoptolink.com/product-solutions/16t/16t-osfp",
+      "checked": "2026-10-03",
+      "status": "Chrome当前可读；已点击Ordering information",
+      "date": "未标"
+    },
+    "EFR": {
+      "url": "https://www.eoptolink.com/pdf/800G/OSFP/Brief%20EOLO-168HG-02-P%20V1.b.pdf",
+      "checked": "2026-10-03",
+      "status": "原厂PDF当前取回",
+      "date": "V1.b，无日历日期",
+      "anchor": "p1"
+    },
+    "EL": {
+      "url": "https://eoptolink.com/news/341-eoptolink-launches-innovative-800g-linear-drive-pluggable-optics-during-ofc-2023",
+      "checked": "2026-10-03",
+      "status": "Chrome当前正文核验；web工具取回异常内容，不能以此称官网不可访问",
+      "date": "2023-03-06",
+      "quote": "VCSEL technology; Silicon Photonics, EMLs, and Thin-film Lithium Niobate modulators"
+    },
+    "EG": {
+      "url": "https://www.prnewswire.com/news-releases/eoptolink-launches-its-gen2-1-6t-osfp-and-osfp-rhs-transceiver-family-at-ofc-2025--302414882.html",
+      "checked": "2026-10-03",
+      "status": "公司提供官方发布稿，上轮本日当前核验",
+      "date": "2025-03-29"
+    },
+    "EOIF": {
+      "url": "https://www.oiforum.com/wp-content/uploads/OIF_PLL_Demo_Eoptolink_OFC2024.pdf",
+      "checked": "2026-10-03",
+      "status": "公司编写、OIF托管PDF，上轮本日核验",
+      "date": "OFC2024"
+    },
+    "A0": {
+      "url": "https://www.accelink.com/en/lighting_your_dreams/OpticalTransceivers.html?cat_id=1729748745307234306",
+      "checked": "2026-10-03",
+      "status": "Chrome加载后当前目录第1、2页；其他页速率/族继续核对",
+      "date": "未标"
+    },
+    "A1": {
+      "url": "https://www.accelink.com/en/lighting_your_dreams/CloudandEnterprise.html",
+      "checked": "2026-10-03",
+      "status": "web当前取回目录",
+      "date": "未标"
+    },
+    "A25": {
+      "url": "https://www.accelink.com/en/lighting_your_dreams/1972134410522226689.html",
+      "checked": "2026-10-03",
+      "status": "web当前取回官方稿",
+      "date": "2025-09-28",
+      "anchor": "200G/lane硅光段"
+    },
+    "A25D": {
+      "url": "https://www.accelink.com/lighting_your_dreams/1972923533839314946.html",
+      "checked": "2026-10-03",
+      "status": "官方稿，现场演示",
+      "date": "2025-09-30"
+    },
+    "A24AR": {
+      "url": "https://www.accelink.com/upload/1/cms/20250427/1745744221633.pdf",
+      "checked": "2026-10-03",
+      "status": "2024年报官方PDF，上轮已核产品族表；本轮当前取回",
+      "date": "2025-04"
+    },
+    "A25AR": {
+      "url": "https://www.accelink.com/upload/1/cms/20260427/1777270551534.pdf",
+      "checked": "2026-10-03",
+      "status": "2025年报官方PDF当前取回",
+      "date": "2026-04-23",
+      "anchor": "p9–10，主要产品"
+    },
+    "AD": {
+      "url": "https://www.accelink.com/en/lighting_your_dreams/1745716334399913986.html",
+      "checked": "2026-10-03",
+      "status": "Key Features上轮Chrome当前核；Receiver PIN原厂搜索缓存，当前表继续核",
+      "date": "未标"
+    },
+    "AF": {
+      "url": "https://www.accelink.com/en/lighting_your_dreams/1745731709229400066.html",
+      "checked": "2026-10-03",
+      "status": "Key Features上轮Chrome当前核；Receiver PIN原厂搜索缓存，当前表继续核",
+      "date": "未标"
+    },
+    "ADR4": {
+      "url": "https://www.accelink.com/en/lighting_your_dreams/2084555909131960322.html",
+      "checked": "2026-10-03",
+      "status": "当前官网Chrome加载后正文和KeyFeatures实时核验；web工具不支持该页",
+      "date": "未标",
+      "anchor": "RTXM700-546 / Key Features"
+    },
+    "A2FR": {
+      "url": "https://www.accelink.com/en/lighting_your_dreams/2084552858237173762.html",
+      "checked": "2026-10-03",
+      "status": "Chrome当前加载后正文、Key Features",
+      "date": "未标",
+      "anchor": "RTXM700-532"
+    },
+    "EOS": {
+      "url": "https://www.eoptolink.com/product-solutions/800g/800g-osfp",
+      "checked": "2026-10-03",
+      "status": "Chrome当前Ordering information，全部11行",
+      "date": "未标"
+    },
+    "EQ": {
+      "url": "https://www.eoptolink.com/product-solutions/800g/800g-qsfp-dd800",
+      "checked": "2026-10-03",
+      "status": "Chrome当前Ordering information，全部11行",
+      "date": "未标"
+    },
+    "E200": {
+      "url": "https://www.eoptolink.com/product-solutions/800g/800g-osfp-200g-per-lane",
+      "checked": "2026-10-03",
+      "status": "Chrome当前Features与Ordering information，全部3行",
+      "date": "未标"
+    },
+    "ELOS": {
+      "url": "https://www.eoptolink.com/product-solutions/800g/800g-lpo-osfp",
+      "checked": "2026-10-03",
+      "status": "Chrome当前Features与Ordering information，全部2行",
+      "date": "未标"
+    },
+    "ELQ": {
+      "url": "https://www.eoptolink.com/product-solutions/800g/800g-lpo-qsfp-dd800",
+      "checked": "2026-10-03",
+      "status": "Chrome当前Ordering information，全部2行；族介绍含VR8/2VR4但订货表无对应P/N",
+      "date": "未标"
+    },
+    "EDPDF": {
+      "url": "https://www.eoptolink.com/pdf/800G/OSFP/Brief%20EOLO-138HG-5H-xDx%20V1.b.pdf",
+      "checked": "2026-10-03",
+      "status": "官网目录链接PDF当前取回",
+      "date": "V1.b，日历日未标",
+      "anchor": "p1"
+    },
+    "E2FPDF": {
+      "url": "https://www.eoptolink.com/pdf/800G/OSFP/Brief%20EOLO-168HG-02-XX%20V1.a.pdf",
+      "checked": "2026-10-03",
+      "status": "官网目录链接PDF当前取回；文件名XX而内部P/N为-1，别名冲突保留",
+      "date": "V1.a，日历日未标",
+      "anchor": "p1"
+    },
+    "EVPDF": {
+      "url": "https://www.eoptolink.com/pdf/800G/OSFP/Brief%20EOLO-858HG-01-M%20V1.c.pdf",
+      "checked": "2026-10-03",
+      "status": "官网目录链接PDF当前取回",
+      "date": "V1.c，日历日未标",
+      "anchor": "p1"
+    },
+    "ELPDF": {
+      "url": "https://www.eoptolink.com/pdf/800G/OSFP/Brief%20EOLO-138HG-10-xDx%20V1.b.pdf",
+      "checked": "2026-10-03",
+      "status": "官网目录链接PDF当前取回",
+      "date": "V1.b，日历日未标",
+      "anchor": "p1"
+    },
+    "EV16": {
+      "url": "https://www.prnewswire.com/news-releases/eoptolink-launches-1-6t-osfp-2vr4-transceivers-using-200g-vcsels-302414876.html",
+      "checked": "2026-10-03",
+      "status": "公司提供官方发布稿当前取回",
+      "date": "2025-03-29"
+    },
+    "ELRO16": {
+      "url": "https://www.prnewswire.com/news-releases/eoptolink-demonstrates-1-6t-lro-modules-at-ofc-2025--302414874.html",
+      "checked": "2026-10-03",
+      "status": "公司提供官方发布稿当前取回",
+      "date": "2025-03-31"
+    },
+    "E26DR4": {
+      "url": "https://www.eoptolink.com/news/13-new-products/365-eoptolink-demos-imdd-400g-per-lambda-based-1-6t-dr4-optical-transceiver-solution-at-ofc-2026",
+      "checked": "2026-10-03",
+      "status": "Chrome当前官方稿正文",
+      "date": "2026-03-12"
+    },
+    "E26DSP": {
+      "url": "https://www.eoptolink.com/news/13-new-products/363-eoptolink-is-using-broadcom-s-industry-first-400g-lane-optical-dsp-for-next-generation-1-6t-transceivers",
+      "checked": "2026-10-03",
+      "status": "新易盛官网当前转载Broadcom原稿，标题及新易盛CEO引语直接锚公司采用",
+      "date": "2026-03-11"
+    },
+    "ICQ": {
+      "url": "https://products.zj-innolight.com/en/goods/solution/cid/19.html",
+      "checked": "2026-10-03",
+      "status": "旧官网搜索缓存支持；该旧域本轮Chrome连接关闭，未实时核此页",
+      "date": "未标，缓存示2月前抓取"
+    },
+    "ICSH": {
+      "url": "https://www.innolight.com/uploads/aboutfiile75/1671780229984674.pdf",
+      "checked": "2026-10-03",
+      "status": "官方历史报告搜索缓存；当前PDF404，不能冒称实时PDF全文",
+      "date": "2021社会责任报告；文中事件OFC2022"
+    },
+    "IN23": {
+      "url": "https://www.innolight.com/en/news/newsinfo/179.html",
+      "checked": "2026-10-03",
+      "status": "上轮本日核官方发布稿；历史代际单列",
+      "date": "OFC2023，现页头2024-02-23"
+    },
+    "AVR": {
+      "url": "https://www.accelink.com/en/lighting_your_dreams/1859162809951092737.html",
+      "checked": "2026-10-03",
+      "status": "当前产品页正文，VCSEL/PIN直接披露",
+      "date": "未标"
+    }
+  },
+  "catalog": [
+    {
+      "company": "中际旭创 / InnoLight",
+      "coverage": "现官网数通800G/1.6T各入口型号；不称全部在售完整SKU",
+      "families": [
+        {
+          "rate": "800G",
+          "package": "OSFP112",
+          "variants": [
+            "2xLR4，10km，EML+两组4波长CWDM MUX/DEMUX",
+            "2xFR4，2km，EML+两组4波长CWDM MUX/DEMUX",
+            "2xDR4，500m，双MPO12/APC，并行",
+            "DR8，500m，MPO16/APC，并行",
+            "SR8，VCSEL，OM3 30m/OM4 50m，双MPO12"
+          ],
+          "electrical": "8×100G PAM4",
+          "sources": [
+            "I1"
+          ]
+        },
+        {
+          "rate": "800G",
+          "package": "QSFP112-DD",
+          "variants": [
+            "2xFR4，EML+双组CWDM，2km",
+            "2xDR4，EML，500m，双MPO12/APC",
+            "DR8，EML，500m，MPO16/APC",
+            "SR8，VCSEL，OM3 30m/OM4 50m，双MPO12"
+          ],
+          "electrical": "8×100G PAM4",
+          "sources": [
+            "I2"
+          ]
+        },
+        {
+          "rate": "800G",
+          "package": "OSFP224",
+          "variants": [
+            "DR4，500m"
+          ],
+          "electrical": "4×200G PAM4",
+          "route": "页面写4 CWDM lanes MUX/DEMUX；名称DR4与WDM结构冲突，待澄清",
+          "sources": [
+            "I3"
+          ]
+        },
+        {
+          "rate": "1.6T",
+          "package": "OSFP224",
+          "variants": [
+            "DR8，500m"
+          ],
+          "electrical": "8×200G PAM4；8×200G并行光",
+          "route": "该当前页不直接披露EML/SiPh/DSP",
+          "sources": [
+            "I4"
+          ]
+        }
+      ],
+      "older_official_cache": [
+        {
+          "package": "800G OSFP",
+          "items": [
+            "T-OL8CNT-N00 2xFR4：EML CWDM/PIN，16W，2km",
+            "T-OP8CNH-N00 DR8：1310nm EML/PIN，16W，500m",
+            "T-OP8CNT-N00 DR8+：1310nm EML/PIN，16W，2km",
+            "C-OS8CNSxxx-N00 AOC：SiPh TX/RX，16W，100m"
+          ],
+          "family_route": "产品族两种架构4x100Gx2/8x100G；EML和硅光方案直接披露，精确后缀对应当前官网需补",
+          "sources": [
+            "IC"
+          ]
+        },
+        {
+          "package": "800G QSFP-DD",
+          "items": [
+            "T-DP8CNT-N00 DR8+：1310nmEML/PIN，16W，2km",
+            "C-DQ8CNSxxx-N00 AOC：SiPh TX/RX，16W，100m"
+          ],
+          "family_route": "族直接EML/SiPh；不映射当前QSFP112-DD的EML配置",
+          "sources": [
+            "ICQ"
+          ]
+        },
+        {
+          "package": "800G OSFP/QSFP-DD800历史硅光",
+          "items": [
+            "OFC2022 OSFP2xFR4、QSFP-DD800 DR8+硅光现场演示；历史报告称重点客户样品测试和小批量送样"
+          ],
+          "sources": [
+            "ICSH"
+          ],
+          "boundary": "历史报告缓存与当时阶段，当前PDF404；不是仅公司平台泛化，也不代表2026当前量产"
+        }
+      ],
+      "other_categories": "数通100G/200G/400G；移动前/中/回传25G/50G/100G/200G；相干QSFP-DD/CFP2/OSFP。现新官网入口未列PON；旧官网缓存有Fiber to the home大类，不能说公司无PON。",
+      "sources": [
+        "I0",
+        "IM",
+        "IH"
+      ],
+      "remaining": "当前精确P/N、DSP、Driver/TIA及PIN型号；各配置量产阶段",
+      "historical_release_families": [
+        {
+          "rate": "800G",
+          "variants": [
+            "第2代OSFP DR8+/2FR4"
+          ],
+          "route": "5nmDSP，<14W；OFC2023稿明确，不能自动并到当前页或16W旧表P/N",
+          "sources": [
+            "IN23"
+          ]
+        },
+        {
+          "rate": "1.6T",
+          "variants": [
+            "OSFP-XD DR8+演示"
+          ],
+          "route": "200G/光通道、100G SerDes生态，2km，<23W；电lane数推导16需标签",
+          "sources": [
+            "IN23"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "新易盛 / Eoptolink",
+      "coverage": "Chrome当前800G入口全部8组，OSFP/QSFP-DD/200G-lane/LPO二级订货表29行；1.6T OSFP表4组；2025/2026发布演示族另列。SR/LR8旧目录不代表当前在售。",
+      "families": [
+        {
+          "rate": "800G",
+          "package": "OSFP",
+          "electrical": "当前200G光通道族Features直接列8×106.25Gbps PAM4电口、4×226.6Gbps PAM4光口；不是4×200G电口",
+          "variants": [
+            "DR4 EOLO-138HG-E-5H-XDX：1311nm，500m，MPO12",
+            "DR4-2 EOLO-138HG-E-02-XDX：1311nm，2km，MPO12",
+            "FR4 EOLO-168HG-E-02-XPX：CWDM，2km，LC"
+          ],
+          "sources": [
+            "E200"
+          ]
+        },
+        {
+          "rate": "800G",
+          "package": "OSFP及QSFP-DD800",
+          "electrical": "100G/lane族",
+          "variants": [
+            "OSFP与QSFP-DD均有8×100G并行DR(500m)/FR(2km)/LR(10km)，各有MPO16与双MPO12版本；不是把8×100G FR误作FR8 WDM",
+            "2FR4与2LR4；QSFP-DD有双LC与双CS变体",
+            "VR8；OSFP另有2VR4",
+            "AOC"
+          ],
+          "sources": [
+            "EOS",
+            "EQ",
+            "E8"
+          ]
+        },
+        {
+          "rate": "800G",
+          "package": "OSFP LPO",
+          "variants": [
+            "2DR4 EOLO-138HG-5H-xDxLx：8×100G，1310nm，500m，2MPO12",
+            "2FR4 EOLO-168HG-02-SLx：8×100G，CWDM，2km，2LC"
+          ],
+          "electrical": "LPO线性电架构，具体lane见细项",
+          "sources": [
+            "ELOS",
+            "EL",
+            "EOIF"
+          ]
+        },
+        {
+          "rate": "800G",
+          "package": "QSFP-DD800 LPO",
+          "variants": [
+            "目录族介绍VR8、2DR4、2VR4、2FR4；当前订货表仅2DR4和2FR4",
+            "2DR4 EOLD-138HG-5H-xDxLx：8×100G，1310nm，500m，2MPO12",
+            "2FR4 EOLD-168HG-02-SLx：8×100G，CWDM，2km，2LC"
+          ],
+          "sources": [
+            "ELQ",
+            "EL",
+            "EOIF"
+          ]
+        },
+        {
+          "rate": "800G",
+          "package": "OSFP",
+          "variants": [
+            "ZR/ZR+：EOLO-168HG-B/E-5X，相干DSP",
+            "MCF：双MPO12，四芯光纤4CF，500m"
+          ],
+          "sources": [
+            "E8"
+          ]
+        },
+        {
+          "rate": "800G",
+          "package": "OSFP",
+          "variants": [
+            "FR8：EOLO-168HG-02-P，EML CWDM/PIN+TIA，2km，LC"
+          ],
+          "electrical": "8×106.25Gbps PAM4",
+          "sources": [
+            "EFR"
+          ]
+        },
+        {
+          "rate": "1.6T",
+          "package": "OSFP",
+          "variants": [
+            "2VR4 EOLO-85T-01-DX，8×200G，850nm，距离/连接器TBD",
+            "DR8 EOLO-13T-5H-XDX/XMX，8×200G，1311nm，500m，DualMPO12/MPO16",
+            "DR8-2 EOLO-13T-02-XDX/XMX，8×200G，1311nm，2km，DualMPO12/MPO16",
+            "2FR4 EOLO-16T-02-XXX，8×200G，CWDM，2km，DualDuplexLC"
+          ],
+          "electrical": "族Features列212.5Gbps PAM4光口和电口，另列106.25Gbps NRZ电口；不得自动把后者分配全部SKU",
+          "sources": [
+            "E16"
+          ]
+        },
+        {
+          "rate": "1.6T",
+          "package": "Gen2 OSFP/OSFP-RHS",
+          "variants": [
+            "2DR4",
+            "2FR4"
+          ],
+          "route": "Fully retimed，3nmDSP；两产品类型均有SiPh/EML变体；完整后缀映射待补",
+          "sources": [
+            "EG"
+          ]
+        },
+        {
+          "rate": "1.6T",
+          "package": "OSFP 2VR4（OFC2025发布族）",
+          "variants": [
+            "两组MPO12，每组4×212Gbps光通道"
+          ],
+          "route": "850nm 200G VCSEL明确；当前目录P/N EOLO-85T-01-DX映射仍待说明",
+          "stage": "OFC2025演示；目录连接器TBD与发布族双MPO12分别保留",
+          "sources": [
+            "EV16",
+            "E16"
+          ]
+        },
+        {
+          "rate": "1.6T",
+          "package": "LRO发布族",
+          "variants": [
+            "212Gbps/光通道"
+          ],
+          "route": "TX retimer、RX linear，接收路径移除DSP；厂商约降30%相对功耗，基线不完整",
+          "stage": "OFC2025演示",
+          "sources": [
+            "ELRO16"
+          ]
+        },
+        {
+          "rate": "1.6T",
+          "package": "OSFP DR4（400G/光通道，OFC2026演示）",
+          "variants": [
+            "8×200G电口→4×400G光口，8:4 PAM4 DSP；IMDD"
+          ],
+          "route": "针对该下一代族官网另披露采用Broadcom 3nm Taurus BCM83640（集成laser driver）；Broadcom EML/PD互操作不是证明该模块实际使用其EML/PD",
+          "stage": "OFC2026演示验证；不能写量产",
+          "sources": [
+            "E26DR4",
+            "E26DSP"
+          ]
+        },
+        {
+          "rate": "1.6T",
+          "package": "200G光通道FRO/LRO/LPO族",
+          "variants": [
+            "2026发布稿明确并列"
+          ],
+          "route": "FRO为全retimed，LRO为TX retimed/RX linear，LPO为linear；本稿未给各P/N/光子平台/连接器",
+          "stage": "OFC2026展示族",
+          "sources": [
+            "E26DR4"
+          ]
+        }
+      ],
+      "other_categories": "400G/200G/100G/50G/40G/25G/10G/低于10G；xPON；OSA（TOSA/ROSA）；遗留及定制。xPON入口自述25G/50G在研，须注明网页无日期；不得外推当前研发未完成。",
+      "sources": [
+        "E0"
+      ],
+      "remaining": "VR/SR命名不可互换；FR8现PDF CWDM与2021旧LANWDM目录不是同一SKU；各平台具体SKU、制造及量产待补",
+      "ordering_tables": [
+        {
+          "package": "OSFP 100G/光通道",
+          "source": "EOS",
+          "rows": [
+            [
+              "EOLO-138HG-5H-XMX/-XDX",
+              "8x100G DR",
+              "1310nm",
+              "500m",
+              "MPO16/双MPO12"
+            ],
+            [
+              "EOLO-138HG-02-XMX/-XDX",
+              "8x100G FR",
+              "1310nm",
+              "2km",
+              "MPO16/双MPO12"
+            ],
+            [
+              "EOLO-138HG-10-XMX/-XDX",
+              "8x100G LR",
+              "1310nm",
+              "10km",
+              "MPO16/双MPO12"
+            ],
+            [
+              "EOLO-168HG-02-XX",
+              "2FR4",
+              "CWDM",
+              "2km",
+              "双LC"
+            ],
+            [
+              "EOLO-168HG-10-XX",
+              "2LR4",
+              "CWDM",
+              "10km",
+              "双LC"
+            ],
+            [
+              "EOLO-168HG-02-PX",
+              "FR8",
+              "WDM",
+              "2km",
+              "LC；链接PDF内部-02-P"
+            ],
+            [
+              "EOLO-858HG-01-MX",
+              "VR8",
+              "850nm",
+              "OM3 30m/OM4 50m",
+              "MPO16"
+            ],
+            [
+              "EOLO-858HG-01-DX",
+              "2VR4",
+              "850nm",
+              "OM3 30m/OM4 50m",
+              "双MPO12"
+            ]
+          ]
+        },
+        {
+          "package": "QSFP-DD800 100G/光通道",
+          "source": "EQ",
+          "rows": [
+            [
+              "EOLD-138HG-5H-XMX/-DX",
+              "8x100G DR",
+              "1310nm",
+              "500m",
+              "MPO16/双MPO12"
+            ],
+            [
+              "EOLD-138HG-02-XMX/-DX",
+              "8x100G FR",
+              "1310nm",
+              "2km",
+              "MPO16/双MPO12"
+            ],
+            [
+              "EOLD-138HG-10-XMX/-DX",
+              "8x100G LR",
+              "1310nm",
+              "10km",
+              "MPO16/双MPO12"
+            ],
+            [
+              "EOLD-168HG-02-XX/-CX",
+              "2FR4",
+              "CWDM",
+              "2km",
+              "双LC/双CS"
+            ],
+            [
+              "EOLD-168HG-10-XX/-CX",
+              "2LR4",
+              "CWDM",
+              "10km",
+              "双LC/双CS"
+            ],
+            [
+              "EOLD-858HG-01-MX",
+              "VR8",
+              "850nm",
+              "OM3 30m/OM4 50m",
+              "MPO16"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "company": "光迅科技 / Accelink",
+      "coverage": "Chrome当前Optical Transceivers入口第1/2页所有800G/1.6T项，加Cloud&Enterprise现入口的OSFP-XD项；发布日期稿另列，非完整全球在售P/N",
+      "families": [
+        {
+          "rate": "1.6T",
+          "package": "OSFP224",
+          "variants": [
+            "DR8 RTXM700-502，SiPh，双MPO12/APC，30W",
+            "2FR4 RTXM700-532：8×200G PAM4 SiPh CWDM发射、8×200G 1600GAUI8电口，DualDuplexLC，2km，26W，0–70°C；DSP/PD/TIA页未列"
+          ],
+          "sources": [
+            "A0",
+            "A2FR"
+          ]
+        },
+        {
+          "rate": "1.6T",
+          "package": "OSFP-XD",
+          "variants": [
+            "DR8 RTXM700-200，8×200G cooledEML+16×100G retimed",
+            "DR8+ RTXM700-204",
+            "2xFR4 RTXM700-210，EML",
+            "DR8 SIP（Cloud&Enterprise关联项）"
+          ],
+          "sources": [
+            "A1"
+          ]
+        },
+        {
+          "rate": "800G",
+          "package": "OSFP",
+          "variants": [
+            "OSFP224 DR4 RTXM700-546：SiPh调制器，4双工光通道，单光通道212.5GbpsPAM4，MPO12/APC，500mSMF，16W，0–70°C；电通道/DSP未在该页披露",
+            "VR8",
+            "ZR DCO",
+            "2xLR4",
+            "DR8",
+            "DR8+",
+            "DR8++",
+            "2xFR4"
+          ],
+          "sources": [
+            "A0",
+            "A1",
+            "ADR4"
+          ]
+        },
+        {
+          "rate": "800G",
+          "package": "QSFP-DD/QSFP-DD800",
+          "variants": [
+            "VR8",
+            "SR8",
+            "2xLR4",
+            "DR8",
+            "DR8+",
+            "DR8++",
+            "2xFR4"
+          ],
+          "sources": [
+            "A0"
+          ]
+        },
+        {
+          "rate": "800G",
+          "package": "OSFP112及OSFP224（2025新一代族）",
+          "variants": [
+            "DR4",
+            "FR4"
+          ],
+          "route": "200G/光通道硅光；OSFP112/224电通道数此稿不逐字给出，不能光通道当电通道",
+          "stage": "2025-09-30已动态演示，精确P/N/量产待补",
+          "sources": [
+            "A25",
+            "A25D"
+          ]
+        },
+        {
+          "rate": "1.6T",
+          "package": "OSFP224（2025新一代族）",
+          "variants": [
+            "2xDR4",
+            "2xFR4",
+            "LPO",
+            "LRO"
+          ],
+          "route": "2DR4/2FR4采用3nmDSP+硅光引擎；LPO/LRO为另列族，不能套DSP",
+          "stage": "ECOC2025演示",
+          "sources": [
+            "A25",
+            "A25D"
+          ]
+        },
+        {
+          "rate": "800G",
+          "package": "年度产品族",
+          "variants": [
+            "DR8 LRO",
+            "2xFR4 LPO"
+          ],
+          "stage": "2025年报列产品族，不直接证逐SKU量产",
+          "sources": [
+            "A25AR"
+          ]
+        }
+      ],
+      "other_categories": "模块/AOC；数通100G/200G/400G；电信传输100G/400G和相干；PON OLT/ONU/BOSA及25G/50G/100G无线灰光/彩光；光纤放大器；波长管理AWG/VMUX/WDM/VOA/OPM/WSS/OTDR；动态/无源器件、光连接器、OSA、子系统。",
+      "sources": [
+        "A25AR"
+      ],
+      "remaining": "200G族OSFP112 P/N、800G FR4 P/N、DSP/Driver/TIA与量产映射；旧800G PIN缓存表应保留来源层级"
+    }
+  ],
+  "corrections": [
+    {
+      "company": "新易盛",
+      "product_claim": "800G FR8 EOLO-168HG-02-P内部实现",
+      "original_dialogue_claim": "EML/CWDM、driver集成retimer、8PD+2四通道TIA",
+      "previous_gap": "前稿未收此SKU与详细PDF；内部实现泛称UNKNOWN",
+      "verified_now": "PDF p1直接披露8×106.25G电输入输出、8 CWDM波长、EML发射、双向PAM4 retimer ASIC与EML/modulator driver集成；RX=8PD+两组4通道TIA+PAM4 retimer；Features=PIN，LC，2km，<16W。",
+      "source": [
+        "EFR"
+      ],
+      "remaining": "精确芯片厂商/制程、PD材料、WDM器件工艺、制造及量产；不能把integrated with解释为EML激光本体在CMOS DSP芯片上",
+      "cause": "漏读原厂PDF"
+    },
+    {
+      "company": "新易盛",
+      "product_claim": "800G LPO光学四路线",
+      "original_dialogue_claim": "MMF VCSEL；SMF EML/SiPh/TFLN",
+      "previous_gap": "前稿只列OIF2024硅光LPO版本，其他路线未进目录",
+      "verified_now": "2023官方发布稿Chrome当前正文明确四路线、无DSP/CDR、OSFP/QSFP-DD800；应记产品族直接披露，SKU映射待补。",
+      "source": [
+        "EL",
+        "EOIF"
+      ],
+      "remaining": "每一路线完整SKU、各自距离/功耗/连接器、是否持续在售及量产；2024 SiPh/PIN-TIA内容不能套全部四路线",
+      "cause": "漏读发布稿；web工具源访问异常；过严SKU匹配把产品族已知写成UNKNOWN"
+    },
+    {
+      "company": "新易盛",
+      "product_claim": "1.6T目录、距离、通道、连接器",
+      "original_dialogue_claim": "DR8/DR8-2/2FR4多配置",
+      "previous_gap": "把搜索缓存留线索；Gen2 PR稿缺距程导致500m/2km泛UNKNOWN",
+      "verified_now": "Chrome当前Ordering information可读完整4族；DR8/DR8-2/2FR4精确型号、8×200G、波长、距离、连接器直接恢复，2VR4仍TBD。",
+      "source": [
+        "E16",
+        "EG"
+      ],
+      "remaining": "Gen2变体后缀与现订货表映射、每SKU DSP代际、SiPh/EML后缀；NRZ电口不能套全族",
+      "cause": "源访问层问题＋未展开订货表"
+    },
+    {
+      "company": "光迅",
+      "product_claim": "800G DR4/FR4 200G/lane SiPh",
+      "original_dialogue_claim": "200G-lane硅光800G DR4/FR4",
+      "previous_gap": "前稿以800G DR8/2FR4老型号为主要样本，漏新一代族",
+      "verified_now": "2025-09-28/30官方稿直接披露OSFP112/OSFP224 DR4/FR4，200G/通道硅光，并已动态演示；产品族路线可成立。",
+      "source": [
+        "A25",
+        "A25D"
+      ],
+      "remaining": "各P/N、电通道、Driver/TIA、MUX、连接器、量产；不能直接把1.6T 3nm DSP套800G",
+      "cause": "漏读新发布稿；代际和产品族覆盖不足"
+    },
+    {
+      "company": "光迅",
+      "product_claim": "1.6T OSFP224 2DR4/2FR4",
+      "original_dialogue_claim": "3nmDSP+SiPh",
+      "previous_gap": "前稿仅DR8 2025 OFC升级版及RTXM700-502旧规格",
+      "verified_now": "ECOC2025族2DR4/2FR4直接3nmDSP+硅光；厂商说功耗比上代降30%，不能视为当前P/N实测",
+      "source": [
+        "A25",
+        "A25D"
+      ],
+      "remaining": "P/N、绝对功耗、基线、距离、PD/TIA及量产",
+      "cause": "新一代产品族漏读，不能跨代合并"
+    },
+    {
+      "company": "中际",
+      "product_claim": "800G SR8 VCSEL",
+      "original_dialogue_claim": "800G短距VCSEL路线",
+      "previous_gap": "上轮JSON未纳SR8，代表样本不等完整公司目录",
+      "verified_now": "新官网OSFP112与QSFP112-DD SR8均直接VCSEL、8×100G电/并行光、双MPO12、OM3 30m/OM4 50m。",
+      "source": [
+        "I1",
+        "I2"
+      ],
+      "remaining": "PIN/TIA、DSP及量产未直接披露",
+      "cause": "产品样本选取漏列，不是路线未公开"
+    },
+    {
+      "company": "中际",
+      "product_claim": "800G 2xFR4 EML+CWDM",
+      "original_dialogue_claim": "EML/CWDM两组4波长",
+      "previous_gap": "该路线前稿已部分写明，需公司目录展示，避免读者以其他项UNKNOWN误读",
+      "verified_now": "OSFP112和QSFP112-DD均官网直接EML+8×100G电、两组4波长CWDM MUX/DEMUX，2km；不需等P/N方可确认产品配置路线。",
+      "source": [
+        "I1",
+        "I2"
+      ],
+      "remaining": "AWG/薄膜实现、PD/TIA当前页不列；旧表PIN另列缓存",
+      "cause": "呈现层级问题，已知配置未扩目录"
+    },
+    {
+      "company": "中际",
+      "product_claim": "800G EML/PIN和SiPh产品族",
+      "original_dialogue_claim": "800G EML/SiPh路线及EML/PIN型号",
+      "previous_gap": "旧官网实时502，全部降线索；没有清楚保留已支持的族",
+      "verified_now": "旧官网缓存列EML/PIN三型号、SiPh TX/RX AOC型号模式；当前QSFP112-DD DR8/2DR4直接EML。记旧官网缓存支持/当前待核，而非抹掉；SiPh族直接披露、当前SKU映射待补。",
+      "source": [
+        "IC",
+        "I2"
+      ],
+      "remaining": "缓存表当前真实性、旧SKU是否持续在售、与新官网代际映射；SiPh AOC不能推SiPh DR8 exactSKU",
+      "cause": "源访问限制＋证据层级被合并成UNKNOWN"
+    },
+    {
+      "company": "光迅",
+      "product_claim": "800G OSFP224 DR4具体P/N和实现",
+      "original_dialogue_claim": "800G200G-laneSiPh",
+      "previous_gap": "前稿没有DR4型号；后来仅恢复2025产品族发布稿",
+      "verified_now": "当前官网RTXM700-546直接SiPh modulator、4双工光通道、每路212.5GbpsPAM4、MPO12APC、500m、16W、0–70°C。此SKU光学路线有直接锚，不再仅族级。",
+      "source": [
+        "ADR4"
+      ],
+      "remaining": "该页没有逐字电通道/DSP/PD/TIA，不把OSFP224封装名当电通道表；量产未知",
+      "cause": "目录漏读＋JS加载抽取漏正文"
+    },
+    {
+      "company": "光迅",
+      "product_claim": "1.6T OSFP224 2FR4 RTXM700-532具体实现",
+      "original_dialogue_claim": "SiPh CWDM与200G通道",
+      "previous_gap": "前稿未纳当前新目录型号",
+      "verified_now": "当前页直接8×200G SiPh CWDM发射、8×200G1600GAUI8电口、DualDuplexLC、2km、26W、0–70°C；补齐具体P/N",
+      "source": [
+        "A2FR"
+      ],
+      "remaining": "DSP、CW激光器、PD/TIA、WDM器件工艺、量产；不认作2025发布稿3nm升级版",
+      "cause": "目录漏读＋JS正文访问问题"
+    },
+    {
+      "company": "新易盛",
+      "product_claim": "800G DR8 / 8x100G LR电芯片集成",
+      "original_dialogue_claim": "Driver/TIA与DSP集成",
+      "previous_gap": "前稿仅浸没冷却SKU有该实现，普通DR8未覆盖",
+      "verified_now": "当前目录链接DR8 EOLO-138HG-5H-xDx及并行LR EOLO-138HG-10-xDx PDF均直接Driver/TIA集成DSP。DR8=8×106.25G电/光，500m；LR=8EML+8ch driver/retimer，8PD+integratedTIA，10km。",
+      "source": [
+        "EDPDF",
+        "ELPDF"
+      ],
+      "remaining": "DR8该PDF未明光源；DSP型号/制程、PD类型、量产；LR虽名称含LR但并行8路，不是LR8 WDM",
+      "cause": "漏读当前二级目录原厂PDF"
+    },
+    {
+      "company": "新易盛",
+      "product_claim": "800G 2FR4内部MUX/接收链",
+      "original_dialogue_claim": "EML、MUX/DEMUX、PD/TIA/retimer",
+      "previous_gap": "前稿只写LPO族及浸没DR8代表款，普通DSP 2FR4缺失",
+      "verified_now": "当前链接2FR4 PDF：8×106.25G电口，两组4 CWDM；TX=双向PAM4retimer+8ch driver、8EML、2MUX；RX=2DEMUX、8PD、2×4chTIA及retimer，Features PIN；双LC，2km，<16W。",
+      "source": [
+        "E2FPDF"
+      ],
+      "remaining": "目录EOLO-168HG-02-XX与PDF内部-02-1别名待补；MUX技术、芯片型号及量产",
+      "cause": "漏读详细PDF；SKU别名映射待补不等内部结构未知"
+    },
+    {
+      "company": "新易盛",
+      "product_claim": "800G VR8内部VCSEL/PIN/driver/TIA",
+      "original_dialogue_claim": "短距VCSEL及PIN/TIA",
+      "previous_gap": "前稿未列VR8",
+      "verified_now": "EOLO-858HG-01-M PDF直接850nmVCSEL/PIN；TX PAM4retimer+2×4ch驱动与8激光器；RX8PD+2×4chTIA及retimer；8×106.25G电口，MPO16APC，OM3 30m/OM4 50m，<15W，15–70°C。",
+      "source": [
+        "EVPDF"
+      ],
+      "remaining": "不能把VR8直改SR8；目录C范围与PDF15–70°C差异保留；芯片型号/量产未知",
+      "cause": "代表型号目录漏列"
+    },
+    {
+      "company": "中际",
+      "product_claim": "800G SiPh 2FR4/DR8+与5nmDSP版本",
+      "original_dialogue_claim": "800G SiPh路线与DSP",
+      "previous_gap": "前稿防错把历史/族路线一概排出主表，没有保留族级已知",
+      "verified_now": "旧官网当前缓存明确EML/SiPh族及SiPh AOC；2021历史报告缓存描述OFC2022具体SiPh OSFP2FR4/QSFPDDDR8+；2023官方稿直接第2代OSFPDR8+/2FR4 5nmDSP<14W。应各按历史版本显示，不把当前新页所有DR8/2FR4归同代。",
+      "source": [
+        "IC",
+        "ICQ",
+        "ICSH",
+        "IN23"
+      ],
+      "remaining": "当前P/N、光子平台变体映射与当期量产；历史送样不升当前量产",
+      "cause": "证据层级显示问题＋历史与当前型号映射不足"
+    }
+  ],
+  "remaining": [
+    "中际旧官网当前连接关闭，旧P/N和EML/PIN/SiPh表保留缓存支持；2021报告PDF现404。当前1.6T光子平台未直接对齐。",
+    "光迅当前目录已核第1/2页800G/1.6T；OSFP-XD在Cloud&Enterprise关联页仍列。DR4/2FR4新增具体P/N已核。600-201/210当前DOM未显示Receiver表，旧官网搜索缓存PIN不应抹掉，也不升实时规格；800G VR8具体页VCSEL/PIN当前直接披露。",
+    "新易盛官网Chrome当前正常，web/HTTP工具抽取异常；各订货表及PDF已恢复。目录有FR8 -PX，PDF内部-P；2FR4 -XX链接内部-1；平台变体后缀仍待补。",
+    "当前SKU的芯片供应商、PD/TIA型号、MUX工艺、封装制造设备材料和逐型号量产尚有缺口；发布族与历史版本已知应单独展示。"
+  ],
+  "implementation_details": [
+    {
+      "company": "新易盛",
+      "product": "800G DR8 EOLO-138HG-5H-xDx",
+      "electrical": "8×106.25G PAM4，800GAUI8",
+      "optical": "8路1310nm并行，500m",
+      "dsp_driver_tia": "Driver/TIA集成DSP",
+      "photonic": "PDF未列EML/SiPh，保留尚未披露",
+      "connector": "双MPO12",
+      "power": "<14.5W，0–70°C",
+      "source": [
+        "EDPDF"
+      ]
+    },
+    {
+      "company": "新易盛",
+      "product": "800G2FR4：目录EOLO-168HG-02-XX，PDF内部EOLO-168HG-02-1",
+      "electrical": "8×106.25G PAM4，800GAUI8",
+      "optical": "2组4 CWDM；8EML，2MUX/2DEMUX，2km",
+      "dsp_driver_tia": "双向PAM4retimer+8chmodulatordriver；8PD+2×4chTIA与retimer；PIN",
+      "connector": "双duplexLC",
+      "power": "<16W，0–70°C",
+      "source": [
+        "E2FPDF"
+      ]
+    },
+    {
+      "company": "新易盛",
+      "product": "800GVR8：EOLO-858HG-01-M",
+      "electrical": "8×106.25G PAM4，53.125GBd",
+      "optical": "8×850nmVCSEL，MMF并行",
+      "dsp_driver_tia": "PAM4retimer+2×4chdriver；8PIN/PD+2×4chTIA+retimer",
+      "connector": "MPO16APC",
+      "power": "<15W，15–70°C",
+      "source": [
+        "EVPDF"
+      ]
+    },
+    {
+      "company": "新易盛",
+      "product": "800G并行8×100G LR：EOLO-138HG-10-xDx",
+      "electrical": "8×106.25G PAM4，800GAUI8",
+      "optical": "8EML/1310nm并行，10km",
+      "dsp_driver_tia": "Driver/TIA集成DSP；双向retimer+8chdriver；8PD+integratedTIA",
+      "connector": "双MPO12",
+      "power": "<14.5W，0–70°C",
+      "source": [
+        "ELPDF"
+      ]
+    }
+  ]
+}

@@ -1,32 +1,28 @@
 workpack:
-  id: OPTICAL-ROUTE-PRODUCT-READER-20260914
-  title: 从路线到产品与零件的独立问答页
-  status: delivered
-  authorization: 用户要求以指定图文合并版及原有问答为资料源，按任务、路线、产品、零件连接、制造、路线差异生成独立页面；缺资料处定向检索。
+  id: OPTICAL-GOAL2-GITHUB-SYNC-20261003
+  title: 已交付公司产品技术路线研究同步到GitHub dev
+  status: validated_pending_push
+  authorization: 用户要求目前Codex这轮光模块研究完成后更新GitHub，沿用现有dev。
 objective:
-  - 走通一个具体产品的解释链，完成一个边界明确的路线差异比较；复用现有资料并保留原问题和证据定位。
+- 核验已交付研究文件，提交并推送到pojoker/optical-module-research现有dev。
 allowed_write_paths:
-  - AGENTS.md
-  - docs/control/ACTIVE_WORKPACK.yaml
-  - out/光模块路线到零件-20260914/**
-  - refs/问题信源路由表.md
-  - docs/research/光通信研究机构近三月公开资料-20261001.md
+- docs/control/ACTIVE_WORKPACK.yaml
+- out/目标2-公司产品环节路线初稿-20261003/**
 read_scope:
-  - AGENTS.md、docs/control/PROJECT_CHARTER.md、当前工作包、项目技能
-  - out/光模块知识体系/光模块基础知识-图文合并版-10图105问.html 及其直接引用的图片与来源
-  - site/optical-module/sections/ 中直接相关问答和路线内容
-  - 定向检索所得的厂商原始资料和标准
+- 当前研究任务的支持界面完成记录、本轮交付目录、项目规定与基线差异。
 non_goals:
-  - 不改原页面、canonical、问题树，不提交、推送或发布，不建立新研究架构。
+- 不增加研究或阅读地图检查，不改canonical，不纳入无关修改，不强推，不合并main，不新建PR，不部署网站。
 acceptance_criteria:
-  - 单独 HTML 可离线阅读正文；按解释依赖组织，产品对象和制造实例不混淆。
-  - 现有内容有原题定位；新增资料有外部证据锚；未披露信息明确保留 UNKNOWN。
-  - 检查本地链接、页面结构与浏览器显示；不以机器检查代替领域复核。
+- 当前研究任务已完成且最终回复对应本轮文件。
+- 检查交付文件及隐私、链接、格式、语法和项目机器门。
+- 远端dev含目标提交，并核对该提交CI状态。
 canonical_policy:
   writable: false
-architecture_budget: 无新框架与依赖；手写静态页面。
+architecture_budget: 仅同步已有静态研究与必要授权记录，无新框架或依赖。
 stop_conditions:
-  - 未披露的内部 BOM 或工艺不猜测；完成限定切片后停止扩展。
+- 无法可靠识别本轮完成状态或文件时停止写入。
+
+previous_workpack_note: 以下保留dev既有历史记录及本轮研究交付依据，不授予额外操作权限。
 
 revision_authorization: 用户指出页面仍难懂，明确允许外部资料补充；继续在同一独立页修订因果解释和图示。
 revision_acceptance:
@@ -277,3 +273,115 @@ dev_package_20261001:
   inherited_content: 现有研究分支已跟踪的 canonical 数据、采集与构建代码、研究 prompt 和九页只读快照随分支继承；不在本次重写。
   non_goals: 不晋升候选或修改 canonical；不额外纳入仓库外的每日运行状态、本地尚未跟踪的历史发送副本和旧实验目录，不生成或改写 calls/out；不更新 main，不新建 PR。既有研究分支历史文件按原样继承。
   acceptance: 检查入包文件、安全边界、页面构建与 YAML；远端 dev 指向包含全部指定文件的提交，回读核对；本地 canonical 指纹不变。
+
+goal2_draft_verification_20261003:
+  delivery: out/目标2-公司产品环节路线初稿-20261003/index.html
+  reading: 完整读取指定对话5轮双方正文，hasMore=false且nextCursor=null；未取得引用占位符的原URL或附件。
+  scope: 六家核心厂商28条产品或版本配置，560项环节检查记录含UNKNOWN；24个产品原始来源URL；其他公司为既有资料索引，不称全覆盖。
+  review: 国内与海外分工核原厂资料，独立审阅修正工程推断标签、未披露距离和LPO旁系通道依据。
+  checks:
+    - HTML28张卡片、本地文件链接、片内锚、CSV行数和JSON解析通过。
+    - 浏览器检查页面排版，型号筛选1条、Lumentum筛选3条、展开20环节；最终恢复全部28条。
+    - 核心6份账本及calls的18份CSV共24份SHA256与任务前一致；未改canonical。
+    - 工作包YAML语法通过；不涉及生成链、正式研究结案、提交、推送或发布。
+  gaps: SKU与平台后缀、型号采用/量产阶段、Driver/TIA/耦合/合分波工艺、支持电路、设备材料测试及可比性能；原厂页面规格冲突保留。
+  agy: 按要求执行辅助检索；headless命令权限自动拒绝，无可用输出；未修改权限，改用原厂一手资料直接核对。
+
+goal2_gap_repair_authorization_20261003:
+  request: 每个公司有哪些产品为何缺失，需要解决；核对原对话与初稿内部实现UNKNOWN的差异。
+  scope: 同一静态初稿目录，补公司产品目录、原对话主张差异说明与可得实现；主表仍以800G/1.6T数通为核心，其他产品族分层呈现范围。
+  non_goals: 不晋升canonical，不推断供应关系，不提交、推送或发布。
+
+all_company_scope_20261003:
+  authorization: 用户明确选择现有资料全部公司，含材料、器件和设备商。
+  delivery: 在同一独立初稿增加全部公司光通信相关产品清单和逐公司缺口；六家原对话差异核对继续。
+  source_boundary: 当前根账本、calls公司池/观察对象/主张与直接来源；不读取禁读历史，不把上下游产品自动归为公司的在售产品。
+
+all_company_gap_repair_delivery_20261003:
+  status: delivered_draft_not_canonical
+  delivery: out/目标2-公司产品环节路线初稿-20261003/index.html
+  scope: 155个points原名、39条calls公司池和47条观察对象共241条输入名称记录全部归集；227个读者目录入口，含集团/子公司/历史名称，不计作独立企业数。
+  outputs:
+    - 全部公司产品清单CSV/Markdown/JSON与公司名称覆盖核对CSV；646组摘录含产品、工艺、服务、客户应用和线索，不是SKU数。
+    - 43项原对话与前稿差异，逐项列补回内容、原因、来源与剩余缺口。
+    - 六家36条具体配置与720行环节检查；撤销默认空值等于厂商未披露的表述，补CMIS/供电/温区、光源、Driver/PD/TIA等可核实现。
+  remaining:
+    - 本川智能、普源精电、星钥光子、星欣磊的当前引语无具体产品名，保留线索与补原文需求。
+    - 公司池线索及历史摘录未全部转为当日原厂核验；精确SKU、内部BOM、制造设备材料、测试及量产仍需补证。
+    - 目录型号、产品族、历史演示和平台名单不能任意拼接；原厂规格冲突继续保留。
+  verification:
+    - 三组提取及独立审阅完成；修正客户用途/自制、母子公司归属、族与型号配对及TX/PD/TIA混填。
+    - 名称覆盖、JSON/CSV行数、HTML唯一ID与本地链接检查通过；详细记录见gap_repair_verification.json。
+    - 浏览器验证全部公司目录、设备类别筛选、公司搜索、FR8单型号筛选与20环节展开，并检查排版。
+    - 24份canonical SHA256与任务前一致；未修改事实账本、提交、推送或发布。
+  agy: 已按要求尝试辅助检索；headless权限自动拒绝，无可用输出。未更改权限；原厂资料由工具与浏览器直接核对。
+
+product_layer_expansion_20261003:
+  authorization: 用户指出当前产品卡都是光模块成品，要求明确其他环节的产品信息，并补充其他公司的光模块产品。
+  delivery: 同一初稿中增加按材料/芯片/器件/设备/制造服务分层的产品阅读入口；展开六家以外的光模块厂商目录和可得路线。
+  scope: 读取现有产品摘录及定向原厂资料，写入同一输出目录与本工作包；沿用既有独立草稿格式。
+  acceptance:
+    - 非模块产品单独可检索阅读，说明它是什么、位于哪个环节、已知路线和具体缺口，不套整模块20环节。
+    - 当前资料中的其他模块厂商均有产品入口；有原厂规格者补型号/产品族、速率场景、光电路线和来源，无法确认者说明来源范围。
+    - 区分芯片/光引擎/整模块、制造服务与自有产品、下游客户与生产厂商。
+    - 检查页面入口、筛选与资料引用；保持canonical不变，不提交推送发布。
+
+product_layer_expansion_verification_20261003:
+  delivery: 同一HTML新增非模块产品区、其他模块公司目录并更新模块卡片与CSV。
+  counts: 417组非模块资料摘录；31个模块公司或品牌归属入口、118条配置，比原稿新增82条；全部目录227入口、740组摘录。
+  boundaries: 统计非独立SKU或量产数量；Vesta光引擎及Fabrinet、Sanmina、聚飞代工服务按对象分层；保留来源冲突和历史阶段。
+  independent_review: 两个代理复核非模块漏分与模块公司入口；修复具体主张类型漏分、混合类型筛选、导航对象与聚飞代工项目遗漏。
+  verification: 本地链接锚点、源字段、118张卡和2360行环节表检查通过；既有本地浏览器预览实测筛选/开关并视觉检查，未见脚本错误；24个canonical指纹不变。
+  remaining: 型号/版本和量产对应、内部BOM、工序到材料设备及测试条件仍有缺口；不代表领域结案。
+  agy: 已尝试辅助，网页读取被无交互权限检查拒绝；未使用或保存用户授权码，未更改权限设置；原厂资料补核已完成本轮交付。
+
+reader_revision_20261003:
+  authorization: 用户要求思考并改善当前页面的逻辑和研报式可读性，直接调整好交付。
+  delivery: 保持当前index入口，重排为连续研究正文、公司/产品查询、来源和资料明细；保留现有产品与引用。
+  allowed_write_paths: 沿用本工作包当前输出目录及工作包本身。
+  additional_read_scope: 用户此前提供研报的可定位原件/附件及相关对话中的文件定位信息；仅为本次比较表达，不读取无关历史或全量代理日志。
+  non_goals: 不新增行业结论或补造BOM，不修改canonical，不发布发送；不把资料记录数当研究结论。
+  acceptance:
+    - 开头回答本页要解决的问题与当前可得结论，先通过具体产品解释环节连接，再看公司产品。
+    - 解释光学实现、电处理、光路组织、封装之间的关系，有明确案例与引用；不混成互斥路线。
+    - 研报正文与全量证据查询分层，完整数据仍可查；减少重复目录、重复边界、整屏UNKNOWN和嵌套滚动。
+    - 核验旧产品ID、数据记录和来源保留，实测导航/查询/展开与实际可读性；记录未取得研报原件的比较限制（如存在）。
+
+reader_revision_verification_20261003:
+  delivered: 当前index已改为连续产品与路线正文、统一公司产品查询区、证据与缺口附录；四段叙述及局部来源可追溯。
+  reference_review: 已定位用户两份浙商原研报，抽读相关正文并视觉核对路线报告第6/10页、芯片报告第6/17页；只借鉴表达方法。
+  preservation: 118个产品R、227个公司C、417个资料PVIEW入口完整保留；31个公司新增直达模块路线查询，原事实快照和CSV保持不变。
+  structural_checks: 唯一H1、唯一ID、完整产品ID集合、内部链接及本地下载链接检查通过；JS/Python语法检查通过；24个canonical文件指纹一致。
+  independent_review: 独立内容和源码复审通过，已修复模块内部回环歧义标题与公司到模块查询的衔接。
+  visual_status: 未完成。浏览器工具明确拒绝当前file协议页面，未绕过到其他浏览器或localhost；不以静态检查冒充实际视觉/交互验收。
+  remaining: 保留原有型号、内部实现及性能比较证据缺口；本轮仅改变表达和阅读组织，未晋升领域结论。
+
+public_reader_revision_20261003:
+  authorization: 当前网页作为入门后的下一篇直接供读者阅读，编辑过程与写作思路单独成文。
+  delivery: 更新同一index及正文生成文件；同目录新建写作思路与内容组织.md，独立于公开阅读页。
+  scope: 沿用当前输出目录和控制文件的写入边界；读取当前页面及相关入门页定位信息。
+  acceptance:
+    - 页首承接入门内容，围绕具体产品、技术路线、公司产品和比较条件展开。
+    - 网页不出现目标编号、改稿过程、对话纠错、研报借鉴、代理/核验流程及内部方法文档入口。
+    - 必要的原厂来源、日期、规格冲突、尚未确认状态继续保留，用读者语言表达。
+    - 写作思路文档归纳受众、两页关系、叙事顺序、层级、比较方法、证据表达、图表与后续扩写原则。
+    - 原产品与来源数据保留，检查锚点、公司到产品查询关系、页面文本残留；不把静态检查说成视觉实测。
+  non_goals: 不改canonical、前一篇入门页、发布或发送；不新增缺乏来源的技术结论。
+
+public_reader_delivery_20261003:
+  result: 当前网页承接入门页，直接展示产品与路线；制作信息从正文、折叠区及下载入口移出；独立写作思路文档已创建。
+  narrative: 保留产品功能链、路线比较、上游产品作用、公司查询及规格与比较条件；目标编号及写作过程转到作者文档。
+  data_boundary: 仅调整展示文字；6份原始快照/CSV与24个canonical指纹一致；型号冲突、工程推断和原厂来源保留。
+  validation: 包含全部折叠文本的制作文字扫描、唯一ID、内部链接、118模块/227公司/417非模块入口、31公司直达模块关系及关键来源检查通过；独立审阅问题已逐项处理。
+  visual_status: 本轮未重试此前被浏览器策略阻止的file协议访问，不宣称实际视觉或交互验收。
+  writing_document: out/目标2-公司产品环节路线初稿-20261003/写作思路与内容组织.md
+
+github_sync_20261003:
+  authorization: 用户明确要求当前Codex光模块研究完成后更新GitHub，目标为pojoker/optical-module-research的现有dev。
+  completion_evidence: 支持的任务界面返回turnCompleted，最终回复确认网页和独立写作思路文档交付；完成时间为2026-10-02T19:29:14Z。
+  selection: 仅本轮目标2目录及其工作包记录；保留原项目所有无关改动，排除国内日更401修复、STE实验及旧发送副本。
+  packaging: 在隔离副本执行；移除本机会话/轮次标识，以研究主题替代私人任务标题和用户逐字提问，并将诊断中的个人命令绝对路径改为命令名称；研究内容与来源不变。
+  boundaries: 本轮是研究初稿及阅读页交付，不代表领域结案或canonical晋升；最新浏览器视觉验收未完成。
+  local_validation: scan.py --check、render.py --verify、participation.py --check、python -m calls check全部通过；24份canonical与研究前一致。
+  validation_environment: 隔离副本只读引用本机Git忽略语料以完成校验；语料不入提交。
+  artifact_validation: 60份文本文件、118个模块、227个公司和417个非模块入口；31条公司路线关联；461条本地链接/锚点、JSON/CSV、Python/JS与YAML检查通过。

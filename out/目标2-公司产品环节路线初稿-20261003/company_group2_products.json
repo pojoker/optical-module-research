@@ -1,0 +1,1897 @@
+[
+  {
+    "company": "Maruwa Co.,Ltd",
+    "products": [
+      {
+        "name": "热沉",
+        "kind": "器件",
+        "route": "仅有热沉品名；材料、结构、散热指标和光模块适用范围未列",
+        "record_ids": [
+          "P002"
+        ],
+        "sources": [
+          "有锚；披露方产品列（长光华芯招股书供应商表）"
+        ]
+      }
+    ],
+    "role": "热管理配套供应商；上游披露方供应商表记载",
+    "gaps": [
+      "缺原厂型号、热沉材料与具体光通信产品匹配；原锚没有直开URL"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "三环集团",
+    "products": [
+      {
+        "name": "光芯片封装陶瓷管壳",
+        "kind": "器件",
+        "route": "高可靠性陶瓷封装；引语称已推向市场",
+        "record_ids": [
+          "P005"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-28/1225041594.PDF"
+        ]
+      },
+      {
+        "name": "陶瓷插芯及配套产品",
+        "kind": "器件",
+        "route": "陶瓷插芯；尺寸、连接器型号及制造工艺未列，原引语末尾截断",
+        "record_ids": [
+          "P080"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-28/1225041594.PDF"
+        ]
+      }
+    ],
+    "role": "光通信陶瓷器件供应商",
+    "gaps": [
+      "未列陶瓷配方、尺寸/系列、客户模块SKU、良率"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "上海景仓通信技术有限公司",
+    "products": [
+      {
+        "name": "光纤",
+        "kind": "材料",
+        "route": "仅列光纤；单模/多模、波导参数、是否自制或经销未明",
+        "record_ids": [
+          "P008"
+        ],
+        "sources": [
+          "有锚；披露方产品列（仕佳光子招股书供应商表）"
+        ]
+      }
+    ],
+    "role": "光纤配套供应商；披露方供应商表记载",
+    "gaps": [
+      "缺原厂产品系列与原URL；不得按仕佳产品自动归为景仓自制产品"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "中瓷电子",
+    "products": [
+      {
+        "name": "光通信器件陶瓷外壳",
+        "kind": "器件",
+        "route": "陶瓷器件外壳及光模块封装外壳；材料/金属化/密封结构未列",
+        "record_ids": [
+          "P011",
+          "P137"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2024-04-26/1219832754.PDF",
+          "https://static.cninfo.com.cn/finalpage/2026-04-29/1225224991.PDF"
+        ]
+      },
+      {
+        "name": "氮化铝薄膜基板",
+        "kind": "材料",
+        "route": "氮化铝薄膜基板；引语称已批量供货，不将外壳全部推为AlN",
+        "record_ids": [
+          "P137"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-29/1225224991.PDF"
+        ]
+      }
+    ],
+    "role": "光通信电子陶瓷外壳及基板供应商",
+    "gaps": [
+      "缺封装尺寸/热阻、薄膜制程、具体模块型号采用关系"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "优迅股份",
+    "products": [
+      {
+        "name": "高速率跨阻放大器芯片（TIA）",
+        "kind": "芯片",
+        "route": "自研高带宽、低噪声、宽动态TIA设计；技术表称成熟应用",
+        "record_ids": [
+          "P014"
+        ],
+        "sources": [
+          "S0a本地扫描2025年报（688807__em_优迅股份_em__2025_优迅股份：2025年年度报告.pdf），全文扩看核实"
+        ]
+      },
+      {
+        "name": "光通信前端收发电芯片",
+        "kind": "芯片",
+        "route": "电信号放大、驱动、重定时；引语未列逐一芯片P/N，不能自行补DSP/制程",
+        "record_ids": [
+          "P118"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-10/1225088673.PDF"
+        ]
+      }
+    ],
+    "role": "光通信前端收发电芯片设计与销售商",
+    "gaps": [
+      "速率、Driver/CDR具体P/N、工艺制程、代工及模块客户映射缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "北京康特睿科光电科技有限公司",
+    "products": [
+      {
+        "name": "芯片封装委托加工",
+        "kind": "制造服务",
+        "route": "仅明确委托芯片封装，未列封装方法和受加工具体芯片",
+        "record_ids": [
+          "P017"
+        ],
+        "sources": [
+          "有锚；披露方产品列（源杰招股书委托加工表）"
+        ]
+      }
+    ],
+    "role": "芯片封装委托加工服务商",
+    "gaps": [
+      "缺加工工序/封装形态、服务阶段和原URL；不得写为自制激光器芯片"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "博通(Broadcom)",
+    "products": [
+      {
+        "name": "物理层器件（PHY）",
+        "kind": "芯片",
+        "route": "AI半导体解决方案中的PHY；该引语未列具体电/光处理架构或型号",
+        "record_ids": [
+          "P020"
+        ],
+        "sources": [
+          "FY2025 10-K产品段(sec.gov avgo-20251102.htm,共识结构层补锚2026-07-24)"
+        ]
+      },
+      {
+        "name": "光组件",
+        "kind": "器件",
+        "route": "引语仅列optical components；激光器/探测器细类未列",
+        "record_ids": [
+          "P020"
+        ],
+        "sources": [
+          "FY2025 10-K产品段(sec.gov avgo-20251102.htm,共识结构层补锚2026-07-24)"
+        ]
+      }
+    ],
+    "role": "PHY与光组件产品供应商",
+    "gaps": [
+      "引语末段截断；本分组不能补DSP型号、EML/PD与客户SKU"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "天孚通信",
+    "products": [
+      {
+        "name": "光隔离器/隔离器组件",
+        "kind": "器件",
+        "route": "无源光隔离器；参数表OCR列损耗<0.3dB、隔离>30dB，但条件和具体型号未列",
+        "record_ids": [
+          "P023",
+          "P154"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2020-08-03/1208119960.PDF",
+          "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082705.PDF"
+        ]
+      },
+      {
+        "name": "OSA光器件（TOSA/ROSA/BOSA；上下文线索）",
+        "kind": "器件",
+        "route": "P024为context_only，不能凭该词确认全部类型自产或采用某激光器",
+        "record_ids": [
+          "P024"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2020-08-03/1208119960.PDF"
+        ]
+      },
+      {
+        "name": "光滤波片/Filter Block/WDM器件",
+        "kind": "器件",
+        "route": "产品表列光滤波及波分器件；记录引语称配套光器件规模量产、全工序厂内生产，逐品目工艺未列",
+        "record_ids": [
+          "P107"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082705.PDF"
+        ]
+      },
+      {
+        "name": "波分复用器件、高密度连接器及微光学组件",
+        "kind": "器件",
+        "route": "持续研发升级的精密无源产品，服务客户新产品交付",
+        "record_ids": [
+          "P153"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082705.PDF"
+        ]
+      },
+      {
+        "name": "AWG器件",
+        "kind": "器件",
+        "route": "阵列波导光栅波分复用；OCR参数表有损耗/隔离指标，型号和测试条件未列",
+        "record_ids": [
+          "P154"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082705.PDF"
+        ]
+      },
+      {
+        "name": "FAU光纤阵列设计与制造平台",
+        "kind": "工艺能力",
+        "route": "FAU设计制造技术平台；不能直接写为特定FAU型号量产",
+        "record_ids": [
+          "P155"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082705.PDF"
+        ]
+      },
+      {
+        "name": "并行光学设计/光学模拟及高速光引擎设计封装平台",
+        "kind": "工艺能力",
+        "route": "并行光学、光学模拟/设计、高速光引擎设计与封装平台",
+        "record_ids": [
+          "P155"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-08/1225082705.PDF"
+        ]
+      },
+      {
+        "name": "CPO配套产品（具体品名待补）",
+        "kind": "器件",
+        "route": "2026-08-19引语称量产交付、良率满足规模量产；未列该产品内部结构或型号",
+        "record_ids": [
+          "P271"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-08-19/1225483926.PDF"
+        ]
+      }
+    ],
+    "role": "无源器件、光引擎封装平台和CPO配套供应商；OSA条目仅上下文线索",
+    "gaps": [
+      "OSA采用/自制关系需原文补锚；CPO品名、光引擎平台到SKU和材料设备映射未列"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "弘景光电",
+    "products": [
+      {
+        "name": "光通信非球面透镜",
+        "kind": "器件",
+        "route": "成功开发光通信非球面透镜；加工/材料/镀膜与量产阶段未明",
+        "record_ids": [
+          "P028"
+        ],
+        "sources": [
+          "S0a本地扫描2025年报（301479__em_弘景光电_em__2025_2025年年度报告.pdf）"
+        ]
+      },
+      {
+        "name": "光纤阵列组件",
+        "kind": "器件",
+        "route": "成功开发光通信光纤阵列；纤芯数、精度、耦合结构未明",
+        "record_ids": [
+          "P028"
+        ],
+        "sources": [
+          "S0a本地扫描2025年报（301479__em_弘景光电_em__2025_2025年年度报告.pdf）"
+        ]
+      }
+    ],
+    "role": "精密光学与光纤阵列器件供应商",
+    "gaps": [
+      "研发成功不等逐型号量产；原锚仅本地扫描定位"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "景旺电子",
+    "products": [
+      {
+        "name": "800G光模块高速PCB",
+        "kind": "器件",
+        "route": "PCB产品；引语直接称已量产，不是800G光模块整机自产",
+        "record_ids": [
+          "P031"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2025-04-29/1223377812.PDF"
+        ]
+      }
+    ],
+    "role": "光模块上游PCB供应商",
+    "gaps": [
+      "层数、板材、线路/孔/互联结构、客户SKU未列"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "杜邦(含关联方)",
+    "products": [
+      {
+        "name": "芳纶纱",
+        "kind": "材料",
+        "route": "仅列芳纶纱；牌号及光缆结构用途未在引语说明",
+        "record_ids": [
+          "P034"
+        ],
+        "sources": [
+          "有锚；披露方产品列（仕佳光子招股书供应商表）"
+        ]
+      }
+    ],
+    "role": "芳纶材料配套供应商；披露方供应表记载",
+    "gaps": [
+      "关联方身份、牌号、实际生产/经销分工和原URL未给"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "武汉云岭光电股份有限公司",
+    "products": [
+      {
+        "name": "光通信激光器芯片",
+        "kind": "芯片",
+        "route": "同业段列激光器芯片；DML/EML/VCSEL/CW未细分",
+        "record_ids": [
+          "P037"
+        ],
+        "sources": [
+          "有锚；同业描述（源杰招股书同业段）"
+        ]
+      },
+      {
+        "name": "光通信探测器芯片",
+        "kind": "芯片",
+        "route": "同业段列探测器芯片；PIN/APD及材料未细分",
+        "record_ids": [
+          "P037"
+        ],
+        "sources": [
+          "有锚；同业描述（源杰招股书同业段）"
+        ]
+      },
+      {
+        "name": "封装类光芯片产品",
+        "kind": "器件",
+        "route": "同业描述含封装类产品，具体器件形态未明",
+        "record_ids": [
+          "P037"
+        ],
+        "sources": [
+          "有锚；同业描述（源杰招股书同业段）"
+        ]
+      }
+    ],
+    "role": "光通信激光器/探测器芯片及封装产品供应商（同业披露）",
+    "gaps": [
+      "精确产品系列、速率、材料、封装类型及原URL缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "永鼎股份",
+    "products": [
+      {
+        "name": "70mW/100mW CW-DFB激光器",
+        "kind": "芯片",
+        "route": "连续光DFB；引语为推进批量化生产与性能迭代，不给逐型号量产规模",
+        "record_ids": [
+          "P165"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-21/1225133679.PDF"
+        ]
+      },
+      {
+        "name": "100G EML产品",
+        "kind": "芯片",
+        "route": "外调制激光器；推进批量化生产与迭代，未披露EML工艺结构",
+        "record_ids": [
+          "P165"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-21/1225133679.PDF"
+        ]
+      },
+      {
+        "name": "IDM激光器FAB",
+        "kind": "工艺能力",
+        "route": "芯片—光器件—MPO产业链及自有IDM激光器晶圆制造能力；不由此补各芯片自制比例",
+        "record_ids": [
+          "P041"
+        ],
+        "sources": [
+          "S0a本地扫描2025年报（600105__em_永鼎股份_em__2025_永鼎股份2025年年度报告.pdf）"
+        ]
+      },
+      {
+        "name": "AWG/MT-FA",
+        "kind": "器件",
+        "route": "阵列波导光栅及MT光纤阵列，无源光器件",
+        "record_ids": [
+          "P041",
+          "P042",
+          "P166"
+        ],
+        "sources": [
+          "S0a本地扫描2025年报（600105__em_永鼎股份_em__2025_永鼎股份2025年年度报告.pdf）",
+          "https://static.cninfo.com.cn/finalpage/2026-04-21/1225133679.PDF"
+        ]
+      },
+      {
+        "name": "Filter/Z-BLOCK/MUX-DEMUX/DWDM-CCWDM-CDWDM组件",
+        "kind": "器件",
+        "route": "滤波片、Z型滤波片、合分波组件；具体材料及滤波制程未列",
+        "record_ids": [
+          "P166"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-21/1225133679.PDF"
+        ]
+      },
+      {
+        "name": "环形器/隔离器",
+        "kind": "器件",
+        "route": "光无源环形与隔离器件，型号及光路结构未列",
+        "record_ids": [
+          "P043",
+          "P166"
+        ],
+        "sources": [
+          "S0a本地扫描2025年报（600105__em_永鼎股份_em__2025_永鼎股份2025年年度报告.pdf）",
+          "https://static.cninfo.com.cn/finalpage/2026-04-21/1225133679.PDF"
+        ]
+      }
+    ],
+    "role": "激光器IDM制造与光无源组件供应商",
+    "gaps": [
+      "CW/EML具体SKU、批量规模、芯片工艺、AWG与滤波片的各自实现/客户映射未列"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "泰库尼思科电子",
+    "products": [
+      {
+        "name": "热沉",
+        "kind": "器件",
+        "route": "仅列热沉品名；材料/工艺/指标未明",
+        "record_ids": [
+          "P046"
+        ],
+        "sources": [
+          "有锚；披露方产品列（长光华芯招股书供应商表）"
+        ]
+      }
+    ],
+    "role": "热管理配套供应商（披露方供应表）",
+    "gaps": [
+      "缺准确主体/原URL/型号；不得由M3节点补钨铜或AlN材质"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "深圳市力子光电科技有限公司",
+    "products": [
+      {
+        "name": "芯片封装委托加工",
+        "kind": "制造服务",
+        "route": "仅明确芯片封装加工，具体封装流程未明",
+        "record_ids": [
+          "P049"
+        ],
+        "sources": [
+          "有锚；披露方产品列（源杰招股书委托加工表）"
+        ]
+      }
+    ],
+    "role": "芯片封装委托加工服务商",
+    "gaps": [
+      "缺受加工芯片、封装工艺和原URL"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "源杰科技",
+    "products": [
+      {
+        "name": "激光器芯片系列",
+        "kind": "芯片",
+        "route": "芯片研发、设计、生产与销售；本组引语没有具体DML/EML/CW型号分类",
+        "record_ids": [
+          "P052"
+        ],
+        "sources": [
+          "有锚；发行人自述（招股书/年报主营句）"
+        ]
+      },
+      {
+        "name": "激光器芯片封装销售产品",
+        "kind": "器件",
+        "route": "为部分客户需求，将激光器芯片封装后销售；不能由此写成光模块整机",
+        "record_ids": [
+          "P167"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-25/1225028582.PDF"
+        ]
+      },
+      {
+        "name": "MOCVD外延与光栅工艺生产线",
+        "kind": "工艺能力",
+        "route": "多条覆盖MOCVD外延生长、光栅工艺的自主可控生产线",
+        "record_ids": [
+          "P095"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-25/1225028582.PDF"
+        ]
+      }
+    ],
+    "role": "激光器芯片研发设计生产销售商；部分芯片封装后销售",
+    "gaps": [
+      "本组缺激光器各技术路线/型号、速率功率、封装形态；不要按cell_id或客户硅光路线补BOM"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "生益电子",
+    "products": [
+      {
+        "name": "高速光模块PCB",
+        "kind": "器件",
+        "route": "研发并实现产业化；具体速率、层数及板材未列，原记录提示版面错位",
+        "record_ids": [
+          "P056"
+        ],
+        "sources": [
+          "S0a本地扫描2025年报（688183__em_生益电子_em__2025_生益电子2025年年度报告.pdf）"
+        ]
+      }
+    ],
+    "role": "光模块PCB供应商",
+    "gaps": [
+      "须补产品表定位/速率/材料和原URL；不将PCB写为光模块制造"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "罗博特科/ficonTEC",
+    "products": [
+      {
+        "name": "高精度光学组件及光电元件生产设备",
+        "kind": "设备",
+        "route": "记录引语明确光学/光电生产设备，精确型号未列",
+        "record_ids": [
+          "P059"
+        ],
+        "sources": [
+          "有锚；竞品描述（发行人披露）；BOM词表 E011/E012 标注CPO耦合设备；C35内容台账补充：正基于硅光/CPO光模块技术需求研发激光辅助键合、倒装热压等先进封装工艺（发行人自述，设备-工序能力条目）"
+        ]
+      },
+      {
+        "name": "半导体自动化微组装及精密测试设备",
+        "kind": "设备",
+        "route": "自动化微组装和精密测试，未披露每型号动作及适用组件",
+        "record_ids": [
+          "P059"
+        ],
+        "sources": [
+          "有锚；竞品描述（发行人披露）；BOM词表 E011/E012 标注CPO耦合设备；C35内容台账补充：正基于硅光/CPO光模块技术需求研发激光辅助键合、倒装热压等先进封装工艺（发行人自述，设备-工序能力条目）"
+        ]
+      }
+    ],
+    "role": "光电自动化微组装、精密测试与生产设备供应商",
+    "gaps": [
+      "原锚注释另提硅光/CPO激光辅助键合、倒装热压研发；非引语原文，需补直接证据后再列工艺；量产设备与在研工艺应分开"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "芯思杰技术",
+    "products": [
+      {
+        "name": "芯片封装委托加工",
+        "kind": "制造服务",
+        "route": "仅列委托芯片封装；未给封装技术及芯片类型",
+        "record_ids": [
+          "P062"
+        ],
+        "sources": [
+          "有锚；披露方产品列（源杰招股书委托加工表）"
+        ]
+      }
+    ],
+    "role": "芯片封装委托加工服务商",
+    "gaps": [
+      "主体全称、具体工序、原URL及客户产品对应待补"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "迅捷兴",
+    "products": [
+      {
+        "name": "800G/1.6T光模块PCB",
+        "kind": "器件",
+        "route": "任意互联HDI结构技术研发已完成；原引语不证明两速率板已量产",
+        "record_ids": [
+          "P065"
+        ],
+        "sources": [
+          "S0a本地扫描2025年报（688655__em_迅捷兴_em__2025_2025年年度报告.pdf）"
+        ]
+      },
+      {
+        "name": "400G光模块PCB生产工艺",
+        "kind": "工艺能力",
+        "route": "自主研发PCB生产工艺；工艺参数、实际交付未列",
+        "record_ids": [
+          "P065"
+        ],
+        "sources": [
+          "S0a本地扫描2025年报（688655__em_迅捷兴_em__2025_2025年年度报告.pdf）"
+        ]
+      }
+    ],
+    "role": "光模块PCB技术研发/生产工艺供应商",
+    "gaps": [
+      "记录整体生产中标签不能把研发完成写成800G/1.6T PCB量产；板材/层数/原URL未列"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "陕西兴化集团有限责任公司",
+    "products": [
+      {
+        "name": "氢气/氮气",
+        "kind": "材料",
+        "route": "仅列两类气体；纯度、用于哪道工艺、是否自制/经销未列",
+        "record_ids": [
+          "P070"
+        ],
+        "sources": [
+          "有锚；披露方产品列（源杰招股书供应商表）"
+        ]
+      }
+    ],
+    "role": "工业气体配套供应商；披露方供应表记载",
+    "gaps": [
+      "不能自动配至MOCVD/外延或具体芯片厂；缺原URL和规格"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "腾景科技",
+    "products": [
+      {
+        "name": "数据中心高速光模块CWDM滤光片",
+        "kind": "器件",
+        "route": "CWDM滤光片；薄膜结构、镀膜工艺未明",
+        "record_ids": [
+          "P176"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225177429.PDF"
+        ]
+      },
+      {
+        "name": "WSS/OCS用光学元组件",
+        "kind": "器件",
+        "route": "提供供WSS模块/OCS交换机使用的光学组件；不是整机WSS/OCS制造证据",
+        "record_ids": [
+          "P176"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225177429.PDF"
+        ]
+      },
+      {
+        "name": "非球面透镜/高功率镀膜光纤线",
+        "kind": "器件",
+        "route": "非球面透镜及高功率镀膜光纤线；材料与光路结构未列",
+        "record_ids": [
+          "P176"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225177429.PDF"
+        ]
+      },
+      {
+        "name": "高速EML/硅光COB光引擎",
+        "kind": "器件",
+        "route": "适用于可插拔光模块的EML及硅光COB光引擎；各自完整SKU、器件链与量产阶段未列",
+        "record_ids": [
+          "P177"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225177429.PDF"
+        ]
+      },
+      {
+        "name": "光引擎配套无源及有源集成组件",
+        "kind": "器件",
+        "route": "配套光引擎的无源组件与有源集成组件，具体品目未列",
+        "record_ids": [
+          "P177"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225177429.PDF"
+        ]
+      },
+      {
+        "name": "光测试仪器及模块（GouMax）",
+        "kind": "设备",
+        "route": "可调谐激光器、激光扫描分析仪、光谱仪、波长计、可调谐滤波器、梳状滤波器；控股子公司产品",
+        "record_ids": [
+          "P178"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225177429.PDF"
+        ]
+      },
+      {
+        "name": "精密光学元组件；光纤器件；光测试仪器",
+        "kind": "器件/设备",
+        "route": "P076主营业务片段列的产品大类；具体型号和光模块应用对应待补。",
+        "record_ids": [
+          "P076"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225177429.PDF"
+        ]
+      }
+    ],
+    "role": "精密光学组件、光引擎配套及光测试仪器供应商",
+    "gaps": [
+      "未给光引擎各速率/实现、仪器型号/测试动作及制造设备材料匹配；P076为主营大类不另造SKU"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "中船特气",
+    "products": [
+      {
+        "name": "磷烷混气/砷烷混气",
+        "kind": "材料",
+        "route": "新增气体产品；混合配比、纯度、外延或掺杂用途未在引语确认",
+        "record_ids": [
+          "P081"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-21/1225127119.PDF"
+        ]
+      },
+      {
+        "name": "五氟乙烷/七氟丙烷",
+        "kind": "材料",
+        "route": "新增产品品名；与光通信制造工艺的对应关系未披露",
+        "record_ids": [
+          "P081"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-21/1225127119.PDF"
+        ]
+      }
+    ],
+    "role": "气体材料供应商；具体光通信适用工序缺失",
+    "gaps": [
+      "不得将新增气体目录直接写成特定光芯片工厂使用；客户、纯度、工序对应缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "徕木股份",
+    "products": [
+      {
+        "name": "800G光模块壳体技术开发项目",
+        "kind": "工艺能力",
+        "route": "2023年度投资计划列技术开发，总预算220万元；不是已量产在售型号证据",
+        "record_ids": [
+          "P084"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-13/1225006760.PDF"
+        ]
+      }
+    ],
+    "role": "高速光模块壳体技术开发主体（湖南徕木）",
+    "gaps": [
+      "研发进度/验收/实际交付、壳体材质和具体型号缺失"
+    ],
+    "evidence_status": "现有账本在建记录；引语是项目计划，未外查当前进度"
+  },
+  {
+    "company": "德科立",
+    "products": [
+      {
+        "name": "400G相干模块与800G相干模块器件",
+        "kind": "模块/器件",
+        "route": "400G相干模块小批量试产；800G相干模块器件取得突破并订单交付，两者阶段分别记录",
+        "record_ids": [
+          "P087"
+        ],
+        "sources": [
+          "http://static.cninfo.com.cn/finalpage/2026-03-31/1225064041.PDF"
+        ]
+      },
+      {
+        "name": "800G/1.6T硅光光收发模块",
+        "kind": "模块",
+        "route": "硅光平台初建，模块开发完成，正在推向量产；不等已量产",
+        "record_ids": [
+          "P109"
+        ],
+        "sources": [
+          "http://static.cninfo.com.cn/finalpage/2026-03-31/1225064041.PDF"
+        ]
+      },
+      {
+        "name": "电信传输相干/非相干光收发模块",
+        "kind": "模块",
+        "route": "155M/1.25G/10G/100G/400G及以上；10/40/80km及以上，路线内部未列",
+        "record_ids": [
+          "P159"
+        ],
+        "sources": [
+          "本地扫描()"
+        ]
+      },
+      {
+        "name": "GPON OLT/COMBO PON接入模块",
+        "kind": "模块",
+        "route": "宽带接入模块，PON类型明确；具体速率/激光探测器和型号未列",
+        "record_ids": [
+          "P160"
+        ],
+        "sources": [
+          "本地扫描()"
+        ]
+      },
+      {
+        "name": "10G/25G灰光和彩光光收发模块",
+        "kind": "模块",
+        "route": "无线接入光收发模块；灰光/彩光路线，具体波长/光芯片未列",
+        "record_ids": [
+          "P160"
+        ],
+        "sources": [
+          "本地扫描()"
+        ]
+      },
+      {
+        "name": "光开关、相干器件、WSS、OXC光背板",
+        "kind": "器件",
+        "route": "原引语归光无源模块；按器件族呈现，不自行补MEMS/LCOS等技术",
+        "record_ids": [
+          "P104"
+        ],
+        "sources": [
+          "http://static.cninfo.com.cn/finalpage/2026-03-31/1225064041.PDF"
+        ]
+      },
+      {
+        "name": "BOSA光组件",
+        "kind": "器件",
+        "route": "宽带接入BOSA产品，内部激光器/探测器及封装形态未列",
+        "record_ids": [
+          "P160"
+        ],
+        "sources": [
+          "本地扫描()"
+        ]
+      },
+      {
+        "name": "前传子系统",
+        "kind": "系统",
+        "route": "无线接入前传子系统；内部模块/组件、架构及型号未列",
+        "record_ids": [
+          "P160"
+        ],
+        "sources": [
+          "本地扫描()"
+        ]
+      }
+    ],
+    "role": "电信/接入及数通模块、无源光模块供应商；硅光数通产品正在量产导入",
+    "gaps": [
+      "同一记录生产中不代替各相干/硅光型号阶段；内部TX/RX链和材料设备、P159/P160扫描原URL缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "Veeco",
+    "products": [
+      {
+        "name": "300mm兼容钛酸钡硅基集成工艺",
+        "kind": "工艺能力",
+        "route": "Veeco与imec联合研发BTO在硅上集成工艺；引语未列具体设备型号及交付",
+        "record_ids": [
+          "P091"
+        ],
+        "sources": [
+          "https://www.imec-int.com/en/press/veeco-and-imec-develop-300mm-compatible-process-enable-integration-barium-titanate-silicon"
+        ]
+      }
+    ],
+    "role": "硅光相关材料集成工艺共同研发方，记录为宇宙外观察",
+    "gaps": [
+      "原锚注硅光MBE；不能在引语层直接补MBE设备型号或量产"
+    ],
+    "evidence_status": "现有记录状态宇宙外观察；研发工艺线索，不记量产设备"
+  },
+  {
+    "company": "三安光电",
+    "products": [
+      {
+        "name": "CW光源/EML/VCSEL/DFB/FP芯片",
+        "kind": "芯片",
+        "route": "CW、EML、VCSEL、DFB、FP多路线；引语称400G/800G应用光芯片批量出货，不将所有路线全配到两速率",
+        "record_ids": [
+          "P098",
+          "P128"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225193540.PDF"
+        ]
+      },
+      {
+        "name": "PD探测器芯片",
+        "kind": "芯片",
+        "route": "探测器PD；PIN/APD、材料及速率未细分",
+        "record_ids": [
+          "P098"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225193540.PDF"
+        ]
+      }
+    ],
+    "role": "光通信激光器与探测器芯片供应商",
+    "gaps": [
+      "具体芯片P/N及速率/平台的产品映射、产量和客户模块BOM未知"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "北方华创",
+    "products": [
+      {
+        "name": "8英寸MOCVD设备",
+        "kind": "设备",
+        "route": "金属有机化学气相沉积/外延生长；引语称批量销售、覆盖光电子等多应用",
+        "record_ids": [
+          "P110"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-18/1225122918.PDF"
+        ]
+      },
+      {
+        "name": "ICP/CCP刻蚀设备",
+        "kind": "设备",
+        "route": "ICP、CCP等系列批量销售；具体光通信客户型号未列",
+        "record_ids": [
+          "P111"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-18/1225122918.PDF"
+        ]
+      },
+      {
+        "name": "离子束刻蚀设备",
+        "kind": "设备",
+        "route": "原记录引语括注适用于激光器、探测器等光电子器件；逐型号交付阶段未明",
+        "record_ids": [
+          "P111"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-18/1225122918.PDF"
+        ]
+      }
+    ],
+    "role": "光电子相关外延及刻蚀设备供应商",
+    "gaps": [
+      "通用光电子应用不等某厂某光芯片产线已采用；精确型号/工艺参数缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "矽电股份",
+    "products": [
+      {
+        "name": "PD/APD/VCSEL芯片探针测试一体机、分选机、AOI",
+        "kind": "设备",
+        "route": "当前销售适用PD/APD/VCSEL芯片测试的设备；具体测试电/光指标与型号未列",
+        "record_ids": [
+          "P171"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-08-04/1225457716.PDF"
+        ]
+      },
+      {
+        "name": "12吋全自动高精度晶圆探针台",
+        "kind": "设备",
+        "route": "适用于硅光晶圆测试，探针类型/耦合与测量参数未列",
+        "record_ids": [
+          "P171"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-08-04/1225457716.PDF"
+        ]
+      },
+      {
+        "name": "分选机、曝光机、AOI半导体专用设备",
+        "kind": "设备",
+        "route": "引语称已研发量产；光电芯片客户背景不等每曝光机都用于光通信",
+        "record_ids": [
+          "P114"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-22/1225138756.PDF"
+        ]
+      }
+    ],
+    "role": "光芯片/硅光晶圆测试和其他半导体设备供应商",
+    "gaps": [
+      "精确型号、被测芯片/测试链、产线采用对应缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "长芯博创",
+    "products": [
+      {
+        "name": "400G SR4/800G SR8多模光模块",
+        "kind": "模块",
+        "route": "多模路线；引语称具备批量供货能力，未列VCSEL/PIN等内部实现",
+        "record_ids": [
+          "P119"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF"
+        ]
+      },
+      {
+        "name": "PLC光分路器",
+        "kind": "器件",
+        "route": "平面光波导分光，FTTH应用",
+        "record_ids": [
+          "P120",
+          "P184"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF"
+        ]
+      },
+      {
+        "name": "PON及无线前传/中回传光收发模块",
+        "kind": "模块",
+        "route": "PON接入及无线承载；具体速率/激光探测器未列",
+        "record_ids": [
+          "P120",
+          "P184"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF"
+        ]
+      },
+      {
+        "name": "AWG/无热AAWG",
+        "kind": "器件",
+        "route": "骨干/城域DWDM的AWG；数据中心互联AAWG已批量出货",
+        "record_ids": [
+          "P121"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF"
+        ]
+      },
+      {
+        "name": "VMUX",
+        "kind": "器件",
+        "route": "可调光功率波分复用器；波导与控制实现未列",
+        "record_ids": [
+          "P184"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF"
+        ]
+      },
+      {
+        "name": "MEMS可调光衰减器VOA",
+        "kind": "器件",
+        "route": "MEMS光功率衰减",
+        "record_ids": [
+          "P184"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045047.PDF"
+        ]
+      }
+    ],
+    "role": "数通/接入光模块、光纤波导无源及光功率管理器件供应商",
+    "gaps": [
+      "P184结尾光纤阵引语截断，光纤阵列品名/型号待补；模块内部BOM与材料设备缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "蓝特光学",
+    "products": [
+      {
+        "name": "光学棱镜/光学透镜",
+        "kind": "器件",
+        "route": "研发生产销售的光学器件系列；光模块适用业务并列披露，未将各型号逐一配对",
+        "record_ids": [
+          "P124"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-17/1225013060.PDF"
+        ]
+      },
+      {
+        "name": "光学晶圆",
+        "kind": "材料",
+        "route": "光学晶圆产品系列；材料和用于哪种光通信器件未明",
+        "record_ids": [
+          "P124"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-17/1225013060.PDF"
+        ]
+      }
+    ],
+    "role": "光学元器件供应商；产品并涉高速光模块应用",
+    "gaps": [
+      "消费/车载/光通为并列市场；不能将全部产品归光模块专用；精确SKU及工艺缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "上海贝岭",
+    "products": [
+      {
+        "name": "网络通信存储器/专用SoC/电源芯片",
+        "kind": "芯片",
+        "route": "引语称接入网及中低速光模块份额提升，向高速数通渗透；不等已在高速模块规模量产",
+        "record_ids": [
+          "P129"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-31/1225051104.PDF"
+        ]
+      }
+    ],
+    "role": "网络通信配套电芯片供应商",
+    "gaps": [
+      "P/N、速率适配和电源/存储/控制功能对应缺失；不自动补DSP/Driver/TIA"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "亨通光电",
+    "products": [
+      {
+        "name": "GPON/XGPON/XGSPON/COMBO PON OLT模块",
+        "kind": "模块",
+        "route": "可提供多类PON OLT模块解决方案；具体型号及内部结构未列",
+        "record_ids": [
+          "P139"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225195764.PDF"
+        ]
+      },
+      {
+        "name": "50G COMBO PON OLT非对称光模块",
+        "kind": "模块",
+        "route": "已发布非对称50G接入模块；速率配比/激光器及量产未列",
+        "record_ids": [
+          "P139"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225195764.PDF"
+        ]
+      },
+      {
+        "name": "10G–800G AOC及高速光模块",
+        "kind": "模块",
+        "route": "算力中心AOC产品与高速光模块；超低功耗AOC获客户反馈，逐速率路线/指标未给",
+        "record_ids": [
+          "P140"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-25/1225195764.PDF"
+        ]
+      }
+    ],
+    "role": "接入光模块、AOC及高速光模块产品供应商",
+    "gaps": [
+      "AOC与可插拔模块需逐型拆；距离、TX/RX及采购/自制分工、逐型交付阶段缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "威尔高",
+    "products": [
+      {
+        "name": "光模块应用PCB",
+        "kind": "器件",
+        "route": "主营为PCB；产品类型表用光模块简称，此处解释为应用PCB，不能当光模块整机制造",
+        "record_ids": [
+          "P157"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-28/1225202924.PDF"
+        ],
+        "evidence_status": "现有摘录；产品名称含PCB主营语境解释，非原句逐字产品名；本轮未回核原文"
+      }
+    ],
+    "role": "光模块应用PCB供应商",
+    "gaps": [
+      "引语产品列表混合应用名，需原表核对具体板型；未列速率、板材与层数"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "意华股份",
+    "products": [
+      {
+        "name": "QSFP/OSFP 800G/1.6T模块精密壳体",
+        "kind": "器件",
+        "route": "QSFP/OSFP壳体研发生产及批量交付；不代表光收发整机制造",
+        "record_ids": [
+          "P162"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-29/1225233182.PDF"
+        ]
+      },
+      {
+        "name": "高速光模块散热组件",
+        "kind": "器件",
+        "route": "具备研发及批量交付能力，材料与热设计未列",
+        "record_ids": [
+          "P162"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-29/1225233182.PDF"
+        ]
+      }
+    ],
+    "role": "高速模块壳体及散热组件供应商",
+    "gaps": [
+      "壳体材质、散热器结构及型号兼容列表缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "澳弘电子",
+    "products": [
+      {
+        "name": "光模块应用（公司具体配套产品未披露）",
+        "kind": "客户应用",
+        "route": "公司产品应用于光模块、网络通信等终端；该句不能确认公司自制光模块或具体PCB品名",
+        "record_ids": [
+          "P168"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-16/1225105752.PDF"
+        ]
+      }
+    ],
+    "role": "上游配套供应商；引语只披露终端应用",
+    "gaps": [
+      "缺公司自身产品名/板材/工艺；客户应用不能改写自制模块"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "长飞光纤",
+    "products": [
+      {
+        "name": "空芯光纤/多芯光纤/高品质多模光纤",
+        "kind": "材料",
+        "route": "空芯、多芯及多模多路线；具体纤芯结构/参数/制造阶段未列",
+        "record_ids": [
+          "P185"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-28/1225048080.PDF"
+        ]
+      },
+      {
+        "name": "800G/1.6T高速光模块",
+        "kind": "模块",
+        "route": "引语称推出模块产品；TX/RX平台及自制/委外分工未列",
+        "record_ids": [
+          "P185"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-28/1225048080.PDF"
+        ]
+      },
+      {
+        "name": "绿色布线系统",
+        "kind": "系统",
+        "route": "面向智算中心的综合布线解决方案，连接架构/具体设备未列",
+        "record_ids": [
+          "P185"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-28/1225048080.PDF"
+        ]
+      }
+    ],
+    "role": "光纤、模块及布线综合解决方案供应商",
+    "gaps": [
+      "公司推出产品不等全部组件自产；光纤各型号与模块配对、量产交付缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "鹏鼎控股",
+    "products": [
+      {
+        "name": "1.6T光模块PCB",
+        "kind": "器件",
+        "route": "2026-06-12回答称已供货；具体材料和结构未明",
+        "record_ids": [
+          "P188"
+        ],
+        "sources": [
+          "corpus/qa/002938/qa.jsonl#indexId=2284219833158844416；irm.cninfo.com.cn 互动易(准披露渠道)"
+        ]
+      },
+      {
+        "name": "3.2T光模块PCB研发",
+        "kind": "工艺能力",
+        "route": "与客户开发中，不能写为已供货3.2T PCB",
+        "record_ids": [
+          "P188"
+        ],
+        "sources": [
+          "corpus/qa/002938/qa.jsonl#indexId=2284219833158844416；irm.cninfo.com.cn 互动易(准披露渠道)"
+        ]
+      }
+    ],
+    "role": "高速光模块PCB供应商",
+    "gaps": [
+      "板材/层数/型号和开发验收节点缺失；互动易快照原URL未给"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "阿莱德",
+    "products": [
+      {
+        "name": "导热散热产品",
+        "kind": "器件",
+        "route": "仅说可应用通信/光模块/消费电子；材料形态、型号与光模块实际交付未列",
+        "record_ids": [
+          "P191"
+        ],
+        "sources": [
+          "corpus/qa/301419/qa.jsonl#indexId=2304090509577408512；irm.cninfo.com.cn 互动易(准披露渠道)"
+        ]
+      }
+    ],
+    "role": "导热散热配套产品供应商",
+    "gaps": [
+      "可应用不等已供货光模块；产品配方/结构和互动易原URL缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "沪硅产业",
+    "products": [
+      {
+        "name": "12英寸SOI硅片",
+        "kind": "材料",
+        "route": "12英寸SOI，中试线16万片/年为记录历史建成规模；硅光/射频/高压并列用途；客户认证、小批量供应、产能爬坡",
+        "record_ids": [
+          "P196"
+        ],
+        "sources": [
+          "https://pdf.dfcfw.com/pdf/H2_AN202605291823017950_1.pdf"
+        ]
+      }
+    ],
+    "role": "SOI硅片材料供应商；客户认证及小批量供应爬坡",
+    "gaps": [
+      "硅光专用SOI规格/实际有效产能/客户晶圆采用未列；中试产能不等量产有效产能"
+    ],
+    "evidence_status": "现有在建记录；引语已有小批量供应，不把在建误作零供应，也不升全面量产"
+  },
+  {
+    "company": "赛微电子",
+    "products": [
+      {
+        "name": "硅光子工艺开发及产品验证",
+        "kind": "工艺能力",
+        "route": "记录引语列工艺开发及验证，不能写自有在售硅光芯片",
+        "record_ids": [
+          "P199"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-27/1225036416.PDF"
+        ]
+      },
+      {
+        "name": "MEMS-OCS工艺开发及产品验证",
+        "kind": "工艺能力",
+        "route": "MEMS光电路交换相关类别工艺开发/验证；未列自有OCS系统商品",
+        "record_ids": [
+          "P199"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-03-27/1225036416.PDF"
+        ]
+      }
+    ],
+    "role": "MEMS/硅光子代工工艺开发验证主体（赛莱克斯北京）",
+    "gaps": [
+      "微振镜/BAW等同段其他类别未明光通信专用；各工艺产线、验证及量产节点缺失"
+    ],
+    "evidence_status": "现有在建记录；工艺开发/验证阶段；未外部核验"
+  },
+  {
+    "company": "苏州猎奇智能设备",
+    "products": [
+      {
+        "name": "光模块贴片设备",
+        "kind": "设备",
+        "route": "贴片/芯片装配，适配800G/1.6T光模块生产需求；精确P/N/精度未列",
+        "record_ids": [
+          "P203"
+        ],
+        "sources": [
+          "https://pdf.dfcfw.com/pdf/H2_AN202607141826953819_1.pdf"
+        ]
+      },
+      {
+        "name": "光模块耦合设备",
+        "kind": "设备",
+        "route": "光学耦合环节，适配800G/1.6T；主动/被动耦合与具体对象未列",
+        "record_ids": [
+          "P204"
+        ],
+        "sources": [
+          "https://pdf.dfcfw.com/pdf/H2_AN202607141826953819_1.pdf"
+        ]
+      },
+      {
+        "name": "光模块老化测试设备",
+        "kind": "设备",
+        "route": "引语称产品覆盖老化测试关键工序；温度、电/光应力、测试标准未列",
+        "record_ids": [
+          "P203",
+          "P204"
+        ],
+        "sources": [
+          "https://pdf.dfcfw.com/pdf/H2_AN202607141826953819_1.pdf"
+        ]
+      }
+    ],
+    "role": "光模块封装测试设备供应商",
+    "gaps": [
+      "设备型号/工艺精度与材料器件配对缺失；厂商设备可适配不等所有客户SKU已采用"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "快克智能",
+    "products": [
+      {
+        "name": "光模块专用AOI检测设备",
+        "kind": "设备",
+        "route": "识别激光器芯片偏移、金线键合缺陷、光芯片波导亚微米缺陷；具体检测原理/型号未列",
+        "record_ids": [
+          "P207"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-04-24/1225173150.PDF"
+        ]
+      }
+    ],
+    "role": "光模块自动光学检测设备供应商",
+    "gaps": [
+      "引语是设备能力；记录注记市场推广期，缺逐型号量产/订单；不得把注记在研共晶固晶系统写成量产设备"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "普源精电",
+    "products": [],
+    "role": "光通信领域供应商；具体产品仍缺引语",
+    "gaps": [
+      "现引语只有核心客户销售收入增长，未给仪器/设备品名；不能根据EQ7或公司名自行补示波器/误码仪",
+      "需产品级光模块测试型号、测试动作及来源锚"
+    ],
+    "evidence_status": "仅客户收入/应用线索；无具体产品引语，未外查"
+  },
+  {
+    "company": "Coherent",
+    "products": [
+      {
+        "name": "光收发模块",
+        "kind": "模块",
+        "route": "内部设计制造；未在本组引语细分数通速率/SKU",
+        "record_ids": [
+          "P220"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      },
+      {
+        "name": "ZR/ZR+相干可插拔模块",
+        "kind": "模块",
+        "route": "ZR/ZR+产品需求与量增加；内部相干DSP/光子平台未列",
+        "record_ids": [
+          "P221"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      },
+      {
+        "name": "GaAs VCSEL",
+        "kind": "芯片",
+        "route": "GaAs VCSEL自主设计制造，美国/欧洲多个6英寸GaAs VCSEL fab",
+        "record_ids": [
+          "P222",
+          "P223"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      },
+      {
+        "name": "InP DML/EML/CW激光器",
+        "kind": "芯片",
+        "route": "InP多种直接/外调制/连续光路线，自主设计制造",
+        "record_ids": [
+          "P222"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      },
+      {
+        "name": "光电二极管/探测器",
+        "kind": "芯片",
+        "route": "自制探测器/光电二极管；P224高量出货的应用上下文未给，不能独断数通PD量产",
+        "record_ids": [
+          "P220",
+          "P224"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      },
+      {
+        "name": "ICs（类型未列）",
+        "kind": "芯片",
+        "route": "自制模块组件中包含ICs；不将其默认定义为Driver/TIA/DSP",
+        "record_ids": [
+          "P220",
+          "P225"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      },
+      {
+        "name": "相干传输组件",
+        "kind": "器件",
+        "route": "电信相干传输组件产品大类",
+        "record_ids": [
+          "P226"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      },
+      {
+        "name": "980nm/14xx泵浦激光器",
+        "kind": "器件",
+        "route": "电信传输产品含泵浦激光器；芯片/封装器件形态未细分",
+        "record_ids": [
+          "P226"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      },
+      {
+        "name": "光隔离器/无源光学件",
+        "kind": "器件",
+        "route": "材料生长制造技术栈中列无源光学与隔离器；独立销售口径未给",
+        "record_ids": [
+          "P227"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      },
+      {
+        "name": "热电组件",
+        "kind": "器件",
+        "route": "热电组件产品大类；光模块专用TEC型号/销售关系未列",
+        "record_ids": [
+          "P228"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      },
+      {
+        "name": "工程材料（具体材料未列）",
+        "kind": "材料",
+        "route": "工程材料大类，具体光通信材料/牌号未细分",
+        "record_ids": [
+          "P228"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      },
+      {
+        "name": "激光光学件",
+        "kind": "器件",
+        "route": "激光光学产品大类，具体光通信适用型号未列",
+        "record_ids": [
+          "P228"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm"
+        ]
+      }
+    ],
+    "role": "光模块及多层组件/材料垂直集成制造供应商",
+    "gaps": [
+      "模块采用哪款自制组件、对外出售比例和设备材料具体型号缺失；不把消费/材料分部背景自动归数通产品"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "Nokia",
+    "products": [
+      {
+        "name": "800G ZR/ZR+相干可插拔模块",
+        "kind": "模块",
+        "route": "已发布800G ZR/ZR+，具体DSP、调制、光子平台及自制/代工分工未列",
+        "record_ids": [
+          "P240"
+        ],
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/924613/000162828026015034/nok-20251231.htm"
+        ]
+      }
+    ],
+    "role": "800G相干可插拔产品供应商",
+    "gaps": [
+      "记录注释并购归并，不按公司名假定芯片自产；逐型号内部实现与供货阶段缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "四川九州光电子技术有限公司",
+    "products": [
+      {
+        "name": "光器件",
+        "kind": "器件",
+        "route": "引语为光器件研发制造销售大类；具体器件名未列",
+        "record_ids": [
+          "P246"
+        ],
+        "sources": [
+          "https://www.jezetek.cc/"
+        ]
+      },
+      {
+        "name": "光通信装备",
+        "kind": "系统",
+        "route": "光通信装备研发制造销售；具体装备类型/型号未列",
+        "record_ids": [
+          "P246"
+        ],
+        "sources": [
+          "https://www.jezetek.cc/"
+        ]
+      },
+      {
+        "name": "光模块专业制造",
+        "kind": "制造服务",
+        "route": "光模块专业制造，应用于FTTH/数据中心/5G；引语不指定速率或自产芯片",
+        "record_ids": [
+          "P246",
+          "P247",
+          "P248"
+        ],
+        "sources": [
+          "https://www.jezetek.cc/"
+        ]
+      },
+      {
+        "name": "光芯片后工序加工",
+        "kind": "制造服务",
+        "route": "芯片后工序加工服务；分选/贴片/键合等具体动作未逐项列",
+        "record_ids": [
+          "P247"
+        ],
+        "sources": [
+          "https://www.jezetek.cc/"
+        ]
+      }
+    ],
+    "role": "光器件及光通信装备制造商、芯片后工序和模块专业制造服务商",
+    "gaps": [
+      "具体光模块和器件速率/型号、后工序动作及自有设计与代工边界缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "苏州星钥光子科技有限公司",
+    "products": [],
+    "role": "产线建设主体；具体工艺产品待直接引语",
+    "gaps": [
+      "引语只有下一代路线及2026年底通线/2027投产计划，未名硅光芯片/Foundry产品",
+      "判定注记称8英寸硅光Foundry，尚非本组直接引语；需原披露产品/工艺锚后补",
+      "计划节点不当作投产完成"
+    ],
+    "evidence_status": "现有在建记录；产品族只有注释线索，未外查"
+  },
+  {
+    "company": "深圳市星欣磊实业有限公司",
+    "products": [],
+    "role": "光通信配套器件供应商；客户名单直接披露",
+    "gaps": [
+      "引语只有为海信/光迅等客户提供产品，未给具体产品名",
+      "判定注记提钨铜热沉/模块结构件/盒体，需对应产品原文锚；不能根据B2补产品",
+      "客户名单不证明其配套被用于某速率某SKU"
+    ],
+    "evidence_status": "客户供货关系自述线索；产品名缺直接引语，未外查"
+  },
+  {
+    "company": "泰科电子(含关联方)",
+    "products": [
+      {
+        "name": "QSFP-DD散热器/连接产品",
+        "kind": "器件",
+        "route": "引语明确专利散热器，15–18W应用；笼子/连接器具体P/N未列",
+        "record_ids": [
+          "P262"
+        ],
+        "sources": [
+          "https://www.te.com/content/dam/te-com/documents/consumer-devices/chn/QSFP-DD-RSG-CN.PDF"
+        ]
+      },
+      {
+        "name": "光收发模块",
+        "kind": "模块",
+        "route": "新增optical transceivers产品；速率/光路/自制或委外引语未列",
+        "record_ids": [
+          "P263"
+        ],
+        "sources": [
+          "https://www.te.com/content/dam/te-com/documents/consumer-devices/global/ddn-optical-transceivers-guide-en.pdf"
+        ]
+      },
+      {
+        "name": "AOC有源光缆",
+        "kind": "模块",
+        "route": "引语明确既有AOC，与铜连接方案配合；详细光电路线未列",
+        "record_ids": [
+          "P263"
+        ],
+        "sources": [
+          "https://www.te.com/content/dam/te-com/documents/consumer-devices/global/ddn-optical-transceivers-guide-en.pdf"
+        ]
+      }
+    ],
+    "role": "高速连接及光模块/AOC产品供应商；自制分工未知",
+    "gaps": [
+      "不能因产品供应商身份推定芯片或整机自产；具体200G–1.6T在判定注释中，需原表补锚后分型号"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  },
+  {
+    "company": "京东方Ａ",
+    "products": [
+      {
+        "name": "20层玻璃基载板样品",
+        "kind": "材料",
+        "route": "9-2-9、20层大尺寸玻璃基载板；2025样品开发送样并通过列示信赖性测试，非量产交付",
+        "record_ids": [
+          "P267"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-07-30/1225449715.PDF"
+        ]
+      }
+    ],
+    "role": "玻璃基封装载板研发主体",
+    "gaps": [
+      "直接引语未确认该样品用于CPO；MicroLED光互连/CPO项目只在注记，需直接应用锚",
+      "层间结构、TGV制程/材料参数及认证条件待补"
+    ],
+    "evidence_status": "现有在建记录；样品开发送样与测试通过，未外查量产"
+  },
+  {
+    "company": "紫光国微",
+    "products": [
+      {
+        "name": "高基频差分晶振",
+        "kind": "器件",
+        "route": "石英晶体频率器件；引语称AI服务器和光模块应用量产，参考时钟用途为常规功能解释，未列接入哪款DSP",
+        "record_ids": [
+          "P274"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-08-20/1225484100.PDF"
+        ]
+      },
+      {
+        "name": "高基频温度补偿差分晶振",
+        "kind": "器件",
+        "route": "温度补偿差分晶体频率路线；引语称量产，频率/抖动/温漂指标未列",
+        "record_ids": [
+          "P274"
+        ],
+        "sources": [
+          "https://static.cninfo.com.cn/finalpage/2026-08-20/1225484100.PDF"
+        ]
+      }
+    ],
+    "role": "光模块参考频率器件供应商",
+    "gaps": [
+      "具体晶振P/N、频率/抖动/温漂及模块电芯片对应缺失"
+    ],
+    "evidence_status": "现有账本引语提取；未回读原始来源或外部核验；记录生产状态不自动归给每个品目"
+  }
+]

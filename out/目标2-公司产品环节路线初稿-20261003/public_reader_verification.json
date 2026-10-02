@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-03",
+  "reader_position": "入门网页后一篇：技术路线与公司产品",
+  "writing_document": "写作思路与内容组织.md",
+  "removed_public_editorial_sections": [
+    "目标编号",
+    "对话纠错",
+    "改稿原因",
+    "研报借鉴",
+    "核验过程",
+    "内部方法文档下载"
+  ],
+  "unchanged_records": {
+    "module": 118,
+    "company": 227,
+    "nonmodule": 417
+  },
+  "module_primary_source_urls": "preserved",
+  "company_route_links": 31,
+  "duplicate_ids": [],
+  "broken_local_links": [],
+  "editorial_text_check": "passed; all collapsed text included",
+  "conflict_inference_spotchecks": [
+    "R13 engineering inference",
+    "R26 COD/COB and reach conflict",
+    "R31 two model suffixes"
+  ],
+  "canonical_files_unchanged": 24,
+  "raw_data_files_unchanged": 6,
+  "independent_review": "public copy audit and targeted repairs",
+  "visual_status": "not re-tested; earlier file-protocol browser restriction remains; no workaround attempted"
+}

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-03",
+  "all_company_entries": 227,
+  "module_company_entries": 31,
+  "module_configs": 118,
+  "module_configs_added": 82,
+  "nonmodule_excerpt_groups": 417,
+  "nonmodule_company_entries": 187,
+  "stage_rows": 2360,
+  "duplicate_ids": [],
+  "broken_local_links": [],
+  "canonical_hashes_checked": 24,
+  "changed_canonical": [],
+  "boundary": "结构、入口覆盖与来源字段检查；不替代领域事实人工复核",
+  "browser_verification": {
+    "target": "同一输出文件的既有127.0.0.1:8764本地预览",
+    "checks": [
+      "非模块层级/关键词筛选",
+      "包括待核线索开关",
+      "ficonTEC ASSEMBLYLINE展开及视觉检查",
+      "剑桥科技4条模块配置筛选及视觉检查",
+      "全部417组与118条恢复显示"
+    ],
+    "console_errors": []
+  },
+  "rendered_html_sha256": "7d85caa7c14f31095dee6b5b10733973d8eff81f36690d7bbf597e183bfe08f5"
+}

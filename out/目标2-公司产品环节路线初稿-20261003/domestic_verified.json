@@ -1,0 +1,498 @@
+{
+  "generated_on": "2026-10-03",
+  "scope": "官方具体产品配置定向核验；仅候选研究交付，不修改canonical",
+  "verification_note": "产品页证明页面列有配置；发布/展示稿不自动证明量产。不同代际或产品族资料不并入同一SKU。",
+  "access_issues": [
+    "新易盛eoptolink.com部分HTML实时打开返回博彩内容；官方PDF仍可读取。缓存HTML仅留线索，非当前核验。",
+    "products.zj-innolight.com产品SKU表仅搜索缓存可见，实时502；首批未用其SKU补齐新官网产品。",
+    "中际新官网800G OSFP224页面把DR4写为4 CWDM lanes MUX/DEMUX；标准名与页面结构疑不一致，需厂商澄清，未作为主配置。"
+  ],
+  "products": [
+    {
+      "company": "中际旭创 / InnoLight",
+      "product": "800G-2xFR4 OSFP112",
+      "sku": "UNKNOWN（新官网未列P/N）",
+      "electrical_lanes": "8 × 100G PAM4",
+      "optical_lanes": "两组4 CWDM光通道",
+      "dsp_architecture": "UNKNOWN（此当前产品页未披露DSP/CDR、不能合并2023年5nm版本）",
+      "light_source_modulation": "EML",
+      "mux_demux": "2 sets × 4 CWDM lanes MUX/DEMUX，具体AWG/薄膜类型UNKNOWN",
+      "pd_tia": "UNKNOWN",
+      "package_connector": "OSFP112；连接器UNKNOWN",
+      "reach": "2km SMF",
+      "power": "UNKNOWN",
+      "maturity": "当前官网产品目录列示；精确配置量产/送样阶段UNKNOWN",
+      "source_date": "UNKNOWN（产品页无日期）",
+      "checked_date": "2026-10-03",
+      "evidence_level": "官方产品页直接型号配置",
+      "sources": [
+        {
+          "url": "https://www.innolight.com/data-center-networking/800g-osfp112",
+          "location": "800G-2xFR4 OSFP112段，web行49–50",
+          "quote": "800G-2xFR4 OSFP112 based on EML."
+        }
+      ],
+      "unknowns": [
+        "DSP制程/型号",
+        "PD材料与PIN/APD",
+        "TIA型号",
+        "光学MUX实现",
+        "精确P/N",
+        "连接器",
+        "制造与认证阶段"
+      ]
+    },
+    {
+      "company": "中际旭创 / InnoLight",
+      "product": "800G-DR8 OSFP112",
+      "sku": "UNKNOWN",
+      "electrical_lanes": "8 × 100G PAM4",
+      "optical_lanes": "8 × 100G PAM4 parallel",
+      "dsp_architecture": "UNKNOWN",
+      "light_source_modulation": "UNKNOWN；不由公司EML/硅光平台能力推入此配置",
+      "mux_demux": "页面明确并行光通道；未列WDM MUX/DEMUX；不可补光学内部BOM",
+      "pd_tia": "UNKNOWN",
+      "package_connector": "OSFP112 / MPO16/APC",
+      "reach": "500m SMF",
+      "power": "UNKNOWN",
+      "maturity": "当前官网列示；量产阶段UNKNOWN",
+      "source_date": "UNKNOWN",
+      "checked_date": "2026-10-03",
+      "evidence_level": "官方产品页直接型号配置",
+      "sources": [
+        {
+          "url": "https://www.innolight.com/data-center-networking/800g-osfp112",
+          "location": "800G-DR8 OSFP112段，web行59–60",
+          "quote": "MPO16/APC optical connector"
+        }
+      ],
+      "unknowns": [
+        "激光/调制路线",
+        "DSP",
+        "PD/TIA",
+        "P/N",
+        "精确配置量产阶段"
+      ]
+    },
+    {
+      "company": "中际旭创 / InnoLight",
+      "product": "1.6T-DR8 OSFP224",
+      "sku": "UNKNOWN",
+      "electrical_lanes": "8 × 200G PAM4",
+      "optical_lanes": "8 × 200G PAM4 parallel",
+      "dsp_architecture": "UNKNOWN",
+      "light_source_modulation": "UNKNOWN；页面未将EML或SiPh配到该型号",
+      "mux_demux": "并行光通道，具体内部光学件UNKNOWN",
+      "pd_tia": "UNKNOWN",
+      "package_connector": "OSFP224 / 连接器UNKNOWN",
+      "reach": "500m SMF",
+      "power": "UNKNOWN",
+      "maturity": "当前官网产品列示；具体量产阶段UNKNOWN",
+      "source_date": "UNKNOWN",
+      "checked_date": "2026-10-03",
+      "evidence_level": "官方产品页直接型号配置",
+      "sources": [
+        {
+          "url": "https://www.innolight.com/data-center-networking/1.6t-osfp224",
+          "location": "1.6T-DR8 OSFP224段，web行43–45",
+          "quote": "8 channels of 200G-PAM4 electrical and optical parallel lanes"
+        }
+      ],
+      "unknowns": [
+        "DSP",
+        "光源/调制",
+        "PD/TIA",
+        "光连接器",
+        "量产"
+      ]
+    },
+    {
+      "company": "中际旭创 / InnoLight",
+      "product": "1.6T OSFP-XD DR8+（OFC 2023演示版本）",
+      "sku": "UNKNOWN",
+      "electrical_lanes": "100G SerDes生态；16电通道为按1.6T/100G推算，非该稿逐字披露，保留待规格书核实",
+      "optical_lanes": "200G/光通道；DR8+名称，8光通道",
+      "dsp_architecture": "数字信号处理已明确；芯片制程/型号UNKNOWN（不要把同稿800G的5nm写到本1.6T）",
+      "light_source_modulation": "UNKNOWN",
+      "mux_demux": "UNKNOWN",
+      "pd_tia": "UNKNOWN",
+      "package_connector": "OSFP-XD；连接器UNKNOWN",
+      "reach": "2km",
+      "power": "<23W，0–70°C",
+      "maturity": "OFC 2023现场演示；本文未证量产",
+      "source_date": "事件日期2023-03-03；官网页面标2024-02-23",
+      "checked_date": "2026-10-03",
+      "evidence_level": "官方发布稿，代际/事件时间有明确边界",
+      "sources": [
+        {
+          "url": "https://www.innolight.com/en/news/newsinfo/179.html",
+          "location": "web行37–41",
+          "quote": "200G per lane optical technologies"
+        }
+      ],
+      "unknowns": [
+        "精确DSP/光源/PD/TIA",
+        "内部MUX",
+        "连接器",
+        "量产"
+      ]
+    },
+    {
+      "company": "光迅科技 / Accelink",
+      "product": "1.6T OSFP224 DR8（3nm升级版本/OFC 2025）",
+      "sku": "UNKNOWN（发布稿无P/N）",
+      "electrical_lanes": "200G SerDes系统，8 × 200G（文中明确8×200G信号，电通道依200G系统与产品容量推导）",
+      "optical_lanes": "8 × 200G，500m单模稳定传输",
+      "dsp_architecture": "3nm DSP；对比前代5nm，供应商/型号UNKNOWN",
+      "light_source_modulation": "Silicon Photonics明确；CW激光器类型、功率、MZM/环调制器类型UNKNOWN",
+      "mux_demux": "UNKNOWN；稿未列具体WDM器件",
+      "pd_tia": "UNKNOWN（不能从自有PD/APD平台映射本产品）",
+      "package_connector": "OSFP224 / 连接器UNKNOWN",
+      "reach": "500m SMF",
+      "power": "相较5nm下降；定量值UNKNOWN",
+      "maturity": "OFC 2025将演示；不能借800G量产句推1.6T量产",
+      "source_date": "2025-03-24",
+      "checked_date": "2026-10-03",
+      "evidence_level": "官方具体版本发布稿",
+      "sources": [
+        {
+          "url": "https://www.accelink.com/en/lighting_your_dreams/1904410936018501633.html",
+          "quote": "3nm DSP chip paired with silicon photonics technology",
+          "location": "正文三项技术突破"
+        }
+      ],
+      "unknowns": [
+        "SKU",
+        "CW光源",
+        "调制器结构",
+        "PD/TIA",
+        "光连接器",
+        "量产",
+        "精确功耗"
+      ]
+    },
+    {
+      "company": "光迅科技 / Accelink",
+      "product": "800G DR8 LPO / OSFP112（OFC 2025）",
+      "sku": "UNKNOWN",
+      "electrical_lanes": "OSFP112；精确8×100G按封装/DR8标准推断，稿未逐项规格表",
+      "optical_lanes": "DR8；精确速率/波长UNKNOWN",
+      "dsp_architecture": "LPO明确，具体Driver/TIA和是否片上辅助电路UNKNOWN",
+      "light_source_modulation": "UNKNOWN（不由1.6T SiPh推800G同族）",
+      "mux_demux": "UNKNOWN",
+      "pd_tia": "UNKNOWN",
+      "package_connector": "OSFP112（中文官方稿指定同场800G模块）；连接器UNKNOWN",
+      "reach": "UNKNOWN",
+      "power": "定性低功耗低时延，数值UNKNOWN",
+      "maturity": "OFC 2025演示与Celestica DS5000交换机组合；SKU量产UNKNOWN",
+      "source_date": "2025-03-31",
+      "checked_date": "2026-10-03",
+      "evidence_level": "官方产品配置展示稿",
+      "sources": [
+        {
+          "url": "https://www.accelink.com/en/lighting_your_dreams/1906618234845560833.html",
+          "quote": "800G DR8 Linear Pluggable Optics (LPO)",
+          "location": "web行151–155"
+        },
+        {
+          "url": "https://www.accelink.com/lighting_your_dreams/1906617069227540481.html",
+          "quote": "800G OSFP112",
+          "location": "中文正文展示产品段"
+        }
+      ],
+      "unknowns": [
+        "光子平台",
+        "PD/TIA",
+        "连接器",
+        "精确通道",
+        "DSP外围定义",
+        "量产"
+      ]
+    },
+    {
+      "company": "新易盛 / Eoptolink",
+      "product": "800G DR8 / 2×FR4 LPO family（OFC 2024厂商展示资料）",
+      "sku": "UNKNOWN（OIF厂商PDF未列P/N）",
+      "electrical_lanes": "每通道106.25Gbps PAM4；全模块8通道由800G/DR8配置推导",
+      "optical_lanes": "DR8或2×FR4；支持106.25Gbps PAM4",
+      "dsp_architecture": "仅TX线性Driver、RX TIA；模块内不需DSP/CDR ASIC",
+      "light_source_modulation": "SiPh transmitter；CW光源/调制器结构UNKNOWN",
+      "mux_demux": "DR8与2×FR4不可混成一个BOM；具体MUX实现未披露",
+      "pd_tia": "PIN and TIA array明确；PIN材料/芯片型号UNKNOWN",
+      "package_connector": "OSFP / QSFP112-DD；DR8/2×DR4支持dual MPO-12或MPO-16；2×FR4连接器UNKNOWN",
+      "reach": "DR8 500m；2×FR4 2km SMF",
+      "power": "<8W（产品族上限，非每SKU实测）",
+      "latency": "<1ns（资料给模块族指标）",
+      "maturity": "OFC 2024展示资料，说明具体路线；不证任一SKU大批量",
+      "source_date": "OFC 2024 2024-03-26至28",
+      "checked_date": "2026-10-03",
+      "evidence_level": "厂商编写、OIF官方托管产品PDF（主来源）",
+      "sources": [
+        {
+          "url": "https://www.oiforum.com/wp-content/uploads/OIF_PLL_Demo_Eoptolink_OFC2024.pdf",
+          "location": "p1, FEATURES与PRODUCT DESCRIPTION",
+          "quote": "Silicon Photonics based transmitter; PIN and TIA array on the receiver side"
+        }
+      ],
+      "unknowns": [
+        "精确SKU",
+        "CW激光器规格",
+        "调制器",
+        "MUX实现",
+        "2×FR4连接器",
+        "量产"
+      ]
+    },
+    {
+      "company": "新易盛 / Eoptolink",
+      "product": "800G OSFP DR8 Immersion cooled",
+      "sku": "EOLO-138HG-5H-XYMX",
+      "electrical_lanes": "8 independent I/O，800GAUI-8；8×106.25Gbps PAM4",
+      "optical_lanes": "8 parallel ×106.25Gbps PAM4 / 1310nm",
+      "dsp_architecture": "发射Driver与接收TIA集成进DSP（规格书明述）；芯片型号/制程UNKNOWN",
+      "light_source_modulation": "UNKNOWN；不能从LPO产品族SiPh推入本SKU",
+      "mux_demux": "并行8通道，内部光学BOM UNKNOWN",
+      "pd_tia": "TIA集成进DSP明确；PD类型UNKNOWN",
+      "package_connector": "OSFP；MPO-16位于光纤尾纤末端",
+      "reach": "500m SMF；主机KP4 FEC",
+      "power": "<14.5W；20–60°C，Two Phase Immersion Cooled环境",
+      "maturity": "Preliminary V1.a数据简表；不证量产交付",
+      "source_date": "文件未标明确日历日期",
+      "checked_date": "2026-10-03",
+      "evidence_level": "官方PDF直接SKU规格",
+      "sources": [
+        {
+          "url": "https://www.eoptolink.com/pdf/800G/OSFP%20Liquid%20Cooling/Brief%20EOLO-138HG-5H-XYMX%20Preliminary%20V1.a.pdf",
+          "location": "p1 Features/产品说明/订货表",
+          "quote": "Driver and TIA integrated in the DSP at transmitter and receiver side"
+        }
+      ],
+      "unknowns": [
+        "激光/调制平台",
+        "PD类型",
+        "DSP供应商与制程",
+        "内部无源光件",
+        "量产"
+      ]
+    },
+    {
+      "company": "新易盛 / Eoptolink",
+      "product": "Gen2 1.6T OSFP / OSFP-RHS 2DR4（SiPh/EML变体）",
+      "sku": "EOLO-13T-5H-xDxx（型号模式；小写x表示未公开变体，不能自行指定某suffix对应SiPh或EML）",
+      "electrical_lanes": "200G/channel与200G SerDes已披露；总8路由1.6T/200G与2DR4配置推导，非稿逐字的电通道表",
+      "optical_lanes": "2DR4对应两组4路；具体baud/波长UNKNOWN",
+      "dsp_architecture": "Fully retimed；3nm DSP明确，供应商/芯片型号UNKNOWN",
+      "light_source_modulation": "该产品类型明确同时有SiPh与EML版本；CW激光/硅光调制器结构UNKNOWN",
+      "mux_demux": "2DR4配置；具体内部光学件UNKNOWN",
+      "pd_tia": "UNKNOWN",
+      "package_connector": "OSFP及OSFP-RHS；2 MPO-12",
+      "reach": "UNKNOWN（该稿未直接披露，不由5H型号编码推500m）",
+      "power": "相较前代模块约下降20%（厂商比较，绝对功耗及测试基线UNKNOWN）",
+      "maturity": "OFC2025将演示/发布；available变体，不等于已核量产",
+      "source_date": "2025-03-29",
+      "checked_date": "2026-10-03",
+      "evidence_level": "公司提供的官方发布稿，PRNewswire实时可读；非记者报道",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/eoptolink-launches-its-gen2-1-6t-osfp-and-osfp-rhs-transceiver-family-at-ofc-2025--302414882.html",
+          "location": "web行475–482；News provided by / SOURCE Eoptolink",
+          "quote": "Both Silicon Photonics and EML variants are available for the above types."
+        }
+      ],
+      "unknowns": [
+        "完整P/N与平台变体映射",
+        "精确通道baud/波长",
+        "CW光源",
+        "PD/TIA",
+        "内部光学件",
+        "距程",
+        "量产"
+      ]
+    },
+    {
+      "company": "新易盛 / Eoptolink",
+      "product": "Gen2 1.6T OSFP / OSFP-RHS 2FR4（SiPh/EML变体）",
+      "sku": "EOLO-16T-02-xxx（型号模式；不指定某suffix的光子平台）",
+      "electrical_lanes": "200G/channel与200G SerDes已披露；总8路为容量推导，非逐字规格表",
+      "optical_lanes": "2FR4类型明确；双4波长光通道为标准架构推导，本文未列波长",
+      "dsp_architecture": "Fully retimed；3nm DSP明确；供应商/型号UNKNOWN",
+      "light_source_modulation": "该产品类型明确同时有SiPh与EML版本，具体变体后缀UNKNOWN",
+      "mux_demux": "2FR4需要两组复用/解复用为架构推导；AWG或薄膜实现UNKNOWN",
+      "pd_tia": "UNKNOWN",
+      "package_connector": "OSFP及OSFP-RHS；2 duplex LC",
+      "reach": "UNKNOWN（不以02型号代码代替规格书）",
+      "power": "相较前代模块约下降20%，绝对W数/基线UNKNOWN",
+      "maturity": "OFC2025演示发布，未核量产",
+      "source_date": "2025-03-29",
+      "checked_date": "2026-10-03",
+      "evidence_level": "公司提供的PRNewswire官方发布稿实时核验",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/eoptolink-launches-its-gen2-1-6t-osfp-and-osfp-rhs-transceiver-family-at-ofc-2025--302414882.html",
+          "location": "web行476–482",
+          "quote": "EOLO-16T-02-xxx"
+        }
+      ],
+      "unknowns": [
+        "完整P/N",
+        "SiPh/EML后缀映射",
+        "波长/baud",
+        "MUX具体技术",
+        "PD/TIA",
+        "距程",
+        "量产"
+      ]
+    },
+    {
+      "company": "光迅科技 / Accelink",
+      "product": "800G OSFP DR8",
+      "sku": "RTXM600-201",
+      "electrical_lanes": "8 ×100G PAM4；retimed 800GAUI-8，当前浏览器DOM明确",
+      "optical_lanes": "8 ×100G PAM4 1310nm EML；DR8 parallel架构",
+      "dsp_architecture": "retimed已披露；是否DSP及其制程/型号UNKNOWN，不以retimed自动补DSP",
+      "light_source_modulation": "EML 1310nm",
+      "mux_demux": "页面未列MUX/DEMUX；并行8路架构，不补WDM",
+      "pd_tia": "当前实时DOM未呈现Receiver规格；历史官网搜索缓存列PIN，暂仅线索；TIA UNKNOWN",
+      "package_connector": "OSFP / MPO-16",
+      "reach": "500m SMF",
+      "power": "<16W；0–70°C",
+      "maturity": "当前官网可询盘产品目录；此P/N量产阶段UNKNOWN",
+      "source_date": "UNKNOWN（页面无发布日期）",
+      "checked_date": "2026-10-03",
+      "evidence_level": "官方产品页面+Chrome实时DOM已核Key Features；不是只用搜索缓存",
+      "sources": [
+        {
+          "url": "https://www.accelink.com/en/lighting_your_dreams/1745716334399913986.html",
+          "location": "RTXM600-201 / Key Features（JS加载后Chrome DOM）",
+          "quote": "8x100G PAM4 EML-based 1310nm transmitter; 8x100G PAM4 retimed 800GAUI-8 electrical interface"
+        }
+      ],
+      "unknowns": [
+        "PD当前规格",
+        "TIA",
+        "DSP类型",
+        "量产",
+        "制造工艺/内部BOM"
+      ]
+    },
+    {
+      "company": "光迅科技 / Accelink",
+      "product": "800G OSFP 2xFR4",
+      "sku": "RTXM600-210",
+      "electrical_lanes": "8 ×100G PAM4；retimed 800GAUI-8，当前DOM明确",
+      "optical_lanes": "8 ×100G PAM4 EML CWDM；两组FR4为产品结构解释",
+      "dsp_architecture": "retimed明确；DSP类型/制程/型号UNKNOWN",
+      "light_source_modulation": "EML CWDM",
+      "mux_demux": "CWDM发射明确；2×FR4的复用/解复用功能为架构解释；AWG/薄膜实现UNKNOWN",
+      "pd_tia": "当前DOM未列接收类型；历史官网搜索缓存列PIN，暂线索；TIA UNKNOWN",
+      "package_connector": "OSFP / Dual LC receptacles（当前DOM）；历史表写Dual Duplex LC，当前先保留Dual LC",
+      "reach": "2km SMF",
+      "power": "<16W；0–70°C",
+      "maturity": "当前官网可询盘产品列示，P/N量产UNKNOWN",
+      "source_date": "UNKNOWN",
+      "checked_date": "2026-10-03",
+      "evidence_level": "官网产品+Chrome DOM实时Key Features核验",
+      "sources": [
+        {
+          "url": "https://www.accelink.com/en/lighting_your_dreams/1745731709229400066.html",
+          "location": "RTXM600-210 / Key Features",
+          "quote": "8x100G PAM4 EML-based CWDM transmitter; Dual LC receptacles"
+        }
+      ],
+      "unknowns": [
+        "CWDM精确波长当前DOM",
+        "PD",
+        "TIA",
+        "DSP",
+        "MUX技术",
+        "P/N量产"
+      ]
+    },
+    {
+      "company": "光迅科技 / Accelink",
+      "product": "1.6T OSFP-XD DR8",
+      "sku": "RTXM700-200",
+      "electrical_lanes": "16 ×100G PAM4 retimed，当前DOM明确；官网电接口文字label为400GAUI-4，疑点保留，不自行改为1600GAUI",
+      "optical_lanes": "8 ×200G PAM4，正文每路最高212.5Gb/s",
+      "dsp_architecture": "retimed明确；DSP芯片、gearbox具体型号/制程UNKNOWN",
+      "light_source_modulation": "Cooled EML 1311nm（当前Key Features）；不要与OSFP224 SiPh/3nm版本合并",
+      "mux_demux": "DR8并行结构；具体内部无源光件UNKNOWN",
+      "pd_tia": "UNKNOWN；历史搜索表写PD，当前DOM不列Receiver",
+      "package_connector": "OSFP-XD；Dual MPO-12 receptacles",
+      "reach": "500m SMF",
+      "power": "<25W；0–70°C",
+      "maturity": "当前官网可询盘具体P/N，量产/认证阶段UNKNOWN",
+      "source_date": "UNKNOWN（当前产品页无日期）",
+      "checked_date": "2026-10-03",
+      "evidence_level": "官方产品页；Chrome实时DOM确认Key Features",
+      "sources": [
+        {
+          "url": "https://www.accelink.com/en/lighting_your_dreams/1729755138554798081.html",
+          "location": "RTXM700-200 / Key Features",
+          "quote": "8x200G PAM4 Cooled EML 1311nm transmitter; 16x100G PAM4 retimed 400GAUI-4 electrical interface"
+        }
+      ],
+      "unknowns": [
+        "DSP/gearbox",
+        "PD/TIA",
+        "内部封装/光学件",
+        "量产",
+        "400GAUI-4电接口label待厂商澄清"
+      ]
+    },
+    {
+      "company": "光迅科技 / Accelink",
+      "product": "1.6T OSFP224 DR8（官网当前配置）",
+      "sku": "RTXM700-502",
+      "electrical_lanes": "UNKNOWN（当前Key Features未直接披露电通道；不得直接以OFC2025稿8×200G电或OSFP224名称填入）",
+      "optical_lanes": "8 ×200G PAM4；每通道最高212.5Gbps直接披露",
+      "dsp_architecture": "UNKNOWN（产品页不披露DSP，不能自动认作OFC2025的3nm升级版）",
+      "light_source_modulation": "Sipho modulator / Sipho-based transmitter明确；CW光源、调制器具体结构UNKNOWN",
+      "mux_demux": "UNKNOWN（DR8并行标准架构可解释，内部光学器件未披露）",
+      "pd_tia": "UNKNOWN",
+      "package_connector": "标题OSFP224，Key Features写OSFP1600；dual MPO-12 APC",
+      "reach": "500m SMF",
+      "power": "30W；15–70°C（官网当前Key Features，不与其他版本功耗混合）",
+      "maturity": "当前官网具体P/N可询盘；量产/客户认证UNKNOWN",
+      "source_date": "UNKNOWN",
+      "checked_date": "2026-10-03",
+      "evidence_level": "官方具体SKU页面+Chrome实时DOM Key Features",
+      "sources": [
+        {
+          "url": "https://www.accelink.com/en/lighting_your_dreams/1859158602116268033.html",
+          "location": "RTXM700-502 / Key Features",
+          "quote": "8x200G PAM4 Sipho-based transmitter; Power dissipation: 30W"
+        }
+      ],
+      "unknowns": [
+        "电通道",
+        "DSP及其代际",
+        "PD/TIA",
+        "CW光源",
+        "调制器结构",
+        "量产",
+        "是否对应2025 3nm升级版"
+      ]
+    }
+  ],
+  "pending_leads": [
+    {
+      "company": "新易盛",
+      "product": "1.6T DR8 EOLO-13T-5H-XDX / EOLO-13T-5H-XX；DR8-2；2FR4 EOLO-16T-02-XX",
+      "source": "https://www.eoptolink.com/?from=owdir.com",
+      "status": "官方域搜索缓存列精确型号，但实时HTML返回博彩；未把缓存作为实时核验，待官方PDF；另已核2025-03-29公司发布稿型号模式，不与缓存完整SKU自动合并"
+    },
+    {
+      "company": "中际",
+      "product": "T-OL8CNT-N00 800G OSFP2×FR4 EML CWDM/PIN；T-OP8CNH-N00 DR8 1310nmEML/PIN",
+      "source": "https://products.zj-innolight.com/en/goods/solution/cid/18.html",
+      "status": "搜索缓存精确型号表，实时502；未合并至新官网产品配置"
+    },
+    {
+      "company": "光迅",
+      "product": "800G DR8系列mass delivery",
+      "source": "https://www.accelink.com/en/lighting_your_dreams/1844910043519021058.html",
+      "status": "2024-09-11证明DR8系列批量交付能力；不能具体映射DSP/LPO/LRO版本"
+    }
+  ]
+}
