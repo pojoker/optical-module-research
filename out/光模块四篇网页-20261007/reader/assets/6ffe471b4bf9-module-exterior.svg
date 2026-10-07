@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 235" role="img" aria-labelledby="title desc">
+<title id="title">一只光模块的外观与两端接口</title><desc id="desc">左端电接口接网络设备，中央壳体容纳内部零件，右端光接口接外部光纤。只画外观，没有第二个安装视图。</desc>
+<defs><pattern id="gold" width="13" height="40" patternUnits="userSpaceOnUse"><rect width="8" height="40" fill="#ba9551"/></pattern></defs>
+<rect width="760" height="235" rx="12" fill="#fff"/>
+<g font-family="PingFang SC,Microsoft YaHei,sans-serif" fill="#223530">
+<rect x="166" y="99" width="60" height="46" fill="url(#gold)"/>
+<path d="M220 85H531L557 106V171H220Z" fill="#cbd4d0" stroke="#667b70" stroke-width="2"/>
+<path d="M220 85l28-19h308l-25 19z" fill="#e6ece8" stroke="#667b70" stroke-width="2"/>
+<path d="M531 85l25-19 25 21v65l-24 19v-65z" fill="#8c9e94" stroke="#667b70" stroke-width="2"/>
+<rect x="303" y="104" width="131" height="39" rx="5" fill="#edf2ee"/><text x="325" y="130" font-size="19">光模块</text>
+<rect x="540" y="115" width="12" height="27" fill="#264b5e"/><rect x="562" y="102" width="11" height="27" fill="#264b5e"/>
+<path d="M189 92V47H33" fill="none" stroke="#9a6828" stroke-width="2"/><text x="30" y="73" font-size="20" fill="#845619">电接口</text><text x="30" y="101" font-size="18">连接网络设备</text>
+<path d="M579 123h23V45h124" fill="none" stroke="#286b8c" stroke-width="2"/><text x="606" y="72" font-size="20" fill="#286b8c">光接口</text><text x="606" y="100" font-size="18">连接外部光纤</text>
+<path d="M380 160v34" stroke="#667b70" stroke-width="2"/><text x="280" y="221" font-size="18">壳体：容纳内部零件</text>
+</g></svg>
