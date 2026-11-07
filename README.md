@@ -1,5 +1,7 @@
 # 光模块产业结构与公司能力地图（点先行 v2）
 
+> **日更知识库已整理：** [阅读入口](knowledge-daily/README.md) · [日期索引](knowledge-daily/DATES.md)。国内最新到2026-11-07，海外与完整汇总到2026-11-06；候选与正式知识分开。
+
 > **新会话先读 `AGENTS.md`。** 它规定必读文件、禁读材料（archive / 结案试点 / 其他分支历史 /
 > 旧 agent 轨迹）和必须停下来升级的情形，避免把历史状态当成当前指令。
 > 当前任务范围只在 `docs/control/ACTIVE_WORKPACK.yaml`；边界与架构准入闸见 `docs/control/PROJECT_CHARTER.md`；

@@ -1,0 +1,128 @@
+{
+  "assembly_status": "complete",
+  "collection": {
+    "domestic": {
+      "manifest_run_status": "partial",
+      "notes": [
+        "run-status 记录 71 条错误摘要，完成度存疑",
+        "manifest logs 记录 70 条失败条目，完成度存疑"
+      ],
+      "processed": 651,
+      "progress": "651/651",
+      "run_status_file": "partial",
+      "status": "partial",
+      "total": 651,
+      "updated_at": "2026-09-09T23:06:14+08:00"
+    },
+    "overseas": {
+      "article_fetch_failure": 10,
+      "configured_entity_count": 78,
+      "endpoint_count": 79,
+      "endpoint_failed": 9,
+      "endpoint_succeeded": 70,
+      "invalid_item": 43,
+      "missing_endpoint_count": 3,
+      "monitored_entity_count": 81,
+      "notes": [
+        "仅 78/81 个监控实体配置了端点；这是配置覆盖，不代表采集成功或研究覆盖",
+        "failure_types 记录 article_fetch_failure×10，采集存在未归类的获取失败",
+        "failure_types 记录 fetch_failure×6，采集存在未归类的获取失败",
+        "failure_types 记录 invalid_item×43，采集存在未归类的获取失败",
+        "failure_types 记录 missing_endpoint×3，采集存在未归类的获取失败",
+        "failure_types 记录 unsupported_listing×3，采集存在未归类的获取失败"
+      ],
+      "status": "partial"
+    }
+  },
+  "collection_status": "partial",
+  "domestic": {
+    "available": true,
+    "collection": {
+      "manifest_run_status": "partial",
+      "notes": [
+        "run-status 记录 71 条错误摘要，完成度存疑",
+        "manifest logs 记录 70 条失败条目，完成度存疑"
+      ],
+      "processed": 651,
+      "progress": "651/651",
+      "run_status_file": "partial",
+      "status": "partial",
+      "total": 651,
+      "updated_at": "2026-09-09T23:06:14+08:00"
+    },
+    "errors": [],
+    "manifest_path": "[本地路径已省略]",
+    "report_path": "[本地路径已省略]",
+    "run_status_path": "[本地路径已省略]",
+    "summary": {
+      "announcements": 10,
+      "gate_review_suggested": true,
+      "ir_new": 10,
+      "log_entries": 72,
+      "outlier_hits": 0,
+      "qa_new": 20,
+      "queue_added": 11,
+      "queue_removed": 0,
+      "restart_hits": 3,
+      "watched_codes": 93
+    }
+  },
+  "overseas": {
+    "available": true,
+    "candidates_path": "[本地路径已省略]",
+    "collection": {
+      "article_fetch_failure": 10,
+      "configured_entity_count": 78,
+      "endpoint_count": 79,
+      "endpoint_failed": 9,
+      "endpoint_succeeded": 70,
+      "invalid_item": 43,
+      "missing_endpoint_count": 3,
+      "monitored_entity_count": 81,
+      "notes": [
+        "仅 78/81 个监控实体配置了端点；这是配置覆盖，不代表采集成功或研究覆盖",
+        "failure_types 记录 article_fetch_failure×10，采集存在未归类的获取失败",
+        "failure_types 记录 fetch_failure×6，采集存在未归类的获取失败",
+        "failure_types 记录 invalid_item×43，采集存在未归类的获取失败",
+        "failure_types 记录 missing_endpoint×3，采集存在未归类的获取失败",
+        "failure_types 记录 unsupported_listing×3，采集存在未归类的获取失败"
+      ],
+      "status": "partial"
+    },
+    "errors": [],
+    "report_path": "[本地路径已省略]",
+    "summary": {
+      "claim_candidates": 35,
+      "configured_entity_count": 78,
+      "corroboration_suggestions": 0,
+      "decision_counts": {
+        "new_disclosure_candidate": 70
+      },
+      "disclosure_candidates": 70,
+      "endpoint_count": 79,
+      "endpoint_failed": 9,
+      "endpoint_succeeded": 70,
+      "event_candidates": 27,
+      "evidence_candidates": 35,
+      "failure_types": {
+        "article_fetch_failure": 10,
+        "fetch_failure": 6,
+        "invalid_item": 43,
+        "missing_endpoint": 3,
+        "no_relevant_content": 49,
+        "unsupported_listing": 3
+      },
+      "fetch_mode": "http",
+      "item_count": 113,
+      "missing_endpoint_count": 3,
+      "monitored_entity_count": 81,
+      "promoted": 0,
+      "queue_added": 48,
+      "queue_removed": 105,
+      "queue_size": 149,
+      "run_date": "2026-09-09"
+    },
+    "summary_path": "[本地路径已省略]"
+  },
+  "run_date": "2026-09-09"
+}
