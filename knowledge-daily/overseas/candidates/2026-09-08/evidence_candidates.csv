@@ -1,0 +1,3 @@
+evidence_id,event_id,event_claim_id,relationship,independence_class,origin_group,notes
+VC_1DFCDB7E5AB6,EC_CEAD1331131A,CC_BF9C0A4F7F05,reports,first_party,OGC_81DB3F017288,第一方材料不能作为独立证据
+VC_EAA29D5B5936,EC_CEAD1331131A,CC_C6EEC0F373F3,supports,first_party,OGC_81DB3F017288,第一方材料不能作为独立证据

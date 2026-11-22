@@ -1,0 +1,41 @@
+{
+  "name_inputs": 241,
+  "display_entries": 227,
+  "company_names_missing": [],
+  "raw_points_with_no_product_extraction": [
+    "P033",
+    "P040",
+    "P075",
+    "P090",
+    "P093",
+    "P217",
+    "P256",
+    "P259"
+  ],
+  "detailed_configurations": 36,
+  "stage_rows": 720,
+  "dialogue_comparison_rows": 43,
+  "local_links_errors": [],
+  "canonical_files_unchanged": 24,
+  "stage_status_counts": {
+    "厂商直接披露": 93,
+    "未提取/待检索": 339,
+    "UNKNOWN": 102,
+    "部分披露/有保留": 114,
+    "部分披露；具体边界见主张": 37,
+    "含工程推断，待型号规格确认": 25,
+    "未核线索；采用情况UNKNOWN": 4,
+    "所核来源未列该项": 6
+  },
+  "verification_boundary": "结构、名称归集与本次特定补值核对；不代表所有产品/环节/量产事实完整。",
+  "product_excerpt_groups": 646,
+  "input_record_gap_explanation": "未抽产品的8条仍归入公司原记录与缺口：无具体产品名、定义性描述、平台宣传或仅需求/用途；不把它们补成自售产品。",
+  "browser_checks": [
+    "全部公司227入口可见；新易盛搜索1入口",
+    "设备类别31入口，Veeco缩至1入口",
+    "FR8型号搜索1/36，展开20环节，PD与TIA分列",
+    "页面视觉预览完成；窄屏表格可横向滚动"
+  ],
+  "independent_review": "两次独立审阅；最终241映射、227入口、646摘录与650CSV行核对；德科立与威尔高最后两处表述已修。",
+  "final_browser_state": "目录227/227；详细配置36/36；恢复未筛选首页并保留交付标签"
+}

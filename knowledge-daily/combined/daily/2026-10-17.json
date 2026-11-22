@@ -1,0 +1,172 @@
+{
+  "assembly_status": "complete",
+  "collection": {
+    "domestic": {
+      "manifest_run_status": "complete",
+      "notes": [],
+      "processed": 188,
+      "progress": "188/188",
+      "run_status_file": "complete",
+      "status": "complete",
+      "total": 188,
+      "updated_at": "2026-10-17T10:29:11+08:00"
+    },
+    "overseas": {
+      "article_fetch_failure": 11,
+      "configured_entity_count": 78,
+      "endpoint_count": 79,
+      "endpoint_failed": 16,
+      "endpoint_succeeded": 63,
+      "invalid_item": 7,
+      "missing_endpoint_count": 3,
+      "monitored_entity_count": 81,
+      "notes": [
+        "仅 78/81 个监控实体配置了端点；这是配置覆盖，不代表采集成功或研究覆盖",
+        "failure_types 记录 article_fetch_failure×11，采集存在未归类的获取失败",
+        "failure_types 记录 fetch_failure×15，采集存在未归类的获取失败",
+        "failure_types 记录 invalid_item×7，采集存在未归类的获取失败",
+        "failure_types 记录 missing_endpoint×3，采集存在未归类的获取失败",
+        "failure_types 记录 unsupported_listing×1，采集存在未归类的获取失败"
+      ],
+      "status": "partial"
+    }
+  },
+  "collection_status": "partial",
+  "domestic": {
+    "available": true,
+    "collection": {
+      "manifest_run_status": "complete",
+      "notes": [],
+      "processed": 188,
+      "progress": "188/188",
+      "run_status_file": "complete",
+      "status": "complete",
+      "total": 188,
+      "updated_at": "2026-10-17T10:29:11+08:00"
+    },
+    "errors": [],
+    "manifest_path": "[本地路径已省略]",
+    "report_path": "[本地路径已省略]",
+    "run_status_path": "[本地路径已省略]",
+    "summary": {
+      "announcements": 23,
+      "gate_review_suggested": true,
+      "ir_new": 4,
+      "log_entries": 0,
+      "outlier_hits": 0,
+      "qa_new": 6,
+      "queue_added": 1,
+      "queue_removed": 0,
+      "restart_hits": 4,
+      "watched_codes": 93
+    }
+  },
+  "gemini": {
+    "automatic_cloud_refresh": false,
+    "daily_increment_verified": false,
+    "sources": [
+      {
+        "available": false,
+        "content_date": null,
+        "date_basis": "unknown",
+        "notes": [],
+        "path": "[本地路径已省略]",
+        "source_kind": "local_export",
+        "source_links": [],
+        "status": "missing",
+        "verification_status": "unverified"
+      },
+      {
+        "available": false,
+        "content_date": null,
+        "date_basis": "unknown",
+        "notes": [],
+        "path": "[本地路径已省略]",
+        "source_kind": "local_export",
+        "source_links": [],
+        "status": "missing",
+        "verification_status": "unverified"
+      },
+      {
+        "available": true,
+        "content": "﻿光模块技术与法律合规深度研究报告 (2026)\r\n一、 报告摘要与核心洞察\r\n步入 2026 年，受 AI 大模型训练集群对超高算力与互联带宽的渴求驱动，光模块行业正迎来新一轮技术爆发与供应链重构。核心洞察如下：\r\n\r\n\r\n* 技术迭代加速： 市场正经历从 800G 向 1.6T 速率的全面跨越。线性驱动可插拔 (LPO) 与光电共封装 (CPO) 技术在降低功耗与延迟方面展开激烈竞争，而硅光技术 (SiPh) 与薄膜铌酸锂 (TFLN) 材料平台已成为提升集成度与降低成本的关键路径。\r\n* 合规环境严峻： 美国出口管制 (EAR) 及 BIS 政策持续收紧，高速互联带宽被列为监管红线。Section 301 关税波动与 FCC 供应链审查迫使企业强化合规管理。\r\n* 产业链全球化： 为了应对地缘政治风险，头部厂商正通过\"中国+1\"策略在东南亚（泰国、越南、马来西亚）建立产能，以满足全球云服务商 (CSP) 对供应链多样性与原产地认定 (Substantial Transformation) 的严格要求。\r\n二、 光模块技术演进与核心方案对比\r\n1. 速率演进与代际演进路径\r\n光模块技术正沿着提升单波速率与增加通道数的方向演进：\r\n\r\n\r\n* 演进路径： 从主流的 400G/800G 向 1.6T 演进，并已开启 3.2T 的前瞻布局。\r\n* 单波速率： 核心突破在于从 100G/Lane PAM4 向 200G/Lane PAM4 的跨越。\r\n* 标准规范： IEEE 802.3dj 标准 对 1.6T 以太网规范进行了详细定义，引入了级联前向纠错 (Concatenated FEC) 等关键技术以保障高速传输的误码率表现。\r\n2. 封装与系统架构对比：传统可插拔 vs LPO/LRO vs CPO/NPO\r\n* 传统可插拔模块 (Retimed Pluggable)： 包含 DSP 芯片进行信号整形，生态成熟但功耗较高。\r\n* 线性驱动可插拔 (LPO/LRO)： 去除或简化 DSP，利用交换机侧芯片驱动，显著降低功耗与传输时延，适合 AI 短距互联。\r\n* 光电共封装 (CPO) 与近封装光学 (NPO)： 将光引擎与电交换芯片封装在一起，极大程度降低功耗并突破 I/O 密度瓶颈。\r\n3. 底层光芯片与材料平台演变\r\n* InP EML/DFB： 传统主流方案，适用于长距离与高性能场景。\r\n* GaAs VCSEL： 专注于超短距数据中心互联。\r\n* 硅光技术 (SiPh)： 通过 CW Laser 外置，利用成熟 CMOS 工艺实现大规模集成。\r\n* 薄膜铌酸锂 (TFLN)： 具备超高调制带宽与极低功耗，是 1.6T 及更高速率的理想材料方案。\r\n4. 核心技术架构与材料方案横向对比表\r\n方案\r\n\t单波速率\r\n\t功耗水平 (pJ/bit)\r\n\t传输时延\r\n\t成本结构\r\n\t可维护性/热插拔\r\n\t2026年商用成熟度\r\n\t主要应用场景\r\n\t传统可插拔\r\n\t100G/200G\r\n\t较高\r\n\t较高\r\n\t包含高端 DSP\r\n\t极佳\r\n\t成熟\r\n\t传统云数据中心\r\n\tLPO/LRO\r\n\t200G\r\n\t较低\r\n\t极低\r\n\t节省 DSP 成本\r\n\t良好\r\n\t高度商用\r\n\tAI 计算集群短距\r\n\tCPO/NPO\r\n\t200G+\r\n\t最低\r\n\t最低\r\n\t系统集成度高\r\n\t较难\r\n\t规模化早期\r\n\t超大规模 AI 集群\r\n\t硅光 (SiPh)\r\n\t100G/200G\r\n\t中等\r\n\t中等\r\n\t规模生产成本低\r\n\t极佳\r\n\t成熟\r\n\t高速互联与相干光\r\n\tTFLN\r\n\t200G-400G\r\n\t极低\r\n\t极低\r\n\t材料成本较高\r\n\t良好\r\n\t研发与高端应用\r\n\t1.6T/3.2T 极限速率\r\n\t三、 法律、监管与地缘政治合规进展\r\n1. 美国出口管制 (EAR) 与 BIS 监管政策\r\nBIS 监管政策紧盯先进计算及高速互联带宽。核心限制涉及上游关键 DSP 电芯片（如 Broadcom, Marvell）的供给，要求严格遵守转口合规。实体清单 (Entity List) 与外国直接产品规则 (FDPR) 的潜在外溢风险，使得中资背景厂商在获取先进制程芯片及技术授权方面面临更高壁垒。\r\n2. 关税壁垒与原产地穿透监管\r\n美国 Section 301 关税条款的持续波动直接影响产品价格竞争力。为应对此挑战，产业链开启\"中国+1\"模式，向泰国、越南、马来西亚等地转移产能。原产地认定不再仅考察组装，更强调实质性改变 (Substantial Transformation) 标准，对跨境制造价值链的分配提出更高要求。\r\n3. FCC 审查动向与关键基础设施供应链安全\r\nFCC 与美国国会针对 AI 数据中心供应链的国家安全审查趋严。关键基础设施采购提案可能限制特定来源的光通信设备。全球头部云服务商 (CSP) 现已普遍要求供应链合规证明，并实施多源采购 (Multi-sourcing) 以分散风险。\r\n4. 知识产权保护与 ITC 337 调查风险\r\nUSITC 337 调查 仍是高速光模块出口的主要法律风险之一。围绕硅光集成、高速封装及精密光耦合等关键领域的专利诉讼频发。企业需建立完善的全球专利壁垒分析与应对策略。\r\n四、 全球竞争格局与产业链分布\r\n1. 全球光模块竞争梯队与市场份额\r\n中国厂商目前占据全球约 60%~65% 的高速光模块市场份额，形成了一超多强的局面：\r\n\r\n\r\n* 中国主力厂商： 中际旭创、新易盛、天孚通信、华工科技、光迅科技。\r\n* 欧美主力厂商： Coherent、Lumentum、Cisco/Acacia、Broadcom。\r\n2. 上游核心元器件自给率与供应链\"卡脖子\"环节\r\n尽管模块组装份额领先，但上游核心环节仍存在依赖：\r\n\r\n\r\n* 光芯片： 高速 EML、高功率 CW 激光器等高端芯片仍有赖于欧美日供应商。\r\n* 电芯片： DSP、TIA、Driver 等核心电芯片主要受控于美系厂商。\r\n* 制造设备： 高精度光电测试与封装设备生态的自主化仍在进程中。\r\n五、 关键不确定性与风险评估\r\n1. 技术演进节奏： CPO 产业化成熟节点若晚于预期，或生态壁垒（标准不统一）难以打破，将影响行业估值。\r\n2. 地缘政治政策突变： 贸易禁令或合规政策的突然调整可能导致供应链中断。\r\n3. 周期性与架构变动： AI 投入的周期性波动，以及如铜缆/DAC 短距互连方案在特定架构下对光模块的替代竞争风险。\r\n六、 战略结论与决策建议\r\n1. 研发策略： 重点布局 1.6T 及更高速率的硅光与 TFLN 技术，抢占下一代技术高地。\r\n2. 供应链建议： 加速东南亚产能落地，确保满足\"实质性改变\"标准，降低关税风险。\r\n3. 架构指引： 针对不同 AI 集群场景，建议客户在 LPO 的低延迟优势与传统模块的兼容性之间建立分级采购机制。\r\n七、 参考文献与权威数据来源\r\n* 中国证券报 - 光模块三巨头半年报解析\r\n* LINK-PP - IEEE 802.3dj Standard & 1.6TbE Specifications\r\n* C-LIGHT - High-Speed Optical Transceiver Market Report\r\n* 讯石光通讯网 - 数据中心光模块技术及演进分析\r\n* 21世纪经济报道 - 光模块出海东南亚产能布局调研\r\n* U.S. BIS - Export Administration Regulations & Semiconductor Licensing Policies\r\n* USITC - Section 337 Intellectual Property Investigations",
+        "content_date": "2026-08-26",
+        "date_basis": "cloud_document_modified_at",
+        "file_modified_at": "2026-10-15T09:45:55.542781+00:00",
+        "notes": [
+          "本地缓存；本命令不刷新Google Doc，抓取时间不代表文档内容更新。",
+          "正文无可直接追溯的来源URL；列出的参考文献名称不等于已核验证据。"
+        ],
+        "original_modified_at": "2026-08-26T05:08:57.277Z",
+        "path": "[本地路径已省略]",
+        "retrieved_at": "2026-10-15T09:44:39Z",
+        "sha256": "39e62daaa437e1ac326de5bc99f120626caf13e7f6563a3eecfe46cb6245b059",
+        "source_kind": "cloud_cache",
+        "source_links": [],
+        "source_url": "https://docs.google.com/document/d/1BxeKVaHKMDXMy8vgI2t_ieIF3Meb2ctUlIeHExZ3Hz8/edit?usp=drivesdk",
+        "status": "stale",
+        "verification_status": "unverified"
+      }
+    ],
+    "status": "stale",
+    "verification_status": "unverified"
+  },
+  "overseas": {
+    "available": true,
+    "candidates_path": "[本地路径已省略]",
+    "collection": {
+      "article_fetch_failure": 11,
+      "configured_entity_count": 78,
+      "endpoint_count": 79,
+      "endpoint_failed": 16,
+      "endpoint_succeeded": 63,
+      "invalid_item": 7,
+      "missing_endpoint_count": 3,
+      "monitored_entity_count": 81,
+      "notes": [
+        "仅 78/81 个监控实体配置了端点；这是配置覆盖，不代表采集成功或研究覆盖",
+        "failure_types 记录 article_fetch_failure×11，采集存在未归类的获取失败",
+        "failure_types 记录 fetch_failure×15，采集存在未归类的获取失败",
+        "failure_types 记录 invalid_item×7，采集存在未归类的获取失败",
+        "failure_types 记录 missing_endpoint×3，采集存在未归类的获取失败",
+        "failure_types 记录 unsupported_listing×1，采集存在未归类的获取失败"
+      ],
+      "status": "partial"
+    },
+    "errors": [],
+    "report_path": "[本地路径已省略]",
+    "summary": {
+      "claim_candidates": 44,
+      "configured_entity_count": 78,
+      "corroboration_suggestions": 0,
+      "decision_counts": {
+        "new_disclosure_candidate": 75
+      },
+      "disclosure_candidates": 75,
+      "endpoint_count": 79,
+      "endpoint_failed": 16,
+      "endpoint_succeeded": 63,
+      "event_candidates": 29,
+      "evidence_candidates": 44,
+      "failure_types": {
+        "article_fetch_failure": 11,
+        "fetch_failure": 15,
+        "invalid_item": 7,
+        "missing_endpoint": 3,
+        "no_relevant_content": 51,
+        "unsupported_listing": 1
+      },
+      "fetch_mode": "http",
+      "item_count": 82,
+      "missing_endpoint_count": 3,
+      "monitored_entity_count": 81,
+      "promoted": 0,
+      "queue_added": 36,
+      "queue_removed": 43,
+      "queue_size": 132,
+      "run_date": "2026-10-17"
+    },
+    "summary_path": "[本地路径已省略]"
+  },
+  "run_date": "2026-10-17"
+}
