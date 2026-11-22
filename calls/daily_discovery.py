@@ -23,15 +23,17 @@ CLI::
 from __future__ import annotations
 
 import argparse
+import math
 import csv
 import hashlib
 import io
 import json
 import os
+import sys
 import re
 import tempfile
 from collections import defaultdict
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import date
 from pathlib import Path
 from typing import Any, Iterable, Sequence
@@ -316,6 +318,11 @@ class Endpoint:
     content_class: str
     provenance_class: str
     corroborates: tuple[str, ...]
+    # 已证实为 JS 渲染、无法静态采集的列表：显式 unsupported，不得冒充健康零增量。
+    unsupported_listing: bool = False
+    publisher_fallback: bool = False
+    article_path_pattern: str = ""
+    allow_blog_release_path: bool = False
 
 
 def load_discovery_config(path: Path, registry: EntityRegistry) -> tuple[Endpoint, ...]:
@@ -384,6 +391,11 @@ def load_discovery_config(path: Path, registry: EntityRegistry) -> tuple[Endpoin
                 raise DailyDiscoveryError(
                     f"discovery config:{endpoint_id}: independent endpoint must declare corroborates_entity_ids"
                 )
+            pattern = str(raw.get("article_path_pattern", ""))
+            try:
+                re.compile(pattern)
+            except re.error as exc:
+                raise DailyDiscoveryError(f"discovery config:{endpoint_id}: invalid article_path_pattern") from exc
             endpoints.append(Endpoint(
                 entity_id=entity_id,
                 endpoint_id=endpoint_id,
@@ -393,6 +405,10 @@ def load_discovery_config(path: Path, registry: EntityRegistry) -> tuple[Endpoin
                 content_class=content_class,
                 provenance_class=provenance,
                 corroborates=corroborates,
+                unsupported_listing=bool(raw.get("unsupported_listing", False)),
+                publisher_fallback=bool(raw.get("publisher_fallback", False)),
+                article_path_pattern=pattern,
+                allow_blog_release_path=bool(raw.get("allow_blog_release_path", False)),
             ))
     if not endpoints:
         raise DailyDiscoveryError("discovery config: no endpoints declared")
@@ -511,7 +527,7 @@ SIGNAL_RULES: tuple[SignalRule, ...] = (
                "commercial_adoption", "ramping", "fact_assertion", True),
     SignalRule("qualifying", r"\bqualification\b|\bqualifying\b|\bqualified\b",
                "product_stage", "qualifying", "fact_assertion", True),
-    SignalRule("sampling", r"\bbeg(?:an|un|ins|inning)? sampling\b|\bis sampling\b|\bsampling (?:to|of)\b",
+    SignalRule("sampling", r"\bbeg(?:an|un|ins|inning)? sampling\b|\bis sampling\b|\bsampling (?:to|of)\b|\bcustomer sampling\b",
                "product_stage", "sampling", "fact_assertion", True),
     SignalRule("demonstration", r"\bdemonstrated\b|\bdemonstration\b|\blive demo\w*\b|\bshowcased\b",
                "product_stage", "demonstrated", "technical_demo", True),
@@ -554,6 +570,11 @@ def extract_statements(item: SourceItem) -> tuple[ExtractedStatement, ...]:
         for rule, regex in _COMPILED_RULES:
             match = regex.search(lowered)
             if not match:
+                continue
+            if rule.code == "demonstration" and re.match(
+                r"demonstrated\s+(?:(?:our|its|their|the)\s+)?(?:ability|commitment|resilience|leadership)\b",
+                lowered[match.start():],
+            ):
                 continue
             quote = _quote_sentence(text, match.start())
             stage = rule.lifecycle_stage
@@ -643,6 +664,22 @@ def _event_subject(
     if len(resolved) > 1:
         return resolved[0], resolved, tuple(sorted(aliases)), True, False
     return resolved[0], resolved, tuple(sorted(aliases)), False, False
+
+
+def _route_publisher_material(item: SourceItem, registry: EntityRegistry) -> SourceItem:
+    """Only opted-in publisher feeds fall back to their own first-party subject.
+
+    A named counterparty match keeps its separate evidence route. No second
+    copy of the disclosure is created, so one source cannot confirm itself.
+    """
+    if not item.endpoint.publisher_fallback or item.endpoint.provenance_class != "counterparty":
+        return item
+    if not _event_subject(item.endpoint, item, registry)[4]:
+        return item
+    endpoint = replace(item.endpoint, provenance_class="first_party", corroborates=(),
+                       endpoint_kind="official_ir", disclosure_type="official_release")
+    return replace(item, endpoint=endpoint, provenance_class="first_party",
+                   disclosure_type="official_release")
 
 
 def _permission_blocked(disclosure_type: str, content_class: str, statement: ExtractedStatement) -> str:
@@ -735,19 +772,33 @@ def _build_candidates(
             "missing_endpoint", "", "", entity_id,
             "monitored entity has no official/regulatory/counterparty/government discovery endpoint",
         )
-    for endpoint in endpoints:
+    for endpoint_index, endpoint in enumerate(endpoints, 1):
+        live = getattr(fetcher, "fetch_mode", "") == "http"
+        if live:
+            print(f"[{endpoint_index}/{len(endpoints)}] START {endpoint.endpoint_id}", file=sys.stderr, flush=True)
         result = fetcher.fetch(endpoint)
+        if live:
+            print(f"[{endpoint_index}/{len(endpoints)}] {endpoint.endpoint_id}: "
+                  f"{result.failure or f'fetched {len(result.items)} items'}", file=sys.stderr, flush=True)
         if result.failure:
             endpoint_stats["failed"] += 1
-            failure("fetch_failure", endpoint.endpoint_id, endpoint.url, endpoint.entity_id, result.failure)
+            failure_type = ("unsupported_listing"
+                            if result.failure.startswith("unsupported_listing")
+                            else "fetch_failure")
+            failure(failure_type, endpoint.endpoint_id, endpoint.url, endpoint.entity_id, result.failure)
             continue
         endpoint_stats["ok"] += 1
+        # HttpFetcher 逐篇追踪详情抓取/解析失败；FixtureFetcher 等旧结果无该字段则无失败。
+        for item_failure in getattr(result, "article_failures", ()):
+            failure("article_fetch_failure", endpoint.endpoint_id,
+                    str(item_failure.get("url", "")), endpoint.entity_id,
+                    str(item_failure.get("detail", "")))
         for index, raw in enumerate(result.items, 1):
             item_total += 1
             where = f"{endpoint.endpoint_id}[{index}]"
             label = str(raw.get("url", ""))
             try:
-                item = _parse_item(endpoint, raw, where)
+                item = _route_publisher_material(_parse_item(endpoint, raw, where), registry)
             except DailyDiscoveryError as exc:
                 failure("invalid_item", endpoint.endpoint_id, label, endpoint.entity_id, str(exc))
                 continue
@@ -767,7 +818,7 @@ def _build_candidates(
                          item_hash=item_hash)
                 continue
             subject_id, entity_ids, aliases, low_confidence, unresolved = _event_subject(
-                endpoint, item, registry
+                item.endpoint, item, registry
             )
             origin_group = _origin_group(endpoint, item, subject_id or endpoint.entity_id)
             if origin_group in origin_owner:
@@ -868,6 +919,21 @@ def _build_candidates(
             claim_notes = ["自动候选：review_status 固定为 candidate，未经人工锚点核验"]
             if not statement.realized:
                 claim_notes.append("前瞻/未兑现表述：不得写成已发生事件")
+            statement_entities = candidate.entity_ids
+            statement_unresolved = candidate.unresolved
+            if item.provenance_class != "first_party":
+                statement_entities = tuple(sorted({registry.canonical[target]
+                    for target in endpoint.corroborates
+                    if _mention_hits(statement.quote, [registry.entities[target].name,
+                                                       *registry.entities[target].aliases])}))
+                publisher_record = registry.entities[publisher]
+                publisher_mentioned = _mention_hits(statement.quote, [publisher_record.name, *publisher_record.aliases])
+                ambiguous_actor = publisher_mentioned or re.search(r"\b(?:we|our|ours|us)\b", statement.quote, re.I)
+                if len(statement_entities) != 1 or ambiguous_actor:
+                    statement_unresolved = True
+                    claim_notes.append("引句未唯一归属被佐证主体或混有发行者动作：仅保留主张候选，需人工确认")
+                    failure("unresolved_claim_subject", endpoint.endpoint_id, item.url, publisher,
+                            "independent quote must name one target without publisher/first-person ambiguity")
             claim_rows.append({
                 "event_claim_id": claim_id,
                 "legacy_claim_id": "",
@@ -894,10 +960,10 @@ def _build_candidates(
                 "published_at": item.published_at,
                 "disclosure_type": item.disclosure_type,
                 "content_class": item.content_class,
-                "subject_id": candidate.entity_ids[0] if candidate.entity_ids else publisher,
-                "entity_ids": list(candidate.entity_ids),
+                "subject_id": statement_entities[0] if statement_entities else publisher,
+                "entity_ids": list(statement_entities),
                 "low_confidence": candidate.low_confidence,
-                "unresolved": candidate.unresolved,
+                "unresolved": statement_unresolved,
                 "notes": claim_notes,
             }
             queue_entries.append({
@@ -1335,6 +1401,7 @@ def run_daily_discovery(
             "run_date": run_date,
             "fetch_mode": outcome.details["fetch_mode"],
             "endpoint_count": outcome.details["endpoint_count"],
+            "endpoint_succeeded": outcome.details["endpoint_ok"],
             "endpoint_failed": outcome.details["endpoint_failed"],
             "monitored_entity_count": outcome.details["monitored_entity_count"],
             "configured_entity_count": outcome.details["configured_entity_count"],
@@ -1550,6 +1617,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     run_parser.add_argument("--date", required=True, help="run date, YYYY-MM-DD")
     run_parser.add_argument("--config", required=True, help="per-entity discovery endpoint config")
     run_parser.add_argument("--fixtures", help="offline fixture directory; omit for public HTTP")
+    run_parser.add_argument("--request-timeout", type=float, default=15, help="seconds per HTTP attempt")
+    run_parser.add_argument("--endpoint-budget", type=float, default=60, help="total HTTP seconds per endpoint")
 
     verify_parser = subparsers.add_parser("verify", help="read-only validation that staging maps to the schema")
     verify_parser.add_argument("--source-root", required=True)
@@ -1559,11 +1628,13 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
     try:
         if args.command == "run":
+            if not all(math.isfinite(value) and value > 0 for value in (args.request_timeout, args.endpoint_budget)):
+                raise DailyDiscoveryError("request timeout and endpoint budget must be positive")
             if args.fixtures:
                 fetcher = FixtureFetcher(Path(args.fixtures))
             else:
                 from .http_discovery import HttpFetcher
-                fetcher = HttpFetcher(args.date)
+                fetcher = HttpFetcher(args.date, timeout=args.request_timeout, endpoint_budget=args.endpoint_budget)
             summary = run_daily_discovery(
                 Path(args.source_root),
                 Path(args.state_root),
@@ -1571,12 +1642,17 @@ def main(argv: Sequence[str] | None = None) -> int:
                 Path(args.config),
                 fetcher,
             )
-            print(f"OK: daily discovery {args.date}: "
+            incomplete = {kind: count for kind, count in summary.get("failure_types", {}).items()
+                          if count and kind != "no_relevant_content"}
+            partial = bool(incomplete or summary.get("endpoint_failed", 0))
+            print(f"{'PARTIAL' if partial else 'OK'}: daily discovery {args.date}: "
                   f"{summary['disclosure_candidates']} disclosure / {summary['claim_candidates']} claim / "
                   f"{summary['event_candidates']} event / {summary['evidence_candidates']} evidence candidates")
             print(f"OK: promoted 0; corroboration suggestions {summary['corroboration_suggestions']} "
                   "await human approval")
-            return 0
+            if partial:
+                print("PARTIAL: " + ", ".join(f"{kind}={count}" for kind, count in sorted(incomplete.items())))
+            return 2 if partial else 0
         for message in verify_staging(Path(args.source_root), Path(args.state_root), args.date):
             print(f"OK: {message}")
         return 0

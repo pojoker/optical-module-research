@@ -1,0 +1,16 @@
+<section class="section" id="choices" data-certainty="stable">
+        <div class="statusline"><span class="certainty stable">稳定分类框架</span><small>先归轴，再谈路线优劣</small></div>
+        <div class="kicker">第 06 章 · 认识技术选项</div><h2>行业里的英文名词，其实在回答不同问题</h2>
+        <p class="intro">读到这里再看技术名词就容易得多：有的描述光纤怎么组织，有的描述模块保留多少信号处理，有的描述用什么材料和器件处理光，还有的描述光学部分放在哪里。它们不是一组选一个的同类选项。</p>
+        <figure class="reference-figure"><a class="figure-link" href="assets/figures/03-route-axis-map.svg" target="_blank" rel="noreferrer" aria-label="打开技术路线六轴地图原图"><img src="assets/figures/03-route-axis-map.svg" alt="光模块技术路线的链路需求、光链组织、电处理、光子实现、物理位置和产品外形六个选择轴"></a><figcaption>参考图 3 · EML、SiPh、LPO、CPO 必须先放回各自选择轴，再组合成路线。点击查看原图。</figcaption></figure>
+        <div class="decision-grid">
+          <article class="decision"><span class="decision-num">1</span><div><h3>链路需求：要传多快、多远</h3><p>先把任务说清楚：一只端口总共搬多少数据，拆成几条电/光 lane，每条多快，要跨越多远，走哪种光纤，错误由谁纠正。</p><div class="terms"><span>400G / 800G / 1.6T</span><span>100m / 500m / 2km</span><span>SMF / MMF</span></div><a class="decision-more" href="#link-requirements">用一个 800G 例子展开这六个问题 →</a></div></article>
+          <article class="decision"><span class="decision-num">2</span><div><h3>光链路组织：并行还是波分</h3><p>决定使用多根并行光纤，还是让多个波长共享光纤；DR8、DR4、FR4 等名称要放回具体标准解释。</p><div class="terms"><span>Parallel</span><span>WDM</span><span>DR8 / DR4 / FR4</span></div></div></article>
+          <article class="decision"><span class="decision-num">3</span><div><h3>电职责：模块处理多少信号恢复</h3><p>决定模块中保留完整重定时、只在部分方向重定时，还是更多依赖 host SerDes。</p><div class="terms"><span>Retimed</span><span>LRO</span><span>LPO / Linear</span></div></div></article>
+          <article class="decision"><span class="decision-num">4</span><div><h3>光子实现：怎样发光、调制与集成</h3><p>这里才出现 DML、EML、SiPh 等词。EML 是具体发射器件；SiPh 是可承载调制、复用、探测等功能的集成平台。</p><div class="terms"><span>DML</span><span>EML</span><span>SiPh</span><span>TFLN 等</span></div></div></article>
+          <article class="decision"><span class="decision-num">5</span><div><h3>光学放置：离交换 ASIC 多远</h3><p>决定光学位于前面板可插拔模块、ASIC 附近，还是与 ASIC 共封装。</p><div class="terms"><span>Pluggable</span><span>NPO</span><span>CPO</span></div></div></article>
+          <article class="decision"><span class="decision-num">6</span><div><h3>产品形态与接口：怎样装、怎样接</h3><p>在前面板可插拔路线中还要选择机械、电、热和光连接形态。</p><div class="terms"><span>OSFP</span><span>QSFP-DD</span><span>MPO</span><span>LC / SN</span></div></div></article>
+        </div>
+        <div class="axis-summary"><div><b>EML vs SiPh</b>出现在光子实现层，但两者粒度并不完全相同</div><div><b>Retimed vs LPO/LRO</b>出现在电职责层</div><div><b>Pluggable vs NPO/CPO</b>出现在物理放置层</div><div><b>DR8 vs FR4</b>出现在链路组织/PMD 层，须绑定速率和标准</div></div>
+        <div class="warn red"><b>因此：</b>“EML、硅光、LPO、CPO 哪个最好”不是一个可直接回答的问题。一个真实产品完全可能同时是 <b>SiPh + LPO + front-panel pluggable + DR8 + OSFP</b>，这些词描述的是它的不同切面。</div>
+      </section>

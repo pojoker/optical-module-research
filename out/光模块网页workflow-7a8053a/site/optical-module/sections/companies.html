@@ -1,0 +1,32 @@
+<section class="section" id="companies" data-certainty="object">
+        <div class="statusline"><span class="certainty object">公司—路线只读投影</span><span class="certainty open">供货关系全部不支持</span></div>
+        <div class="kicker">Company–route projection · QX-12</div><h2>公司出现在一条路线旁边，究竟证明到了哪一步</h2>
+        <p class="intro">这张表按“公司法律实体 + 具名产品 + 路线身份 + 成熟度事件”重新裁决。只有同一证据单元闭合 exact product 与路线，才进入 route-served candidate；产品族、演示或组件能力只到 capability match。</p>
+        <div class="projection-map" aria-label="公司路线证据分层图">
+          <div class="projection-lane"><strong>路线服务候选</strong><div class="marker-line">
+            <button class="company-marker" type="button" aria-label="Eoptolink 路线服务候选">EO<span class="marker-tip"><strong>Eoptolink</strong><em>EOLO-138HG-E-5H-XDX</em><span>闭合：OSFP · 800G DR4 · 4×200G · 500m。</span><b>不支持：认证、出货、客户与部署。</b></span></button>
+            <button class="company-marker" type="button" aria-label="Juniper 路线服务候选">JU<span class="marker-tip"><strong>Juniper</strong><em>ORHS-2X800G-FR4-P</em><span>闭合：exact branded optic · 800GBASE-FR4-500 application。</span><b>不支持：实体制造商、内部 mux/TEC、出货与部署。</b></span></button>
+          </div></div>
+          <div class="projection-lane"><strong>能力匹配</strong><div class="marker-line">
+            <button class="company-marker capability" type="button" aria-label="Coherent 能力匹配">CO<span class="marker-tip"><strong>Coherent</strong><em>ECOC 2024 800G DR4 demo</em><span>观察：4×200G、500m、differential EML。</span><b>不支持：可订购 SKU、认证、出货或部署。</b></span></button>
+            <button class="company-marker capability" type="button" aria-label="Source Photonics 能力匹配">SP<span class="marker-tip"><strong>Source Photonics</strong><em>800G 200G/lane DR4/FR4/LR4 family</em><span>观察：公司产品族 availability claim。</span><b>不支持：exact PN、FR4-500 身份、出货与客户。</b></span></button>
+            <button class="company-marker capability" type="button" aria-label="Accelink 能力匹配">AC<span class="marker-tip"><strong>Accelink</strong><em>ECOC 2025 800G DR4/FR4</em><span>观察：OSFP112/224、200G/lane、SiPh 展示。</span><b>不支持：exact PN、reach、出货与部署。</b></span></button>
+            <button class="company-marker capability" type="button" aria-label="Lumentum 组件能力匹配">LU<span class="marker-tip"><strong>Lumentum</strong><em>HL13E1CP00-Ln</em><span>观察：200G PAM4 CWDM EML 组件能力。</span><b>不支持：任何 exact 800G 模块采用或客户供货。</b></span></button>
+          </div></div>
+          <div class="projection-lane"><strong>近邻名称反例</strong><div class="marker-line">
+            <button class="company-marker counter" type="button" aria-label="InnoLight 近邻名称反例">IN<span class="marker-tip"><strong>InnoLight</strong><em>800G 2×DR4 OSFP112</em><span>观察：8×100G optical lanes 的两组 400G DR4。</span><b>反例：名称含 800G 和 DR4，仍不能推出 4×200G 800GBASE-DR4。</b></span></button>
+          </div></div>
+        </div>
+        <p class="projection-help">鼠标悬停、键盘聚焦或点击圆形标志查看公司、对象和证据边界。颜色表示证据层级，不表示公司强弱。</p>
+        <div class="table-tools"><input id="companySearch" type="search" placeholder="搜索公司、产品、路线或证据判定" aria-label="搜索公司路线投影"><span id="companyCount" class="badge unknown">7 条</span></div>
+        <div class="tablewrap"><table id="companyTable"><thead><tr><th>公司 / 直接对象</th><th>路线闭合到哪里</th><th>证据判定</th><th>不能据此推出</th></tr></thead><tbody>
+          <tr data-projection-id="CRP-EOPTOLINK-EOLO138HG-E-5H-XDX"><td><div class="company">Eoptolink</div><span class="scope">EOLO-138HG-E-5H-XDX</span></td><td>OSFP · 800G DR4 · 4×200G · 500m · MPO-12</td><td><span class="badge listing">路线服务候选</span><div class="scope">exact PN · 产品 listing</div></td><td><div class="missing">IEEE revision、认证、出货、客户与部署 UNKNOWN</div></td></tr>
+          <tr data-projection-id="CRP-JUNIPER-ORHS-2X800G-FR4-P"><td><div class="company">Juniper</div><span class="scope">ORHS-2X800G-FR4-P / 740-189771</span></td><td>800GBASE-FR4-500 application · QFX5250 平台兼容</td><td><span class="badge listing">路线服务候选</span><div class="scope">exact branded optic · HCT</div></td><td><div class="missing">实体制造商、ODM、内部 mux/TEC、出货与部署 UNKNOWN</div></td></tr>
+          <tr data-projection-id="CRP-COHERENT-ECOC2024-800G-DR4"><td><div class="company">Coherent</div><span class="scope">ECOC 2024 800G DR4</span></td><td>4×200G · 500m · differential EML 演示</td><td><span class="badge conditional">能力匹配</span><div class="scope">具名 demo · 无 PN</div></td><td><div class="missing">可订购 SKU、认证、出货或部署不支持</div></td></tr>
+          <tr data-projection-id="CRP-SOURCEPHOTONICS-800G-200G-LANE-FAMILY"><td><div class="company">Source Photonics</div><span class="scope">800G 200G/lane DR4/FR4/LR4 family</span></td><td>公司宣称产品族 available；未分离 exact reach variant</td><td><span class="badge conditional">能力匹配</span><div class="scope">产品族 · availability claim</div></td><td><div class="missing">exact PN、FR4-500 身份、出货与客户不支持</div></td></tr>
+          <tr data-projection-id="CRP-ACCELINK-ECOC2025-800G-DR4-FR4"><td><div class="company">Accelink</div><span class="scope">ECOC 2025 800G DR4/FR4</span></td><td>OSFP112 / OSFP224 · 200G/lane · SiPh 展示</td><td><span class="badge conditional">能力匹配</span><div class="scope">具名产品族 demo</div></td><td><div class="missing">exact PN、reach、标准版本、出货与部署不支持</div></td></tr>
+          <tr data-projection-id="CRP-LUMENTUM-HL13E1CP00-LN"><td><div class="company">Lumentum</div><span class="scope">HL13E1CP00-Ln</span></td><td>200G PAM4 CWDM EML 组件应用范围可覆盖 DR/FR links</td><td><span class="badge supported">组件能力匹配</span><div class="scope">exact component · 非模块</div></td><td><div class="missing">任何 exact 800G 模块采用、路线服务或客户供货不支持</div></td></tr>
+          <tr data-projection-id="CRP-INNOLIGHT-800G-2XDR4-FALSE-POSITIVE"><td><div class="company">InnoLight</div><span class="scope">800G 2×DR4 OSFP112</span></td><td>8×100G 光 lane 的两组 400G DR4，不是 4×200G 800GBASE-DR4</td><td><span class="badge sample">近邻名称反例</span><div class="scope">related facet only</div></td><td><div class="missing">名称含 800G 和 DR4 不能推出 800GBASE-DR4</div></td></tr>
+        </tbody></table></div>
+        <div class="review-note"><strong>目前能说到哪里</strong><p>7 个对象已完成候选裁决：2 个路线服务候选、4 个能力匹配、1 个近邻名称反例。所有对象的 named-customer supply 均为不支持；route-served candidate 也不等于实体制造商、量产或部署。</p></div>
+      </section>

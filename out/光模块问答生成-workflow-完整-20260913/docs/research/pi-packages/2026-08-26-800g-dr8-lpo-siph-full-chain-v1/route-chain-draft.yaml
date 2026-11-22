@@ -1,0 +1,280 @@
+meta:
+  artifact_id: draft-route-chain-800g-dr8-lpo-siph-20260826
+  mode: draft_only
+  purpose: supplement_candidate_for_existing_yaml_knowledge_system
+  generated_at: 2026-08-26
+  realtime_baseline_at: 2026-08-26
+  evidence_subject_rule: evidence attaches only to the named product, company, platform, or document subject
+  canonical_write_performed: false
+  coverage_status_changed: false
+  formal_route_profile_created: false
+  why_links_written: false
+  confirmed_company_group_created: false
+
+knowledge_systems:
+  physical:
+    canonical_target: tree.yaml
+    relevant_cells:
+      - {cell_id: C1, role: optical_source_or_emitter}
+      - {cell_id: C3, role: photodetector}
+      - {cell_id: C4, role: photonic_integrated_circuit}
+      - {cell_id: C5, role: electrical_signal_processing}
+      - {cell_id: MOD1, role: finished_module}
+    extension_dimensions: [component, interface, process, equipment, test]
+  route:
+    canonical_question_source: research_questions.yaml
+    profile_model: one_link_profile_constraint_plus_three_decision_axes
+    axes: [TQ005, TQ006, TQ007, TQ008]
+  why_bridge:
+    canonical_target: knowledge.yaml#why_links
+    candidate_questions: [WQ001, WQ002, WQ003, WQ004]
+    promotion_state: not_written
+
+route_profile_candidate:
+  candidate_id: DRAFT-RC-800G-DR8-LPO-SIPH-01
+  label: 800G DR8 LPO SiPh front-panel pluggable
+  status: reviewed_draft_with_explicit_unknowns
+  tq005_link_profile:
+    aggregate_rate: 800G
+    optical_profile: 800G-DR8-LPO
+    lanes: 8
+    symbol_rate_per_lane: 53.125_GBd_PAM4
+    wavelength: 1310_nm
+    media: SMF
+    reach: 0.5_to_500_m
+    host_fec: RS_544_514
+    evidence: [S1]
+  tq006_electrical_responsibility:
+    value: linear_LPO
+    module_signal_path_dsp_retimer: absent_by_architecture
+    host_responsibilities: [FEC, equalization, channel_configuration]
+    module_responsibilities: [tx_equalization, driver_TIA_AGC_behavior, management_parameters]
+    evidence: [S1, S2, S4, S10]
+  tq007_photonics:
+    observed_platform: silicon_photonics
+    internal_light_source: UNKNOWN
+    internal_modulator: UNKNOWN
+    internal_detector: UNKNOWN
+    integration_details: UNKNOWN
+    evidence: [S6]
+  tq008_placement:
+    placement_class: front_panel_pluggable
+    observed_form_factors: [OSFP, QSFP_DD]
+    observed_optical_connector: MPO
+    evidence: [S6]
+  baseline_candidate:
+    label: 800G DR8 retimed front-panel pluggable
+    observed_product: Coherent_FTCE4517E1PxM
+    form_factor: OSFP
+    reach: 500_m_SMF
+    photonics_platform: UNKNOWN
+    evidence: [S5]
+  comparability:
+    status: partially_comparable
+    reason: supplier_platform_connector_temperature_and_implementation_are_not_controlled
+    no_unconditional_ranking: true
+
+causal_chain_candidates:
+  - question_id: WQ001
+    relation_type: need_to_constraint
+    status: candidate_mixed_support
+    upstream:
+      - high_bandwidth_and_density_target
+      - lower_module_power_cost_latency_target
+    downstream:
+      - eight_lane_100G_class_link
+      - host_FEC
+      - bounded_host_module_channel_loss
+      - 500m_SMF
+    evidence: [S1]
+    boundary: MSA_scenario_statement_not_market_wide_measurement
+
+  - question_id: WQ002
+    relation_type: bottleneck_to_choice
+    status: candidate_framework_supported
+    upstream:
+      - module_retimer_DSP_power_and_processing_path
+      - capable_host_equalization
+    downstream:
+      - linear_LPO_enters_candidate_pool
+    evidence: [S1, S2, S3, S10]
+    boundary: mechanism_only_no_controlled_total_system_power_cost_or_latency_delta
+
+  - attachment_question_id: TQ007
+    relation_type: condition_to_platform_candidate
+    status: conditional_platform_selection_hypothesis
+    upstream_conditions:
+      - eight_lane_PIC_integration_is_prioritized
+      - wafer_scale_test_burn_in_and_KGD_are_prioritized
+      - mature_pluggable_platform_experience_is_prioritized
+    downstream:
+      - silicon_photonics_enters_platform_candidate_pool
+    evidence: [S8, S11]
+    subject_limit: Intel_and_Credo_specific_mechanisms_do_not_transfer_to_Hyper
+    promotion_gate: controlled_same_boundary_SiPh_vs_EML_or_TFLN_comparison
+    forbidden_conclusion: LPO_requires_or_proves_superiority_of_SiPh
+
+  - question_id: WQ003
+    relation_type: choice_to_physical
+    status: candidate_specification_supported_subchain_only
+    upstream:
+      - select_end_to_end_linear_LPO
+    downstream:
+      component:
+        - module_signal_path_retimer_DSP_removed
+        - host_FEC_and_equalization_retained
+      interface:
+        - channel_loss_and_equalizer_parameters_managed_across_host_module
+      test:
+        - stressed_input_and_host_to_host_BER_FEC_validation
+      process: UNKNOWN_COMPARATIVE_DELTA
+      equipment: UNKNOWN_PRODUCTION_EQUIPMENT_DELTA
+    evidence: [S1, S2, S3, S4]
+    boundary: does_not_support_cancellation_of_coupling_aging_eye_or_BER_tests
+
+  - question_id: WQ004
+    relation_type: physical_to_capability
+    status: candidate_role_stage_supported
+    upstream:
+      - finished_module_integration
+      - SiPh_PIC
+      - linear_driver_TIA
+      - host_equalization_and_joint_compliance_test
+      - SiPh_wafer_test_and_advanced_bonding_candidates
+    downstream:
+      - attach_company_only_to_direct_evidence_object_and_maturity_stage
+    evidence: [S3, S6, S8, S9, S11, S13, S14, S15, S16]
+    boundary: capability_match_is_not_supply_customer_or_adoption_proof
+
+tradeoffs:
+  module_power_mechanism:
+    status: engineering_inference
+    statement: removing_module_signal_path_DSP_removes_one_module_digital_processing_and_power_path
+    evidence: [S2, S3]
+    boundary: no_magnitude_and_not_total_system_power
+  product_power_observations:
+    target: {value: less_than_or_equal_to_9_W, evidence: S6}
+    baseline: {value: less_than_17_W, evidence: S5}
+    comparison_status: not_comparable
+  latency:
+    status: consortium_stated_mechanism
+    boundary: no_controlled_numeric_result
+  cost:
+    status: consortium_stated_target
+    boundary: no_BOM_ASP_yield_or_host_cost_comparison
+  disadvantages_and_new_bottlenecks:
+    - host_compatibility
+    - channel_loss_margin
+    - equalization_ownership
+    - startup_and_training
+    - end_to_end_BER_FEC_margin
+
+physical_deltas:
+  component:
+    status: supported_architecture_and_product_observation
+    changes:
+      - module_signal_path_DSP_retimer_absent_in_LPO
+      - host_FEC_equalization_responsibility
+      - target_platform_observed_as_SiPh
+    unknowns:
+      - target_internal_laser_modulator_detector
+      - target_chip_supplier_binding
+  interface:
+    status: specification_supported
+    changes:
+      - LEI_800G_PAM4_8_with_0_to_16_dB_host_loss
+      - host_module_equalization_and_channel_parameters
+      - end_to_end_linear_channel_management
+  process:
+    status: UNKNOWN_COMPARATIVE_DELTA
+    capability_observations:
+      - Intel_specific_wafer_scale_test_laser_burn_in_and_KGD
+      - Credo_DustPhotonics_L3C_laser_coupling_process
+      - advanced_bonding_reflow_and_thermocompression_RnD_at_Lieqi
+    forbidden_inference: none_are_proven_to_be_used_by_Hyper_or_to_replace_baseline_steps
+  equipment:
+    status: UNKNOWN_PRODUCTION_EQUIPMENT_DELTA
+    capability_observations:
+      - Lianxun_Instruments_SiPh_wafer_test_system
+      - coupling_module_probe_station_wafer_handler_and_optical_DC_RF_probes
+    forbidden_inference: no_target_line_CAPEX_throughput_yield_or_net_add_remove_table
+  test:
+    status: specification_supported_responsibility
+    changes:
+      - TP1a_TP4_EECQ_reference_equalizer
+      - high_low_loss_channel_calibration
+      - stressed_input
+      - host_to_host_BER_error_statistics
+      - FEC_tail_margin
+
+company_service_evidence:
+  exact_target_product:
+    - company: Hyper_Photonix_芯速联
+      role: finished_module_integrator
+      object: [HSO6_800_LP_P8S, HSD2_800_LP_P8S]
+      stage: listed_finished_product
+      evidence: [S6]
+      shipment: UNKNOWN
+      named_customer: UNKNOWN
+  role_scoped:
+    - {company: Credo, role: SiPh_Tx_PIC_provider, stage: listed_component_product, evidence: [S8], exact_target_binding: UNKNOWN}
+    - {company: Intel, role: integrated_SiPh_platform, stage: platform_shipment_company_stated, evidence: [S11], exact_target_binding: false}
+    - {company: MACOM, role: linear_driver_TIA_provider, stage: production_available_component_offer, evidence: [S9], exact_target_binding: UNKNOWN}
+    - {company: Lumentum, role: alternative_InP_EML_device_platform, stage: production_device_platform, evidence: [S12], exact_target_binding: false}
+    - {company: OIF_participants, role: host_interop_test_ecosystem, stage: ecosystem_demo, evidence: [S3], supply_relation: UNKNOWN}
+  near_route:
+    - company: 剑桥科技
+      closed_fields: [SiPh, 800G, OSFP, DR8_or_DR8_plus, overseas_customer_certification, volume_shipment]
+      missing_fields: [LPO, named_customer, exact_reach]
+      stage: near_route_shipment_company_disclosed
+      evidence: [S13]
+    - company: 新易盛
+      closed_fields: [LPO_module_scale_production, separate_800G_LPO_project, separate_800G_SiPh_direct_drive_project]
+      missing_fields: [same_SKU_binding, DR8, named_customer]
+      stage: company_production_plus_separate_project_acceptance
+      evidence: [S14]
+    - company: 联特科技
+      closed_fields: [800G, SiPh, LPO, 2xDR4_or_2xFR4, NPI, customer_joint_design]
+      missing_fields: [DR8, scale_shipment, certification]
+      stage: near_route_NPI_customer_collaboration
+      evidence: [S15]
+  equipment_roles:
+    - {company: 联讯仪器, role: SiPh_wafer_test_equipment, stage: production_equipment_company_disclosed, evidence: [S16], exact_target_binding: UNKNOWN}
+    - {company: 猎奇智能设备, role: advanced_photonic_bonding_process_equipment, stage: equipment_process_RnD, evidence: [S16], exact_target_binding: UNKNOWN}
+  exact_target_shipment: UNKNOWN
+  exact_target_named_customer_adoption: UNKNOWN
+  confirmed_company_group_created: false
+
+sources:
+  S1: {publisher: LPO_MSA, type: specification, locator: corpus/web/2026-08-24/lpo-msa.org__LPO_MSA_Specification_v1p2_final.pdf, sha256: 01e142336f001740f1f3c526c778b8fe7b4c5b6d9603e41e9795b2426f782282}
+  S2: {publisher: OIF, type: implementation_agreement, locator: https://www.oiforum.com/wp-content/uploads/OIF-CEI-05.3.pdf}
+  S3: {publisher: OIF, type: ecosystem_demo, locator: https://www.oiforum.com/wp-content/uploads/OIF_CEI_Demo_OFC2024_Final.pdf}
+  S4: {publisher: OIF, type: management_specification, locator: https://www.oiforum.com/wp-content/uploads/OIF-CMIS-VCS-01.1.pdf}
+  S5: {publisher: Coherent, type: baseline_datasheet, locator: corpus/web/2026-08-23/coherent.com__FTCE4517E1PxM_800G_DR8_OSFP.pdf}
+  S6: {publisher: Hyper_Photonix, type: target_product_pages, locator: docs/research/pi-packages/2026-08-26-agy-vendor-binding-chase-v1/source-excerpts.md}
+  S7: {publisher: Eoptolink, type: demo_page, locator: https://eoptolink.com/news/341-eoptolink-launches-innovative-800g-linear-drive-pluggable-optics-during-ofc-2023}
+  S8: {publisher: Credo, type: component_product_page, locator: https://credosemi.com/products/silicon-photonics/carmel8/}
+  S9: {publisher: MACOM, type: component_platform_page, locator: https://www.macom.com/pure-drive-linear-architecture}
+  S10: {publisher: LPO_MSA, type: FAQ, locator: corpus/web/2026-08-24/lpo-msa.org__faqs.html}
+  S11: {publisher: Intel, type: platform_page, locator: corpus/web/2026-08-24/intel.com__silicon-photonics.html}
+  S12: {publisher: Lumentum, type: device_page, locator: corpus/web/2026-08-24/lumentum.com__emls.html}
+  S13: {publisher: 剑桥科技, type: annual_report, locator: corpus/annual/603083/603083/603083__em_剑桥科技_em__2025_2025年年度报告.pdf}
+  S14: {publisher: 新易盛, type: annual_report, locator: corpus/annual/300502/300502/300502__em_新易盛_em__2025_2025年年度报告.pdf}
+  S15: {publisher: 联特科技, type: annual_report, locator: corpus/annual/301205/301205/301205__em_联特科技_em__2025_2025年年度报告.pdf}
+  S16: {publisher: [猎奇智能设备, 联讯仪器], type: prospectus_extracts, locator: [corpus/legacy-input/lieqi_prospectus.txt, corpus/legacy-input/lianxun_prospectus.txt]}
+
+promotion_contract:
+  allowed_after_explicit_approval:
+    - adapt_route_profile_candidate_to_existing_route_seed_schema
+    - adapt_supported_candidate_edges_to_why_links_after_acceptance_review
+    - attach_company_evidence_points_without_creating_supply_relations
+  hard_blockers:
+    - exact_target_shipment_and_named_customer_are_UNKNOWN
+    - SiPh_selection_is_only_a_conditional_hypothesis
+    - process_and_equipment_comparative_deltas_are_UNKNOWN
+    - target_vs_baseline_product_power_is_not_comparable
+  forbidden_without_new_evidence:
+    - create_unconditional_route_ranking
+    - claim_LPO_implies_SiPh
+    - claim_role_capability_implies_supply_or_customer_relation
+    - merge_parallel_company_disclosures_into_one_SKU

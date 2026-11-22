@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+  <title id="title">Front-panel、NPO 与 CPO 的位置差别</title>
+  <desc id="desc">三种方案完成相同的电光转换任务，区别首先是光引擎相对交换芯片的位置：前面板、芯片附近、或同一一级封装基板。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#087d78"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#18242d}
+      .title{font-size:28px;font-weight:750;fill:#fff}.sub{font-size:14px;fill:#cfe4e3}
+      .head{font-size:20px;font-weight:750;fill:#102f3b}.en{font-size:12px;font-weight:700;fill:#087d78}
+      .label{font-size:12px;font-weight:700}.note{font-size:11px;fill:#63727d}.tiny{font-size:10px;fill:#63727d}
+      .chip{fill:#102f3b}.engine{fill:#e8a947}.board{fill:#d9e3df}.fiber{stroke:#e8a947;stroke-width:5;fill:none}
+      .electric{stroke:#087d78;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="690" rx="26" fill="#f6f8f5"/>
+  <rect width="1200" height="104" rx="26" fill="#102f3b"/><rect y="78" width="1200" height="26" fill="#102f3b"/>
+  <text x="48" y="47" class="title">同一个任务，光引擎放在三个不同位置</text>
+  <text x="48" y="77" class="sub">深蓝是交换 ASIC，黄色是光引擎；绿色线代表高速电路径，黄色线代表光纤。示意图不按毫米比例绘制。</text>
+
+  <g transform="translate(38 132)">
+    <rect width="354" height="486" rx="20" fill="#fff" stroke="#dce2da"/>
+    <text x="24" y="38" class="head">Front-panel</text><text x="24" y="59" class="en">前面板可插拔</text>
+    <rect x="25" y="92" width="304" height="238" rx="14" class="board"/>
+    <rect x="57" y="177" width="92" height="70" rx="12" class="chip"/><text x="103" y="217" text-anchor="middle" style="fill:#fff" class="label">ASIC</text>
+    <path d="M151 211H258" class="electric"/>
+    <rect x="260" y="155" width="49" height="114" rx="9" class="engine"/><text x="284" y="195" text-anchor="middle" class="label">光</text><text x="284" y="212" text-anchor="middle" class="label">模</text><text x="284" y="229" text-anchor="middle" class="label">块</text>
+    <path d="M309 211H348" class="fiber"/>
+    <text x="25" y="361" class="label">像什么？</text><text x="25" y="382" class="note">把翻译器插在机器外墙的插槽里。</text>
+    <text x="25" y="411" class="label">主要变化</text><text x="25" y="432" class="note">高速电信号要从 ASIC 走到前面板。</text>
+    <text x="25" y="461" class="label">常见误解</text><text x="25" y="482" class="note">可插拔不自动等于任意产品都可热换或无中断。</text>
+  </g>
+
+  <g transform="translate(423 132)">
+    <rect width="354" height="486" rx="20" fill="#fff" stroke="#dce2da"/>
+    <text x="24" y="38" class="head">NPO / OBO</text><text x="24" y="59" class="en">芯片附近 / 板上光学</text>
+    <rect x="25" y="92" width="304" height="238" rx="14" class="board"/>
+    <rect x="61" y="177" width="92" height="70" rx="12" class="chip"/><text x="107" y="217" text-anchor="middle" style="fill:#fff" class="label">ASIC</text>
+    <path d="M155 211H190" class="electric"/>
+    <rect x="193" y="174" width="70" height="76" rx="10" class="engine"/><text x="228" y="206" text-anchor="middle" class="label">光引擎</text><text x="228" y="224" text-anchor="middle" class="tiny">靠近 ASIC</text>
+    <path d="M263 211C300 211 309 194 348 194" class="fiber"/>
+    <text x="25" y="361" class="label">像什么？</text><text x="25" y="382" class="note">把翻译器从外墙搬到主板上、靠近核心芯片。</text>
+    <text x="25" y="411" class="label">主要变化</text><text x="25" y="432" class="note">潜在电路径缩短，光纤、冷却和维修进入板级设计。</text>
+    <text x="25" y="461" class="label">常见误解</text><text x="25" y="482" class="note">NPO 不自动等于 socket、LPO、无 DSP 或现场可换。</text>
+  </g>
+
+  <g transform="translate(808 132)">
+    <rect width="354" height="486" rx="20" fill="#fff" stroke="#dce2da"/>
+    <text x="24" y="38" class="head">CPO</text><text x="24" y="59" class="en">共同封装光学</text>
+    <rect x="25" y="92" width="304" height="238" rx="14" class="board"/>
+    <rect x="51" y="145" width="224" height="132" rx="18" fill="#edf2fb" stroke="#8ca5d1" stroke-width="2"/>
+    <text x="163" y="166" text-anchor="middle" class="tiny">同一 first-level substrate</text>
+    <rect x="78" y="181" width="92" height="70" rx="12" class="chip"/><text x="124" y="221" text-anchor="middle" style="fill:#fff" class="label">ASIC</text>
+    <path d="M171 215H192" class="electric"/>
+    <rect x="196" y="184" width="58" height="64" rx="10" class="engine"/><text x="225" y="211" text-anchor="middle" class="label">光引擎</text><text x="225" y="229" text-anchor="middle" class="tiny">同基板</text>
+    <path d="M254 215C300 215 310 194 348 194" class="fiber"/>
+    <text x="25" y="361" class="label">像什么？</text><text x="25" y="382" class="note">把翻译器放进核心芯片所在的一级封装边界。</text>
+    <text x="25" y="411" class="label">主要变化</text><text x="25" y="432" class="note">电路径进一步靠近，同时封装、热、光纤和故障域耦合。</text>
+    <text x="25" y="461" class="label">常见误解</text><text x="25" y="482" class="note">CPO 不等于单芯片，也不自动规定光源或维修方式。</text>
+  </g>
+  <text x="600" y="661" text-anchor="middle" class="note">三种位置都在完成电 ↔ 光转换；差别首先是“光引擎相对 ASIC 放在哪里”，不是技术高低排名。</text>
+</svg>

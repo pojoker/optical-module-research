@@ -1,0 +1,59 @@
+meta:
+  mode: draft_only
+  python_interpreter: /Users/jowang/miniconda3/bin/python3
+  canonical_write_performed: false
+checks:
+- check: miniconda_interpreter
+  passed: true
+  observed: /Users/jowang/miniconda3/bin/python3
+- check: all_package_yaml_parse
+  passed: true
+  yaml_file_count: 14
+  errors: []
+- check: all_package_python_compile
+  passed: true
+  script_count: 4
+  errors: []
+- check: comparison_matrix_reproducible
+  passed: true
+- check: company_match_pilot_reproducible
+  passed: true
+- check: company_pilot_expected_summary
+  passed: true
+  observed:
+    target_point_count: 56
+    unique_company_count: 40
+    facet_explicit_point_count: 39
+    cell_only_point_count: 17
+    candidate_match_point_count: 6
+    related_facet_only_point_count: 14
+    blocked_subject_scope_point_count: 1
+- check: review_fix_invariants
+  passed: true
+  invariants:
+    P193_affiliate_blocked_and_no_roles: true
+    P195_no_product_offer: true
+    P119_no_module_integrate: true
+    P101_related_only_not_requirement_match: true
+    P254_OSFP_attribute_only_with_rate_conflict: true
+- check: graph_summary_matches_pilot
+  passed: true
+  observed:
+    target_cells:
+    - C1
+    - C3
+    - C4
+    - C5
+    - MOD1
+    point_count: 56
+    unique_company_strings: 40
+    facet_explicit_points: 39
+    cell_only_points: 17
+    points_with_candidate_requirement_match: 6
+    points_with_related_facet_only: 14
+    blocked_subject_scope_points: 1
+    full_route_service_conclusions: 0
+summary:
+  check_count: 8
+  passed_count: 8
+  all_passed: true

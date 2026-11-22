@@ -1,0 +1,75 @@
+meta:
+  mode: draft_only
+  purpose: separate_route_attributes_physical_capabilities_and_validation_gaps
+  canonical_write_performed: false
+
+entity_types:
+  route_profile_axis_observation:
+    meaning: an observed, company-stated, normalized, or unknown value describing one route instance
+    company_matchable: false
+  route_product_attribute:
+    meaning: a product-level attribute such as rate, lane organization, placement, form factor, reach, or connector
+    company_matchable: true
+    match_result: product_profile_support_only
+  physical_capability_requirement:
+    meaning: a physical cell plus facet explicitly present in a route instance
+    company_matchable: true
+    match_result: candidate_capability_support_only
+  validation_gap:
+    meaning: missing evidence or controlled comparison needed to answer a research question
+    company_matchable: false
+  company_evidence_point:
+    meaning: an existing points.csv row anchored to a company and physical cell
+    company_matchable: not_applicable
+  company_capability_assertion:
+    meaning: a draft normalized assertion extracted from a company evidence point
+    company_matchable: not_applicable
+
+company_capability_roles:
+  - material_supply
+  - component_design
+  - component_manufacture
+  - module_integrate
+  - product_offer
+  - process_enable
+  - test_enable
+  - role_unknown
+
+relation_types:
+  - PROFILE_REQUIRES_PHYSICAL_CAPABILITY
+  - PROFILE_REQUIRES_PRODUCT_ATTRIBUTE
+  - POINT_SUPPORTS_CAPABILITY_ASSERTION
+  - CAPABILITY_ASSERTION_CANDIDATE_MATCHES_REQUIREMENT
+  - VALIDATION_GAP_BLOCKS_COMPARISON
+  - CONSTRAINT_EXPLAINS_REQUIREMENT
+
+candidate_match_gate:
+  required_checks:
+    - target_kind_matches
+    - physical_cell_matches_when_applicable
+    - facet_is_explicit_or_marked_generic
+    - company_role_is_explicit_or_role_unknown
+    - product_or_instance_scope_preserved
+    - evidence_point_is_anchored
+    - no_supplier_or_customer_relation_inferred
+    - no_route_service_conclusion_from_cell_match_alone
+  outputs:
+    - exact_keyword_candidate
+    - generic_scope_candidate
+    - attribute_exact_candidate
+    - related_facet_only
+    - no_match
+    - needs_review
+  interpretation:
+    related_facet_only: remains attached to the physical facet and must not create a requirement-match edge
+    generic_scope_candidate: candidate only at the route requirement's generic scope; subtype and full-profile satisfaction remain unknown
+    attribute_exact_candidate: exact for one product attribute only; other route-profile fields may conflict
+
+why_bridge:
+  chain:
+    - scenario_constraint
+    - engineering_mechanism
+    - tradeoff_or_bottleneck
+    - route_requirement
+    - physical_capability_or_product_attribute
+  promotion_rule: every causal edge requires its own evidence state; adjacency is not causality

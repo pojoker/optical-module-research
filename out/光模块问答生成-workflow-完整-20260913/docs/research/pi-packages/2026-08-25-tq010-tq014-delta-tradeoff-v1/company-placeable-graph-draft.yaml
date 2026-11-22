@@ -1,0 +1,189 @@
+meta:
+  mode: draft_only
+  purpose: company_placeable_graph_without_company_group_promotion
+  physical_tree_source: tree.yaml
+  route_seed_source: ../2026-08-24-tq009-route-profile-seeds-v1/route-profile-seeds-effective.yaml
+  company_attachment_source: company-capability-match-pilot.yaml
+  canonical_write_performed: false
+
+knowledge_systems:
+  physical_system:
+    root: physical_cell
+    stable_identity: tree.yaml cell_id
+    draft_extension: capability_facet
+    route_relevant_facets:
+      C1:
+        - laser_type
+        - wavelength
+      C3:
+        - detector_type
+      C4:
+        - platform
+        - modulator_type
+        - device_integration_raw
+      C5:
+        - component_type
+        - electrical_function
+        - tx_retiming_scope
+        - rx_retiming_scope
+        - process_node_raw
+      MOD1:
+        - product_evidence_attachment_only
+  route_system:
+    root: route_profile_instance
+    axes:
+      - tq005_external_link
+      - tq006_electrical_responsibility
+      - tq007_photonics
+      - tq008_placement
+    identity_rule: one observed product/demo instance per profile seed
+    product_attributes:
+      - aggregate_rate
+      - lane_count_and_rate
+      - modulation_and_fec
+      - media_reach_and_wavelength
+      - placement_class
+      - form_factor
+  why_bridge:
+    required_chain:
+      - scenario_constraint
+      - engineering_mechanism
+      - advantage_disadvantage_or_bottleneck
+      - route_axis_choice
+      - physical_capability_requirement
+    current_status: blocked_by_missing_controlled_tradeoff_evidence
+    current_allowed_edges:
+      - PROFILE_HAS_OBSERVED_AXIS
+      - PROFILE_REQUIRES_PHYSICAL_FACET
+      - VALIDATION_GAP_BLOCKS_COMPARISON
+    current_forbidden_edges:
+      - ROUTE_IS_BETTER_THAN_ROUTE
+      - COMPANY_SERVES_ROUTE
+      - COMPANY_SUPPLIES_ROUTE_OWNER
+      - CONSTRAINT_CAUSES_CHOICE_WITHOUT_EVIDENCE
+
+node_types:
+  - physical_cell
+  - capability_facet
+  - route_profile_instance
+  - route_axis_observation
+  - route_product_attribute
+  - physical_capability_requirement
+  - validation_gap
+  - company
+  - company_evidence_point
+  - company_capability_assertion
+
+edge_types:
+  - edge_type: CELL_HAS_FACET
+    from: physical_cell
+    to: capability_facet
+    promotion: draft_only_until_schema_review
+  - edge_type: PROFILE_HAS_OBSERVED_AXIS
+    from: route_profile_instance
+    to: route_axis_observation
+    promotion: source_and_instance_gated
+  - edge_type: PROFILE_REQUIRES_PHYSICAL_FACET
+    from: route_profile_instance
+    to: physical_capability_requirement
+    promotion: source_and_scope_gated
+  - edge_type: POINT_SUPPORTS_CAPABILITY_ASSERTION
+    from: company_evidence_point
+    to: company_capability_assertion
+    promotion: quote_and_role_gated
+  - edge_type: ASSERTION_CANDIDATE_MATCHES_REQUIREMENT
+    from: company_capability_assertion
+    to: physical_capability_requirement
+    promotion: human_review_required
+  - edge_type: POINT_SUPPORTS_PRODUCT_ATTRIBUTE
+    from: company_evidence_point
+    to: route_product_attribute
+    promotion: human_review_required
+  - edge_type: VALIDATION_GAP_BLOCKS_COMPARISON
+    from: validation_gap
+    to: route_profile_instance
+    promotion: draft_only
+
+attachment_contract:
+  company_identity: unique company string now; future stable company_id required before promotion
+  point_identity: points.csv point_id
+  physical_attachment: existing cell_id must remain unchanged
+  facet_attachment:
+    fields: [namespace, value, explicit_quote_span, proposal_method, facet_maturity_state, review_status]
+    default_review_status: needs_human_review
+    rule: points.csv point_status must not be inherited by every extracted facet
+  role_attachment:
+    fields: [role, explicit_quote_span, scope, review_status]
+    rule: cell identity alone cannot infer role
+  requirement_match:
+    fields: [requirement_id, match_level, matched_facets, limitation, review_status]
+    allowed_levels: [exact_keyword_candidate, generic_scope_candidate, attribute_exact_candidate, no_match, needs_review]
+    rule: a candidate match is not a route-service, supply, customer, or adoption conclusion
+  related_facet_evidence:
+    fields: [requirement_id, matched_facets, limitation]
+    rule: related_facet_only does not create ASSERTION_CANDIDATE_MATCHES_REQUIREMENT
+  subject_scope:
+    fields: [subject_scope, attachment_eligible, scope_note]
+    rule: affiliate-only quotes are blocked until the affiliate has its own stable company identity
+
+current_attachment_summary:
+  target_cells: [C1, C3, C4, C5, MOD1]
+  point_count: 56
+  unique_company_strings: 40
+  facet_explicit_points: 39
+  cell_only_points: 17
+  points_with_candidate_requirement_match: 6
+  points_with_related_facet_only: 14
+  blocked_subject_scope_points: 1
+  full_route_service_conclusions: 0
+
+example_attachments:
+  - point_id: P003
+    physical_cell: C5
+    observed_facets: [component_type.DSP, component_type.Driver, component_type.TIA]
+    related_facet_only:
+      - {requirement_id: PCR-D02-C5-001, matched: component_type.DSP}
+      - {requirement_id: PCR-D03-C5-001, matched: component_type.DSP}
+    limitation: generic DSP does not establish LRO direction split or 3 nm
+  - point_id: P088
+    physical_cell: C4
+    observed_facets: [platform.silicon_photonics]
+    observed_roles: [component_design]
+    related_facet_only:
+      - {requirement_id: PCR-D04-C4-001, matched: platform.silicon_photonics}
+    limitation: no MZM PIC evidence
+  - point_id: P201
+    physical_cell: C1
+    observed_facets: [laser_type.EML, laser_type.DFB]
+    observed_roles: [component_design, component_manufacture, product_offer]
+    related_facet_only:
+      - {requirement_id: PCR-D05-C1-001, matched: laser_type.EML}
+    limitation: no 1310 nm evidence
+  - point_id: P224
+    physical_cell: C3
+    observed_facets: [detector_type.photodiode]
+    observed_roles: [product_offer]
+    candidate_matches:
+      - {requirement_id: PCR-D05-C3-001, level: generic_scope_candidate}
+    limitation: company subtype evidence does not fill RPS-D05 detector subtype
+  - point_id: P254
+    physical_cell: MOD1
+    observed_product_attributes: [aggregate_rate.1.6T, form_factor.OSFP, photonics_platform.silicon_photonics, photonics_platform.EML_raw]
+    candidate_matches:
+      - {requirement_id: RPA-D05-FORM-001, level: attribute_exact_candidate}
+    limitation: matches OSFP attribute only; the point explicitly states 1.6T while RPS-D05 is an 800 Gbps demo endpoint
+  - point_id: P193
+    physical_cell: MOD1
+    subject_scope: affiliate_only
+    attachment_eligible: false
+    blocked_reason: quote concerns investee 四川光为 rather than row company 通宇通讯
+
+next_schema_gaps:
+  - stable company_id and alias resolution
+  - explicit quote-span offsets rather than whole-quote keyword hits
+  - facet-level maturity extraction for quotes mixing production and in-development products
+  - generalized subject/entity resolution beyond the current explicit P193 override
+  - separate product_profile_support from physical_capability_support in UI
+  - model form_factor as a route product attribute without forcing a physical tree cell
+  - add controlled tradeoff evidence before creating why causal edges
+  - acceptance metrics for exact route capability satisfaction

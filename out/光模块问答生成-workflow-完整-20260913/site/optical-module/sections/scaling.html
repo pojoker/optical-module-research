@@ -1,0 +1,20 @@
+<section class="section" id="scaling" data-certainty="stable">
+  <div class="statusline"><span class="certainty stable">稳定分解方法</span><small>具体 lane 组织必须绑定标准或产品</small></div>
+  <div class="kicker">先拆总速率</div><h2>端口提速只有两个基本旋钮：增加 lane，或让每条 lane 更快</h2>
+  <p class="intro">可以把聚合速率近似理解为“lane 数 × 每 lane 速率”。这只是帮助理解的骨架；真实链路还涉及编码、FEC 和协议开销。更重要的是，主机电接口和光纤侧介质接口要分别计算，不能拿电 lane 数直接代替光 lane 数。</p>
+
+  <div class="lane-equation"><span>端口聚合速率</span><b>≈</b><span>并行 lane 数量</span><b>×</b><span>每条 lane 的速率</span></div>
+  <div class="knob-grid">
+    <article class="knob-card"><span class="knob-label">旋钮 A · lane 更多</span><h3>保持单 lane 较成熟，用数量堆出总速率</h3><div class="knob-path"><b>100G/lane</b><i>×</i><b>更多 lane</b><i>→</i><b>更高聚合速率</b></div><p>好处是可以复用相对成熟的单 lane 器件与电接口能力；压力转移到封装引脚、连接器、PCB 走线、光通道数量、光纤数量和装配面积。</p><footer>典型问题：面板还能放多少接口？模块和 ASIC 还能提供多少高速 I/O？并行光纤与极性管理是否可接受？</footer></article>
+    <article class="knob-card"><span class="knob-label">旋钮 B · lane 更快</span><h3>保持 lane 数量，用更高波特率提高总速率</h3><div class="knob-path"><b>更少 lane</b><i>×</i><b>200G/lane</b><i>→</i><b>更高聚合速率</b></div><p>好处是减少达到同一聚合速率所需的 lane 数；压力转移到 SerDes、封装和连接器的信号完整性，以及 Driver、modulator、PD、TIA 的带宽和噪声余量。</p><footer>典型问题：现有电通道能否达到目标损耗？更强均衡和 FEC 是否足够？光器件能否在目标温度和误码边界下工作？</footer></article>
+  </div>
+
+  <div class="lane-map" aria-label="主机电lane与介质光lane分层示意">
+    <div class="lane-map-head"><span>层级</span><span>800G 示例</span><span>1.6T 示例</span><span>压力首先落在哪里</span></div>
+    <div><b>主机侧电接口</b><span>8×约100G</span><span>8×约200G</span><span>SerDes、封装、PCB、连接器、均衡与 FEC</span></div>
+    <div><b>模块内部电路径</b><span>DSP/retimer、Driver、TIA</span><span>更高带宽或更短路径</span><span>功耗、时延、通道损耗和 Host—Module 分责</span></div>
+    <div><b>光纤侧介质接口</b><span>8×100G 或 4×200G 等</span><span>8×200G 等候选</span><span>光源、调制、探测、合分波、耦合和光纤数量</span></div>
+  </div>
+
+  <div class="warn"><b>“lane 数减少”不等于产品一定更简单。</b>例如从 8 条空间并行光改成 4 个更高速的波长，可能减少纤芯，却增加合波/分波、波长控制和更高速器件责任。复杂度往往是转移，不是消失。</div>
+</section>

@@ -38,6 +38,7 @@ def main(argv: list[str] | None = None) -> int:
             output_root=args.output_root,
         )
         print(f"OK: published original artifacts {args.date} -> {result['index_path']}")
+        return 0
     else:
         result = combine_daily_reports(
             run_date=args.date,
@@ -45,8 +46,11 @@ def main(argv: list[str] | None = None) -> int:
             overseas_state_root=args.overseas_state_root,
             output_root=args.output_root,
         )
+        if result["assembly_status"] == "complete" and result["collection_status"] == "complete":
+            print(f"OK: combined daily {args.date}: complete -> {result['markdown_path']}")
+            return 0
         print(
-            f"OK: combined daily {args.date}: {result['assembly_status']} -> "
-            f"{result['markdown_path']}"
+            f"PARTIAL: combined daily {args.date}: assembly={result['assembly_status']} "
+            f"collection={result['collection_status']} -> {result['markdown_path']}"
         )
-    return 0
+        return 1

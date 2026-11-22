@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "note": "日更镜像的按实体 discovery 端点登记。只允许公司 IR/官网、监管或交易所托管文件、具名客户/交易对手、政府记录等可追溯页面；media/generic_news/aggregator/macro_news 会被 load_discovery_config 拒绝。本文件只声明端点，不写任何 canonical 数据。2026-09-05 实测核验：investors.macom.com 与 investors.poet-technologies.com TLS 失败，改用 ir.macom.com 与 www.poet-technologies.com；Cisco y2026/m09 归档、Hamamatsu newsroom.html、IQE /2026 均实测 404，改用各自可访问的官方列表页。",
+  "entities": {
+    "AAOI": {
+      "endpoints": [
+        {
+          "endpoint_id": "AAOI_IR_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investors.ao-inc.com/press-releases",
+          "unsupported_listing": true,
+          "note": "2026-09-05 实测：Q4 平台 JS 渲染列表，静态 HTML 无文章链接且本客户端响应超时，无法静态采集；显式 unsupported，不冒充健康零增量。",
+          "disclosure_type": "official_release",
+          "content_class": "commercial_disclosure",
+          "provenance_class": "first_party"
+        }
+      ]
+    },
+    "LITE": {
+      "endpoints": [
+        {
+          "endpoint_id": "LITE_IR_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://investor.lumentum.com/feed/PressRelease.svc/GetPressReleaseList?LanguageId=1&bodyType=2&pressReleaseDateFilter=1&categoryId=00000000-0000-0000-0000-000000000000&pageSize=20&pageNumber=0&tagList=&includeTags=true&year=-1&excludeSelection=1",
+          "note": "2026-09-09 核验官方 Q4 widget 公开 GET：返回逐篇 Headline/PressReleaseDate/LinkToDetailPage/Body；不执行网页脚本。",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party"
+        },
+        {
+          "endpoint_id": "LITE_TECH_BLOG",
+          "endpoint_kind": "official_blog",
+          "url": "https://www.lumentum.com/en/blog",
+          "disclosure_type": "technical_blog",
+          "content_class": "demonstration_disclosure",
+          "provenance_class": "first_party"
+        }
+      ]
+    },
+    "CSCO": {
+      "endpoints": [
+        {
+          "endpoint_id": "CSCO_IR_RELEASES",
+          "endpoint_kind": "counterparty_release",
+          "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/index.html",
+          "note": "2026-09-09 核验主页 pressRelease 组件的内嵌 JSON：含文章 path/releaseDate，详情可取得日期正文；只解码指定组件，不执行网页脚本。",
+          "disclosure_type": "customer_release",
+          "content_class": "commercial_disclosure",
+          "provenance_class": "counterparty",
+          "corroborates_entity_ids": ["AAOI", "LITE"]
+        }
+      ]
+    },
+    "MTSI": {
+      "endpoints": [
+        {
+          "endpoint_id": "MTSI_IR_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://ir.macom.com/news-releases",
+          "disclosure_type": "official_release",
+          "content_class": "commercial_disclosure",
+          "provenance_class": "first_party"
+        }
+      ]
+    },
+    "WATCH_IQE": {
+      "endpoints": [
+        {
+          "endpoint_id": "IQE_RNS_RELEASES",
+          "endpoint_kind": "counterparty_release",
+          "url": "https://www.iqep.com/media/press-releases",
+          "disclosure_type": "official_release",
+          "content_class": "commercial_disclosure",
+          "provenance_class": "counterparty",
+          "corroborates_entity_ids": ["MTSI", "LITE"]
+        }
+      ]
+    },
+    "CAND_HAMAMATSU": {
+      "endpoints": [
+        {
+          "endpoint_id": "HAMAMATSU_IR_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.hamamatsu.com/jp/en/news.html",
+          "disclosure_type": "official_release",
+          "content_class": "corporate_narrative",
+          "provenance_class": "first_party"
+        }
+      ]
+    },
+    "POET": {
+      "endpoints": [
+        {
+          "endpoint_id": "POET_IR_RELEASES",
+          "endpoint_kind": "official_ir",
+          "url": "https://www.poet-technologies.com/news-media",
+          "disclosure_type": "official_release",
+          "content_class": "commercial_disclosure",
+          "provenance_class": "first_party"
+        }
+      ]
+    }
+  }
+}

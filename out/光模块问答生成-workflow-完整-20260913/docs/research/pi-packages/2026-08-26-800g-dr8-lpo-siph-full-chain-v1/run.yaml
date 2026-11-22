@@ -1,0 +1,64 @@
+run_id: 2026-08-26-800g-dr8-lpo-siph-full-chain-v1
+status: reviewed_complete_multi_axis_route_chain_draft_with_explicit_unknowns
+route_target: 800G_DR8_LPO_SiPh_front_panel_pluggable
+baseline_target: 800G_DR8_retimed_front_panel_pluggable
+search_agent: agy
+search_model: gemini-3.7-flash-high
+search_effort: high
+realtime_baseline_updated_at: 2026-08-26
+lpo_spec_baseline: 100G-DR-LPO_Specification_Revision_1.0_v1p2_final_file
+canonical_write_allowed: false
+canonical_write_performed: false
+coverage_status_changed: false
+knowledge_write_allowed: false
+why_write_allowed: false
+formal_route_profile_allowed: false
+confirmed_company_group_allowed: false
+machine_readable_artifact: route-chain-draft.yaml
+machine_readable_artifact_mode: draft_only
+validator: validate-route-chain-draft.py
+validator_python: /Users/jowang/miniconda3/bin/python3
+validator_status: PASS
+pi_model: deepseek-v4-flash
+pi_thinking: high
+pi_raw_output_disposition: summarized_and_locally_adjudicated
+review_verdict: PASS_WITH_FIXES_APPLIED
+codebuddy_model: hy3
+codebuddy_review_mode: read_only
+reviewers:
+  kimi:
+    model: kimi-code/k3
+    mode: read_only
+    p0_count: 0
+  cursor:
+    model: auto
+    mode: ask_read_only
+    p0_count: 0
+round2_review_verdict: PASS
+round2_reviewers:
+  kimi:
+    model: kimi-code/k3
+    mode: read_only
+    p0_count: 0
+    p1_count: 0
+  cursor:
+    model: auto
+    mode: ask_read_only
+    p0_count: 0
+    p1_count: 0
+delta_review_verdict: PASS
+delta_reviewers:
+  kimi:
+    model: kimi-code/k3
+    mode: read_only
+    p0_count: 0
+    p1_count: 0
+    p2_count: 2
+    p2_status: applied
+  cursor:
+    model: auto
+    mode: ask_read_only
+    p0_count: 0
+    p1_count: 0
+    p2_count: 1
+    p2_status: applied

@@ -1,0 +1,431 @@
+# flows/entity-registry.yaml — 节点实体归并登记册·机器可读两层契约 (v1.7-E 项)
+# =====================================================================
+# 数据化来源：flows/entity-registry.md（5 条归并裁决骨架）
+# 设计依据：
+#   - ROADMAP-v1.7a.md §E（两层契约：身份层 + 观察 scope 层）
+#   - flows/out/roadmap-v17-review-codex.md §E（三表合并为两层的裁决）
+# 冻结基线：236 边 / 169 节点 (commit 6b6d491)
+#
+# 两层：
+#   1) identity_layer  —— 回答“这些名称是不是同一法人 / 是否属同一集团 / 何时生效”
+#      字段：entity_id, identity_type(legal_entity|group), canonical_name, legal_name,
+#            identifiers(代码/证券/信源代码), aliases[{name, effective_from, effective_to}],
+#            rename_evidence{status, anchor, retrieved},
+#            related{member_of, parent_of, possible_same_as, predecessor_of},
+#            identity_decision, registry_ruling, registry_status, source_ruling, notes
+#   2) observation_scope_layer —— 回答“这一条披露数字究竟是集团/法人/分支口径”
+#      字段：scope_id, scope_level(group|legal_entity|branch), based_on_entity,
+#            members[entity_id], scope_effective_period{start, end},
+#            disclosure_basis, anchor, source_ruling, notes
+#
+# 约定：
+#   - identity_decision ∈ {same_legal_entity, distinct_legal_entities, pending}
+#     （对应 codex 两裁决：同一法人 / 不同法人 / 待证；取代原 v1.6 三选一“合并/分列/照录”）
+#   - registry_ruling / registry_status 原样保留 entity-registry.md 的治理状态
+#   - rename_evidence.status ∈ {confirmed, pending, none}
+#   - 未补锚点的字段留空字符串 ""，不伪造 URL（诚实边界）
+
+schema_version: 1
+source_doc: flows/entity-registry.md
+frozen_baseline: "236边/169节点 commit 6b6d491"
+basis:
+  - ROADMAP-v1.7a.md#E
+  - flows/out/roadmap-v17-review-codex.md#E
+
+# ============================ 第一层：身份层 ============================
+identity_layer:
+  entities:
+
+    # ---- 裁决 1：海信集团 vs 海信宽带 ----
+    - entity_id: GROUP_HISENSE
+      identity_type: group
+      canonical_name: 海信集团
+      legal_name: 海信集团控股有限公司
+      identifiers: {}
+      aliases:
+        - {name: 海信集团, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: []
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities   # codex 建议：法人分列；集团口径观察另存 scope
+      registry_ruling: 待裁决
+      registry_status: 待办
+      source_ruling: 1
+      notes: "联讯招股书 E087/E089/E092 以'海信集团'(同一控制合并)披露；源杰以具体法人'海信宽带'披露，两口径不同"
+
+    - entity_id: LEGAL_HISENSE_BROADBAND
+      identity_type: legal_entity
+      canonical_name: 海信宽带
+      legal_name: 青岛海信宽带多媒体技术有限公司
+      identifiers: {}
+      aliases:
+        - {name: 海信宽带, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: [GROUP_HISENSE]
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities
+      registry_ruling: 待裁决
+      registry_status: 待办
+      source_ruling: 1
+      notes: "源杰客户，具体法人；与海信集团为同一控制合并下的不同披露口径"
+
+    # ---- 裁决 2：旭创系（苏州旭创/成都旭创/储翰科技）----
+    - entity_id: GROUP_INNOLIGHT
+      identity_type: group
+      canonical_name: 中际旭创
+      legal_name: 中际旭创股份有限公司
+      identifiers: {}
+      aliases:
+        - {name: 中际旭创, effective_from: "", effective_to: ""}
+        - {name: 旭创, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: []
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities   # codex：三法人分列
+      registry_ruling: "v1.6 已按披露口径合并（源杰招股书注明并表列示）——待复核是否与'储翰独立节点'冲突"
+      registry_status: 待复核
+      source_ruling: 2
+      notes: "源杰招股书原文注并表列示；codex 建议仅原文明示合并的前五大使用 group scope"
+
+    - entity_id: LEGAL_SUZHOU_INNOLIGHT
+      identity_type: legal_entity
+      canonical_name: 苏州旭创
+      legal_name: 苏州旭创科技有限公司
+      identifiers: {}
+      aliases:
+        - {name: 苏州旭创, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: [GROUP_INNOLIGHT]
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities
+      registry_ruling: 待复核
+      registry_status: 待复核
+      source_ruling: 2
+      notes: ""
+
+    - entity_id: LEGAL_CHENGDU_INNOLIGHT
+      identity_type: legal_entity
+      canonical_name: 成都旭创
+      legal_name: 成都旭创科技有限公司
+      identifiers: {}
+      aliases:
+        - {name: 成都旭创, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: [GROUP_INNOLIGHT]
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities
+      registry_ruling: 待复核
+      registry_status: 待复核
+      source_ruling: 2
+      notes: ""
+
+    - entity_id: LEGAL_CHUHAN
+      identity_type: legal_entity
+      canonical_name: 储翰科技
+      legal_name: 成都储翰科技股份有限公司
+      identifiers: {}
+      aliases:
+        - {name: 储翰科技, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: [GROUP_INNOLIGHT]
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities
+      registry_ruling: "待复核是否与'储翰独立节点'冲突"
+      registry_status: 待复核
+      source_ruling: 2
+      notes: "储翰是否应独立节点的争议点"
+
+    # ---- 裁决 3：长飞系（长飞光纤合并 / YOFC 各海外子 / 汉川 / 潜江 / 石英等）----
+    - entity_id: GROUP_YOFC
+      identity_type: group
+      canonical_name: 长飞光纤光缆股份
+      legal_name: 长飞光纤光缆股份有限公司
+      identifiers: {}
+      aliases:
+        - {name: 长飞光纤, effective_from: "", effective_to: ""}
+        - {name: YOFC, effective_from: "", effective_to: ""}
+        - {name: 长飞光纤合并, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: []
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities   # codex：各法人分列
+      registry_ruling: "v1.6 按博创年报'长飞光纤合并'披露口径聚合"
+      registry_status: 待复核
+      source_ruling: 3
+      notes: "十余法人，registry 仅列具名代表；'长飞光纤合并'为合并行口径标签"
+
+    - entity_id: LEGAL_YOFC_CONSOLIDATED
+      identity_type: legal_entity
+      canonical_name: 长飞光纤合并（合并行）
+      legal_name: 长飞光纤光缆股份有限公司（合并口径）
+      identifiers: {}
+      aliases:
+        - {name: 长飞光纤合并, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: [GROUP_YOFC]
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities
+      registry_ruling: 待复核
+      registry_status: 待复核
+      source_ruling: 3
+      notes: "博创年报关联方表自带合并行；代表合并观察的具名法人"
+
+    - entity_id: LEGAL_YOFC_OVERSEAS
+      identity_type: legal_entity
+      canonical_name: YOFC 海外子
+      legal_name: 长飞海外子公司（未逐一具名）
+      identifiers: {}
+      aliases:
+        - {name: YOFC海外子, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: [GROUP_YOFC]
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities
+      registry_ruling: 待复核
+      registry_status: 待复核
+      source_ruling: 3
+      notes: "YOFC 各海外子，registry 未逐一枚举"
+
+    - entity_id: LEGAL_YOFC_HANCHUAN
+      identity_type: legal_entity
+      canonical_name: 长飞汉川
+      legal_name: 长飞光纤（汉川）有限公司（代表）
+      identifiers: {}
+      aliases:
+        - {name: 汉川, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: [GROUP_YOFC]
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities
+      registry_ruling: 待复核
+      registry_status: 待复核
+      source_ruling: 3
+      notes: "汉川/潜江/石英等十余法人代表之一"
+
+    # ---- 裁决 4：武汉昱升光器件有限公司 vs 武汉昱升光电股份有限公司（更名）----
+    - entity_id: LEGAL_WUHAN_YUSHENG_DEVICES
+      identity_type: legal_entity
+      canonical_name: 武汉昱升光器件有限公司
+      legal_name: 武汉昱升光器件有限公司
+      identifiers: {}
+      aliases:
+        - {name: 武汉昱升光器件, effective_from: "", effective_to: ""}
+      rename_evidence:
+        status: pending            # 更名证据未查，待补工商记录锚点
+        anchor: ""                 # 待补工商记录锚点
+        retrieved: ""
+      related:
+        member_of: []
+        parent_of: []
+        possible_same_as: [LEGAL_WUHAN_YUSHENG_OPTICAL]
+        predecessor_of: [LEGAL_WUHAN_YUSHENG_OPTICAL]
+      identity_decision: pending   # codex：更名证据未得前不得硬合并 → possible_same_as
+      registry_ruling: "v1.6 已合并为'武汉昱升光电'——更名证据未查，待补工商记录锚点"
+      registry_status: 待补证
+      source_ruling: 4
+      notes: "源杰 IPO 披露名；与'武汉昱升光电股份'名称高度相似+同城同业；硬合并待更名证据"
+
+    - entity_id: LEGAL_WUHAN_YUSHENG_OPTICAL
+      identity_type: legal_entity
+      canonical_name: 武汉昱升光电股份有限公司
+      legal_name: 武汉昱升光电股份有限公司
+      identifiers: {}
+      aliases:
+        - {name: 武汉昱升光电, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: []
+        parent_of: []
+        possible_same_as: [LEGAL_WUHAN_YUSHENG_DEVICES]
+        predecessor_of: []
+      identity_decision: pending
+      registry_ruling: 待补证
+      registry_status: 待补证
+      source_ruling: 4
+      notes: "仕佳/博创披露名；更名证据确认前与'光器件有限公司'仅作 possible_same_as"
+
+    # ---- 裁决 5：顺丰速运 vs 西安顺丰速运 ----
+    - entity_id: GROUP_SF
+      identity_type: group
+      canonical_name: 顺丰控股
+      legal_name: 顺丰控股股份有限公司
+      identifiers: {}
+      aliases:
+        - {name: 顺丰, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: []
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities
+      registry_ruling: 待复核
+      registry_status: 待复核
+      source_ruling: 5
+      notes: "物流服务商集团；集团口径合理"
+
+    - entity_id: LEGAL_SF_EXPRESS
+      identity_type: legal_entity
+      canonical_name: 顺丰速运
+      legal_name: 顺丰速运有限公司
+      identifiers: {}
+      aliases:
+        - {name: 顺丰速运, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: [GROUP_SF]
+        parent_of: [LEGAL_XIAN_SF]
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities
+      registry_ruling: "v1.6 合并为'顺丰速运'"
+      registry_status: 待复核
+      source_ruling: 5
+      notes: "源杰两处披露，集团口径合并"
+
+    - entity_id: LEGAL_XIAN_SF
+      identity_type: legal_entity
+      canonical_name: 西安顺丰速运
+      legal_name: 西安顺丰速运有限公司
+      identifiers: {}
+      aliases:
+        - {name: 西安顺丰速运, effective_from: "", effective_to: ""}
+      rename_evidence: {status: none, anchor: "", retrieved: ""}
+      related:
+        member_of: [GROUP_SF]
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities
+      registry_ruling: 待复核
+      registry_status: 待复核
+      source_ruling: 5
+      notes: "顺丰速运之子/分支，法人分列；观察可走 branch scope"
+
+# ====================== 第二层：观察 scope 层 ======================
+observation_scope_layer:
+  default_policy: >
+    未显式声明 scope 的边，默认按 legal_entity 口径观察；
+    仅当披露原文明示合并（集团/分支）口径时才登记 group / branch scope。
+  scopes:
+
+    # 裁决 1：联讯以集团合并口径披露
+    - scope_id: SC_HISENSE_GROUP_LIANXUN
+      scope_level: group
+      based_on_entity: GROUP_HISENSE
+      members: [LEGAL_HISENSE_BROADBAND]
+      scope_effective_period: {start: "", end: ""}
+      disclosure_basis: "联讯招股书 E087/E089/E092"
+      anchor: ""                 # registry 未载 URL，待补
+      source_ruling: 1
+      notes: "联讯披露口径为集团合并；与源杰法人口径不同，故分两条 scope 观察"
+
+    - scope_id: SC_HISENSE_BROADBAND_LEGAL
+      scope_level: legal_entity
+      based_on_entity: LEGAL_HISENSE_BROADBAND
+      members: [LEGAL_HISENSE_BROADBAND]
+      scope_effective_period: {start: "", end: ""}
+      disclosure_basis: "源杰客户（具体法人）"
+      anchor: ""
+      source_ruling: 1
+      notes: "源杰以具体法人'海信宽带'披露"
+
+    # 裁决 2：仅原文明示合并的前五大用 group scope
+    - scope_id: SC_INNOLIGHT_GROUP_PROSPECTUS
+      scope_level: group
+      based_on_entity: GROUP_INNOLIGHT
+      members: [LEGAL_SUZHOU_INNOLIGHT, LEGAL_CHENGDU_INNOLIGHT, LEGAL_CHUHAN]
+      scope_effective_period: {start: "", end: ""}
+      disclosure_basis: "源杰招股书前五大（明文并表列示）"
+      anchor: ""
+      source_ruling: 2
+      notes: "仅原文明示合并的前五大观察使用 group scope；其余按法人分列"
+
+    # 裁决 3：长飞合并行口径
+    - scope_id: SC_YOFC_MERGED
+      scope_level: group
+      based_on_entity: GROUP_YOFC
+      members: [LEGAL_YOFC_CONSOLIDATED, LEGAL_YOFC_OVERSEAS, LEGAL_YOFC_HANCHUAN]
+      scope_effective_period: {start: "", end: ""}
+      disclosure_basis: "博创年报关联方表合并行"
+      anchor: ""
+      source_ruling: 3
+      notes: "'长飞光纤合并'观察保留成员与期间；各法人仍可独立 legal_entity scope"
+
+    # 裁决 4：更名前/后观察口径
+    - scope_id: SC_YUSHENG_RENAME
+      scope_level: legal_entity
+      based_on_entity: LEGAL_WUHAN_YUSHENG_OPTICAL
+      members: [LEGAL_WUHAN_YUSHENG_DEVICES, LEGAL_WUHAN_YUSHENG_OPTICAL]
+      scope_effective_period: {start: "", end: ""}
+      disclosure_basis: "源杰 IPO / 仕佳 / 博创 披露"
+      anchor: ""
+      source_ruling: 4
+      notes: >
+        更名证据确认前，pre-rename 观察用 LEGAL_WUHAN_YUSHENG_DEVICES，
+        post-rename 用 LEGAL_WUHAN_YUSHENG_OPTICAL；二者仅 possible_same_as，不硬合并
+
+    # 裁决 5：顺丰集团口径合并
+    - scope_id: SC_SF_MERGED
+      scope_level: legal_entity
+      based_on_entity: LEGAL_SF_EXPRESS
+      members: [LEGAL_SF_EXPRESS, LEGAL_XIAN_SF]
+      scope_effective_period: {start: "", end: ""}
+      disclosure_basis: "源杰两处披露"
+      anchor: ""
+      source_ruling: 5
+      notes: "物流服务商，集团口径合理；西安顺丰为子/分支，可走 branch scope 独立观察"
+
+# 2026-07-25 天眼查对外投资数据修正(聚合库,pending_primary)
+- entity_id: LEGAL_ZHIHE
+  legal_name: 成都智禾光通科技有限公司
+  identifiers: {信用代码: 91510100MA69GLFW85}
+  related: {member_of: 旭创系(中际旭创100%全资,天眼查对外投资,2021-01设立)}
+  identity_decision: distinct_legal_entities
+  修正: 此前"承继原成都旭创且脱离旭创系"推断后半句错误,智禾在系内
+- 曾用名补充: {天孚通信: 苏州天孚精密陶瓷有限公司, 中际旭创: 龙口中际电工机械/山东中际电工装备}
+
+# 2026-07-25 标签解析会话:母公司/上市状态解析(专家知识+搜索验证)
+- 母公司关系:
+    北京通美晶体: {parent: AXT Inc(NASDAQ:AXTI), 持股: "85.51%", 备注: 科创板IPO2026-07终止注册拟转港股, 来源: 新浪财经/证券时报2026-07-10}
+    有研亿金新材料: {parent: 有研新材(600206), 持股: 全资, 来源: 专家知识}
+    大阳日酸特殊气体: {parent: 日本酸素HD(TSE:4091), 来源: 专家知识}
+    OharaQuartz: {parent: Ohara Inc(TSE:5218), 来源: 专家知识}
+    陕西兴化集团: {子公司上市: 兴化股份(002109), 自身: 未上市国企(延长石油系), 来源: 专家知识}
+- 上市状态解析:
+    广东瑞谷光网: {status: 新三板837597, 来源: 新浪新三板页}
+    武汉昱升光电: {status: 未上市(IPO辅导中,海通证券,哈勃投资), 来源: 搜索2026-07-25}
+    洛阳中超新材料: {status: 未上市(创业板IPO 2024-09撤回,曾挂新三板), 来源: 证券时报}
+    芯思杰技术: {status: 待核(疑曾挂新三板838275,中信证券IPO文件存在,未见代码确认), 保持: 未解析}
+    西安卫光气体: {status: 待核, 保持: 未解析}
+- 光迅科技控股结构: {parent: 中国信科集团, 持股: "直接2.1%+经烽火科技间接36.13%=38.23%", 来源: 大唐电信2025年报(互查矩阵命中), 日期: 2026-07-25}

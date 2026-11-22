@@ -1,0 +1,25 @@
+run_id: 2026-08-24-tq009-route-profile-seeds-v1
+question_id: TQ009
+mode: draft_only
+status: reviewed_pass
+python_interpreter: /Users/jowang/miniconda3/bin/python3
+pi:
+  provider: opencode-go
+  model: deepseek-v4-flash
+  thinking: high
+  tools: disabled
+  context_files: disabled
+  session: disabled
+reviewers:
+  kimi:
+    model: kimi-code/k3
+    status: pass
+    review: docs/reviews/2026-08-25-kimi-rereview-tq009-route-profile-seeds.md
+  cursor:
+    model: auto
+    mode: ask
+    status: pass
+    review: docs/reviews/2026-08-25-cursor-final-rereview-tq009-route-profile-seeds.md
+canonical_write_performed: false
+coverage_status_changed: false
+new_question_ids_created: false

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="保留目标对象 UNKNOWN，同时展示 Intel、NVIDIA、Coherent、GIGALIGHT 等受限案例。">
+  <title>用现实案例解释未知，而不冒充通用答案｜光模块知识体系</title>
+  <link rel="stylesheet" href="assets/content.css?v=98f63f49a89c">
+  <link rel="stylesheet" href="assets/site-shell.css?v=cc86a9dc06c3">
+</head>
+<body data-page="cases">
+  <header class="site-header">
+    <a class="site-brand" href="index.html"><span class="brand-mark">OM</span><span><b>光模块知识体系</b><small>模块化重构版 · 2026-08-31</small></span></a>
+    <nav class="global-nav" aria-label="主题模块"><a class="" href="index.html">总览</a><a class="" href="01-foundation.html">基础结构</a><a class="" href="02-demand.html">提速需求</a><a class="" href="03-routes.html">技术路线</a><a class="active" href="04-cases.html">案例与 UNKNOWN</a><a class="" href="05-companies.html">公司投影</a><a class="" href="06-research.html">研究台账</a><a class="" href="07-decision-dossier.html">决策卷宗</a><a class="" href="08-concept-primer.html">名词入门</a></nav>
+    <div class="canonical-pill">研究草案 · canonical 仍为 0</div>
+  </header>
+
+  <main class="site-frame">
+    <header class="module-hero">
+      <div><span class="module-number">04</span><span class="module-kicker">硅光需要几个 laser，WDM 是否必须 TEC</span></div>
+      <h1>用现实案例解释未知，而不冒充通用答案</h1>
+      <p>保留目标对象 UNKNOWN，同时展示 Intel、NVIDIA、Coherent、GIGALIGHT 等受限案例。</p>
+    </header>
+
+    <div class="module-layout">
+      <nav class="local-nav" aria-label="本页小节"><span>本页内容</span><a href="#case-lab">UNKNOWN 不是空白：用现实案例说明“可能怎么做”</a><a href="#mainstream">“最主流的方案是什么？”目前只能回答到两层</a></nav>
+      <div class="module-content"><section class="section" id="case-lab" data-certainty="object">
+        <div class="statusline"><span class="certainty object">对象级案例</span><span class="certainty open">目标字段仍为 UNKNOWN</span></div>
+        <div class="kicker">Case-bounded explanation</div><h2>UNKNOWN 不是空白：用现实案例说明“可能怎么做”</h2>
+        <p class="intro">这里采用降阶解释：不把案例升级成通用答案，也不跨产品补齐目标对象。每张卡都同时写明观察对象、直接事实和不可外推边界。</p>
+        <figure class="reference-figure"><a class="figure-link" href="assets/figures/04-case-boundary.svg" target="_blank" rel="noreferrer" aria-label="打开硅光激光器数量案例边界原图"><img src="assets/figures/04-case-boundary.svg" alt="通用硅光、目标800G DR8 LPO硅光对象、Intel CWDM4与NVIDIA Q3450-LD激光器数量的边界对照"></a><figcaption>参考图 4 · 案例扩展实现空间，但不能继承为目标产品答案。点击查看原图。</figcaption></figure>
+        <div class="case-rule"><div class="case-answer"><small>通用回答</small><h3>硅光没有固定的激光器数量</h3><p>数量取决于光 lane、波长组织、光源位置、共享方式和冗余设计；“采用 SiPh”本身不能推出一个数字。</p></div><div class="case-target"><span class="badge unknown">当前目标对象</span><h3>800G DR8 LPO SiPh：仍未知</h3><p>Hyper Photonix 产品页确认 DR8、LPO 与 SiPh，但未公开内部 laser 的数量、位置、器件类型或供应商，因此不能从其他产品继承。</p></div></div>
+        <div class="case-grid">
+          <article class="case-card"><span class="badge evidence-product">产品实现案例</span><h3>Intel CWDM4：四波 + 片上复用</h3><p>公司技术资料描述四个不同波长的激光器、四个调制器和一个光复用器集成在一块 silicon die 上。</p><div class="case-observation"><b>它说明：</b>WDM 可以采用片上集成路径，不必然依赖分立 mux。</div><div class="case-boundary"><b>不可外推：</b>不是 800G FR4-500 BOM，也不能填补目标 800G LPO SiPh 的激光器数量。</div><a class="case-source" href="https://www.intel.com/content/dam/www/public/us/en/documents/product-briefs/silicon-photonics-the-key-to-data-centre-connectivity-robert-blum.pdf" target="_blank" rel="noreferrer">Intel 技术资料 ↗</a></article>
+          <article class="case-card"><span class="badge evidence-product">精确系统案例</span><h3>NVIDIA Q3450-LD：外置激光源</h3><p>官方技术与维修资料披露 18 个 ELS，每个 ELS 含 8 个激光器，系统合计 144 个。</p><div class="case-observation"><b>它说明：</b>硅光 CPO 可以把光源放到可维护的外置 ELS，并按系统规模配置多个光源模块。</div><div class="case-boundary"><b>不可外推：</b>144 是该 exact system 的系统级数字，不是“每个硅光模块需要 144 个 laser”，也不证明无损冗余。</div><a class="case-source" href="https://networking-docs.nvidia.com/xdrswitcheshw/els-replacement-procedure-for-q3450-ld-systems" target="_blank" rel="noreferrer">NVIDIA 维修资料 ↗</a></article>
+          <article class="case-card"><span class="badge evidence-product">相反实现并存</span><h3>WDM mux：分立与集成都可以</h3><p>Coherent Z-block 是分立滤光式 mux/demux 产品；Intel CWDM4 展示片上 optical multiplexer。</p><div class="case-observation"><b>它说明：</b>FR/WDM 要求的是“合分波功能”，不是某一种固定器件。</div><div class="case-boundary"><b>不可外推：</b>目标 FR4-500 使用 AWG、TFF、Z-block 或片上 mux 仍然 UNKNOWN，不能据此推算对准次数与良率。</div><a class="case-source" href="https://www.coherent.com/resources/datasheet/optics/swdm-cwdm-lwdm-z-block-ds.pdf" target="_blank" rel="noreferrer">Coherent Z-block ↗</a></article>
+          <article class="case-card"><span class="badge evidence-product">反例案例</span><h3>WDM 不等于必须使用 TEC</h3><p>Coherent 的 1300 nm CWDM4 DFB die 产品声明为 uncooled，并给出 0–75 °C 的产品边界。</p><div class="case-observation"><b>它说明：</b>在给定波长窗口、器件分档和热设计下，可以存在无 TEC 的 CWDM 路径。</div><div class="case-boundary"><b>不可外推：</b>这不是完整 200G/lane FR4-500 模块，不能证明所有 WDM 产品都无需 TEC。</div><a class="case-source" href="https://www.coherent.com/content/dam/coherent/site/en/resources/datasheet/networking/1300nm-100mw-cw-cwdm4-dfb-laser-diode-chips-ds.pdf" target="_blank" rel="noreferrer">Coherent DFB datasheet ↗</a></article>
+          <article class="case-card"><span class="badge evidence-demo">NPO 案例</span><h3>GIGALIGHT：插座式光引擎 + 外置光源</h3><p>公司公告描述 socket-based、flip-chip bonding 的 1.6T DR16 NPO linear SiPh engine，以及 16-channel CWL 外置光源。</p><div class="case-observation"><b>它说明：</b>NPO 可以同时选择线性电架构、插座连接、硅光和外置光源。</div><div class="case-boundary"><b>不可外推：</b>“16-channel source”不能自动换算成 16 个独立 laser；插座也不自动等于现场可更换。</div><a class="case-source" href="https://www.gigalight.com/news-events/news-10133.html" target="_blank" rel="noreferrer">GIGALIGHT 公告 ↗</a></article>
+          <article class="case-card"><span class="badge evidence-product">跨对象对照</span><h3>NPO/CPO 的连接与维修没有统一答案</h3><p>Lightmatter L20 描述 BGA/reflow；GIGALIGHT 描述 socket；Broadcom 支持 remote laser module；NVIDIA 提供 ELS 的带电维修流程。</p><div class="case-observation"><b>它说明：</b>placement、attach、laser location 与 service workflow 是四条独立选择轴。</div><div class="case-boundary"><b>不可外推：</b>CPO 不自动等于不可维修，NPO 也不自动等于可热插拔；必须回到 exact object。</div><a class="case-source" href="https://lightmatter.co/products/passage-l20/" target="_blank" rel="noreferrer">Lightmatter L20 ↗</a></article>
+        </div>
+        <div class="scope-lock"><b>阅读规则：</b>案例只扩展“实现空间”，不替代目标对象答案，不代表默认方案、市场份额或供应关系。后续拿到目标产品 datasheet、teardown、CMIS dump 或维修文档时，再升级相应字段。</div>
+      </section>
+<section class="section" id="mainstream" data-certainty="open">
+        <div class="statusline"><span class="certainty object">速率层对象观察</span><span class="certainty open">内部路线排序阻断</span></div>
+        <div class="kicker">Live baseline</div><h2>“最主流的方案是什么？”目前只能回答到两层</h2>
+        <p class="intro">“主流”必须带日期和分母。本轮固定为：2026-08-26、全球 AI 数据中心、800G、约 500m、前面板可插拔、单位出货份额。</p>
+        <div class="snapshot"><div class="verdict"><small>可以回答 · 速度层级</small><h3>800GbE 已是高速数据中心模块的主流速率</h3><p>Cignal AI 的公开信息支持：2026 年一季度 400G 及以上高速模块接近 2000 万只，800GbE 占多数。但它没有公开 800G 内部技术路线的统一统计口径。</p></div><div class="requirements"><h3>暂时不能回答 · 内部路线份额</h3><p><span class="badge unknown">暂无统一统计口径</span></p><ul><li>重定时 EML：有具体产品证据，但没有同口径市场份额</li><li>重定时硅光：当前材料只有使用 DSP 的硅光演示，无法完整确认电架构</li><li>LPO 硅光：有具体产品页面，但不能据此推定出货规模；份额未知</li></ul></div></div>
+        <div class="warn"><b>关闭 UNKNOWN 需要：</b>同一时间、市场、速率、距离、放置方式和单位出货量口径，能拆出 EML/SiPh 或 retimed/LPO/LRO，并保留表号、页码或快照哈希。到那时才允许判断 leader / co-mainstream。</div>
+      </section></div>
+    </div>
+
+    <nav class="prev-next" aria-label="模块翻页"><a href="03-routes.html"><small>← 上一模块</small><b>技术路线</b></a><a href="05-companies.html"><small>下一模块 →</small><b>公司投影</b></a></nav>
+  </main>
+
+  <footer class="site-footer"><span>光模块知识体系 · 模块化重构版</span><span>展示层重构，不改变知识库状态</span></footer>
+  <script src="assets/site.js?v=5d2cebaa45c6"></script>
+</body>
+</html>

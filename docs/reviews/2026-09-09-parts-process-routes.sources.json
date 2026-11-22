@@ -1,0 +1,335 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.coherent.com/networking/transceivers/datacom/FTCE4527E1PxA",
+      "title": "Coherent — 800G-DR8+ OSFP Optical Transceiver",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "Receiver  | PIN",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://www.lumentum.com/en/optical-communications/products/source-lasers-ics-and-photodiodes/emls",
+      "title": "Lumentum — EMLs",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "a distributed feedback (DFB) diode lasers followed by a monolithically integrated electro-absorption modulator (EAM).",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://www.lpo-msa.org/home/faqs.html",
+      "title": "LPO MSA — Frequently Asked Questions",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "Links that use a linear receiver and a retimed transmitter",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://www.ntt-review.jp/archive/ntttechnical.php?contents=ntr201008le2.html",
+      "title": "NTT — Uncooled Operation of 10-/40-Gbit/s EML; Aug 2010; section 2",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "The advantage of the TWG structure is that the EAM MQW regrowth process can be omitted.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://www.aimphotonics.com/low-loss-pdk",
+      "title": "AIM Photonics — Low-Loss Process Design Kit; undated; Overview",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "a Ge photodetector, two copper wiring levels, and an Al termination pad level.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://www.coherent.com/content/dam/coherent/site/en/resources/datasheet/networking/optical-transceivers/osfp/ftce4527e1pxa-transceiver-ds.pdf",
+      "title": "Coherent — FTCE4527E1PxA Product Specification; Rev B2; pp 1,3",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "8x100G PAM4 retimed 106.25Gb/s",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://www.osfpmsa.org/assets/pdf/OSFP_Module_Specification_Rev5_0.pdf",
+      "title": "OSFP MSA — Module Specification Rev 5.0; 2022-10-02; sections 3,10",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "The thermally conductive area in Figure 3-13 should have surface flatness and roughness",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://www.asml.com/en/company/stories/2021/semiconductor-manufacturing-process-steps",
+      "title": "ASML — Six crucial steps in semiconductor manufacturing; updated 2023-10-04",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "deposition, photoresist, lithography, etch, ionization and packaging.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://www.researchgate.net/publication/222370921_InGaAs_PIN_photodiodes_on_semi-insulating_InP_substrates_with_bandwidth_exceeding_14_GHz",
+      "title": "Ho et al. — InGaAs PIN photodiodes; July 1995; Device structure; author-uploaded full text",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "Besides, a self-aligned lift-off process is used for the n-contact recess and metallization.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "url": "https://www.marvell.com/company/newsroom/marvell-introduces-1-6-tbps-lpo-chipset.html",
+      "title": "Marvell — 1.6 Tbps LPO Chipset; 2024-12-10",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "TIA and laser driver chipset provide adjustable equalization to compensate for channel loss.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://www.eurocircuits.com/technical-guidelines/pcb-manufacturing-technology/making-a-pcb-pcb-manufacture-step-by-step",
+      "title": "Eurocircuits — Making a PCB; undated; process sections",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "Now we drill the holes for leaded components and the via holes that link the copper layers together.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://www.corning.com/microsites/coc/oem/documents/OEM-039-AEN.pdf",
+      "title": "Corning — FAU Series OEM-039-AEN; 2019-09-03; pp 1,2,5",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "advanced dicing machines and core pitch measurement machines.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "url": "https://www.marvell.com/company/newsroom/marvell-to-demonstrate-industrys-first-400g-lane-pam4-electrical-to-optical-link-technology-at-ofc-2025.html",
+      "title": "Marvell — 400G/lane demonstration announcement; 2025-03-31",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "complete electrical to optical link operating at 224 Gbaud",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "url": "https://www.oiforum.com/oif-launches-the-industrys-first-co-packaging-standard-the-3-2t-co-packaged-module-implementation-agreement",
+      "title": "OIF — 3.2T Co-Packaged Module IA announcement; 2023-04-05",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "32 x CEI-112G-XSR host interface",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "url": "https://www.advance.mitsubishielectric.com/advance/pdf/2019/168_complete.pdf",
+      "title": "Mitsubishi Electric ADVANCE Vol168; Dec2019; 400G EML-TOSA, printed pp5-6",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "a lens and a spatial optical multiplexer are integrated.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "url": "https://www.coherent.com/news/press-releases/coherent-demonstrates-two-advanced-transceiver-modules",
+      "title": "Coherent — 1.6T-DR8 and 800G-DR4 at ECOC; 2024-09-23",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "eight electrical and eight optical lanes each running at 200 Gbps",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "url": "https://www.coherent.com/networking/optoelectronic-devices/integrated-circuits/transimpedance-amplifiers",
+      "title": "Coherent — TIA product table; undated; CHR1074 and CHR1065",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "Die, Wire Bonded, with AuSn bumps for stacked PD",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "url": "https://www.lpo-msa.org/files/live/sites/lpomsa/files/specs/LPO_MSA_Specification_v1p01.pdf",
+      "title": "LPO MSA — 100G-DR-LPO Revision 1.0; 2025-03-19; file v1p01; sections 4,10",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "The LPO optical module performs transmit and receive functions that convey analog signals between the host and the medium.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "url": "https://www.newport.com/medias/sys_master/images/images/h57/hc5/9135932669982/DS-03002-App-Note-6.pdf",
+      "title": "Newport — Fiber to Waveguide Alignment Algorithm; App Note 6; footer 12/04; PDF pp 2-4",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "A power\nmeter is used to accurately measure and display the\noptical power level.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "url": "https://plasma.oxinst.com/media-centre/wp/s2-vcsel-advanced-endpoint",
+      "title": "Oxford Instruments — Advanced Endpoint Control Techniques for VCSEL Mesa Manufacture; public introduction; undated",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "The dry etching process of the p mesa then aims to expose the Aluminium rich layer before the oxidation.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "url": "https://www.coherent.com/news/press-releases/significant-advancement-in-vcsel-performance-next-gen-ai-networks",
+      "title": "Coherent — Lithographic-aperture VCSEL; 2024-03-25",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "This improvement comes in the form of lithographic-aperture VCSELs",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "url": "https://www.ficontec.com/capabilities",
+      "title": "ficonTEC — Capabilities; undated; Motion Systems For Passive and Active Alignment; direct HTML retrieved",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "Here, a coupled optical parameter such as power is correlated with positioning in motion space.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "url": "https://www.poet-technologies.com/blog/poet-technologies-redefines-optical-integration-with-its-hybrid-integrated-1-6t-2xfr4-transmitter-pic",
+      "title": "POET — Hybrid-Integrated 1.6T 2xFR4 Transmitter PIC; 2025-12-08",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "Four 2x200G EML arrays flip-chip bonded on POET’s optical interposer.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "url": "https://www.edmundoptics.com/knowledge-center/application-notes/optics/all-about-aspheric-lenses",
+      "title": "Edmund Optics — All About Aspheric Lenses; undated; manufacturing techniques",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "After the cores cool down to room temperature, the resulting lenses maintain the shape of the mold.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "url": "https://www.intel.com/content/www/us/en/newsroom/news/intel-unveils-first-integrated-optical-io-chiplet.html",
+      "title": "Intel — Optical I/O Chiplet; 2024-06-26; How It Works and Whats Next",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "Intel’s current OCI chiplet is a prototype.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "url": "https://www.ti.com/tool/CIRCUIT060041",
+      "title": "TI — AC-coupled transimpedance amplifier circuit; Overview; low-speed principle example",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "This circuit uses an op amp configured as a transimpedance amplifier to amplify the AC signal of a photodiode",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "url": "https://semi.asmpt.com/en/products/icd",
+      "title": "ASMPT — IC and Discrete; undated; die attach, wire bond, flip chip categories",
+      "accessed": "2026-09-09",
+      "quotes": [
+        {
+          "text": "including die attach, wire bond, AOI, encapsulation, trim & form and test handler.",
+          "added": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "url": "https://pdf-program.abstractserver.com/?congress=ecoc2025",
+      "title": "ECOC 2025 official programme; Th.02.02.3; 2025-10-02; p100",
+      "accessed": "2026-09-09"
+    }
+  ]
+}

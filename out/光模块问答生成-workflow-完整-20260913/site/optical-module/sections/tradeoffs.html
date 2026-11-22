@@ -1,0 +1,15 @@
+<section class="section" id="tradeoffs" data-certainty="mechanism">
+        <div class="statusline"><span class="certainty mechanism">机理与产品观察</span><span class="certainty open">缺受控比较</span></div>
+        <div class="kicker">Trade-offs</div><h2>这条路线可能得到什么，又把责任移到哪里</h2>
+        <p class="intro">优势必须与代价同时出现。下面区分工程机理、组织陈述和当前缺口；没有同条件数据时，不写确定幅度。</p>
+        <div class="tradeoff-grid">
+          <article class="trade"><h3>模块功耗机制</h3><p>去掉模块信号路径 DSP/retimer，减少一条模块内数字处理与耗电路径。</p><span class="badge conditional">工程机理</span><div class="bottom">不等于系统总功耗必然下降，也没有合格幅度。</div></article>
+          <article class="trade"><h3>时延</h3><p>减少模块数字决策与 retiming 路径，被规范组织描述为降低 module-path latency。</p><span class="badge conditional">组织陈述</span><div class="bottom">没有同条件 ns 数据，不推出端到端时延。</div></article>
+          <article class="trade"><h3>成本</h3><p>去 DSP 被描述为 lower-cost target，但模块 BOM 只是系统成本的一部分。</p><span class="badge conditional">设计目标</span><div class="bottom">缺 BOM、ASP、良率和 host 侧成本边界。</div></article>
+          <article class="trade"><h3>Host 责任</h3><p>FEC、均衡、channel-loss 配置和闭环验证承担更多端到端责任。</p><span class="badge supported">规范支持</span><div class="bottom">不是“所有 DSP 功能都转移到 host”。</div></article>
+          <article class="trade"><h3>启动与训练</h3><p>传统电通道 link training 不能直接照搬，driver/TIA AGC 带来新的配置问题。</p><span class="badge supported">规范支持</span><div class="bottom">具体启动优化方法不在当前规范范围内。</div></article>
+          <article class="trade"><h3>测试耦合</h3><p>验证需要覆盖 stressed input、host-to-host BER/FEC 和通道校准等联合场景。</p><span class="badge supported">规范支持</span><div class="bottom">不能据此推出测试时间或设备价值量必然上升。</div></article>
+        </div>
+        <div class="comparison"><div class="product"><strong>LPO SiPh 产品观察</strong><span>Hyper Photonix 800G DR8 listing：≤9 W</span></div><div class="versus">不可归因比较</div><div class="product"><strong>Retimed EML 基线观察</strong><span>Coherent 800G DR8 OSFP：&lt;17 W</span></div></div>
+        <div class="warn red"><b>两个上限不能直接相减：</b>供应商、光子平台、连接器、温度与内部实现没有控制一致，差值不能全部归因于 LPO。</div>
+      </section>

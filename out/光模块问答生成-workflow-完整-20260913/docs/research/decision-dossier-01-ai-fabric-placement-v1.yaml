@@ -1,0 +1,171 @@
+schema_version: decision_dossier_v1
+dossier_id: DD-01
+title: AI Fabric 光学放置与电职责决策卷宗
+version: v0.1
+status: reader_product_pilot
+prepared_at: '2026-08-31'
+canonical_write_allowed: false
+formal_question_created: false
+source_question_id: COVERAGE-GAP-CANDIDATE-01
+
+decision_scope:
+  decision: 在匹配 AI fabric 服务目标的前提下，判断 front-panel pluggable、NPO、CPO 何时进入 Pareto 前沿；若选择 front-panel，再判断 retimed、LRO、LPO 的电职责分配
+  analysis_mode: qualitative_boundary_map_no_numeric_system_model
+  reason_for_mode: 当前公开证据不足以同时闭合 topology、radix、reach、Host增量功耗、cooling、MTTR与TCO，不能生成可信的统一分数或阈值
+  comparison_guard: LPO属于电处理职责并带可插拔属性，NPO/CPO属于放置与封装；必须分两阶段决策，禁止直接写成LPO对CPO的单轴二选一
+
+common_denominator:
+  frozen:
+    - 相同 endpoint 数、业务流量分布和 delivered bisection bandwidth 目标
+    - 相同 oversubscription、hop/latency、availability 和部署边界
+    - 相同器件代际、optical lane rate、FEC/BER 目标与证据日期
+    - 同时核算 optics、Host/board、cooling、failure domain 与 service boundary
+  unresolved_inputs:
+    - input_id: U01
+      name: topology与switch_radix
+      status: unknown_parameter
+      effect: 决定交换层级、芯片数量、端口占用和链路数量
+    - input_id: U02
+      name: port与reach分布
+      status: unknown_parameter
+      effect: 决定前面板密度、光纤组织、PMD与链路预算
+    - input_id: U03
+      name: Host电通道与SerDes能力
+      status: public_evidence_incomplete
+      effect: 决定linear、LRO或retimed链路能否在目标温度与多供应商条件下闭合
+    - input_id: U04
+      name: 系统分项功耗与cooling响应
+      status: public_evidence_incomplete
+      effect: 决定模块功耗下降是否转化为wall power改善
+    - input_id: U05
+      name: failure rate、MTTR与RMA成本
+      status: private_or_measurement_dependency
+      effect: 决定较大集成故障域是否被更低链路复杂度或可换光源抵消
+    - input_id: U06
+      name: assembly yield与生命周期成本
+      status: private_or_measurement_dependency
+      effect: 决定socket、BGA、LGA、solder与整板/整包返工的经济边界
+
+decision_rule:
+  without_weights: 只报告硬门、Pareto dominance与frontier，不给总分排名
+  with_weights: 只有预先冻结权重、硬约束、成本边界和缺失数据处理后，才允许报告总排序
+  reversal_definition: 某一硬约束从非active变为active，或两个可行方案在同一冻结目标下交换Pareto支配关系
+  current_weighted_ranking_allowed: false
+
+decision_stages:
+  - stage_id: S1
+    question: 光学放在哪里？
+    axis: placement_and_packaging
+    options: [front_panel_pluggable, NPO_or_OBO, CPO_same_first_level_substrate]
+  - stage_id: S2
+    question: 信号恢复、均衡与链路闭合责任放在哪里？
+    axis: electrical_responsibility
+    options: [full_retimed, Tx_retimed_Rx_linear, full_linear]
+    note: 每一种placement都必须单独填电职责，NPO或CPO标签不能自动推出无DSP、linear或direct-drive
+
+option_profiles:
+  - option_id: FP-RETIMED
+    label: 前面板可插拔 × Full Retimed
+    axes: {placement: front_panel_pluggable, electrical_responsibility: full_retimed}
+    enters_frontier_when:
+      - 独立模块更换、多供应商电边界或故障隔离是硬约束
+      - 前面板、电通道、供电与散热预算仍能闭合
+    burden_shift: 模块承担更多信号恢复、功耗、热与局部诊断；Host与模块在较清晰的电接口边界分责
+    loses_frontier_when:
+      - 模块/面板热密度成为active constraint
+      - 电通道或连接器余量在目标lane rate下无法闭合
+    evidence_state: mechanism_supported_exact_system_threshold_unknown
+
+  - option_id: FP-LPO
+    label: 前面板可插拔 × Linear/LPO
+    axes: {placement: front_panel_pluggable, electrical_responsibility: full_linear}
+    enters_frontier_when:
+      - Host与模块能在目标FEC、温度、老化和多供应商矩阵下闭合端到端linear channel
+      - 模块或面板功耗是active constraint，且Host增量、board与cooling没有抵消模块侧节省
+    burden_shift: 减少模块内retiming/CDR职责，把均衡、校准、互操作、遥测和故障定位更多转给Host与系统验证
+    loses_frontier_when:
+      - Host SerDes、板级通道或控制面不能稳定闭合
+      - 系统分项测量显示Host/cooling增量抵消模块收益
+    evidence_state: product_nameplate_and_adjacent_demo_supported_system_net_effect_unknown
+
+  - option_id: NPO-CONDITIONAL
+    label: NPO/OBO × 电职责待填
+    axes: {placement: near_package_or_on_board, electrical_responsibility: object_specific}
+    enters_frontier_when:
+      - 前面板到ASIC的电路径或面板密度成为active constraint
+      - 板级光纤、冷却、attach/rework与service workflow在具名实现中可接受
+    burden_shift: 缩短潜在高速电路径，同时把attach、板级光纤、冷板、校准和维修责任迁入主板/系统集成
+    loses_frontier_when:
+      - BGA、socket或其他attach的热/信号/返工代价抵消电路径收益
+      - service unit、actor、post-repair test或RMA边界无法满足availability目标
+    evidence_state: exact_object_counterexamples_exist_power_reliability_tco_unknown
+
+  - option_id: CPO-CONDITIONAL
+    label: CPO × 电职责待填
+    axes: {placement: same_first_level_substrate, electrical_responsibility: object_specific}
+    enters_frontier_when:
+      - package IO escape、电路径或系统密度成为前面板/NPO无法解决的硬约束
+      - package thermal、fiber、laser、failure domain和service ownership能够在系统级闭合
+    burden_shift: 把光引擎带到ASIC同一first-level substrate，并把封装、热、内部光纤、外置/集成光源与服务边界提升为系统问题
+    loses_frontier_when:
+      - package级故障域、冷却或engine service代价超过电路径收益
+      - 成熟度、良率、可维护性或供应链边界不满足部署要求
+    evidence_state: definition_and_exact_objects_supported_controlled_system_comparison_absent
+
+reversal_conditions:
+  - reversal_id: R01
+    active_constraint: 可替换单元与故障隔离优先
+    before: 集成度或电路径优势主导
+    after: 具名产品的独立模块更换、多供应商边界与服务流程成为硬门
+    result: 通过服务合同的front-panel方案留在前沿；NPO/CPO只有在其实际replaceable unit和流程同样闭合时才能保留
+  - reversal_id: R02
+    active_constraint: 前面板模块功耗或热密度优先
+    before: FP-RETIMED可行
+    after: Host已证明linear closure，且系统分项测量未抵消模块侧收益
+    result: FP-LPO可替代FP-RETIMED进入前沿；不能仅凭nameplate功耗宣布反转
+  - reversal_id: R03
+    active_constraint: ASIC到前面板的电通道余量优先
+    before: front-panel placement可行
+    after: 目标lane rate下连接器、走线、串扰或面板密度使前面板边界无法闭合
+    result: NPO进入前沿；其电职责、attach、热与维修仍须逐轴填写
+  - reversal_id: R04
+    active_constraint: package IO escape或最高系统密度优先
+    before: NPO能够满足系统目标
+    after: near-package路径或板级扇出仍无法满足硬约束，且CPO系统责任已闭合
+    result: CPO进入或取代NPO的前沿位置；这不是由端口速率标签自动触发
+  - reversal_id: R05
+    active_constraint: availability与生命周期成本优先
+    before: electrical或power单项优势主导
+    after: failure domain、MTTR、RMA、yield与cooling成本纳入同一边界
+    result: 排序可能再次反转；当前公开资料不足以判定方向
+
+current_result:
+  verdict: conditional_frontier_only
+  statements:
+    - 当前没有证据支持front-panel、NPO或CPO的无条件总排序
+    - LPO与CPO不在同一选择轴，必须先定placement，再定electrical responsibility
+    - FP-RETIMED与FP-LPO均可能留在前沿，关键分界是Host linear closure与系统净功耗，而不是模块标签
+    - NPO与CPO只有在电路径或密度成为active constraint时提高相对价值；收益同时带来板级或封装级责任迁移
+    - 任何数值阈值、系统节能比例、MTTR或TCO排名都必须等待共同分母输入或受控实验
+  next_measurement_contract:
+    - 固定一个可复现AI fabric的topology、radix、port/reach与availability目标
+    - 同步测量module/engine、Host/board、PSU与cooling功耗
+    - 为每个方案记录channel、BER/FEC、temperature、failure unit、service actor、downtime和post-repair test
+    - 无权重先画Pareto frontier；权重和硬约束必须在模型输出可见前冻结
+
+source_artifacts:
+  canonical_knowledge: [KN008, KN009, KN010]
+  artifacts:
+    - docs/research/expert-question-coverage-gap-candidate-v1.yaml
+    - docs/research/pi-packages/2026-08-31-q-mid-01-retimed-vs-lpo-v1/system-power-latency-primary.md
+    - docs/research/pi-packages/2026-08-30-q-up-03-host-electrical-architecture-v1/responsibility-matrix.md
+    - docs/research/pi-packages/2026-08-31-q-up-05-npo-cpo-boundaries-v1/adjudication.md
+    - docs/research/pi-packages/2026-08-31-q-up-05-npo-cpo-boundaries-v1/responsibility-and-observable-matrix.md
+    - docs/research/npo-cpo-route-profile-seeds-v1.yaml
+    - docs/research/npo-cpo-serviceability-matrix-seeds-v1.yaml
+
+reader_projection:
+  section_id: decision-dossier-01
+  source: site/optical-module/sections/decision-dossier-01.html
+  output: out/光模块知识体系/07-decision-dossier.html
+

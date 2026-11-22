@@ -1,0 +1,29 @@
+run_id: 2026-08-26-agy-vendor-binding-chase-v1
+status: reviewed_draft_ready
+search_agent: agy
+model: gemini-3.7-flash-high
+effort: high
+targets:
+  - Eoptolink_800G_DR8_SiPh_binding
+  - InnoLight_800G_DR8_SiPh_binding
+  - HyperPhotonix_800G_DR8_SiPh_binding
+canonical_write_allowed: false
+canonical_write_performed: false
+coverage_status_changed: false
+knowledge_write_allowed: false
+why_write_allowed: false
+company_group_allowed: false
+route_service_promotion_allowed: false
+absence_claim_allowed_without_full_trail: false
+source_adjudication_completed: true
+pi_input_must_use_handoff_only: true
+reviewers:
+  kimi:
+    model: kimi-code/k3
+    verdict: PASS_WITH_FIXES
+    review: docs/reviews/2026-08-26-kimi-review-agy-vendor-binding-chase-v1.md
+  cursor:
+    model: auto
+    mode: ask
+    verdict: PASS_WITH_FIXES
+    review: docs/reviews/2026-08-26-cursor-review-agy-vendor-binding-chase-v1.md

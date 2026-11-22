@@ -1,0 +1,271 @@
+schema_version: company_route_projection_seed_v1
+status: draft_only
+source_question: QX-12
+retrieved_at: 2026-08-31
+read_only_projection: true
+canonical_write_allowed: false
+formal_company_route_created: false
+
+projection_status_enum: [route_served_candidate, capability_match, related_facet_only]
+identity_status_enum: [exact_part_number, exact_named_demo, product_family, component_part_number, named_product_without_part_number]
+maturity_enum: [component_product_listing, module_product_listing, platform_compatibility_listing, demo, product_availability_claim]
+role_enum: [optical_transceiver_vendor, system_and_branded_optic_vendor, component_vendor]
+
+sources:
+  - source_id: CR-S1
+    title: Eoptolink EOLO-138HG-E-5H-XDX normalized product-row snapshot
+    publisher: Eoptolink Technology Inc. Ltd.
+    source_type: official_product_page_semantic_snapshot
+    url: https://eoptolink.com/product-solutions/800g/800g-osfp-200g-per-lane
+    locator: corpus/web/2026-08-31/semantic/eoptolink__EOLO-138HG-E-5H-XDX.normalized.yaml
+    snapshot_manifest: docs/research/web-semantic-snapshot-pilot-v1.yaml
+    snapshot_id: WSS-EOPTOLINK-EOLO-138HG-E-5H-XDX
+  - source_id: CR-S2
+    title: Eoptolink 800G DR4 LPO OFC 2024 demonstration
+    publisher: Eoptolink Technology Inc. Ltd.
+    source_type: official_demo_announcement
+    url: https://eoptolink.com/news/13-new-products/348-eoptolink-demonstrates-industry-1st-200g-lane-lpos-with-100g-lane-800g-lpos-entering-mass-production
+  - source_id: CR-S3
+    title: Juniper ORHS-2X800G-FR4-P normalized HCT semantic object
+    publisher: local_normalization_of_Juniper_official_HCT
+    source_type: semantic_snapshot
+    url: https://apps.juniper.net/hct/model/ORHS-2X800G-FR4-P
+    locator: corpus/web/2026-08-31/semantic/juniper__ORHS-2X800G-FR4-P.normalized.yaml
+    snapshot_manifest: docs/research/web-semantic-snapshot-pilot-v1.yaml
+    snapshot_id: WSS-JUNIPER-ORHS-2X800G-FR4-P
+  - source_id: CR-S4
+    title: Juniper ORHS-2X800G-FR4-P official HCT page
+    publisher: Juniper Networks
+    source_type: official_hardware_compatibility_page
+    url: https://apps.juniper.net/hct/model/ORHS-2X800G-FR4-P
+  - source_id: CR-S5
+    title: Coherent 800G-DR4 OSFP ECOC 2024 demonstration
+    publisher: Coherent Corp.
+    source_type: official_demo_announcement
+    url: https://www.coherent.com/news/press-releases/coherent-demonstrates-two-advanced-transceiver-modules
+  - source_id: CR-S6
+    title: Source Photonics 200G-per-lane 800G product availability announcement
+    publisher: Source Photonics Inc.
+    source_type: official_product_availability_announcement
+    url: https://www.sourcephotonics.com/news/source-photonics-announce-the-product-availability-of-its-200g-per-lane-based-1-6t-and-800g-pam4-transceiver-family-products-at-ofc25/
+  - source_id: CR-S7
+    title: Accelink 800G OSFP112 and OSFP224 DR4/FR4 ECOC 2025 announcement
+    publisher: Accelink Technologies Co. Ltd.
+    source_type: official_demo_announcement
+    url: https://www.accelink.com/en/lighting_your_dreams/1972134410522226689.html
+  - source_id: CR-S8
+    title: Lumentum HL13E1CP00-Ln 200G PAM4 CWDM EML product page
+    publisher: Lumentum Operations LLC
+    source_type: official_component_product_page
+    url: https://www.lumentum.com/en/products/eml-200g-pam4-cwdm-laser
+  - source_id: CR-S9
+    title: InnoLight 800G OSFP112 product page
+    publisher: Innolight Technology
+    source_type: official_product_page
+    url: https://www.innolight.com/en/goods/info.html?cid=6
+
+projection_entries:
+  - projection_id: CRP-EOPTOLINK-EOLO138HG-E-5H-XDX
+    company:
+      legal_entity: Eoptolink_Technology_Inc_Ltd
+      role: optical_transceiver_vendor
+    product:
+      name: OSFP_800G_DR4
+      part_number: EOLO-138HG-E-5H-XDX
+      identity_status: exact_part_number
+    route:
+      name: vendor_labeled_800G_DR4_4x200G_500m
+      binding_scope: 4x200G_800GbE_1311nm_500m_MPO12
+      standard_binding: vendor_explicit_route_with_physical_fields
+    evidence_unit:
+      closure_source_ids: [CR-S1]
+      event_date: "2026-08-31_retrieved"
+      maturity: module_product_listing
+      event: current_official_product_listing
+    projection_status: route_served_candidate
+    supports:
+      - Eoptolink lists an exact part number as an OSFP 800G DR4 with four 200G optical lanes and 500 m reach.
+      - The same official product page closes vendor role, product identity, route label, lane count, reach and listing maturity.
+    does_not_support:
+      - Explicit compliance with a named P802.3dj draft revision or final IEEE clause.
+      - Qualification, general availability, shipment volume, named customer or deployment.
+      - That the separate 2024 LPO demo is the same hardware revision as this exact part.
+    supply_claim: not_supported
+    unknowns: [hardware_revision, exact_IEEE_revision, qualification, shipment, named_customer, named_deployment]
+
+  - projection_id: CRP-JUNIPER-ORHS-2X800G-FR4-P
+    company:
+      legal_entity: Juniper_Networks_Inc
+      role: system_and_branded_optic_vendor
+    product:
+      name: ORHS-2X800G-FR4-P
+      part_number: "740-189771"
+      identity_status: exact_part_number
+    route:
+      name: 800GBASE_FR4_500_application_mode
+      binding_scope: P802_3dj_Clause_181_2m_to_500m_inner_FEC_bypassed
+      standard_binding: explicit_standard_application
+    evidence_unit:
+      closure_source_ids: [CR-S3]
+      event_date: "2026-08-31_semantic_snapshot"
+      maturity: platform_compatibility_listing
+      event: QFX5250_support_and_Junos_OS_Evolved_25_2X100_D20_introduction_record
+    projection_status: route_served_candidate
+    supports:
+      - Juniper official HCT data binds one exact model and part number to an 800GBASE-FR4-500 application mode.
+      - The same semantic object records a supported platform and software-introduction maturity event.
+    does_not_support:
+      - The physical module manufacturer, ODM, optical-engine supplier or named customer supply relationship.
+      - Mux or demux implementation, photonic platform, TEC, module-specific CMIS AppSel dump or actual field deployment.
+      - That every sold hardware revision advertises both FR4 and FR4-500 until a physical CMIS dump is captured.
+    supply_claim: not_supported
+    unknowns: [physical_manufacturer, hardware_revision, internal_BOM, qualification_sample, shipment, named_deployment]
+
+  - projection_id: CRP-COHERENT-ECOC2024-800G-DR4
+    company:
+      legal_entity: Coherent_Corp
+      role: optical_transceiver_vendor
+    product:
+      name: ECOC_2024_800G_DR4_OSFP_demonstrator
+      part_number: UNKNOWN
+      identity_status: exact_named_demo
+    route:
+      name: demonstrated_800G_DR4_4x200G_500m
+      binding_scope: 8x100G_electrical_4x200G_optical_four_SMF_pairs_500m
+      standard_binding: vendor_explicit_route_with_physical_fields
+    evidence_unit:
+      closure_source_ids: [CR-S5]
+      event_date: "2024-09-23"
+      maturity: demo
+      event: announced_ECOC_2024_demonstration
+    projection_status: capability_match
+    failure_reasons:
+      - No public part number or orderable exact product identity in the evidence unit.
+      - Demo maturity does not establish product listing, qualification, shipment or deployment.
+    supports:
+      - Coherent directly demonstrated the physical 800G DR4 route with proprietary 200G differential EML technology.
+    does_not_support:
+      - A currently orderable SKU, P802.3dj revision compliance, shipment, named customer or deployment.
+    supply_claim: not_supported
+    unknowns: [part_number, hardware_revision, qualification, product_listing, shipment, deployment]
+
+  - projection_id: CRP-SOURCEPHOTONICS-800G-200G-LANE-FAMILY
+    company:
+      legal_entity: Source_Photonics_Inc
+      role: optical_transceiver_vendor
+    product:
+      name: 800G_200G_per_lane_DR4_FR4_LR4_family
+      part_number: UNKNOWN
+      identity_status: product_family
+    route:
+      name: vendor_labeled_800G_DR4_and_FR4_family
+      binding_scope: single_lambda_200G_OSFP_or_QSFP_DD_family
+      standard_binding: vendor_route_family_without_exact_standard_or_reach_binding
+    evidence_unit:
+      closure_source_ids: [CR-S6]
+      event_date: "2025-04-01"
+      maturity: product_availability_claim
+      event: company_announced_product_availability_and_live_family_demo
+    projection_status: capability_match
+    failure_reasons:
+      - No exact part number in the announcement.
+      - FR4 is not separated into FR4-500 versus 2 km or another reach object.
+    supports:
+      - Source Photonics directly claims an available 800G 4x200G DR4/FR4/LR4 product family.
+    does_not_support:
+      - An exact 800GBASE-FR4-500 product, exact SKU qualification, shipment of this family or named customer deployment.
+    supply_claim: not_supported
+    unknowns: [part_number, exact_reach_by_variant, exact_standard, qualification, shipment, customer]
+
+  - projection_id: CRP-ACCELINK-ECOC2025-800G-DR4-FR4
+    company:
+      legal_entity: Accelink_Technologies_Co_Ltd
+      role: optical_transceiver_vendor
+    product:
+      name: ECOC_2025_800G_OSFP112_OSFP224_DR4_FR4_modules
+      part_number: UNKNOWN
+      identity_status: exact_named_demo
+    route:
+      name: vendor_labeled_800G_DR4_FR4_200G_per_lane
+      binding_scope: OSFP112_and_OSFP224_200G_per_lane_demo
+      standard_binding: vendor_route_family_without_exact_standard_or_reach_binding
+    evidence_unit:
+      closure_source_ids: [CR-S7]
+      event_date: "2025-09-29"
+      maturity: demo
+      event: ECOC_2025_showcase_and_dynamic_demo
+    projection_status: capability_match
+    failure_reasons:
+      - No exact part number or hardware revision is disclosed.
+      - FR4 reach and FR4-500 standard identity are not closed in the evidence unit.
+    supports:
+      - Accelink directly showcased 800G DR4/FR4 modules using 200G-per-lane silicon photonics.
+    does_not_support:
+      - Exact 800GBASE-DR4 or FR4-500 compliance, listing, qualification, shipment or deployment.
+    supply_claim: not_supported
+    unknowns: [part_number, exact_reach, exact_standard, qualification, shipment, customer]
+
+  - projection_id: CRP-LUMENTUM-HL13E1CP00-LN
+    company:
+      legal_entity: Lumentum_Operations_LLC
+      role: component_vendor
+    product:
+      name: 200G_PAM4_CWDM_EML
+      part_number: HL13E1CP00-Ln
+      identity_status: component_part_number
+    route:
+      name: component_application_for_DR_and_FR_links
+      binding_scope: 1271_1291_1311_1331nm_115GBd_200G_per_lane_up_to_2km
+      standard_binding: component_application_not_module_route
+    evidence_unit:
+      closure_source_ids: [CR-S8]
+      event_date: "2026-08-31_retrieved"
+      maturity: component_product_listing
+      event: current_official_component_listing
+    projection_status: capability_match
+    failure_reasons:
+      - The evidence is for a component, not an exact 800G module or PMD implementation.
+      - DR and FR are broad application labels and do not bind 800GBASE-DR4 or FR4-500.
+    supports:
+      - Lumentum has an exact component whose published application envelope can fit 200G-per-lane DR or FR designs.
+    does_not_support:
+      - Use in any exact 800G product, route-served status, customer supply or module shipment.
+    supply_claim: not_supported
+    unknowns: [module_SKU, exact_route, customer, volume, qualification_in_module]
+
+  - projection_id: CRP-INNOLIGHT-800G-2XDR4-FALSE-POSITIVE
+    company:
+      legal_entity: Innolight_Technology
+      role: optical_transceiver_vendor
+    product:
+      name: 800G_2xDR4_OSFP112
+      part_number: UNKNOWN
+      identity_status: named_product_without_part_number
+    route:
+      name: 2x400G_DR4_not_800GBASE_DR4
+      binding_scope: 8x100G_parallel_optical_lanes_dual_MPO12_500m
+      standard_binding: adjacent_route_false_positive
+    evidence_unit:
+      closure_source_ids: [CR-S9]
+      event_date: "2026-08-31_retrieved"
+      maturity: module_product_listing
+      event: current_official_product_page
+    projection_status: related_facet_only
+    rejection_reason: Product name contains DR4 but the physical object is two 400G DR4 instances, not one 800GBASE-DR4 four-by-200G PMD.
+    supports:
+      - Innolight lists an 800G aggregate 2x400G DR4 product.
+    does_not_support:
+      - Service of the P802.3dj 800GBASE-DR4 route or any FR4-500 route.
+    supply_claim: not_supported
+    unknowns: [part_number, qualification, shipment, named_customer]
+
+cross_projection_adjudication:
+  route_served_candidates: [CRP-EOPTOLINK-EOLO138HG-E-5H-XDX, CRP-JUNIPER-ORHS-2X800G-FR4-P]
+  capability_matches: [CRP-COHERENT-ECOC2024-800G-DR4, CRP-SOURCEPHOTONICS-800G-200G-LANE-FAMILY, CRP-ACCELINK-ECOC2025-800G-DR4-FR4, CRP-LUMENTUM-HL13E1CP00-LN]
+  related_facets_only: [CRP-INNOLIGHT-800G-2XDR4-FALSE-POSITIVE]
+  forbidden_inferences:
+    - route_served_candidate_means_named_customer_supply
+    - vendor_route_label_means_explicit_P802_3dj_revision_compliance
+    - demo_or_product_availability_means_qualification_or_deployment
+    - component_application_means_exact_module_adoption
+    - 2x400G_DR4_means_800GBASE_DR4

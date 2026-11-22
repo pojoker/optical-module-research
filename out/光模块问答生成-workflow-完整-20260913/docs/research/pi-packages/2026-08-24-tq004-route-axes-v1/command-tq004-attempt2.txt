@@ -1,0 +1,1 @@
+pi --provider opencode-go --model deepseek-v4-flash --thinking high --no-tools --no-context-files --no-session --print @contract-tq004.md @contract-tq004-attempt2.md @sources-tq004.md @source-discovery.md @adjudication-tq004-attempt1.md @../2026-08-23-expansion-v1/post-review-effective-text.md '严格执行 TQ004 attempt-2 收口合同。只输出中文 Markdown；优先纠正术语层级和复合标签。'

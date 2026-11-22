@@ -1,0 +1,132 @@
+meta:
+  mode: draft_only
+  purpose: deterministic_keyword_proposals_not_company_facts
+  canonical_write_performed: false
+
+facet_rules:
+  C1:
+    laser_type:
+      EML: ['(?i)EMLs?']
+      DFB: ['(?i)(?<![A-Za-z])DFB(?![A-Za-z])']
+      CW: ['(?i)CW(?:\s*[- ]?DFB|\s*laser|\s*光源|\s*激光|(?=\W|$))']
+      VCSEL: ['(?i)(?<![A-Za-z])VCSEL(?:s)?(?![A-Za-z])']
+      FP: ['(?i)(?<![A-Za-z])FP(?![A-Za-z])']
+      DML: ['(?i)(?<![A-Za-z])DML(?:s)?(?![A-Za-z])']
+    wavelength:
+      1310_nm: ['(?i)1310\s*nm']
+  C3:
+    detector_type:
+      generic_detector: ['探测器', '(?i)photodetector']
+      photodiode: ['(?i)photodiode']
+      PD: ['(?i)(?<![A-Za-z])PD(?![A-Za-z])']
+      APD: ['(?i)(?<![A-Za-z])APD(?![A-Za-z])']
+  C4:
+    platform:
+      silicon_photonics: ['硅光', '(?i)silicon\s+photonics?', '(?i)(?<![A-Za-z])SiPh(?![A-Za-z])']
+      SiN: ['(?i)(?<![A-Za-z])SiN(?![A-Za-z])']
+      SOI: ['(?i)(?<![A-Za-z])SOI(?![A-Za-z])']
+    modulator_type:
+      MZM: ['(?i)(?<![A-Za-z])MZM(?![A-Za-z])']
+  C5:
+    component_type:
+      DSP: ['(?i)DSPs?']
+      Driver: ['(?i)(?<![A-Za-z])drivers?(?![A-Za-z])', '驱动']
+      TIA: ['(?i)(?<![A-Za-z])TIAs?(?![A-Za-z])', '跨阻放大']
+      MCU: ['(?i)(?<![A-Za-z])MCUs?(?![A-Za-z])']
+      CDR: ['(?i)(?<![A-Za-z])CDR(?![A-Za-z])']
+      PHY: ['(?i)(?<![A-Za-z])PHYs?(?![A-Za-z])']
+      IC_generic: ['(?i)(?<![A-Za-z])ICs?(?![A-Za-z])', '电芯片', '控制芯片']
+    electrical_function:
+      retiming: ['重定时', '(?i)retim']
+      control_monitor_protocol: ['控制、监控、协议处理', '偏置']
+    process_node_raw:
+      3_nm: ['(?i)3\s*nm']
+    raw_architecture_label:
+      LRO: ['(?i)LRO']
+  MOD1:
+    aggregate_rate:
+      400G: ['(?i)(?<![0-9])400G(?![0-9A-Za-z])']
+      800G: ['(?i)(?<![0-9])800G(?![0-9A-Za-z])']
+      1.6T: ['(?i)(?<![0-9])1\.6T(?![0-9A-Za-z])']
+    electrical_architecture:
+      LPO: ['(?i)LPO']
+      LRO: ['(?i)LRO']
+    photonics_platform:
+      silicon_photonics: ['硅光', '(?i)(?<![A-Za-z])SiPh(?![A-Za-z])']
+      EML_raw: ['(?i)EMLs?']
+    form_factor:
+      OSFP: ['(?i)(?<![A-Za-z])OSFP(?![A-Za-z])']
+      QSFP_DD800: ['(?i)QSFP[- ]?DD800']
+
+role_rules:
+  component_design: ['研发', '开发', '设计', '自研', '(?i)\bdesign\b', '(?i)\bdevelop']
+  component_manufacture: ['生产', '制造', '量产', '批量', '(?i)\bmanufactur', '(?i)\bfabricat']
+  product_offer: ['销售', '供货', '交付', '出货', '提供', '(?i)\bsupply', '(?i)\bship', '(?i)\bprovide']
+  process_enable: ['工艺平台', '工艺开发', '产线', '(?i)\bfoundry\s+(?:service|platform)', '代工服务']
+  module_integrate:
+    - '(?:光模块|光收发模块).{0,50}(?:研发|开发|生产|制造|量产)'
+    - '(?:研发|开发|生产|制造|量产).{0,50}(?:光模块|光收发模块)'
+    - '(?i)(?:transceivers?|optical modules?).{0,50}(?:design|develop|manufactur)'
+    - '(?i)(?:design|develop|manufactur).{0,50}(?:transceivers?|optical modules?)'
+
+role_negative_patterns:
+  product_offer:
+    - '暂未.{0,20}销售订单'
+    - '未形成.{0,20}销售订单'
+
+point_overrides:
+  P039:
+    subject_scope: direct_named_subsidiary
+    attachment_eligible: true
+    reason: quote directly names the row company 武汉钧恒 as the subsidiary carrying the module business
+  P130:
+    subject_scope: controlled_subsidiary_or_acquired_business
+    attachment_eligible: true
+    reason: quote attributes the capability to acquired Source Photonics; keep group-level attachment under human review and do not infer direct parent manufacturing
+  P193:
+    subject_scope: affiliate_only
+    attachment_eligible: false
+    reason: quote concerns the investee 四川光为 rather than the row company 通宇通讯; no stable affiliate entity is attached in this pilot
+  P195:
+    suppress_roles: [product_offer]
+    reason: quote explicitly says no actual sales orders have formed
+  P133:
+    subject_scope: group_claim_via_acquisition
+    attachment_eligible: true
+    reason: quote is a parent-company group claim explicitly framed as capability obtained through the Source Photonics acquisition
+
+requirement_match_rules:
+  - requirement_id: PCR-D02-C5-001
+    cell: C5
+    exact_all: ['raw_architecture_label.LRO', 'electrical_function.retiming']
+    related_any: ['component_type.DSP', 'electrical_function.retiming']
+    limitation: related DSP/retiming evidence does not establish the Tx-retimed/Rx-linear split
+  - requirement_id: PCR-D03-C5-001
+    cell: C5
+    exact_all: ['component_type.DSP', 'process_node_raw.3_nm']
+    related_any: ['component_type.DSP']
+    limitation: generic DSP evidence does not establish 3 nm or D03 architecture
+  - requirement_id: PCR-D04-C4-001
+    cell: C4
+    exact_all: ['platform.silicon_photonics', 'modulator_type.MZM']
+    related_any: ['platform.silicon_photonics']
+    limitation: generic SiPh evidence does not establish MZM PIC
+  - requirement_id: PCR-D05-C1-001
+    cell: C1
+    exact_all: ['laser_type.EML', 'wavelength.1310_nm']
+    related_any: ['laser_type.EML']
+    limitation: EML without 1310 nm is partial; no DFB+EAM or InP expansion
+  - requirement_id: PCR-D05-C3-001
+    cell: C3
+    generic_any: ['detector_type.generic_detector', 'detector_type.photodiode', 'detector_type.PD', 'detector_type.APD']
+    limitation: route requirement is generic photodetector; subtype evidence must not be transferred to RPS-D05
+  - requirement_id: RPA-D04-FORM-001
+    cell: MOD1
+    attribute_exact_any: ['form_factor.QSFP_DD800']
+    limitation: matches only the product attribute, not the full route profile
+  - requirement_id: RPA-D05-FORM-001
+    cell: MOD1
+    attribute_exact_any: ['form_factor.OSFP']
+    limitation: matches only the product attribute, not the full route profile
+    conflict_notes:
+      aggregate_rate.1.6T: same point states 1.6T while RPS-D05 is an 800 Gbps demo endpoint

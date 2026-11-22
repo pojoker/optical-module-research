@@ -1,0 +1,90 @@
+schema_version: web_semantic_snapshot_manifest_v1
+status: draft_only
+contract: docs/research/web-semantic-snapshot-contract-v1.yaml
+canonical_write_allowed: false
+formal_evidence_created: false
+captured_at: '2026-08-31T02:27:36+08:00'
+snapshots:
+- snapshot_id: WSS-JUNIPER-ORHS-2X800G-FR4-P
+  source_url: https://apps.juniper.net/hct/model/ORHS-2X800G-FR4-P
+  publisher: Juniper Networks
+  retrieval_runs:
+  - run: 1
+    retrieved_at: '2026-08-31T02:27:28+08:00'
+    raw_sha256: c2eb73c68f814f02825a8f67d3af741a44649fda99bf0fa1785e423f2ae245ac
+    semantic_sha256: a92b6cad41f812b5028d2a777c388b85ade4335709094b01f5897cc0f2734aed
+    byte_count: 48198
+    http_status: 200
+  - run: 2
+    retrieved_at: '2026-08-31T02:27:29+08:00'
+    raw_sha256: c2eb73c68f814f02825a8f67d3af741a44649fda99bf0fa1785e423f2ae245ac
+    semantic_sha256: a92b6cad41f812b5028d2a777c388b85ade4335709094b01f5897cc0f2734aed
+    byte_count: 48198
+    http_status: 200
+  - run: 3
+    retrieved_at: '2026-08-31T02:27:30+08:00'
+    raw_sha256: 342cb3e626093c5c9060b92d411df4fca3596404f6526671616db1cc62d35668
+    semantic_sha256: a92b6cad41f812b5028d2a777c388b85ade4335709094b01f5897cc0f2734aed
+    byte_count: 48107
+    http_status: 200
+  raw_response:
+    path: corpus/web/2026-08-31/semantic/juniper__ORHS-2X800G-FR4-P.html
+    sha256: c2eb73c68f814f02825a8f67d3af741a44649fda99bf0fa1785e423f2ae245ac
+    byte_count: 48198
+    media_type: text/html
+    http_status: 200
+  normalized_object:
+    path: corpus/web/2026-08-31/semantic/juniper__ORHS-2X800G-FR4-P.normalized.yaml
+    sha256: a92b6cad41f812b5028d2a777c388b85ade4335709094b01f5897cc0f2734aed
+    schema: juniper_hct_semantic_object_v1
+    normalizer: capture_web_semantic_snapshots.normalize_juniper
+    normalizer_version: '1'
+  hash_behavior: raw_volatile_semantic_stable
+  supports:
+  - exact branded-optic identity and public HCT fields captured by the normalized
+    object
+  - field-level comparison across later snapshots using the same normalizer version
+  does_not_support:
+  - physical manufacturer, ODM, internal mux, TEC, shipment, or named deployment
+  - semantic equivalence after changing the normalizer version without migration adjudication
+- snapshot_id: WSS-EOPTOLINK-EOLO-138HG-E-5H-XDX
+  source_url: https://www.eoptolink.com/product-solutions/800g/800g-osfp-200g-per-lane
+  publisher: Eoptolink Technology Inc., Ltd.
+  retrieval_runs:
+  - run: 1
+    retrieved_at: '2026-08-31T02:27:32+08:00'
+    raw_sha256: 86aeae41eb2520329f102a9de9994560f582b706585356bf1fd788e1625143c3
+    semantic_sha256: 98f5144069b4ce9c7b8c477b8b190e54a1e84112b3070624f9b9c52f6c41e23c
+    byte_count: 60737
+    http_status: 200
+  - run: 2
+    retrieved_at: '2026-08-31T02:27:34+08:00'
+    raw_sha256: 0851a8cca64e2fa5045dd0ae66aa83c871cf94e4a0d35264e04066abd5d4f60c
+    semantic_sha256: 98f5144069b4ce9c7b8c477b8b190e54a1e84112b3070624f9b9c52f6c41e23c
+    byte_count: 60737
+    http_status: 200
+  - run: 3
+    retrieved_at: '2026-08-31T02:27:36+08:00'
+    raw_sha256: 0d1613c9a6b2755911c3e4014117eec0a1de98b3ea15ae97df7243463372143d
+    semantic_sha256: 98f5144069b4ce9c7b8c477b8b190e54a1e84112b3070624f9b9c52f6c41e23c
+    byte_count: 60737
+    http_status: 200
+  raw_response:
+    path: corpus/web/2026-08-31/semantic/eoptolink__EOLO-138HG-E-5H-XDX.html
+    sha256: 86aeae41eb2520329f102a9de9994560f582b706585356bf1fd788e1625143c3
+    byte_count: 60737
+    media_type: text/html
+    http_status: 200
+  normalized_object:
+    path: corpus/web/2026-08-31/semantic/eoptolink__EOLO-138HG-E-5H-XDX.normalized.yaml
+    sha256: 98f5144069b4ce9c7b8c477b8b190e54a1e84112b3070624f9b9c52f6c41e23c
+    schema: eoptolink_product_row_semantic_object_v1
+    normalizer: capture_web_semantic_snapshots.normalize_eoptolink
+    normalizer_version: '1'
+  hash_behavior: raw_volatile_semantic_stable
+  supports:
+  - the exact product row fields for EOLO-138HG-E-5H-XDX
+  - field-level comparison across later snapshots using the same normalizer version
+  does_not_support:
+  - P802.3dj revision, hardware revision, qualification, shipment, customer, or deployment
+  - identity with a separate Eoptolink LPO demonstration

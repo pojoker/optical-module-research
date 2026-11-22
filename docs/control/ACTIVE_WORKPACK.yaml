@@ -1,157 +1,40 @@
-# ACTIVE_WORKPACK — 当前唯一工作包（人工控制，无自动状态机）
-
 workpack:
-  id: REMEDIATE-DQ-001
-  title: 四路关灯工场数据语义修复与产品方向复核
-  status: in_progress
-  approved_at: 2026-09-04
-  owner: 用户
-  authorization: 用户明确要求基于三方审计制定外包方案，由 CodeBuddy/OpenCode/Pi/AGY 开发，Codex 集成审核，再由 Kimi K3 与 Cursor Fable 5.1 复核
-
+  id: QA-PROVENANCE-SHARE-20260913
+  title: 打包14个主问题来源说明并发送飞书产业案头
+  status: delivered
+  authorization: 用户明确要求“打包一下 这个回答，发送到 飞书的产业案头”。
 objective:
-  - 修复审计已确认的读者侧语义误导和派生层合同错误，不修改 canonical 数据。
-  - 通过四个隔离 worktree 并行实现四个互不重叠的低风险切片。
-  - 集成后由 Codex 审核代码、测试与产品语义，并形成当前产品方向报告。
-  - 由 Kimi K3 与 Cursor Fable 5.1 对集成结果和方向报告独立复核。
-
-baseline:
-  repository: pojoker/optical-module-research
-  branch: main
-  commit: 7ff3b25cfd0ff3b137ec55471c7ad33dd5060510
-  audit_as_of: 2026-09-04
-
-reader_visible_deliverables:
-  - 能力明细不再把过程型判定串冒充证据等级，且不把粗粒度 cell overlap 表述成产品/路线能力
-  - 海外输出显式区分 slot/source/claim/reviewed/event 覆盖及 asserted/corroborated
-  - 出货量、锚点和关系边的页面展示明确不可比范围与证据边界
-  - 九页前端的审计与状态区说明当前可回答、不可回答和证据限制
-  - docs/plans/2026-09-04-lights-out-remediation-outsourcing-plan.md
-  - docs/reviews/2026-09-04-post-remediation-codex-review.md
-  - docs/reviews/2026-09-04-product-direction-after-remediation.md
-  - docs/reviews/2026-09-04-kimi-k3-product-direction-review.md
-  - docs/reviews/2026-09-04-cursor-fable-5-1-product-direction-review.md
-
+- 将本轮已给出的三段对话40轮提问到14个主问题的解释整理成可独立阅读的附件
+- 保留对应表、Q1来源区别、主题归属不等于逐子问覆盖的边界，以及可核对的原始提问索引
+- 使用现有飞书机器人发送到名称核对为产业案头的群，并核验发送结果
 allowed_write_paths:
-  - docs/control/ACTIVE_WORKPACK.yaml
-  - docs/plans/2026-09-04-lights-out-remediation-outsourcing-plan.md
-  - build_detailed_capability_report.py
-  - tests/test_capability_report_semantics.py
-  - calls/renderer.py
-  - calls/README.md
-  - calls/tests/test_reader_semantics.py
-  - render.py
-  - tests/test_render_data_quality_boundaries.py
-  - site/optical-module/sections/audit.html
-  - site/optical-module/sections/status.html
-  - tests/site/test_optical_module_reader.py
-  - calls/out/**
-  - out/光模块知识体系/**
-  - docs/reviews/2026-09-04-post-remediation-codex-review.md
-  - docs/reviews/2026-09-04-product-direction-after-remediation.md
-  - docs/reviews/2026-09-04-kimi-k3-product-direction-review.md
-  - docs/reviews/2026-09-04-cursor-fable-5-1-product-direction-review.md
-
-worker_write_scopes:
-  codebuddy_hy4:
-    - build_detailed_capability_report.py
-    - tests/test_capability_report_semantics.py
-  opencode_omen_alpha:
-    - calls/renderer.py
-    - calls/README.md
-    - calls/tests/test_reader_semantics.py
-  pi_glm_5_3_flash:
-    - render.py
-    - tests/test_render_data_quality_boundaries.py
-  agy_gemini_3_8_flash:
-    - site/optical-module/sections/audit.html
-    - site/optical-module/sections/status.html
-    - tests/site/test_optical_module_reader.py
-
+- docs/control/ACTIVE_WORKPACK.yaml
+- out/光模块14问来源说明-20260913/**
 read_scope:
   allowed:
-    - AGENTS.md
-    - docs/control/PROJECT_CHARTER.md
-    - docs/control/ACTIVE_WORKPACK.yaml
-    - docs/reviews/2026-09-04-data-quality-ablation-independent-review-brief.md
-    - docs/reviews/2026-09-04-kimi-data-quality-semantic-audit.md
-    - docs/reviews/2026-09-04-cursor-data-quality-contract-ablation-audit.md
-    - docs/plans/2026-09-04-lights-out-remediation-outsourcing-plan.md
-    - README.md
-    - 每个 worker 写入路径及其直接依赖、fixtures 和测试
-    - canonical CSV/YAML 只读输入
-    - site/optical-module/**
-    - tools/site/**
-    - calls/out/**
-    - out/光模块知识体系/**
-    - 本工作包明确创建的四个 worktree
-  forbidden:
-    - archive/**
-    - closure-pilot 与状态机材料
-    - 旧 worktree 和无关分支
-    - 完整 agent 轨迹和旧会话全量日志
-    - 并行开发者的终端记录和未完成输出
-
+  - docs/source-conversations/README.md及三段原文Markdown
+  - site/optical-qa/index.html及本轮回答
+  - README.md、章程、工作包及本次差异
+  - 飞书技能与现有CLI身份状态、目标群查询、本次发送结果
+  - 原始语料已发布链接的精确Git远端及对应文件核验
+non_goals:
+- 不修改网页正文、原始对话或canonical账本
+- 不补充领域研究、不将索引对应视为全部子问题已回答
+- 不推送代码、不发布网站、不发送到其他群
+acceptance_criteria:
+- 附件保留14题对应关系和40轮提问的完整索引
+- Q1明确为基础导入，无独立同名原始用户提问
+- 文档能脱离本地绝对路径阅读，无脚本或外部资源依赖
+- 飞书API返回目标群消息ID，随后读取确认附件存在
 canonical_policy:
   writable: false
-  protected:
-    - knowledge.yaml
-    - points.csv
-    - edges.csv
-    - triage.csv
-    - route_bom.csv
-    - tree.yaml
-    - shipments.csv
-    - macro_evidence.csv
-    - company_segment_revenue.csv
-    - capability_details.csv
-    - calls/*.csv
-
-worker_models:
-  codebuddy: hy4-preview
-  opencode: omen-alpha（启动前以本机模型列表确认精确 ID，不得静默替代）
-  pi: glm-5.3-flash（启动前确认 provider/model）
-  agy: gemini-3.8-flash（启动前确认精确 ID）
-  kimi_reviewer: kimi-k3（启动前确认精确 alias）
-  cursor_reviewer: fable-5.1（启动前确认精确 ID）
-
-execution_order:
-  - 固定基线并建立外包方案
-  - 建立四个隔离 worktree 和 cmux 可视窗格
-  - 四路并行开发并各自提交
-  - Codex 逐分支代码审核、运行测试并选择性集成
-  - 生成 reader outputs 并执行全仓机器门
-  - Codex 输出产品方向与理解报告
-  - Kimi K3 与 Cursor Fable 5.1 独立复核报告
-  - 汇总分歧与 UNKNOWN，等待用户决定是否推送
-
-non_goals:
-  - 不修改任何 canonical 数据
-  - 不拆分 C5/M1/MOD1 或新增关系类型
-  - 不合并海外 sources/claims 与 event 链 schema
-  - 不删除 canonical/legacy 表或执行真正消融
-  - 不新增状态机、receipt、manifest、snapshot lineage 或自动 close/reopen
-  - 不自动提交到远端、合并 PR 或推送 main
-  - 不把机器门通过表述为领域结论完成
-
-acceptance_criteria:
-  - 四个开发分支从同一基线建立且写入范围互不重叠。
-  - 每个切片有针对性测试，并明确 reader-visible 行为变化。
-  - Codex 审核未发现越级推导、canonical 写入或无依据 schema 扩张。
-  - 集成后 scan/render/participation/calls 机器门和站点测试通过。
-  - 产品方向报告区分已修复、仍属数据问题、需架构裁决和 UNKNOWN。
-  - Kimi 与 Cursor 复核完成前互不读取对方报告。
-
-architecture_budget:
-  new_relation_types: []
-  new_state_machines: []
-  new_canonical_schemas: []
-  new_engines: []
-
-stop_and_escalate:
-  - 任一指定模型在本地不可用，且只能通过替换模型继续
-  - 任一 worker 需要修改其写入范围之外的文件
-  - 任一 worker 修改 canonical 或依赖禁读材料
-  - 修复需要新增 schema、关系类型或状态机
-  - 并行分支无法在不改变领域语义的情况下集成
-  - 机器门失败且修复会扩大工作包
-  - 复核需要登录、验证码、付费来源或绕过访问控制
+validation:
+- 生成独立HTML和Markdown，包含14题对应表、40轮原始提问及4条已核对来源链接。
+- 40轮页面索引与源文件用户消息忽略空白后逐条一致；HTML有55个唯一锚点，内部链接全部有效，无脚本或外部资源依赖。
+- 三份原文及当前问答页与GitHub提交7a8053a3dce96b40d0a5998eb35702931f787637对应blob一致。
+- 以现有机器人codex yiji发送富文本说明并附HTML至产业案头，目标群oc_5d884e05d5da81aca3f809bb923fab6e。
+- 发送API返回成功；随后mget确认消息未删除、群ID一致、正文及HTML附件存在。
+- 未修改网页、原始对话或canonical；未推送或发布。
+delivery:
+  message_id: om_x100b656bbb3ec4a0b04fd350786d7dc
+  message_url: https://applink.feishu.cn/client/chat/open?openChatId=oc_5d884e05d5da81aca3f809bb923fab6e&position=145

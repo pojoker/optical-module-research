@@ -1,0 +1,22 @@
+<section class="section" id="demand" data-certainty="mechanism">
+  <div class="statusline"><span class="certainty stable">稳定因果骨架</span><span class="certainty mechanism">规模与强弱取决于具体系统</span></div>
+  <div class="kicker">第 05 章 · 需求从哪里开始</div><h2>为什么 800G 之后还要 1.6T、3.2T？</h2>
+  <p class="intro">不是因为“800G 突然不能用”，而是交换系统需要搬运的总数据量继续增加，同时机箱空间、交换芯片端口数、连接器和散热能力不能无限扩张。提高单端口速率，可以让同样数量的端口承载更大的总交换容量；由此产生的代价，会沿着电通道、光通道、功耗、封装和测试逐层向下传导。</p>
+  <div class="thesis"><strong>先把三个量分开：系统总交换容量、端口速率、每 lane 速率。</strong><p>它们不是同一件事。交换芯片总容量提高，不必然规定每个端口都采用同一种速率；端口从 800G 提高到 1.6T，也不自动规定内部采用几条电 lane、几条光 lane 或哪一种光子平台。</p></div>
+
+  <div class="demand-ladder" aria-label="从AI集群需求到光模块提速的因果链">
+    <article><span>01</span><div><b>更多计算节点参与同一任务</b><p>训练、推理、参数同步或专家路由会让节点之间产生大量东西向通信；具体通信量仍取决于模型和网络拓扑。</p></div></article>
+    <article><span>02</span><div><b>网络需要更高的聚合吞吐</b><p>交换结构要在可接受的拥塞和完成时间内搬完数据，因此交换芯片容量、链路数量或链路速度至少有一项需要提高。</p></div></article>
+    <article><span>03</span><div><b>只增加端口数量会碰到物理边界</b><p>更多端口会占用更多面板空间、SerDes、封装引脚、连接器、光纤和交换层级，并增加布线与运维复杂度。</p></div></article>
+    <article><span>04</span><div><b>于是提高每个端口的承载能力</b><p>800G → 1.6T → 3.2T 是提高端口聚合速率的路径之一，不代表旧速率立即退出，也不代表所有网络位置同步升级。</p></div></article>
+    <article><span>05</span><div><b>压力继续落到每一条 lane 和整机热设计</b><p>端口提速最终必须由更多 lane、更快 lane，或二者组合完成；困难由此传给芯片、封装、PCB、连接器、光器件和测试。</p></div></article>
+  </div>
+
+  <div class="rate-grid">
+    <article class="rate-card"><div class="rate">800G</div><h3>建立现阶段的比较基准</h3><p>主机侧常见 8×约100G 电 lane；光侧可见 8×100G、4×200G 等不同组织。</p><ul><li>电 lane 与光 lane 必须分开记录</li><li>同为 800G，DR8、DR4、FR4 的物理结构不同</li></ul></article>
+    <article class="rate-card"><div class="rate">1.6T</div><h3>200G/lane 成为关键压力源</h3><p>8×约200G 是重要组织方向；也可以用“更多、较慢 lane”理解另一端的设计取舍。</p><ul><li>单 lane 更快，信号完整性和器件带宽更难</li><li>lane 更多，封装、连接和光纤密度更难</li></ul></article>
+    <article class="rate-card"><div class="rate">3.2T</div><h3>绝对功耗与密度问题进一步集中</h3><p>16×约200G 是可观察候选；更高单 lane 速率属于继续演进方向，尚不能写成唯一实现。</p><ul><li>更关心每模块、每比特与整机三个口径</li><li>前面板、NPO、CPO 的相对价值可能重新排序</li></ul></article>
+  </div>
+
+  <div class="reader-rule"><b>这一节只回答“为什么需要提高端口承载能力”。</b>下一节才回答速率怎样拆到 lane；再下一节解释为什么 lane 变化会放大电、光、热、封装和测试约束。</div>
+</section>

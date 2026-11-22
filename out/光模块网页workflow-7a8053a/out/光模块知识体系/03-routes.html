@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="先给名词归位，再组合链路、电职责、光子平台、放置与外形，并展示增减关系。">
+  <title>不同技术选项怎样组合成一条路线｜光模块知识体系</title>
+  <link rel="stylesheet" href="assets/content.css?v=98f63f49a89c">
+  <link rel="stylesheet" href="assets/site-shell.css?v=cc86a9dc06c3">
+</head>
+<body data-page="routes">
+  <header class="site-header">
+    <a class="site-brand" href="index.html"><span class="brand-mark">OM</span><span><b>光模块知识体系</b><small>模块化重构版 · 2026-08-31</small></span></a>
+    <nav class="global-nav" aria-label="主题模块"><a class="" href="index.html">总览</a><a class="" href="01-foundation.html">基础结构</a><a class="" href="02-demand.html">提速需求</a><a class="active" href="03-routes.html">技术路线</a><a class="" href="04-cases.html">案例与 UNKNOWN</a><a class="" href="05-companies.html">公司投影</a><a class="" href="06-research.html">研究台账</a><a class="" href="07-decision-dossier.html">决策卷宗</a><a class="" href="08-concept-primer.html">名词入门</a></nav>
+    <div class="canonical-pill">研究草案 · canonical 仍为 0</div>
+  </header>
+
+  <main class="site-frame">
+    <header class="module-hero">
+      <div><span class="module-number">03</span><span class="module-kicker">EML、SiPh、LPO、CPO 分别处在哪一层</span></div>
+      <h1>不同技术选项怎样组合成一条路线</h1>
+      <p>先给名词归位，再组合链路、电职责、光子平台、放置与外形，并展示增减关系。</p>
+    </header>
+
+    <div class="module-layout">
+      <nav class="local-nav" aria-label="本页小节"><span>本页内容</span><a href="#choices">行业里的英文名词，其实在回答不同问题</a><a href="#link-requirements">“传多快、多远”不是一句规格，而是六个必须同时回答的问题</a><a href="#axes">这些常见名词，分别能说明什么？</a><a href="#routes">把多个轴组合后，才得到一条完整路线</a><a href="#why">技术路线不是凭空出现：它们分别响应不同约束</a><a href="#tradeoffs">这条路线可能得到什么，又把责任移到哪里</a><a href="#route-impact">路线选择如何改变组件、接口、制造、设备和测试</a></nav>
+      <div class="module-content"><section class="section" id="choices" data-certainty="stable">
+        <div class="statusline"><span class="certainty stable">稳定分类框架</span><small>先归轴，再谈路线优劣</small></div>
+        <div class="kicker">第 06 章 · 认识技术选项</div><h2>行业里的英文名词，其实在回答不同问题</h2>
+        <p class="intro">读到这里再看技术名词就容易得多：有的描述光纤怎么组织，有的描述模块保留多少信号处理，有的描述用什么材料和器件处理光，还有的描述光学部分放在哪里。它们不是一组选一个的同类选项。</p>
+        <figure class="reference-figure"><a class="figure-link" href="assets/figures/03-route-axis-map.svg" target="_blank" rel="noreferrer" aria-label="打开技术路线六轴地图原图"><img src="assets/figures/03-route-axis-map.svg" alt="光模块技术路线的链路需求、光链组织、电处理、光子实现、物理位置和产品外形六个选择轴"></a><figcaption>参考图 3 · EML、SiPh、LPO、CPO 必须先放回各自选择轴，再组合成路线。点击查看原图。</figcaption></figure>
+        <div class="decision-grid">
+          <article class="decision"><span class="decision-num">1</span><div><h3>链路需求：要传多快、多远</h3><p>先把任务说清楚：一只端口总共搬多少数据，拆成几条电/光 lane，每条多快，要跨越多远，走哪种光纤，错误由谁纠正。</p><div class="terms"><span>400G / 800G / 1.6T</span><span>100m / 500m / 2km</span><span>SMF / MMF</span></div><a class="decision-more" href="#link-requirements">用一个 800G 例子展开这六个问题 →</a></div></article>
+          <article class="decision"><span class="decision-num">2</span><div><h3>光链路组织：并行还是波分</h3><p>决定使用多根并行光纤，还是让多个波长共享光纤；DR8、DR4、FR4 等名称要放回具体标准解释。</p><div class="terms"><span>Parallel</span><span>WDM</span><span>DR8 / DR4 / FR4</span></div></div></article>
+          <article class="decision"><span class="decision-num">3</span><div><h3>电职责：模块处理多少信号恢复</h3><p>决定模块中保留完整重定时、只在部分方向重定时，还是更多依赖 host SerDes。</p><div class="terms"><span>Retimed</span><span>LRO</span><span>LPO / Linear</span></div></div></article>
+          <article class="decision"><span class="decision-num">4</span><div><h3>光子实现：怎样发光、调制与集成</h3><p>这里才出现 DML、EML、SiPh 等词。EML 是具体发射器件；SiPh 是可承载调制、复用、探测等功能的集成平台。</p><div class="terms"><span>DML</span><span>EML</span><span>SiPh</span><span>TFLN 等</span></div></div></article>
+          <article class="decision"><span class="decision-num">5</span><div><h3>光学放置：离交换 ASIC 多远</h3><p>决定光学位于前面板可插拔模块、ASIC 附近，还是与 ASIC 共封装。</p><div class="terms"><span>Pluggable</span><span>NPO</span><span>CPO</span></div></div></article>
+          <article class="decision"><span class="decision-num">6</span><div><h3>产品形态与接口：怎样装、怎样接</h3><p>在前面板可插拔路线中还要选择机械、电、热和光连接形态。</p><div class="terms"><span>OSFP</span><span>QSFP-DD</span><span>MPO</span><span>LC / SN</span></div></div></article>
+        </div>
+        <div class="axis-summary"><div><b>EML vs SiPh</b>出现在光子实现层，但两者粒度并不完全相同</div><div><b>Retimed vs LPO/LRO</b>出现在电职责层</div><div><b>Pluggable vs NPO/CPO</b>出现在物理放置层</div><div><b>DR8 vs FR4</b>出现在链路组织/PMD 层，须绑定速率和标准</div></div>
+        <div class="warn red"><b>因此：</b>“EML、硅光、LPO、CPO 哪个最好”不是一个可直接回答的问题。一个真实产品完全可能同时是 <b>SiPh + LPO + front-panel pluggable + DR8 + OSFP</b>，这些词描述的是它的不同切面。</div>
+      </section>
+<section class="section" id="link-requirements" data-certainty="stable">
+  <div class="statusline"><span class="certainty stable">稳定解释骨架</span><small>示例帮助理解；精确数值仍须绑定完整标准或产品</small></div>
+  <div class="kicker">第一条选择轴展开 · Link requirements</div>
+  <h2>“传多快、多远”不是一句规格，而是六个必须同时回答的问题</h2>
+  <p class="intro">把它想成运输任务会更直观：总速率是每秒要搬多少货，lane 是把货分给几条车道，每 lane 速率是每条车道跑多快，距离是路有多长，光纤类型是走哪种路，BER/FEC 则规定途中允许出现多少错误、由谁负责纠正。六项合在一起，才形成一份可以选方案的链路任务书。</p>
+
+  <div class="link-mission">
+    <div class="mission-label"><span>示例任务</span><b>把 800G 数据送到 500 米外</b></div>
+    <div class="mission-flow" aria-label="800G五百米单模链路任务">
+      <span>交换 ASIC</span><i>→</i><span>光模块 A</span><i>⇢ 500 m 单模光纤 ⇢</i><span>光模块 B</span><i>→</i><span>另一台交换机</span>
+    </div>
+    <p>这句话还不够下单：800G 是端口总速率，不说明模块内部有几条 lane，也不说明这些 lane 靠多根光纤还是多个波长区分，更没有说明错误校正放在哪里。</p>
+  </div>
+
+  <div class="requirement-grid">
+    <article class="requirement-card"><span class="req-num">01</span><div><small>Total rate</small><h3>总速率：一只端口合计搬多少</h3><p><b>800G</b>描述端口汇总能力，不代表“有一颗 800G 激光器”。真实实现会把数据拆到多条电 lane 和光 lane。</p><footer>先问：这是单个 800G 端口，还是两组 400G 业务装在同一个模块里？</footer></div></article>
+    <article class="requirement-card"><span class="req-num">02</span><div><small>Lane count</small><h3>lane 数：把总任务拆成几路</h3><p>lane 是一条并行数据通道。必须分别记录<b>主机侧电 lane</b>和<b>光纤侧光 lane</b>；两边可以通过 gearbox、DSP 或复用结构重新组织，不能默认数量相同。</p><footer>先问：8 条电 lane 进入模块后，光侧仍是 8 条，还是变成 4 条？</footer></div></article>
+    <article class="requirement-card"><span class="req-num">03</span><div><small>Per-lane rate</small><h3>每 lane 速率：每一路承担多少</h3><p>同为 800G，可以理解为 <b>8×约100G</b>，也可以是 <b>4×约200G</b> 等组织。lane 更少会降低接口数量，但每一路更快，电与光器件带宽更难。</p><footer>取舍：更多较慢 lane 增加密度；更少较快 lane 压缩信号余量。</footer></div></article>
+    <article class="requirement-card"><span class="req-num">04</span><div><small>Reach</small><h3>距离：光要在衰减和失真后仍能识别</h3><p>100 m、500 m、2 km 不只是线缆长度不同。距离增加会消耗更多光功率预算，并让色散、反射和连接损耗更值得关注；不能简单理解成“换一颗更强激光器”。</p><footer>先问：标称距离是否包含连接器、配线架和工程余量？</footer></div></article>
+    <article class="requirement-card"><span class="req-num">05</span><div><small>Fiber medium</small><h3>光纤类型：多模还是单模，几根纤芯</h3><p><b>MMF 多模光纤</b>常服务较短距离；<b>SMF 单模光纤</b>适合把高速信号送得更远。还要继续记录是一条收、一条发，还是多根并行收发光纤。</p><footer>光纤类型会联动波长、耦合方式、连接器和布线成本。</footer></div></article>
+    <article class="requirement-card"><span class="req-num">06</span><div><small>BER &amp; FEC</small><h3>误码与 FEC：允许错多少，在哪里纠错</h3><p>高速链路允许出现少量原始错误。<b>BER</b>衡量错误比例；<b>FEC</b>加入冗余信息来纠错。必须分清纠错前、纠错后指标，以及 FEC 位于 Host、模块还是协议规定的其他位置。</p><footer>更强纠错也有代价：冗余、处理时延、功耗和端到端验证责任。</footer></div></article>
+  </div>
+
+  <h3 class="subhead">同一个“800G、500 米、单模”任务，仍可能长成不同物理方案</h3>
+  <div class="same-demand" aria-label="相同链路需求的三种组织示意">
+    <div class="same-demand-input"><small>共同任务</small><b>800G · 500 m · SMF</b><span>再叠加完整 BER/FEC、温度和损耗边界</span></div>
+    <div class="demand-branch"><span class="branch-code">A</span><div><b>8 条约100G光 lane · 空间并行</b><p>可形成 DR8 类组织：单 lane 压力相对较低，但收发纤芯、阵列耦合和极性管理更多。</p></div></div>
+    <div class="demand-branch"><span class="branch-code">B</span><div><b>4 条约200G光 lane · 空间并行</b><p>可形成 DR4 类组织：光 lane 和纤芯减少，但每 lane 的调制、探测与电互连带宽提高。</p></div></div>
+    <div class="demand-branch"><span class="branch-code">C</span><div><b>4 条约200G光 lane · 波长复用</b><p>可形成 FR4 类组织：多路波长共用一对光纤，同时引入合分波、波长控制与相应测试。</p></div></div>
+  </div>
+  <div class="warn"><b>DR8、DR4、FR4 不能脱离完整名称使用。</b>这里是在 800G 示例中解释组织差异；正式判断还要写明标准组织、完整规范名、版本/成熟度、reach 与 FEC。裸写“DR4”并不能唯一确定一个产品。</div>
+
+  <div class="requirement-boundary">
+    <article><small>链路需求可以先筛掉什么</small><h3>不满足速率、距离、光纤和误码边界的方案</h3><p>例如目标只有双工两芯布线，就不能直接采用依赖多根并行光纤的实现而不改变基础设施。</p></article>
+    <i>→</i>
+    <article><small>链路需求还不能决定什么</small><h3>EML 还是 SiPh、Retimed 还是 LPO、Pluggable 还是 CPO</h3><p>这些属于后续不同选择轴。它们要在链路任务确定后，再结合功耗、Host 能力、封装、制造和维护要求选择。</p></article>
+  </div>
+  <div class="reader-rule"><b>正确阅读顺序：</b>先得到“速率 × lane × 距离 × 光纤 × BER/FEC”的链路画像，再选择 Parallel/WDM；之后才讨论电职责、EML/SiPh、Pluggable/NPO/CPO 和产品外形。</div>
+</section>
+<section class="section" id="axes" data-certainty="stable">
+        <div class="statusline"><span class="certainty stable">稳定术语边界</span><small>术语不能跨维度互相替代</small></div>
+        <div class="kicker">第 06 章补充 · 名词放回正确位置</div><h2>这些常见名词，分别能说明什么？</h2>
+        <p class="intro">上一节建立了直观位置，这里进一步给每个术语划定边界：它能说明什么，又不能据此自动推出什么。</p>
+        <div class="tablewrap"><table><thead><tr><th>术语</th><th>所在轴</th><th>它真正回答</th><th>不能自动推出</th></tr></thead><tbody>
+          <tr><td class="term">DR8 / FR4</td><td><span class="axis-tag">链路规格层</span></td><td>具体标准或产品上下文中的光通道与光纤组织</td><td class="scope">不能单独推出速率、距离、纠错方式、外形或光子平台</td></tr>
+          <tr><td class="term">重定时方案（Retimed）</td><td><span class="axis-tag">电处理层</span></td><td>模块内恢复时钟，并重新判决和发送高速电信号</td><td class="scope">不固定光子平台、链路规格、外形或放置位置</td></tr>
+          <tr><td class="term">线性可插拔光学（LPO）</td><td><span class="axis-tag">电处理层</span></td><td>一种减少模块内复杂数字处理、更多依靠主机信号能力的可插拔方案</td><td class="scope">不能自动推出硅光、OSFP 外形或统一的功耗优势</td></tr>
+          <tr><td class="term">线性接收光学（LRO）</td><td><span class="axis-tag">电处理层</span></td><td>发送和接收方向采用不同信号处理责任的方向性架构</td><td class="scope">不能简单等同“半重定时”，也不固定光子平台</td></tr>
+          <tr><td class="term">直接调制激光器（DML）</td><td><span class="axis-tag">光子实现层</span></td><td>通过改变激光器本身的驱动，直接改变输出光</td><td class="scope">不自动推出距离、通道组织、电架构或封装</td></tr>
+          <tr><td class="term">电吸收调制激光器（EML）</td><td><span class="axis-tag">光子实现层</span></td><td>典型器件由 InP 平台上的 DFB 激光器与单片集成 EAM 调制器组成</td><td class="scope">不回答电处理架构、摆放位置、链路规格或市场份额</td></tr>
+          <tr><td class="term">硅光子平台（SiPh）</td><td><span class="axis-tag">光子实现层</span></td><td>在硅平台上集成波导、调制、复用、探测等光子功能</td><td class="scope">不能自动回答光源、调制器、探测器分别如何集成</td></tr>
+          <tr><td class="term">可插拔 / 邻近封装 / 共封装（Pluggable / NPO / CPO）</td><td><span class="axis-tag">物理位置层</span></td><td>光学位于设备前面板、交换芯片附近，还是与交换芯片共同封装</td><td class="scope">不固定电处理方式，也不固定 EML 或硅光</td></tr>
+          <tr><td class="term">OSFP / QSFP-DD</td><td><span class="axis-tag">产品外形层</span></td><td>前面板可插拔产品的机械、散热、供电和电连接形态</td><td class="scope">不自动推出链路规格、光子平台或是否采用 LPO</td></tr>
+        </tbody></table></div>
+        <div class="warn red"><b>最关键纠偏：</b>EML 是“发射器件组合”，SiPh 是“光子集成平台”，粒度不同；LPO 是电职责复合别名，CPO 是放置架构，维度也不同。它们不能直接排成一条互斥清单。</div>
+      </section>
+<section class="section" id="routes" data-certainty="object">
+        <div class="statusline"><span class="certainty object">对象级候选</span><small>三张卡分别绑定产品页或演示，不代表市场排名</small></div>
+        <div class="kicker">Route profiles</div><h2>把多个轴组合后，才得到一条完整路线</h2>
+        <p class="intro">下列三张卡证明“组合方式不同”以及“成熟度不同”。它们是候选画像，不代表三条路线的市场排名。</p>
+        <div class="profiles">
+          <article class="profile"><span class="badge evidence-product">产品页 + 规格书</span><h3>800G 重定时 EML 可插拔模块</h3><p>Coherent FTCE4517E1PxM · 教学参考产品</p><div class="fields"><div class="field"><b>链路</b><span>800G，主机侧 8×106.25G，500m 单模光纤，MPO-16</span></div><div class="field"><b>电处理</b><span>产品标注为 retimed；更细的内部职责未公开</span></div><div class="field"><b>光子</b><span>发送使用 EML，接收使用 PIN；底层平台未公开</span></div><div class="field"><b>放置</b><span>前面板可插拔 · OSFP</span></div></div><div class="foot"><span class="stage">产品存在不等于已证明出货规模或市场主流</span></div></article>
+          <article class="profile"><span class="badge evidence-demo">公司演示</span><h3>1.6T DR8 硅光 OSFP 演示</h3><p>Coherent OFC 2025 演示对象</p><div class="fields"><div class="field"><b>链路</b><span>1.6T，主机侧与光侧均为 8×200G，DR8</span></div><div class="field"><b>电处理</b><span>资料写明使用 3nm DSP；无法据此确定完整电架构</span></div><div class="field"><b>光子</b><span>资料标注硅光平台；内部器件没有完整公开</span></div><div class="field"><b>放置</b><span>前面板可插拔 · OSFP</span></div></div><div class="foot"><span class="stage">演示不等于正式产品、规模出货或客户采用</span></div></article>
+          <article class="profile"><span class="badge evidence-listing">精确产品页面</span><h3>800G DR8 LPO 硅光可插拔模块</h3><p>Hyper Photonix HSO6-800-LP-P8S</p><div class="fields"><div class="field"><b>链路</b><span>800G，DR8，500m 单模光纤，双 MPO-12 APC</span></div><div class="field"><b>电处理</b><span>产品标注 LPO；更细的内部职责没有公开</span></div><div class="field"><b>光子</b><span>产品标注硅光平台；内部器件没有完整公开</span></div><div class="field"><b>放置</b><span>前面板可插拔 · OSFP112</span></div></div><div class="foot"><span class="stage">官网列出产品不等于已证明量产规模、出货或客户采用</span></div></article>
+        </div>
+        <div class="route-focus"><small>老路线迁移为一条深度分支</small><h3>800G DR8 × LPO × SiPh × front-panel pluggable</h3><p>下面不再重复讲所有基础组件，而是沿这条具体路线回答：为什么考虑 LPO、为什么考虑 SiPh、优势与代价是什么、物理和制造环节怎么变化、哪些公司证据已经走到哪一步。</p><div class="focus-formula">链路边界 DR8 → 电职责 LPO → 光子平台 SiPh → 放置 front-panel pluggable → 物理变化 / 公司角色 / 采用阶段</div></div>
+      </section>
+<section class="section" id="why" data-certainty="mechanism">
+        <div class="statusline"><span class="certainty mechanism">机理候选</span><small>解释相对价值变化，不宣称唯一最优路线</small></div>
+        <div class="kicker">Causal bridge · 约束到路线</div><h2>技术路线不是凭空出现：它们分别响应不同约束</h2>
+        <p class="intro">同一个“提速压力”可以有多种解决方法。一条完整 WHY 必须写成：需求和边界 → 工程约束 → 技术选择相对价值提高 → 组件/连接/工序改变 → 得到优势并产生新代价。</p>
+        <div class="tablewrap"><table class="bridge-table"><thead><tr><th>上游问题</th><th>候选响应</th><th>为什么可能有效</th><th>新增代价/前提</th></tr></thead><tbody>
+          <tr><td>电通道余量不足</td><td>Retimed / 更强 DSP</td><td>在模块内恢复和重新发送信号，提高对 host channel 的容忍</td><td class="scope">模块功耗、时延、成本与散热压力</td></tr>
+          <tr><td>模块 DSP 功耗过高</td><td>LPO / LRO</td><td>减少模块内部分数字处理路径</td><td class="scope">要求 capable host、联合均衡、管理和端到端验证</td></tr>
+          <tr><td>多通道集成与尺寸压力</td><td>SiPh / 集成 PIC</td><td>把调制、波导、复用、耦合或探测中的多项功能集成</td><td class="scope">光源集成、耦合、封装、良率和平台成熟度</td></tr>
+          <tr><td>高速电路径需要缩短</td><td>NPO / CPO</td><td>把光引擎靠近交换 ASIC，缩短高损耗电互连</td><td class="scope">可服务性、热耦合、封装复杂度和生态改变</td></tr>
+          <tr><td>可维护与供应链灵活性</td><td>Front-panel pluggable</td><td>模块可独立更换，网络设备与光学升级解耦</td><td class="scope">较长 C2M 电路径和面板功率密度</td></tr>
+        </tbody></table></div>
+        <h3>具体分支：为什么会把 LPO 与 SiPh 组合在一起观察</h3>
+        <div class="branch-grid">
+          <article class="branch"><span class="badge supported">规范与机理支持</span><h3>支路 A：为什么考虑 linear / LPO</h3><p>当 host ASIC 已具备足够的均衡能力，并允许 host-module 联合配置和端到端 BER/FEC 验证时，模块内 DSP/retimer 的相对价值可能下降。</p><div class="formula">模块功耗 / 时延 / 成本目标 + capable host → LPO 进入候选</div></article>
+          <article class="branch"><span class="badge conditional">条件性假设</span><h3>支路 B：为什么考虑 SiPh</h3><p>如果项目优先多通道 PIC 集成、晶圆级测试与筛选，以及已有量产平台经验，具备这些能力的 SiPh 平台相对价值提高。</p><div class="formula">多通道 PIC + wafer test / KGD + 平台成熟度 → SiPh 进入候选池</div></article>
+        </div>
+        <div class="warn"><b>不能连跳：</b>低功耗目标不能直接推出 LPO；LPO 不能直接推出 SiPh；SiPh 也不能推出某家公司已经供货。每一步都需要独立证据。</div>
+      </section>
+<section class="section" id="tradeoffs" data-certainty="mechanism">
+        <div class="statusline"><span class="certainty mechanism">机理与产品观察</span><span class="certainty open">缺受控比较</span></div>
+        <div class="kicker">Trade-offs</div><h2>这条路线可能得到什么，又把责任移到哪里</h2>
+        <p class="intro">优势必须与代价同时出现。下面区分工程机理、组织陈述和当前缺口；没有同条件数据时，不写确定幅度。</p>
+        <div class="tradeoff-grid">
+          <article class="trade"><h3>模块功耗机制</h3><p>去掉模块信号路径 DSP/retimer，减少一条模块内数字处理与耗电路径。</p><span class="badge conditional">工程机理</span><div class="bottom">不等于系统总功耗必然下降，也没有合格幅度。</div></article>
+          <article class="trade"><h3>时延</h3><p>减少模块数字决策与 retiming 路径，被规范组织描述为降低 module-path latency。</p><span class="badge conditional">组织陈述</span><div class="bottom">没有同条件 ns 数据，不推出端到端时延。</div></article>
+          <article class="trade"><h3>成本</h3><p>去 DSP 被描述为 lower-cost target，但模块 BOM 只是系统成本的一部分。</p><span class="badge conditional">设计目标</span><div class="bottom">缺 BOM、ASP、良率和 host 侧成本边界。</div></article>
+          <article class="trade"><h3>Host 责任</h3><p>FEC、均衡、channel-loss 配置和闭环验证承担更多端到端责任。</p><span class="badge supported">规范支持</span><div class="bottom">不是“所有 DSP 功能都转移到 host”。</div></article>
+          <article class="trade"><h3>启动与训练</h3><p>传统电通道 link training 不能直接照搬，driver/TIA AGC 带来新的配置问题。</p><span class="badge supported">规范支持</span><div class="bottom">具体启动优化方法不在当前规范范围内。</div></article>
+          <article class="trade"><h3>测试耦合</h3><p>验证需要覆盖 stressed input、host-to-host BER/FEC 和通道校准等联合场景。</p><span class="badge supported">规范支持</span><div class="bottom">不能据此推出测试时间或设备价值量必然上升。</div></article>
+        </div>
+        <div class="comparison"><div class="product"><strong>LPO SiPh 产品观察</strong><span>Hyper Photonix 800G DR8 listing：≤9 W</span></div><div class="versus">不可归因比较</div><div class="product"><strong>Retimed EML 基线观察</strong><span>Coherent 800G DR8 OSFP：&lt;17 W</span></div></div>
+        <div class="warn red"><b>两个上限不能直接相减：</b>供应商、光子平台、连接器、温度与内部实现没有控制一致，差值不能全部归因于 LPO。</div>
+      </section>
+<section class="section" id="route-impact" data-certainty="mechanism">
+        <div class="statusline"><span class="certainty mechanism">影响链候选</span><small>能力存在不等于目标产品采用</small></div>
+        <div class="kicker">Physical consequences</div><h2>路线选择如何改变组件、接口、制造、设备和测试</h2>
+        <p class="intro">这部分把老路线重新挂回物理知识体系：不是再背一遍 BOM，而是看技术选择带来了哪些增量变化。</p>
+        <div class="delta-legend" aria-label="路线变化图例"><span class="delta-keep">保留</span><span class="delta-remove">移除</span><span class="delta-add">新增</span><span class="delta-shift">责任转移</span><span class="delta-open">对象内未知</span></div>
+        <div class="delta-board" aria-label="三组路线变化对照图">
+          <div class="delta-row"><div class="delta-title">Retimed → LPO</div><div class="delta-side"><strong>模块内重定时</strong><div class="delta-items"><span class="delta-chip delta-keep">Driver / TIA</span><span class="delta-chip delta-remove">高速 DSP / retimer</span><span class="delta-chip delta-keep">光电转换</span></div><span class="delta-note">基线模块在高速数据路径中恢复、判决并重新发送信号。</span></div><div class="delta-arrow">→</div><div class="delta-side"><strong>线性可插拔</strong><div class="delta-items"><span class="delta-chip delta-keep">Driver / TIA</span><span class="delta-chip delta-shift">FEC / 均衡 / 验证更多依赖 Host</span><span class="delta-chip delta-open">系统净功耗</span></div><span class="delta-note">减少模块内数字路径，不等于取消所有均衡、管理、校准或诊断。</span></div></div>
+          <div class="delta-row"><div class="delta-title">Parallel → WDM</div><div class="delta-side"><strong>空间区分四条 lane</strong><div class="delta-items"><span class="delta-chip delta-keep">4 Tx + 4 Rx lane</span><span class="delta-chip delta-remove">光谱合分波</span><span class="delta-chip delta-add">4 Tx + 4 Rx active fibers</span></div><span class="delta-note">复杂度落在纤芯位置、极性、lane mapping 与阵列耦合。</span></div><div class="delta-arrow">→</div><div class="delta-side"><strong>波长区分四条 lane</strong><div class="delta-items"><span class="delta-chip delta-keep">4 Tx + 4 Rx lane</span><span class="delta-chip delta-add">合波 / 分波功能</span><span class="delta-chip delta-keep">1 Tx + 1 Rx fiber</span><span class="delta-chip delta-open">AWG / TFF / 片上 mux / TEC</span></div><span class="delta-note">WDM 没有消灭 lane，而是把空间管理责任转成光谱管理责任。</span></div></div>
+          <div class="delta-row"><div class="delta-title">Pluggable → NPO/CPO</div><div class="delta-side"><strong>前面板独立模块</strong><div class="delta-items"><span class="delta-chip delta-keep">可独立更换</span><span class="delta-chip delta-add">较长 C2M 电路径</span><span class="delta-chip delta-keep">设备与光学升级解耦</span></div><span class="delta-note">维护边界清晰，但面板功率密度与高速电损耗成为压力。</span></div><div class="delta-arrow">→</div><div class="delta-side"><strong>光引擎靠近交换 ASIC</strong><div class="delta-items"><span class="delta-chip delta-remove">长高速电路径</span><span class="delta-chip delta-add">共同封装与热耦合</span><span class="delta-chip delta-open">焊接 / 插座 / FRU</span><span class="delta-chip delta-shift">维护边界重画</span></div><span class="delta-note">NPO/CPO 不自动决定是否 LPO、是否硅光，也不自动决定可现场更换。</span></div></div>
+        </div>
+        <div class="deep-tabs" role="tablist" aria-label="路线物理变化">
+          <button class="deep-tab" role="tab" aria-selected="true" data-deep-tab="component">组件</button><button class="deep-tab" role="tab" aria-selected="false" data-deep-tab="interface">接口</button><button class="deep-tab" role="tab" aria-selected="false" data-deep-tab="process">工序</button><button class="deep-tab" role="tab" aria-selected="false" data-deep-tab="equipment">设备</button><button class="deep-tab" role="tab" aria-selected="false" data-deep-tab="test">测试</button>
+        </div>
+        <div class="deep-panel active" id="deep-panel-component"><h3>组件变化</h3><p>电职责变化有架构证据；目标产品观察到 SiPh 平台，但其内部光源、调制器、探测器与供应商仍未知。</p><div class="bullet-grid"><div class="bullet"><b>已支持</b><span>模块信号路径不使用 DSP/retimer；host 承担更多 FEC/equalization；模块仍有 driver/TIA 与 Tx equalization。</span></div><div class="bullet"><b>仍未知</b><span>内部 laser、modulator、detector、PIC 供应商和集成关系。</span></div></div></div>
+        <div class="deep-panel" id="deep-panel-interface"><h3>接口与管理变化</h3><p>Host 与 module 不只传高速信号，还需要表达通道损耗、均衡和非线性补偿参数。</p><div class="bullet-grid"><div class="bullet"><b>电接口</b><span>LEI-800G-PAM4-8；0–16 dB host-loss class。</span></div><div class="bullet"><b>管理接口</b><span>CTLE/equalization、host-channel-loss、可选 NLC 参数。</span></div><div class="bullet"><b>光接口</b><span>8 lanes、53.125 GBd PAM4、1310 nm、0.5–500 m SMF。</span></div><div class="bullet"><b>产品形态</b><span>OSFP/QSFP-DD/MPO 是本例观察，不是 LPO 必然值。</span></div></div></div>
+        <div class="deep-panel" id="deep-panel-process"><h3>制造工序变化</h3><p>可以观察到 SiPh 平台相关的晶圆级筛选、激光耦合和先进键合方向，但没有目标产线与 retimed/EML 基线的逐工序对照。</p><div class="bullet-grid"><div class="bullet"><b>能力观察</b><span>Intel wafer-scale test / burn-in / KGD；Credo/DustPhotonics L3C；猎奇先进键合研发。</span></div><div class="bullet"><b>不可外推</b><span>不能证明目标模块采用这些流程，也不能说它们取消主动耦合、老化或其他通用步骤。</span></div></div></div>
+        <div class="deep-panel" id="deep-panel-equipment"><h3>生产与测试设备变化</h3><p>设备公司披露可以证明能力存在，不能自动证明进入目标产品产线。</p><div class="bullet-grid"><div class="bullet"><b>设备组成观察</b><span>测试机、耦合模组、探针台、晶圆上下料机，以及 optical/DC/RF probes。</span></div><div class="bullet"><b>关键缺口</b><span>没有 target-vs-baseline 的设备净增删、CAPEX、节拍、良率或单位成本表。</span></div></div></div>
+        <div class="deep-panel" id="deep-panel-test"><h3>测试责任变化</h3><p>这是当前证据相对完整的一层，规范直接定义了 host-module 联合验证对象。</p><div class="bullet-grid"><div class="bullet"><b>发射与接收</b><span>TP1a/TP4、EECQ、reference equalizer、stressed input。</span></div><div class="bullet"><b>系统链路</b><span>高/低损通道校准、crosstalk、host-to-host BER/error statistics、FEC tail margin。</span></div></div></div>
+      </section></div>
+    </div>
+
+    <nav class="prev-next" aria-label="模块翻页"><a href="02-demand.html"><small>← 上一模块</small><b>提速需求</b></a><a href="04-cases.html"><small>下一模块 →</small><b>案例与 UNKNOWN</b></a></nav>
+  </main>
+
+  <footer class="site-footer"><span>光模块知识体系 · 模块化重构版</span><span>展示层重构，不改变知识库状态</span></footer>
+  <script src="assets/site.js?v=5d2cebaa45c6"></script>
+</body>
+</html>

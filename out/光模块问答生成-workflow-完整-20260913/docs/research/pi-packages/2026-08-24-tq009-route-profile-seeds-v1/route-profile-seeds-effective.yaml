@@ -1,0 +1,1030 @@
+meta:
+  mode: draft_only
+  question_id: TQ009
+  schema_status: candidate_atomic_v2_post_review
+  formal_route_profiles_created: false
+  coverage_status_changed: false
+  canonical_write_performed: false
+  semantic_corrections:
+  - RPS-D01.media_lane_rate_is_unknown_symbol_rate_observed_separately
+  - RPS-D04.MZM_PIC_does_not_prove_PIC_EIC_integration
+  - placement_class_is_normalized_not_directly_observed
+  - wavelength_nominal_and_range_are_separate
+  - RPS-D05.EML_laser_is_preserved_as_raw_combination_label
+  - RPS-D05.modulator_or_emitter_type_remains_unknown_for_unsplit_EML_label
+  allowed_observation_states:
+  - observed
+  - company-stated
+  - normalized
+  - unknown
+  normalization_rule: tq008.placement_class is normalized from an observed form_factor through the frozen TQ008 dictionary
+route_profile_seeds:
+- seed_id: RPS-D01
+  source_instance: FTCE4517E1PxM
+  company: Coherent
+  product_or_demo: product
+  evidence_type: product_datasheet
+  draft_only: true
+  alias_labels:
+  - 800G-DR+
+  - 800G-DR8
+  - DR8
+  promotion_blockers:
+  - marketed 800G versus reported 850 Gb/s needs a stable nominal-versus-line-rate convention
+  - DR+ versus DR8 naming needs reconciliation
+  - exact FEC and optical lane count are not directly reported
+  - retiming responsibilities are not diagrammed
+  - TQ007 platform/light-source/integration remain missing
+  axes:
+    tq005_external_link:
+      nominal_aggregate_rate:
+        value: 800G
+        observation_state: observed
+        source_ids:
+        - S1
+        - S2
+      reported_aggregate_or_line_rate:
+        value: 850 Gb/s
+        observation_state: observed
+        source_ids:
+        - S1
+        - S2
+      host_lane_count:
+        value: 8
+        observation_state: observed
+        source_ids:
+        - S2
+      host_lane_rate:
+        value: 106.25 Gb/s
+        observation_state: observed
+        source_ids:
+        - S2
+      media_lane_count:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      media_lane_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      modulation_format:
+        value: PAM4
+        observation_state: observed
+        source_ids:
+        - S2
+      symbol_rate:
+        value: 53.125 GBd
+        observation_state: observed
+        source_ids:
+        - S2
+      fec_code:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      pmd_or_application_reference:
+        value: 400GBASE-DR4 (2x400 DR4 application)
+        observation_state: observed
+        source_ids:
+        - S2
+      media_type:
+        value: SMF (G.652)
+        observation_state: observed
+        source_ids:
+        - S1
+        - S2
+      reach:
+        value: 500 m
+        observation_state: observed
+        source_ids:
+        - S1
+        - S2
+      nominal_wavelength:
+        value: 1310 nm
+        observation_state: observed
+        source_ids:
+        - S1
+        - S2
+      wavelength_range:
+        value: 1304.5–1317.5 nm
+        observation_state: observed
+        source_ids:
+        - S2
+      lane_organization:
+        value: parallel
+        observation_state: observed
+        source_ids:
+        - S2
+      optical_connector:
+        value: MPO-16
+        observation_state: observed
+        source_ids:
+        - S2
+      fiber_mapping:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq006_electrical_responsibility:
+      normalized_architecture:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      raw_architecture_label:
+        value: retimed
+        observation_state: company-stated
+        source_ids:
+        - S2
+      tx_retiming:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      rx_retiming:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fec_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      dac_adc_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      host_serdes_role:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq007_photonics:
+      platform:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      material:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_wavelength:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      modulator_or_emitter_type:
+        value: EML
+        observation_state: observed
+        source_ids:
+        - S1
+      detector_type:
+        value: PIN
+        observation_state: observed
+        source_ids:
+        - S1
+      device_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      pic_eic_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      laser_pic_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq008_placement:
+      placement_class:
+        value: front-panel pluggable
+        observation_state: normalized
+        source_ids:
+        - S1
+        - S2
+      form_factor:
+        value: OSFP
+        observation_state: observed
+        source_ids:
+        - S1
+        - S2
+  missing_fields:
+  - tq005_external_link.media_lane_count
+  - tq005_external_link.media_lane_rate
+  - tq005_external_link.fec_code
+  - tq005_external_link.fiber_mapping
+  - tq006_electrical_responsibility.normalized_architecture
+  - tq006_electrical_responsibility.tx_retiming
+  - tq006_electrical_responsibility.rx_retiming
+  - tq006_electrical_responsibility.fec_location
+  - tq006_electrical_responsibility.dac_adc_location
+  - tq006_electrical_responsibility.host_serdes_role
+  - tq007_photonics.platform
+  - tq007_photonics.material
+  - tq007_photonics.light_source_type
+  - tq007_photonics.light_source_wavelength
+  - tq007_photonics.light_source_location
+  - tq007_photonics.device_integration
+  - tq007_photonics.pic_eic_integration
+  - tq007_photonics.laser_pic_integration
+- seed_id: RPS-D02
+  source_instance: OFC 2025 1.6T-DR8 OSFP SiPh LRO demo (first module, S3 line 1979)
+  company: Coherent
+  product_or_demo: demo_endpoint
+  evidence_type: company_demo_statement
+  draft_only: true
+  alias_labels:
+  - 1.6T-DR8
+  - LRO
+  promotion_blockers:
+  - no exact modulation/FEC/PMD/media/reach/wavelength disclosure
+  - no light-source/modulator/detector/integration disclosure
+  - host FEC and SerDes responsibilities are not stated even though the Tx/Rx retiming split is
+  axes:
+    tq005_external_link:
+      nominal_aggregate_rate:
+        value: 1.6T
+        observation_state: observed
+        source_ids:
+        - S3
+      reported_aggregate_or_line_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      host_lane_count:
+        value: 8
+        observation_state: observed
+        source_ids:
+        - S3
+      host_lane_rate:
+        value: 200G
+        observation_state: observed
+        source_ids:
+        - S3
+      media_lane_count:
+        value: 8
+        observation_state: observed
+        source_ids:
+        - S3
+      media_lane_rate:
+        value: 200G
+        observation_state: observed
+        source_ids:
+        - S3
+      modulation_format:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      symbol_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fec_code:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      pmd_or_application_reference:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      media_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      reach:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      nominal_wavelength:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      wavelength_range:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      lane_organization:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      optical_connector:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fiber_mapping:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq006_electrical_responsibility:
+      normalized_architecture:
+        value: Tx-retimed / Rx-linear
+        observation_state: company-stated
+        source_ids:
+        - S3
+      raw_architecture_label:
+        value: LRO
+        observation_state: company-stated
+        source_ids:
+        - S3
+      tx_retiming:
+        value: retimed (transmit direction)
+        observation_state: company-stated
+        source_ids:
+        - S3
+      rx_retiming:
+        value: linear (no retiming)
+        observation_state: company-stated
+        source_ids:
+        - S3
+      fec_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      dac_adc_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      host_serdes_role:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq007_photonics:
+      platform:
+        value: silicon photonics
+        observation_state: company-stated
+        source_ids:
+        - S3
+      material:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_wavelength:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      modulator_or_emitter_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      detector_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      device_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      pic_eic_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      laser_pic_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq008_placement:
+      placement_class:
+        value: front-panel pluggable
+        observation_state: normalized
+        source_ids:
+        - S3
+      form_factor:
+        value: OSFP
+        observation_state: observed
+        source_ids:
+        - S3
+  missing_fields:
+  - tq005_external_link.reported_aggregate_or_line_rate
+  - tq005_external_link.modulation_format
+  - tq005_external_link.symbol_rate
+  - tq005_external_link.fec_code
+  - tq005_external_link.pmd_or_application_reference
+  - tq005_external_link.media_type
+  - tq005_external_link.reach
+  - tq005_external_link.nominal_wavelength
+  - tq005_external_link.wavelength_range
+  - tq005_external_link.lane_organization
+  - tq005_external_link.optical_connector
+  - tq005_external_link.fiber_mapping
+  - tq006_electrical_responsibility.fec_location
+  - tq006_electrical_responsibility.dac_adc_location
+  - tq006_electrical_responsibility.host_serdes_role
+  - tq007_photonics.material
+  - tq007_photonics.light_source_type
+  - tq007_photonics.light_source_wavelength
+  - tq007_photonics.light_source_location
+  - tq007_photonics.modulator_or_emitter_type
+  - tq007_photonics.detector_type
+  - tq007_photonics.device_integration
+  - tq007_photonics.pic_eic_integration
+  - tq007_photonics.laser_pic_integration
+- seed_id: RPS-D03
+  source_instance: OFC 2025 1.6T-DR8 OSFP SiPh 3 nm DSP demo (third module, S3 line 1979)
+  company: Coherent
+  product_or_demo: demo_endpoint
+  evidence_type: company_demo_statement
+  draft_only: true
+  alias_labels:
+  - 1.6T-DR8
+  - 3 nm DSP
+  promotion_blockers:
+  - 3 nm DSP architecture is UNKNOWN
+  - Rx retiming, Tx retiming, FEC placement, and host SerDes responsibility are unreported
+  - exact modulation/FEC/PMD/media/reach/wavelength and most TQ007 implementation fields are missing
+  axes:
+    tq005_external_link:
+      nominal_aggregate_rate:
+        value: 1.6T
+        observation_state: observed
+        source_ids:
+        - S3
+      reported_aggregate_or_line_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      host_lane_count:
+        value: 8
+        observation_state: observed
+        source_ids:
+        - S3
+      host_lane_rate:
+        value: 200G
+        observation_state: observed
+        source_ids:
+        - S3
+      media_lane_count:
+        value: 8
+        observation_state: observed
+        source_ids:
+        - S3
+      media_lane_rate:
+        value: 200G
+        observation_state: observed
+        source_ids:
+        - S3
+      modulation_format:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      symbol_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fec_code:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      pmd_or_application_reference:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      media_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      reach:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      nominal_wavelength:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      wavelength_range:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      lane_organization:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      optical_connector:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fiber_mapping:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq006_electrical_responsibility:
+      normalized_architecture:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      raw_architecture_label:
+        value: 3 nm DSP
+        observation_state: company-stated
+        source_ids:
+        - S3
+      tx_retiming:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      rx_retiming:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fec_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      dac_adc_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      host_serdes_role:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq007_photonics:
+      platform:
+        value: silicon photonics
+        observation_state: company-stated
+        source_ids:
+        - S3
+      material:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_wavelength:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      modulator_or_emitter_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      detector_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      device_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      pic_eic_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      laser_pic_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq008_placement:
+      placement_class:
+        value: front-panel pluggable
+        observation_state: normalized
+        source_ids:
+        - S3
+      form_factor:
+        value: OSFP
+        observation_state: observed
+        source_ids:
+        - S3
+  missing_fields:
+  - tq005_external_link.reported_aggregate_or_line_rate
+  - tq005_external_link.modulation_format
+  - tq005_external_link.symbol_rate
+  - tq005_external_link.fec_code
+  - tq005_external_link.pmd_or_application_reference
+  - tq005_external_link.media_type
+  - tq005_external_link.reach
+  - tq005_external_link.nominal_wavelength
+  - tq005_external_link.wavelength_range
+  - tq005_external_link.lane_organization
+  - tq005_external_link.optical_connector
+  - tq005_external_link.fiber_mapping
+  - tq006_electrical_responsibility.normalized_architecture
+  - tq006_electrical_responsibility.tx_retiming
+  - tq006_electrical_responsibility.rx_retiming
+  - tq006_electrical_responsibility.fec_location
+  - tq006_electrical_responsibility.dac_adc_location
+  - tq006_electrical_responsibility.host_serdes_role
+  - tq007_photonics.material
+  - tq007_photonics.light_source_type
+  - tq007_photonics.light_source_wavelength
+  - tq007_photonics.light_source_location
+  - tq007_photonics.modulator_or_emitter_type
+  - tq007_photonics.detector_type
+  - tq007_photonics.device_integration
+  - tq007_photonics.pic_eic_integration
+  - tq007_photonics.laser_pic_integration
+- seed_id: RPS-D04
+  source_instance: ECOC 2022 QSFP-DD800 SiPh MZM PIC interoperability endpoint (S4 line 1967)
+  company: Coherent
+  product_or_demo: demo_endpoint
+  evidence_type: company_demo_statement
+  draft_only: true
+  alias_labels:
+  - 800G-DR8+
+  - 2x400G-DR4+
+  promotion_blockers:
+  - most TQ005 external-link details are absent
+  - architecture is absent
+  - light source and detector are absent
+  - MZM-PIC internal partitioning is not disclosed; the opposite endpoint cannot supply these fields
+  axes:
+    tq005_external_link:
+      nominal_aggregate_rate:
+        value: 800 Gbps
+        observation_state: observed
+        source_ids:
+        - S4
+      reported_aggregate_or_line_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      host_lane_count:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      host_lane_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      media_lane_count:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      media_lane_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      modulation_format:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      symbol_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fec_code:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      pmd_or_application_reference:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      media_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      reach:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      nominal_wavelength:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      wavelength_range:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      lane_organization:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      optical_connector:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fiber_mapping:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq006_electrical_responsibility:
+      normalized_architecture:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      raw_architecture_label:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      tx_retiming:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      rx_retiming:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fec_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      dac_adc_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      host_serdes_role:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq007_photonics:
+      platform:
+        value: silicon photonics
+        observation_state: company-stated
+        source_ids:
+        - S4
+      material:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_wavelength:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      modulator_or_emitter_type:
+        value: MZM
+        observation_state: observed
+        source_ids:
+        - S4
+      detector_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      device_integration:
+        value: MZM PIC
+        observation_state: company-stated
+        source_ids:
+        - S4
+      pic_eic_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      laser_pic_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq008_placement:
+      placement_class:
+        value: front-panel pluggable
+        observation_state: normalized
+        source_ids:
+        - S4
+      form_factor:
+        value: QSFP-DD800
+        observation_state: observed
+        source_ids:
+        - S4
+  missing_fields:
+  - tq005_external_link.reported_aggregate_or_line_rate
+  - tq005_external_link.host_lane_count
+  - tq005_external_link.host_lane_rate
+  - tq005_external_link.media_lane_count
+  - tq005_external_link.media_lane_rate
+  - tq005_external_link.modulation_format
+  - tq005_external_link.symbol_rate
+  - tq005_external_link.fec_code
+  - tq005_external_link.pmd_or_application_reference
+  - tq005_external_link.media_type
+  - tq005_external_link.reach
+  - tq005_external_link.nominal_wavelength
+  - tq005_external_link.wavelength_range
+  - tq005_external_link.lane_organization
+  - tq005_external_link.optical_connector
+  - tq005_external_link.fiber_mapping
+  - tq006_electrical_responsibility.normalized_architecture
+  - tq006_electrical_responsibility.raw_architecture_label
+  - tq006_electrical_responsibility.tx_retiming
+  - tq006_electrical_responsibility.rx_retiming
+  - tq006_electrical_responsibility.fec_location
+  - tq006_electrical_responsibility.dac_adc_location
+  - tq006_electrical_responsibility.host_serdes_role
+  - tq007_photonics.material
+  - tq007_photonics.light_source_type
+  - tq007_photonics.light_source_wavelength
+  - tq007_photonics.light_source_location
+  - tq007_photonics.detector_type
+  - tq007_photonics.pic_eic_integration
+  - tq007_photonics.laser_pic_integration
+- seed_id: RPS-D05
+  source_instance: ECOC 2022 800G-DR8+ OSFP EML/photodetector interoperability endpoint (S4 line 1967)
+  company: Coherent
+  product_or_demo: demo_endpoint
+  evidence_type: company_demo_statement
+  draft_only: true
+  alias_labels:
+  - 800G-DR8+
+  - 2x400G-DR4+
+  promotion_blockers:
+  - most TQ005 external-link details are absent
+  - architecture is absent
+  - platform/material and integration are absent
+  - light-source and detector subtypes are incomplete
+  - the adjacent 200G EML demo and the opposite SiPh endpoint cannot fill these gaps
+  - EML laser is an unsplit source/device label; do not infer a separate laser architecture or EAM substructure
+  axes:
+    tq005_external_link:
+      nominal_aggregate_rate:
+        value: 800 Gbps
+        observation_state: observed
+        source_ids:
+        - S4
+      reported_aggregate_or_line_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      host_lane_count:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      host_lane_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      media_lane_count:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      media_lane_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      modulation_format:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      symbol_rate:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fec_code:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      pmd_or_application_reference:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      media_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      reach:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      nominal_wavelength:
+        value: 1310 nm
+        observation_state: observed
+        source_ids:
+        - S4
+      wavelength_range:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      lane_organization:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      optical_connector:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fiber_mapping:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq006_electrical_responsibility:
+      normalized_architecture:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      raw_architecture_label:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      tx_retiming:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      rx_retiming:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      fec_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      dac_adc_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      host_serdes_role:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq007_photonics:
+      platform:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      material:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      light_source_type:
+        value: 'laser (raw instance phrase: EML laser)'
+        observation_state: observed
+        source_ids:
+        - S4
+      light_source_wavelength:
+        value: 1310 nm
+        observation_state: observed
+        source_ids:
+        - S4
+      light_source_location:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      modulator_or_emitter_type:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      detector_type:
+        value: photodetector
+        observation_state: observed
+        source_ids:
+        - S4
+      device_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      pic_eic_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+      laser_pic_integration:
+        value: UNKNOWN
+        observation_state: unknown
+        source_ids: []
+    tq008_placement:
+      placement_class:
+        value: front-panel pluggable
+        observation_state: normalized
+        source_ids:
+        - S4
+      form_factor:
+        value: OSFP
+        observation_state: observed
+        source_ids:
+        - S4
+  missing_fields:
+  - tq005_external_link.reported_aggregate_or_line_rate
+  - tq005_external_link.host_lane_count
+  - tq005_external_link.host_lane_rate
+  - tq005_external_link.media_lane_count
+  - tq005_external_link.media_lane_rate
+  - tq005_external_link.modulation_format
+  - tq005_external_link.symbol_rate
+  - tq005_external_link.fec_code
+  - tq005_external_link.pmd_or_application_reference
+  - tq005_external_link.media_type
+  - tq005_external_link.reach
+  - tq005_external_link.wavelength_range
+  - tq005_external_link.lane_organization
+  - tq005_external_link.optical_connector
+  - tq005_external_link.fiber_mapping
+  - tq006_electrical_responsibility.normalized_architecture
+  - tq006_electrical_responsibility.raw_architecture_label
+  - tq006_electrical_responsibility.tx_retiming
+  - tq006_electrical_responsibility.rx_retiming
+  - tq006_electrical_responsibility.fec_location
+  - tq006_electrical_responsibility.dac_adc_location
+  - tq006_electrical_responsibility.host_serdes_role
+  - tq007_photonics.platform
+  - tq007_photonics.material
+  - tq007_photonics.light_source_location
+  - tq007_photonics.modulator_or_emitter_type
+  - tq007_photonics.device_integration
+  - tq007_photonics.pic_eic_integration
+  - tq007_photonics.laser_pic_integration

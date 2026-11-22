@@ -1,0 +1,120 @@
+<section class="section qa-section" data-certainty="object" id="connections"><div class="kicker">04 / 装配连接</div><h2>固定、电连接与光对准，分别解决什么？</h2><p class="intro">零件做出来，还要固定、连接并保持合适的位置。先看每道工序作用于哪个接口，再判断需要什么设备。</p><div class="qa-bridge"><strong>三个不同的验收问题</strong><p>芯片固定了吗？电连接满足要求吗？光学接口配合了吗？它们不由同一个“贴装完成”自动回答。</p></div><article class="qa-card" id="qa-14"><div class="qa-meta"><span>Q14</span><span>工序解释</span></div><h3>Die attach、wire bond与flip-chip分别做什么？</h3><p class="qa-short">固晶负责定位与固定裸片，引线键合负责电连接；倒装在具体实现中可以同时承担固定和互连。三者不是必须依次执行的统一流程。 <a class="qa-cite" href="https://semi.asmpt.com/en/products/icd" rel="noopener noreferrer" target="_blank" title="ASMPT — IC and Discrete; undated; die attach, wire bond, flip chip categories">[27]<span class="qa-sr"> ASMPT — IC and Discrete; undated; die attach, wire bond, flip chip categories</span></a><a class="qa-cite" href="https://www.coherent.com/networking/optoelectronic-devices/integrated-circuits/transimpedance-amplifiers" rel="noopener noreferrer" target="_blank" title="Coherent — TIA product table; undated; CHR1074 and CHR1065">[17]<span class="qa-sr"> Coherent — TIA product table; undated; CHR1074 and CHR1065</span></a></p><details class="qa-expand"><summary>读完整解释与依据</summary><div class="qa-body"><p>ASMPT把die attach、wire bond等列为不同后段工序，并列出环氧、共晶、软焊料及flip-chip等贴装类别。<a class="qa-cite" href="https://semi.asmpt.com/en/products/icd" rel="noopener noreferrer" target="_blank" title="ASMPT — IC and Discrete; undated; die attach, wire bond, flip chip categories">[27]<span class="qa-sr"> ASMPT — IC and Discrete; undated; die attach, wire bond, flip chip categories</span></a></p>
+<div aria-label="可横向滚动的数据表" class="qa-table" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>工序概念</th>
+<th>面向读者的动作解释</th>
+<th>不应混淆之处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Die attach，固晶/芯片贴装</td>
+<td>把已经制造好的裸die定位、固定在承载结构上</td>
+<td>固定芯片不等于已经完成其所有信号连接</td>
+</tr>
+<tr>
+<td>Wire bond，引线键合</td>
+<td>通过细金属线连接芯片与外部焊盘</td>
+<td>是电互连；不是把光从芯片送进光纤</td>
+</tr>
+<tr>
+<td>Flip-chip，倒装连接</td>
+<td>把芯片连接面朝向载体，以凸点等结构实现连接</td>
+<td>在具体工艺中可同时承担固定与电互连；不是所有固晶步骤都必须再单独做一遍</td>
+</tr>
+</tbody>
+</table></div>
+<p>表格是工序功能解释；具体实现可由器件披露验证。Coherent的TIA表同时列有引线键合、铜柱倒装以及支持堆叠PD的AuSn凸点；不能仅凭“高速接收器”四个字判断工艺。<a class="qa-cite" href="https://www.coherent.com/networking/optoelectronic-devices/integrated-circuits/transimpedance-amplifiers" rel="noopener noreferrer" target="_blank" title="Coherent — TIA product table; undated; CHR1074 and CHR1065">[17]<span class="qa-sr"> Coherent — TIA product table; undated; CHR1074 and CHR1065</span></a></p></div><aside class="qa-origin"><b>从这条原始提问扩展</b><p>对 你提醒的很对 我需要构件是完整的 下一步告诉我这些部件的衔接需要哪些设备</p><a href="../../docs/source-conversations/光模块构成介绍1.md#turn-6" rel="noopener" target="_blank">光模块构成介绍1 · 第6轮原文 ↗</a></aside><details class="qa-evidence"><summary>本题来源与适用范围 · 2份</summary><ol><li><a class="qa-cite" href="https://www.coherent.com/networking/optoelectronic-devices/integrated-circuits/transimpedance-amplifiers" rel="noopener noreferrer" target="_blank" title="Coherent — TIA product table; undated; CHR1074 and CHR1065">[17]<span class="qa-sr"> Coherent — TIA product table; undated; CHR1074 and CHR1065</span></a> <b>Coherent — TIA product table; undated; CHR1074 and CHR1065</b><p>Coherent TIA参数表，CHR1074/CHR1065等。日期未标；器件可用封装，不证明具体模块选型。访问：2026-09-09。</p></li><li><a class="qa-cite" href="https://semi.asmpt.com/en/products/icd" rel="noopener noreferrer" target="_blank" title="ASMPT — IC and Discrete; undated; die attach, wire bond, flip chip categories">[27]<span class="qa-sr"> ASMPT — IC and Discrete; undated; die attach, wire bond, flip chip categories</span></a> <b>ASMPT — IC and Discrete; undated; die attach, wire bond, flip chip categories</b><p>ASMPT IC &amp; Discrete，Die Bonding与Wire Bonding。日期未标；设备工序分类，不是任何模块厂采购名单。访问：2026-09-09。</p></li></ol></details></details><a class="qa-next" href="#qa-15">接着看：主动对准、被动对准以及固定，为什么要拆开？ →</a></article><article class="qa-card" id="qa-15"><div class="qa-meta"><span>Q15</span><span>实例与厂商能力</span></div><h3>主动对准、被动对准以及固定，为什么要拆开？</h3><p class="qa-short">主动对准用光学反馈寻找位置，被动预定位可用几何与视觉信息；固定又是另一动作。三者可以组合，不应被简单写成互相取代。 <a class="qa-cite" href="https://www.newport.com/medias/sys_master/images/images/h57/hc5/9135932669982/DS-03002-App-Note-6.pdf" rel="noopener noreferrer" target="_blank" title="Newport — Fiber to Waveguide Alignment Algorithm; App Note 6; footer 12/04; PDF pp 2-4">[19]<span class="qa-sr"> Newport — Fiber to Waveguide Alignment Algorithm; App Note 6; footer 12/04; PDF pp 2-4</span></a><a class="qa-cite" href="https://www.ficontec.com/capabilities" rel="noopener noreferrer" target="_blank" title="ficonTEC — Capabilities; undated; Motion Systems For Passive and Active Alignment; direct HTML retrieved">[22]<span class="qa-sr"> ficonTEC — Capabilities; undated; Motion Systems For Passive and Active Alignment; direct HTML retrieved</span></a></p><details class="qa-expand"><summary>读完整解释与依据</summary><div class="qa-body"><p><strong>主动对准实例：</strong>Newport应用笔记让光纤连接功率计，再移动光纤寻找较好的耦合位置；其980 nm泵浦激光器实例之后通过激光焊固定。它说明了“测光—运动—固定”的关系，不是800G生产线说明。<a class="qa-cite" href="https://www.newport.com/medias/sys_master/images/images/h57/hc5/9135932669982/DS-03002-App-Note-6.pdf" rel="noopener noreferrer" target="_blank" title="Newport — Fiber to Waveguide Alignment Algorithm; App Note 6; footer 12/04; PDF pp 2-4">[19]<span class="qa-sr"> Newport — Fiber to Waveguide Alignment Algorithm; App Note 6; footer 12/04; PDF pp 2-4</span></a></p>
+<p><strong>厂商能力说明：</strong>ficonTEC的被动预对准依靠相机、机器视觉和几何校准；主动对准把光功率等性能量与位置关联。它还描述粘接期间监测并校正位置偏移。因此被动预定位、主动搜索和固定可以在同一流程中先后出现。<a class="qa-cite" href="https://www.ficontec.com/capabilities" rel="noopener noreferrer" target="_blank" title="ficonTEC — Capabilities; undated; Motion Systems For Passive and Active Alignment; direct HTML retrieved">[22]<span class="qa-sr"> ficonTEC — Capabilities; undated; Motion Systems For Passive and Active Alignment; direct HTML retrieved</span></a></p>
+<p><strong>关键区别：</strong>被动对准不是“不需要精度”，主动对准也不是设备名称。要问清具体接口、反馈量和固定方式，才有依据列设备。</p></div><aside class="qa-origin"><b>从这条原始提问扩展</b><p>对 你提醒的很对 我需要构件是完整的 下一步告诉我这些部件的衔接需要哪些设备</p><a href="../../docs/source-conversations/光模块构成介绍1.md#turn-6" rel="noopener" target="_blank">光模块构成介绍1 · 第6轮原文 ↗</a></aside><details class="qa-evidence"><summary>本题来源与适用范围 · 2份</summary><ol><li><a class="qa-cite" href="https://www.newport.com/medias/sys_master/images/images/h57/hc5/9135932669982/DS-03002-App-Note-6.pdf" rel="noopener noreferrer" target="_blank" title="Newport — Fiber to Waveguide Alignment Algorithm; App Note 6; footer 12/04; PDF pp 2-4">[19]<span class="qa-sr"> Newport — Fiber to Waveguide Alignment Algorithm; App Note 6; footer 12/04; PDF pp 2-4</span></a> <b>Newport — Fiber to Waveguide Alignment Algorithm; App Note 6; footer 12/04; PDF pp 2-4</b><p>Newport App Note6，PDF第2—4页。页脚12/04；980 nm激光器及对准算法示例。访问：2026-09-09。</p></li><li><a class="qa-cite" href="https://www.ficontec.com/capabilities" rel="noopener noreferrer" target="_blank" title="ficonTEC — Capabilities; undated; Motion Systems For Passive and Active Alignment; direct HTML retrieved">[22]<span class="qa-sr"> ficonTEC — Capabilities; undated; Motion Systems For Passive and Active Alignment; direct HTML retrieved</span></a> <b>ficonTEC — Capabilities; undated; Motion Systems For Passive and Active Alignment; direct HTML retrieved</b><p>ficonTEC，Motion Systems For Passive &amp; Active Alignment。日期未标；网页读取超时后直接取得HTML正文；厂商能力说明。访问：2026-09-09。</p></li></ol></details></details><a class="qa-next" href="#qa-16">接着看：壳体、散热接触面有什么可核查的工艺要求？ →</a></article><article class="qa-card" id="qa-16"><div class="qa-meta"><span>Q16</span><span>固定版本规范</span></div><h3>壳体、散热接触面有什么可核查的工艺要求？</h3><p class="qa-short">规范可以规定热接触面的平面度与粗糙度，却未必指定加工方法。表面合格仍不能代替整机热验证。 <a class="qa-cite" href="https://www.osfpmsa.org/assets/pdf/OSFP_Module_Specification_Rev5_0.pdf" rel="noopener noreferrer" target="_blank" title="OSFP MSA — Module Specification Rev 5.0; 2022-10-02; sections 3,10">[7]<span class="qa-sr"> OSFP MSA — Module Specification Rev 5.0; 2022-10-02; sections 3,10</span></a></p><details class="qa-expand"><summary>读完整解释与依据</summary><div class="qa-body"><p>OSFP Rev5.0对散热接触面的平面度和粗糙度给出要求，还展示不同散热片形态及气流约束；例如表3-2列有0.12 mm或更好的平面度，并对超过20 W的模块给出更严格的可选建议。这里的数值属于该版规范，不是所有封装的统一公差。<a class="qa-cite" href="https://www.osfpmsa.org/assets/pdf/OSFP_Module_Specification_Rev5_0.pdf" rel="noopener noreferrer" target="_blank" title="OSFP MSA — Module Specification Rev 5.0; 2022-10-02; sections 3,10">[7]<span class="qa-sr"> OSFP MSA — Module Specification Rev 5.0; 2022-10-02; sections 3,10</span></a></p>
+<p><strong>工艺推论：</strong>制造和装配需要分别控制表面几何、配合位置及实际热接触；机械尺寸合格也不能替代整机散热验证。规范并没有指定壳体必须采用CNC或压铸，参考模块的壳体工艺、内部导热材料与热阻仍为UNKNOWN。<a class="qa-cite" href="https://www.osfpmsa.org/assets/pdf/OSFP_Module_Specification_Rev5_0.pdf" rel="noopener noreferrer" target="_blank" title="OSFP MSA — Module Specification Rev 5.0; 2022-10-02; sections 3,10">[7]<span class="qa-sr"> OSFP MSA — Module Specification Rev 5.0; 2022-10-02; sections 3,10</span></a></p></div><aside class="qa-origin"><b>从这条原始提问扩展</b><p>对 你提醒的很对 我需要构件是完整的 下一步告诉我这些部件的衔接需要哪些设备</p><a href="../../docs/source-conversations/光模块构成介绍1.md#turn-6" rel="noopener" target="_blank">光模块构成介绍1 · 第6轮原文 ↗</a></aside><details class="qa-evidence"><summary>本题来源与适用范围 · 1份</summary><ol><li><a class="qa-cite" href="https://www.osfpmsa.org/assets/pdf/OSFP_Module_Specification_Rev5_0.pdf" rel="noopener noreferrer" target="_blank" title="OSFP MSA — Module Specification Rev 5.0; 2022-10-02; sections 3,10">[7]<span class="qa-sr"> OSFP MSA — Module Specification Rev 5.0; 2022-10-02; sections 3,10</span></a> <b>OSFP MSA — Module Specification Rev 5.0; 2022-10-02; sections 3,10</b><p>OSFP Rev5.0，2022-10-02，§3.3、表3-2、§10。固定版本要求，不声称它是最新版。访问：2026-09-09。</p></li></ol></details></details><a class="qa-next" href="#qa-17">接着看：800G升到1.6T，零件数量会翻倍吗？ →</a></article><div class="qa-card" id="interface-depth"><h3>把同一发射PIC的三个接口连起来</h3><p>以下沿用2026-09-09接口研究稿，对象固定为POET于2025-12-08披露的1.6T 2×FR4发射PIC。它是发射子组件，不能当作参考Coherent收发模块的内部结构。</p><h4>2. Driver到EML：知道要连接，还缺什么才能说明怎样连接？</h4>
+<p>该产品说明宣称采用无引线键合的互连；平台介绍提到RF重布线层和有源器件倒装。这支持沿倒装及载体布线方向追查，但平台能力不能直接指定该产品每一段连接的实际层数、凸点结构或TSV实现。<a href="https://www.poet-technologies.com/blog/poet-technologies-redefines-optical-integration-with-its-hybrid-integrated-1-6t-2xfr4-transmitter-pic">POET产品说明</a></p>
+<p>下一步需要把这条边拆成三个可核查对象：</p>
+<table>
+<thead>
+<tr>
+<th>待确认对象</th>
+<th>要取得的产品级证据</th>
+<th>为什么它能推进解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Driver输出端</td>
+<td>芯片型号、输出接口和驱动摆幅、偏置定义</td>
+<td>才能说明它具体给EML什么电信号</td>
+</tr>
+<tr>
+<td>两颗芯片之间</td>
+<td>本产品连接剖面、凸点与布线示意、回流路径</td>
+<td>才能从“靠得近”进入真实电流路径</td>
+</tr>
+<tr>
+<td>EML电输入端</td>
+<td>电极定义、负载或等效电路、接口测试条件</td>
+<td>才能判断驱动与负载是否匹配</td>
+</tr>
+</tbody>
+</table>
+<p>这三项该研究稿均未取得完整披露。不能指定Driver供应商、把任意200G Driver规格贴进来，或替厂商算出未经证实的阻抗和功耗。</p>
+<p><strong>工艺追问：</strong>倒装前检测哪一个界面？倒装后是否检查连接电阻、空洞和高速传输？这是一组待验证问题，不是已知产线工序。</p>
+<h4>3. EML到光耦合：不能把一个箭头直接叫“对准设备”</h4>
+<p>POET称该发射PIC采用无透镜、无主动对准的被动装配。<a href="https://www.poet-technologies.com/blog/poet-technologies-redefines-optical-integration-with-its-hybrid-integrated-1-6t-2xfr4-transmitter-pic">POET产品说明</a> 这是厂商对该对象的声明。它没有使EML光输出端到芯片光路之间的物理接口自动透明。</p>
+<p>这条边值得继续拆成两件事：</p>
+<ul>
+<li><strong>接口几何：</strong>出光面与接收光路的相对位置、间隙、高度和角度由什么结构决定？需要产品剖面和公差定义。</li>
+<li><strong>装配与保持：</strong>怎样定位、固定，固定后怎样确认光学性能？需要针对这个接口的制造说明和测试记录。</li>
+</ul>
+<p>这些是该研究稿的研究问题。没有证据时，不把“被动”翻译成某种特定V槽、焊料自对准或视觉定位方案，也不套用另一家设备商的主动对准流程。</p>
+<p>这里最需要的不是再找一家“能做精密贴装”的公司，而是一张能标出<strong>EML出光口与芯片光路入口</strong>的本产品截面图。</p>
+<h4>4. 光路到光纤：SSC不是完整的光纤装配方案</h4>
+<p>产品说明给出SSC与单模光纤的模式匹配，并宣称耦合损耗小于0.5 dB。<a href="https://www.poet-technologies.com/blog/poet-technologies-redefines-optical-integration-with-its-hybrid-integrated-1-6t-2xfr4-transmitter-pic">POET产品说明</a> 该数字应保留为厂商披露；该研究稿没有取得完整测量条件，不能把它当成EML到光纤全路径损耗或量产良率。</p>
+<p>需要继续核实：</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>该研究稿状态</th>
+<th>最有用的后续资料</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSC与光纤在哪里相接？</td>
+<td>具体截面、间隙和端面条件未知</td>
+<td>该产品光接口图</td>
+</tr>
+<tr>
+<td>使用独立光纤还是FAU？</td>
+<td>未取得足以判定的产品级说明</td>
+<td>出纤装配图和物料说明</td>
+</tr>
+<tr>
+<td>光纤怎样固定？</td>
+<td>胶、焊接、机械夹持等均不能先指定</td>
+<td>固定工艺说明</td>
+</tr>
+<tr>
+<td>小于0.5 dB在哪里测？</td>
+<td>输入/输出参考面、波长与温度条件不完整</td>
+<td>测试方法及原始曲线</td>
+</tr>
+<tr>
+<td>装好后能否保持位置和性能？</td>
+<td>未取得可靠性与批次分布证据</td>
+<td>热循环、老化及批次测试</td>
+</tr>
+</tbody>
+</table>
+<p>“耦合结构存在”“一次测得低损耗”“稳定制造出合格组件”应分别寻找证据，不能相互替代。</p>
+<h4>5. 现在能不能列出这个产品的制造流程？</h4>
+<p><strong>能列研究顺序，不能列已证实的生产先后顺序。</strong>该研究稿适合按下面顺序继续取证：</p>
+<ol>
+<li>找到电连接剖面，解释Driver输出怎样到达EML电极。</li>
+<li>找到光连接剖面，解释EML光场怎样进入芯片光路。</li>
+<li>找到出纤装配图，解释SSC怎样与光纤定位和固定。</li>
+<li>找到各接口测试边界，把“哪一处做坏了”与“哪一个测试会发现”对应起来。</li>
+</ol>
+<p>这也给设备研究设下了具体入口：<strong>先确定实际制造动作和验收指标，再判断需要哪类设备。</strong>该研究稿不会列出某厂商的固晶机、对准机、点胶机，冒充该PIC已经采用的设备清单。</p><p>资料范围：上述内容来自已有接口研究稿和厂商说明。本次仅整合已有内容，未重新核查量产状态；缺少的接口剖面、装配图和测试条件仍保留为待查项。</p></div></section>
+

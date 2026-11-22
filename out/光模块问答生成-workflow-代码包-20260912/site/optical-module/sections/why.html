@@ -1,0 +1,18 @@
+<section class="section" id="why" data-certainty="mechanism">
+        <div class="statusline"><span class="certainty mechanism">机理候选</span><small>解释相对价值变化，不宣称唯一最优路线</small></div>
+        <div class="kicker">Causal bridge · 约束到路线</div><h2>技术路线不是凭空出现：它们分别响应不同约束</h2>
+        <p class="intro">同一个“提速压力”可以有多种解决方法。一条完整 WHY 必须写成：需求和边界 → 工程约束 → 技术选择相对价值提高 → 组件/连接/工序改变 → 得到优势并产生新代价。</p>
+        <div class="tablewrap"><table class="bridge-table"><thead><tr><th>上游问题</th><th>候选响应</th><th>为什么可能有效</th><th>新增代价/前提</th></tr></thead><tbody>
+          <tr><td>电通道余量不足</td><td>Retimed / 更强 DSP</td><td>在模块内恢复和重新发送信号，提高对 host channel 的容忍</td><td class="scope">模块功耗、时延、成本与散热压力</td></tr>
+          <tr><td>模块 DSP 功耗过高</td><td>LPO / LRO</td><td>减少模块内部分数字处理路径</td><td class="scope">要求 capable host、联合均衡、管理和端到端验证</td></tr>
+          <tr><td>多通道集成与尺寸压力</td><td>SiPh / 集成 PIC</td><td>把调制、波导、复用、耦合或探测中的多项功能集成</td><td class="scope">光源集成、耦合、封装、良率和平台成熟度</td></tr>
+          <tr><td>高速电路径需要缩短</td><td>NPO / CPO</td><td>把光引擎靠近交换 ASIC，缩短高损耗电互连</td><td class="scope">可服务性、热耦合、封装复杂度和生态改变</td></tr>
+          <tr><td>可维护与供应链灵活性</td><td>Front-panel pluggable</td><td>模块可独立更换，网络设备与光学升级解耦</td><td class="scope">较长 C2M 电路径和面板功率密度</td></tr>
+        </tbody></table></div>
+        <h3>具体分支：为什么会把 LPO 与 SiPh 组合在一起观察</h3>
+        <div class="branch-grid">
+          <article class="branch"><span class="badge supported">规范与机理支持</span><h3>支路 A：为什么考虑 linear / LPO</h3><p>当 host ASIC 已具备足够的均衡能力，并允许 host-module 联合配置和端到端 BER/FEC 验证时，模块内 DSP/retimer 的相对价值可能下降。</p><div class="formula">模块功耗 / 时延 / 成本目标 + capable host → LPO 进入候选</div></article>
+          <article class="branch"><span class="badge conditional">条件性假设</span><h3>支路 B：为什么考虑 SiPh</h3><p>如果项目优先多通道 PIC 集成、晶圆级测试与筛选，以及已有量产平台经验，具备这些能力的 SiPh 平台相对价值提高。</p><div class="formula">多通道 PIC + wafer test / KGD + 平台成熟度 → SiPh 进入候选池</div></article>
+        </div>
+        <div class="warn"><b>不能连跳：</b>低功耗目标不能直接推出 LPO；LPO 不能直接推出 SiPh；SiPh 也不能推出某家公司已经供货。每一步都需要独立证据。</div>
+      </section>

@@ -1,0 +1,32 @@
+﻿claim_id,量化结论,证据等级,证据类型,处理方式,来源描述,链接,口径备注
+MC001,2026数通光模块市场约228亿美元,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径",LightCounting《Optics for AI》2026-01月报（以太网+CPO收发器2026预测260亿美元；数通口径228亿）,https://lightcounting.com/newsletter/en/january-2026-optics-for-ai-clusters-366 https://www.c-light.com/news/details/2026_Telecom_Optical_Module_Market.html,口径=数通/数据中心，非全品类；中金/新浪亦引用228亿
+MC002,中国厂商全球份额超过60%,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径",LightCounting 2024全球前十（中国占7席：旭创/新易盛/华为/光迅/海信宽带/华工/东山）+2026预测合计>60%,https://caifuhao.eastmoney.com/news/20260529091238662831220 https://www.c-light.com/news/details/2026_Telecom_Optical_Module_Market.html,60%≈高端800G/1.6T数通；前十占七席为2024排名
+MC003,上游总成本占比70-80%（型号相关，800G/1.6T偏高）,C,多型号混合口径,"二手汇总,仅方向性参考不上首页",同花顺《光模块全产业链深度拆解(2026)》；雪球ssgsmarketing,https://t.10jqka.com.cn/pid_619115549.shtml https://ssgsmarketing@xueqiu.com/7831343781/395687338,与B3同源；非全行业恒定比例
+MC004,高端DSP国产化<3%（800G/1.6T PAM4精确口径<5%）,C,机构报告/厂商规格,"二手汇总,仅方向性参考不上首页",同花顺（112G/224G PAM4不足3%）/东方财富/雪球/澎湃；头条称DSP国产化0%,https://t.10jqka.com.cn/pid_619115549.shtml https://www.toutiao.com/a7663023966503567907,"按速率分层：低端25/50G≈40%、400G≈10%、800G/1.6T<5%；等级复审:同花顺/东方财富/雪球互引=回声室,与B5/B6同判压回C"
+MC005,1.6T CPO功耗9W而传统方案30W,D,缺少同边界同口径原始测试,"缺可比原始数据,不采用",缺同边界（CPO vs 传统）可比原始测试；各厂商方案功耗差异大,,从正文删除，仅作诚实标注
+MC006,800G DR8采用8路100G通道,A,IEEE 802.3df标准材料,进入路线BOM,,https://www.ieee802.org/3/df/KeyMotions_3df_220914.pdf,
+MC007,1.6TBASE-DR8采用8路200G方向,B,IEEE P802.3dj制定中材料,进入路线BOM并标记标准制定中,,https://www.ieee802.org/3/B400G/email/msg01775.html,
+MC008,400ZR采用单载波DP-16QAM与相干DSP,A,OIF Implementation Agreement,进入路线BOM,,https://www.oiforum.com/oif-publishes-implementation-agreement-for-400zr-coherent-optical-interface/,
+MC009,已确认公司数,A,内部证据账本可重算,首页展示,,capability_details.csv,
+MC010,能力记录数与覆盖节点数,A,内部证据账本可重算,首页展示,,capability_details.csv,
+MC011,数通占比>70%,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径",LC数通228亿 vs 电信53亿≈81%；新浪/中金一致称数通超70%,https://finance.sina.com.cn/stock/relnews/cn/2026-04-27/doc-inhvwwmp2518726.shtml https://www.c-light.com/news/details/2026_Telecom_Optical_Module_Market.html,多家分析一致
+MC012,GB200 NVL72单机架72个OSFP端口（每GPU一个，400G/800G scale-out；机柜内GPU经铜缆NVLink互联，不耗光模块）,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径",NVIDIA GB200 NVL72规格(72 Blackwell GPU/72 IB NIC) + SemiAnalysis拆解,https://www.nvidia.com/en-us/data-center/gb200-nvl2 https://www.baidu.com/s?wd=SemiAnalysis,原“72个800G/1.6T”措辞有误，已修正
+MC013,LPO新易盛全球市占~75%,C,二手汇总,"二手汇总,仅方向性参考不上首页",C114/头条/雪球/高盛多家一致确认800G LPO新易盛市占75%,https://m.c114.com.cn/w241-1307289.html https://www.toutiao.com/article/7651730571244175926/,"细分LPO赛道；Meta/亚马逊60%+订单；等级复审:出处为C114/头条/雪球/高盛多家二手互引=回声室,非一手,压回C(2026-07-28闸主裁定)"
+MC014,源杰科技10G DFB全球出货第一,C,二手汇总,"二手汇总,仅方向性参考不上首页",钛媒体/雪球/东方财富一致：10G DFB全球市占≈20%居第一（超住友/三菱）,https://www.tmtpost.com/7957602.html https://xueqiu.com/2511366191/386852774,"2.5G以下国产化>90%；等级复审:钛媒体/雪球/东方财富互引=回声室,压回C(同上)"
+MC015,电芯片(DSP)占BOM 25-40%（速率越高占比越大）,C,二手汇总,"二手汇总,仅方向性参考不上首页",雪球ssgsmarketing（800G/1.6T DSP 25-40%）；同花顺,https://ssgsmarketing@xueqiu.com/7831343781/395687338 https://t.10jqka.com.cn/pid_619115549.shtml,DSP单颗近百美元、毛利60%+
+MC016,光芯片占BOM 30-50%，1.6T达60%+,C,二手汇总,"二手汇总,仅方向性参考不上首页",同花顺(30-50%/高端70%)；雪球ssgsmarketing,https://t.10jqka.com.cn/pid_619115549.shtml https://ssgsmarketing@xueqiu.com/7831343781/395687338,成本集中在TOSA/ROSA内光芯片
+MC017,无源器件+结构件占BOM 15-20%，毛利30-40%,C,二手汇总,"二手汇总,仅方向性参考不上首页","ssgsmarketing(15-20%,毛利30-40%)；同花顺",https://ssgsmarketing@xueqiu.com/7831343781/395687338 https://t.10jqka.com.cn/pid_619115549.shtml,国产已占优的“卖水”环节
+MC018,封装组装约10%，毛利约20%,C,二手汇总,"二手汇总,仅方向性参考不上首页",ssgsmarketing（封装只赚辛苦钱）,https://ssgsmarketing@xueqiu.com/7831343781/395687338,模块厂本质是高端组装
+MC019,辅助材料/PCB占BOM 5-10%,C,二手汇总,"二手汇总,仅方向性参考不上首页",同花顺；雪球ssgsmarketing,https://t.10jqka.com.cn/pid_619115549.shtml https://ssgsmarketing@xueqiu.com/7831343781/395687338,高速板材要求高
+MC020,DSP单颗近百美元、毛利60-65%；DSP市场博通+Marvell+Inphi合计>80%,C,二手汇总,"二手汇总,仅方向性参考不上首页","ssgsmarketing（“单价近百美元,毛利率60%-65%”）；同花顺",https://ssgsmarketing@xueqiu.com/7831343781/395687338 https://t.10jqka.com.cn/pid_619115549.shtml,最大短板环节
+MC021,高端EML毛利50%+,C,二手汇总,"二手汇总,仅方向性参考不上首页",同花顺（毛利率区间50%-60%）,https://t.10jqka.com.cn/pid_619115549.shtml,—
+MC022,100G→800G用3年，800G→1.6T仅2年,C,二手汇总,"二手汇总,仅方向性参考不上首页",东方财富长文（速率迭代周期约2年）；头条,https://www.baidu.com/s?wd=%E4%B8%9C%E6%96%B9%E8%B4%A2%E5%AF%8C/%E5%A4%B4%E6%9D%A1,行业叙事，非精确线
+MC023,万卡集群需1.6T模块>1.5万只,C,二手汇总,"二手汇总,仅方向性参考不上首页",测算值，无厂商直报,,标注为测算
+MC024,交付周期8-10周压缩至4周以内,C,二手汇总,"二手汇总,仅方向性参考不上首页",上海证券报2026-05-29（原文：传统12周压缩到8周甚至更短）,https://caifuhao.eastmoney.com/news/20260529091238662831220,原文为12→8周，4周为更激进口径
+MC025,电信市场≈30%（基本盘）,C,二手汇总,"二手汇总,仅方向性参考不上首页",由数通>70%镜像推导,,推导值
+MC026,10G及以下光芯片国产化>65%（源杰DFB全球第一）,C,二手汇总,"二手汇总,仅方向性参考不上首页",头条(10G DFB约60%/低端10G突破90%)、雪球(10G DFB国产化约60%),https://www.toutiao.com/a7663023966503567907 https://xueqiu.com/2511366191/386852774,口径有分歧，部分称10G>90%
+MC027,无源器件全球份额>30%,C,二手汇总,"二手汇总,仅方向性参考不上首页",天孚龙头但精确值缺；雪球(天孚占全球光器件约12%),https://www.baidu.com/s?wd=%E5%A4%A9%E5%AD%9A/%E9%9B%AA%E7%90%83%E4%BC%B0%E7%AE%97,估算
+MC028,测试/老化设备是德/安立垄断，国产<20%,C,二手汇总,"二手汇总,仅方向性参考不上首页",ssgsmarketing（“国产化率不到20%”）,https://ssgsmarketing@xueqiu.com/7831343781/395687338,扩产最先受益的隐藏环节
+MC029,200G+ EML海外垄断，交期排至2027+；高端EML国产化<10%,C,二手汇总,"二手汇总,仅方向性参考不上首页","头条(200G EML自给率<5%,缺口七成)、英伟达锁Lumentum/Coherent 40亿产能",https://www.toutiao.com/a7663023966503567907 https://www.baidu.com/s?wd=%E8%8B%B1%E4%BC%9F%E8%BE%BE%E9%94%81%E4%BA%A7%E8%83%BD,可升B
+MC030,高端产线设备投资占总投资>90%，老化/测试设备占40-56%,C,二手汇总,"二手汇总,仅方向性参考不上首页",ssgsmarketing,https://ssgsmarketing@xueqiu.com/7831343781/395687338,—
+MC031,国产替代窗口期2-3年,C,二手汇总,"二手汇总,仅方向性参考不上首页",头条（2到3年的关键窗口期）,https://www.toutiao.com/a7663023966503567907,—

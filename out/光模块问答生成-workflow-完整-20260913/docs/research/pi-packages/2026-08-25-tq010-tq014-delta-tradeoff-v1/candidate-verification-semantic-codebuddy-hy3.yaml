@@ -1,0 +1,581 @@
+meta:
+  verifier: codebuddy-hy3
+  mode: draft_only
+  canonical_write_performed: false
+claim_results:
+  - claim_ref: P1-D02-D03-001
+    generator_id: P1
+    claim_type: physical_delta
+    verdict: accepted
+    normalized_claim_key: KEY-DELTA-D02D03-RAWDESC
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D02 and D03 raw implementation descriptions differ (LRO vs 3 nm DSP) as a contrast in raw labels, but raw_architecture_label is not_comparable; no equal-grain comparative delta (responsibility/component/process/equipment/test) is established; remaining D03 electrical responsibilities UNKNOWN."
+    correction: null
+    reason: "Matches comparison-source-audit 4.1: raw-label contrast directly supported, leaf status not_comparable, all comparative deltas UNKNOWN; C5 coarse parent with candidate facets consistent."
+  - claim_ref: P1-D04-D05-001
+    generator_id: P1
+    claim_type: physical_delta
+    verdict: accepted
+    normalized_claim_key: KEY-DELTA-D04D05-FORMFACTOR
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D04 and D05 have different front-panel pluggable form factors (QSFP-DD800 vs OSFP), a field-level `different` in the same form-factor field; the form-factor dimension is UNMODELED in tree.yaml and must not be forced into B1/B2/D9/MOD1; it is not a comparable internal component delta."
+    correction: null
+    reason: "deterministic field_status=different for tq008_placement.form_factor (S4); audit 4.1/4.2 confirms field-level different and UNMODELED dimension."
+  - claim_ref: P1-D04-D05-002
+    generator_id: P1
+    claim_type: physical_delta
+    verdict: accepted
+    normalized_claim_key: KEY-DELTA-D04D05-COMPOSITE
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D04 and D05 endpoints have composite observed implementation descriptions that differ (SiPh MZM PIC vs 1310 nm raw EML laser + generic photodetector); this is a composite-endpoint observed-description difference, not an equal-grain component replacement, performance, or same-role delta; internal partitioning (laser-PIC, PIC-EIC, detector subtype) UNKNOWN."
+    correction: null
+    reason: "Matches audit 4.1 composite-endpoint scope; C4/C1/C3 mapping and MZM facet consistent; no equal-grain component delta asserted."
+  - claim_ref: P2-D02D03-01
+    generator_id: P2
+    claim_type: physical_delta
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-DELTA-D02D03-RAWDESC
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D02 and D03 raw implementation descriptions differ (LRO vs 3 nm DSP) as a contrast in raw labels, but raw_architecture_label is not_comparable; no equal-grain comparative delta (responsibility/component/process/equipment/test) is established; remaining D03 electrical responsibilities UNKNOWN."
+    correction: null
+    reason: "Same semantic claim as KEY-DELTA-D02D03-RAWDESC; delta_status=unknown consistent; duplicate of P1-D02-D03-001."
+  - claim_ref: P2-D04D05-01
+    generator_id: P2
+    claim_type: physical_delta
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-DELTA-D04D05-FORMFACTOR
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D04 and D05 have different front-panel pluggable form factors (QSFP-DD800 vs OSFP), a field-level `different` in the same form-factor field; the form-factor dimension is UNMODELED in tree.yaml and must not be forced into B1/B2/D9/MOD1; it is not a comparable internal component delta."
+    correction: null
+    reason: "Same semantic claim as KEY-DELTA-D04D05-FORMFACTOR; duplicate of P1-D04-D05-001."
+  - claim_ref: P2-D04D05-02
+    generator_id: P2
+    claim_type: physical_delta
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-DELTA-D04D05-COMPOSITE
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D04 and D05 endpoints have composite observed implementation descriptions that differ (SiPh MZM PIC vs 1310 nm raw EML laser + generic photodetector); this is a composite-endpoint observed-description difference, not an equal-grain component replacement, performance, or same-role delta; internal partitioning (laser-PIC, PIC-EIC, detector subtype) UNKNOWN."
+    correction: null
+    reason: "Same composite-endpoint claim; delta_status=unknown is conservative but content (composite differs, equal-grain UNKNOWN) is valid; duplicate of P1-D04-D05-002."
+  - claim_ref: P3-D02-D03-01
+    generator_id: P3
+    claim_type: physical_delta
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-DELTA-D02D03-RAWDESC
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D02 and D03 raw implementation descriptions differ (LRO vs 3 nm DSP) as a contrast in raw labels, but raw_architecture_label is not_comparable; no equal-grain comparative delta (responsibility/component/process/equipment/test) is established; remaining D03 electrical responsibilities UNKNOWN."
+    correction: null
+    reason: "Same semantic claim; duplicate of P1-D02-D03-001."
+  - claim_ref: P3-D04-D05-01
+    generator_id: P3
+    claim_type: physical_delta
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-DELTA-D04D05-FORMFACTOR
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D04 and D05 have different front-panel pluggable form factors (QSFP-DD800 vs OSFP), a field-level `different` in the same form-factor field; the form-factor dimension is UNMODELED in tree.yaml and must not be forced into B1/B2/D9/MOD1; it is not a comparable internal component delta."
+    correction: null
+    reason: "Same semantic claim; duplicate of P1-D04-D05-001."
+  - claim_ref: P3-D04-D05-02
+    generator_id: P3
+    claim_type: physical_delta
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-DELTA-D04D05-COMPOSITE
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D04 and D05 endpoints have composite observed implementation descriptions that differ (SiPh MZM PIC vs 1310 nm raw EML laser + generic photodetector); this is a composite-endpoint observed-description difference, not an equal-grain component replacement, performance, or same-role delta; internal partitioning (laser-PIC, PIC-EIC, detector subtype) UNKNOWN."
+    correction: null
+    reason: "Same composite-endpoint claim; duplicate of P1-D04-D05-002."
+  - claim_ref: C1-D02D03-1
+    generator_id: C1
+    claim_type: physical_delta
+    verdict: corrected
+    normalized_claim_key: KEY-DELTA-D02D03-RAWDESC
+    source_entailment: partial
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D02 and D03 raw implementation descriptions differ (LRO vs 3 nm DSP) as a contrast in raw labels, but raw_architecture_label is not_comparable; no equal-grain comparative delta (responsibility/component/process/equipment/test) is established; remaining D03 electrical responsibilities UNKNOWN."
+    correction: "raw descriptions not comparable; comparative delta UNKNOWN"
+    reason: "Rule 2: delta_status=observed_difference is wrong; raw labels are not_comparable and comparative delta is UNKNOWN. Content otherwise matches KEY-DELTA-D02D03-RAWDESC."
+  - claim_ref: C1-D04D05-1
+    generator_id: C1
+    claim_type: physical_delta
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-DELTA-D04D05-FORMFACTOR
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D04 and D05 have different front-panel pluggable form factors (QSFP-DD800 vs OSFP), a field-level `different` in the same form-factor field; the form-factor dimension is UNMODELED in tree.yaml and must not be forced into B1/B2/D9/MOD1; it is not a comparable internal component delta."
+    correction: null
+    reason: "Same semantic claim; duplicate of P1-D04-D05-001."
+  - claim_ref: C1-D04D05-2
+    generator_id: C1
+    claim_type: physical_delta
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-DELTA-D04D05-COMPOSITE
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "D04 and D05 endpoints have composite observed implementation descriptions that differ (SiPh MZM PIC vs 1310 nm raw EML laser + generic photodetector); this is a composite-endpoint observed-description difference, not an equal-grain component replacement, performance, or same-role delta; internal partitioning (laser-PIC, PIC-EIC, detector subtype) UNKNOWN."
+    correction: null
+    reason: "Same composite-endpoint claim; duplicate of P1-D04-D05-002."
+  - claim_ref: P1-TRADEOFF-CMP-D02-D03
+    generator_id: P1
+    claim_type: tradeoff_card
+    verdict: accepted
+    normalized_claim_key: KEY-TRADEOFF-D02D03
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "CMP-D02-D03 is partially_comparable (shared 1.6T, 8x200G lanes, SiPh, OSFP, front-panel placement); advantages/disadvantages/bottlenecks/alternatives empty; no_unconditional_ranking true; all non-rate/non-lane controls and D03 architecture UNKNOWN."
+    correction: null
+    reason: "Matches audit 5 CMP-D02-D03 exactly; rule 7 satisfied (empty advantages, no_unconditional_ranking true, unknowns complete)."
+  - claim_ref: P1-TRADEOFF-CMP-D04-D05
+    generator_id: P1
+    claim_type: tradeoff_card
+    verdict: accepted
+    normalized_claim_key: KEY-TRADEOFF-D04D05
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "CMP-D04-D05 is partially_comparable (shared 800 Gbps traffic, front-panel placement); advantages/disadvantages/bottlenecks/alternatives empty; no_unconditional_ranking true; all controls except shared traffic and placement UNKNOWN."
+    correction: null
+    reason: "Matches audit 5 CMP-D04-D05 exactly; rule 7 satisfied."
+  - claim_ref: P2-TRADEOFF-CMP-D02-D03
+    generator_id: P2
+    claim_type: tradeoff_card
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-TRADEOFF-D02D03
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "CMP-D02-D03 is partially_comparable (shared 1.6T, 8x200G lanes, SiPh, OSFP, front-panel placement); advantages/disadvantages/bottlenecks/alternatives empty; no_unconditional_ranking true; all non-rate/non-lane controls and D03 architecture UNKNOWN."
+    correction: null
+    reason: "Identical to P1 card; duplicate of KEY-TRADEOFF-D02D03."
+  - claim_ref: P2-TRADEOFF-CMP-D04-D05
+    generator_id: P2
+    claim_type: tradeoff_card
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-TRADEOFF-D04D05
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "CMP-D04-D05 is partially_comparable (shared 800 Gbps traffic, front-panel placement); advantages/disadvantages/bottlenecks/alternatives empty; no_unconditional_ranking true; all controls except shared traffic and placement UNKNOWN."
+    correction: null
+    reason: "Identical to P1 card; duplicate of KEY-TRADEOFF-D04D05."
+  - claim_ref: P3-TRADEOFF-CMP-D02-D03
+    generator_id: P3
+    claim_type: tradeoff_card
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-TRADEOFF-D02D03
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "CMP-D02-D03 is partially_comparable (shared 1.6T, 8x200G lanes, SiPh, OSFP, front-panel placement); advantages/disadvantages/bottlenecks/alternatives empty; no_unconditional_ranking true; all non-rate/non-lane controls and D03 architecture UNKNOWN."
+    correction: null
+    reason: "Identical content to P1 card; duplicate of KEY-TRADEOFF-D02D03."
+  - claim_ref: P3-TRADEOFF-CMP-D04-D05
+    generator_id: P3
+    claim_type: tradeoff_card
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-TRADEOFF-D04D05
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "CMP-D04-D05 is partially_comparable (shared 800 Gbps traffic, front-panel placement); advantages/disadvantages/bottlenecks/alternatives empty; no_unconditional_ranking true; all controls except shared traffic and placement UNKNOWN."
+    correction: null
+    reason: "Identical content to P1 card; duplicate of KEY-TRADEOFF-D04D05."
+  - claim_ref: C1-TRADEOFF-CMP-D02-D03
+    generator_id: C1
+    claim_type: tradeoff_card
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-TRADEOFF-D02D03
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "CMP-D02-D03 is partially_comparable (shared 1.6T, 8x200G lanes, SiPh, OSFP, front-panel placement); advantages/disadvantages/bottlenecks/alternatives empty; no_unconditional_ranking true; all non-rate/non-lane controls and D03 architecture UNKNOWN."
+    correction: null
+    reason: "Identical content to P1 card; duplicate of KEY-TRADEOFF-D02D03."
+  - claim_ref: C1-TRADEOFF-CMP-D04-D05
+    generator_id: C1
+    claim_type: tradeoff_card
+    verdict: duplicate_valid
+    normalized_claim_key: KEY-TRADEOFF-D04D05
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "CMP-D04-D05 is partially_comparable (shared 800 Gbps traffic, front-panel placement); advantages/disadvantages/bottlenecks/alternatives empty; no_unconditional_ranking true; all controls except shared traffic and placement UNKNOWN."
+    correction: null
+    reason: "Identical content to P1 card; duplicate of KEY-TRADEOFF-D04D05."
+  - claim_ref: REQ-P1-D02-D03-001
+    generator_id: P1
+    claim_type: capability_requirement
+    verdict: accepted
+    normalized_claim_key: CAP-D02D03-C5-8x200G
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C5 (DSP/CDR-class) must be able to represent/design a 1.6T module with 8x200G electrical host and 8x200G optical media lanes as observed on both endpoints (axis_direct from same observed values)."
+    correction: null
+    reason: "axis_direct from same observed values (1.6T, 8x200G) per rule 4; C5 is the valid DSP/CDR coarse parent; existing_points_matchable=partial respects rule 6."
+  - claim_ref: REQ-P1-D02-D03-002
+    generator_id: P1
+    claim_type: capability_requirement
+    verdict: accepted
+    normalized_claim_key: CAP-D02D03-C5-CHAR-D03
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "A characterization/test capability is required to determine D03's Tx/Rx retiming, FEC, DAC/ADC, and host-SerDes responsibilities under conditions comparable to D02's disclosed LRO split (D03 side undisclosed)."
+    correction: null
+    reason: "engineering_inference on UNKNOWN D03 responsibilities; framed as test/characterization need, not as a company fact; existing_points_matchable=no consistent with rule 6."
+  - claim_ref: REQ-P1-D04-D05-001
+    generator_id: P1
+    claim_type: capability_requirement
+    verdict: accepted
+    normalized_claim_key: CAP-D04D05-FORMFACTOR
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "An integration/representation capability is required for the observed QSFP-DD800 vs OSFP form-factor difference (delta_direct from `different` form_factor); the form-factor dimension is UNMODELED in tree.yaml."
+    correction: null
+    reason: "delta_direct from field-level `different` form_factor per rule 4; target UNMODELED correctly stated; not forced into B1/B2/D9/MOD1."
+  - claim_ref: REQ-P1-D04-D05-002
+    generator_id: P1
+    claim_type: capability_requirement
+    verdict: accepted
+    normalized_claim_key: CAP-D04D05-C4-MZM
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C4 must be able to represent/integrate D04's disclosed silicon-photonics MZM PIC with an MZM modulator-type facet; PIC/EIC and laser/PIC integration remain UNKNOWN (axis_direct from D04 observed/company-stated values)."
+    correction: null
+    reason: "axis_direct from D04 observed/company-stated platform/MZM/MZM PIC; C4 is the correct cell; equal-grain D05 counterparts not asserted."
+  - claim_ref: REQ-P1-D04-D05-003
+    generator_id: P1
+    claim_type: capability_requirement
+    verdict: accepted
+    normalized_claim_key: CAP-D04D05-C1-EML
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C1 must represent / capability to characterize D05's raw 'EML laser' 1310 nm light source at label level without expanding into DFB+EAM, InP, monolithic integration, or an independent modulator field (axis_direct from company-stated label)."
+    correction: null
+    reason: "engineering_inference/test framed as characterization need at equal grain; explicitly no label expansion, matching audit 4.2."
+  - claim_ref: REQ-P1-D04-D05-004
+    generator_id: P1
+    claim_type: capability_requirement
+    verdict: accepted
+    normalized_claim_key: CAP-D04D05-C3-PD
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C3 must represent / capability to characterize D05's generic photodetector at label level; detector subtype (PIN/APD) remains UNKNOWN and is not inferred (axis_direct from observed label)."
+    correction: null
+    reason: "engineering_inference/test at equal grain; detector subtype UNKNOWN not inferred, matching audit 4.2."
+  - claim_ref: P2-REQ-D02D03-01
+    generator_id: P2
+    claim_type: capability_requirement
+    verdict: accepted
+    normalized_claim_key: CAP-D02D03-C5-LRO
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C5 must be able to express the Tx-retimed / Rx-linear (LRO) electrical-responsibility split at retiming-scope granularity as disclosed for D02; D03 responsibilities remain UNKNOWN and are not inferred (axis_direct from D02 observed/company-stated values)."
+    correction: null
+    reason: "axis_direct from D02 observed/company-stated normalized_architecture/tx_retiming/rx_retiming; D03 UNKNOWN explicitly not inferred."
+  - claim_ref: P2-REQ-D02D03-02
+    generator_id: P2
+    claim_type: capability_requirement
+    verdict: accepted
+    normalized_claim_key: CAP-D02D03-C5-3nmDSP
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C5 must be able to record the raw disclosed label '3 nm DSP' as a DSP process-node facet without asserting a comparative process or fabrication delta (axis_direct from D03 company-stated raw label)."
+    correction: null
+    reason: "axis_direct from D03 company-stated raw label only; explicitly no comparative process/fabrication delta; consistent with audit 4.2."
+  - claim_ref: P2-REQ-D04D05-01
+    generator_id: P2
+    claim_type: capability_requirement
+    verdict: duplicate_valid
+    normalized_claim_key: CAP-D04D05-FORMFACTOR
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "An integration/representation capability is required for the observed QSFP-DD800 vs OSFP form-factor difference (delta_direct from `different` form_factor); the form-factor dimension is UNMODELED in tree.yaml."
+    correction: null
+    reason: "Same semantic claim as CAP-D04D05-FORMFACTOR; duplicate of REQ-P1-D04-D05-001."
+  - claim_ref: P2-REQ-D04D05-02
+    generator_id: P2
+    claim_type: capability_requirement
+    verdict: duplicate_valid
+    normalized_claim_key: CAP-D04D05-C4-MZM
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C4 must be able to represent/integrate D04's disclosed silicon-photonics MZM PIC with an MZM modulator-type facet; PIC/EIC and laser/PIC integration remain UNKNOWN (axis_direct from D04 observed/company-stated values)."
+    correction: null
+    reason: "Same semantic claim as CAP-D04D05-C4-MZM; duplicate of REQ-P1-D04-D05-002."
+  - claim_ref: P2-REQ-D04D05-03
+    generator_id: P2
+    claim_type: capability_requirement
+    verdict: accepted
+    normalized_claim_key: CAP-D04D05-C1-EML
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C1 must represent / capability to characterize D05's raw 'EML laser' 1310 nm light source at label level without expanding into DFB+EAM, InP, monolithic integration, or an independent modulator field (axis_direct from company-stated label)."
+    correction: null
+    reason: "axis_direct from D05 observed light_source_type/light_source_wavelength; raw label recorded without expansion, matching audit 4.2. Same atomic claim as REQ-P1-D04-D05-003 (merged in union)."
+  - claim_ref: P2-REQ-D04D05-04
+    generator_id: P2
+    claim_type: capability_requirement
+    verdict: accepted
+    normalized_claim_key: CAP-D04D05-C3-PD
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C3 must represent / capability to characterize D05's generic photodetector at label level; detector subtype (PIN/APD) remains UNKNOWN and is not inferred (axis_direct from observed label)."
+    correction: null
+    reason: "axis_direct from D05 observed detector_type; subtype UNKNOWN not inferred. Same atomic claim as REQ-P1-D04-D05-004 (merged in union)."
+  - claim_ref: P3-D02-D03-REQ-01
+    generator_id: P3
+    claim_type: capability_requirement
+    verdict: duplicate_valid
+    normalized_claim_key: CAP-D02D03-C5-LRO
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C5 must be able to express the Tx-retimed / Rx-linear (LRO) electrical-responsibility split at retiming-scope granularity as disclosed for D02; D03 responsibilities remain UNKNOWN and are not inferred (axis_direct from D02 observed/company-stated values)."
+    correction: null
+    reason: "Same semantic claim as CAP-D02D03-C5-LRO; duplicate of P2-REQ-D02D03-01."
+  - claim_ref: P3-D04-D05-REQ-01
+    generator_id: P3
+    claim_type: capability_requirement
+    verdict: corrected
+    normalized_claim_key: CAP-D04D05-FORMFACTOR
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: fail
+    accepted_atomic_claim: "An integration/representation capability is required for the observed QSFP-DD800 vs OSFP form-factor difference (delta_direct from `different` form_factor); the form-factor dimension is UNMODELED in tree.yaml."
+    correction: "existing_points_matchable must be the enum string 'no' (unquoted 'no' is parsed as YAML 1.1 boolean false); semantic claim otherwise valid and duplicate of CAP-D04D05-FORMFACTOR."
+    reason: "Rule 1: mechanical boolean-enum failure on existing_points_matchable; claim substance valid and mergeable with CAP-D04D05-FORMFACTOR."
+  - claim_ref: P3-D04-D05-REQ-02
+    generator_id: P3
+    claim_type: capability_requirement
+    verdict: duplicate_valid
+    normalized_claim_key: CAP-D04D05-C4-MZM
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C4 must be able to represent/integrate D04's disclosed silicon-photonics MZM PIC with an MZM modulator-type facet; PIC/EIC and laser/PIC integration remain UNKNOWN (axis_direct from D04 observed/company-stated values)."
+    correction: null
+    reason: "Same semantic claim as CAP-D04D05-C4-MZM; duplicate of REQ-P1-D04-D05-002."
+  - claim_ref: P3-D04-D05-REQ-03
+    generator_id: P3
+    claim_type: capability_requirement
+    verdict: duplicate_valid
+    normalized_claim_key: CAP-D04D05-C1-EML
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C1 must represent / capability to characterize D05's raw 'EML laser' 1310 nm light source at label level without expanding into DFB+EAM, InP, monolithic integration, or an independent modulator field (axis_direct from company-stated label)."
+    correction: null
+    reason: "Same semantic claim as CAP-D04D05-C1-EML; duplicate of P2-REQ-D04D05-03."
+  - claim_ref: P3-D04-D05-REQ-04
+    generator_id: P3
+    claim_type: capability_requirement
+    verdict: duplicate_valid
+    normalized_claim_key: CAP-D04D05-C3-PD
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "C3 must represent / capability to characterize D05's generic photodetector at label level; detector subtype (PIN/APD) remains UNKNOWN and is not inferred (axis_direct from observed label)."
+    correction: null
+    reason: "Same semantic claim as CAP-D04D05-C3-PD; duplicate of P2-REQ-D04D05-04."
+  - claim_ref: C1-REQ-1
+    generator_id: C1
+    claim_type: capability_requirement
+    verdict: corrected
+    normalized_claim_key: CAP-D02D03-C5-CHAR-D03
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: fail
+    accepted_atomic_claim: "A characterization/test capability is required to determine D03's Tx/Rx retiming, FEC, DAC/ADC, and host-SerDes responsibilities under conditions comparable to D02's disclosed LRO split (D03 side undisclosed)."
+    correction: "existing_points_matchable must be the enum string 'no' (unquoted 'no' parsed as YAML 1.1 boolean false); semantic claim otherwise valid and duplicate of CAP-D02D03-C5-CHAR-D03."
+    reason: "Rule 1: mechanical boolean-enum failure; claim substance valid and mergeable with CAP-D02D03-C5-CHAR-D03 (REQ-P1-D02-D03-002)."
+  - claim_ref: C1-REQ-2
+    generator_id: C1
+    claim_type: capability_requirement
+    verdict: corrected
+    normalized_claim_key: CAP-D04D05-FORMFACTOR
+    source_entailment: pass
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: fail
+    accepted_atomic_claim: "An integration/representation capability is required for the observed QSFP-DD800 vs OSFP form-factor difference (delta_direct from `different` form_factor); the form-factor dimension is UNMODELED in tree.yaml."
+    correction: "existing_points_matchable must be the enum string 'no' (unquoted 'no' parsed as YAML 1.1 boolean false); semantic claim otherwise valid and duplicate of CAP-D04D05-FORMFACTOR."
+    reason: "Rule 1: mechanical boolean-enum failure; claim substance valid and mergeable with CAP-D04D05-FORMFACTOR."
+  - claim_ref: C1-REQ-3
+    generator_id: C1
+    claim_type: capability_requirement
+    verdict: corrected
+    normalized_claim_key: CAP-D04D05-EQUALGRAIN-BOTH
+    source_entailment: partial
+    scope_preservation: pass
+    physical_mapping: pass
+    mechanical_gate: pass
+    accepted_atomic_claim: "A characterization/test capability is required to obtain equal-grain light-source, modulator, detector, material, and integration disclosures for both D04 and D05 endpoints (composite endpoints; no equal-grain comparable field difference established)."
+    correction: "basis_type delta_direct is invalid here; the composite endpoint has no equal-grain comparable field difference, so basis_type should be engineering_inference."
+    reason: "Rule 4: delta_direct requires a directly comparable field difference, but the basis fields are complementary UNKNOWNs with no equal-grain difference; the characterization need itself is valid."
+shared_errors:
+  - "Unquoted 'no' in existing_points_matchable (P3-D04-D05-REQ-01, C1-REQ-1, C1-REQ-2) is parsed as YAML 1.1 boolean false, violating the enum contract [no, partial, yes]; correct to quoted 'no' per contract rule 1."
+recommended_claim_union:
+  - normalized_claim_key: KEY-DELTA-D02D03-RAWDESC
+    selected_claim_refs:
+      - P1-D02-D03-001
+      - C1-D02D03-1
+    accepted_atomic_claim: "D02 and D03 raw implementation descriptions differ (LRO vs 3 nm DSP) as a contrast in raw labels, but raw_architecture_label is not_comparable; no equal-grain comparative delta (responsibility/component/process/equipment/test) is established; remaining D03 electrical responsibilities UNKNOWN."
+    limitations: "Comparative delta UNKNOWN; raw-label contrast is not a physical route difference; C5 candidate facets (tx_retiming_scope, rx_retiming_scope, dsp_process_node_raw) are not canonical cell IDs."
+  - normalized_claim_key: KEY-DELTA-D04D05-FORMFACTOR
+    selected_claim_refs:
+      - P1-D04-D05-001
+      - C1-D04D05-1
+      - P3-D04-D05-REQ-01
+      - C1-REQ-2
+    accepted_atomic_claim: "D04 and D05 have different front-panel pluggable form factors (QSFP-DD800 vs OSFP), a field-level `different` in the same form-factor field; the form-factor dimension is UNMODELED in tree.yaml and must not be forced into B1/B2/D9/MOD1; it is not a comparable internal component delta."
+    limitations: "Form factor is UNMODELED in tree.yaml; not a performance/power/component delta; symmetric endpoint role unverified."
+  - normalized_claim_key: KEY-DELTA-D04D05-COMPOSITE
+    selected_claim_refs:
+      - P1-D04-D05-002
+      - C1-D04D05-2
+    accepted_atomic_claim: "D04 and D05 endpoints have composite observed implementation descriptions that differ (SiPh MZM PIC vs 1310 nm raw EML laser + generic photodetector); this is a composite-endpoint observed-description difference, not an equal-grain component replacement, performance, or same-role delta; internal partitioning (laser-PIC, PIC-EIC, detector subtype) UNKNOWN."
+    limitations: "Not an equal-grain leaf-by-leaf comparison; D04 light source/detector UNKNOWN, D05 platform/modulator/integration UNKNOWN; maps only to candidate facets under C4/C1/C3, not full leaves."
+  - normalized_claim_key: KEY-TRADEOFF-D02D03
+    selected_claim_refs:
+      - P1-TRADEOFF-CMP-D02-D03
+    accepted_atomic_claim: "CMP-D02-D03 is partially_comparable (shared 1.6T, 8x200G lanes, SiPh, OSFP, front-panel placement); advantages/disadvantages/bottlenecks/alternatives empty; no_unconditional_ranking true; all non-rate/non-lane controls and D03 architecture UNKNOWN."
+    limitations: "Not comparable for performance trade-offs; reach, FEC/BER, environmental, power, density, cost, maintenance, and D03 architecture controls missing."
+  - normalized_claim_key: KEY-TRADEOFF-D04D05
+    selected_claim_refs:
+      - P1-TRADEOFF-CMP-D04-D05
+    accepted_atomic_claim: "CMP-D04-D05 is partially_comparable (shared 800 Gbps traffic, front-panel placement); advantages/disadvantages/bottlenecks/alternatives empty; no_unconditional_ranking true; all controls except shared traffic and placement UNKNOWN."
+    limitations: "No symmetric endpoint roles or controlled performance/power/density/cost/reliability/maintenance comparison established."
+  - normalized_claim_key: CAP-D02D03-C5-8x200G
+    selected_claim_refs:
+      - REQ-P1-D02-D03-001
+    accepted_atomic_claim: "C5 (DSP/CDR-class) must be able to represent/design a 1.6T module with 8x200G electrical host and 8x200G optical media lanes as observed on both endpoints (axis_direct from same observed values)."
+    limitations: "Description/screening field capability only; does not assert company supply or route satisfaction; same-condition controls (modulation, FEC/BER, reach) not established."
+  - normalized_claim_key: CAP-D02D03-C5-LRO
+    selected_claim_refs:
+      - P2-REQ-D02D03-01
+    accepted_atomic_claim: "C5 must be able to express the Tx-retimed / Rx-linear (LRO) electrical-responsibility split at retiming-scope granularity as disclosed for D02; D03 responsibilities remain UNKNOWN and are not inferred (axis_direct from D02 observed/company-stated values)."
+    limitations: "Single-side (D02) axis_direct; D03 side UNKNOWN; product-implementation/representation capability, not a company fact."
+  - normalized_claim_key: CAP-D02D03-C5-3nmDSP
+    selected_claim_refs:
+      - P2-REQ-D02D03-02
+    accepted_atomic_claim: "C5 must be able to record the raw disclosed label '3 nm DSP' as a DSP process-node facet without asserting a comparative process or fabrication delta (axis_direct from D03 company-stated raw label)."
+    limitations: "Raw-label recording only; no comparative process/fabrication delta; single-side (D03) axis_direct."
+  - normalized_claim_key: CAP-D02D03-C5-CHAR-D03
+    selected_claim_refs:
+      - REQ-P1-D02-D03-002
+      - C1-REQ-1
+    accepted_atomic_claim: "A characterization/test capability is required to determine D03's Tx/Rx retiming, FEC, DAC/ADC, and host-SerDes responsibilities under conditions comparable to D02's disclosed LRO split (D03 side undisclosed)."
+    limitations: "Test/characterization need, not an observed company fact; D03 responsibilities UNKNOWN; existing point evidence cannot company-match."
+  - normalized_claim_key: CAP-D04D05-FORMFACTOR
+    selected_claim_refs:
+      - REQ-P1-D04-D05-001
+      - P2-REQ-D04D05-01
+      - P3-D04-D05-REQ-01
+      - C1-REQ-2
+    accepted_atomic_claim: "An integration/representation capability is required for the observed QSFP-DD800 vs OSFP form-factor difference (delta_direct from `different` form_factor); the form-factor dimension is UNMODELED in tree.yaml."
+    limitations: "Form factor UNMODELED; not a component/performance delta; symmetric endpoint role unverified; modeling decision pending."
+  - normalized_claim_key: CAP-D04D05-C4-MZM
+    selected_claim_refs:
+      - REQ-P1-D04-D05-002
+      - P2-REQ-D04D05-02
+      - P3-D04-D05-REQ-02
+    accepted_atomic_claim: "C4 must be able to represent/integrate D04's disclosed silicon-photonics MZM PIC with an MZM modulator-type facet; PIC/EIC and laser/PIC integration remain UNKNOWN (axis_direct from D04 observed/company-stated values)."
+    limitations: "Single-side (D04) axis_direct; equal-grain D05 counterparts UNKNOWN; integration details not inferred."
+  - normalized_claim_key: CAP-D04D05-C1-EML
+    selected_claim_refs:
+      - REQ-P1-D04-D05-003
+      - P2-REQ-D04D05-03
+      - P3-D04-D05-REQ-03
+    accepted_atomic_claim: "C1 must represent / capability to characterize D05's raw 'EML laser' 1310 nm light source at label level without expanding into DFB+EAM, InP, monolithic integration, or an independent modulator field (axis_direct from company-stated label)."
+    limitations: "Raw-label representation only; no internal-structure expansion; detector subtype and integration remain UNKNOWN."
+  - normalized_claim_key: CAP-D04D05-C3-PD
+    selected_claim_refs:
+      - REQ-P1-D04-D05-004
+      - P2-REQ-D04D05-04
+      - P3-D04-D05-REQ-04
+    accepted_atomic_claim: "C3 must represent / capability to characterize D05's generic photodetector at label level; detector subtype (PIN/APD) remains UNKNOWN and is not inferred (axis_direct from observed label)."
+    limitations: "Label-level only; detector subtype UNKNOWN; not a company fact."
+  - normalized_claim_key: CAP-D04D05-EQUALGRAIN-BOTH
+    selected_claim_refs:
+      - C1-REQ-3
+    accepted_atomic_claim: "A characterization/test capability is required to obtain equal-grain light-source, modulator, detector, material, and integration disclosures for both D04 and D05 endpoints (composite endpoints; no equal-grain comparable field difference established)."
+    limitations: "Test/characterization need; composites are not equal-grain; D04 light source/detector UNKNOWN and D05 platform/modulator/integration UNKNOWN."
+metrics:
+  total_claims: 40
+  accepted_or_duplicate: 35
+  corrected: 5
+  rejected: 0
+  unique_valid_claims: 14
+  verifier_domain_type_errors_reported_by_self_verifier: 0
+  verifier_domain_type_error_count_post_human_adjudication: 4

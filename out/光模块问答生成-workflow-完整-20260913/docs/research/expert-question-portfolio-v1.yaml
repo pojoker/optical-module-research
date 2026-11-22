@@ -1,0 +1,100 @@
+schema_version: expert_question_portfolio_v1
+status: draft_only
+canonical_write_allowed: false
+formal_question_ids_created: false
+purpose: schedule_existing_candidate_questions_without_copying_question_content
+
+source_files:
+  - docs/research/pi-packages/2026-08-31-q-up-05-npo-cpo-boundaries-v1/expert-questions-candidate.yaml
+  - docs/research/pi-packages/2026-08-31-q-mid-01-retimed-vs-lpo-v1/expert-questions-candidate.yaml
+  - docs/research/pi-packages/2026-08-30-q-up-06-parallel-vs-wdm-v1/expert-questions-candidate.yaml
+
+verified_counts:
+  total_questions: 30
+  unique_question_ids: 30
+  trigger_edges: 82
+  by_research_status:
+    ready_for_research: 0
+    monitoring: 5
+    requires_controlled_measurement: 10
+    requires_private_or_factory_data: 7
+    blocked_on_public_evidence: 5
+    closed: 3
+
+scheduling_rules:
+  - public_research_cycle_may_select_only_ready_for_research
+  - monitoring_questions_run_only_when_a_new_revision_disclosure_or_event_exists
+  - blocked_on_public_evidence_questions_require_an_explicit_unblocker_before_reopening
+  - controlled_measurement_questions_go_to_experiment_backlog_not_web_search
+  - private_or_factory_questions_require_a_data_partner_or_parameterized_threshold_model
+  - do_not_run_more_than_one_template_instance_for_the_same_object_in_one_cycle
+  - supported_and_falsified_branches_must_change_the_next_research_action
+  - no_question_becomes_formal_without_external_review_and_user_approval
+
+lanes:
+  public_research_now:
+    []
+  public_monitoring:
+    - QUP05-NQ07
+    - QUP05-NQ09
+    - QMID01-NQ08
+    - QX-01
+    - QX-02
+  experiment_backlog:
+    - QUP05-NQ01
+    - QUP05-NQ03
+    - QUP05-NQ05
+    - QMID01-NQ01
+    - QMID01-NQ02
+    - QMID01-NQ03
+    - QMID01-NQ05
+    - QMID01-NQ06
+    - QMID01-NQ09
+    - QX-05
+  private_or_factory_backlog:
+    - QUP05-NQ04
+    - QMID01-NQ07
+    - QX-06
+    - QX-07
+    - QX-08
+    - QX-09
+    - QX-10
+  blocked_until_unblocker:
+    - question_id: QUP05-NQ02
+      unblocker: exact_product_engine_service_bulletin_RMA_contract_or_assembly_rework_manual
+    - question_id: QUP05-NQ06
+      unblocker: physical_service_manual_or_vendor_dump_for_Q3450_LD_exact_part
+    - question_id: QMID01-NQ04
+      unblocker: physical_1_6T_modules_and_CMis_VCS_dump_or_vendor_exact_capability_matrix
+    - question_id: QX-03
+      unblocker: exact_SKU_teardown_official_dump_or_SKU_linked_supplier_disclosure
+    - question_id: QX-04
+      unblocker: QX_03_internal_object_resolution_plus_physical_thermal_spectral_measurement
+  closed_candidate_answer:
+    - QX-11
+    - QUP05-NQ08
+    - QX-12
+
+template_families:
+  - template_id: EQT-SYSTEM-POWER-BOUNDARY
+    purpose: prevent_component_or_nameplate_power_from_becoming_system_net_power
+    instances: [QUP05-NQ03, QMID01-NQ01]
+  - template_id: EQT-MATURITY-LADDER
+    purpose: separate_listing_demo_qualification_delivery_named_deployment_and_scaled_deployment
+    instances: [QUP05-NQ07, QUP05-NQ09, QMID01-NQ08]
+  - template_id: EQT-OBJECT-IMPLEMENTATION-GATE
+    purpose: bind_internal_implementation_or_control_capability_to_an_exact_object
+    instances: [QUP05-NQ06, QMID01-NQ04, QX-03, QX-04]
+  - template_id: EQT-MANUFACTURING-NET-ECONOMICS
+    purpose: close_route_card_cycle_time_yield_rework_scrap_and_test_cost_before_ranking
+    instances: [QUP05-NQ04, QMID01-NQ07, QX-06, QX-07, QX-10]
+  - template_id: EQT-ROUTE-SERVED-EVIDENCE
+    purpose: prevent_capability_match_from_becoming_route_service_or_supply
+    instances: [QX-12]
+
+next_public_cycle:
+  selected_question: null
+  reason: no_remaining_question_is_ready_for_public_research_and_horizontal_expansion_is_paused
+  stop_condition: no_public_research_runs_until_a_new_ready_question_or_explicit_unblocker_exists
+  next_non_research_action: external_incremental_review_of_promotion_batch_stable_explanations_01
+  canonical_write_allowed: false

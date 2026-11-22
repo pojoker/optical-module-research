@@ -1,0 +1,253 @@
+schema_version: knowledge_append_candidate_v1
+status: promoted
+canonical_write_allowed: false
+canonical_write_performed: true
+target_file: knowledge.yaml
+prepared_at: '2026-08-31'
+purpose: 将PQ001既有冻结研究拆成可审阅的物理知识原子条目_并记录整批晋升结果
+applied_at: '2026-08-31'
+applied_ids: [KN008, KN009, KN010]
+
+source_package:
+  path: docs/research/pi-packages/2026-08-23-pq001-v1
+  adjudication: docs/research/pi-packages/2026-08-23-pq001-v1/adjudication.md
+  adjudication_sha256: dc9afe9cd63f9bf43dad5efb0a8de86ea18501fff3e72d5f9883df9256d68c54
+  adjudication_outcome: usable_draft_after_explicit_boundary_errata
+  frozen_manifest: corpus/web/2026-08-23/PQ001-snapshot-manifest.md
+  frozen_manifest_sha256: d34eb0200248e9305a7196c835fe00ad5fb10667b8886c08ac6491972c348890
+
+target_contract:
+  target_class: physical_domain_knowledge
+  target_system: 物理知识
+  target_file: knowledge.yaml
+  current_canonical_sha256: ecb9f6efefaba2085bf0e3f6121de17ab56e107953b3649e6bb07e64288b5c22
+  current_canonical_max_id: KN010
+  proposed_ids: [KN008, KN009, KN010]
+  ids_are_reserved: false
+  batch_write_policy: atomic_all_or_none
+  canonical_write_requires_explicit_user_approval: true
+  question_acceptance_effect:
+    RQ000:
+      proposed_status: acceptance_complete_if_full_batch_promoted
+      required_candidate_ids: [PQ001-KN-C01]
+      acceptance_criteria:
+        - criterion_id: RQ000-AC01
+          requirement: 明确发送方向电转光与接收方向光转电_并限定对象为光收发模块
+          status: met
+          satisfied_by_candidate_ids: [PQ001-KN-C01]
+    PQ001:
+      proposed_status: acceptance_complete_if_full_batch_promoted
+      required_candidate_ids: [PQ001-KN-C02, PQ001-KN-C03]
+      acceptance_criteria:
+        - criterion_id: PQ001-AC01
+          requirement: 区分Host高速电接口_Media接口与模块桥接功能_并保存CMIS适用条件
+          status: met
+          satisfied_by_candidate_ids: [PQ001-KN-C02]
+        - criterion_id: PQ001-AC02
+          requirement: 证明机械边界随前面板可插拔与CPO对象变化_不把机笼金手指写成通用定义
+          status: met
+          satisfied_by_candidate_ids: [PQ001-KN-C03]
+        - criterion_id: PQ001-AC03
+          requirement: 明确系统边界结论不等于内部BOM或连接器统一实现
+          status: met
+          satisfied_by_candidate_ids: [PQ001-KN-C02, PQ001-KN-C03]
+    PQ002:
+      proposed_status: unchanged_unresearched
+      required_candidate_ids: []
+
+items:
+  - candidate_id: PQ001-KN-C01
+    proposed_knowledge_id: KN008
+    target_contract:
+      target_class: physical_domain_knowledge
+      knowledge_yaml_eligible: true
+      research_question_ids: [RQ000]
+      physical_cell_ids: []
+      route_item_ids: []
+    entailment_contract:
+      atomic_claim: 对具备发送和接收功能的光收发模块_发送端把电信号转换成光信号_接收端再把光信号转换成电信号
+      claim_class: stable_explanation
+      applies_when: 解释光收发模块最基本的双向光电转换功能
+      does_not_apply_when: 单向发射或接收器件_内部组件清单_机械形态_接口协议或性能指标
+      proposed_disposition: ready_for_stable_explanation_review
+      evidence:
+        - source_id: S1-中际旭创2024年报
+          source_type: annual_report_local_file
+          locator: corpus/annual-2024/300308/300308__em_中际旭创_em__2024_2024年年度报告.pdf.txt#释义章节·光模块/光通信模块
+          supports: 发送端电转光_经光纤传送后接收端光转电
+          does_not_support: 行业统一机械边界_完整BOM_所有光模块均为双向收发器
+        - source_id: S2-博创科技2024年报
+          source_type: annual_report_local_file
+          locator: corpus/annual-2024/300548/300548__em_博创科技_em__2024_2024年年度报告.pdf.txt#释义章节·光收发模块/光模块
+          supports: 光模块实现光电信号收发与转换_发送端电转光_接收端光转电
+          does_not_support: 完整BOM_标准接口_机械边界或路线优劣
+      falsifier: 所指对象并非光收发模块_或其一手定义明确表明不承担电光与光电转换
+    append_payload:
+      id: KN008
+      体系: 物理知识
+      研究问题: [RQ000]
+      格: []
+      标题: 光模块最基本的工作——发送时电转光，接收时光转电
+      一句话: |
+        光收发模块夹在电子设备和光纤之间：发送时把电信号变成光信号，
+        接收时再把光信号变回电信号。
+      说细点: |
+        服务器、交换机等电子设备内部处理的是电信号；光纤里传输的是光信号。
+        具备发送和接收功能的光模块负责在这两种信号之间往返转换：发送端完成电转光，
+        光信号经光纤传到远端后，接收端完成光转电。
+
+        这是理解光模块的第一层，不等于完整零件清单，也没有规定它必须长成前面板可插拔盒子。
+        单向发射器、单向接收器以及更具体的接口和封装形态，需要另行限定对象。
+      怎么用它判断: |
+        遇到“这是光模块吗”时，先问它是否承担电子系统与光传输介质之间的信号转换；
+        再另行判断它是双向收发、单向器件、可插拔模块还是板载/共封装光学。
+      证据:
+        - 谁: 中际旭创股份有限公司
+          原话: 光模块的作用就是光电转换，发送端把电信号转换成光信号，通过光纤传送后，接收端再把光信号转换成电信号。
+          出处: 2024年年度报告·释义章节
+          锚型: local_file
+          锚: corpus/annual-2024/300308/300308__em_中际旭创_em__2024_2024年年度报告.pdf.txt#释义章节·光模块/光通信模块
+          说明: 公司功能口径_不单独替代行业标准边界
+        - 谁: 博创科技股份有限公司
+          原话: 由光电子器件和功能电路等组成，实现光电信号的收发、转换功能，光模块的发送端把电信号转换为光信号，接收端把光信号转换为电信号。
+          出处: 2024年年度报告·释义章节
+          锚型: local_file
+          锚: corpus/annual-2024/300548/300548__em_博创科技_em__2024_2024年年度报告.pdf.txt#释义章节·光收发模块/光模块
+          说明: 公司功能与构成口径_不支撑完整BOM或统一形态
+      录入日期: '2026-08-31'
+
+  - candidate_id: PQ001-KN-C02
+    proposed_knowledge_id: KN009
+    target_contract:
+      target_class: physical_domain_knowledge
+      knowledge_yaml_eligible: true
+      research_question_ids: [PQ001]
+      physical_cell_ids: []
+      route_item_ids: []
+    entailment_contract:
+      atomic_claim: 在CMIS管理的传输模块中_主机接口是模块与主机之间的高速电接口_介质接口是模块与远端介质之间的高速电或光接口_应用功能在两侧之间桥接
+      claim_class: stable_explanation
+      applies_when: 解释CMIS管理的传输模块的任务接口骨架
+      does_not_apply_when: 非CMIS对象_CMIS资源模块或线缆组件例外_具体外壳连接器散热器与内部BOM
+      proposed_disposition: ready_for_stable_explanation_review
+      evidence:
+        - source_id: S3-OIF-CMIS-05.4
+          source_type: implementation_agreement_web_snapshot
+          locator: corpus/web/2026-08-23/oiforum.com__OIF-CMIS-05.4.pdf#印刷页65-67·§6至§6.2.1.1
+          supports: Host_Interface与Media_Interface定义_Application桥接功能_高速任务接口与低速管理通信分层
+          does_not_support: 所有光模块都受CMIS管理_media必为光_具体机械边界或完整BOM
+      falsifier: 适用版本的CMIS正文不再以Host_Interface和Media_Interface描述传输模块任务接口_或目标对象不在CMIS适用范围内
+    append_payload:
+      id: KN009
+      体系: 物理知识
+      研究问题: [PQ001]
+      格: []
+      标题: 先看两侧接口——模块把主机侧高速电信号接到远端介质
+      一句话: |
+        对采用 CMIS 管理的传输模块，主机一侧是高速电接口，远端一侧是高速电或光接口，
+        模块的应用功能负责把两侧接起来。
+      说细点: |
+        CMIS 把与传输任务直接相关的物理接口分成两侧：Host Interface 位于模块和主机系统之间，
+        是高速电接口；Media Interface 位于模块和远端介质之间，可以是高速电接口，也可以是光接口。
+        模块中的 Application 是连接主机侧和介质侧的桥接或转发功能。
+
+        这里说的是 CMIS 管理的 transmission module，不是所有光模块的统一定义。
+        CMIS 还使用低速双线通信来做主机到模块的管理，但它和承载业务数据的高速接口不是一回事。
+        这套接口骨架也没有直接规定外壳、机笼、连接器、散热器或内部零件清单。
+      怎么用它判断: |
+        研究一个模块时先把“高速业务接口”和“低速管理接口”分开，再分别标出主机侧与介质侧；
+        只有确认对象受 CMIS 管理时，才可直接套用这里的术语。
+      证据:
+        - 谁: Optical Internetworking Forum（OIF）
+          原话: （忠实转述，非逐字引文）Host Interface 是模块与主机系统之间的高速电接口；Media Interface 是模块与连接远端节点的介质之间的高速电或光接口；Application 描述主机侧与介质侧接口电路之间的桥接或转发功能。
+          出处: OIF-CMIS-05.4·§6.1.1、§6.1.2、§6.2.1.1
+          锚型: web_snapshot
+          锚:
+            原URL: https://www.oiforum.com/wp-content/uploads/OIF-CMIS-05.4.pdf
+            存档路径: corpus/web/2026-08-23/oiforum.com__OIF-CMIS-05.4.pdf
+            抓取日期: '2026-08-23'
+            SHA256: cd57ebb1cfb8e0a9e9c7b63862b5b261855e9b77844f4cf85bd36ea3808911db
+          说明: 仅用于CMIS管理的传输模块_不扩张到全部光模块
+      录入日期: '2026-08-31'
+
+  - candidate_id: PQ001-KN-C03
+    proposed_knowledge_id: KN010
+    target_contract:
+      target_class: physical_domain_knowledge
+      knowledge_yaml_eligible: true
+      research_question_ids: [PQ001]
+      physical_cell_ids: []
+      route_item_ids: []
+    entailment_contract:
+      atomic_claim: 前面板机笼与金手指不是所有光模块的必要边界_OSFP以金手指外壳连接主机连接器和机笼_而OIF_3.2T_CPO模块可近ASIC共基板或嵌板并以尾纤连接光侧
+      claim_class: stable_explanation
+      applies_when: 比较前面板可插拔OSFP与OIF_3.2T_CPO_IA所定义模块的机械边界
+      does_not_apply_when: 推断所有CPO都无机笼或金手指_把ASIC或基板算入模块_推断具体产品内部BOM
+      proposed_disposition: ready_for_stable_explanation_review
+      evidence:
+        - source_id: S4-OSFP-Rev5.22
+          source_type: msa_specification_web_snapshot
+          locator: corpus/web/2026-08-23/osfpmsa.org__OSFP_Module_Specification_Rev5_22.pdf#印刷页17_30_159-160·§1_§3.5_§15
+          supports: OSFP模块金手指与主机连接器配合_模块外壳与主机机笼配合_模块边缘连接器承载高速与低速信号和供电
+          does_not_support: 所有光模块均采用OSFP形态_OSFP规范给出完整内部BOM
+        - source_id: S5-OIF-3.2T-CPO-01.0
+          source_type: implementation_agreement_web_snapshot
+          locator: corpus/web/2026-08-23/oiforum.com__OIF-Co-Packaging-3.2T-Module-01.0.pdf#印刷页7_9-10_24·§1_架构图_§6
+          supports: 该IA中的光模块近ASIC_可同处共封装基板或嵌板_光侧为尾纤且最终连接器位置未固定
+          does_not_support: 所有CPO的唯一实现_ASIC或基板属于光模块_所有光模块均使用尾纤
+      falsifier: OSFP来源不再要求所述主机配合关系_且该OIF_CPO_IA也要求相同的前面板机笼与金手指作为模块必要边界
+    append_payload:
+      id: KN010
+      体系: 物理知识
+      研究问题: [PQ001]
+      格: []
+      标题: 外壳不是定义——可插拔 OSFP 和 CPO 有不同机械边界
+      一句话: |
+        OSFP 模块通过金手指和外壳接入主机连接器与机笼；OIF 的一种 3.2T CPO 模块则靠近交换芯片，
+        可共基板或嵌在板上并用尾纤接出，所以前面板机笼不是所有光模块的必要条件。
+      说细点: |
+        在 OSFP 这种前面板可插拔形态中，模块电路板的金手指与主机连接器配合，模块外壳与主机机笼配合。
+        这是一个清楚、可替换的机械边界，但它只描述 OSFP/OSFP-RHS 家族。
+
+        OIF 的 3.2T 共封装模块规范给出了另一种实例：光模块靠近交换芯片，可与芯片同处一个共封装基板
+        但仍是不同对象，也可以嵌在系统板上；光侧以尾纤引出，最终光连接器的位置和实现没有被该规范固定。
+
+        因而判定“是不是光模块”时，不能先把前面板盒子、机笼或金手指当成必要条件。
+        这也不等于所有 CPO 都采用同一种结构，更不能把交换芯片或整块基板算进光模块本体。
+      怎么用它判断: |
+        先按具体规范或产品资料画出模块与主机、介质的接口，再标机械边界；
+        不要把某一种可插拔形态的机笼、金手指和散热结构拼成所有光模块的共同零件表。
+      证据:
+        - 谁: OSFP MSA
+          原话: （忠实转述，非逐字引文）规范分别定义模块机械形态、主机机笼及配套连接器和主机 PCB 布局；模块 PCB 的接触垫与 §5.10 规定的连接器配合。
+          出处: OSFP Module Specification Rev 5.22·§1、§3.5、§15
+          锚型: web_snapshot
+          锚:
+            原URL: https://www.osfpmsa.org/assets/pdf/OSFP_Module_Specification_Rev5_22.pdf
+            存档路径: corpus/web/2026-08-23/osfpmsa.org__OSFP_Module_Specification_Rev5_22.pdf
+            抓取日期: '2026-08-23'
+            SHA256: c8e80dda50e85b1d4ec96c88642d8a9ed0ed254124f9442f20c51559533850eb
+          说明: 仅用于OSFP/OSFP-RHS实例_不推广为全部光模块
+        - 谁: Optical Internetworking Forum（OIF）
+          原话: （忠实转述，非逐字引文）光模块为交换芯片把短距电接口转换为光输入输出；模块可沿基板周边布置或嵌在板上，并以尾纤引出；该协议未固定光连接器实现。
+          出处: OIF-Co-Packaging-3.2T-Module-01.0·§1、架构图、§6
+          锚型: web_snapshot
+          锚:
+            原URL: https://www.oiforum.com/wp-content/uploads/OIF-Co-Packaging-3.2T-Module-01.0.pdf
+            存档路径: corpus/web/2026-08-23/oiforum.com__OIF-Co-Packaging-3.2T-Module-01.0.pdf
+            抓取日期: '2026-08-23'
+            SHA256: 586d0ed09f2e19d49bf92b23bb681c266d63db6c477d9c8e8c6cd6cf1d6a304f
+          说明: 仅用于该3.2T_CPO_IA实例_不推广为所有CPO
+      录入日期: '2026-08-31'
+
+review_state:
+  machine_preflight: pass
+  machine_checker: tools/research/check_knowledge_append_candidates.py
+  materialized_scan: pass_on_current_canonical
+  canonical_knowledge_file_mutated: true
+  external_semantic_review: pass_after_quote_fidelity_fix
+  external_reviewer: Kimi
+  continuity_handle: session_9b3c8af2-d10c-4713-a573-ed0e37e69a03
+  external_review_record: docs/reviews/2026-08-31-kimi-review-knowledge-append-pq001-v1.md
+  user_decision: approved
+  canonical_changes: 3
