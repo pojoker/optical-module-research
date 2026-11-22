@@ -1,0 +1,57 @@
+{
+  "assembly_status": "complete",
+  "domestic": {
+    "available": true,
+    "errors": [],
+    "manifest_path": "[本地路径已省略]",
+    "report_path": "[本地路径已省略]",
+    "summary": {
+      "announcements": 2,
+      "gate_review_suggested": true,
+      "ir_new": 6,
+      "log_entries": 3,
+      "outlier_hits": 0,
+      "qa_new": 35,
+      "queue_added": 0,
+      "queue_removed": 0,
+      "restart_hits": 9,
+      "watched_codes": 93
+    }
+  },
+  "overseas": {
+    "available": true,
+    "candidates_path": "[本地路径已省略]",
+    "errors": [],
+    "report_path": "[本地路径已省略]",
+    "summary": {
+      "claim_candidates": 0,
+      "configured_entity_count": 7,
+      "corroboration_suggestions": 0,
+      "decision_counts": {
+        "new_disclosure_candidate": 1
+      },
+      "disclosure_candidates": 1,
+      "endpoint_count": 8,
+      "endpoint_failed": 5,
+      "event_candidates": 0,
+      "evidence_candidates": 0,
+      "failure_types": {
+        "fetch_failure": 5,
+        "invalid_item": 12,
+        "missing_endpoint": 74,
+        "no_relevant_content": 1
+      },
+      "fetch_mode": "http",
+      "item_count": 13,
+      "missing_endpoint_count": 74,
+      "monitored_entity_count": 81,
+      "promoted": 0,
+      "queue_added": 92,
+      "queue_removed": 0,
+      "queue_size": 92,
+      "run_date": "2026-09-04"
+    },
+    "summary_path": "[本地路径已省略]"
+  },
+  "run_date": "2026-09-04"
+}

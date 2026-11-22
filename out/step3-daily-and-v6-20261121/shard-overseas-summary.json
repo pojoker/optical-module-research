@@ -1,0 +1,131 @@
+{
+  "shard": "step3-overseas-and-relationship-timeline",
+  "as_of_date": "2026-11-21",
+  "commitments_adjudicated": {
+    "fulfilled": {
+      "CM001": {
+        "company_id": "CSCO",
+        "evidence_source_id": "S_CSCO_2026Q2_A",
+        "evidence_claim_id": "CL010",
+        "anchor_fix": "CL009 -> p. 3, Demand for Silicon One"
+      },
+      "CM002": {
+        "company_id": "AAOI",
+        "evidence_source_id": "S_AAOI_2026Q2",
+        "evidence_claim_id": "CL075",
+        "source_url_fix": "S_AAOI_Q1_RESULT_A -> https://investors.ao-inc.com/2026-05-07-Applied-Optoelectronics-Reports-First-Quarter-2026-Results"
+      }
+    },
+    "partially_fulfilled": {
+      "CM007": {
+        "company_id": "CIEN",
+        "evidence_source_id": "S_CIEN_2026_FORUM",
+        "evidence_claim_id": "CL076"
+      }
+    },
+    "pending_refined": [
+      "CM003",
+      "CM004",
+      "CM005",
+      "CM006",
+      "CM008",
+      "CM009"
+    ]
+  },
+  "calls_ledger_changes": {
+    "sources_updated": [
+      "S_AAOI_Q1_RESULT_A"
+    ],
+    "sources_inserted": [
+      "S_CIEN_2026_FORUM"
+    ],
+    "claims_updated": [
+      "CL009"
+    ],
+    "claims_inserted": [
+      "CL075",
+      "CL076"
+    ],
+    "watch_entities_inserted": [
+      "WATCH_INNOLIGHT"
+    ],
+    "existing_universe_reused": [
+      "CSCO",
+      "TSEM"
+    ],
+    "disclosures_inserted": [
+      "D_CSCO_20261012_OCP_G300",
+      "D_TSEM_20261103_INNOLIGHT_NPO"
+    ],
+    "event_claims_inserted": [
+      "ECL038",
+      "ECL039"
+    ],
+    "events_inserted": [
+      "EV035",
+      "EV036"
+    ],
+    "event_evidence_inserted": [
+      "EE038",
+      "EE039"
+    ],
+    "deferred_to_review_queue_not_in_claims": [
+      "DC_501FC1F61B62 (Marvell x Lumentum boilerplate)",
+      "DC_573401DC530B (Lumentum FY27Q1 unverified full text)",
+      "DC_3841FCD60F32 (AXT Q3 / Tongmei financing unverified full text)"
+    ],
+    "row_counts": {
+      "sources.csv": 167,
+      "claims.csv": 72,
+      "commitments.csv": 9,
+      "watch_entities.csv": 48,
+      "disclosures.csv": 52,
+      "event_claims.csv": 39,
+      "events.csv": 36,
+      "event_evidence.csv": 39,
+      "radar_events": 36
+    }
+  },
+  "relationship_timeline_changes": {
+    "inserted_timeline_ids": [
+      "TL9001",
+      "TL9002",
+      "TL9003",
+      "TL9004",
+      "TL9005"
+    ],
+    "reused_relation_ids": {
+      "TL9001": "R057",
+      "TL9004": "R058"
+    },
+    "new_relation_ids": {
+      "TL9002": "R205",
+      "TL9003": "R206",
+      "TL9005": "R207"
+    },
+    "total_rows": 451,
+    "unique_relations": 207,
+    "negative_cuts_collision_count": 0
+  },
+  "verification": {
+    "calls_check_messages": [
+      "validated 39 companies / 167 sources / 72 claims",
+      "validated 21 themes / 12 cross-checks / 9 commitments / 4 technology feedback rows",
+      "event ledger validated / 36 reviewed radar events; canonical references are closed; no canonical file was written"
+    ],
+    "relationship_table_errors": [],
+    "solution_links_frozen_sha256": "491a542e9bad782bf18cb0c9522e86989b660d4ea3bd63b4e948c6ba923d4269",
+    "forbidden_words_hits": 0,
+    "target_file_sha256": {
+      "calls/sources.csv": "1bbe9c4f19649c5c14f2190525d06461b811934eea979732f37b35dab252252b",
+      "calls/claims.csv": "b9180a873326b35bd0ac780a08a8e0fe36d2a9ea7669ac56cb7f8ca246bd89da",
+      "calls/commitments.csv": "b2c8c016b0e8d65ba80ec5afa52bfc382948bb29aa363fa8f766c0f42baf2a96",
+      "calls/watch_entities.csv": "d6c6c4eb4198e66911a6fdcd41306da134cc0b1140d8ab4cb56bd85698cfe7f2",
+      "calls/disclosures.csv": "7caad4bcd0d7257ccc318bfe417f0ff7c985407b02894e73851619c6b9912bc6",
+      "calls/event_claims.csv": "8b8d6ce39936689648bbade94a0f75e46110b0cf57055bb00d668815275f8e9b",
+      "calls/events.csv": "9cf71aaa3297d35f86bedc0c85c98d5f6bf171a1ba85a88945404e80f4f311ae",
+      "calls/event_evidence.csv": "ae1d2cdeffed3576a2829768476c1d6e0c9e2e00f843377e098da728810f418a",
+      "corpus/relationships/relationship_timeline.csv": "98cd166210633fa626456708bd80ff4ce6106265587a7cc1fb46f00737353136"
+    }
+  }
+}

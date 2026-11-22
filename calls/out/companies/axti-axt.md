@@ -8,24 +8,26 @@
 
 - 季度槽登记：4/4 个季度槽已登记（含未采集槽位）
 - 可用来源：3/4 个季度槽有 `available` 材料
-- 陈述登记：0 条 `claims.csv` 陈述（含 candidate/rejected）
-- 已核陈述：0 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：1 条已审核雷达事件（asserted 1 / corroborated 0）
+- 陈述登记：1 条 `claims.csv` 陈述（含 candidate/rejected）
+- 已核陈述：1 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
+- 已核事件：3 条已审核雷达事件（asserted 3 / corroborated 0）
 
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
+| 2026Q3 | [S_AXTI_2026Q3](https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-Third-Quarter-2026-Financial-Results/default.aspx) | A | available | 公司IR官方2026Q3业绩新闻稿；本地存档HTML与清洗TXT；归档 corpus/web/step4_20261122/axti_20261029_2026q3_results.txt |
 | 2026Q2 | [S_AXTI_2026Q2](https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Schedules-Second-Quarter-2026-Earnings-Release-for-July-30-2026/default.aspx) | unknown | unavailable | 截至2026-08-13仅找到发布预告；不能冒充结果材料 |
 | 2026Q1 | [S_AXTI_2026Q1](https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-First-Quarter-2026-Financial-Results/default.aspx) | A | available | 公司IR直接业绩稿与电话会入口 |
 | 2025Q4 | [S_AXTI_2025Q4](https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results/default.aspx) | A | available | 公司IR直接业绩稿与电话会入口 |
-| 2025Q3 | [S_AXTI_2025Q3](https://investors.axt.com/Investors/news/news-details/2025/AXT-Inc--Announces-Third-Quarter-2025-Financial-Results/default.aspx) | A | available | 公司IR直接业绩稿与电话会入口 |
 
 ## 已审核管理层陈述
 
 > `reviewed` 仅表示原文已核（说话人、原文、锚点经人工复核），不代表独立来源交叉证实。
 
-未知：本 MVP 尚无已审核管理层陈述。
+- `CL078` · fact · scaled · [S_AXTI_2026Q3](https://investors.axt.com/Investors/news/news-details/2026/AXT-Inc--Announces-Third-Quarter-2026-Financial-Results/default.aspx) `Management Qualitative Comments, paragraph 1 (p3)`
+  - 归纳：AXT在2026Q3业绩稿称已超额完成年内InP衬底产能翻倍目标；未单列InP分产品确收金额或两用物项出口许可证获批笔数
+  - 原文短引：“We entered 2026 with a commitment to double our indium phosphide capacity and I am pleased to report that not only have we surpassed that goal but we have more than quadrupled our 2026 indium phosphide revenue opportunity through additional productivity gains and the expansion of our capabilities for high-value, large diameter products.”
 
 ## 公司官网技术作者陈述（与管理层商业确认隔离）
 

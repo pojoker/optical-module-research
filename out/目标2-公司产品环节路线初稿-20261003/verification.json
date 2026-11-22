@@ -1,0 +1,27 @@
+{
+  "configuration_count": 28,
+  "company_count": 6,
+  "stage_rows": 560,
+  "source_urls": 24,
+  "bucket_counts": {
+    "产品页/规格书": 14,
+    "演示/发布配置": 5,
+    "产品族披露": 8,
+    "冲突待澄清": 1
+  },
+  "html_cards": 28,
+  "local_links_and_anchors_errors": [],
+  "canonical_files_fingerprint_unchanged": 24,
+  "semantic_repairs": [
+    "R28工程推断身份保留",
+    "未披露距离改UNKNOWN",
+    "R11删除DR8旁系推导"
+  ],
+  "limits": [
+    "标注检查项含UNKNOWN，不是事实覆盖率",
+    "事实不晋升canonical",
+    "只检查本地链接存在与片内锚，不声称全部外链永远可访问"
+  ],
+  "browser_visual_check": "已查看页面与产品卡截图；型号过滤1/28、公司过滤3/28、展开20环节；恢复全量",
+  "workpack_yaml": "syntax parsed"
+}

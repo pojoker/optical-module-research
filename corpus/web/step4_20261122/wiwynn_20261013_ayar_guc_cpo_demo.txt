@@ -1,0 +1,74 @@
+URL: https://www.wiwynn.com/news/wiwynn-ayar-labs-and-guc-advance-co-packaged-optics-with-live-demonstration-of-integrated-optical-compute-system-at-ocp-global-summit-2026
+REQUESTED_URL: https://www.wiwynn.com/news/wiwynn-ayar-labs-and-guc-advance-co-packaged-optics-with-live-demonstration-of-integrated-optical-compute-system-at-ocp-global-summit-2026
+TITLE: Wiwynn, Ayar Labs, and GUC Advance Co-Packaged Optics with Live Demonstration of Integrated Optical Compute System at OCP Global Summit 2026
+PUBLISHED_AT: 2026-10-13
+RETRIEVED_AT: 2026-11-22
+--- PARSED PARAGRAPHS ---
+[p1] Wiwynn Published October 13, 2026
+[p2] Three-way collaboration showcases platform integration, real-time telemetry and system management readiness, accelerating CPO deployment into rack-scale AI infrastructure
+[p3] San Jose, CA — October 13, 2026— Wiwynn, an innovative cloud IT infrastructure provider for data centers, Ayar Labs, the leader in co-packaged optics (CPO) solutions for AI scale-up, and Global Unichip Corp. (GUC), the Advanced ASIC Leader, today announced the latest milestone in their strategic collaboration. For the first time, they are presenting a live demonstration at OCP Global Summit 2026, showcasing Wiwynn’s compute system integrating GUC's ASIC with Ayar Labs' TeraPHY™ optical engine paired with SuperNova™ light source, streaming real-time health telemetry.
+[p4] This demonstration marks a significant step forward from the companies' previous rack-level architecture collaboration, advancing to platform integration and functional validation. The system integrates GUC's multi-chip packages (MCPs) with TeraPHY™ optical engines (OEs), powered by the Ayar Labs SuperNova™ light source. In this live demo, telemetry is continuously polled from the OEs within the MCPs and displayed in real time, proving the optical link is up inside the system. As the tuning subsystem tracks thermal and wavelength drift, key signal quality metrics hold steady, validating the system's real-world operational readiness.
+[p5] “AI infrastructure is rapidly evolving toward an optically connected future," said William Lin, President and CEO of Wiwynn. "This deeper integration with Ayar Labs and GUC, proving that the optical engine and light source can operate reliably within a real system architecture, marks a significant step forward in our collaboration. Together, we are accelerating CPO deployment at scale, helping hyperscalers build high-bandwidth, more power-efficient, and more scalable AI infrastructure."
+[p6] Live Demonstration Highlights:
+[p7] Wiwynn will showcase a full spectrum of forward-looking cooling innovations, from on-package cooling and advanced materials to system-level lightweight design, demonstrating its commitment to breaking through the physical limits of traditional cooling architectures.
+[p8] Deepening Collaboration to Accelerate CPO Commercialization
+[p9] "AI is driving the industry toward an optically-connected future, and the bar is no longer whether it works; it’s whether it can be deployed and managed at scale," said Mark Wade, CEO and co-founder of Ayar Labs. "This demonstration with Wiwynn and GUC is about proving integration and operability in a real platform, and giving data center teams the data they’ll need to adopt CPO with confidence. We're proud to work with Wiwynn and GUC to make the next generation of AI infrastructure deployable at hyperscale."
+[p10] "Integrating optical I/O directly into chip design, and proving its functionality through live system-level demonstration, is a significant achievement in our collaboration with Wiwynn and Ayar Labs," said Sean Tai, President of GUC. "This cross-layer collaborative approach allows us to incorporate system requirements earlier in the chip design phase, significantly shortening the development cycle from silicon innovation to system readiness, and providing our customers with a definitive advantage in the global AI race."
+[p11] AI infrastructure is shifting toward optical-electrical convergence. This demonstration shows CPO has progressed from architectural validation to system-level functional proof, laying a solid foundation for hyperscale adoption. The three companies will continue deepening their collaboration, driving CPO from validation toward high-volume deployment.
+[p12] Visit the Wiwynn booth at OCP Global Summit 2026 to experience the Compute Tray CPO live demonstration firsthand.
+[p13] Wiwynn is an innovative cloud IT infrastructure provider delivering high-quality computing, storage, and rack-level solutions for leading data centers worldwide. Guided by the vision to “unleash the power of digitalization; ignite the innovation of sustainability,” Wiwynn actively invests in next-generation technologies to deliver the best TCO, workload- and energy-optimized IT solutions from cloud to edge. Wiwynn’s end-to-end capabilities span server design, system integration, and high-volume L10/L11 rack delivery, backed by a manufacturing network spanning Taiwan, the United States, Mexico, Malaysia, and the Czech Republic.
+[p14] For more information, please visit Wiwynn website, Facebook, and Linkedin.
+[p15] Ayar Labs is transforming AI infrastructure with the industry’s first proven co-packaged optics (CPO) solution manufactured in partnership with the world’s leading semiconductor ecosystem. By unlocking performance gains and reducing workload costs in power-constrained environments, Ayar Labs’ optical engines are key to enabling next-generation AI scale-up. Founded in 2015, Ayar Labs is funded by domestic and international venture capital firms, as well as strategic investors including AMD, Applied Ventures, MediaTek, NVIDIA, VentureTech Alliance, and Wiwynn. For more information, visit www.ayarlabs.com.
+[p16] GLOBAL UNICHIP CORP. (GUC) is the Advanced ASIC Leader who provides the semiconductor industry with leading IC implementation and SoC manufacturing services, using advanced process and packaging technology. Based in Hsin-Chu, Taiwan, GUC has developed a global reputation with a presence in China, Europe, Japan, Korea, North America, and Vietnam. GUC is publicly traded on the Taiwan Stock Exchange under the symbol 3443. For more information about GUC's turnkey design services, please visit GUC Official Website
+[p17] Wiwynn collaborates with REWOOD to enhance tree care in schools, promote resource circularity, and foster talent development for environmental...
+[p18] Wiwynn reports record Q3 2026 financial results, highlighting significant revenue and profit growth while planning strategic investments for future...
+[p19] Wiwynn showcased cutting-edge AI infrastructure solutions at the OCP Global Summit 2026, emphasizing sustainability and efficiency in data centers.
+[p20] © 2026 Wiwynn Corporation
+--- FULL BLOCK TEXT ---
+Wiwynn, Ayar Labs, and GUC Advance Co-Packaged Optics with Live Demonstration of Integrated Optical Compute System at OCP Global Summit 2026
+3 min read
+Wiwynn, Ayar Labs, and GUC Advance Co-Packaged Optics with Live Demonstration of Integrated Optical Compute System at OCP Global Summit 2026
+Wiwynn Published October 13, 2026
+Corporate Events OCP
+Wiwynn, Ayar Labs, and GUC Advance Co-Packaged Optics with Live Demonstration of Integrated Optical Compute System at OCP Global Summit 2026
+6:46
+Three-way collaboration showcases platform integration, real-time telemetry and system management readiness, accelerating CPO deployment into rack-scale AI infrastructure
+San Jose, CA — October 13, 2026— Wiwynn, an innovative cloud IT infrastructure provider for data centers, Ayar Labs, the leader in co-packaged optics (CPO) solutions for AI scale-up, and Global Unichip Corp. (GUC), the Advanced ASIC Leader, today announced the latest milestone in their strategic collaboration. For the first time, they are presenting a live demonstration at OCP Global Summit 2026, showcasing Wiwynn’s compute system integrating GUC's ASIC with Ayar Labs' TeraPHY™ optical engine paired with SuperNova™ light source, streaming real-time health telemetry.
+This demonstration marks a significant step forward from the companies' previous rack-level architecture collaboration, advancing to platform integration and functional validation. The system integrates GUC's multi-chip packages (MCPs) with TeraPHY™ optical engines (OEs), powered by the Ayar Labs SuperNova™ light source. In this live demo, telemetry is continuously polled from the OEs within the MCPs and displayed in real time, proving the optical link is up inside the system. As the tuning subsystem tracks thermal and wavelength drift, key signal quality metrics hold steady, validating the system's real-world operational readiness.
+“AI infrastructure is rapidly evolving toward an optically connected future," said William Lin, President and CEO of Wiwynn. "This deeper integration with Ayar Labs and GUC, proving that the optical engine and light source can operate reliably within a real system architecture, marks a significant step forward in our collaboration. Together, we are accelerating CPO deployment at scale, helping hyperscalers build high-bandwidth, more power-efficient, and more scalable AI infrastructure."
+Live Demonstration Highlights:
+Wiwynn will showcase a full spectrum of forward-looking cooling innovations, from on-package cooling and advanced materials to system-level lightweight design, demonstrating its commitment to breaking through the physical limits of traditional cooling architectures.
+Silicon-to-System Optical Integration: Wiwynn’s system architecture integrates GUC's MCP with Ayar Labs' TeraPHY OEs paired with ELSFP-based high-power SuperNova light sources, into an ORV3-ready compute system.
+OE Telemetry and System Health Monitoring: Real-time optical engine telemetry gives data centers visibility into system status, strengthening reliability at scale.
+Stability Metrics Under Live Operation: As the tuning subsystem tracks thermal and wavelength drift (TX heater activity), key eye metrics (eye height, OMA, ER) hold steady alongside OE and ELSFP temperatures.
+Advanced Cooling Solution: Wiwynn's system-level cooling architecture supports stable operation of optical power under real-world conditions.
+Detachable FAU and In-Chassis Fiber Routing: Demonstration of serviceability and manufacturability at the compute system level.
+Deepening Collaboration to Accelerate CPO Commercialization
+"AI is driving the industry toward an optically-connected future, and the bar is no longer whether it works; it’s whether it can be deployed and managed at scale," said Mark Wade, CEO and co-founder of Ayar Labs. "This demonstration with Wiwynn and GUC is about proving integration and operability in a real platform, and giving data center teams the data they’ll need to adopt CPO with confidence. We're proud to work with Wiwynn and GUC to make the next generation of AI infrastructure deployable at hyperscale."
+"Integrating optical I/O directly into chip design, and proving its functionality through live system-level demonstration, is a significant achievement in our collaboration with Wiwynn and Ayar Labs," said Sean Tai, President of GUC. "This cross-layer collaborative approach allows us to incorporate system requirements earlier in the chip design phase, significantly shortening the development cycle from silicon innovation to system readiness, and providing our customers with a definitive advantage in the global AI race."
+Looking Ahead
+AI infrastructure is shifting toward optical-electrical convergence. This demonstration shows CPO has progressed from architectural validation to system-level functional proof, laying a solid foundation for hyperscale adoption. The three companies will continue deepening their collaboration, driving CPO from validation toward high-volume deployment.
+Visit the Wiwynn booth at OCP Global Summit 2026 to experience the Compute Tray CPO live demonstration firsthand.
+About Wiwynn
+Wiwynn is an innovative cloud IT infrastructure provider delivering high-quality computing, storage, and rack-level solutions for leading data centers worldwide. Guided by the vision to “unleash the power of digitalization; ignite the innovation of sustainability,” Wiwynn actively invests in next-generation technologies to deliver the best TCO, workload- and energy-optimized IT solutions from cloud to edge. Wiwynn’s end-to-end capabilities span server design, system integration, and high-volume L10/L11 rack delivery, backed by a manufacturing network spanning Taiwan, the United States, Mexico, Malaysia, and the Czech Republic.
+For more information, please visit Wiwynn website, Facebook, and Linkedin.
+About Ayar Labs
+Ayar Labs is transforming AI infrastructure with the industry’s first proven co-packaged optics (CPO) solution manufactured in partnership with the world’s leading semiconductor ecosystem. By unlocking performance gains and reducing workload costs in power-constrained environments, Ayar Labs’ optical engines are key to enabling next-generation AI scale-up. Founded in 2015, Ayar Labs is funded by domestic and international venture capital firms, as well as strategic investors including AMD, Applied Ventures, MediaTek, NVIDIA, VentureTech Alliance, and Wiwynn. For more information, visit www.ayarlabs.com.
+About GUC
+GLOBAL UNICHIP CORP. (GUC) is the Advanced ASIC Leader who provides the semiconductor industry with leading IC implementation and SoC manufacturing services, using advanced process and packaging technology. Based in Hsin-Chu, Taiwan, GUC has developed a global reputation with a presence in China, Europe, Japan, Korea, North America, and Vietnam. GUC is publicly traded on the Taiwan Stock Exchange under the symbol 3443. For more information about GUC's turnkey design services, please visit GUC Official Website
+Tweet
+Wiwynn Partners with REWOOD to Promote Campus Tree Care, Resource Circularity, and Talent Development
+Wiwynn : Nov 20, 2026
+Wiwynn collaborates with REWOOD to enhance tree care in schools, promote resource circularity, and foster talent development for environmental...
+ESG
+Read More
+Wiwynn Reports Third Quarter 2026 Financial Results
+Wiwynn : Nov 9, 2026
+Wiwynn reports record Q3 2026 financial results, highlighting significant revenue and profit growth while planning strategic investments for future...
+Corporate Financials
+Read More
+Recap of Wiwynn at OCP Global Summit 2026: Scaling AI Beyond Limits
+Wiwynn : Oct 20, 2026
+Wiwynn showcased cutting-edge AI infrastructure solutions at the OCP Global Summit 2026, emphasizing sustainability and efficiency in data centers.
+Corporate Events Products
+Read More

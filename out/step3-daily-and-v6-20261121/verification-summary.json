@@ -1,0 +1,203 @@
+{
+  "workpack_id": "OPTICAL-STEP3-DAILY-AND-V6-20261121",
+  "verified_at": "2026-11-21",
+  "verifier_agent": "carbon-s3-verifier",
+  "verifier_model": "gemini-pro-orchestrator",
+  "verifier_model_display_name": "Orchestrator (Carbon)",
+  "passed": true,
+  "step3_scope_passed": true,
+  "pass_summary": "All 7 machine gates (scan --selftest [139/139], scan --check [0 days staleness, 0 missing annual reports in 466 universe, invariants ①-⑭ green], render --verify, participation --check [466/466, 93 confirmed, 15 pending], -m calls check [39 companies / 167 sources / 72 claims / 36 reviewed radar events], sync_daily_queue.py --check [55 queue rows], and bare python3 -m pytest -q [487 passed, 157 subtests passed, 0 collection errors, 0 deselected, 0 failures]) exited with code 0. Independent byte-level idempotency reruns across all Step 3 deterministic builders (ingest_domestic_daily.py, ingest_overseas_and_timeline.py, build_v6_and_daily_queue.py, sync_daily_queue.py) verified 0 SHA-256 drift across 23 tracked outputs, 36/36 (100.0%) step3_daily_2026q4 content_ledger quotes (CLG0598-CLG0633) matched local corpus files verbatim, Kerui Technology (002957) P275/P276 and CLG0632/CLG0633 landed with strict anonymous-customer boundaries while DRQ0050 retains pending_filing_anchor gating on Lumentum/Coherent attribution, and all protected canonical baselines (edges.csv, triage.csv, knowledge.yaml, macro_evidence.csv, shipments.csv, calls/solution_links.csv, archive/, and workflow-rehearsal/corpus/annual=463) remained 100% untouched.",
+  "gates": {
+    "scan_selftest": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 scan.py --selftest",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "[selftest] 合计 139 用例, 通过 139, 失败 0 (原有 119 例 100% 保留 + Step 3 新增 20 例)"
+    },
+    "scan_check": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 scan.py --check",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "[语料] 最新文件距今0天; 宇宙内缺席年报 0 家 | 不变量全绿(①-⑭)"
+    },
+    "render_verify": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 render.py --verify",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "--verify: 两次临时重建一致(out/非canonical)"
+    },
+    "participation_check": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 participation.py --check",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "参与识别: 全绿 | 宇宙 466 | 覆盖 466 | 确认 93 | 待确认 15"
+    },
+    "calls_check": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 -m calls check",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "OK: validated 39 companies / 167 sources / 72 claims; 21 themes / 12 cross-checks / 9 commitments / 4 technology feedback rows; event ledger validated / 36 reviewed radar events; canonical references are closed; no canonical file was written"
+    },
+    "daily_review_queue_check": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 corpus/daily_review/sync_daily_queue.py --check",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "daily_review check OK | queue=55 (ingested=15, pending_text=32, pending_anchor=8) | staging_sep_nov=504 (folded=95.04%, triggered=4.96%)"
+    },
+    "pytest_bare_full_repo": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 -m pytest -q",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "487 passed, 157 subtests passed (0 collection errors, 0 deselected, 0 failures)"
+    },
+    "pytest_step1_step2_step3_capability": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 -m pytest -q tests/test_step1_ledger_gates.py tests/test_step2_archive_salvage.py tests/test_step3_daily_and_v6.py tests/test_capability_report_semantics.py",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "84 passed, 67 subtests passed"
+    }
+  },
+  "derived_rebuilds": {
+    "calls_render": "rendered 47 files under calls/out (including positioning.json with P074 point_as_of=2026-11-21 and event-intelligence.json with 36 radar events)",
+    "render_py": "out/ 重建一致 (全景.md/html, 知识库.md/html, 问题队列.md, 研究问题树.md)",
+    "participation_py": "out/参与识别.* 重建 | 宇宙 466 | 确认 93 (含 688808 联讯仪器、002428 云南锗业、002957 科瑞技术) | 待确认 15",
+    "build_detailed_capability_report_py": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 build_detailed_capability_report.py --html-output out/step3-daily-and-v6-20261121/光模块产业链全景图_公司能力细化版.html",
+      "companies": 93,
+      "capabilities": 187,
+      "nodes": 38,
+      "csv_output": "capability_details.csv",
+      "pdf_output": "output/pdf/光模块产业链公司能力明细.pdf",
+      "pdf_size_bytes": 573330,
+      "html_output": "out/step3-daily-and-v6-20261121/光模块产业链全景图_公司能力细化版.html",
+      "html_size_bytes": 460600,
+      "workbuddy_external_dir_untouched": true
+    }
+  },
+  "independent_audit": {
+    "builders_idempotency": {
+      "passed": true,
+      "scripts_rerun": [
+        "out/step3-daily-and-v6-20261121/ingest_domestic_daily.py",
+        "out/step3-daily-and-v6-20261121/ingest_overseas_and_timeline.py",
+        "out/step3-daily-and-v6-20261121/build_v6_and_daily_queue.py",
+        "corpus/daily_review/sync_daily_queue.py --build"
+      ],
+      "tracked_output_files_checked": 23,
+      "sha256_drift_count": 0
+    },
+    "shard_domestic_and_kerui_002957": {
+      "passed": true,
+      "ir_synced_codes": 81,
+      "ir_synced_files": 332,
+      "qa_synced_codes": 93,
+      "qa_source_to_deduped_lines": "46276 -> 45639 (-637 duplicates)",
+      "points_total_rows": 271,
+      "points_updated_existing_rows": 15,
+      "points_appended_rows": [
+        "P275 (科瑞技术 EQ3 光模块芯片共晶贴片设备, 2025年报 p.15)",
+        "P276 (科瑞技术 EQ4 50nm精度光耦合设备, 2025年报 p.15)"
+      ],
+      "p031_untouched": true,
+      "p209_quote_and_anchor_untouched": true,
+      "p257_untouched_and_p202_mapped_to_yng_10_01_wan": true,
+      "content_ledger_total_rows": 633,
+      "content_ledger_step3_added_rows": 36,
+      "content_ledger_step3_cid_range": "CLG0598..CLG0633",
+      "content_ledger_step3_live_verbatim_hits": "36/36 (100.0%)"
+    },
+    "shard_overseas_and_timeline": {
+      "passed": true,
+      "commitments_fulfilled": ["CM001", "CM002"],
+      "commitments_partially_fulfilled": ["CM007"],
+      "new_sources": ["S_CIEN_2026_FORUM"],
+      "updated_sources": ["S_AAOI_Q1_RESULT_A"],
+      "new_claims": ["CL075", "CL076"],
+      "new_disclosures": ["D_CSCO_20261012_OCP_G300", "D_TSEM_20261103_INNOLIGHT_NPO"],
+      "new_events": ["EV035", "EV036"],
+      "new_watch_entities": ["WATCH_INNOLIGHT"],
+      "relationship_timeline_total_rows": 451,
+      "relationship_timeline_added_ids": ["TL9001", "TL9002", "TL9003", "TL9004", "TL9005"],
+      "negative_cuts_collision_count": 0,
+      "unverified_staging_leaked_into_reviewed_claims": 0
+    },
+    "shard_v6_universe_and_daily_review_queue": {
+      "passed": true,
+      "frozen_universe_count": 466,
+      "v6_added_codes": ["688808", "002428", "002957"],
+      "observation_list_added": ["微见智能", "镭神技术"],
+      "entity_nodes_total": 173,
+      "kerui_n171_point_ids": "P275;P276",
+      "overseas_staging_sep_nov_95_5_split": {
+        "total_unique_disclosures": 504,
+        "auto_folded_noise_count": 479,
+        "auto_folded_noise_pct": 95.04,
+        "triggered_count": 25,
+        "triggered_pct": 4.96,
+        "slid_out_rescued_count": 21
+      },
+      "review_queue_total_rows": 55,
+      "review_queue_by_status": {
+        "ingested_to_kb": 15,
+        "pending_primary_text": 32,
+        "pending_filing_anchor": 8
+      },
+      "review_queue_by_trigger_type": {
+        "T1_lifecycle_shift": 32,
+        "T2_supply_relationship_or_ma": 9,
+        "T3_commitment_verification": 5,
+        "T4_universe_blindspot": 9
+      },
+      "drq0050_retained_for_u11_lumentum_coherent_gate": true,
+      "drq0055_ingested_kerui_p275_p276_clg0632_clg0633": true
+    },
+    "protected_baselines_and_boundaries": {
+      "edges_csv_sha256_unchanged": true,
+      "triage_csv_sha256_unchanged": true,
+      "knowledge_yaml_sha256_unchanged": true,
+      "macro_evidence_csv_sha256_unchanged": true,
+      "shipments_csv_sha256_unchanged": true,
+      "calls_solution_links_csv_sha256_unchanged": true,
+      "archive_git_tracked_modifications": 0,
+      "workflow_rehearsal_annual_count_exact_463": true,
+      "refs_file_count_exact_8": true,
+      "root_whitelist_violations": 0,
+      "git_commit_created": false
+    }
+  },
+  "steps_1_to_3_ledger_progression": {
+    "frozen_universe_companies": {"initial": 463, "step1": 463, "step2": 463, "step3": 466},
+    "tree_universe_count": {"initial": 461, "step1": 463, "step2": 463, "step3": 466},
+    "participation_confirmed_companies": {"initial": 89, "step1": 90, "step2": 90, "step3": 93},
+    "points_rows": {"initial": 271, "step1": 269, "step2": 269, "step3": 271},
+    "edges_rows": {"initial": 236, "step1": 236, "step2": 236, "step3": 236},
+    "triage_rows": {"initial": 571, "step1": 569, "step2": 569, "step3": 569},
+    "shipments_rows": {"initial": 103, "step1": 103, "step2": 103, "step3": 103},
+    "macro_evidence_rows": {"initial": 31, "step1": 32, "step2": 35, "step3": 35},
+    "capability_details_rows": {"initial": 181, "step1": 183, "step2": 183, "step3": 187},
+    "content_ledger_rows": {"initial": 0, "step1": 0, "step2": 597, "step3": 633},
+    "relationship_timeline_rows": {"initial": 0, "step1": 0, "step2": 446, "step3": 451},
+    "edge_negative_cuts_rows": {"initial": 0, "step1": 0, "step2": 74, "step3": 74},
+    "entity_nodes_rows": {"initial": 0, "step1": 0, "step2": 169, "step3": 173},
+    "daily_review_queue_rows": {"initial": 0, "step1": 0, "step2": 0, "step3": 55},
+    "calls_sources_claims_events": {
+      "initial": "166 / 70 / 34",
+      "step1": "166 / 70 / 34",
+      "step2": "166 / 70 / 34",
+      "step3": "167 / 72 / 36"
+    },
+    "scan_selftest_cases": {"initial": 53, "step1": 90, "step2": 119, "step3": 139},
+    "bare_pytest_status": {
+      "initial": "collection error (9 errors in out/ archived bundles + 1 legacy ID failure)",
+      "step1": "466 passed, 1 deselected (with manual --ignore flags)",
+      "step2": "479 passed, 1 deselected (with manual --ignore flags)",
+      "step3": "487 passed, 157 subtests passed (bare pytest -q exit 0)"
+    }
+  },
+  "pending_user_decisions": [
+    "是否拉取并精读 corpus/daily_review/review_queue.csv 中 32 条 pending_primary_text 一手原文（重点包括 DRQ0015 Marvell×Lumentum 并购 8-K、DRQ0016 Lumentum FY27Q1 逐字稿、DRQ0017/DRQ0018 AXT Q3 与通美私募融资全文、DRQ0019 Tower×中际旭创 NPO 公告正文），以决定是否晋升为正式主张或事件。",
+    "是否跟进核验 8 条 pending_filing_anchor 法定锚点（如 DRQ0047 云南锗业 2.7 亿元 InP 调增正式公告、DRQ0050 科瑞技术关于 Lumentum/Coherent 具名客户归属的监管披露、DRQ0048/DRQ0049 微见智能与镭神技术独立一手产品/客户锚）。",
+    "是否指定需经人工复核后从 content_ledger.csv（633 条）或 relationship_timeline.csv（451 条）提炼写入根级 knowledge.yaml（KN### / WHY###）的领域专题。",
+    "是否授权对 Step 1–Step 3 经核验的工作区改动执行 git commit。"
+  ]
+}

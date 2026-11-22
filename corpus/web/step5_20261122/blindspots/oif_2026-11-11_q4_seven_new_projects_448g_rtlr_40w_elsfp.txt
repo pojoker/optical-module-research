@@ -1,0 +1,48 @@
+URL: https://www.oiforum.com/oif-launches-seven-new-technical-projects-at-q4-member-meeting-reflecting-accelerating-demand-for-next-generation-connectivity/
+REQUESTED_URL: https://www.oiforum.com/oif-launches-seven-new-technical-projects-at-q4-member-meeting-reflecting-accelerating-demand-for-next-generation-connectivity/
+TITLE: OIF Launches Seven New Technical Projects at Q4 Member Meeting, Reflecting Accelerating Demand for Next-Generation Connectivity – OIF
+RETRIEVED_AT: 2026-11-22
+--- PARSED PARAGRAPHS ---
+[p1] Press Releases | Press Room
+[p2] Meeting in Bangkok highlights expanding technical activity across AI and data center infrastructure
+[p3] FREMONT, Calif. — OIF , where the optical networking industry’s interoperability work gets done, today announced that seven new technical projects were initiated at its Q4 2026 Technical and Market Awareness & Education (MA&E) Committees Meeting, held Nov. 2–5 in Bangkok, Thailand. The Bangkok meeting brought together more than 200 member company representatives, including approximately 40 first-time attendees, and included Working Group leadership elections.
+[p4] The unusually high number of new projects reflects the accelerating pace of technological development and growing demand for interoperable connectivity solutions as AI and data center operators push for greater bandwidth, power efficiency and performance.
+[p5] The new projects span electrical and optical interfaces, coherent optical security, external laser source technologies and management specifications, reflecting the broad range of technical challenges facing an industry working to support rapidly evolving AI and networking architectures.
+[p6] “The pace of change across our industry is remarkable, and the volume of new technical work coming into OIF reflects both how quickly networking requirements are evolving and the industry’s confidence in our ability to deliver,” said Sam Kocsis, OIF Technical Committee Chair (Amphenol). “AI and data center operators need solutions at an unprecedented pace, and they are looking to OIF to bring the industry together, build consensus and develop interoperable specifications quickly enough to make a meaningful impact. Launching seven new projects at a single meeting speaks to the trust our members place in this process and our ability to translate complex technical challenges into practical solutions that move the industry forward.”
+[p7] New Projects Address Rapidly Evolving Industry Requirements
+[p8] The seven projects initiated at the Q4 meeting reflect the expanding scope and increasing urgency of OIF’s technical work as the industry develops new approaches to high-speed connectivity, optical networking and module management.
+[p9] Next-Generation Electrical and Optical Connectivity
+[p10] Energy Efficient Interfaces (EEI) EEI-448G Retimed Transmit Linear Receive (RTLR) IA: Establishes a new project to define energy efficient half-retimed electrical interface requirements at 448 Gbps per lane, complementing OIF’s expanding CEI-448G portfolio.
+[p11] BiDi O-band Single Mode Fiber (SMF) 200G/Lane IA: Initiates development of an IA for bidirectional 200 Gbps-per-lane optical connectivity for AI scale-up over O-band single-mode fiber.
+[p12] External Laser Source Evolution and Higher-Power Operation
+[p13] External Laser Small Form Factor Pluggable (ELSFP) IA 3.0: Initiates the next revision of OIF’s ELSFP IA to address evolving industry requirements.
+[p14] Type-3 Elongated ELSFP to support Electrical Power Class 8 High Power Mode (40W): Establishes a project to develop support for an ELSFP variant supporting higher-power requirements for external laser applications.
+[p15] Module Management
+[p16] MACsec Management for Pluggable Modules: Initiates the development of an IA to manage MACsec functionality within pluggable modules.
+[p17] Common Management Interface Specification (CMIS) Management Communication Interface (MCI) over USB: Launches development of a USB-based management communication interface for CMIS, expanding module management and communication capabilities.
+[p18] Interoperability
+[p19] ZRsec (FlexOsec) for Coherent Optical Interfaces: Launches work to define a common technique on the implementation of FlexOsec for layer 1 encryption in ZR applications.
+[p20] The range of new initiatives underscores the increasingly interconnected technical challenges facing the industry, where advances in bandwidth and optical connectivity must be accompanied by improvements in power delivery, security and management. Through its collaborative development process, OIF brings together expertise from across the ecosystem to establish common specifications that help vendors address these requirements.
+[p21] Working Group Leadership Elections
+[p22] OIF also conducted Working Group leadership elections during the meeting. Mike Klempa (Qualcomm Incorporated) was re-elected as Physical and Link Layer (PLL) Interoperability Working Group Chair, and Jeffery Maki (HPE) was re-elected as Physical Layer User Group (PLUG) Working Group Chair.
+[p23] OIF’s Working Groups play a central role in advancing technical projects, bringing together industry experts to evaluate requirements, develop specifications and build consensus on solutions that address evolving network demands.
+[p24] Looking Ahead to 2027
+[p25] OIF’s Q1 Technical and MA&E Committees Meeting will take place Feb. 22–26, 2027, in Charleston, South Carolina.
+[p26] For more information about OIF’s technical work and Implementation Agreements, visit https://www.oiforum.com/ .
+[p27] OIF is where the optical networking industry’s interoperability work gets done. With more than 25 years of effecting forward change in the industry, OIF represents the dynamic ecosystem of 180+ industry leading network operators, system vendors, component vendors and test equipment vendors collaborating to develop interoperable electrical, optical and control solutions that directly impact the industry’s ecosystem and facilitate global connectivity in the open network world. Connect with OIF on LinkedIn , on X , on Bluesky and at https://www.oiforum.com/ .
+[p28] Media Contact Leah Wilkinson Wilkinson + Associates for OIF leah@wilkinson.associates +1 703-907-0010
+[p29] Implementation Agreements
+[p30] Informative Documents
+[p31] Educational/Demo White Papers
+[p32] Archived Non-OIF Generated Specifications
+[p33] Success Stories Common Electrical I/O Transport SDN Tunable Lasers Common Electrical I/O 25G 400ZR
+[p34] Common Electrical I/O
+[p35] Common Electrical I/O 25G
+[p36] OIF Member Policies (members only)
+[p37] Document Templates (members only)
+[p38] Contribution Site/Aro
+[p39] 39221 Paseo Padre Pkwy Suite J Fremont, CA 94538
+[p40] Phone: +1.510.392.4903 Fax: +1.510.392.4903 info@oiforum.com
+[p41] Board of Directors and Officers
+[p42] Meetings & Events
+[p43] Member/Observer Login

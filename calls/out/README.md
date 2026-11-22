@@ -12,16 +12,16 @@
 |---|---|---:|---:|
 | 季度槽登记 | 4 个季度槽均已登记（含 not_collected/unavailable 槽位） | 39 | 39 |
 | 可用来源 | 4 个季度槽均有 `available` 材料 | 36 | 39 |
-| 陈述登记 | 在 `claims.csv` 有至少 1 条陈述（含 candidate/rejected） | 12 | 39 |
-| 已核陈述 | 有至少 1 条 `reviewed` 陈述（reviewed 仅表示原文已核） | 12 | 39 |
-| 已核事件 | 有至少 1 条已审核雷达事件（证据经 `anchor_reviewed`） | 15 | 39 |
+| 陈述登记 | 在 `claims.csv` 有至少 1 条陈述（含 candidate/rejected） | 17 | 39 |
+| 已核陈述 | 有至少 1 条 `reviewed` 陈述（reviewed 仅表示原文已核） | 17 | 39 |
+| 已核事件 | 有至少 1 条已审核雷达事件（证据经 `anchor_reviewed`） | 20 | 39 |
 
-信源底账：`sources.csv` 共 166 行（季度槽材料 163 行、季度槽位 156 个）。这些行数是采集底账，不能单独用“N 家公司、M 行来源”表达研究结论覆盖；结论覆盖以上表五级为准。
+信源底账：`sources.csv` 共 180 行（季度槽材料 163 行、季度槽位 156 个）。这些行数是采集底账，不能单独用“N 家公司、M 行来源”表达研究结论覆盖；结论覆盖以上表五级为准。
 
 ## 事件状态（asserted / corroborated 分列）
 
-- asserted：32 条 —— 第一方主张，原文已核，但没有独立来源交叉支持。
-- corroborated：2 条 —— 存在与第一方不同 origin_group 且独立于第一方的来源支持（EV013、EV014）。
+- asserted：58 条 —— 第一方主张，原文已核，但没有独立来源交叉支持。
+- corroborated：3 条 —— 存在与第一方不同 origin_group 且独立于第一方的来源支持（EV013、EV014、EV061）。
 - 同源双证（同一 origin_group 的多份材料）不得升级为 corroborated；asserted 不代表已确认，corroborated 也不代表产能或卡点变化。
 
 ## 输出

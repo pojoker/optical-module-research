@@ -1,0 +1,148 @@
+{
+  "shard": "Step 2 Task C — Relationships Timeline, Negative Cuts, Audit, Alarms & Refs Case #005",
+  "generated_by": "out/step2-archive-salvage-20261121/build_timelines_and_refs.py",
+  "outputs": {
+    "relationship_timeline_csv": {
+      "path": "corpus/relationships/relationship_timeline.csv",
+      "total_rows": 446,
+      "unique_relations": 204,
+      "baseline_r001_r070_rows": 145,
+      "e100_e236_edges_count": 137,
+      "e100_e236_unpacked_period_rows": 290,
+      "equipment_watch_pool": {
+        "total_eq_pool_rows": 25,
+        "linked_existing_count": 14,
+        "linked_existing_ids": [
+          "FT-OB-20240731",
+          "LX-JT1-2025Q1",
+          "LX-PM-2025Q1",
+          "LX-XYS-2025Q1",
+          "LX-XSXY-2025Q1",
+          "LX-HX-2023",
+          "LX-ZX-2023",
+          "LX-JT1-2023",
+          "LX-SA-2023",
+          "LX-HX-2022",
+          "LX-GX-2022",
+          "LX-AVGO-2022",
+          "LX-SA-2022",
+          "LQ-ZX-2025"
+        ],
+        "added_supplementary_count": 11,
+        "added_supplementary_ids": [
+          "FT-OB-20241213",
+          "LX-GX-2025Q1",
+          "LX-JT1-2024",
+          "LX-GX-2024",
+          "LX-SLW-2024",
+          "LX-HX-2024",
+          "LX-ZX-2024",
+          "LX-JT2-2023",
+          "LX-XSXY-2022",
+          "LQ-ZX-2023",
+          "LQ-ZX-2024"
+        ]
+      },
+      "all_236_edges_covered": true,
+      "conflict_rows_count": 12,
+      "observe_type_distribution": {
+        "first_observed": 121,
+        "observed": 209,
+        "censored": 8,
+        "last_observed": 103,
+        "confirmed_ended": 1,
+        "procedural_intermediary": 1,
+        "bad_debt_frozen": 3
+      },
+      "metric_kind_distribution": {
+        "sales_share": 202,
+        "purchase_share": 107,
+        "amount_usd": 1,
+        "order_backlog": 4,
+        "intermediary_disclosure": 1,
+        "amount_rmb": 128,
+        "bad_debt_writeoff": 3
+      },
+      "source_channel_distribution": {
+        "sec_10k": 73,
+        "annual_report": 140,
+        "prospectus": 233
+      }
+    },
+    "edge_negative_cuts_csv": {
+      "path": "corpus/relationships/edge_negative_cuts.csv",
+      "total_rows": 74,
+      "unique_directional_pairs": 67,
+      "leaked_in_edges_csv_count": 0,
+      "category_distribution": {
+        "consolidated_into_group_edge": 25,
+        "non_supply_relation": 6,
+        "non_optical_related_or_bad_debt": 40,
+        "non_optical_counterparty": 3
+      }
+    },
+    "counterparty_audit_csv": {
+      "path": "corpus/relationships/counterparty_audit.csv",
+      "total_rows": 15,
+      "audited_pairs": [
+        "P01(弱一致)",
+        "P02(口径不可比_判例#004_B级终态)",
+        "P03(口径不可比_服务费逐位确认_商品并表还原后差~4.9%)"
+      ],
+      "pending_candidate_pairs": 12
+    },
+    "sellside_watch_alarms_csv": {
+      "path": "corpus/relationships/sellside_watch_alarms.csv",
+      "total_rows": 7,
+      "status_distribution": {
+        "active_alarm_2026_2027": 5,
+        "verified_updated": 1,
+        "verified_closed": 1
+      },
+      "resolved_or_updated": {
+        "W03": "联讯仪器已于2026-04-24登陆科创板(688808)，2026-01-07更新申报稿在案",
+        "W06": "Yole CPO 54亿/121%(Scale-Up自洽口径) vs 81亿/137%(跨子口径拼接)已核实结案 -> macro_evidence.csv#MC035"
+      },
+      "active_2026_2027_alarms": [
+        "W01",
+        "W02",
+        "W04",
+        "W05",
+        "W07"
+      ]
+    },
+    "relationships_readme_md": {
+      "path": "corpus/relationships/README.md",
+      "step3_daily_insertion_contract_documented": true,
+      "worked_examples": [
+        "罗博特科×NVIDIA 2026-11-16 深交所互动易(qa:300757:2402040011815366656 -> 接续 R057)",
+        "Tower Semiconductor×中际旭创 2026-11-03 官网新闻稿(DC_430D7977BA22 -> NPO合作)"
+      ]
+    },
+    "refs_deanonymization_cases_md": {
+      "path": "refs/解匿判例库.md",
+      "refs_file_count": 8,
+      "refs_files": [
+        "CODEX-KIMI-COLLAB.md",
+        "entity-registry.yaml",
+        "overseas-company-expansion-2026.md",
+        "us-china-optical-transceiver-restrictions.md",
+        "信源分层总表.md",
+        "参与识别-MVP.md",
+        "解匿判例库.md",
+        "问题信源路由表.md"
+      ],
+      "entity_registry_yaml_valid": true,
+      "cases_md_lines": 248,
+      "cases_covered": [
+        "#002(A)",
+        "#003(A)",
+        "#004(B终态+U/L定量注)",
+        "#001(留档)",
+        "#005(已推翻反面教材RT-011/014)",
+        "#006(C候选+RT-009/010克制注)",
+        "#007(B)"
+      ]
+    }
+  }
+}

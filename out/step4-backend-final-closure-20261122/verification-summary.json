@@ -1,0 +1,167 @@
+{
+  "workpack_id": "OPTICAL-STEP4-BACKEND-FINAL-CLOSURE-20261122",
+  "verified_at": "2026-11-22",
+  "verifier_agent": "carbon-s4-verifier",
+  "verifier_model": "gemini-pro-orchestrator",
+  "verifier_model_display_name": "Orchestrator (Carbon)",
+  "passed": true,
+  "step4_backend_sealed_for_yanxu": true,
+  "pass_summary": "All 7 machine gates (scan --selftest [153/153], scan --check [1 day staleness, 0 missing annual reports in 466 universe, invariants ①-⑭ green], render --verify, participation --check [466/466, 94 confirmed, 13 pending], -m calls check [39 companies / 180 sources / 79 claims / 60 reviewed radar events], sync_daily_queue.py --check [97 queue rows: 54 ingested, 2 pending_primary_text, 5 pending_filing_anchor, 36 watch_deferred; 0 silent routine_pr_without_state_transition noise], and bare python3 -m pytest -q [495 passed, 189 subtests passed, 0 collection errors, 0 deselected, 0 failures]) exited with code 0. Independent reruns of all 4 Step 4 idempotent scripts (remediate_content_ledger.py, remediate_points_and_domestic_drq.py, ingest_overseas_step4.py, sync_daily_queue.py --build) verified 0 SHA-256 drift across 22 tracked canonical/derived targets, while all 10 protected baseline files (edges.csv, tree.yaml, knowledge.yaml, macro_evidence.csv, shipments.csv, corpus/_frozen.csv, edge_negative_cuts.csv, calls/solution_links.csv, test_step2_archive_salvage.py, test_positioning.py) plus archive/, workflow-rehearsal/corpus/annual=463, and securities-research-kb/ remained 100% untouched.",
+  "gates": {
+    "scan_selftest": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 scan.py --selftest",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "[selftest] 合计 153 用例, 通过 153, 失败 0 (原有 139 例 100% 保留 + Step 4 新增 14 例覆盖 verified_local \\n 行切片、伪 table_normalized 拦截、cut_category 分类与 _norm_co_name 简称归一)"
+    },
+    "scan_check": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 scan.py --check",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "[语料] 最新文件距今1天; 宇宙内缺席年报 0 家 | 不变量全绿(①-⑭)"
+    },
+    "render_verify": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 render.py --verify",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "--verify: 两次临时重建一致(out/非canonical)"
+    },
+    "participation_check": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 participation.py --check",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "参与识别: 全绿 | 宇宙 466 | 覆盖 466 | 确认 94 | 待确认 13"
+    },
+    "calls_check": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 -m calls check",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "OK: validated 39 companies / 180 sources / 79 claims; 21 themes / 12 cross-checks / 9 commitments / 4 technology feedback rows; event ledger validated / 60 reviewed radar events; canonical references are closed; no canonical file was written"
+    },
+    "daily_review_queue_check": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 corpus/daily_review/sync_daily_queue.py --check",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "daily_review check OK | queue=97 (ingested=54, pending_text=2, pending_anchor=5, deferred=36) | staging_sep_nov=504 (triggered=66, noise=102, unclassified=336)"
+    },
+    "pytest_bare_full_repo": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 -m pytest -q",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "495 passed, 189 subtests passed (0 collection errors, 0 deselected, 0 failures)"
+    }
+  },
+  "three_surgical_fixes_verified": {
+    "cut_1_content_ledger_truthfulness_and_nl_line_closure": {
+      "total_rows": 633,
+      "physical_lines": 634,
+      "unique_companies": 26,
+      "status_breakdown": {
+        "verified_local": 578,
+        "table_normalized": 37,
+        "segmented_verified": 15,
+        "inherited_v1_verified": 3
+      },
+      "clg0633_line_fix": "corpus/annual/002957/002957/002957__em_科瑞技术_em__2025_2025年年度报告.pdf.txt#L642..648 -> #L630..631 (strict text.split('\\n'))",
+      "section_ref_line_ranges_verified": "237/237 (100.0%)",
+      "yanxu_citation_contract": "Only verified_local (578 rows) eligible as direct verified citation in Yanxu; table_normalized (37), segmented_verified (15), inherited_v1_verified (3) restricted to locatable candidates."
+    },
+    "cut_2_daily_queue_unclassified_and_positive_rescue": {
+      "default_noise_fallback_eliminated": true,
+      "routine_pr_without_state_transition_count": 0,
+      "all_snapshots_split": {
+        "total_unique_disclosures": 533,
+        "seeded_triggered_count": 25,
+        "positive_rule_triggered_count": 42,
+        "triggered_total_count": 67,
+        "high_confidence_noise_count": 112,
+        "unclassified_count": 354
+      },
+      "rescued_oct_nov_focal_9": [
+        "DC_A6ADDA0BAFA7 (MTSI FY26Q4 -> ingested_to_kb)",
+        "DC_58448CDF4801 (TSEM 2026Q3 -> ingested_to_kb)",
+        "DC_DB6E7B2D27BB (GFS 2026Q3 & Marvell SiGe -> ingested_to_kb)",
+        "DC_25B37F48DF71 (VECO 2026Q3 -> ingested_to_kb)",
+        "DC_6B392C92DA0A (VECO x ACLS merger update -> ingested_to_kb)",
+        "DC_86F8DBF8F95E (SOI FY27 H1 ~$1.2B deposits -> ingested_to_kb)",
+        "DC_C85C91649A7A (ANET 2026Q3 -> ingested_to_kb)",
+        "DC_89DB234EEA46 (CRDO x ORCL OCP telemetry -> ingested_to_kb)",
+        "DC_35C4F1F433DF (KEYS FY26Q4 WATCH_KEYS -> watch_deferred, 0 fabricated ref)"
+      ]
+    },
+    "cut_3_negative_cuts_category_and_norm_co_name_gate": {
+      "total_rows": 74,
+      "true_negative_supply_cuts": 43,
+      "consolidated_into_group_edge": 25,
+      "non_supply_relation": 6,
+      "true_negative_normalized_collision_count": 0,
+      "consolidated_replacement_edge_closure": "25/25 (E154, E163)"
+    }
+  },
+  "points_triage_and_primary_fetch_closure": {
+    "points_total_rows": 272,
+    "points_bare_or_markdown_wrapped_anchors": 0,
+    "points_anchor_distribution": {
+      "pure_http_url": 193,
+      "leading_http_multi_anchor": 20,
+      "leading_corpus_path": 59
+    },
+    "p074_as_of_preserved": "2026-11-21",
+    "new_point_added": "P277 (天准科技 688003, EQ6, 生产中, A股: 2026半年报 p.14 工业富联 CPO 在线 AOI 小批量订单部分交付现场)",
+    "triage_adjudicated": {
+      "600552_凯盛科技": "驳回-非本格",
+      "688307_中润光学": "驳回-非本格",
+      "688003_天准科技": "已入点 (P277)",
+      "06088.HK_FIT_鸿腾精密": "维持待判 (刷新 2026-11-22 核查理由)"
+    },
+    "participation_counts": {
+      "universe": 466,
+      "confirmed": 94,
+      "pending": 13,
+      "no_evidence": 359
+    },
+    "capability_report": {
+      "companies": 94,
+      "capabilities": 188,
+      "nodes": 38,
+      "csv_sha256": "f9cae98fb976da7e9141f7773298ab30e9392d37462780ad752f1682b3d098e0",
+      "pdf_sha256": "5a212e9b76af2bd220e091c4ea7e29d1347e4b59b0658db462a478d1d058a700",
+      "html_output": "out/step4-backend-final-closure-20261122/光模块产业链全景图_公司能力细化版.html",
+      "html_sha256": "148ab7888f80f4e73f1379d0931d083303ebdad589d5296dc6c95311a6470e52"
+    },
+    "domestic_cninfo_pdfs_archived": 6,
+    "overseas_web_snapshots_archived": "32/33 HTTP 200 (only DRQ0037 LWLG QuoteMedia empty JS shell blocked)",
+    "calls_sources_advanced": "167 -> 180 (latest published_date 2026-08-17 -> 2026-11-18)",
+    "calls_claims_advanced": "72 -> 79 (+CL077..CL083)",
+    "calls_disclosures_advanced": "52 -> 82 (68 anchor_reviewed, 14 no_relevant_claims)",
+    "calls_events_advanced": "36 -> 60 (EV001..EV060 across 23 primary subjects)",
+    "relationship_timeline_advanced": "451 -> 458 (upgraded TL9002 + added TL9006..TL9012)"
+  },
+  "objective_remaining_restricted_items_7": [
+    "DRQ0037 (pending_primary_text): Lightwave Logic × 鸿海 — 源站 QuoteMedia 返回空 JS 壳且官网嵌入 Issuer Direct 动态组件，严守不强绕反爬/动态壳红线",
+    "DRQ0046 (pending_primary_text): 北美 CSP 与进出口合规政策池 — FCC 26-50 与商务部/科技部 2026 年第 48 号公告待调取官方公报条文逐款核对",
+    "DRQ0048 (pending_filing_anchor): 微见智能 (UNLISTED_MV) — 未上市私企，缺第一方官网规格书存档、IPO 申报稿或上市客户具名法定公告",
+    "DRQ0049 (pending_filing_anchor): 镭神技术 (UNLISTED_LS) — 未上市私企，猎奇招股书所引 27% 份额系第三方估算，缺独立一手能力锚",
+    "DRQ0050 (pending_filing_anchor): 科瑞技术 (002957) U11 — 2025 年报仅匿名披露“海外头部客户”，Lumentum/Coherent 具名供应链归属受商业保密限制未披露",
+    "DRQ0052 (pending_filing_anchor): 长光华芯 (688048) — 200G PAM4 EML 光芯片截至互动易核查仍处客户端验证阶段、尚未获批量大单",
+    "DRQ0053 (pending_filing_anchor): 利扬芯片 (688135) — 2026-11-14 签署收购众望达光电 51% 股权协议(1225671802.PDF)，但审计评估未完、待股东会审议且尚未办理股权交割"
+  ],
+  "idempotency_and_protected_baselines": {
+    "step4_scripts_rerun_zero_drift": true,
+    "protected_hashes_unchanged": {
+      "edges.csv": "0768d707a1247a5886ed7bfaaab6fcbbdc688862bf3b00ee273112d958f81f38",
+      "tree.yaml": "f82fe52a644a414ac67916d5e4679f555e7b375cfbff8917bbab54cc6ae93c50",
+      "knowledge.yaml": "af29efd3be539fce27bab8df4f01ec9e0b6486e4c3c06b5faff34192f3d01d6a",
+      "macro_evidence.csv": "5bb76336700844199b9119f931671be52adba0feaff8bc466b1e97719e6c9f9e",
+      "shipments.csv": "e2526f29729ef212d2b80a40cc405bb51e9b3cb6c05739f01729d7ed1bf37dc9",
+      "corpus/_frozen.csv": "bb8f47269c5a204d9f8f51c31e73f83f96f761d6e7ceda655d07f9f137616645",
+      "corpus/relationships/edge_negative_cuts.csv": "8827a1e122c772c59de9185d3230e38acbbbe869ce7308322518d0f1125222f8",
+      "calls/solution_links.csv": "491a542e9bad782bf18cb0c9522e86989b660d4ea3bd63b4e948c6ba923d4269"
+    },
+    "workflow_rehearsal_annual_count": 463,
+    "refs_file_count": 8,
+    "archive_git_clean": true,
+    "securities_research_kb_untouched": true,
+    "git_commit_executed": false
+  }
+}

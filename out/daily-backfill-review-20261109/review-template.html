@@ -1,0 +1,66 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>光模块 · 历史 Daily 入库复核</title>
+<style>
+:root{color-scheme:light;--ink:#162a26;--line:#c9d8d3;--mute:#4a635b;--page:#eff5f2;--accent:#12604c}*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font:16px/1.55 system-ui,sans-serif}main{max-width:1190px;margin:auto;padding:22px}header,section,article{background:white;border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px}header{border-top:5px solid var(--accent)}h1,h2,h3,p{margin:.3em 0 .65em}h1{font-size:clamp(24px,4vw,40px)}h2{font-size:21px}h3{font-size:17px}.sub{color:var(--mute)}a{color:#075d68;overflow-wrap:anywhere}button,input,select,textarea{font:inherit}input,select,button,textarea{border:1px solid var(--line);border-radius:6px;padding:8px;background:#fff;color:var(--ink)}button{cursor:pointer;font-weight:600}button:disabled{opacity:.45;cursor:auto}.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}input[type=search]{flex:1 1 235px}.badge{border-radius:14px;background:#dbeee6;padding:3px 9px;display:inline-block}.evidence{background:#f3f6f5;border-left:3px solid #89a89e;padding:8px 12px;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:140px 1fr;gap:5px 12px;margin:10px 0}.grid b{color:var(--mute)}summary{cursor:pointer;font-weight:600}.table{overflow:auto}table{border-collapse:collapse;width:100%}td,th{padding:5px 8px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}code{overflow-wrap:anywhere;white-space:normal}textarea{width:100%;min-height:90px}details details{padding:4px 0}@media(max-width:560px){main{padding:10px}.grid{grid-template-columns:1fr;gap:1px}.grid div{padding-bottom:7px}}
+</style>
+<main><header>
+<div class="sub">光模块研究 · 一次性历史整理 · 截至 <span id="cutoff"></span></div>
+<h1>历史 Daily 入库复核</h1>
+<p id="counts"></p><p>筛选后按编号逐条看原文、旧目标、建议和缺证。观察日期是本地日报或快照的观察日期；国内仅累计可见的条目无可归属日期，Gemini 纪要日期另列。</p>
+<p class="sub">本页只供复核。勾选仅生成编号短名单，不代表人工复核已完成，也不写正式账本。若要批准，另行提交具体编号、核实后的证据和允许写入的目标。</p>
+<p><button id="gemini-compliance" type="button">查看 Gemini 合规</button> · <a href="compliance-audit/index.html">11 月 10 日合规核查与入库建议</a></p><p><a href="review.csv">下载清单 CSV</a> · <a href="coverage.json">逐日期覆盖及缺口</a> · <a href="review.json">完整清单 JSON</a></p>
+</header>
+<section><details><summary>日期覆盖与来源局限</summary><div id="notes"></div><div class="table"><table><thead><tr><th>日期</th><th>国内日报</th><th>海外日报</th><th>海外 staging</th><th>合并</th><th>组装</th><th>采集</th><th>Gemini</th></tr></thead><tbody id="coverage"></tbody></table></div></details></section>
+<section aria-label="筛选"><div class="bar"><input id="q" type="search" aria-label="全文搜索" placeholder="搜索编号、公司、旧问题、主张或证据"><select id="stream" aria-label="来源"><option value="">全部来源</option></select><select id="decision" aria-label="处置建议"><option value="">全部处置</option></select><select id="date" aria-label="观察日"><option value="">全部观察日</option><option value="UNKNOWN">未归属观察日</option></select></div>
+<div class="bar" style="margin-top:10px"><button id="prev">上一页</button><button id="next">下一页</button><span id="where" role="status"></span></div></section>
+<section><details><summary>待讨论编号 <span id="chosen">0</span> 条</summary><p>复制给复核人并说明每条决定。刷新页面会清空选择。</p><textarea id="shortlist" readonly aria-label="所选编号"></textarea></details></section>
+<div id="list"></div></main>
+<script type="application/json" id="payload">__PAYLOAD__</script>
+<script>
+'use strict';
+const {$rows:rows, $coverage:coverage, cutoff}=JSON.parse(document.getElementById('payload').textContent);
+const $=id=>document.getElementById(id), node=(t,s)=>{const el=document.createElement(t);if(s!=null)el.textContent=s;return el;};
+$('cutoff').textContent=cutoff;
+const counts={};rows.forEach(r=>counts[r.stream]=(counts[r.stream]||0)+1);
+$('counts').textContent=`${rows.length.toLocaleString()} 条记录：`+Object.entries(counts).map(([k,v])=>`${k} ${v.toLocaleString()}`).join(' · ');
+const uniq=x=>[...new Set(x)].sort();
+for(const [id,vs] of [['stream',uniq(rows.map(r=>r.stream))],['decision',uniq(rows.map(r=>r.disposition))],['date',uniq(rows.flatMap(r=>r.dates)).reverse()]]) for(const v of vs){const o=node('option',v);o.value=v;$(id).append(o);}
+const cDays=coverage.calendar.filter(r=>r.combined_report==='有').length;
+$('notes').append(node('p',`已找到 ${cDays} 期合并日报；日期范围内有 ${coverage.calendar.length-cDays} 天缺合并日报。`));
+for(const n of coverage.notes)$('notes').append(node('p',n));
+for(const r of coverage.calendar){const tr=node('tr');for(const cell of [r.date,r.domestic_report,r.overseas_report,r.overseas_staging,r.combined_report,r.assembly_status,r.collection_status,r.gemini_status])tr.append(node('td',cell??'—'));$('coverage').append(tr);}
+const selected=new Set(), size=24;let page=0;
+const index=rows.map(r=>[r.id,r.subject,r.claim,r.quote,r.target,r.proposal,r.gap,r.category,(r.topics||[]).join(' '),r.anchors.map(a=>a.ref).join(' ')].join(' ').toLowerCase());
+function selection(){ $('chosen').textContent=selected.size; $('shortlist').value=[...selected].sort().join('\n'); }
+function card(r){
+ const a=node('article'), h=node('h3',r.subject+' · '+r.id);a.append(h);
+ const badge=node('span',r.stream+' / '+r.category+' / '+r.disposition);badge.className='badge';a.append(badge);
+ if(r.topics?.length)a.append(node('p','主题 · '+r.topics.join('、')));
+ a.append(node('p',r.claim));
+ const g=node('div');g.className='grid';
+ for(const [k,v] of [['对应旧问题/条目',r.target],['建议补充或修正',r.proposal],['还缺的证据',r.gap]])g.append(node('b',k),node('div',v));a.append(g);
+ const d=node('details');d.append(node('summary','原文定位与历史观察日期'));
+ if(r.quote){const q=node('div',r.quote);q.className='evidence';d.append(q);}
+ if(r.publication_date)d.append(node('p','原件披露日：'+r.publication_date));
+ if(r.date_basis)d.append(node('p','日期依据：'+r.date_basis));
+ if(r.source_entry_date)d.append(node('p','纪要标注日：'+r.source_entry_date));
+ d.append(node('p','观察日：'+(r.dates.join('、')||'UNKNOWN')));
+ for(const x of [...r.anchors,...(r.target_anchors||[])]){const p=node('p');p.append(node('b',x.label+': '));
+   if(/^https?:\/\//i.test(x.ref)){const l=node('a',x.ref);l.href=x.ref;l.target='_blank';l.rel='noopener noreferrer';p.append(l);}else if(x.ref.startsWith('/')){const m=x.ref.match(/^(.*?)(#L\d+(?:-L?\d+)?)?$/);const l=node('a',x.ref);l.href='file://'+m[1].split('/').map(encodeURIComponent).join('/')+(m[2]||'');l.target='_blank';l.rel='noopener';p.append(l);}
+   else p.append(node('code',x.ref));d.append(p);}
+ const label=node('label'), c=node('input');c.type='checkbox';c.checked=selected.has(r.id);c.addEventListener('change',()=>{if(c.checked)selected.add(r.id);else selected.delete(r.id);selection();});label.append(c,' 加入待讨论编号');a.append(d,label);return a;
+}
+function render(){
+ const words=$('q').value.trim().toLowerCase().split(/\s+/).filter(Boolean), s=$('stream').value, d=$('decision').value, day=$('date').value;
+ const list=rows.filter((r,i)=>(!s||r.stream===s)&&(!d||r.disposition===d)&&(!day||(day==='UNKNOWN'?!r.dates.length:r.dates.includes(day)))&&words.every(w=>index[i].includes(w)));
+ if(s==='Gemini 合规')list.sort((a,b)=>(b.source_entry_date||'').localeCompare(a.source_entry_date||''));
+ const pages=Math.ceil(list.length/size);page=Math.max(0,Math.min(page,pages-1));$('prev').disabled=!page;$('next').disabled=page+1>=pages;
+ $('where').textContent=list.length?`第 ${page+1}/${pages} 页 · ${list.length} 条匹配`:'没有匹配结果';
+ $('list').replaceChildren(...list.slice(page*size,(page+1)*size).map(card));
+}
+$('q').addEventListener('input',()=>{page=0;render();});for(const k of ['stream','decision','date'])$(k).addEventListener('change',()=>{page=0;render();});
+$('gemini-compliance').addEventListener('click',()=>{
+ $('q').value='';$('decision').value='';$('date').value='';$('stream').value='Gemini 合规';page=0;render();
+});
+$('prev').addEventListener('click',()=>{page--;render();});$('next').addEventListener('click',()=>{page++;render();});render();
+</script></html>

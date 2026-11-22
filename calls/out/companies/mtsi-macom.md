@@ -10,16 +10,16 @@
 - 可用来源：4/4 个季度槽有 `available` 材料
 - 陈述登记：0 条 `claims.csv` 陈述（含 candidate/rejected）
 - 已核陈述：0 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：3 条已审核雷达事件（asserted 1 / corroborated 2）
+- 已核事件：4 条已审核雷达事件（asserted 2 / corroborated 2）
 
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
+| FY2026Q4 | [S_MTSI_2026Q4](https://ir.macom.com/news-releases/news-release-details/macom-reports-fiscal-fourth-quarter-and-fiscal-year-2026/) | A | available | 公司IR官方FY2026Q4及全年业绩新闻稿；本地存档HTML与清洗TXT；归档 corpus/web/step4_20261122/mtsi_20261105_fy26q4_results.txt |
 | FY2026Q3 | [S_MTSI_2026Q3](https://www.sec.gov/Archives/edgar/data/1493594/000149359426000036/ex99_1earningsreleaseq3fy26.htm) | A | available | SEC官方EX-99.1承载同一季度业绩稿；管理层引述无光学特指 |
 | FY2026Q2 | [S_MTSI_2026Q2](https://ir.macom.com/news-releases/news-release-details/macom-reports-fiscal-second-quarter-2026-financial-results) | A | available | 公司官方季度业绩与电话会入口 |
 | FY2026Q1 | [S_MTSI_2026Q1](https://ir.macom.com/news-releases/news-release-details/macom-reports-fiscal-first-quarter-2026-financial-results/) | A | available | 公司官方季度业绩与电话会入口 |
-| FY2025Q4 | [S_MTSI_2025Q4](https://ir.macom.com/news-releases/news-release-details/macom-reports-fiscal-fourth-quarter-and-fiscal-year-2025/) | A | available | 公司官方季度及全年业绩与电话会入口 |
 
 ## 已审核管理层陈述
 

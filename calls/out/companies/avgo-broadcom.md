@@ -8,18 +8,18 @@
 
 - 季度槽登记：4/4 个季度槽已登记（含未采集槽位）
 - 可用来源：4/4 个季度槽有 `available` 材料
-- 陈述登记：4 条 `claims.csv` 陈述（含 candidate/rejected）
-- 已核陈述：4 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
+- 陈述登记：5 条 `claims.csv` 陈述（含 candidate/rejected）
+- 已核陈述：5 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
 - 已核事件：1 条已审核雷达事件（asserted 1 / corroborated 0）
 
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
+| FY2026Q3 | [S_AVGO_2026Q3](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial) | A | available | 公司IR官方FY2026Q3业绩新闻稿；本地存档HTML与清洗TXT；归档 corpus/web/step4_20261122/avgo_20260902_fy26q3_results.txt |
 | FY2026Q2 | [S_AVGO_2026Q2](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial) | A | available | 公司官方季度业绩与电话会入口 |
 | FY2026Q1 | [S_AVGO_2026Q1](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-first-quarter-fiscal-year-2026-financial) | A | available | 公司官方季度业绩与电话会入口 |
 | FY2025Q4 | [S_AVGO_2025Q4](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-fourth-quarter-and-fiscal-year-2025) | A | available | 公司官方季度及全年业绩与电话会入口 |
-| FY2025Q3 | [S_AVGO_2025Q3](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2025-financial) | A | available | 公司官方季度业绩与电话会入口 |
 
 ## 已审核管理层陈述
 
@@ -37,6 +37,9 @@
 - `CL048` · fact · unknown · [S_AVGO_2026Q2](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial) `CEO quote in official FY2026 Q2 results`
   - 归纳：Broadcom称FY2026Q2 AI半导体收入108亿美元并同比增长143%；不能换算光模块需求
   - 原文短引：“Q2 semiconductor revenue from AI of $10.8 billion grew 143% year-over-year above our forecast”
+- `CL080` · fact · unknown · [S_AVGO_2026Q3](https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial) `CEO quote in official FY2026 Q3 results (p2)`
+  - 归纳：Broadcom披露FY2026Q3 AI半导体收入167亿美元（同比增长221%、环比增长54%）并指引Q4达217亿美元；仅作混合需求背景
+  - 原文短引：“Q3 AI semiconductor revenue of $16.7 billion grew 221% year-over-year, and 54% quarter-over-quarter”
 
 ## 公司官网技术作者陈述（与管理层商业确认隔离）
 

@@ -1,0 +1,72 @@
+{
+  "docs/control/ACTIVE_WORKPACK.yaml": {
+    "sha256": "4af3594f33223a6ca858e5fc0855be94a55d984e8a7b0142c9d116b57a349e95",
+    "bytes": 5232,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 92
+  },
+  "macro_evidence.csv": {
+    "sha256": "b2008488afacfef850c9575f949a133216370d8087457c189d6b00af1355a4aa",
+    "bytes": 10127,
+    "has_bom": true,
+    "crlf_count": 33,
+    "lf_count": 33
+  },
+  "points.csv": {
+    "sha256": "d35a46a3afaf1c80e6a666a6c3143de327bdca2e96d65712060be78f16b7cac0",
+    "bytes": 111186,
+    "has_bom": true,
+    "crlf_count": 0,
+    "lf_count": 270
+  },
+  "edges.csv": {
+    "sha256": "0768d707a1247a5886ed7bfaaab6fcbbdc688862bf3b00ee273112d958f81f38",
+    "bytes": 87295,
+    "has_bom": true,
+    "crlf_count": 237,
+    "lf_count": 237
+  },
+  "knowledge.yaml": {
+    "sha256": "954e64e6035ec87000f7607e20e6ab3208680e80ced34b75a9ce173c792eeb51",
+    "bytes": 35333,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 475
+  },
+  "refs/entity-registry.yaml": {
+    "sha256": "079f1ea57e48f045d8ce5caf31d14c9578bf50491fbe93b224106cbad0f47b53",
+    "bytes": 20263,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 450
+  },
+  "refs/解匿判例库.md": {
+    "sha256": "91b5e4cea6106ddac8a891852be3c851a6b42169234d2945556c54e51fe44b53",
+    "bytes": 15908,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 226
+  },
+  "scan.py": {
+    "sha256": "4e4cf6640ed96fbeb920ebeb4a2e74e30bccd5e1deec799689226e97def5ec8f",
+    "bytes": 76560,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 1176
+  },
+  "capability_details.csv": {
+    "sha256": "15dc92aa2cbd2a98dd937469d86b92e3b09bf7bf5cbf3aaffdccfc85690d7348",
+    "bytes": 111706,
+    "has_bom": true,
+    "crlf_count": 184,
+    "lf_count": 184
+  },
+  "corpus/_frozen.csv": {
+    "sha256": "ff58d9c0e420fd6d80b2528d860790780c2b5fc2b2254ec0a5f651233caad395",
+    "bytes": 124612,
+    "has_bom": true,
+    "crlf_count": 462,
+    "lf_count": 464
+  }
+}

@@ -277,5 +277,81 @@ class ReaderOutputTest(unittest.TestCase):
         self.assertIn("粗粒度格", html)
 
 
+class TreeMetadataTest(unittest.TestCase):
+    """tree.yaml 结构化解析：带 knowledge_ids/status/decision_ref 的叶不得落成「未标」。"""
+
+    def test_real_tree_has_no_unlabelled_route(self) -> None:
+        meta = report.tree_metadata()
+        self.assertTrue(meta)
+        self.assertEqual([cell for cell, node in meta.items() if node["route"] == "未标"], [])
+
+    def test_leaves_with_extra_keys_are_parsed(self) -> None:
+        meta = report.tree_metadata()
+        for cell in ("C1", "D8", "D12", "M2a", "M2c", "EQ3", "EQ4", "EQ7", "EQ8", "P1"):
+            with self.subTest(cell=cell):
+                self.assertIn(cell, meta)
+                self.assertTrue(meta[cell]["name"])
+                self.assertNotEqual(meta[cell]["route"], "未标")
+        self.assertEqual(meta["M2c"]["route"], "数通COB/硅光")
+        self.assertEqual(meta["EQ8"]["route"], "电信气密")
+
+    def test_enumeration_in_node_name_is_not_credited_as_product(self) -> None:
+        self._read_rows = participation.read_rows
+        self._universe = participation.unique_universe
+        self._tree = report.tree_metadata
+        try:
+            participation.read_rows = lambda _path: [  # type: ignore[assignment]
+                point("P1", "测试公司甲", "C1", "edge_backed", quote="公司从事半导体激光器芯片研发与生产")
+            ]
+            participation.unique_universe = lambda: list(UNIVERSE)  # type: ignore[assignment]
+            report.tree_metadata = lambda: {  # type: ignore[assignment]
+                "C1": {"name": "激光器芯片(EML/DFB/CW光源)", "route": "共用", "process_note": ""}
+            }
+            row = report.granular_rows()[0]
+        finally:
+            participation.read_rows = self._read_rows  # type: ignore[assignment]
+            participation.unique_universe = self._universe  # type: ignore[assignment]
+            report.tree_metadata = self._tree  # type: ignore[assignment]
+        self.assertEqual(row["细分节点"], "激光器芯片(EML/DFB/CW光源)")
+        for token in ("EML", "DFB", "CW光源"):
+            self.assertNotIn(token, row["具体产品"])
+
+
+class StageDetailTest(unittest.TestCase):
+    """量产/交付证据优先于末尾的「研发」后备，不得误降为 研发/建设中。"""
+
+    def test_scale_production_wins_over_rnd(self) -> None:
+        text = "拥有覆盖磷化铟衬底、外延材料至光芯片的全流程研发与工艺体系。目前CWlaser已实现规模化量产"
+        self.assertEqual(report.stage_detail(text, "生产中"), "规模量产/批量交付")
+
+    def test_already_supplying_wins_over_in_development(self) -> None:
+        text = "公司1.6T光模块PCB用板已经供货，3.2T光模块PCB用板目前与客户开发中"
+        self.assertEqual(report.stage_detail(text, "生产中"), "量产/产业化")
+
+    def test_batch_delivery_and_high_shipment(self) -> None:
+        self.assertEqual(report.stage_detail("800G ZR/ZR+相干光模块实现批量交付", ""), "规模量产/批量交付")
+        self.assertEqual(report.stage_detail("订单于本年度维持于较高的出貨水平；高出货", ""), "规模量产/批量交付")
+        self.assertEqual(report.stage_detail("各类产品研发并实现800G量产", ""), "量产/产业化")
+
+    def test_small_batch_is_not_promoted_to_scale(self) -> None:
+        self.assertEqual(report.stage_detail("高频高速产品已在光模块客户中实现小批量出货", ""), "小批量/试产")
+        self.assertEqual(report.stage_detail("样板及小批量交付，仍处于客户需求验证", ""), "小批量/试产")
+
+    def test_rnd_with_production_is_operating(self) -> None:
+        self.assertEqual(report.stage_detail("具备光缆、MPO预端接组件等产品研发与量产能力", ""), "生产经营中")
+        self.assertEqual(report.stage_detail("公司研发和生产的相干光模块用于长距传输", ""), "生产经营中")
+
+    def test_pure_rnd_falls_back(self) -> None:
+        self.assertEqual(report.stage_detail("1.6T产品在研", ""), "研发/建设中")
+        self.assertEqual(report.stage_detail("", "生产中"), "生产中")
+
+
+class ResolveCompanyRealUniverseTest(unittest.TestCase):
+    def test_real_universe_aliases(self) -> None:
+        names = {row["名称"] for row in participation.unique_universe()}
+        self.assertEqual(participation.resolve_company("南大光电", names), "江苏南大光电材料股份有限公司")
+        self.assertEqual(participation.resolve_company("汇聚科技", names), "汇聚科技(Huiju Technology)")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -228,19 +228,35 @@ def extract_url(value: str) -> str:
 
 
 def tree_metadata() -> dict[str, dict[str, str]]:
-    text = (ROOT / "tree.yaml").read_text(encoding="utf-8")
+    """Leaf metadata keyed by cell_id, parsed structurally from tree.yaml.
+
+    A flow-mapping regex used to require ``路线`` to immediately follow
+    ``名称`` and silently skipped leaves carrying knowledge_ids/status/
+    decision_ref, which then rendered as ``技术路线=未标``.
+    """
+    import yaml
+
+    data = yaml.safe_load((ROOT / "tree.yaml").read_text(encoding="utf-8")) or {}
     result: dict[str, dict[str, str]] = {}
-    pattern = re.compile(
-        r"\{cell_id:\s*([^,\s]+),\s*名称:\s*(.*?),\s*路线:\s*([^,}]+)"
-        r"(?:,\s*工艺备注:\s*(.*?))?\}"
-    )
-    for match in pattern.finditer(text):
-        cell_id, name, route, process_note = match.groups()
-        result[cell_id] = {
-            "name": clean(name),
-            "route": clean(route),
-            "process_note": clean(process_note or ""),
-        }
+
+    def walk(nodes) -> None:
+        if isinstance(nodes, dict):
+            nodes = [nodes]
+        if not isinstance(nodes, list):
+            return
+        for node in nodes:
+            if not isinstance(node, dict):
+                continue
+            cell_id = node.get("cell_id")
+            if cell_id is not None:
+                result[str(cell_id).strip()] = {
+                    "name": clean(str(node.get("名称") or "")),
+                    "route": clean(str(node.get("路线") or "未标")),
+                    "process_note": clean(str(node.get("工艺备注") or "")),
+                }
+            walk(node.get("children"))
+
+    walk(data.get("tree", []) if isinstance(data, dict) else [])
     return result
 
 
@@ -295,14 +311,26 @@ def cell_label(cell_id: str, node_name: str) -> str:
 
 
 def stage_detail(text: str, point_status: str) -> str:
+    # Order matters: delivery/mass-production evidence is checked before the
+    # bare "研发" fallback so "研发并量产/已实现规模化量产/已经供货" never
+    # downgrades to 研发/建设中.
     checks = [
-        ("规模量产/批量交付", r"规模量产|大批量|批量供货|批量出货|批量销售|批量产销"),
-        ("量产/产业化", r"已实现量产|实现量产|量产线|产业化|成熟应用|生产中"),
+        (
+            "规模量产/批量交付",
+            r"规模量产|规模化量产|规模化交付|大批量|(?<!小)批量供货|(?<!小)批量出货|(?<!小)批量销售|(?<!小)批量产销|"
+            r"(?<!小)批量交付|稳定量产|高出货|商业化量产|商業化量產",
+        ),
+        (
+            "量产/产业化",
+            r"已实现量产|实现量产|量产线|产业化|成熟应用|生产中|"
+            r"已经供货|已实现[^。；;]*量产|并实现[^。；;]*量产|持续出货|提量交付|月出货量",
+        ),
         ("小批量/试产", r"小批量|试产"),
         ("送样/验证/导入", r"送样|验证|导入"),
         (
             "生产经营中",
             r"研发[、与及/]*生产|研发[、与及/]*制造|研发.*销售|生产.*销售|"
+            r"研发(?:[、与及和/]|及).*(?:生产|制造|量产|销售)|设计.*制造.*交付|"
             r"提供.*光模块|主营业务|业务.*涵盖.*销售|营业收入",
         ),
         ("研发/建设中", r"在研|研发|开发中|在建|持续进行中"),
@@ -314,6 +342,12 @@ def stage_detail(text: str, point_status: str) -> str:
 
 
 def role_for(cell_id: str, text: str) -> str:
+    if (
+        cell_id.startswith("C")
+        and re.search(r"自主设计|自研|自主开发|自行设计", text)
+        and re.search(r"外部代工|流片采用外部|委外流片", text)
+    ):
+        return "芯片设计与产品定义（外部流片）"
     if re.search(r"委托加工|OEM|EMS|代工", text, flags=re.I):
         return "专业代工/制造服务"
     if cell_id.startswith("MOD"):
@@ -387,13 +421,18 @@ def granular_rows() -> list[dict[str, str]]:
                 quotes.append(quote)
         quote_text = "；".join(quotes)
         label = cell_label(cell_id, node["name"])
-        combined = f"{label} {node['process_note']} {quote_text}"
+        # A node's parenthetical enumeration ("激光器芯片(EML/DFB/CW光源)") is a
+        # navigation aid, never evidence: matching it would credit every company
+        # in the cell with every listed sub-capability. Products/materials are
+        # therefore matched against the bracket-free node name plus disclosures.
+        match_label = PARENTHETICAL.sub("", label).strip() or label
+        combined = f"{match_label} {node['process_note']} {quote_text}"
         evidence_and_process = f"{node['process_note']} {quote_text}"
         products = unique_matches(combined, PRODUCT_PATTERNS)
         processes = unique_matches(evidence_and_process, PROCESS_PATTERNS)
         specs = unique_matches(quote_text, SPEC_PATTERNS)
         if not products:
-            products = [label]
+            products = [match_label]
         if not processes and node["process_note"]:
             processes = [node["process_note"]]
         best_point = max(points, key=lambda point: admission_rank(point.get("判定等级", "")))

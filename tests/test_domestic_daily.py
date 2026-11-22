@@ -259,6 +259,77 @@ class MirrorTests(unittest.TestCase):
         self.assertFalse((state / "monthly/.rescreen-2026-09.done").exists())
         self.assertEqual([call[0] for call in client.calls].count("rescreen"), 1)
 
+    def test_requests_client_rescreen_reads_current_cninfo_records(self):
+        client = RequestsClient(self.make_source())
+        client.session = mock.Mock()
+        client.session.get.return_value = types.SimpleNamespace(
+            status_code=200,
+            text='{"resultcode":401,"resultmsg":"未经授权的访问"}',
+            json=lambda: {"resultcode": 401, "resultmsg": "未经授权的访问"},
+        )
+        client.session.post.return_value = types.SimpleNamespace(
+            status_code=200,
+            raise_for_status=lambda: None,
+            json=lambda: {"resultcode": 200, "records": [
+                {"F001V": "008003", "F005V": "通信设备", "F008C": "0"},
+                {"F001V": "008003", "F005V": "通信设备", "F008C": "1"},
+            ]},
+        )
+
+        self.assertEqual(client.rescreen("002281", "2026-10-02"), "通信设备")
+        client.session.get.assert_not_called()
+        kwargs = client.session.post.call_args.kwargs
+        self.assertEqual(kwargs["params"]["scode"], "002281")
+        self.assertTrue(kwargs["headers"]["Accept-Enckey"])
+
+    def test_requests_client_rescreen_rejects_json_401(self):
+        client = RequestsClient(self.make_source())
+        client.session = mock.Mock()
+        client.session.post.return_value = types.SimpleNamespace(
+            status_code=200,
+            raise_for_status=lambda: None,
+            json=lambda: {"resultcode": 401, "resultmsg": "未经授权的访问,code_005_ipban_notoken"},
+        )
+        with self.assertRaisesRegex(RuntimeError, "401"):
+            client.rescreen("002281", "2026-10-02")
+
+    def test_rescreen_expired_access_stops_without_month_marker(self):
+        source = self.make_source()
+        state = Path(tempfile.mkdtemp())
+        client = FixtureClient(rescreen={"000001": RuntimeError("p_stock2110 授权失败(405)")})
+        result = DailyMirror(source, state, client).run("2026-09-01")
+        self.assertTrue(result["manifest"]["rescreen"]["blocked"])
+        self.assertEqual(result["manifest"]["run_status"], "partial")
+        self.assertFalse((state / "monthly/.rescreen-2026-09.done").exists())
+
+    def test_rescreen_missing_classification_does_not_mark_month_complete(self):
+        source = self.make_source()
+        state = Path(tempfile.mkdtemp())
+        result = DailyMirror(source, state, FixtureClient(rescreen={"000001": None})).run("2026-09-01")
+        self.assertEqual(result["manifest"]["run_status"], "partial")
+        self.assertEqual(result["manifest"]["rescreen"]["unresolved"], 1)
+        self.assertFalse((state / "monthly/.rescreen-2026-09.done").exists())
+
+    def test_rescreen_excludes_non_a_shares_and_keeps_approved_extra_industries(self):
+        source = self.make_source()
+        (source / "corpus/_frozen.csv").write_text(
+            "代码,名称,市场,行业分类,分类来源\n"
+            "000001,公司甲,深交所主板,通信设备,原分母\n"
+            "300567,公司乙,深交所创业板,宇宙外补录v3,人工补录\n"
+            "Ciena,Ciena,美股,宇宙外补录v4,人工补录\n",
+            encoding="utf-8",
+        )
+        state = Path(tempfile.mkdtemp())
+        client = FixtureClient(rescreen={"000001": "通信设备", "300567": "专用设备"})
+        result = DailyMirror(source, state, client).run("2026-09-01")
+        rescreen = result["manifest"]["rescreen"]
+        self.assertEqual([call[1] for call in client.calls if call[0] == "rescreen"], ["000001", "300567"])
+        self.assertEqual(rescreen["checked"], 2)
+        self.assertEqual(rescreen["moved_out"], [])
+        self.assertEqual(rescreen["skipped_non_a"], 1)
+        self.assertEqual(result["manifest"]["run_status"], "complete")
+        self.assertTrue((state / "monthly/.rescreen-2026-09.done").exists())
+
     def test_qa_since_backfills_once_then_uses_overlap_window(self):
         source = self.make_source()
         state = Path(tempfile.mkdtemp())

@@ -10,17 +10,17 @@
 - 可用来源：4/4 个季度槽有 `available` 材料
 - 陈述登记：2 条 `claims.csv` 陈述（含 candidate/rejected）
 - 已核陈述：2 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：0 条已审核雷达事件（asserted 0 / corroborated 0）
+- 已核事件：2 条已审核雷达事件（asserted 1 / corroborated 1）
 
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
+| FY2027Q3 | [S_NVDA_2027Q3](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) | A | available | NVIDIA官方新闻室FY2027Q3业绩新闻稿；本地存档HTML与清洗TXT；归档 corpus/web/step4_20261122/nvda_20261117_fy27q3_results.txt |
 | FY2027Q1 | [S_NVDA_2026Q1_CALL](https://s201.q4cdn.com/141608511/files/doc_financials/2027/q1/NVDA-Q1-2027-Earnings-Call-20-May-2026-5_00-PM-ET.pdf) | A | available | NVIDIA IR托管的官方季度电话会校订逐字稿 |
 | FY2027Q1 | [S_NVDA_2026Q1](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx) | A | available | 公司官方季度业绩新闻稿 |
 | FY2026Q4 | [S_NVDA_2025Q4](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/) | A | available | 公司官方季度及全年业绩新闻稿 |
 | FY2026Q3 | [S_NVDA_2025Q3](https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2026/) | A | available | 公司官方季度业绩新闻稿 |
-| FY2026Q2 | [S_NVDA_2025Q2](https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2026/default.aspx) | A | available | 公司官方季度业绩新闻稿 |
 
 ## 已审核管理层陈述
 

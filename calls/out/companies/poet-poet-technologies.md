@@ -8,24 +8,26 @@
 
 - 季度槽登记：4/4 个季度槽已登记（含未采集槽位）
 - 可用来源：4/4 个季度槽有 `available` 材料
-- 陈述登记：0 条 `claims.csv` 陈述（含 candidate/rejected）
-- 已核陈述：0 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：2 条已审核雷达事件（asserted 2 / corroborated 0）
+- 陈述登记：1 条 `claims.csv` 陈述（含 candidate/rejected）
+- 已核陈述：1 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
+- 已核事件：3 条已审核雷达事件（asserted 3 / corroborated 0）
 
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
+| 2026Q3 | [S_POET_2026Q3](https://www.poet-technologies.com/news/poet-technologies-reports-record-q3-2026-revenue-of-1-03m-up-244) | A | available | 公司官网2026Q3正式业绩新闻稿；本地存档HTML与清洗TXT；归档 corpus/web/step4_20261122/poet_20261116_2026q3_official.txt |
 | 2026Q1 | [S_POET_2026Q1](https://www.poet-technologies.com/news/poet-technologies-reports-first-quarter-2026-financial-results) | A | available | 公司官方季度业绩稿 |
 | 2025Q4 | [S_POET_2025Q4](https://www.poet-technologies.com/news/poet-technologies-reports-fourth-quarter-2025-financial-results) | A | available | 公司官方季度及全年业绩稿 |
 | 2025Q3 | [S_POET_2025Q3](https://www.poet-technologies.com/news/poet-technologies-reports-third-quarter-2025-financial-results) | A | available | 公司官方季度业绩稿 |
-| 2025Q2 | [S_POET_2025Q2](https://www.poet-technologies.com/news/poet-technologies-reports-second-quarter-2025-financial-results) | A | available | 公司官方季度业绩稿 |
 
 ## 已审核管理层陈述
 
 > `reviewed` 仅表示原文已核（说话人、原文、锚点经人工复核），不代表独立来源交叉证实。
 
-未知：本 MVP 尚无已审核管理层陈述。
+- `CL079` · forward_looking · delayed · [S_POET_2026Q3](https://www.poet-technologies.com/news/poet-technologies-reports-record-q3-2026-revenue-of-1-03m-up-244) `Management Commentary, paragraph 2 (p5)`
+  - 归纳：POET在2026Q3业绩稿将原定2026年目标的3万只光引擎积压订单出货窗口调整至2027年第二季度前；当季总收入约103万美元
+  - 原文短引：“We expect to ship our current backlog of optical engines, including the 30,000 engines we had targeted for 2026, by the second quarter of 2027, as the capacity we have already funded comes online”
 
 ## 公司官网技术作者陈述（与管理层商业确认隔离）
 

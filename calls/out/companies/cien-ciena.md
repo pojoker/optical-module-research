@@ -8,9 +8,9 @@
 
 - 季度槽登记：4/4 个季度槽已登记（含未采集槽位）
 - 可用来源：4/4 个季度槽有 `available` 材料
-- 陈述登记：11 条 `claims.csv` 陈述（含 candidate/rejected）
-- 已核陈述：11 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：5 条已审核雷达事件（asserted 5 / corroborated 0）
+- 陈述登记：12 条 `claims.csv` 陈述（含 candidate/rejected）
+- 已核陈述：12 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
+- 已核事件：6 条已审核雷达事件（asserted 6 / corroborated 0）
 
 ## 四季度覆盖
 
@@ -58,6 +58,9 @@
 - `CL073` · fact · announced · [S_CIEN_2026Q2](https://s25.q4cdn.com/550667411/files/content_files/Ciena-Fiscal-Q2-2026-Financial-Results-Call.pdf) `prepared remarks p.4 / coherent modules paragraph`
   - 归纳：Ciena称赢得大型hyperscaler相干模块项目
   - 原文短引：“new win with a major hyperscaler for our high-performance Coherent modules”
+- `CL076` · fact · sampling · [S_CIEN_2026_FORUM](https://s25.q4cdn.com/550667411/files/doc_events/2026/09/16/Ciena-Investor-Forum-2026-Full-Transcript-of-the-Day-s-Events-Final.pdf) `p. 24, lines 873-874, Vesta 200 CPX`
+  - 归纳：Ciena在2026-09-16 Investor Forum确认正就Vesta 200 CPX向超大规模客户与交换机OEM等多家关键客户送样评估；未披露首次样品可用日
+  - 原文短引：“we are sampling devices for multiple key customers”
 
 ## 公司官网技术作者陈述（与管理层商业确认隔离）
 

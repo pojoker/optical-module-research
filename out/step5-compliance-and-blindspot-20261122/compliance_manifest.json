@@ -1,0 +1,1015 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-22",
+  "workpack_id": "OPTICAL-STEP5-COMPLIANCE-AND-BLINDSPOT-CLOSURE-20261122",
+  "target_audit_ids": [
+    "G-339d80a17d919a12",
+    "G-d000601e4e2f38ba",
+    "G-d6ee1cb32ece68e2",
+    "G-cf34d3f9017c9f88",
+    "G-9ab4ac6f52ae4f02",
+    "G-f46ef070f67d25cb",
+    "G-dacd6464384279d8",
+    "G-d4a9cc9237f3b367",
+    "G-bfccb127bea191d2"
+  ],
+  "summary_counts": {
+    "total_urls_evaluated": 31,
+    "http_200_archived": 24,
+    "existing_local_corpus": 3,
+    "http_403_or_gated": 3,
+    "error": 1
+  },
+  "anti_bot_and_tls_compliance_note": "全程仅用标准 requests(User-Agent, timeout=20) 单次直连，零绕过验证码/WAF/403、零禁用TLS证书校验。EUR-Lex 三份法条页返回 HTTP 202 AWS WAF JS 挑战壳记为 http_403_or_gated；商务部出口管制子站 1329.html 因证书域名不匹配记为 error；上述4项在 knowledge.yaml 中诚实采用 url 锚，其余 HTTP 200 原件全部落盘计算 SHA256 并逐字校验核心引语。",
+  "items": [
+    {
+      "item_id": "cbp_H335829",
+      "category": "CBP_CROSS_RULING",
+      "audit_ids": [
+        "G-339d80a17d919a12",
+        "G-d000601e4e2f38ba"
+      ],
+      "kn_refs": [
+        "KN011"
+      ],
+      "title": "U.S. CBP HQ H335829 (2025-02-26) — Eoptolink 100G–800G Optical Transceivers & AOCs",
+      "url": "https://rulings.cbp.gov/api/ruling/H335829",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/cbp_ruling_H335829.json",
+      "bytes": 26960,
+      "sha256": "8e268f6c51865bdb9977e9090d969e5a00b83f0dc17245d83c4b7c22f15b30d8",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "JSON text field · FACTS, LAW AND ANALYSIS, HOLDING (2025-02-26)",
+      "verified_quotes": [
+        {
+          "quote": "In this case, the entirety of the physical manufacturing and assembly of the optical transceiver devices occurs in China.",
+          "verified_in_text": true
+        },
+        {
+          "quote": "Based on the information provided, we find that the country of origin of the subject optical transceiver units is China.",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "反例1（原产地判中国）：中国境内做完SMT贴装PCBA、TOSA/ROSA封装、整机空白模块装配与-40℃~85℃温循；运往泰国仅做MCU固件写入、调谐、EEPROM参数烧录、老化、终测与包装，CBP认定不构成实质性转变，原产地仍为中国。"
+    },
+    {
+      "item_id": "cbp_N344720",
+      "category": "CBP_CROSS_RULING",
+      "audit_ids": [
+        "G-d000601e4e2f38ba"
+      ],
+      "kn_refs": [
+        "KN011"
+      ],
+      "title": "U.S. CBP N344720 (2025-01-13) — Accelink 800G OSFP DR8 Transceiver Module",
+      "url": "https://rulings.cbp.gov/api/ruling/N344720",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/cbp_ruling_N344720.json",
+      "bytes": 12492,
+      "sha256": "1a34811ca90f34fe96cbe632fa22e809585780af5bca351718167e01cc266c62",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "JSON text field · Main Board PCBA (Thailand-origin) & Holding paragraph (2025-01-13)",
+      "verified_quotes": [
+        {
+          "quote": "The Main Board PCBA contains approximately 560 electrical elements sourced from various countries of origin.",
+          "verified_in_text": true
+        },
+        {
+          "quote": "The character of this product is imparted by the main PCBA which would be considered the dominant component of this assembly.",
+          "verified_in_text": true
+        },
+        {
+          "quote": "the country of origin for marking purposes would be Thailand upon importation into the United States and as such, the Section 301 trade remedy would not be applicable.",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "正例1（原产地判泰国，不适用301关税）：主PCBA（含美系DSP等约560颗元器件，占全机超四分之三元器件）在泰国经多道SMT工序制造，运回中国贴装硅光OSA并打线对光后再返泰国总装调测；CBP认定主PCBA赋予产品本质特征，原产地为泰国。"
+    },
+    {
+      "item_id": "cbp_N358465",
+      "category": "CBP_CROSS_RULING",
+      "audit_ids": [
+        "G-339d80a17d919a12",
+        "G-d000601e4e2f38ba"
+      ],
+      "kn_refs": [
+        "KN011"
+      ],
+      "title": "U.S. CBP N358465 (2026-02-27) — Accelink 800G OSFP DR8 Transceiver Module",
+      "url": "https://rulings.cbp.gov/api/ruling/N358465",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/cbp_ruling_N358465.json",
+      "bytes": 10785,
+      "sha256": "d41856f4adc0dc606d2977bf94b971698e06fd0f3d884e39224ab91d986dff30",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "JSON text field · Main Board PCBA (Malaysia-origin) & Holding paragraph (2026-02-27)",
+      "verified_quotes": [
+        {
+          "quote": "Production in Malaysia includes the creation of the PCBA via surface mount technology (SMT).",
+          "verified_in_text": true
+        },
+        {
+          "quote": "the country of origin of this product would be Malaysia upon importation into the United States and as such, the Section 301 trade remedy would not be applicable.",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "正例2（原产地判马来西亚，不适用301关税）：主PCBA（约560颗元器件含美系DSP）在马来西亚经多道SMT工序制造，运至中国贴装OSA后再返马来西亚总装测试；CBP同样按主PCBA主导原则判马来西亚原产，且按19 CFR 177.9(b)(1)声明仅限申报事实。"
+    },
+    {
+      "item_id": "cbp_N359369",
+      "category": "CBP_CROSS_RULING",
+      "audit_ids": [
+        "G-339d80a17d919a12"
+      ],
+      "kn_refs": [
+        "KN011"
+      ],
+      "title": "U.S. CBP N359369 (2026-03-17) — Source Photonics Taiwan 800G/400G Optical Transceivers",
+      "url": "https://rulings.cbp.gov/api/ruling/N359369",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/cbp_ruling_N359369.json",
+      "bytes": 5700,
+      "sha256": "6fa2e0ec49195f777b417fafec9576fff9ac2806b26b66fe8dd91a2d82619160",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "JSON text field · Manufacturing & Section 301 Holding paragraph (2026-03-17)",
+      "verified_quotes": [
+        {
+          "quote": "In China, the main PCBA is manufactured using surface mount technology.",
+          "verified_in_text": true
+        },
+        {
+          "quote": "The optical sub-assembly (OSA) is manufactured in Taiwan. The process includes manufacturing the optical chip, and then packaging that chip and performing alignment processes.",
+          "verified_in_text": true
+        },
+        {
+          "quote": "the character of this product is imparted by the main PCBA which is considered the dominant component of this assembly",
+          "verified_in_text": true
+        },
+        {
+          "quote": "the country of origin for purposes of applying trade remedies under Section 301 will be China.",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "反例2（关键纠偏：原产地仍判中国，适用301关税）：索尔思台湾申报的800G 2xFR4与400G DR4/FR4三款模块，即便光芯片制造、OSA封装及光学对准在台湾进行，但因主PCBA（含DSP/MCU）在中国SMT制造，CBP认定主PCBA为主导部件、台湾工序未改变主PCBA最终用途，故Section 301原产地仍为中国。"
+    },
+    {
+      "item_id": "fr_91FR57798",
+      "category": "US_FCC_AND_CONGRESS",
+      "audit_ids": [
+        "G-d6ee1cb32ece68e2"
+      ],
+      "kn_refs": [
+        "KN012"
+      ],
+      "title": "Federal Register 91 FR 57798 (2026-09-11) — FCC 26-50 Final Rule Codifying 47 CFR §§ 2.902–2.903",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/govinfo_91FR57798_2026-18535.pdf",
+      "bytes": 225564,
+      "sha256": "bdb6481a68caf926c5d0285e7971427480250cd67b7dbdbaa00d0e961898b0eb",
+      "sidecar_txt_path": "corpus/web/step5_20261122/compliance/govinfo_91FR57798_2026-18535.pdf.txt",
+      "sidecar_txt_bytes": 28625,
+      "sidecar_txt_sha256": "4576f143840dcf79ad3df9355cb04b6129adc30d359f354071ed83c64db55d0d",
+      "locator": "p. 57798 DATES; p. 57801 § 2.903(b)(2)",
+      "verified_quotes": [
+        {
+          "quote": "This final rule is effective October 13, 2026.",
+          "verified_in_text": true
+        },
+        {
+          "quote": "A logic-bearing hardware component produced by an entity identified on the Covered List",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "2026-10-13生效的正式规则：仅当组件制造商已被列入Covered List且若由其制造整机本就会被禁批时，含该逻辑硬件组件的新设备才禁止取得FCC授权（47 CFR §2.903(b)(2)）；未把一般商用光模块增列为受限品类。"
+    },
+    {
+      "item_id": "fcc_26_50A1",
+      "category": "US_FCC_AND_CONGRESS",
+      "audit_ids": [
+        "G-d6ee1cb32ece68e2"
+      ],
+      "kn_refs": [
+        "KN012"
+      ],
+      "title": "FCC 26-50 Third Report and Order and Third FNPRM (Released 2026-07-23)",
+      "url": "https://docs.fcc.gov/public/attachments/FCC-26-50A1.pdf",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/fcc_FCC-26-50A1.pdf",
+      "bytes": 548489,
+      "sha256": "2cd32b8af0f2f383b08ecb22b9c4359170d78d7e18b639ca6a7c7b272bf849a2",
+      "sidecar_txt_path": "corpus/web/step5_20261122/compliance/fcc_FCC-26-50A1.pdf.txt",
+      "sidecar_txt_bytes": 450090,
+      "sidecar_txt_sha256": "d6d567a415a4b94360b962bd03f57a1e4750440b0f63035ac74e790fba65f587",
+      "locator": "pp. 10–11 ¶¶22–23; p. 35 fn. 245; pp. 51, 67–68 Third FNPRM ¶¶145, 198–200",
+      "verified_quotes": [
+        {
+          "quote": "listing the key players in the optical transceiver market, none of which appear on the Covered List",
+          "verified_in_text": true
+        },
+        {
+          "quote": "We seek comment on this option.",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "全文检索核实：'3.2T'命中0次；脚注245明确指出Coherent与中际旭创等光模块主要厂商均不在Covered List上；'65%'仅在第三次拟议规则征询（Third FNPRM）讨论48 CFR 25.101(a)(1)国内终端产品定义时出现2次，绝非针对光模块的生效法令。"
+    },
+    {
+      "item_id": "fcc_DA_26_870A1",
+      "category": "US_FCC_AND_CONGRESS",
+      "audit_ids": [
+        "G-d6ee1cb32ece68e2"
+      ],
+      "kn_refs": [
+        "KN012"
+      ],
+      "title": "FCC DA 26-870 Public Notice — Covered List Update (2026-08-20)",
+      "url": "https://docs.fcc.gov/public/attachments/DA-26-870A1.pdf",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/fcc_DA-26-870A1.pdf",
+      "bytes": 1224845,
+      "sha256": "402867cc1336fa4a2afc8be0c8814d135be7ebbe04d85d48a70e6e3a3ee2539a",
+      "sidecar_txt_path": "corpus/web/step5_20261122/compliance/fcc_DA-26-870A1.pdf.txt",
+      "sidecar_txt_bytes": 29359,
+      "sidecar_txt_sha256": "711813ac679a57f6a0ba5a2f3989da9eb77cc181b786f16f9b735e20261b6f0c",
+      "locator": "p. 2 & Appendix A (Covered List as of 2026-08-20)",
+      "verified_quotes": [
+        {
+          "quote": "COVERED LIST",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "2026-08-20版Covered List官方快照，全文检索'transceiver'命中0次。"
+    },
+    {
+      "item_id": "fcc_DA_26_1130A1",
+      "category": "US_FCC_AND_CONGRESS",
+      "audit_ids": [
+        "G-d6ee1cb32ece68e2"
+      ],
+      "kn_refs": [
+        "KN012"
+      ],
+      "title": "FCC DA 26-1130 Public Notice — Appendix A Full Covered List (2026-10-21)",
+      "url": "https://docs.fcc.gov/public/attachments/DA-26-1130A1.pdf",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/fcc_DA-26-1130A1.pdf",
+      "bytes": 243485,
+      "sha256": "7fca7e9071c4f1ab9b2e618c10638f96c269e512d7a2c83721b1821ab1eb0f51",
+      "sidecar_txt_path": "corpus/web/step5_20261122/compliance/fcc_DA-26-1130A1.pdf.txt",
+      "sidecar_txt_bytes": 28421,
+      "sidecar_txt_sha256": "f35f65db577a9dad336842e5c211950ab5b5a88c86849794bf39e02f93112d3d",
+      "locator": "Appendix A pp. 1–3 (PDF pp. 4–6), COVERED LIST (October 21, 2026)",
+      "verified_quotes": [
+        {
+          "quote": "COVERED LIST",
+          "verified_in_text": true
+        },
+        {
+          "quote": "October 21, 2026",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "2026-10-21完整Covered List附录，全文检索'transceiver'命中0次，一般商用光收发器未被列为受限独立品类。"
+    },
+    {
+      "item_id": "fcc_DA_26_1203A1",
+      "category": "US_FCC_AND_CONGRESS",
+      "audit_ids": [
+        "G-d6ee1cb32ece68e2"
+      ],
+      "kn_refs": [
+        "KN012"
+      ],
+      "title": "FCC DA 26-1203 Public Notice — Conditional Approvals for UAS, Routers, Robotics & Inverters (2026-11-06)",
+      "url": "https://docs.fcc.gov/public/attachments/DA-26-1203A1.pdf",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/fcc_DA-26-1203A1.pdf",
+      "bytes": 233337,
+      "sha256": "b172b23fb43dbfea7428fc9fd585027fc23a58fb1ca1cb77148c97fdbdf035ff",
+      "sidecar_txt_path": "corpus/web/step5_20261122/compliance/fcc_DA-26-1203A1.pdf.txt",
+      "sidecar_txt_bytes": 28444,
+      "sidecar_txt_sha256": "782ef045613341a3f7ca76294c844216bb09b054cd72a2610e26b485591d72a2",
+      "locator": "p. 1 & fn. 1 (Released November 6, 2026)",
+      "verified_quotes": [
+        {
+          "quote": "Released: November 6, 2026",
+          "verified_in_text": true
+        },
+        {
+          "quote": "uncrewed aircraft systems (UAS), routers, advanced robotic devices, and power inverters",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "截至2026-11-06的Covered List条件豁免增量公告，涉及品类仅限无人机、路由器、先进机器人与电力逆变器，全文'transceiver'命中0次。"
+    },
+    {
+      "item_id": "congress_s5548_htm",
+      "category": "US_FCC_AND_CONGRESS",
+      "audit_ids": [
+        "G-cf34d3f9017c9f88"
+      ],
+      "kn_refs": [
+        "KN012"
+      ],
+      "title": "119th Congress S. 5548 Bill Text (Introduced in Senate, 2026-09-24)",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s5548is/html/BILLS-119s5548is.htm",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/govinfo_BILLS-119s5548is.htm",
+      "bytes": 20642,
+      "sha256": "e0b2e902a0519d1daaac48a71db2adf8462ff4a99abbdf043e1854ec14f8b10a",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "Title; Sec. 1; Sec. 2 amending FY2023 NDAA Sec. 5949 (41 U.S.C. 4713 note)",
+      "verified_quotes": [
+        {
+          "quote": "To prohibit Federal procurement of certain optical transceivers, and for other purposes.",
+          "verified_in_text": true
+        },
+        {
+          "quote": "Securing National Security Systems from Chinese Optical Transceivers Act of 2026",
+          "verified_in_text": true
+        },
+        {
+          "quote": "shall take effect five years after the date of the enactment",
+          "verified_in_text": true
+        },
+        {
+          "quote": "for a system that is not a critical system",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "参议院提案原文：拟修订FY2023 NDAA §5949限制联邦政府关键系统采购特定光收发器（非关键系统明确豁免），且即便未来成法亦在成法5年后生效。"
+    },
+    {
+      "item_id": "congress_s5548_xml",
+      "category": "US_FCC_AND_CONGRESS",
+      "audit_ids": [
+        "G-cf34d3f9017c9f88"
+      ],
+      "kn_refs": [
+        "KN012"
+      ],
+      "title": "119th Congress S. 5548 Official BILLSTATUS XML",
+      "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/s/BILLSTATUS-119s5548.xml",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/govinfo_BILLSTATUS-119s5548.xml",
+      "bytes": 6414,
+      "sha256": "03f7451043d4adf7f1ad9c2f4a1371e29608c63a792003ad478c3e4477791b93",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "introducedDate, committees, actions/latestAction",
+      "verified_quotes": [
+        {
+          "quote": "2026-09-24",
+          "verified_in_text": true
+        },
+        {
+          "quote": "Homeland Security and Governmental Affairs Committee",
+          "verified_in_text": true
+        },
+        {
+          "quote": "Referred To",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "国会官方状态XML核实：2026-09-24提出并转交参议院国土安全与政府事务委员会，无委员会表决或两院通过记录，处于委员会待审提案阶段。"
+    },
+    {
+      "item_id": "mofcom_2026_no48",
+      "category": "CHINA_EXPORT_CONTROL_AND_TARIFF",
+      "audit_ids": [
+        "G-9ab4ac6f52ae4f02"
+      ],
+      "kn_refs": [
+        "KN013"
+      ],
+      "title": "商务部 科技部公告2026年第48号（修订《中国禁止出口限制出口技术目录》公开征求意见及临时登记）",
+      "url": "https://www.mofcom.gov.cn/zcfb/dwmygl/art/2026/art_61446ab4beee4f63973d4d0ab3097648.html",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/mofcom_most_2026_no48_export_tech_catalog.html",
+      "bytes": 22473,
+      "sha256": "55b5bf8c75ce9a65ff97f496f79f461e87cac78c8891553f85e51e5b550e2325",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "导语、一、拟修订内容、二、征求意见反馈方式（2026-10-16至11-15）、三、出口前登记要求",
+      "verified_quotes": [
+        {
+          "quote": "现向社会公开征求意见，并同步对相关技术实施出口前登记管理。",
+          "verified_in_text": true
+        },
+        {
+          "quote": "已经开始但尚未完成的出口，在登记范围内。",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "2026-10-16发布，公开征求意见期至11-15（并非已正式实施目录修订），但同步要求对附件所列技术转让/授权出境实施出口前临时登记（含已开始但尚未办结的出口）。"
+    },
+    {
+      "item_id": "mofcom_2026_no48_attachment1",
+      "category": "CHINA_EXPORT_CONTROL_AND_TARIFF",
+      "audit_ids": [
+        "G-9ab4ac6f52ae4f02"
+      ],
+      "kn_refs": [
+        "KN013"
+      ],
+      "title": "商务部 科技部公告2026年第48号 附件1：拟列入目录技术范围（征求意见稿）.wps",
+      "url": "https://www.mofcom.gov.cn/api-gateway/jpaas-web-server/front/document/download?fileUrl=YW5UzzlvCwcM%2FNHHX%2FtT6KYc7i4iYCs13RxyX1cYsF7Mi050tv2zWwJDAqyqUOFf3lPQeAoPgP%2BrmQMGF7Tta7RdRW1C2hni5Ufl7eigFU2aoR9BIV7bpVR%2BwDBnd46wm5m7QVY2Mj%2FXPJaIbSdBzxKM6WqPb1yMuUzPhfLWixM%3D&fileName=1.%E6%8B%9F%E5%88%97%E5%85%A5%E3%80%8A%E4%B8%AD%E5%9B%BD%E7%A6%81%E6%AD%A2%E5%87%BA%E5%8F%A3%E9%99%90%E5%88%B6%E5%87%BA%E5%8F%A3%E6%8A%80%E6%9C%AF%E7%9B%AE%E5%BD%95%E3%80%8B%E7%9A%84%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E3%80%81%E7%94%9F%E7%89%A9%E5%8C%BB%E8%8D%AF%E3%80%81%E5%85%89%E4%BC%8F%E6%8A%80%E6%9C%AF%E8%8C%83%E5%9B%B4%EF%BC%88%E5%BE%81%E6%B1%82%E6%84%8F%E8%A7%81%E7%A8%BF%EF%BC%89.wps",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/mofcom_most_2026_no48_attachment1.wps",
+      "bytes": 191488,
+      "sha256": "213158bbda29e17f386f25acbf8bd45a746b5da9dba5fe57a64c2b1827cefbcd",
+      "sidecar_txt_path": "corpus/web/step5_20261122/compliance/mofcom_most_2026_no48_attachment1.wps.txt",
+      "sidecar_txt_bytes": 19824,
+      "sidecar_txt_sha256": "fa2a59570e46143c1324cc1da8628f35c3a33d4fbcade513cf45a2bf8f7168c3",
+      "locator": "一、人工智能·限制出口部分·第11项 266507X 人工智能算力集群技术 控制要点1及注",
+      "verified_quotes": [
+        {
+          "quote": "用于大规模智能算力集群的片间或节点间高速互连技术，双向带宽≥800吉字节每秒（GB/s）。",
+          "verified_in_text": true
+        },
+        {
+          "quote": "注：“大规模智能算力集群”指人工智能加速卡总数超过10,000张的运算主体。",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "附件1原文落盘核实：266507X针对万卡（>10,000张加速卡）智算集群的片间/节点间高速互连技术（双向带宽≥800 GB/s，即字节每秒而非单只800Gbps光模块比特率），管控对象为技术转让与授权而非一般标准光模块货物贸易。"
+    },
+    {
+      "item_id": "mofcom_exportcontrol_1329",
+      "category": "CHINA_EXPORT_CONTROL_AND_TARIFF",
+      "audit_ids": [
+        "G-9ab4ac6f52ae4f02"
+      ],
+      "kn_refs": [
+        "KN013"
+      ],
+      "title": "商务部中国出口管制信息网·新闻发言人就修订出口技术目录答记者问",
+      "url": "https://cms.exportcontrol.mofcom.gov.cn/article/gndt/202610/1329.html",
+      "fetch_date": "2026-11-22",
+      "status": "error",
+      "http_status": null,
+      "saved_path": null,
+      "bytes": null,
+      "sha256": null,
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "第三问",
+      "verified_quotes": [],
+      "factual_finding": "TLS证书域名不匹配（SSLCertVerificationError: Hostname mismatch for cms.exportcontrol.mofcom.gov.cn），严守不跳过证书校验铁律未落盘、按url锚处理；其核心规定‘已经开始但尚未完成的出口，在登记范围内。’已在www.mofcom.gov.cn第48号公告正文第三节逐字落盘验证。"
+    },
+    {
+      "item_id": "cninfo_301421_1225597511",
+      "category": "CHINA_EXPORT_CONTROL_AND_TARIFF",
+      "audit_ids": [
+        "G-f46ef070f67d25cb"
+      ],
+      "kn_refs": [
+        "KN013"
+      ],
+      "title": "波长光电（301421）关于公司收到起诉书的公告（公告编号：2026-037）",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-08/1225597511.PDF",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/ir/301421/301421_2026-10-08_关于公司收到起诉书的公告_1225597511.PDF",
+      "bytes": 104565,
+      "sha256": "4335db209c2c88b0419ef885a28c8e153d196107db581270d3c184f4c5916344",
+      "sidecar_txt_path": "corpus/ir/301421/301421_2026-10-08_关于公司收到起诉书的公告_1225597511.PDF.txt",
+      "sidecar_txt_bytes": 4822,
+      "sidecar_txt_sha256": "be33939cabbde9cd8c35b5b7a3f3a80a65df9d6b1f3ed6aa063ca8e145f6513e",
+      "locator": "重要内容提示(#L15..25)、绪言(#L33..35)、三、有关本案的基本情况(#L63..78，均按\\n计行)",
+      "verified_quotes": [
+        {
+          "quote": "1. 案件所处的诉讼阶段：公诉起诉阶段",
+          "verified_in_text": true
+        },
+        {
+          "quote": "3. 涉案的金额：人民币 2,010.85 万元（2023 年 8 月至 2025 年 4 月）",
+          "verified_in_text": true
+        },
+        {
+          "quote": "被告单位及被告人出口国家禁止进出口货物（光学镜片）数额达人民币 20,108,512.11 元。",
+          "verified_in_text": true
+        },
+        {
+          "quote": "未按规定办理两用物项出口许可证，出口国家禁止进出口货物（光学镜片）数额达人民币 2,000 余万元",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "2026-10-08公告收到沪检三分刑诉〔2026〕176号起诉书（#L34），检方指控2023-08至2025-04出口涉案光学镜片未办两用物项出口许可证，精确金额20,108,512.11元（约2,010.85万元，#L21/#L68），处于公诉起诉阶段（#L17），尚未审理宣判（#L23/#L90）。"
+    },
+    {
+      "item_id": "gss_mof_20261109",
+      "category": "CHINA_EXPORT_CONTROL_AND_TARIFF",
+      "audit_ids": [
+        "G-dacd6464384279d8"
+      ],
+      "kn_refs": [
+        "KN011"
+      ],
+      "title": "国务院关税税则委员会·调整对原产于美国的进口商品加征关税措施（2026-11-09）",
+      "url": "https://gss.mof.gov.cn/gzdt/zhengcejiedu/202611/t20261109_4004261.htm",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/gss_mof_20261109_us_tariff_suspension_2m.htm",
+      "bytes": 15926,
+      "sha256": "18c238ff17c99c522794cff494f35cee5b5bd36d5cea4ec3c7e8e42c64788f98",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "2026-11-09 正文首段",
+      "verified_quotes": [
+        {
+          "quote": "自2026年11月10日13时01分起",
+          "verified_in_text": true
+        },
+        {
+          "quote": "在2个月内继续暂停实施24%的对美加征关税税率，保留10%的对美加征关税税率。",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "中方自2026-11-10 13:01起两个月内继续暂停24%对美加征关税、保留10%，针对原产于美国的进口商品。"
+    },
+    {
+      "item_id": "mofcom_8th_round",
+      "category": "CHINA_EXPORT_CONTROL_AND_TARIFF",
+      "audit_ids": [
+        "G-dacd6464384279d8"
+      ],
+      "kn_refs": [
+        "KN011"
+      ],
+      "title": "商务部美大司负责人解读第八轮中美经贸磋商成果",
+      "url": "https://www.mofcom.gov.cn/syxwfb/art/2026/art_d9ea01824fc44fd8a29f7dc3f8ca9c72.html",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/mofcom_2026_8th_round_kuala_lumpur_extension.html",
+      "bytes": 18914,
+      "sha256": "3963cb6b0c4586da53c62a93b3dac99d5b359c958781d9c52dce89e0b80ae329",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "八、关于吉隆坡经贸磋商联合安排延期",
+      "verified_quotes": [
+        {
+          "quote": "中美双方同意在将吉隆坡经贸磋商联合安排延期至2027年1月10日的基础上，继续积极探讨这一事项",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "商务部确认第八轮磋商将吉隆坡经贸磋商联合安排延期至2027-01-10。"
+    },
+    {
+      "item_id": "ustr_301_jan2027",
+      "category": "USTR_BIS_EU_POLICY",
+      "audit_ids": [
+        "G-dacd6464384279d8"
+      ],
+      "kn_refs": [
+        "KN011"
+      ],
+      "title": "USTR Notice — Extending Section 301 China Exclusions to Jan 2027 (2026-11-06)",
+      "url": "https://ustr.gov/sites/default/files/files/Issue_Areas/Enforcement/Section%20301/USTR%20FRN%20Extending%20Section%20301%20China%20FTT%20Exclusions%20to%20Jan%202027.pdf",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/ustr_20261106_section301_exclusions_to_jan2027.pdf",
+      "bytes": 130668,
+      "sha256": "a80555dd7faa1ee9ba95a38ff31f9e77f2024c3a144770a408ff0bdfa7d101da",
+      "sidecar_txt_path": "corpus/web/step5_20261122/compliance/ustr_20261106_section301_exclusions_to_jan2027.pdf.txt",
+      "sidecar_txt_bytes": 8872,
+      "sidecar_txt_sha256": "1de0d6e98817848396bbbb8a292087cfe069fbd3ae1f838091f7ce7738f627c8",
+      "locator": "p. 1 DATES; p. 4 Determination; p. 5 Annex A/B",
+      "verified_quotes": [
+        {
+          "quote": "further extend all 178 current exclusions",
+          "verified_in_text": true
+        },
+        {
+          "quote": "through 11:59 p.m. eastern time on January 9, 2027.",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "USTR将既有178项Section 301产品排除延长至美东时间2027-01-09 23:59（具体光模块SKU是否享排除仍须按进口当日HTSUS/Chapter 99逐项核对）。"
+    },
+    {
+      "item_id": "whitehouse_20260220",
+      "category": "USTR_BIS_EU_POLICY",
+      "audit_ids": [
+        "G-dacd6464384279d8"
+      ],
+      "kn_refs": [
+        "KN011"
+      ],
+      "title": "White House Presidential Action — Ending Certain Tariff Actions (2026-02-20)",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/02/ending-certain-tariff-actions/",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/whitehouse_20260220_ending_certain_tariff_actions.html",
+      "bytes": 298100,
+      "sha256": "5fbbc8d6eca70108b2c812619aeb210c106ebfa2ff84bfcb1758f9fe9f814294",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "Sec. 2",
+      "verified_quotes": [
+        {
+          "quote": "Ending Certain Tariff Actions",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "白宫2026-02-20关于终止特定IEEPA关税措施的总统令，须与Section 301关税沿革严格区分。"
+    },
+    {
+      "item_id": "bis_ear_734",
+      "category": "USTR_BIS_EU_POLICY",
+      "audit_ids": [
+        "G-d4a9cc9237f3b367"
+      ],
+      "kn_refs": [
+        "KN014"
+      ],
+      "title": "BIS Export Administration Regulations (EAR) Part 734 — Scope of the EAR (§ 734.9 FDPR)",
+      "url": "https://www.bis.gov/regulations/ear/734",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/bis_ear_734.html",
+      "bytes": 12967360,
+      "sha256": "680e27fb3aa3fe4f806c220188ff36adf5604b3cdbae6b88f6d6f0ddec449214",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "15 CFR § 734.9 Foreign-Direct Product (FDP) Rules, introductory text & (e)",
+      "verified_quotes": [
+        {
+          "quote": "assessing the item classification, destination, end-use, and end-user in the relevant transaction",
+          "verified_in_text": true
+        },
+        {
+          "quote": "Not all transactions involving foreign-produced items that are subject to the EAR require a license.",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "EAR §734.9明文规定外国直接产品即使落入EAR管辖范围，是否需要许可证仍须按物项分类(ECCN)、目的地、最终用途和最终用户逐笔判定，不存在“凡达到某一光模块总带宽即一律禁运”的统一红线。"
+    },
+    {
+      "item_id": "bis_ear_744",
+      "category": "USTR_BIS_EU_POLICY",
+      "audit_ids": [
+        "G-d4a9cc9237f3b367"
+      ],
+      "kn_refs": [
+        "KN014"
+      ],
+      "title": "BIS Export Administration Regulations (EAR) Part 744 — Control Policy: End-User and End-Use Based",
+      "url": "https://www.bis.gov/regulations/ear/744",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/bis_ear_744.html",
+      "bytes": 16548508,
+      "sha256": "4081a09c0d244771b7ed8290226b7acf1ad94c74e70433525516ee20b4c933dd",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "15 CFR §§ 744.23, 744.24 & Supplement No. 4 (Entity List)",
+      "verified_quotes": [
+        {
+          "quote": "Section 744.23 sets forth restrictions on exports, reexports, and transfers (in-country) for certain",
+          "verified_in_text": true
+        },
+        {
+          "quote": "Entity List",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "EAR Part 744基于特定超算/半导体制造/受关注数据中心最终用途与实体清单（Entity List）实施定向许可管控，须核对具体DSP/测试仪表ECCN、交易链与终端用户名单。"
+    },
+    {
+      "item_id": "eu_eed_2023_1791",
+      "category": "USTR_BIS_EU_POLICY",
+      "audit_ids": [
+        "G-bfccb127bea191d2"
+      ],
+      "kn_refs": [
+        "KN014"
+      ],
+      "title": "EU Energy Efficiency Directive (EU) 2023/1791 — Article 12 & Annex VII",
+      "url": "https://eur-lex.europa.eu/eli/dir/2023/1791/oj/eng",
+      "fetch_date": "2026-11-22",
+      "status": "http_403_or_gated",
+      "http_status": 202,
+      "saved_path": null,
+      "bytes": null,
+      "sha256": null,
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "Article 12(1)–(5), Annex VII",
+      "verified_quotes": [],
+      "factual_finding": "EUR-Lex返回HTTP 202 AWS WAF JS挑战壳(2035 bytes)，严守不绕反爬铁律未落盘，knowledge.yaml按url锚引用；已装IT功率≥500kW数据中心能效信息报送义务同时由HTTP 200落盘的欧委会官方通稿交叉印证。"
+    },
+    {
+      "item_id": "eu_reg_del_2024_1364",
+      "category": "USTR_BIS_EU_POLICY",
+      "audit_ids": [
+        "G-bfccb127bea191d2"
+      ],
+      "kn_refs": [
+        "KN014"
+      ],
+      "title": "Commission Delegated Regulation (EU) 2024/1364 — EU Data Centre Reporting Scheme",
+      "url": "https://eur-lex.europa.eu/eli/reg_del/2024/1364/oj/eng",
+      "fetch_date": "2026-11-22",
+      "status": "http_403_or_gated",
+      "http_status": 202,
+      "saved_path": null,
+      "bytes": null,
+      "sha256": null,
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "Arts. 1, 3 & Annexes II–IV (PUE = E_DC / E_IT)",
+      "verified_quotes": [],
+      "factual_finding": "EUR-Lex返回HTTP 202 AWS WAF JS挑战壳(2035 bytes)，严守不绕反爬铁律未落盘，knowledge.yaml按url锚引用。"
+    },
+    {
+      "item_id": "eu_c_2026_3472",
+      "category": "USTR_BIS_EU_POLICY",
+      "audit_ids": [
+        "G-bfccb127bea191d2"
+      ],
+      "kn_refs": [
+        "KN014"
+      ],
+      "title": "Commission Delegated Regulation C(2026) 3472 final — Common Union Rating Scheme for Data Centres",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=PI_COM%3AC%282026%293472",
+      "fetch_date": "2026-11-22",
+      "status": "http_403_or_gated",
+      "http_status": 202,
+      "saved_path": null,
+      "bytes": null,
+      "sha256": null,
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "Arts. 1, 4, 7 & Annex I (PUE/WUE classes)",
+      "verified_quotes": [],
+      "factual_finding": "EUR-Lex返回HTTP 202 AWS WAF JS挑战壳(2035 bytes)，严守不绕反爬铁律未落盘，knowledge.yaml按url锚引用；其2个月议会/理事会审查期及预计2027年首批标签安排已由欧委会2026-09-22官稿HTTP 200落盘核实。"
+    },
+    {
+      "item_id": "ec_cyprus_news_20260922",
+      "category": "USTR_BIS_EU_POLICY",
+      "audit_ids": [
+        "G-bfccb127bea191d2"
+      ],
+      "kn_refs": [
+        "KN014"
+      ],
+      "title": "European Commission News (2026-09-22) — Common Union Rating Scheme for Data Centres",
+      "url": "https://cyprus.representation.ec.europa.eu/news/commission-enhances-energy-efficiency-and-sustainability-data-centres-eu-2026-09-22_en",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/ec_data_centres_rating_scheme_20260922.html",
+      "bytes": 99352,
+      "sha256": "f172147165cb59dbef6feb8f8ff68ab3f3148d841e134de955f9645bf732d308",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "Next steps · 2-month scrutiny period & first labels expected in 2027",
+      "verified_quotes": [
+        {
+          "quote": "subject to 2-month scrutiny period by the European Parliament and the Council before entering into force",
+          "verified_in_text": true
+        },
+        {
+          "quote": "The first sustainability labels for individual data centres are expected to be displayed in 2027.",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "欧委会官方通稿HTTP 200落盘：数据中心通用评级授权法规处欧洲议会与理事会2个月审查期，预计2027年首次展示可持续性评级标签，并非即时生效的设备采购禁令。"
+    },
+    {
+      "item_id": "ec_energy_mps_20260921",
+      "category": "USTR_BIS_EU_POLICY",
+      "audit_ids": [
+        "G-bfccb127bea191d2"
+      ],
+      "kn_refs": [
+        "KN014"
+      ],
+      "title": "European Commission DG ENER News (2026-09-21) — Public Consultation on Minimum Performance Standards for Data Centres",
+      "url": "https://energy.ec.europa.eu/news/minimum-performance-standards-data-centres-europe-public-consultation-launched-2026-09-21_en",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/ec_energy_mps_consultation_20260921.html",
+      "bytes": 92359,
+      "sha256": "cc78a6b531b9f43dc3169f79051ed600a7653caa3f79ac6ee2fe251f3e9f880b",
+      "sidecar_txt_path": null,
+      "sidecar_txt_bytes": null,
+      "sidecar_txt_sha256": null,
+      "locator": "Lead paragraph (2026-09-21, consultation open until 2026-12-14)",
+      "verified_quotes": [
+        {
+          "quote": "the legislative proposal planned for the second quarter of 2027",
+          "verified_in_text": true
+        },
+        {
+          "quote": "submit their input by 14 December 2026",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "欧委会能源总司官稿HTTP 200落盘：欧盟数据中心最低能效标准仍处于公开征求意见阶段（截至2026-12-14，计划2027Q2提出立法提案），现行法规不等于强制考核PUE红线或强制指定采购LPO/NPO/相干光模块。"
+    },
+    {
+      "item_id": "cninfo_300394_1225645208",
+      "category": "COMPANY_DISCLOSURE_CROSSCHECK",
+      "audit_ids": [
+        "G-d000601e4e2f38ba"
+      ],
+      "kn_refs": [
+        "KN011"
+      ],
+      "title": "天孚通信（300394）关于泰国子公司签订《土地买卖协议》的公告（2026-065）",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225645208.PDF",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/cninfo_300394_20261029_thailand_land_1225645208.pdf",
+      "bytes": 185080,
+      "sha256": "7b21402dbead529424a22bcb207a8de39c4b4092457eefd54b3e737fd47ff872",
+      "sidecar_txt_path": "corpus/web/step5_20261122/compliance/cninfo_300394_20261029_thailand_land_1225645208.pdf.txt",
+      "sidecar_txt_bytes": 5069,
+      "sidecar_txt_sha256": "faa0e651bf0197335b384b6e0f641a1497bda57a174b2043fd0f110cad368d1d",
+      "locator": "一、交易概述；六、本次交易的目的和对公司的影响",
+      "verified_quotes": [
+        {
+          "quote": "作为泰国工厂的建设用地",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "证实天孚通信泰国扩建购地动作，仅反映海外厂房扩产布局，不等同于成品模块的海关原产地裁定。"
+    },
+    {
+      "item_id": "cninfo_688183_1225474834",
+      "category": "COMPANY_DISCLOSURE_CROSSCHECK",
+      "audit_ids": [
+        "G-cf34d3f9017c9f88"
+      ],
+      "kn_refs": [
+        "KN012"
+      ],
+      "title": "生益电子（688183）2026年半年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225474834.PDF",
+      "fetch_date": "2026-11-22",
+      "status": "http_200_archived",
+      "http_status": 200,
+      "saved_path": "corpus/web/step5_20261122/compliance/cninfo_688183_20260815_2026h1_1225474834.pdf",
+      "bytes": 1385334,
+      "sha256": "7fa3e4a049b162ad60d697e4c197c85792aaa9c2eed9d40d1e9d057f103385af",
+      "sidecar_txt_path": "corpus/web/step5_20261122/compliance/cninfo_688183_20260815_2026h1_1225474834.pdf.txt",
+      "sidecar_txt_bytes": 568796,
+      "sidecar_txt_sha256": "d21e9ba7dd3fc7dc81aba7f86903160350b0397c3db898083299170b5308ffb2",
+      "locator": "第三节管理层讨论与分析·光模块PCB段",
+      "verified_quotes": [
+        {
+          "quote": "1.6T光模块PCB已打样测试中",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "生益电子2026半年报披露1.6T光模块PCB处打样测试中，区分于景旺电子（P031）同期的批量交付口径，且不可与母公司生益科技混淆。"
+    },
+    {
+      "item_id": "cninfo_603228_1225493416_existing",
+      "category": "COMPANY_DISCLOSURE_CROSSCHECK",
+      "audit_ids": [
+        "G-cf34d3f9017c9f88"
+      ],
+      "kn_refs": [
+        "KN012"
+      ],
+      "title": "景旺电子（603228）2026年半年度报告（仓库既有归档）",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225493416.PDF",
+      "fetch_date": "2026-11-22",
+      "status": "existing_local_corpus",
+      "http_status": 200,
+      "saved_path": "corpus/ir/603228/603228_2026-08-22_2026年半年度报告.pdf",
+      "bytes": 1161389,
+      "sha256": "0e6a88e8e86d9d2fa81247260d67e5aefd903df0a312869ea0bfda5cf5a122d4",
+      "sidecar_txt_path": "corpus/ir/603228/603228_2026-08-22_2026年半年度报告.pdf.txt",
+      "sidecar_txt_bytes": 479236,
+      "sidecar_txt_sha256": "fbc6b2f3d1e077120c9cc62a66ab13c38a80c8bd8c787eef34f8fd71d7220b9c",
+      "locator": "第11页第三节管理层讨论与分析(#L493..495)",
+      "verified_quotes": [
+        {
+          "quote": "报告期内公司已批量交付 800G、1.6T 光模块 PCB",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "仓库既有本地归档复核通过，对应P031。"
+    },
+    {
+      "item_id": "cninfo_300394_1225617545_existing",
+      "category": "COMPANY_DISCLOSURE_CROSSCHECK",
+      "audit_ids": [
+        "G-339d80a17d919a12"
+      ],
+      "kn_refs": [
+        "KN011"
+      ],
+      "title": "天孚通信（300394）2026年10月22日投资者关系活动记录表（仓库既有归档）",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-22/1225617545.PDF",
+      "fetch_date": "2026-11-22",
+      "status": "existing_local_corpus",
+      "http_status": 200,
+      "saved_path": "corpus/ir/300394/300394_2026-10-22_2026年10月22日天孚通信投资者关系活动记录表.pdf",
+      "bytes": 108264,
+      "sha256": "3cbf5216ac7148aba4b13cbb996caeae1513cb668e60fe5713b13e79ef8df852",
+      "sidecar_txt_path": "corpus/ir/300394/300394_2026-10-22_2026年10月22日天孚通信投资者关系活动记录表.pdf.txt",
+      "sidecar_txt_bytes": 3999,
+      "sidecar_txt_sha256": "fea8a8b682c4e5634944b29ba7ffec97359c9ae9b23e5b09a2b3d79c1bdba4e2",
+      "locator": "第2页第3问",
+      "verified_quotes": [
+        {
+          "quote": "公司在泰国建有量产基地",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "仓库既有本地归档复核通过，公司对关税风险的主观回应不构成海关原产地裁定。"
+    },
+    {
+      "item_id": "cninfo_300502_1225172598_existing",
+      "category": "COMPANY_DISCLOSURE_CROSSCHECK",
+      "audit_ids": [
+        "G-d000601e4e2f38ba"
+      ],
+      "kn_refs": [
+        "KN011"
+      ],
+      "title": "新易盛（300502）2025年年度报告（仓库既有归档）",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225172598.PDF",
+      "fetch_date": "2026-11-22",
+      "status": "existing_local_corpus",
+      "http_status": 200,
+      "saved_path": "corpus/annual/300502/300502/300502__em_新易盛_em__2025_2025年年度报告.pdf",
+      "bytes": 2902416,
+      "sha256": "3432905a431a8254c2274c2188269e94cfc5a69e92c7d34332a5a3a7da8b15b6",
+      "sidecar_txt_path": "corpus/annual/300502/300502/300502__em_新易盛_em__2025_2025年年度报告.pdf.txt",
+      "sidecar_txt_bytes": 536479,
+      "sidecar_txt_sha256": "24f542a7f66231b752a36c0c9414ee1c076d318eb953d441c0ec91d3fa5dfb81",
+      "locator": "第三节管理层讨论与分析·泰国工厂二期及主要控股参股公司分析",
+      "verified_quotes": [
+        {
+          "quote": "报告期内，公司泰国工厂二期已于 2025 年初正式运行，产能处于持续释放过程中。",
+          "verified_in_text": true
+        }
+      ],
+      "factual_finding": "仓库既有本地归档复核通过，对应P073。"
+    }
+  ]
+}

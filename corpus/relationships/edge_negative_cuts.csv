@@ -1,0 +1,75 @@
+cut_id,company,counterparty,counterparty_normalized,raw_direction,implied_supplier,implied_customer,cut_rule,cut_category,replacement_edge_ids,duplicate_of_cut_id,leaked_in_edges_csv,verification_note
+CUT001,博创科技,长飞光纤光缆有限公司,长飞光纤光缆有限公司,采购(对手方→公司),长飞光纤光缆有限公司,博创科技,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E163,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E163 统一承载，防重扫双计
+CUT002,博创科技,PT.Yangtze Optics Indonesia,PT.Yangtze Optics Indonesia,采购(对手方→公司),PT.Yangtze Optics Indonesia,博创科技,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E163,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E163 统一承载，防重扫双计
+CUT003,博创科技,YOFC International USA Corporation,YOFC International USA Corporation,采购(对手方→公司),YOFC International USA Corporation,博创科技,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E163,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E163 统一承载，防重扫双计
+CUT004,博创科技,长飞光纤光缆汉川有限公司,长飞光纤光缆汉川有限公司,采购(对手方→公司),长飞光纤光缆汉川有限公司,博创科技,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E163,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E163 统一承载，防重扫双计
+CUT005,博创科技,YOFC International  Telecomumicacoes Ltda,YOFC International Telecomumicacoes Ltda,销售(公司→对手方),博创科技,YOFC International Telecomumicacoes Ltda,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT006,博创科技,YOFC Peru S.A.C.,YOFC Peru S.A.C.,销售(公司→对手方),博创科技,YOFC Peru S.A.C.,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT007,博创科技,YOFC International  Proprietary Limited,YOFC International Proprietary Limited,销售(公司→对手方),博创科技,YOFC International Proprietary Limited,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT008,博创科技,长飞光纤潜江有限公司,长飞光纤潜江有限公司,销售(公司→对手方),博创科技,长飞光纤潜江有限公司,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT009,博创科技,长飞光坊科技有限公司,长飞光坊科技有限公司,销售(公司→对手方),博创科技,长飞光坊科技有限公司,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT010,博创科技,长飞光纤光缆汉川有限公司,长飞光纤光缆汉川有限公司,销售(公司→对手方),博创科技,长飞光纤光缆汉川有限公司,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT011,博创科技,长飞石英技术有限公司,长飞石英技术有限公司,销售(公司→对手方),博创科技,长飞石英技术有限公司,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT012,博创科技,成都蓉博通信技术有限公司,成都蓉博通信技术有限公司,担保(公司为子公司担保),,,非供货方向,non_supply_relation,,,false,edges.csv零泄漏核验通过
+CUT013,博创科技,长飞石英技术有限公司,长飞石英技术有限公司,采购(对手方→公司),长飞石英技术有限公司,博创科技,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E163,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E163 统一承载，防重扫双计
+CUT014,博创科技,YOFC Perú S.A.C.,YOFC Perú S.A.C.,销售(公司→对手方),博创科技,YOFC Perú S.A.C.,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT015,博创科技,长飞光纤光缆有限公司,长飞光纤光缆有限公司,销售(公司→对手方),博创科技,长飞光纤光缆有限公司,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT016,博创科技,PT. YOFC International Indonesia,PT. YOFC International Indonesia,销售(公司→对手方),博创科技,PT. YOFC International Indonesia,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT017,博创科技,YOFC Brasil Cabos e Solucoes Ltda,YOFC Brasil Cabos e Solucoes Ltda,销售(公司→对手方),博创科技,YOFC Brasil Cabos e Solucoes Ltda,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT018,博创科技,长飞光纤光缆有限公司,长飞光纤光缆有限公司,采购(对手方→公司),长飞光纤光缆有限公司,博创科技,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E163,CUT001,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E163 统一承载，防重扫双计
+CUT019,博创科技,PT.Yangtze Optics Indonesia,PT.Yangtze Optics Indonesia,采购(对手方→公司),PT.Yangtze Optics Indonesia,博创科技,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E163,CUT002,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E163 统一承载，防重扫双计
+CUT020,博创科技,YOFC International USA Corporation,YOFC International USA Corporation,采购(对手方→公司),YOFC International USA Corporation,博创科技,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E163,CUT003,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E163 统一承载，防重扫双计
+CUT021,博创科技,长飞光纤光缆汉川有限公司,长飞光纤光缆汉川有限公司,采购(对手方→公司),长飞光纤光缆汉川有限公司,博创科技,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E163,CUT004,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E163 统一承载，防重扫双计
+CUT022,博创科技,PT Yangtze Optical Fibre Indonesia,PT Yangtze Optical Fibre Indonesia,采购(对手方→公司),PT Yangtze Optical Fibre Indonesia,博创科技,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E163,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E163 统一承载，防重扫双计
+CUT023,博创科技,Yangtze Optical Fibre and Cable Company  Limited,Yangtze Optical Fibre and Cable Company Limited,采购(对手方→公司),Yangtze Optical Fibre and Cable Company Limited,博创科技,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E163,,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E163 统一承载，防重扫双计
+CUT024,博创科技,长飞光纤光缆汉川有限公司,长飞光纤光缆汉川有限公司,销售(公司→对手方),博创科技,长飞光纤光缆汉川有限公司,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,CUT010,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT025,博创科技,长飞石英技术有限公司,长飞石英技术有限公司,销售(公司→对手方),博创科技,长飞石英技术有限公司,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,CUT011,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT026,博创科技,长飞光纤光缆有限公司,长飞光纤光缆有限公司,销售(公司→对手方),博创科技,长飞光纤光缆有限公司,"长飞系个体行,由合并边承载",consolidated_into_group_edge,E154,CUT015,false,edges.csv零泄漏核验通过; 个体子公司行已由合并口径边 E154 统一承载，防重扫双计
+CUT027,仕佳光子,河南仕佳信息技术有限公司,河南仕佳信息技术有限公司,担保(对手方为公司担保/本公司为被担保方),,,非供货方向,non_supply_relation,,,false,edges.csv零泄漏核验通过
+CUT028,仕佳光子,葛海泉,葛海泉,担保(对手方为公司担保/本公司为被担保方),,,非供货方向,non_supply_relation,,,false,edges.csv零泄漏核验通过
+CUT029,仕佳光子,葛海泉、耿树霞,葛海泉、耿树霞,担保(对手方为公司担保/本公司为被担保方),,,非供货方向,non_supply_relation,,,false,edges.csv零泄漏核验通过
+CUT030,源杰科技,中际旭创股份有限公司,中际旭创股份有限公司,股权关系(间接持股5%以上股东),,,非供货方向,non_supply_relation,,,false,edges.csv零泄漏核验通过; 注:E184为源杰→中际旭创商品销售实边，本条仅剔除'间接持股5%以上股东'非供货股权边(零股权边泄漏)
+CUT031,华工科技,武汉武钢华工激光大型装备有限公司,武汉武钢华工激光大型装备有限公司,供应商,武汉武钢华工激光大型装备有限公司,华工科技,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT032,华工科技,武汉华日精密激光股份有限公司,武汉华日精密激光股份有限公司,供应商,武汉华日精密激光股份有限公司,华工科技,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT033,华工科技,深圳市艾贝特电子科技有限公司,深圳市艾贝特电子科技有限公司,供应商,深圳市艾贝特电子科技有限公司,华工科技,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT034,华工科技,武汉东湖华科投资管理有限公司,武汉东湖华科投资管理有限公司,供应商,武汉东湖华科投资管理有限公司,华工科技,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT035,华工科技,宝鸡华工激光科技有限公司,宝鸡华工激光科技有限公司,供应商,宝鸡华工激光科技有限公司,华工科技,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT036,华工科技,武汉武钢华工激光大型装备有限公司,武汉武钢华工激光大型装备有限公司,客户,华工科技,武汉武钢华工激光大型装备有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT037,华工科技,武汉华日精密激光股份有限公司,武汉华日精密激光股份有限公司,客户,华工科技,武汉华日精密激光股份有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT038,华工科技,武汉华锐超快光纤激光技术有限公司,武汉华锐超快光纤激光技术有限公司,客户,华工科技,武汉华锐超快光纤激光技术有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT039,华工科技,宝鸡华工激光科技有限公司,宝鸡华工激光科技有限公司,客户,华工科技,宝鸡华工激光科技有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT040,华工科技,武汉超擎数智科技有限公司,武汉超擎数智科技有限公司,客户,华工科技,武汉超擎数智科技有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT041,华工科技,上海华工恒锐激光科技有限公司,上海华工恒锐激光科技有限公司,客户,华工科技,上海华工恒锐激光科技有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT042,华工科技,武汉华工智云科技有限公司,武汉华工智云科技有限公司,客户,华工科技,武汉华工智云科技有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT043,华工科技,武汉正信光学科技有限公司,武汉正信光学科技有限公司,客户,华工科技,武汉正信光学科技有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT044,华工科技,湖南猎豹汽车股份有限公司长沙分公司,湖南猎豹汽车股份有限公司长沙分公司,客户,华工科技,湖南猎豹汽车股份有限公司长沙分公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT045,华工科技,武汉华日科仪激光科技有限公司,武汉华日科仪激光科技有限公司,客户,华工科技,武汉华日科仪激光科技有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT046,华工科技,凌云华工智能系统有限公司,凌云华工智能系统有限公司,客户,华工科技,凌云华工智能系统有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT047,华工科技,武汉东湖创新科技投资有限公司,武汉东湖创新科技投资有限公司,客户,华工科技,武汉东湖创新科技投资有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT048,华工科技,武汉华工瑞源科技创业投资有限公司,武汉华工瑞源科技创业投资有限公司,客户,华工科技,武汉华工瑞源科技创业投资有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT049,华工科技,湖北美洋汽车工业有限公司,湖北美洋汽车工业有限公司,客户,华工科技,湖北美洋汽车工业有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT050,华工科技,深圳市力诺特新型包装材料有限公司,深圳市力诺特新型包装材料有限公司,客户,华工科技,深圳市力诺特新型包装材料有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT051,华工科技,珠海格力电器股份有限公司香洲分公司,珠海格力电器股份有限公司香洲分公司,客户,华工科技,珠海格力电器股份有限公司香洲分公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT052,华工科技,深圳市绩业实业有限公司,深圳市绩业实业有限公司,客户,华工科技,深圳市绩业实业有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT053,华工科技,重庆市林正机械有限公司,重庆市林正机械有限公司,客户,华工科技,重庆市林正机械有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT054,华工科技,长春市数控机电设备有限公司,长春市数控机电设备有限公司,客户,华工科技,长春市数控机电设备有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT055,华工科技,江苏菲雅新能源车业有限公司,江苏菲雅新能源车业有限公司,客户,华工科技,江苏菲雅新能源车业有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT056,华工科技,华工数智科技有限公司,华工数智科技有限公司,供应商,华工数智科技有限公司,华工科技,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT057,华工科技,武汉华工瑞源科技创业投资有限公司,武汉华工瑞源科技创业投资有限公司,供应商,武汉华工瑞源科技创业投资有限公司,华工科技,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT058,华工科技,武汉雷神特种器材有限公司,武汉雷神特种器材有限公司,客户,华工科技,武汉雷神特种器材有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT059,华工科技,哈尔滨灵动智能装备有限公司,哈尔滨灵动智能装备有限公司,客户,华工科技,哈尔滨灵动智能装备有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT060,华工科技,江苏荣邦微电子有限公司,江苏荣邦微电子有限公司,客户,华工科技,江苏荣邦微电子有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT061,华工科技,哈尔滨大东方卷烟材料科技开发有限责任公司,哈尔滨大东方卷烟材料科技开发有限责任公司,客户,华工科技,哈尔滨大东方卷烟材料科技开发有限责任公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT062,华工科技,天津福瑞德电子科技有限公司,天津福瑞德电子科技有限公司,客户,华工科技,天津福瑞德电子科技有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT063,华工科技,重庆铃耀汽车有限公司,重庆铃耀汽车有限公司,客户,华工科技,重庆铃耀汽车有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT064,华工科技,武汉华星光电半导体显示技术有限公司,武汉华星光电半导体显示技术有限公司,客户,华工科技,武汉华星光电半导体显示技术有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT065,华工科技,珠海市江海电子股份有限公司,珠海市江海电子股份有限公司,客户,华工科技,珠海市江海电子股份有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT066,华工科技,深圳市盈志达电子有限公司,深圳市盈志达电子有限公司,客户,华工科技,深圳市盈志达电子有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT067,华工科技,Haier Group Dalian Electric,Haier Group Dalian Electric,客户,华工科技,Haier Group Dalian Electric,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT068,华工科技,北京铭阳天诚有限公司,北京铭阳天诚有限公司,客户,华工科技,北京铭阳天诚有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT069,华工科技,新昌县精通机械有限公司,新昌县精通机械有限公司,客户,华工科技,新昌县精通机械有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT070,华工科技,上海双北机械有限公司,上海双北机械有限公司,客户,华工科技,上海双北机械有限公司,华工非光链关联方/坏账,non_optical_related_or_bad_debt,,,false,edges.csv零泄漏核验通过
+CUT071,华工科技,武汉华工正源光子技术有限公司,武汉华工正源光子技术有限公司,子公司(集团内),,,非供货方向,non_supply_relation,,,false,edges.csv零泄漏核验通过
+CUT072,剑桥科技,上海神舟新能源发展有限公司,上海神舟新能源发展有限公司,供应商(房屋租赁-出租方),上海神舟新能源发展有限公司,剑桥科技,非光链主体,non_optical_counterparty,,,false,edges.csv零泄漏核验通过; 房产出租方非BOM供应链主体
+CUT073,剑桥科技,SCS DEVELOPMENT JV LLC,SCS DEVELOPMENT JV LLC,供应商(房屋租赁-出租方),SCS DEVELOPMENT JV LLC,剑桥科技,非光链主体,non_optical_counterparty,,,false,edges.csv零泄漏核验通过; 房产出租方非BOM供应链主体
+CUT074,仕佳光子,淇县海强盘具销售部,淇县海强盘具销售部,供应商,淇县海强盘具销售部,仕佳光子,非光链主体,non_optical_counterparty,,,false,edges.csv零泄漏核验通过

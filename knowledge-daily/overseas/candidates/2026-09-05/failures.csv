@@ -1,0 +1,86 @@
+run_date,failure_type,endpoint_id,item_url,entity_id,detail
+2026-09-05,article_fetch_failure,IQE_RNS_RELEASES,https://www.iqep.com/investors/share-price-tools,WATCH_IQE,article fetched but no usable paragraphs extracted
+2026-09-05,article_fetch_failure,POET_IR_RELEASES,https://www.poet-technologies.com/media/2025-ai-trends-to-watch-featuring-poets-ceo-dr-suresh-venkatesan,POET,article GET failed: HTTPError: HTTP Error 404: Not Found
+2026-09-05,article_fetch_failure,POET_IR_RELEASES,https://www.poet-technologies.com/media/cfo-thomas-mika-discusses-poets-market-opportunities,POET,article GET failed: HTTPError: HTTP Error 404: Not Found
+2026-09-05,article_fetch_failure,POET_IR_RELEASES,https://www.poet-technologies.com/media/dr-suresh-venkatesan-on-the-sweet-spot-for-the-optical-communications-company-in-the-ai-boom,POET,article GET failed: HTTPError: HTTP Error 404: Not Found
+2026-09-05,article_fetch_failure,POET_IR_RELEASES,https://www.poet-technologies.com/media/is-poet-technologies-stock-an-under-the-radar-ai-play,POET,article GET failed: HTTPError: HTTP Error 404: Not Found
+2026-09-05,invalid_item,LITE_TECH_BLOG,https://www.lumentum.com/en/blog/how-optical-connectivity-evolving-scale-out-ai-networks,LITE,LITE_TECH_BLOG[1]: published_at is required
+2026-09-05,missing_endpoint,,,ADTN,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,AIXA,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,ANET,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,ASMPT,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,AVGO,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,AXTI,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,CAND_AMKR,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,CAND_DELTA,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,CAND_EKI,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,CAND_HPE,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,CAND_RBBN,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,CAND_TEL,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,CIEN,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,CLS,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,COHR,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,CRDO,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,FN,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,FORM,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,FURUKAWA,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,GFS,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,GLW,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,JBL,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,LWLG,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,META,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,MRVL,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,MXL,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,MYCRONIC,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,NOK,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,NVDA,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,OXIG,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,SANM,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,SIVERS,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,SMOP,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,SMTC,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,SOI,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,SUMITOMO,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,TSEM,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,VECO,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,VIAV,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_ACCTON,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_AMD,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_AMZN,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_ASE,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_AVICENA,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_AYAR,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_ENNOSTAR,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_EVG,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_EXFO,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_FICONTEC,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_FREIBERGER,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_FUJIKURA,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_FUJITSUOC,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_GOOGL,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_KEYS,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_LIGHTMATTER,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_LUMILENS,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_MCHP,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_MELCO,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_MOLEX,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_MSFT,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_NTTID,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_OPENLIGHT,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_ORCL,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_PI,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_POLARITON,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_RANOVUS,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_SAMCO,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_SCINTIL,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_SENKO,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_SICOYA,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_SOURCEPHOTONICS,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_SUSS,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WATCH_XSCAPE,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,missing_endpoint,,,WIWYNN,monitored entity has no official/regulatory/counterparty/government discovery endpoint
+2026-09-05,no_relevant_content,IQE_RNS_RELEASES,https://www.iqep.com/media/press-releases/2026/iqe-announces-purchase-agreement-with-quintessent-as-quantum-dot-laser-technology-moves-to-customer-sampling/,WATCH_IQE,no event signal matched the retrieved text
+2026-09-05,unresolved_entity,IQE_RNS_RELEASES,https://www.iqep.com/media/press-releases/2026/iqe-announces-purchase-agreement-with-quintessent-as-quantum-dot-laser-technology-moves-to-customer-sampling/,WATCH_IQE,no corroborated entity alias matched this independent material
+2026-09-05,unsupported_listing,LITE_IR_RELEASES,https://investor.lumentum.com/financial-news-releases,LITE,unsupported_listing: no parseable article link or dated page item in static HTML; listing may be JavaScript-rendered
+2026-09-05,unsupported_listing,AAOI_IR_RELEASES,https://investors.ao-inc.com/press-releases,AAOI,unsupported_listing: configured endpoint is a verified JavaScript-rendered listing; not statically collectable
+2026-09-05,unsupported_listing,CSCO_IR_RELEASES,https://newsroom.cisco.com/c/r/newsroom/en/us/index.html,CSCO,unsupported_listing: configured endpoint is a verified JavaScript-rendered listing; not statically collectable

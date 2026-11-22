@@ -1,0 +1,86 @@
+{
+  "shard": "Step 2 Task B (carbon-content-ledger)",
+  "deliverables": {
+    "content_ledger_csv": {
+      "path": "corpus/content_ledger/content_ledger.csv",
+      "sha256": "a01a65124a5bd4fc143c851bc6aebd5d64d7248b4aa92c354c97db2f6d056f81",
+      "total_rows": 597,
+      "v1_salvage_rows": 377,
+      "step2_expansion_rows": 220,
+      "physical_lines": 598
+    },
+    "quote_verification_report": {
+      "path": "corpus/content_ledger/quote_verification_report.json",
+      "sha256": "c6237e33e7241d649c72469f49cd9087d74987a34a3e863c92150fa5e72b267c"
+    },
+    "readme": {
+      "path": "corpus/content_ledger/README.md",
+      "sha256": "58b617d8159d84507d86ad6adfb1ff80decf07526237bfcbf5c457a7df99c722"
+    },
+    "knowledge_kn007_update": {
+      "path": "knowledge.yaml",
+      "sha256": "af29efd3be539fce27bab8df4f01ec9e0b6486e4c3c06b5faff34192f3d01d6a",
+      "added_anchor": "corpus/legacy-input/lieqi_prospectus.txt#第六节·分产品毛利率分析(1-1-228,18218-18222行)",
+      "verified_numbers": {
+        "burn_in_gross_margin_2023_2024_2025": [
+          "37.45%",
+          "50.65%",
+          "12.55%"
+        ],
+        "die_attach_gross_margin_2023_2024_2025": [
+          "59.28%",
+          "59.58%",
+          "60.51%"
+        ],
+        "coupling_gross_margin_2023_2024_2025": [
+          "60.45%",
+          "54.52%",
+          "53.99%"
+        ]
+      }
+    }
+  },
+  "verification": {
+    "v1_salvage_exact_377": true,
+    "step2_expansion_15_companies": true,
+    "step2_expansion_strict_quote_hits": "220/220 (100.0%)",
+    "step2_expansion_strict_quote_misses": 0,
+    "all_rows_verified_local": "594/597",
+    "dual_gate_commercial_order_violations": 0,
+    "invalid_leaf_cell_ids": 0
+  },
+  "company_counts": {
+    "仕佳光子": 99,
+    "源杰科技": 108,
+    "长光华芯": 63,
+    "太辰光": 24,
+    "猎奇智能": 83,
+    "联讯仪器": 16,
+    "炬光科技": 15,
+    "长进光子": 14,
+    "盛合晶微": 14,
+    "中际旭创": 15,
+    "新易盛": 14,
+    "天孚通信": 15,
+    "光迅科技": 15,
+    "华工科技": 14,
+    "罗博特科/ficonTEC": 16,
+    "东山精密/索尔思": 14,
+    "Coherent": 15,
+    "Lumentum": 15,
+    "Fabrinet": 14,
+    "AAOI": 14
+  },
+  "fact_type_counts": {
+    "工序步骤": 109,
+    "技术参数": 139,
+    "产品构成": 113,
+    "代际事件": 136,
+    "设备-工序能力": 100
+  },
+  "stance_counts": {
+    "neutral": 447,
+    "industry": 111,
+    "issuer_self": 39
+  }
+}

@@ -13,6 +13,264 @@ from calls.http_discovery import HttpFetcher, discover_article_links, parse_feed
 
 
 class HttpDiscoveryTest(unittest.TestCase):
+    def pi_endpoint(self):
+        return Endpoint('WATCH_PI', 'PI_TEST', 'official_ir', 'https://www.pi-usa.us/en/news-events/news',
+                        'official_release', 'corporate_narrative', 'first_party', (),
+                        article_path_pattern=r'^/en/news-events/news/news-detailpage/[^/]+/?$')
+
+    def pi_fetch(self, final_url, canonical=None, dated=True, endpoint=None):
+        endpoint = endpoint or self.pi_endpoint()
+        link = 'https://www.pi-usa.us/en/news-events/news/news-detailpage/announcement'
+        body = '<h1>PI announces a positioning system</h1><p>PI introduces a precision positioning system for optical alignment applications.</p>'
+        if dated:
+            body += '<meta property="article:published_time" content="2026-10-13T08:00:00Z">'
+        if canonical is not None:
+            body += '<link rel="canonical" href="'+canonical+'">'
+        fetcher = HttpFetcher('2026-10-14', max_items=1)
+        requested = []
+        def request(url):
+            requested.append(url)
+            if url == endpoint.url:
+                return '<a href="'+link+'">PI announces a positioning system</a>', 'text/html', url
+            return body, 'text/html', final_url
+        fetcher._request = request
+        return fetcher.fetch(endpoint), requested
+
+    def test_pi_legitimate_announcement_with_relative_canonical(self):
+        url='https://www.pi-usa.us/en/news-events/news/news-detailpage/announcement'
+        result,requests=self.pi_fetch(url,'/en/news-events/news/news-detailpage/announcement/')
+        self.assertFalse(result.failure);self.assertFalse(result.article_failures)
+        self.assertEqual(len(result.items),1);self.assertEqual(result.items[0]['published_at'],'2026-10-13')
+        self.assertEqual(len(requests),2)
+
+    def test_pi_product_redirect_rejected_even_with_date_and_news_canonical(self):
+        product='https://www.pi-usa.us/en/products/precision-motorized-linear-stages'
+        news='https://www.pi-usa.us/en/news-events/news/news-detailpage/announcement'
+        result,_=self.pi_fetch(product,news)
+        self.assertFalse(result.items);self.assertEqual(len(result.article_failures),1)
+        self.assertIn('final URL',result.article_failures[0]['detail'])
+
+    def test_pi_product_canonical_rejected_even_with_date_and_news_final(self):
+        news='https://www.pi-usa.us/en/news-events/news/news-detailpage/announcement'
+        result,_=self.pi_fetch(news,'/en/products/precision-motorized-linear-stages')
+        self.assertFalse(result.items);self.assertEqual(len(result.article_failures),1)
+        self.assertIn('canonical',result.article_failures[0]['detail'])
+
+    def test_pi_missing_canonical_uses_verified_final_news_url(self):
+        news='https://www.pi-usa.us/en/news-events/news/news-detailpage/announcement'
+        result,_=self.pi_fetch(news)
+        self.assertFalse(result.article_failures);self.assertEqual(result.items[0]['url'],news)
+        self.assertEqual(result.items[0]['published_at'],'2026-10-13')
+
+    def test_pi_missing_canonical_does_not_admit_product_final(self):
+        result,_=self.pi_fetch('https://www.pi-usa.us/en/products/precision-motorized-linear-stages')
+        self.assertFalse(result.items);self.assertTrue(result.article_failures)
+
+    def test_pi_missing_date_is_not_fabricated(self):
+        from calls.daily_discovery import DailyDiscoveryError, _parse_item
+        news='https://www.pi-usa.us/en/news-events/news/news-detailpage/announcement'
+        result,_=self.pi_fetch(news,dated=False)
+        self.assertEqual(result.items[0]['published_at'],'')
+        with self.assertRaisesRegex(DailyDiscoveryError, 'published_at is required'):
+            _parse_item(self.pi_endpoint(), result.items[0], 'PI offline fixture')
+
+    def test_pi_json_product_redirect_is_explicit_failure_beside_valid_news(self):
+        endpoint=self.pi_endpoint(); fetcher=HttpFetcher('2026-10-14',max_items=2)
+        news=endpoint.url+'/news-detailpage/announcement'
+        redirected=endpoint.url+'/news-detailpage/product-redirect'
+        product='https://www.pi-usa.us/en/products/precision-motorized-linear-stages'
+        def request(url):
+            if url==endpoint.url:
+                return '<a href="'+news+'">Announcement</a><a href="'+redirected+'">Product redirect</a>', 'text/html', url
+            if url==redirected:
+                return '{}', 'application/json', product
+            return '<h1>Announcement</h1><meta property="article:published_time" content="2026-10-13T08:00:00Z"><p>PI introduces a positioning system for optical alignment applications.</p>', 'text/html', news
+        fetcher._request=request
+        result=fetcher.fetch(endpoint)
+        self.assertEqual(len(result.items),1)
+        self.assertEqual(result.items[0]['url'],news)
+        self.assertEqual(len(result.article_failures),1)
+        self.assertEqual(result.article_failures[0]['url'],redirected)
+        self.assertIn('final URL',result.article_failures[0]['detail'])
+
+    def test_pi_external_host_http_and_wrong_article_path_rejected(self):
+        news='https://www.pi-usa.us/en/news-events/news/news-detailpage/announcement'
+        invalid=['https://example.com/en/news-events/news/news-detailpage/announcement',
+                 news.replace('https:','http:'),'https://www.pi-usa.us/en/news-events/news/news-detailpage/announcement/child',
+                 'https://www.pi-usa.us/en/news-events/news']
+        for url in invalid:
+            with self.subTest(url=url,field='final'):
+                result,_=self.pi_fetch(url,news)
+                self.assertFalse(result.items);self.assertTrue(result.article_failures)
+            with self.subTest(url=url,field='canonical'):
+                result,_=self.pi_fetch(news,url)
+                self.assertFalse(result.items);self.assertTrue(result.article_failures)
+
+    def test_pi_legal_news_alias_and_trailing_slash_are_allowed(self):
+        news='https://www.pi-usa.us/en/news-events/news/news-detailpage/renamed/'
+        result,_=self.pi_fetch(news)
+        self.assertFalse(result.article_failures);self.assertEqual(result.items[0]['url'],news)
+
+    def test_pi_guard_does_not_change_other_source_behavior(self):
+        from dataclasses import replace
+        endpoint=replace(self.pi_endpoint(),entity_id='OTHER_SOURCE')
+        product='https://www.pi-usa.us/en/products/precision-motorized-linear-stages'
+        result,_=self.pi_fetch(product,endpoint=endpoint)
+        self.assertFalse(result.article_failures);self.assertEqual(result.items[0]['url'],product)
+
+    def test_whole_class_market_updated_status_not_date_field(self):
+        for cls in ['share-price date', 'updated date', 'status-publish', 'publisher-item']:
+            with self.subTest(cls=cls):
+                body = f'<div class="{cls}">October 12, 2026</div><h1>Article</h1>'
+                self.assertEqual(parse_html_item(body, 'https://example.com/article')['published_at'], '')
+
+    def test_hamamatsu_explicit_year_month_day_field(self):
+        body = '<h1>Announcement</h1><span class="Col Type--Date">2026年10月07日</span>'
+        self.assertEqual(parse_html_item(body, 'https://www.hamamatsu.com/jp/en/news/announcements/2026/20261007000000.html')['published_at'], '2026-10-07')
+        self.assertEqual(parse_html_item('<h1>Event on 2026年10月07日</h1>', 'https://example.com/event')['published_at'], '')
+
+    def test_avicena_created_date_requires_matching_release_dateline(self):
+        body = '<article class="qodef-blog-item status-publish"><h1>Release</h1><a class="entry-date published updated" itemprop="dateCreated">November 17, 2025</a><p>St. Louis, MO — November 17, 2025 — Avicena announces a microLED product.</p></article>'
+        self.assertEqual(parse_html_item(body, 'https://avicena.tech/avicena-release/')['published_at'], '2025-11-17')
+        self.assertEqual(parse_html_item(body.replace('MO — November 17', 'MO — November 18'), 'https://avicena.tech/avicena-release/')['published_at'], '')
+        self.assertEqual(parse_html_item(body, 'https://example.com/release')['published_at'], '')
+
+    def hpe_widget(self):
+        from calls.http_discovery import escape
+        template = '/us/en/newsroom/press-hub/_jcr_content/polaris-body-zone/aem.model.json?type={type}&restype={restype}&date={date}&topic={topic}&offset={offset}&limit={limit}'
+        filters = [{'type':'type','options':[{'value':'press-release'},{'value':'news-advisory'}]}]
+        return '<media-browser url="'+escape(template, quote=True)+'" filters="'+escape(json.dumps(filters), quote=True)+'"></media-browser>'
+
+    def hpe_endpoint(self):
+        return Endpoint('CAND_HPE', 'HPE', 'official_ir', 'https://www.hpe.com/us/en/newsroom/press-hub.html/restype/press-release_news-advisory', 'official_release', 'corporate_narrative', 'first_party', (), article_path_pattern=r'^/us/en/newsroom/(?:press-release|news-advisory)/')
+
+    def test_hpe_declared_model_date_and_type_bind_to_detail(self):
+        endpoint = self.hpe_endpoint(); fetcher = HttpFetcher('2026-10-13', max_items=2); requests = []
+        link = 'https://www.hpe.com/us/en/newsroom/press-release/2026/10/release.html'
+        def request(u):
+            requests.append(u)
+            if u == endpoint.url: return self.hpe_widget(), 'text/html', u
+            if 'aem.model.json' in u:
+                row = {'label':'Press Release','title':'New product','contentDate':'Oct 7, 2026','cta':{'link':link}}
+                data = {'stat':{'total':1 if 'type=press-release&' in u else 0},'items':[row] if 'type=press-release&' in u else []}
+                return json.dumps(data), 'application/json', u
+            return '<h1>New product</h1><p>HPE introduces a next-generation server product for enterprise workloads.</p>', 'text/html', u
+        fetcher._request = request
+        result = fetcher.fetch(endpoint)
+        self.assertFalse(result.failure);self.assertFalse(result.article_failures)
+        self.assertEqual(len(result.items),1);self.assertEqual(result.items[0]['published_at'],'2026-10-07')
+        self.assertEqual(len(requests),4)
+
+    def test_hpe_403_stops_without_other_type_or_detail_request(self):
+        endpoint=self.hpe_endpoint(); fetcher=HttpFetcher('2026-10-13'); requests=[]
+        def request(u):
+            requests.append(u)
+            if u == endpoint.url:return self.hpe_widget(), 'text/html', u
+            raise HTTPError(u,403,'Forbidden',None,None)
+        fetcher._request=request
+        result=fetcher.fetch(endpoint)
+        self.assertTrue(result.failure);self.assertEqual(len(requests),2)
+
+    def test_hpe_absent_declaration_makes_no_component_request(self):
+        endpoint=self.hpe_endpoint();fetcher=HttpFetcher('2026-10-13');requested=[]
+        def request(u):requested.append(u);return '<h1>New template</h1>','text/html',u
+        fetcher._request=request
+        self.assertTrue(fetcher.fetch(endpoint).failure);self.assertEqual(requested,[endpoint.url])
+
+    def test_hpe_mismatched_blog_or_external_article_is_rejected(self):
+        endpoint=self.hpe_endpoint()
+        for label,link in [('Blog Post','https://www.hpe.com/us/en/newsroom/blog-post/x.html'),('Press Release','https://example.com/us/en/newsroom/press-release/x.html')]:
+            with self.subTest(label=label):
+                fetcher=HttpFetcher('2026-10-13',max_items=2)
+                def request(u):
+                    if u==endpoint.url:return self.hpe_widget(),'text/html',u
+                    return json.dumps({'stat':{'total':1},'items':[{'label':label,'title':'Title','contentDate':'Oct 12, 2026','cta':{'link':link}}]}),'application/json',u
+                fetcher._request=request
+                result = fetcher.fetch(endpoint)
+                self.assertFalse(result.items)
+                self.assertTrue(result.failure or result.article_failures)
+
+    def test_hpe_recent_first_page_cap_remains_partial(self):
+        endpoint=self.hpe_endpoint();fetcher=HttpFetcher('2026-10-13',max_items=2)
+        def request(u):
+            if u==endpoint.url:return self.hpe_widget(),'text/html',u
+            if 'aem.model.json' in u:
+                if 'type=news-advisory&' in u:return json.dumps({'stat':{'total':0},'items':[]}),'application/json',u
+                return json.dumps({'stat':{'total':20},'items':[{'label':'Press Release','title':'Title','contentDate':'Oct 12, 2026','cta':{'link':'https://www.hpe.com/us/en/newsroom/press-release/a.html'}}]}),'application/json',u
+            return '<h1>Title</h1><p>HPE introduces a new server platform for enterprise AI use.</p>','text/html',u
+        fetcher._request=request;result=fetcher.fetch(endpoint)
+        self.assertTrue(any('lookback coverage' in f['detail'] for f in result.article_failures))
+
+    def test_hpe_second_model_denial_stops_all_later_requests(self):
+        for status in [403, 429]:
+            with self.subTest(status=status):
+                endpoint=self.hpe_endpoint();fetcher=HttpFetcher('2026-10-13',max_items=2);requested=[]
+                def request(u):
+                    requested.append(u)
+                    if u==endpoint.url:return self.hpe_widget(),'text/html',u
+                    if 'type=news-advisory&' in u:raise HTTPError(u,status,'Denied',None,None)
+                    row={'label':'Press Release','title':'Title','contentDate':'Oct 12, 2026','cta':{'link':'https://www.hpe.com/us/en/newsroom/press-release/a.html'}}
+                    return json.dumps({'stat':{'total':1},'items':[row]}),'application/json',u
+                fetcher._request=request;result=fetcher.fetch(endpoint)
+                self.assertEqual(len(requested),3);self.assertFalse(result.items);self.assertTrue(result.article_failures)
+
+    def test_hpe_detail_redirect_canonical_title_are_bound(self):
+        link='https://www.hpe.com/us/en/newsroom/press-release/a.html'
+        for returned,body in [('https://example.com/a', '<h1>Title</h1>'),
+                              (link,'<link rel="canonical" href="https://example.com/a"><h1>Title</h1>'),
+                              (link,'<h1>Different title</h1>'),
+                              (link,''),
+                              (link.replace('https:', 'http:'),'<h1>Title</h1>')]:
+            with self.subTest(returned=returned,body=body):
+                endpoint=self.hpe_endpoint();fetcher=HttpFetcher('2026-10-13',max_items=2)
+                def request(u):
+                    if u==endpoint.url:return self.hpe_widget(),'text/html',u
+                    if 'aem.model.json' in u:
+                        row={'label':'Press Release','title':'Title','contentDate':'Oct 12, 2026','cta':{'link':link}}
+                        data={'stat':{'total':1 if 'type=press-release&' in u else 0},'items':[row] if 'type=press-release&' in u else []}
+                        return json.dumps(data),'application/json',u
+                    return body+'<p>HPE introduces a new server product for artificial intelligence workloads.</p>','text/html',returned
+                fetcher._request=request;result=fetcher.fetch(endpoint)
+                self.assertFalse(result.items);self.assertTrue(result.article_failures)
+
+    def test_hpe_model_protocol_and_query_must_bind(self):
+        endpoint=self.hpe_endpoint()
+        for rewrite in [lambda u:u.replace('https:', 'http:'),lambda u:u.replace('offset=0','offset=50'),lambda u:u.replace('type=press-release&','type=blog-post&')]:
+            with self.subTest(rewrite=rewrite):
+                fetcher=HttpFetcher('2026-10-13',max_items=2)
+                def request(u):
+                    if u==endpoint.url:return self.hpe_widget(),'text/html',u
+                    return json.dumps({'stat':{'total':0},'items':[]}),'application/json',rewrite(u)
+                fetcher._request=request;result=fetcher.fetch(endpoint)
+                self.assertTrue(result.failure or result.article_failures)
+
+    def test_hpe_inconsistent_empty_envelope_is_failure(self):
+        endpoint=self.hpe_endpoint();fetcher=HttpFetcher('2026-10-13')
+        fetcher._request=lambda u:(self.hpe_widget(),'text/html',u) if u==endpoint.url else (json.dumps({'stat':{'total':20},'items':[]}),'application/json',u)
+        self.assertTrue(fetcher.fetch(endpoint).failure)
+
+    def test_hpe_old_story_filtered_and_recent_story_remains_unsupported(self):
+        for day,expected in [('Sep 1, 2026',False),('Oct 12, 2026',True)]:
+            with self.subTest(day=day):
+                endpoint=self.hpe_endpoint();fetcher=HttpFetcher('2026-10-13',max_items=2)
+                def request(u):
+                    if u==endpoint.url:return self.hpe_widget(),'text/html',u
+                    if 'type=press-release&' in u:return json.dumps({'stat':{'total':0},'items':[]}),'application/json',u
+                    row={'label':'News Advisory','title':'Story','contentDate':day,'cta':{'link':'https://www.hpe.com/us/en/newsroom/stories/a.html'}}
+                    return json.dumps({'stat':{'total':1},'items':[row]}),'application/json',u
+                fetcher._request=request;result=fetcher.fetch(endpoint)
+                self.assertFalse(result.items);self.assertEqual(bool(result.article_failures),expected)
+
+    def test_q4_old_attachments_filtered_but_current_or_unknown_still_fail(self):
+        endpoint=self.endpoint('https://ir.aboutamazon.com/feed/PressRelease.svc/GetPressReleaseList')
+        for stamp,expected in [('04/10/2025 08:00:00',False),('10/12/2026 08:00:00',True),('',True)]:
+            with self.subTest(stamp=stamp):
+                fetcher=HttpFetcher('2026-10-13')
+                data={'GetPressReleaseListResult':[{'Headline':'Letter','PressReleaseDate':stamp,'LinkToDetailPage':'/letter.pdf','Body':'<p>Letter.</p>'}]}
+                fetcher._request=lambda u:(json.dumps(data),'application/json',u)
+                result=fetcher.fetch(endpoint)
+                self.assertFalse(result.items);self.assertEqual(bool(result.article_failures),expected)
+
     def endpoint(self, url="https://example.com/news"):
         return Endpoint(entity_id="LITE", endpoint_id="LITE_IR_RELEASES", endpoint_kind="official_ir",
                         url=url, disclosure_type="official_release", content_class="corporate_narrative",
@@ -568,3 +826,81 @@ class HttpDiscoveryTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# 2026-10-12: regressions for the observed official Duda response and media links.
+from calls.daily_discovery import Endpoint
+from calls.http_discovery import HttpFetcher,discover_article_links
+from unittest.mock import Mock
+import json
+
+def duda_endpoint():
+    return Endpoint(entity_id="LWLG",endpoint_id="LWLG_OFFICIAL_RELEASES",endpoint_kind="official_ir",url="https://www.lightwavelogic.com/press-releases",disclosure_type="official_release",content_class="corporate_narrative",provenance_class="first_party",corroborates=(),article_path_pattern="/press-releases/[^/]+")
+
+def test_duda_listing_and_article_are_parsed_without_executing_scripts():
+    listing={"alias":"press-releases","current_url":"","page_title":"Press Releases","headsection":"","content":"<a href='/press-releases/new-modulator'>Company announces a new modulator</a>","collections":"e30="}
+    article={"alias":"press-releases/new-modulator","current_url":"","page_title":"New modulator","headsection":"<meta property='article:published_time' content='2026-10-10'>","content":"<h1>New modulator</h1><p>Company announces volume production of a new modulator.</p>","collections":"e30="}
+    f=HttpFetcher("2026-10-12")
+    f._get=lambda url:(json.dumps(listing if url.endswith("/press-releases") else article),"text/html",url)
+    result=f.fetch(duda_endpoint())
+    assert not result.failure,result.failure
+    assert len(result.items)==1
+    assert result.items[0]["published_at"]=="2026-10-10"
+    assert "volume production" in result.items[0]["paragraphs"][0]["text"]
+
+def test_mismatched_duda_page_identity_stays_failed():
+    payload={"alias":"different-page","current_url":"","page_title":"Other","headsection":"","content":"<p>other</p>","collections":"e30="}
+    f=HttpFetcher("2026-10-12");f._get=lambda u:(json.dumps(payload),"text/html",u)
+    assert f.fetch(duda_endpoint()).failure
+
+def test_news_video_is_not_fetched_as_an_html_article():
+    body="<a href='/news/ecoc26-expert-interview.mp4'>Company expert interview</a><a href='/news/release'>Company release</a>"
+    assert discover_article_links(body,"https://example.com/news")==[("https://example.com/news/release","Company release")]
+
+
+# 2026-10-12: declared official IR widget integration regressions.
+from calls.daily_discovery import Endpoint
+from calls.http_discovery import HttpFetcher
+from unittest.mock import Mock
+from urllib.error import HTTPError
+import json
+
+def embedded_endpoint():
+    return Endpoint(entity_id="LWLG",endpoint_id="LWLG_OFFICIAL_RELEASES",endpoint_kind="official_ir",url="https://www.lightwavelogic.com/press-releases",disclosure_type="official_release",content_class="corporate_narrative",provenance_class="first_party",corroborates=(),article_path_pattern="/press-releases/[^/]+")
+
+LISTING={"alias":"press-releases","headsection":"","collections":"e30=","content":"<script>const source=\"https://feeds.issuerdirect.com/news.html?symbol=LWLG&amp;news_template=plain\";</script>"}
+ROW={"newsid":123,"datetime":"2026-10-10T08:30:00-04:00","headline":"Lightwave Logic announces a new device","qmsource":"bayaw","storyurl":"https://api.quotemedia.com/supplement/news-story/?storyId=123"}
+def headlines(topic="LWLG"):
+    return {"results":{"news":[{"topicstring":topic,"newsitemcount":1,"newsitem":[ROW]}]}}
+def story(title=ROW["headline"]):
+    return {"qmcistory":{"qmnews":{"qmstory":{"datetime":ROW["datetime"],"qmheadline":title,"qmsource":"bayaw","qmtext":"<p>Lightwave Logic announces volume production of its new device.</p>"}}}}
+def embedded_fixture(story_value=None,topic="LWLG"):
+    f=HttpFetcher("2026-10-12")
+    def get(u):
+        if u==embedded_endpoint().url:return json.dumps(LISTING),"text/html",u
+        if "getHeadlines.json" in u:return json.dumps(json.dumps(headlines(topic))),"application/json",u
+        if "getStory.json" in u:
+            if isinstance(story_value,Exception):raise story_value
+            return json.dumps(json.dumps(story_value or story())),"application/json",u
+        raise AssertionError("unexpected source: "+u)
+    f._get=Mock(side_effect=get)
+    return f
+
+def test_official_embedded_publisher_returns_bound_full_text():
+    f=embedded_fixture();result=f.fetch(embedded_endpoint());assert not result.failure,result.failure;assert not result.article_failures
+    assert len(result.items)==1
+    item=result.items[0];assert item["published_at"]=="2026-10-10"
+    assert "volume production" in item["paragraphs"][0]["text"]
+    assert "embedded" in item["published_at_basis"]
+
+def test_wrong_company_in_embedded_response_is_not_accepted():
+    result=embedded_fixture(topic="OTHER").fetch(embedded_endpoint());assert result.failure and not result.items
+
+def test_mismatched_full_text_cannot_use_headline_date():
+    result=embedded_fixture(story("Another company's release")).fetch(embedded_endpoint());assert not result.items and result.article_failures
+
+def test_http403_keeps_partial_failure_without_retry_or_new_destination():
+    f=embedded_fixture(HTTPError("https://www.accesswire.com/qm/data/getStory.json",403,"denied",{},None));result=f.fetch(embedded_endpoint())
+    assert not result.items and result.article_failures
+    story_calls=[x for x in f._get.call_args_list if "getStory.json" in x.args[0]]
+    assert len(story_calls)==1

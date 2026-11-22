@@ -1,0 +1,75 @@
+URL: https://www.iqep.com/media/press-releases/2026/iqe-announces-purchase-agreement-with-quintessent-as-quantum-dot-laser-technology-moves-to-customer-sampling/
+REQUESTED_URL: https://www.iqep.com/media/press-releases/2026/iqe-announces-purchase-agreement-with-quintessent-as-quantum-dot-laser-technology-moves-to-customer-sampling/
+TITLE: IQE announces purchase agreement with Quintessent as Quantum Dot Laser technology moves to customer sampling
+PUBLISHED_AT: 2026-09-03
+RETRIEVED_AT: 2026-11-22
+--- PARSED PARAGRAPHS ---
+[p1] Cardiff, UK3 September 2026
+[p2] IQE announces purchase agreement with Quintessent as Quantum Dot Laser technology moves to customer sampling
+[p3] IQE plc (AIM: IQE, "IQE" or the "Group"), the leading global supplier of compound semiconductor wafer products and advanced material solutions, is pleased to announce a purchase agreement with Quintessent Inc., an innovator in resilient and low-cost connectivity solutions for AI data centres, for the supply of Quantum Dot Laser (QDL) epitaxy.
+[p4] Following an initial strategic announcement and purchase order in January 2025, the extension of the companies’ longstanding relationship will see IQE supply 6-inch Gallium Arsenide epiwafers through its foundry-ready service. This will support Quintessent’s customer sampling activity as its technology progresses towards commercial deployment and new production introductions.
+[p5] Quintessent’s QDL product architecture enables the next generation of AI data centre infrastructure by meeting the need for optical interconnects with lower power consumption, simpler manufacturing and improved reliability as compared to traditional laser technologies.
+[p6] IQE and Quintessent have been working together for over a decade to transition QDL technology from research to large-scale production and previously announced a partnership to establish the world’s first large-scale QDL epitaxial wafer supply chain.
+[p7] Jutta Meier, Chief Executive Officer of IQE, commented:
+[p8] “After a period of successful development, we are pleased to be enabling customer sampling with our partner Quintessent as its Quantum Dot Laser technology moves towards broader market adoption and commercialisation. IQE’s proven expertise in advanced epitaxy and high-volume manufacturing means we are ideally positioned to support the scaling of multiple complementary optical interconnect technologies that are enabling the AI revolution.”
+[p9] Alan Liu, Chief Executive Officer and Co-founder of Quintessent, commented:
+[p10] “We are proud of our long-standing partnership with IQE. Quintessent is an innovator in resilient AI datacenter optical interconnect products that drive TCO benefits for customers. The next phase of the AI infrastructure buildout will require deep technology and supply-chain partnerships to address the scale required in the AI ecosystem. IQE has been a wonderful production partner, helping Quintessent enable our Laser and SOA technology. We look forward to continued collaboration with IQE.”Contacts:
+[p11] IQE plc+44 (0) 29 2083 9400Jutta MeierMark CubittAmy Barlow
+[p12] Peel Hunt (Nomad and Joint Broker)+44 (0) 20 7418 8900Ben CryerKate BannatyneAdam Telling
+[p13] Deutsche Numis (Joint Broker)+44 (0) 20 7260 1000Hugo RubinsteinIqra Amin
+[p14] Headland Consultancy (Financial PR) + 44 (0) 20 38054822Andy Rivett-Carnac: +44 (0) 7968 997 365Chloe Francklin: +44 (0)78 3497 4624ABOUT IQE
+[p15] IQE is the leading global supplier of advanced compound semiconductor wafers and materials solutions that enable a diverse range of applications across:Smart Connected DevicesCommunications InfrastructureAutomotive and IndustrialAerospace and Security
+[p16] As a scaled global epitaxy wafer manufacturer, IQE is uniquely positioned in this market which has high barriers to entry. IQE supplies the global market and is enabling customers to innovate at chip and OEM level. By leveraging the Group’s intellectual property portfolio including know-how and patents, it produces epitaxy wafers of superior quality, yield and unit economics.
+[p17] IQE is headquartered in Cardiff UK, with employees across manufacturing locations in the UK, US and Taiwan, and is listed on the AIM Stock Exchange in London.About Quintessent Inc.:
+[p18] Quintessent is simplifying the optical infrastructure powering the AI era to enable the next generation of resilient and scalable AI connectivity. We are converging innovations in materials science, process and manufacturing, device and system design to build products that slash architectural complexity, reduce total cost of ownership, and improve system reliability. The company's portfolio spans enabling components today and integrated optical connectivity products in the future.
+[p19] Quintessent is headquartered in Santa Barbara, California.
+[p20] To learn more about Quintessent, please visit www.quintessent.com or contact info@quintessent.com. Quick LinksAbout UsProductsMarketsInvestorsResponsibilityMediaEmail sign-upEnter email address Follow us© IQE PLCContact UsAccessibilityPrivacy and CookiesSitemapTerms and ConditionsAnti-Slavery StatementBoiler Room Scamemperor.works
+--- FULL BLOCK TEXT ---
+﻿IQE announces purchase agreement with Quintessent as Quantum Dot Laser technology moves to customer sampling | IQE Corporate
+Home
+Media
+Press Releases
+IQE announces purchase agreement with Quintessent as Quantum Dot Laser technology moves to customer sampling
+Cardiff, UK
+3 September 2026
+IQE announces purchase agreement with Quintessent as Quantum Dot Laser technology moves to customer sampling
+IQE plc (AIM: IQE, "IQE" or the "Group"), the leading global supplier of compound semiconductor wafer products and advanced material solutions, is pleased to announce a purchase agreement with Quintessent Inc., an innovator in resilient and low-cost connectivity solutions for AI data centres, for the supply of Quantum Dot Laser (QDL) epitaxy.
+Following an initial strategic announcement and purchase order in January 2025, the extension of the companies’ longstanding relationship will see IQE supply 6-inch Gallium Arsenide epiwafers through its foundry-ready service. This will support Quintessent’s customer sampling activity as its technology progresses towards commercial deployment and new production introductions.
+Quintessent’s QDL product architecture enables the next generation of AI data centre infrastructure by meeting the need for optical interconnects with lower power consumption, simpler manufacturing and improved reliability as compared to traditional laser technologies.
+IQE and Quintessent have been working together for over a decade to transition QDL technology from research to large-scale production and previously announced a partnership to establish the world’s first large-scale QDL epitaxial wafer supply chain.
+Jutta Meier, Chief Executive Officer of IQE, commented:
+“After a period of successful development, we are pleased to be enabling customer sampling with our partner Quintessent as its Quantum Dot Laser technology moves towards broader market adoption and commercialisation. IQE’s proven expertise in advanced epitaxy and high-volume manufacturing means we are ideally positioned to support the scaling of multiple complementary optical interconnect technologies that are enabling the AI revolution.”
+Alan Liu, Chief Executive Officer and Co-founder of Quintessent, commented:
+“We are proud of our long-standing partnership with IQE. Quintessent is an innovator in resilient AI datacenter optical interconnect products that drive TCO benefits for customers. The next phase of the AI infrastructure buildout will require deep technology and supply-chain partnerships to address the scale required in the AI ecosystem. IQE has been a wonderful production partner, helping Quintessent enable our Laser and SOA technology. We look forward to continued collaboration with IQE.”
+Contacts:
+IQE plc
++44 (0) 29 2083 9400
+Jutta Meier
+Mark Cubitt
+Amy Barlow
+Peel Hunt (Nomad and Joint Broker)
++44 (0) 20 7418 8900
+Ben Cryer
+Kate Bannatyne
+Adam Telling
+Deutsche Numis (Joint Broker)
++44 (0) 20 7260 1000
+Hugo Rubinstein
+Iqra Amin
+Headland Consultancy (Financial PR)
++ 44 (0) 20 38054822
+Andy Rivett-Carnac: +44 (0) 7968 997 365
+Chloe Francklin: +44 (0)78 3497 4624
+ABOUT IQE
+http://iqep.com
+IQE is the leading global supplier of advanced compound semiconductor wafers and materials solutions that enable a diverse range of applications across:
+Smart Connected Devices
+Communications Infrastructure
+Automotive and Industrial
+Aerospace and Security
+As a scaled global epitaxy wafer manufacturer, IQE is uniquely positioned in this market which has high barriers to entry. IQE supplies the global market and is enabling customers to innovate at chip and OEM level. By leveraging the Group’s intellectual property portfolio including know-how and patents, it produces epitaxy wafers of superior quality, yield and unit economics.
+IQE is headquartered in Cardiff UK, with employees across manufacturing locations in the UK, US and Taiwan, and is listed on the AIM Stock Exchange in London.
+About Quintessent Inc.:
+Quintessent is simplifying the optical infrastructure powering the AI era to enable the next generation of resilient and scalable AI connectivity. We are converging innovations in materials science, process and manufacturing, device and system design to build products that slash architectural complexity, reduce total cost of ownership, and improve system reliability. The company's portfolio spans enabling components today and integrated optical connectivity products in the future.
+Quintessent is headquartered in Santa Barbara, California.
+To learn more about Quintessent, please visit www.quintessent.com or contact info@quintessent.com.

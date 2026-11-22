@@ -1,0 +1,180 @@
+[
+  {
+    "id": "CM001",
+    "target": "出货第100万颗Silicon One芯片",
+    "due_date": "2026-01-24",
+    "old_status": "fulfilled",
+    "verdict": "fulfilled",
+    "assessment": "维持 fulfilled。2025-11-12的FY26 Q1官方prepared remarks承诺FY26 Q2出货第100万颗芯片。2026-02-11的Q2同类官方材料用已发生时态确认该季度已出货第100万颗Silicon One，Q2截至2026-01-24。事件在原定季度内发生，披露日晚于事件窗口，仅凭公开材料不能确定具体哪一天。兑现证据是CEO公司自述，未得到客户收货记录等独立确认。",
+    "missing": "缺具体出货日、芯片SKU、客户和独立收货数据。Daily可串到10月G300系列送样与系统出货，但总系列累计出货里程碑和G300单代送样是不同指标。当前光模块BOM不包含交换ASIC，同系列进展不能改变映射边界。",
+    "proposal": "CM001保持fulfilled，补明“FY26 Q2内按期兑现，2026-02-11由公司披露，具体日未知”。保留CL009原始承诺和CL010结果，纠正CL009原始PDF锚点为印刷第3页。Daily的G300只追加为后续同系列事件关联。",
+    "positions": [
+      "calls/commitments.csv CM001：保持status=fulfilled、evidence_source_id=S_CSCO_2026Q2_A、evidence_claim_id=CL010，仅细化assessment。",
+      "calls/claims.csv CL009：原anchor写p.4，实际Q1 FY26 PDF印刷第3页，建议更正。CL010在Q2 PDF印刷第4页，现锚正确。",
+      "calls/themes.csv T009：继续记录Silicon One交换ASIC主题，映射unmapped。",
+      "不建议由本承诺产生模块电芯片C5能力点。"
+    ],
+    "evidence": [
+      {
+        "date": "2025-11-12",
+        "title": "Cisco FY26 Q1 Prepared Remarks",
+        "url": "https://investor.cisco.com/files/doc_events/2025/11/1/Q1FY26-Prepared-Remarks.pdf",
+        "locator": "印刷第3页，“Demand for Silicon One”段；原账本p.4需纠正",
+        "quote": "we expect to ship our 1-millionth chip in Q2 FY26"
+      },
+      {
+        "date": "2026-02-11",
+        "title": "Cisco FY26 Q2 Prepared Remarks",
+        "url": "https://investor.cisco.com/files/doc_events/2026/02/Q2FY26-Prepared-Remarks-1.pdf",
+        "locator": "印刷第4页，Chuck Robbins，Silicon One段",
+        "quote": "We shipped our one-millionth Silicon One chip in Q2"
+      },
+      {
+        "date": "2026-02-11",
+        "title": "Cisco Reports Second Quarter Earnings",
+        "url": "https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-SECOND-QUARTER-EARNINGS/default.aspx",
+        "locator": "正文首段，财政季度结束日",
+        "quote": "the period ended January 24, 2026"
+      },
+      {
+        "date": "2026-10-12",
+        "title": "Cisco Advances Scalability and Openness at OCP 2026",
+        "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m10/cisco-advances-scalability-and-openness-at-ocp-2026.html",
+        "locator": "“Cisco Silicon One Portfolio Delivers”段，G300句",
+        "quote": "the first G300-powered systems are currently shipping to customers"
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-10-13",
+        "claim": "CC_B7D08360AB0B：102.4T Silicon One G300已可客户送样，首批G300系统正在向客户出货。",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-13/claim_candidates.csv#L32",
+        "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m10/cisco-advances-scalability-and-openness-at-ocp-2026.html",
+        "match": "同Silicon One系列、不同里程碑。仅作后续产品阶段进展，不作为百万颗出货的兑现证据。",
+        "published_date": "2026-10-12",
+        "event_date": "不晚于2026-10-12，具体日未知",
+        "observed_dates": [
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26"
+        ],
+        "disclosure_id": "DC_66D313EC13F4",
+        "claim_id": "CC_B7D08360AB0B",
+        "dedupe": "同一URL及同一引文在8期出现，合为1次来源观察。"
+      },
+      {
+        "date": "2026-11-11",
+        "claim": "在2026-09-04至2026-11-11现存55期staging中，CSCO有172次披露观察、74次主张观察。URL与内容哈希归并后37个版本，同一引文归并后12条主张。",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-11-11/disclosure_candidates.csv",
+        "url": "",
+        "match": "扫描到的Daily材料没有百万颗里程碑直接复述，相关季度发生于Daily留存窗口之前。上述统计只描述现存观察，不代表采集完整。"
+      }
+    ],
+    "search": [
+      "回读calls/commitments.csv CM001、claims.csv CL009/CL010、sources.csv S_CSCO_2026Q1_A/S_CSCO_2026Q2_A。",
+      "公开检索 Cisco one-millionth Silicon One Q2 FY2026，回读两份官方prepared remarks和Q2财报。",
+      "现存55期overseas/staging，筛CSCO披露与原子主张，按URL+哈希及公司+引文去重；回读10月12日OCP官方稿。",
+      "agy只读检索已尝试，返回FAILED_PRECONDITION：User location is not supported for the API use，随后通过官方web原件完成核对。"
+    ]
+  },
+  {
+    "id": "CM002",
+    "target": "800G产品从Q2开始明显放量",
+    "due_date": "2026-06-30",
+    "old_status": "pending",
+    "verdict": "fulfilled",
+    "assessment": "建议pending改为fulfilled。AAOI于2026-05-07的Q1业绩稿承诺800G产品从Q2开始明显放量。2026-08-06发布的Q2业绩稿回顾截至6月30日季度，CEO称看到800G产品强劲放量并环比翻倍以上，直接支持原定Q2窗口内已发生。该指标由公司披露，release没有单列精确800G出货只数或分产品收入，不能把整体收入增长或800G+1.6T合并名义产能当成兑现依据。11月5日Q3披露的建设和供电延误属于后续扩产目标，未推翻此前Q2放量。",
+    "missing": "缺Q2逐型号出货只数、800G专属确认收入、具体客户及客户侧收货证据。不能将Q3的混合800G+1.6T设备能力上限转述成Q2 800G稳定产量。当前Daily配置指向newsroom.ao-inc.com，同域滚动新闻未取得跨域IR的Q2/Q3财报，既有源S_AAOI_2026Q2已在账本但尚未关联CM002结果。",
+    "proposal": "经用户确认后，以已有S_AAOI_2026Q2新增一条经复核的Q2兑现结果主张，CM002改fulfilled并关联该结果，assessment写明事件窗口截至2026-06-30、公司确认日2026-08-06。保留CL003原始预测。修复Q1源URL到官方迁移后地址时保留旧URL记录。Q3后续扩产延误另作观察，不能覆盖CM002。",
+    "positions": [
+      "calls/commitments.csv CM002：拟status=fulfilled、evidence_source_id=S_AAOI_2026Q2，evidence_claim_id需分配新的结果主张编号。",
+      "calls/claims.csv：新增Q2公司回顾性结果主张，原句强劲放量且环比翻倍以上，映射MOD1/T003；保留CL003预测。",
+      "calls/sources.csv S_AAOI_2026Q2已存在，优先复用，原URL与迁移后URL为同一官方稿；S_AAOI_Q1_RESULT_A的node/17011目前404，官方带日期新URL可读。",
+      "calls/themes.csv T003：可补AAOI Q2产品级放量证据，客户独立确认的缺口仍保留。",
+      "points.csv P229（Applied Optoelectronics, MOD1）可作为后续能力证据位置，但本次只建议承诺账本与结果主张。"
+    ],
+    "evidence": [
+      {
+        "date": "2026-05-07",
+        "title": "Applied Optoelectronics Reports First Quarter 2026 Results",
+        "url": "https://investors.ao-inc.com/2026-05-07-Applied-Optoelectronics-Reports-First-Quarter-2026-Results",
+        "locator": "CEO首段，第二句；对应现有S_AAOI_Q1_RESULT_A/CL003",
+        "quote": "anticipate a strong volume ramp of our 800G products starting in Q2"
+      },
+      {
+        "date": "2026-08-06",
+        "title": "Applied Optoelectronics Reports Second Quarter 2026 Results",
+        "url": "https://investors.ao-inc.com/2026-08-06-Applied-Optoelectronics-Reports-Second-Quarter-2026-Results",
+        "locator": "CEO首段，回顾截至2026-06-30季度；对应已有S_AAOI_2026Q2",
+        "quote": "we saw a strong volume ramp of our 800G products, which more than doubled sequentially"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "Applied Optoelectronics Reports Third Quarter 2026 Results",
+        "url": "https://investors.ao-inc.com/2026-11-05-Applied-Optoelectronics-Reports-Third-Quarter-2026-Results",
+        "locator": "CFO首段，美国2027扩产计划；独立于Q2放量目标",
+        "quote": "We expect our 2027 capacity expansion plan in the US to take longer to complete"
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-09-04",
+        "claim": "AAOI误取SEC Filings目录页，未提取出可匹配800G放量的主张。",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-04/disclosure_candidates.csv#L2",
+        "url": "https://investors.ao-inc.com/financial-information/sec-filings",
+        "match": "无同对象兑现证据，目录页不能替代季度原文。",
+        "published_date": "候选标注2026-09-01，目录无稳定事件日",
+        "disclosure_id": "DC_0160483A6A29",
+        "observed_dates": [
+          "2026-09-04"
+        ]
+      },
+      {
+        "date": "2026-09-25",
+        "claim": "CC_5D8B3424093C来自Quantum30 3.0GHz HFC概念演示新闻，涉及有线电视带宽扩展。",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-25/claim_candidates.csv#L25",
+        "url": "https://newsroom.ao-inc.com/news-releases/aoi-brings-first-live-quantum30-3-0ghz-concept-demo-to-scte-techexpo-in-atlanta/",
+        "match": "同公司，产品对象是HFC/CATV，不匹配800G数据中心收发模块承诺，排除。",
+        "published_date": "2026-09-24",
+        "event_date": "2026-09-24披露概念演示，非800G放量日期",
+        "disclosure_id": "DC_55510D59BAD2",
+        "claim_id": "CC_5D8B3424093C",
+        "observed_dates": [
+          "2026-09-25",
+          "2026-09-27",
+          "2026-09-28",
+          "2026-09-29",
+          "2026-09-30",
+          "2026-10-01",
+          "2026-10-02",
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08"
+        ],
+        "dedupe": "同一URL、哈希与同一主张在13期重复，合为1次观察。"
+      },
+      {
+        "date": "2026-11-11",
+        "claim": "55期现存staging中AAOI共14次披露观察、13次主张观察，仅2个URL/哈希版本与1条唯一原子引文，未取得8月6日Q2和11月5日Q3业绩稿。",
+        "ref": "/Users/jowang/Downloads/optical-module-research/calls/discovery_config.json#L5",
+        "url": "https://newsroom.ao-inc.com/news-releases/",
+        "match": "配置自身注明跨域IR财报未证明恢复。Daily缺少结果关联，兑现判断直接取自官方IR原文。"
+      }
+    ],
+    "search": [
+      "回读CM002、CL001/CL002/CL003、S_AAOI_Q1_RESULT_A、已存在的S_AAOI_2026Q2。",
+      "公开检索AAOI second quarter 2026 800G volume ramp，回读官方5月7日、8月6日、11月5日稿。",
+      "回读old node/17011与/pdf均404，确认同公司迁移后Q1带日期永久链接可读。",
+      "检查2026-09-04至2026-11-11现存55期staging的AAOI原子候选与披露，按URL/哈希及原句去重。",
+      "agy只读检索返回地域FAILED_PRECONDITION，使用官方web原件完成核对。"
+    ]
+  }
+]

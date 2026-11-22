@@ -1,0 +1,34 @@
+workpack:
+  id: OPTICAL-GITHUB-SOURCE-ARCHIVE-20261121
+  title: 第一批财报及监管申报原件的私有 GitHub 归档
+  status: delivered
+  authorization: 用户接受前述 GitHub 去重归档方案，并要求提供上传地址、编写脚本上传。
+allowed_write_paths:
+  - docs/control/ACTIVE_WORKPACK.yaml
+  - out/source-archive-20261121/**
+remote_write_scope:
+  - github.com/pojoker/optical-module-source-archive（私有仓库初始化及本次批次 Release）
+read_scope:
+  - corpus/annual、corpus/annual-2024、corpus/legacy-input 和原采集项目的 corpus/annual-2023
+  - 上述目录的披露及下载索引、calls/sources.csv
+  - 上轮远端比对的光模块主仓 main、dev 和原采集仓 master 快照
+non_goals:
+  - 暂不补抓缺失链接，不上传投关批次、微信研报、Daily 状态或其他缓存
+  - 不改资料源文件、canonical、项目已有分支或公开仓库
+canonical_policy:
+  writable: false
+acceptance_criteria:
+  - 交付可重试的 Python 上传脚本和经验证的私有 GitHub 地址
+  - 精确去重，排除已匹配 GitHub 副本，保留来源与恢复路径并标注转制格式
+  - 分包发布，重新下载，对包及包内文件逐一校验 SHA-256
+stop_conditions:
+  - 归档目标不是指定私有仓库、发现候选范围漂移、原件不可读或上传校验失败时暂停相应操作
+previous_workpack: out/source-archive-20261121/previous-active-workpack.yaml
+delivery:
+  release: https://github.com/pojoker/optical-module-source-archive/releases/tag/sources-2026-11-21
+  visibility: private
+  verified_files: 533
+  zip_assets: 8
+  existing_remote_copies: 27
+  source_urls_from_local_index: 433
+  verification: 从 GitHub 下载索引及全部 ZIP，验证包级和每份文件的 SHA-256，发布后回读 9 个附件均已上传。

@@ -1,0 +1,413 @@
+[
+  {
+    "id": "G-f2cf4505e36d44db",
+    "verdict": "原说法待证",
+    "confirmed": "FCC 26-50 的最终条文未设置按速率划分的 3.2T 限制或光模块 65% 豁免。随附征询用 65% 讨论 Buy American 国内终端产品口径，包含无人机例子。东山精密称其所知的光模块 65% 说法来自市场传闻。",
+    "missing": "在发文方站点和公开索引检索研报英文标题、作者归因及 2026-10-01 日期，未取得摩根士丹利发布的原件。公开转述只用于定位。 因此 3.2T、过渡期、豁免及百分比分母只能作为研报来源待核项。",
+    "proposal": "",
+    "target": "UNKNOWN。保留在本次审阅的待核线索。",
+    "evidence": [
+      {
+        "title": "《联邦公报》FCC 26-50 最终规则，91 FR 57798",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf",
+        "locator": "p. 57798 DATES，pp. 57798–57799 §A，修订 47 CFR §§ 2.902–2.903",
+        "quote": "This final rule is effective October 13, 2026."
+      },
+      {
+        "title": "FCC 26-50 原文：最终令与第三次进一步拟议规则公告",
+        "url": "https://docs.fcc.gov/public/attachments/FCC-26-50A1.pdf",
+        "locator": "最终令 pp. 10–11 ¶¶22–23。拟议规则 p. 51 ¶145、pp. 67–68 ¶¶198–200",
+        "quote": "We seek comment on this option."
+      },
+      {
+        "title": "东山精密 2026-10-08 投资者关系活动记录表",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-08/1225598207.PDF",
+        "locator": "问题 1、6、13",
+        "quote": "属于非官方市场传闻"
+      }
+    ],
+    "search": [
+      "FCC-26-50A1 全文与 91 FR 57798，查 3.2T、65%、optical transceivers，核对最终令与第三次 FNPRM 分界。",
+      "Federal Register、FCC 公告与会议公开材料，核对截至 2026-11-10 找到的记录。",
+      "检索 Morgan Stanley 原题 Potential FCC Rules on Optical Transceivers More Likely to Come in at 3.2T 与 2026-10-01，未取得发布方原文。"
+    ]
+  },
+  {
+    "id": "G-d6ee1cb32ece68e2",
+    "verdict": "部分证实",
+    "confirmed": "2026 年 10 月 13 日生效的 FCC 26-50 最终规则规定，如果由名单识别的实体制造整机本会导致整机不得获授权，则使用其逻辑硬件组件的设备也不得获得设备授权。此项组件规则前瞻适用于新申请。待审申请随后更改相关组件时可能适用。最终令还处理设备变更、销售和关键基础设施定义。全文 ¶22 在转述评论时提到光收发器。 10 月 21 日官方名单全表未将商业光收发器单列为独立品类。",
+    "missing": "核对了 8 月 20 日及 10 月 21 日官方名单附录和 11 月 6 日 FCC 条件批准增量。FCC 动态名单页返回 403，未取得 11 月完整名单。 具体模块仍须核查设备类别、生产者、整机条件和实际授权方式。",
+    "proposal": "保留 7 月 22 日通过、7 月 23 日发布、9 月 11 日刊载、10 月 13 日生效，并按 §2.903(b)(2) 记录两项触发条件。 将 10 月 21 日名单中的独立品类观察单列。",
+    "target": "本次审阅的政策证据。旧账本未定位。待用户确认兼容登记路径后才考虑正式写入。",
+    "evidence": [
+      {
+        "title": "《联邦公报》FCC 26-50 最终规则，91 FR 57798",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf",
+        "locator": "p. 57798 DATES，pp. 57798–57799 §A，修订 47 CFR §§ 2.902–2.903",
+        "quote": "This final rule is effective October 13, 2026."
+      },
+      {
+        "title": "FCC 26-50 原文：最终令与第三次进一步拟议规则公告",
+        "url": "https://docs.fcc.gov/public/attachments/FCC-26-50A1.pdf",
+        "locator": "最终令 pp. 10–11 ¶¶22–23。拟议规则 p. 51 ¶145、pp. 67–68 ¶¶198–200",
+        "quote": "We seek comment on this option."
+      },
+      {
+        "title": "FCC DA 26-870 Covered List 更新公告",
+        "url": "https://docs.fcc.gov/public/attachments/DA-26-870A1.pdf",
+        "locator": "8 月 20 日，p. 2 及附录 A，当时官方名单",
+        "quote": ""
+      },
+      {
+        "title": "FCC DA 26-1203 Covered List 特定设备附条件批准",
+        "url": "https://docs.fcc.gov/public/attachments/DA-26-1203A1.pdf",
+        "locator": "11 月 6 日，p. 1 与脚注 1，附表仅为条件批准产品",
+        "quote": "last updated Nov. 6, 2026"
+      },
+      {
+        "title": "FCC DA 26-1130 附录 A：2026-10-21 Covered List",
+        "url": "https://docs.fcc.gov/public/attachments/DA-26-1130A1.pdf",
+        "locator": "附录 A pp. 1–3（PDF pp. 4–6），完整当日名单",
+        "quote": "COVERED LIST (October 21, 2026)"
+      }
+    ],
+    "search": [
+      "FCC-26-50A1 全文与 91 FR 57798，查 3.2T、65%、optical transceivers，核对最终令与第三次 FNPRM 分界。",
+      "Federal Register、FCC 公告与会议公开材料，核对截至 2026-11-10 找到的记录。",
+      "查 DA 26-1130 附录 A 整份名单，区分 10 月 21 日快照和 11 月 6 日增量。"
+    ]
+  },
+  {
+    "id": "G-cb80feb5485f402e",
+    "verdict": "未取得原件",
+    "confirmed": "FCC 在 8 月 7 日刊登 ET Docket 21-232 进一步征求意见公告。可定位行业协会 ITI 的 ex parte 档号，尚未读到文件原件。",
+    "missing": "ITI 文件官方访问返回 403。仍需原件确认协会意见，并另取具名 CSP 自身提交或公开声明及具体草案。协会代表成员不等同逐家公司提交。",
+    "proposal": "",
+    "target": "UNKNOWN。保留在本次审阅的待核线索。",
+    "evidence": [
+      {
+        "title": "《联邦公报》第三次进一步拟议规则公告，91 FR 51139",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-08-07/pdf/2026-16197.pdf",
+        "locator": "p. 51139 ACTION/SUMMARY，ET Docket 21–232",
+        "quote": "Proposed rule."
+      }
+    ],
+    "search": [
+      "从公开报道定位 FCC ECFS 26110071120/1，直接页和公共接口均返回 403。",
+      "查具名 AWS、Microsoft、Google、Meta 的 FCC 案卷提交，未取得支持该条表述的原件。"
+    ]
+  },
+  {
+    "id": "G-b1b6d9e7209e03f4",
+    "verdict": "部分证实",
+    "confirmed": "FCC 26-50 处理设备授权供应链风险。参议院 S.5548 的公开版本提出对特定联邦关键系统采购施加限制。两者分别属于设备授权与立法提案。",
+    "missing": "需提供具体采购提案以外的各 CSP 采购条款、供应商准入文件与多源采购记录，才能建立行业普遍性。",
+    "proposal": "",
+    "target": "本次审阅的政策证据。旧账本未定位。待用户确认兼容登记路径后才考虑正式写入。 立法线索另见本次 S.5548 专条。",
+    "evidence": [
+      {
+        "title": "《联邦公报》FCC 26-50 最终规则，91 FR 57798",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf",
+        "locator": "p. 57798 DATES，pp. 57798–57799 §A，修订 47 CFR §§ 2.902–2.903",
+        "quote": "This final rule is effective October 13, 2026."
+      },
+      {
+        "title": "美国参议院 S.5548 法案原文",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119s5548is/xhtml/BILLS-119s5548is.html",
+        "locator": "IS 版本，第 2 条关于联邦关键系统采购",
+        "quote": ""
+      }
+    ],
+    "search": [
+      "FCC-26-50A1 全文与 91 FR 57798，查 3.2T、65%、optical transceivers，核对最终令与第三次 FNPRM 分界。",
+      "Federal Register、FCC 公告与会议公开材料，核对截至 2026-11-10 找到的记录。",
+      "GovInfo 119s5548is 原文第 2 条，核对采购对象。"
+    ]
+  },
+  {
+    "id": "G-96c83238115e2734",
+    "verdict": "限定证实",
+    "confirmed": "10 月 8 日公布的 10 月 29 日暂定议程未单列中国光收发器限制。10 月 22 日签发的正式议程仍未单列这项议题。正式议程第 4 项为测试实验室和认证机构，第 5 项为国际 Section 214，第 8 项以笼统标题列示执法事项。 10 月 29 日 FCC 通过、10 月 30 日发布 FCC 26-73，调整非互惠经济体测试实验室和认证机构的认可规则，统一过渡期至 2028 年 12 月 1 日。",
+    "missing": "结论范围限于已公布的该次议程。第 8 项主题应以随后披露的行动文件判断，其他程序不能由该次议程排除。",
+    "proposal": "记录 10 月 8 日暂定及 10 月 22 日正式议程的有限观察。另以 FCC 26-73 标出实际通过的设备测试认证事项和过渡期。",
+    "target": "本次审阅的政策证据。旧账本未定位。待用户确认兼容登记路径后才考虑正式写入。",
+    "evidence": [
+      {
+        "title": "FCC 10 月公开会议暂定议程 DOC-425708A1",
+        "url": "https://docs.fcc.gov/public/attachments/DOC-425708A1.pdf",
+        "locator": "10 月 8 日发布，全文 pp. 1–2",
+        "quote": "the items below are tentatively on the agenda"
+      },
+      {
+        "title": "《联邦公报》10 月 29 日 FCC 公开会议正式议程",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-10-29/pdf/2026-22080.pdf",
+        "locator": "91 FR 68146–68148，10 月 22 日公告，议题 1–8",
+        "quote": "Prohibiting Test Labs and Certification Bodies in Non-Reciprocal Countries"
+      },
+      {
+        "title": "FCC 26-73 非互惠经济体测试和认证规则",
+        "url": "https://docs.fcc.gov/public/attachments/FCC-26-73A1.pdf",
+        "locator": "封面、p. 2 及 pp. 48–49，ET Docket 24-136",
+        "quote": "following a uniform transition ending December 1, 2028"
+      }
+    ],
+    "search": [
+      "对照 DOC-425708A1 与 FR Doc 2026-22080 的各议题。",
+      "FCC 26-73 原文封面、过渡期及 ET Docket 24-136。"
+    ]
+  },
+  {
+    "id": "G-917b7b15076aaab5",
+    "verdict": "部分证实",
+    "confirmed": "FCC 10 月公开议程未单列中国光收发器限制。USITC 337-TA-1526 立案公告的标的是垂直供电系统、相关组件和含该系统的计算系统。两份文件各有自己的对象和程序。 10 月 29 日 FCC 通过、10 月 30 日发布 FCC 26-73，调整非互惠经济体测试实验室和认证机构的认可规则，统一过渡期至 2028 年 12 月 1 日。",
+    "missing": "标题式综合表述未指明何者作出澄清。公告不能扩推整个光通信行业的监管风险或涉案公司经营影响。",
+    "proposal": "",
+    "target": "本次审阅的政策证据。旧账本未定位。待用户确认兼容登记路径后才考虑正式写入。 FCC 见 G-96c83238115e2734，ITC 见本次 337 案专条。",
+    "evidence": [
+      {
+        "title": "《联邦公报》10 月 29 日 FCC 公开会议正式议程",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-10-29/pdf/2026-22080.pdf",
+        "locator": "91 FR 68146–68148，10 月 22 日公告，议题 1–8",
+        "quote": "Prohibiting Test Labs and Certification Bodies in Non-Reciprocal Countries"
+      },
+      {
+        "title": "USITC 337-TA-1526 立案公告",
+        "url": "https://www.usitc.gov/fed_reg_notices/section_337_notices/certain_vertical_power_delivery_systems_components_100926.htm",
+        "locator": "标题及案号，垂直供电系统及含此类系统的计算系统",
+        "quote": ""
+      },
+      {
+        "title": "FCC 26-73 非互惠经济体测试和认证规则",
+        "url": "https://docs.fcc.gov/public/attachments/FCC-26-73A1.pdf",
+        "locator": "封面、p. 2 及 pp. 48–49，ET Docket 24-136",
+        "quote": "following a uniform transition ending December 1, 2028"
+      }
+    ],
+    "search": [
+      "对照 FCC Sunshine 议程及 USITC 337-TA-1526 立案原文。"
+    ]
+  },
+  {
+    "id": "G-734e722c63257448",
+    "verdict": "部分证实",
+    "confirmed": "东山精密 10 月 8 日投关记录第 1、6 问将传闻中的 65% 比例视为市场说法。第 13 问披露截至当时公司未收到客户就相关法案的专门问询，下游需求稳定、交付有序。公司答复的主体口径为东山精密。",
+    "missing": "同份投关记录未载加州 A2LA 实验室或索尔思单体在手订单。缺 A2LA 证书编号、资质范围和有效期及索尔思专门披露。公司表述不构成 FCC 裁定。",
+    "proposal": "如需保留经营披露，仅记录东山精密于 10 月 8 日的归因表述和当时交付情况，分开审核实验室资质及子公司口径。",
+    "target": "points.csv P133 可对照公司与光模块对象，现有能力点不适合承载传闻或产品授权裁定。拟留在本次审阅的公司披露。",
+    "evidence": [
+      {
+        "title": "东山精密 2026-10-08 投资者关系活动记录表",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-08/1225598207.PDF",
+        "locator": "问题 1、6、13",
+        "quote": "属于非官方市场传闻"
+      },
+      {
+        "title": "《联邦公报》FCC 26-50 最终规则，91 FR 57798",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf",
+        "locator": "p. 57798 DATES，pp. 57798–57799 §A，修订 47 CFR §§ 2.902–2.903",
+        "quote": "This final rule is effective October 13, 2026."
+      }
+    ],
+    "search": [
+      "巨潮 1225598207.PDF 问题 1、6、13。",
+      "A2LA 公开目录及 Source Photonics California/A2LA 搜索，未定位可绑定证书。"
+    ]
+  },
+  {
+    "id": "G-603d1e220d8b305e",
+    "verdict": "部分证实",
+    "confirmed": "FCC 26-50 最终条文没有设置 3.2T 光模块限制或 65% 光模块豁免。进一步拟议规则的光收发器 BOM 披露提问和 Buy American 65% 出现在不同段落、不同语境。",
+    "missing": "在发文方站点和公开索引检索研报英文标题、作者归因及 2026-10-01 日期，未取得摩根士丹利发布的原件。公开转述只用于定位。 不能确定研报是否为传闻唯一来源。检索结果也不能排除未公开方案或另案未来措施。",
+    "proposal": "",
+    "target": "本次审阅的政策证据。旧账本未定位。待用户确认兼容登记路径后才考虑正式写入。 以 G-d6ee1cb32ece68e2 为最终规则主条，研报归因仍待核。",
+    "evidence": [
+      {
+        "title": "《联邦公报》FCC 26-50 最终规则，91 FR 57798",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf",
+        "locator": "p. 57798 DATES，pp. 57798–57799 §A，修订 47 CFR §§ 2.902–2.903",
+        "quote": "This final rule is effective October 13, 2026."
+      },
+      {
+        "title": "FCC 26-50 原文：最终令与第三次进一步拟议规则公告",
+        "url": "https://docs.fcc.gov/public/attachments/FCC-26-50A1.pdf",
+        "locator": "最终令 pp. 10–11 ¶¶22–23。拟议规则 p. 51 ¶145、pp. 67–68 ¶¶198–200",
+        "quote": "We seek comment on this option."
+      },
+      {
+        "title": "《联邦公报》第三次进一步拟议规则公告，91 FR 51139",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-08-07/pdf/2026-16197.pdf",
+        "locator": "p. 51139 ACTION/SUMMARY，ET Docket 21–232",
+        "quote": "Proposed rule."
+      }
+    ],
+    "search": [
+      "FCC-26-50A1 全文与 91 FR 57798，查 3.2T、65%、optical transceivers，核对最终令与第三次 FNPRM 分界。",
+      "Federal Register、FCC 公告与会议公开材料，核对截至 2026-11-10 找到的记录。",
+      "检索摩根士丹利发布域、公开索引及同期媒体线索，未取报告原件。"
+    ]
+  },
+  {
+    "id": "G-3e5415f20897d6dc",
+    "verdict": "部分证实",
+    "confirmed": "正式刊载日为 9 月 11 日，9 月 12 日为日更标注日。最终规则调整设备授权条件。全文 ¶22 提及评论者将光收发器作为逻辑硬件示例，最终规则并未以光收发器为独立品类修改 Covered List。 10 月 21 日官方名单全表未将商业光收发器单列为独立品类。",
+    "missing": "核对了 8 月 20 日及 10 月 21 日官方名单附录和 11 月 6 日 FCC 条件批准增量。FCC 动态名单页返回 403，未取得 11 月完整名单。 仅凭刊载不能证明任意商业光模块获准。",
+    "proposal": "",
+    "target": "本次审阅的政策证据。旧账本未定位。待用户确认兼容登记路径后才考虑正式写入。 刊载与生效日合并进 G-d6ee1cb32ece68e2。",
+    "evidence": [
+      {
+        "title": "《联邦公报》FCC 26-50 最终规则，91 FR 57798",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf",
+        "locator": "p. 57798 DATES，pp. 57798–57799 §A，修订 47 CFR §§ 2.902–2.903",
+        "quote": "This final rule is effective October 13, 2026."
+      },
+      {
+        "title": "FCC 26-50 原文：最终令与第三次进一步拟议规则公告",
+        "url": "https://docs.fcc.gov/public/attachments/FCC-26-50A1.pdf",
+        "locator": "最终令 pp. 10–11 ¶¶22–23。拟议规则 p. 51 ¶145、pp. 67–68 ¶¶198–200",
+        "quote": "We seek comment on this option."
+      },
+      {
+        "title": "FCC DA 26-870 Covered List 更新公告",
+        "url": "https://docs.fcc.gov/public/attachments/DA-26-870A1.pdf",
+        "locator": "8 月 20 日，p. 2 及附录 A，当时官方名单",
+        "quote": ""
+      },
+      {
+        "title": "FCC DA 26-1130 附录 A：2026-10-21 Covered List",
+        "url": "https://docs.fcc.gov/public/attachments/DA-26-1130A1.pdf",
+        "locator": "附录 A pp. 1–3（PDF pp. 4–6），完整当日名单",
+        "quote": "COVERED LIST (October 21, 2026)"
+      }
+    ],
+    "search": [
+      "FCC-26-50A1 全文与 91 FR 57798，查 3.2T、65%、optical transceivers，核对最终令与第三次 FNPRM 分界。",
+      "Federal Register、FCC 公告与会议公开材料，核对截至 2026-11-10 找到的记录。",
+      "查 DA 26-1130 附录 A 整份名单，区分 10 月 21 日快照和 11 月 6 日增量。"
+    ]
+  },
+  {
+    "id": "G-23c7016ebd9a3b66",
+    "verdict": "限定证实",
+    "confirmed": "10 月 8 日暂定议程与 10 月 22 日正式议程均未单列中国光收发器限制。10 月 21 日日更早于正式议程签发，因此当时可核的对应材料为暂定议程。 10 月 29 日 FCC 通过、10 月 30 日发布 FCC 26-73，调整非互惠经济体测试实验室和认证机构的认可规则，统一过渡期至 2028 年 12 月 1 日。",
+    "missing": "正式议程含测试认证与通用执法事项，不能据此判断会议外或非公开程序是否讨论光模块。",
+    "proposal": "",
+    "target": "本次审阅的政策证据。旧账本未定位。待用户确认兼容登记路径后才考虑正式写入。 合并进 G-96c83238115e2734 的会议议程主条。",
+    "evidence": [
+      {
+        "title": "FCC 10 月公开会议暂定议程 DOC-425708A1",
+        "url": "https://docs.fcc.gov/public/attachments/DOC-425708A1.pdf",
+        "locator": "10 月 8 日发布，全文 pp. 1–2",
+        "quote": "the items below are tentatively on the agenda"
+      },
+      {
+        "title": "《联邦公报》10 月 29 日 FCC 公开会议正式议程",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-10-29/pdf/2026-22080.pdf",
+        "locator": "91 FR 68146–68148，10 月 22 日公告，议题 1–8",
+        "quote": "Prohibiting Test Labs and Certification Bodies in Non-Reciprocal Countries"
+      },
+      {
+        "title": "FCC 26-73 非互惠经济体测试和认证规则",
+        "url": "https://docs.fcc.gov/public/attachments/FCC-26-73A1.pdf",
+        "locator": "封面、p. 2 及 pp. 48–49，ET Docket 24-136",
+        "quote": "following a uniform transition ending December 1, 2028"
+      }
+    ],
+    "search": [
+      "核对 DOC-425708A1 与 FR Doc 2026-22080 的公布顺序及全议题。",
+      "FCC 26-73 原文封面、过渡期及 ET Docket 24-136。"
+    ]
+  },
+  {
+    "id": "G-01e441648c073919",
+    "verdict": "部分证实",
+    "confirmed": "9 月 11 日刊载、10 月 13 日生效及 10 月 29 日公开议程未单列中国光收发器议题可复核。10 月 29 日发布的 11 月 19 日暂定议程也未单列该议题。最终规则没有采用所述 65% 光模块豁免。 10 月 29 日 FCC 通过、10 月 30 日发布 FCC 26-73，调整非互惠经济体测试实验室和认证机构的认可规则，统一过渡期至 2028 年 12 月 1 日。 10 月 21 日官方名单全表未将商业光收发器单列为独立品类。",
+    "missing": "在发文方站点和公开索引检索研报英文标题、作者归因及 2026-10-01 日期，未取得摩根士丹利发布的原件。公开转述只用于定位。 核对了 8 月 20 日及 10 月 21 日官方名单附录和 11 月 6 日 FCC 条件批准增量。FCC 动态名单页返回 403，未取得 11 月完整名单。 整机准入须逐产品核实，不从议程或单份规则推出全面准入。",
+    "proposal": "",
+    "target": "本次审阅的政策证据。旧账本未定位。待用户确认兼容登记路径后才考虑正式写入。 归并到 G-d6ee1cb32ece68e2 和 G-96c83238115e2734。",
+    "evidence": [
+      {
+        "title": "《联邦公报》FCC 26-50 最终规则，91 FR 57798",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf",
+        "locator": "p. 57798 DATES，pp. 57798–57799 §A，修订 47 CFR §§ 2.902–2.903",
+        "quote": "This final rule is effective October 13, 2026."
+      },
+      {
+        "title": "FCC 26-50 原文：最终令与第三次进一步拟议规则公告",
+        "url": "https://docs.fcc.gov/public/attachments/FCC-26-50A1.pdf",
+        "locator": "最终令 pp. 10–11 ¶¶22–23。拟议规则 p. 51 ¶145、pp. 67–68 ¶¶198–200",
+        "quote": "We seek comment on this option."
+      },
+      {
+        "title": "《联邦公报》10 月 29 日 FCC 公开会议正式议程",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-10-29/pdf/2026-22080.pdf",
+        "locator": "91 FR 68146–68148，10 月 22 日公告，议题 1–8",
+        "quote": "Prohibiting Test Labs and Certification Bodies in Non-Reciprocal Countries"
+      },
+      {
+        "title": "FCC 11 月公开会议暂定议程 DOC-426309A1",
+        "url": "https://docs.fcc.gov/public/attachments/DOC-426309A1.pdf",
+        "locator": "10 月 29 日发布，11 月 19 日会议，全文",
+        "quote": ""
+      },
+      {
+        "title": "FCC DA 26-1203 Covered List 特定设备附条件批准",
+        "url": "https://docs.fcc.gov/public/attachments/DA-26-1203A1.pdf",
+        "locator": "11 月 6 日，p. 1 与脚注 1，附表仅为条件批准产品",
+        "quote": "last updated Nov. 6, 2026"
+      },
+      {
+        "title": "FCC 26-73 非互惠经济体测试和认证规则",
+        "url": "https://docs.fcc.gov/public/attachments/FCC-26-73A1.pdf",
+        "locator": "封面、p. 2 及 pp. 48–49，ET Docket 24-136",
+        "quote": "following a uniform transition ending December 1, 2028"
+      },
+      {
+        "title": "FCC DA 26-1130 附录 A：2026-10-21 Covered List",
+        "url": "https://docs.fcc.gov/public/attachments/DA-26-1130A1.pdf",
+        "locator": "附录 A pp. 1–3（PDF pp. 4–6），完整当日名单",
+        "quote": "COVERED LIST (October 21, 2026)"
+      }
+    ],
+    "search": [
+      "FCC-26-50A1 全文与 91 FR 57798，查 3.2T、65%、optical transceivers，核对最终令与第三次 FNPRM 分界。",
+      "Federal Register、FCC 公告与会议公开材料，核对截至 2026-11-10 找到的记录。",
+      "查 10 月、11 月公开会议议程，另核 11 月 6 日 FCC DA 26-1203。",
+      "FCC 26-73 原文封面、过渡期及 ET Docket 24-136。",
+      "查 DA 26-1130 附录 A 整份名单，区分 10 月 21 日快照和 11 月 6 日增量。"
+    ]
+  },
+  {
+    "id": "G-c27c3a14f839220e",
+    "verdict": "原说法待证",
+    "confirmed": "9 月 30 日上证路演中心有长光华芯官方半年度说明会。该场披露可以定位原材料管理答复，与本条所指 10 月媒体采访不同。FCC 最终条文及随附征询的区别可独立核对。",
+    "missing": "长光华芯 10 月说法在媒体中归因于证券部人士，未取得发行人原始公告或采访完整可核材料。800G/1.6T 极度紧缺需要按产品、市场和时点独立核验。在发文方站点和公开索引检索研报英文标题、作者归因及 2026-10-01 日期，未取得摩根士丹利发布的原件。公开转述只用于定位。",
+    "proposal": "",
+    "target": "points.csv P066 为公司激光芯片能力对照，不能承载全行业供给缺口。合规判断仍为 UNKNOWN。",
+    "evidence": [
+      {
+        "title": "上证路演中心 长光华芯 2026 年半年度业绩说明会",
+        "url": "https://roadshow.sseinfo.com/stayTuned/41298",
+        "locator": "2026-09-30 13:52:34，公司原材料供应答复，不对应 10 月采访",
+        "quote": ""
+      },
+      {
+        "title": "《联邦公报》FCC 26-50 最终规则，91 FR 57798",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf",
+        "locator": "p. 57798 DATES，pp. 57798–57799 §A，修订 47 CFR §§ 2.902–2.903",
+        "quote": "This final rule is effective October 13, 2026."
+      },
+      {
+        "title": "FCC 26-50 原文：最终令与第三次进一步拟议规则公告",
+        "url": "https://docs.fcc.gov/public/attachments/FCC-26-50A1.pdf",
+        "locator": "最终令 pp. 10–11 ¶¶22–23。拟议规则 p. 51 ¶145、pp. 67–68 ¶¶198–200",
+        "quote": "We seek comment on this option."
+      }
+    ],
+    "search": [
+      "检索上证 e 互动、路演中心、发行人和交易所 10 月披露。",
+      "跟查《科创板日报》采访转述，仅作定位。",
+      "FCC-26-50A1 全文与 91 FR 57798，查 3.2T、65%、optical transceivers，核对最终令与第三次 FNPRM 分界。",
+      "Federal Register、FCC 公告与会议公开材料，核对截至 2026-11-10 找到的记录。"
+    ]
+  }
+]

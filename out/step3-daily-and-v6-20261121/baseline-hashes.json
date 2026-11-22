@@ -1,0 +1,31 @@
+{
+  "hashes": {
+    "docs/control/ACTIVE_WORKPACK.yaml": "488008fed1a91c7c89a510ca5304dae2ed4b9274462fd04553d622c71322227d",
+    "points.csv": "b90c7ccc4c2c62451d14229b732193875d1e93ea5c04d769e6866e48cb6c6063",
+    "edges.csv": "0768d707a1247a5886ed7bfaaab6fcbbdc688862bf3b00ee273112d958f81f38",
+    "triage.csv": "b1103f272ed27df1902766c06eb08ee11eca4ad96bfd5e4ed4435f9b947a6c02",
+    "tree.yaml": "397fec5ac93659706aab02fdea216532ddd7192343527e891b63211034220390",
+    "knowledge.yaml": "af29efd3be539fce27bab8df4f01ec9e0b6486e4c3c06b5faff34192f3d01d6a",
+    "macro_evidence.csv": "5bb76336700844199b9119f931671be52adba0feaff8bc466b1e97719e6c9f9e",
+    "shipments.csv": "e2526f29729ef212d2b80a40cc405bb51e9b3cb6c05739f01729d7ed1bf37dc9",
+    "participation.py": "53be6c3c21d9d509dbf46f08094820bf0af96a49d1fc0f4660c5547fe68fbf34",
+    "scan.py": "d78b204094bd605e24dbf5cc5aeacc892e0ce9ec7ec3e9e7fb6829f85a28619e",
+    "refs/entity-registry.yaml": "c740381927a4e20924737c9b1ac08501a2683d2afce1c6ef88cf4a5d6ff13c12",
+    "corpus/_frozen.csv": "ff58d9c0e420fd6d80b2528d860790780c2b5fc2b2254ec0a5f651233caad395",
+    "corpus/content_ledger/content_ledger.csv": "a01a65124a5bd4fc143c851bc6aebd5d64d7248b4aa92c354c97db2f6d056f81",
+    "corpus/relationships/relationship_timeline.csv": "00d0c8e4df756348c48f6c30e5d24abf4395fd24c35dea1f19ae8819c0b5bb0c",
+    "corpus/salvaged/entity_nodes.csv": "5a7453b59e6f146e3171136e9aa794eeec7a71650c428a1937a0f3fa86cb2e9b",
+    "calls/sources.csv": "3268725d149270bde02b7fb465d2a1f857ab1ae0dfafdf22ed1ba1dfe32aee0f",
+    "calls/claims.csv": "dfdaf14306e091ea7a6911d5bda4bacb3b7e7593d046edec87619e7e2214eab1",
+    "calls/commitments.csv": "4f43e729a5ac3d99dcb9edbaa41d743e849b6898e984338f1328c6c34ed6081c",
+    "calls/disclosures.csv": "6a0caa7f294ac0b32a8f216872677949c9334520c079b9f9ebe79b5a691de4a9",
+    "calls/events.csv": "f77c87b6ff8d54c235d04eaa38de91a370e2e804ef8e4c671f91220b799a491f",
+    "calls/event_claims.csv": "2be39d6f11e8f47b3a75c6980bc45de2acf6c341fb4c6eaea6997b58894b970c",
+    "calls/event_evidence.csv": "8302b5b627c8b9dda4ace6428e9ad197cfe3da7281769f7eb9d7ef121e931df4",
+    "calls/watch_entities.csv": "2ef06938d2e1062af7cf61e429fa5f7ecc0a205ec7f5b78c938d15ee386ee13b",
+    "calls/solution_links.csv": "491a542e9bad782bf18cb0c9522e86989b660d4ea3bd63b4e948c6ba923d4269",
+    "tests/research/test_question_completion_semantics.py": "510226f4b2df25e757adca30e6bd836805638cc2b0e1b41b7441d560e0f1bd9a"
+  },
+  "workflow_rehearsal_annual_count": 463,
+  "refs_count": 8
+}

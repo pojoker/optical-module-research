@@ -22,7 +22,21 @@ COMPANY_ALIASES = {
     "武汉钧恒科技有限公司": "汇绿生态",
     "罗博特科/ficonTEC": "罗博特科",
     "炬光": "炬光科技",
+    "南大光电": "江苏南大光电材料股份有限公司",
+    "汇聚科技": "汇聚科技(Huiju Technology)",
+    "鸿腾精密": "鸿腾精密(FIT Hon Teng)",
+    "FIT": "鸿腾精密(FIT Hon Teng)",
+    "AAOI": "Applied Optoelectronics(AAOI)",
+    "Intel": "Intel(含其代工厂)",
+    "云南鑫耀半导体材料有限公司": "云南锗业",
 }
+
+_BRACKETED = re.compile(r"[（(].*?[）)]")
+
+
+def _normalize_company(value: str) -> str:
+    """Drop parenthesized qualifiers ("汇聚科技(Huiju Technology)" -> "汇聚科技")."""
+    return _BRACKETED.sub("", value or "").strip()
 
 STATUS_ORDER = {
     "已确认参与": 0,
@@ -56,13 +70,39 @@ def unique_universe() -> list[dict[str, str]]:
 
 
 def resolve_company(name: str, universe_names: set[str]) -> str | None:
-    name = name.strip()
+    """Map a ledger company label onto exactly one universe name, or None.
+
+    Order: exact name -> explicit alias -> bracket-stripped exact match ->
+    unambiguous bidirectional substring match on bracket-stripped names
+    (both sides >= 3 chars). Any ambiguity returns None instead of merging.
+    """
+    name = (name or "").strip()
+    if not name:
+        return None
     if name in universe_names:
         return name
     alias = COMPANY_ALIASES.get(name)
     if alias in universe_names:
         return alias
-    matches = [candidate for candidate in universe_names if len(candidate) >= 3 and candidate in name]
+    norm_name = _normalize_company(name)
+    if not norm_name:
+        return None
+    normalized = {candidate: _normalize_company(candidate) for candidate in universe_names}
+    exact = [candidate for candidate, norm in normalized.items() if norm and norm == norm_name]
+    if len(exact) == 1:
+        return exact[0]
+    if len(exact) > 1:
+        return None
+    alias = COMPANY_ALIASES.get(norm_name)
+    if alias in universe_names:
+        return alias
+    if len(norm_name) < 3:
+        return None
+    matches = [
+        candidate
+        for candidate, norm in normalized.items()
+        if len(norm) >= 3 and (norm in norm_name or norm_name in norm)
+    ]
     if len(matches) == 1:
         return matches[0]
     return None

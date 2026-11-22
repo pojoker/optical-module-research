@@ -1,0 +1,631 @@
+                                                                                              DA 26-1203
+                                                                               Released: November 6, 2026
+
+     THE PUBLIC SAFETY AND HOMELAND SECURITY BUREAU ANNOUNCES
+  CONDITIONAL APPROVAL AND EXEMPTION OF CERTAIN UNCREWED AIRCRAFT
+SYSTEMS, ROUTERS, ADVANCED ROBOTIC DEVICES, AND POWER INVERTERS FROM
+                          FCC COVERED LIST
+
+                  WC Docket No. 18-89, ET Docket No. 21-232, EA Docket No. 21-233
+
+         The Federal Communications Commission’s (FCC or Commission) Public Safety and Homeland
+Security Bureau (PSHSB or Bureau) maintains a list of equipment and services (Covered List) that have
+been determined to “pose an unacceptable risk to the national security of the United States or the security
+and safety of United States persons.”1 Pursuant to Section 2 of the Secure and Trusted Communications
+Networks Act of 2019 (Secure Networks Act)2 and sections 1.50002(a) and 1.50003 of the Commission’s
+rules,3 PSHSB announces that the Department of War (DoW) has granted Conditional Approval for
+certain foreign-produced uncrewed aircraft systems (UAS), routers, advanced robotic devices, and power
+inverters. Therefore, such devices are exempt from the Covered List.
+
+Additions to the Covered List
+
+        UAS and UAS Critical Components. On December 22, 2025, PSHSB issued a Public Notice
+adding all UAS and UAS critical components produced in a foreign country to the Covered List.4 This
+action was based on a National Security Determination from an Executive Branch interagency body,
+including several appropriate national security agencies, determining (among other things) that UAS and
+UAS critical components produced in a foreign country pose an unacceptable risk to the national security
+of the United States and to the safety and security of U.S. persons. In that Public Notice, we stated, “[i]f
+we receive a further specific determination from the Department of War or the Department of Homeland
+Security that a given UAS, class of UAS, or UAS critical component does not pose unacceptable risks,
+we will further update the Covered List.”5
+
+
+
+1 Secure and Trusted Communications Networks Act of 2019, Pub. L. No. 116-124, 133 Stat. 158 (2020) (codified
+
+as amended at 47 U.S.C. §§ 1601-1609) (Secure Networks Act); 47 CFR §§ 1.50002, 1.50003. For the current
+version of the Covered List, see Federal Communications Commission, List of Equipment and Services Covered By
+Section 2 of The Secure Networks Act, https://www.fcc.gov/supplychain/coveredlist (last updated Nov. 6, 2026).
+2 47 U.S.C. § 1601.
+
+3 47 CFR §§ 1.50002(a), 1.50003; see also Protecting Against National Security Threats to the Communications
+
+Supply Chain Through FCC Programs, WC Docket No. 18-89, Second Report and Order, 35 FCC Rcd 14284
+(2020) (Supply Chain Second Report and Order).
+4 Public Safety and Homeland Security Bureau Announces Addition of Uncrewed Aircraft Systems (UAS) and UAS
+
+Critical Components Produced Abroad, and Equipment and Services Listed in Section 1709 of the FY2025 NDAA,
+to FCC Covered List, WC Docket 18-89, Public Notice, DA 25-1086 (Dec 22, 2025) (UAS Public Notice).
+5 UAS Public Notice at 3.
+                                      Federal Communications Commission                         DA 26-1203
+
+
+
+        Most recently, on July 21, 2026, we updated the Covered List to reflect DoW’s determination that
+extended timelines for the exemption of UAS and UAS critical components included on DoW’s Blue
+UAS Cleared List and UAS and UAS critical components that qualify as “domestic end products” under
+the Buy American Standard to January 1, 2028.6 We also updated the Covered List to reflect DoW’s
+determination that Conditional Approvals for foreign-produced UAS and UAS critical components will
+not terminate on December 31, 2026, so long as the applicant complies with its approved onshoring plan
+and updated vetting of the products.7
+
+         Routers. On March 23, 2026, the Commission added to the Covered List “routers produced in a
+foreign country, except routers which have been granted a Conditional Approval by DoW or DHS.”8 This
+addition was based on a National Security Determination from an Executive Branch interagency body,
+including several appropriate national security agencies, determining (among other things) that routers
+produced in a foreign country pose an unacceptable risk to the national security of the United States and
+to the safety and security of U.S. persons.9
+
+         Advanced Robotic Devices. On July 28, 2026, the Commission added to the Covered List
+“foreign-produced advanced robotic devices, except advanced robotic devices which have been granted a
+Conditional Approval by DoW.”10 This addition was based on a National Security Determination from an
+Executive Branch interagency body, including several appropriate national security agencies, determining
+(among other things) that advanced robotic devices produced in a foreign country pose an unacceptable
+risk to the national security of the United States and to the safety and security of U.S. persons.11
+
+         Power Inverters. On July 28, 2026, PSHSB added to the Covered List “[f]oreign-produced
+power inverters, except power inverters which have been granted a Conditional Approval by DoW or
+DHS.”12 This action was based on a National Security Determination from an Executive Branch
+interagency body, including several appropriate national security agencies, determining (among other
+things) that power inverters produced in a foreign country pose an unacceptable risk to the national
+security of the United States and to the safety and security of U.S. persons.13
+
+         On August 19, 2026, the Commission received another National Security Determination from
+DoW that contained additional determinations related to foreign-produced power inverters. First, DoW
+determined that certain foreign‑produced power inverters that are eligible for certain clean energy tax
+credits do not pose unacceptable risks to the national security of the United States or to the safety and
+security of U.S. persons. Second, DoW determined that the definition of “power inverters” should be
+revised to accurately reflect the specific power inverters that the Executive Branch interagency body and
+
+6 FCC's Public Safety and Homeland Security Bureau Announces Extension of Conditional Approvals and
+Exemption of Certain Uncrewed Aircraft Systems (UAS) and UAS Critical Components from FCC Covered List,
+WC Docket 18-89, Public Notice, DA 26-761 (Jul. 21, 2026) (UAS Extension Public Notice).
+7 UAS Extension Public Notice at 2.
+
+8 FCC’s Public Safety and Homeland Security Bureau Announces Addition of Routers Produced in Foreign
+
+Countries to FCC Covered List, WC Docket No. 18-89, Public Notice, DA 26-278 (Mar. 23, 2026) (Routers Public
+Notice).
+9 Id. at 2.
+
+10 FCC’s Public Safety and Homeland Security Bureau Announces Addition of Foreign-Produced Power Inverters
+
+and Advanced Robotic Devices to FCC Covered List, WC Docket No. 18-89, Public Notice, DA 26-786 (July 28,
+2026) (Power Inverters and Robotics Public Notice).
+11 Power Inverters and Robotics Public Notice at 2-3.
+
+12 Id. at 1-2.
+
+13 Id.
+
+
+                                                        2
+                                    Federal Communications Commission                                  DA 26-1203
+
+
+
+the DoW previously determined to pose unacceptable risks to the national security of the United States or
+to the security and safety of U.S. persons.14 On August 20, 2026, PSHSB updated the Covered List to
+implement these determinations.
+
+Conditional Approvals
+
+        The Executive Branch interagency body established a process by which entities producing certain
+covered equipment in foreign countries can request DoW to evaluate whether such devices do not pose
+unacceptable risks to national security and receive Conditional Approvals that would exempt such devices
+from the Covered List. The Commission has previously updated the Covered List to reflect the
+Conditional Approvals that we have received from DoW.15
+
+      The Commission received National Security Determinations from DoW granting Conditional
+Approvals for the following devices:
+
+              •    Percepto, Inc.’s Air Max drone ecosystem including the Optical Gas Imaging drone and
+                   base station
+              •    ABB Robotics, LLC’s Autonomous Mobile Manipulators, Model Nos. AMMR G0540
+                   and AMMR G1240, and its Autonomous Mobile Robot, Model No. P204V
+              •    Pantograph Industries, PBC’s Pandroid Robot Hardware
+              •    Nextpower, LLC’s APCS-UL and APV-UL product families
+              •    SERCOMM Corporation’s XF10 10GEPON ONU / Wi-Fi 7 Tri-Band 4×4×4 Home
+                   Gateway (terminates May 8, 2028)
+
+         Consistent with the National Security Determinations, these exemptions from the FCC’s Covered
+List are subject to the companies’ continuing “compliance with the onshoring plan[s] outlined in [their]
+conditional approval application[s] and pursuant to updated vetting of [their] products.”16 In addition, the
+advanced robotics National Security Determinations (ABB Robotics, Pantograph Industries) state that
+these conditions apply “unless superseded by another National Security Determination.”
+
+
+
+
+The Covered List
+
+14 See Appendix.
+
+15 See, e.g., FCC’s Public Safety and Homeland Security Bureau Announces Conditional Approval of Certain
+
+Routers and Uncrewed Aircraft Systems (UAS) and Exemption from FCC Covered List, WC Docket No. 18-89,
+Public Notice, DA-26-351 (April 14, 2026); The Public Safety and Homeland Security Bureau Announces
+Conditional Approval and Exemption of Certain Advanced Robotic Devices and Power Inverters from FCC Covered
+List, WC Docket No. 18-89, Public Notice, DA-26-1114 (Oct. 16, 2026); FCC’s Public Safety and Homeland
+Security Bureau Announces Addition of Routers Produced in Foreign Countries to FCC Covered List, WC Docket
+No. 18-89, Public Notice, DA 26-278 (Mar. 23, 2026). The list of devices that have received Conditional Approvals
+can be found on the Bureau’s website at https://www.fcc.gov/supplychain/coveredlist.
+16 The National Security Determinations also state that failure to comply with the onshoring plan or the discovery of
+
+a false statement or misrepresentation in the Conditional Approval application could result in termination of the
+Conditional Approval and return of the equipment to the FCC’s Covered List. Further, consistent with the National
+Security Determinations, Conditional Approvals that do not reflect termination dates will remain effective
+indefinitely, so long as the entity that received Conditional Approval abides by the onshoring plan outlined in its
+Conditional Approval application and pursuant to updated vetting of the products.
+
+                                                          3
+                                     Federal Communications Commission                                     DA 26-1203
+
+
+
+
+        We find that the Conditional Approval constitutes “a specific determination” by DoW that such
+devices do not pose risks to U.S. national security.17 Therefore, we conclude that PSHSB is required to
+update the Covered List to exclude the equipment identified in the Conditional Approval.
+
+         PSHSB takes this action under its authority and obligation to publish and maintain the Covered
+List. Sections 1.50002(a) and 1.50003 of the Commission’s rules require PSHSB to publish the Covered
+List on the Commission’s website, to maintain and update the Covered List, and to monitor the status of
+determinations.18
+
+         The updated list of devices that have received Conditional Approvals is attached as an Appendix
+to this Public Notice and can also be found on the Bureau’s website at
+https://www.fcc.gov/supplychain/coveredlist.19
+
+        We note the continued availability of FCC staff guidance pursuant to sections 0.191 and 0.31(i)
+of the Commission’s rules. Commission staff will provide guidance to TCBs, test labs, and equipment
+authorization applicants on the impact of these updates.
+
+       For further information, please contact Matthew Chai, Attorney Advisor, Operations and
+Emergency Management Division, Public Safety and Homeland Security Bureau at 202-418-1112 or
+Matthew.Chai@fcc.gov.
+
+
+
+
+17 See Routers Public Notice, Appx. C; UAS Public Notice, Appx. C; Power Inverters and Robotics Public Notice.
+
+Appx. C.
+18 47 CFR §§ 1.50002(a), 1.50003.    See Supply Chain Second Report and Order, 35 FCC Rcd at 14319, 14325,
+paras. 72, 77, 92.
+19 The FCC website also contains a list of certain affiliates and subsidiaries of entities identified on the Covered List.
+
+The list of affiliates and subsidiaries does not constitute a comprehensive list of all entities that the Commission may
+find, upon further examination, to qualify as relevant subsidiaries or affiliates of entities on the Covered List. Those
+entities, whether or not they currently provide covered communications equipment or services, are subject to the
+Commission’s prohibitions, such as the prohibition against obtaining authorizations for covered equipment. See
+Reminder: Communications Equipment and Services on the Covered List Pose an Unacceptable Risk to National
+Security, National Security Advisory No. 2025-01, DA 25-927, n.3 (PSHSB Oct. 14, 2025).
+
+
+                                                            4
+                                   Federal Communications Commission                    DA 26-1203
+
+
+
+                                                  APPENDIX
+                                           Conditional Approvals
+                                          Updated November 6, 2026
+
+This Appendix identifies the devices that have been granted Conditional Approvals and are
+therefore exempt from the FCC’s Covered List. The following tables each correspond to a
+different category of foreign-produced devices: Uncrewed Aircraft Systems (UAS), Routers,
+Advanced Robotic Devices, and Power Inverters.
+
+                                       UAS Conditional Approvals
+                 Company & Model                              Date of Conditional Approval
+
+ Percepto, Inc.’s Air Max drone ecosystem including
+                                                                     November 6, 2026
+ the Optical Gas Imaging drone and base station
+
+
+ Voliro AG’s T uncrewed aircraft system                              October 30, 2026
+
+
+ Manna Drones Delivery, Inc.’s 383.2 Uncrewed
+                                                                     October 23, 2026
+ Aircraft Systems
+
+ Dronus S.p.A.’s K500L Uncrewed Aircraft Systems
+ (UAS) and its associated K500L docking station (Nest                 October 2, 2026
+ V2)
+
+ Ascento, Inc.’s Ascento Guard Dori USA v1 Uncrewed
+                                                                     August 21, 2026
+ Aircraft System
+
+
+ Exedy Globalparts Corporation’s Ayre CX Uncrewed
+                                                                       July 24, 2026
+ Aircraft System
+
+
+ Parallel Flight Technologies, Inc.’s Firefly Uncrewed
+                                                                       July 24, 2026
+ Aircraft System
+
+
+ Real-Time Robotics, Inc.’s HERA Tactical Uncrewed
+                                                                       June 22, 2026
+ Aircraft Systems Platform (both standard and VEGA)
+
+
+ Ceres Air LLC’s Uncrewed Aircraft Systems: C40,
+                                                                       June 22, 2026
+ C31, C26, C20, and C6
+
+
+ Flock Group, Inc. (doing business as Flock Safety)
+                                                                       June 12, 2026
+ Flock Alpha Uncrewed Aircraft System
+
+
+ ABZ Innovation Kft.’s L50 Uncrewed Aircraft System                    June 12, 2026
+
+
+
+
+                                                         1
+                                 Federal Communications Commission                    DA 26-1203
+
+
+
+                                      UAS Conditional Approvals
+               Company & Model                              Date of Conditional Approval
+
+Innovation First International, Inc.’s VEX AIR
+                                                                     June 4, 2026
+Uncrewed Aircraft System
+
+Blueflite, Inc.’s Cobalt 461 Uncrewed Aircraft System
+(UAS) and related UAS critical components including
+                                                                    May 26, 2026
+data transmission devices, communications systems,
+and flight controllers
+
+Verity AG’s Series 4 Indoor Autonomous Inventory
+                                                                    May 26, 2026
+System Uncrewed Aircraft System
+
+
+Air VEV, Inc.’s 120C and 060C Unmanned Aerial
+                                                                    May 26, 2026
+Systems
+
+
+Elevon Aerial, LLC, doing business as Elevon Aerial
+                                                                    May 15, 2026
+AG, Z30, Z50, and Z80 Uncrewed Aircraft Systems
+
+Air6 System GmbH’s AIR8 Medium Lifter, AIR8
+Compact, AIR4 Rugged, AIR4 Light, AIR4 Micro,
+                                                                     May 6, 2026
+AIR4 Nano E, and AIR4 Nano Unmanned Aerial
+Systems
+
+Sees.ai v.USA. 1.0 Uncrewed Aircraft System                         April 14, 2026
+
+
+
+SiFly Aviation, Inc. Q12 Uncrewed Aircraft System                  March 17, 2026
+
+
+Mobilicom SkyHopper Series / M Band / Tactical Data
+Link, Various Controllers, and ICE, OS3 Security                   March 17, 2026
+Software
+
+
+ScoutDI Scout 137 Uncrewed Aircraft System                         March 17, 2026
+
+
+
+Verge, Inc. X1 Uncrewed Aircraft System                            March 17, 2026
+
+
+
+
+                                                        2
+                                  Federal Communications Commission                        DA 26-1203
+
+
+
+                                     Routers Conditional Approvals
+                Company & Model                             Dates of Conditional Approval
+
+SERCOMM Corporation’s XF10 10GEPON ONU /
+                                                             November 6, 2026 – May 8, 2028
+Wi-Fi 7 Tri-Band 4×4×4 Home Gateway
+
+
+Alpha’s XGSPON ONT 1000 series router                       October 23, 2026 – April 24, 2028
+
+
+Micro-Star International Co., Ltd. (MSI) Radix series
+                                                            October 21, 2026 – April 17, 2028
+GRBE94 and GRBE36 routers
+
+Vivid-Hosting, LLC’s entire product class of routers,
+including its VH-109 (V1) and VH-109 (V2) robot             October 2, 2026 – March 28, 2028
+radio routers
+
+ASUS Computer International’s RT Router Series,
+ROG GT Series, ROG Strix GS Series, TUF Gaming
+                                                            September 9, 2026 – March 6, 2028
+Series, ExpertWiFi Series, ZenWiFi Mesh Series, 5G
+MiFi Series, repeaters, and wireless access points
+
+Comtrend Corporation’s GRG-4366u, VG-8043u,
+                                                            September 9, 2026 – March 6, 2028
+PBL-6201, and NL-3131 wireless routers
+
+
+Zyxel Communications, Inc.’s EE4210-00, EE6610-00,
+                                                            August 14, 2026 – February 3, 2028
+and 5GNR (NR5331) routers
+
+
+Humax Networks USA, Inc.’s HNR2306 and
+                                                             July 24, 2026 – January 17, 2028
+HNRM30 routers
+
+
+SpaceX Services, Inc.’s Starlink routers                     July 27, 2026 – January 17, 2028
+
+
+Askey Computer Corp.’s ASK-NCM3000 and ASK-                  July 24, 2026 – January 17, 2028
+NCQ8000 (Wi-Fi 8 Gateways)
+
+Askey Computer, Corp.’s ASK-NCM1100, ASK-                   August 14, 2026 – February 3, 2028
+NCM1100E, ASK-NCM3000, and ASK-NCQ8000
+routers
+
+
+Hitron Technologies Americas, Inc.’s DOCSIS 4.0 Wi-
+Fi Gateway, DOCSIS 3.1 Wi-Fi Gateway, XGSPON
+                                                            June 22, 2026 – December 18, 2027
+Wi-Fi Gateway, Standalone Wi-Fi routers, 5G FWA
+Wi-Fi Gateway, and 5G FWA Wi-Fi Hotspot
+
+
+
+Miri Technologies, Inc.’s Miri X10 Travel router            June 12, 2026 – December 12, 2027
+
+
+
+                                                        3
+                                  Federal Communications Commission                           DA 26-1203
+
+
+
+                                     Routers Conditional Approvals
+                Company & Model                            Dates of Conditional Approval
+Arcadyan Technology Corporation’s routers for T-
+Mobile 5G FWA broadband devices, which includes
+the G5AR, G5MAR, GxMAR, GxMAR-ODU, GxAR
+Series (5G FWA), Indoor Wi-Fi Routers Series, and          June 12, 2026 – December 12, 2027
+Wi-Fi Mesh Series; AT&T BGW 720 (BGW Series);
+and Verizon XC46BE (XC Series), CR1000B (WG
+Series), CE1000A, and E3200 (WE Series)
+
+WNC Corporation's LVR5A, LVM9, and LV85C Wi-
+                                                            August 21, 2026 – February, 2028
+Fi Routers
+
+
+Gryphon Safety Online, Inc.’s Parental Control WiFi
+                                                            July 20, 2026 – January 10, 2028
+Router
+
+
+Sercomm Corporation’s Air4992 Wi-Fi 7 Router                July 20, 2026 – January 10, 2028
+
+
+Gemtek Technology Co., Ltd.’s WRTQ-411BE and
+                                                             July 10, 2026 – January 3, 2028
+WNRFQQ-113BE routers
+
+
+Vantiva USA, LLC’s CWA438TX router                           July 8, 2026 – January 3, 2028
+
+
+Sagemcom USA, LLC’s FAST3994, FAST3897,                     June 4, 2026 – December 5, 2027
+FAST5698, FAST5699, and FAST5999 routers
+
+Sagemcom USA, LLC’s “FAST” Broadband Class of               July 24, 2026 – December 5, 2027
+Gateways and Routers (including FAST3994,
+FAST3897, FAST5698, FAST5699, FAST5999)
+
+
+Alpha Networks Inc. USA’s 1700 and 2700 series of          June 1, 2026 – November 22, 2027
+routers
+
+Nokia Corporation’s wireless-fidelity 8 router
+                                                            May 15, 2026 – October 31, 2027
+Nokia Corporation’s Beacons, Open Network Terminal
+(ONT) Based Beacons, and Fastmile Gateway routers           May 18, 2026 – October 31, 2027
+
+
+Calix, Inc.’s 7u6.2 router, part number (100-06200)         May 6, 2026 – October 31, 2027
+
+
+Calix, Inc.’s 7p6, 7u6m.2, 7u4txg, and 7u4 broadband       June 1, 2026 – November 22, 2027
+routers
+
+Calix, Inc.’s GigaSpire and Giga Pro class routers         July 24, 2026 – November 22, 2027
+
+
+
+
+                                                       4
+                                 Federal Communications Commission                       DA 26-1203
+
+
+
+                                   Routers Conditional Approvals
+               Company & Model                            Dates of Conditional Approval
+
+eero LLC’s eero, eero Pro, eero Max, eero PoE, eero
+                                                          April 22, 2026 – October 31, 2027
+Outdoor, eero Signal, and Amazon Leo routers
+
+Netgear, Inc.’s Nighthawk consumer mesh, mobile and
+standalone routers (R, RAX, RAXE, RS, MK, MR, M
+and MH series), Orbi consumer mesh, mobile and
+                                                           April 14, 2026 – October 1, 2027
+standalone routers (RBK, RBE, RBR, RBRE, LBR,
+LBK and CBK series), cable gateways (CAX series)
+and cable modems (CM series)
+
+Adtran Inc.’s Service Delivery Gateway (SDG) class
+                                                           April 14, 2026 – October 1, 2027
+routers
+
+
+
+
+                                                      5
+                                   Federal Communications Commission                 DA 26-1203
+
+
+
+
+                         Advanced Robotic Devices Conditional Approvals
+                Company & Model                            Date of Conditional Approval
+ABB Robotics, LLC’s Autonomous Mobile
+Manipulators, Model Nos. AMMR G0540 and AMMR
+                                                                  November 6, 2026
+G1240, and Autonomous Mobile Robot, Model No.
+P204V
+
+Pantograph Industries, PBC’s Pandroid Robot
+                                                                  November 6, 2026
+Hardware
+
+ARAPL RaaS Private Limited’s Autonomous Pallet
+Truck/Maia2000 V1, V3, & V4 and autonomous
+counterbalance                                                    October 30, 2026
+Forklift/Atlas AC2000 V1, V2, and V4 automated
+mobile robotic equipment
+ATI Motors, Inc.’s Sherpa 3K, Sherpa 10K, FlexFork
+1500, FlexFork 3000, and Sherpa Mecha robotic                     October 30, 2026
+platforms
+
+Lightberry Holdings, Inc.’s Lumi Interactive mobile
+                                                                  October 30, 2026
+robots
+
+SunScout Holdings, Inc.’s, SunScout Eco, Pro, and
+Promax Robotic Platforms and SunScout Solar Shelter               October 30, 2026
+Mobile Energy Systems
+
+Swap Robotics Canada Inc.’s V7 robot                              October 30, 2026
+
+
+OMRON Holdings, Inc.’s LD-150 and LD-300 robotic
+                                                                  October 30, 2026
+platforms
+
+
+Haystack Robotics, Inc.’s Violet AI robotic device                October 23, 2026
+
+
+T-Robotics Co., Ltd.’s entire product class of
+                                                                  October 23, 2026
+automated guided vehicles (AGVs)
+
+
+Vulcan Robotics Inc.’s Sourccey mobile robotic
+                                                                  October 21, 2026
+platform
+
+
+Volley Automation, Inc.’s automated guided vehicles
+                                                                  October 16, 2026
+and autonomous mobile robots (AGV/AMR)
+
+
+Matic Robots, Inc.’s Robotic Floor Cleaner Model
+                                                                   October 2, 2026
+4MA0001 and Charging Dock Model 4DK0008
+
+
+
+
+                                                      6
+                               Federal Communications Commission                  DA 26-1203
+
+
+
+                      Advanced Robotic Devices Conditional Approvals
+              Company & Model                          Date of Conditional Approval
+
+ANSCER Robotics AR250, AR650, and AR1250
+                                                             September 18, 2026
+robotic platforms
+
+
+Husqvarna AB 305v IQ, 310v IQ, 420v IQ, and 440v
+                                                              September 9, 2026
+IQ robotic platforms
+
+
+
+
+                                                   7
+                                  Federal Communications Commission                    DA 26-1203
+
+
+
+                               Power Inverters Conditional Approvals
+                Company & Model                              Date of Conditional Approval
+
+Nextpower, LLC’s APCS-UL and APV-UL product
+                                                                   November 6, 2026
+families
+
+Ingeteam Power Technology, S.A. INGECON
+3POWER C, C Plus, C HV, and M power inverter                        October 30, 2026
+models
+
+Bloom Energy Corporation’s INV-750, AC7, RI7, and
+                                                                    October 23, 2026
+Central power inverter platforms
+
+Hitachi Energy Power Conversion Solutions S.L.U.’s
+WD3 and WD4 power inverters                                         October 23, 2026
+
+
+Dynapower Company, LLC’s CPS-2500, CPS-1250,
+                                                                    October 16, 2026
+and MPS-125 series power inverters
+
+Power Electronics España, S.L.U.’s GEN3 platform
+utility-scale solar power inverters, including the HEM
+                                                                    October 16, 2026
+and the PCSM & Multi PCSM bidirectional battery
+storage inverters
+GE Grid Solutions, LLC’s FLEXINVERTER 1.5kV
+Solar version, 1.5kV BESS version, 2KV Solar                        October 9, 2026
+version, and SiC Variant power inverters
+
+
+
+
+                                                         8
+

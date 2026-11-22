@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gemini 合规线索 · 逐条核查</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eff5f2;color:#162a26;font:16px/1.6 system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:20px}header,article,.focus{background:white;border:1px solid #c9d8d3;border-radius:12px;padding:16px 20px;margin:12px 0}header{border-top:5px solid #12604c}h1,h2,h3,h4{line-height:1.3;margin:.4em 0}dt{font-weight:650;color:#456159}dd{margin:0 0 10px}a{color:#075d68;overflow-wrap:anywhere}details{color:#456159}li{margin:4px 0;overflow-wrap:anywhere}input{font:inherit;width:min(100%,480px);padding:8px;border:1px solid #a9bcb5;border-radius:6px}article:target{outline:3px solid #12604c}
+</style>
+<main>
+<header><p>光模块研究 · 2026-11-10</p><h1>Gemini 合规线索逐条核查</h1><p>__COUNTS__</p>
+<p>可按候选编号填写批准、补证或驳回。批准时请注明接受的窄表述与写入位置。原线索含多个说法时，逐项采用「核实到的内容」和「建议写入」所列的边界。</p>
+<p><a href="../review.html">返回历史复核页</a> · <a href="audit.csv">下载逐条确认 CSV</a> · <a href="audit.json">完整审计 JSON</a></p></header>
+<div class="focus">
+<h2>FCC 3.2T 与 65% 美国含量</h2>
+<ol>
+<li>FCC 26-50 的最终规则在 2026 年 9 月 11 日公布、10 月 13 日生效。零部件条款按 Covered List 主体和相应设备条件适用。该最终规则的操作条款未设光模块 3.2T 门槛或 65% 美国物料豁免。10 月 21 日完整名单未将商业光收发器单列。<a href="https://docs.fcc.gov/public/attachments/DA-26-1130A1.pdf">10 月 21 日名单附录</a> · <a href="https://www.federalregister.gov/d/2026-18535">《联邦公报》最终规则</a> · <a href="#G-d6ee1cb32ece68e2">逐条核查</a></li>
+<li>同一 FCC 文件的后续拟议规则分开征求意见。第 145 段提及光收发器等部件的 BOM 披露。第 198–200 段提到 65%，语境是讨论美国本土产品与潜在采购口径，并非光模块速率豁免。<a href="https://docs.fcc.gov/public/attachments/FCC-26-50A1.pdf">FCC 文件正文</a></li>
+<li>公开转述把 3.2T 与 65% 组合归因于摩根士丹利的政策情景。尚未取得该研报可核原件。10 月 29 日公开议程未单列 3.2T 光模块措施。当天另通过 FCC 26-73，涉及设备检测与认证机构，过渡期至 2028 年 12 月 1 日。<a href="https://docs.fcc.gov/public/attachments/FCC-26-73A1.pdf">FCC 26-73 正文</a> · <a href="https://www.govinfo.gov/content/pkg/FR-2026-10-29/html/2026-22080.htm">公开会议通知</a> · <a href="#G-f2cf4505e36d44db">10 月 6 日线索</a> · <a href="#G-603d1e220d8b305e">10 月 21 日线索</a></li>
+<li>S. 5548 于 9 月 24 日提出并转委员会。它提出联邦采购限制，适用范围和生效条件应依提案文字读取。<a href="https://www.govinfo.gov/content/pkg/BILLS-119s5548is/html/BILLS-119s5548is.htm">S. 5548 提案</a> · <a href="#G-cf34d3f9017c9f88">逐条核查</a></li>
+</ol>
+</div>
+<label for="q">筛选编号、主题或正文</label><br><input type="search" id="q" placeholder="例如 G-f2cf、CBP、1.6T">
+__CARDS__
+</main>
+<script>
+const cards=[...document.querySelectorAll('article')];
+const filter=document.getElementById('q');
+filter.addEventListener('input',()=>{
+  const query=filter.value.toLowerCase().trim();
+  for(const card of cards)card.hidden=!card.textContent.toLowerCase().includes(query);
+});
+</script>
+</html>

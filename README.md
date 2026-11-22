@@ -1,5 +1,7 @@
 # 光模块产业结构与公司能力地图（点先行 v2）
 
+> **日更知识库已整理：** [阅读入口](knowledge-daily/README.md) · [日期索引](knowledge-daily/DATES.md)。国内最新到2026-11-07，海外与完整汇总到2026-11-06；候选与正式知识分开。
+
 > **新会话先读 `AGENTS.md`。** 它规定必读文件、禁读材料（archive / 结案试点 / 其他分支历史 /
 > 旧 agent 轨迹）和必须停下来升级的情形，避免把历史状态当成当前指令。
 > 当前任务范围只在 `docs/control/ACTIVE_WORKPACK.yaml`；边界与架构准入闸见 `docs/control/PROJECT_CHARTER.md`；
@@ -128,6 +130,26 @@ HTML 保持单一读者页面：`route_bom.csv` 提供 800G DR8 / 1.6T DR8 / 400
 
 国内问答每家公司默认有 60 秒墙钟预算，可用 `--qa-timeout` 调整；失败不推进水位，成功检查点支持同日期、同输入及同代码的中断恢复。运行状态记录当前公司、请求、页码与 PID；遗留 `running` 不证明进程仍存活。
 
+`combine` 同时读取 Gemini 补充检索材料，原命令无需增加参数。默认查找项目根目录中的
+`optical_transceiver_tracker.json` 和 `optical_transceiver_daily_tracker.md`，以及国内状态目录同级的
+`gemini/cloud-snapshot.json`。可用 `--gemini-source-root`、`--gemini-state-root` 指定其他目录。
+MD 报告新增「Gemini 补充检索材料」，JSON 报告新增 `gemini`，列明每个来源的路径、SHA-256、
+内容日期、日期依据、正文链接和可用性。此补充输入独立于国内/海外的 `assembly_status`、
+`collection_status`；原有采集缺口不会因读到 Gemini 材料而消失。
+
+JSON 导出的根对象可提供 `run_date`、`date`、`as_of`、`generated_at` 或 `updated_at`；
+Markdown 使用上述显式字段或第一个一级标题中的 `YYYY-MM-DD`。无日期保留 `date_unknown`，
+内容日期早于本次日期保留 `stale`，未来日期保留 `future_dated`；不使用文件mtime冒充内容日期。
+同日材料仅作为待核验原文展开，累计材料也不自动计算为当日新增，两个导出与云端副本不作独立证据。
+单个输入最多读取2 MiB，日报原文摘录上限16000字符并明确截断；原文件不改写。
+
+云端文档为 [光模块技术与法律合规深度研究报告 (2026)](https://docs.google.com/document/d/1BxeKVaHKMDXMy8vgI2t_ieIF3Meb2ctUlIeHExZ3Hz8/edit)。
+通过已连接的 Google Drive 读取并缓存时，保存 `content`、`source_url`、`retrieved_at` 和
+`original_modified_at`；`combine` 只读该缓存，不会自行访问登录态或刷新云端文档。
+2026-10-15 实际回读的文档修改时间为2026-08-26，正文没有逐日追加内容和原始来源URL；
+目前不能验证 Gemini 所述的自动同步。Codex 原日更时间为6:47，早于Gemini所述的约9:00，
+因此应按实际内容日期标注隔日资料或缺口，不能声称获得当天9点更新。
+
 全景网问答先按官网的提问日期筛选，并按返回总数分页；达到 100 条时先拆日期，单日仍达上限则继续拆到时分秒，交界重叠并按 ID 去重。另以窗口起点之前的提问为条件补查新回复，避免近期问题占满最新100条而挡住旧问题的新回答。最小时间窗仍达上限、筛选无效、重复页或预算耗尽均保留不完整状态，不推进成功日期。
 
 日更从每家公司上次成功日期回退7天，查到当天；明确来自互动易的全景网镜像会与已有同一问答去重。2026-09-11已把93家公司本次历史回填的成功日期接入正式进度，9月12日的增量窗口因此从9月4日开始。Unicode行分隔符按正文字符读取，避免后续日更丢失历史问答。接入、回归与真实样本验证见 [2026-09-11 增量更新记录](docs/reviews/2026-09-11-domestic-incremental.md)；全池定时运行结果仍以实际日报最终状态为准。
@@ -147,3 +169,13 @@ HTML 保持单一读者页面：`route_bom.csv` 提供 800G DR8 / 1.6T DR8 / 400
 
 年报季提示：A股年报4月末集中披露；美股10-K财年后60-90天。
 边界：语料宇宙见 corpus/_frozen.csv（每文件一行带出处）；archive/ 为旧结构冷冻区（默认禁读）。
+
+## 四篇连续阅读网页与更新全景（全景修订：2026-10-08）
+
+从光模块入门、技术路线与制造、公司产品，读到本地公司产品与制造环节的深度介绍。
+
+[阅读入口](out/光模块四篇网页-20261007/index.html) · [下载离线 ZIP](out/光模块四篇网页-20261007.zip)
+
+GitHub 文件页显示 HTML 源码。下载 ZIP 并解压后，用浏览器打开包内的 `index.html`，即可阅读四篇及配套资料。
+
+本包现包含[更新后的全景图](out/光模块四篇网页-20261007/supplement/panorama-20261008/index.html)、[全景修改记录](out/光模块四篇网页-20261007/supplement/panorama-20261008/changes.html)及全景与第四篇的差异入口。全景正文修订于 2026-10-08；包内候选资料日期仍为 2026-10-07，不代表全行业动态已更新至页面修订日。页面是研究阅读稿，未回写正式账本。

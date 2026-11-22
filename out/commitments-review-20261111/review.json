@@ -1,0 +1,1528 @@
+[
+  {
+    "id": "CM001",
+    "target": "出货第100万颗Silicon One芯片",
+    "due_date": "2026-01-24",
+    "old_status": "fulfilled",
+    "verdict": "fulfilled",
+    "assessment": "维持 fulfilled。2025-11-12的FY26 Q1官方prepared remarks承诺FY26 Q2出货第100万颗芯片。2026-02-11的Q2同类官方材料用已发生时态确认该季度已出货第100万颗Silicon One，Q2截至2026-01-24。事件在原定季度内发生，披露日晚于事件窗口，仅凭公开材料不能确定具体哪一天。兑现证据是CEO公司自述，未得到客户收货记录等独立确认。",
+    "missing": "缺具体出货日、芯片SKU、客户和独立收货数据。Daily可串到10月G300系列送样与系统出货，但总系列累计出货里程碑和G300单代送样是不同指标。当前光模块BOM不包含交换ASIC，同系列进展不能改变映射边界。",
+    "proposal": "CM001保持fulfilled，补明“FY26 Q2内按期兑现，2026-02-11由公司披露，具体日未知”。保留CL009原始承诺和CL010结果，纠正CL009原始PDF锚点为印刷第3页。Daily的G300只追加为后续同系列事件关联。",
+    "positions": [
+      "calls/commitments.csv CM001：保持status=fulfilled、evidence_source_id=S_CSCO_2026Q2_A、evidence_claim_id=CL010，仅细化assessment。",
+      "calls/claims.csv CL009：原anchor写p.4，实际Q1 FY26 PDF印刷第3页，建议更正。CL010在Q2 PDF印刷第4页，现锚正确。",
+      "calls/themes.csv T009：继续记录Silicon One交换ASIC主题，映射unmapped。",
+      "不建议由本承诺产生模块电芯片C5能力点。"
+    ],
+    "evidence": [
+      {
+        "date": "2025-11-12",
+        "title": "Cisco FY26 Q1 Prepared Remarks",
+        "url": "https://investor.cisco.com/files/doc_events/2025/11/1/Q1FY26-Prepared-Remarks.pdf",
+        "locator": "印刷第3页，“Demand for Silicon One”段；原账本p.4需纠正",
+        "quote": "we expect to ship our 1-millionth chip in Q2 FY26"
+      },
+      {
+        "date": "2026-02-11",
+        "title": "Cisco FY26 Q2 Prepared Remarks",
+        "url": "https://investor.cisco.com/files/doc_events/2026/02/Q2FY26-Prepared-Remarks-1.pdf",
+        "locator": "印刷第4页，Chuck Robbins，Silicon One段",
+        "quote": "We shipped our one-millionth Silicon One chip in Q2"
+      },
+      {
+        "date": "2026-02-11",
+        "title": "Cisco Reports Second Quarter Earnings",
+        "url": "https://investor.cisco.com/news/news-details/2026/CISCO-REPORTS-SECOND-QUARTER-EARNINGS/default.aspx",
+        "locator": "正文首段，财政季度结束日",
+        "quote": "the period ended January 24, 2026"
+      },
+      {
+        "date": "2026-10-12",
+        "title": "Cisco Advances Scalability and Openness at OCP 2026",
+        "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m10/cisco-advances-scalability-and-openness-at-ocp-2026.html",
+        "locator": "“Cisco Silicon One Portfolio Delivers”段，G300句",
+        "quote": "the first G300-powered systems are currently shipping to customers"
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-10-13",
+        "claim": "CC_B7D08360AB0B：102.4T Silicon One G300已可客户送样，首批G300系统正在向客户出货。",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-13/claim_candidates.csv#L32",
+        "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m10/cisco-advances-scalability-and-openness-at-ocp-2026.html",
+        "match": "同Silicon One系列、不同里程碑。仅作后续产品阶段进展，不作为百万颗出货的兑现证据。",
+        "published_date": "2026-10-12",
+        "event_date": "不晚于2026-10-12，具体日未知",
+        "observed_dates": [
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26"
+        ],
+        "disclosure_id": "DC_66D313EC13F4",
+        "claim_id": "CC_B7D08360AB0B",
+        "dedupe": "同一URL及同一引文在8期出现，合为1次来源观察。"
+      },
+      {
+        "date": "2026-11-11",
+        "claim": "在2026-09-04至2026-11-11现存55期staging中，CSCO有172次披露观察、74次主张观察。URL与内容哈希归并后37个版本，同一引文归并后12条主张。",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-11-11/disclosure_candidates.csv",
+        "url": "",
+        "match": "扫描到的Daily材料没有百万颗里程碑直接复述，相关季度发生于Daily留存窗口之前。上述统计只描述现存观察，不代表采集完整。"
+      }
+    ],
+    "search": [
+      "回读calls/commitments.csv CM001、claims.csv CL009/CL010、sources.csv S_CSCO_2026Q1_A/S_CSCO_2026Q2_A。",
+      "公开检索 Cisco one-millionth Silicon One Q2 FY2026，回读两份官方prepared remarks和Q2财报。",
+      "现存55期overseas/staging，筛CSCO披露与原子主张，按URL+哈希及公司+引文去重；回读10月12日OCP官方稿。",
+      "agy只读检索已尝试，返回FAILED_PRECONDITION：User location is not supported for the API use，随后通过官方web原件完成核对。"
+    ],
+    "original": {
+      "claim_id": "CL009",
+      "source_id": "S_CSCO_2026Q1_A",
+      "date": "2025-11-12",
+      "url": "https://investor.cisco.com/files/doc_events/2025/11/1/Q1FY26-Prepared-Remarks.pdf",
+      "quote": "We expect to ship our 1-millionth chip in Q2 FY26.",
+      "locator": "Q1 FY26 prepared remarks p.4"
+    },
+    "checked_at": "2026-11-11"
+  },
+  {
+    "id": "CM002",
+    "target": "800G产品从Q2开始明显放量",
+    "due_date": "2026-06-30",
+    "old_status": "pending",
+    "verdict": "fulfilled",
+    "assessment": "建议pending改为fulfilled。AAOI于2026-05-07的Q1业绩稿承诺800G产品从Q2开始明显放量。2026-08-06发布的Q2业绩稿回顾截至6月30日季度，CEO称看到800G产品强劲放量并环比翻倍以上，直接支持原定Q2窗口内已发生。该指标由公司披露，release没有单列精确800G出货只数或分产品收入，不能把整体收入增长或800G+1.6T合并名义产能当成兑现依据。11月5日Q3披露的建设和供电延误属于后续扩产目标，未推翻此前Q2放量。",
+    "missing": "缺Q2逐型号出货只数、800G专属确认收入、具体客户及客户侧收货证据。不能将Q3的混合800G+1.6T设备能力上限转述成Q2 800G稳定产量。当前Daily配置指向newsroom.ao-inc.com，同域滚动新闻未取得跨域IR的Q2/Q3财报，既有源S_AAOI_2026Q2已在账本但尚未关联CM002结果。",
+    "proposal": "经用户确认后，以已有S_AAOI_2026Q2新增一条经复核的Q2兑现结果主张，CM002改fulfilled并关联该结果，assessment写明事件窗口截至2026-06-30、公司确认日2026-08-06。保留CL003原始预测。修复Q1源URL到官方迁移后地址时保留旧URL记录。Q3后续扩产延误另作观察，不能覆盖CM002。",
+    "positions": [
+      "calls/commitments.csv CM002：拟status=fulfilled、evidence_source_id=S_AAOI_2026Q2，evidence_claim_id需分配新的结果主张编号。",
+      "calls/claims.csv：新增Q2公司回顾性结果主张，原句强劲放量且环比翻倍以上，映射MOD1/T003；保留CL003预测。",
+      "calls/sources.csv S_AAOI_2026Q2已存在，优先复用，原URL与迁移后URL为同一官方稿；S_AAOI_Q1_RESULT_A的node/17011目前404，官方带日期新URL可读。",
+      "calls/themes.csv T003：可补AAOI Q2产品级放量证据，客户独立确认的缺口仍保留。",
+      "points.csv P229（Applied Optoelectronics, MOD1）可作为后续能力证据位置，但本次只建议承诺账本与结果主张。"
+    ],
+    "evidence": [
+      {
+        "date": "2026-05-07",
+        "title": "Applied Optoelectronics Reports First Quarter 2026 Results",
+        "url": "https://investors.ao-inc.com/2026-05-07-Applied-Optoelectronics-Reports-First-Quarter-2026-Results",
+        "locator": "CEO首段，第二句；对应现有S_AAOI_Q1_RESULT_A/CL003",
+        "quote": "anticipate a strong volume ramp of our 800G products starting in Q2"
+      },
+      {
+        "date": "2026-08-06",
+        "title": "Applied Optoelectronics Reports Second Quarter 2026 Results",
+        "url": "https://investors.ao-inc.com/2026-08-06-Applied-Optoelectronics-Reports-Second-Quarter-2026-Results",
+        "locator": "CEO首段，回顾截至2026-06-30季度；对应已有S_AAOI_2026Q2",
+        "quote": "we saw a strong volume ramp of our 800G products, which more than doubled sequentially"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "Applied Optoelectronics Reports Third Quarter 2026 Results",
+        "url": "https://investors.ao-inc.com/2026-11-05-Applied-Optoelectronics-Reports-Third-Quarter-2026-Results",
+        "locator": "CFO首段，美国2027扩产计划；独立于Q2放量目标",
+        "quote": "We expect our 2027 capacity expansion plan in the US to take longer to complete"
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-09-04",
+        "claim": "AAOI误取SEC Filings目录页，未提取出可匹配800G放量的主张。",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-04/disclosure_candidates.csv#L2",
+        "url": "https://investors.ao-inc.com/financial-information/sec-filings",
+        "match": "无同对象兑现证据，目录页不能替代季度原文。",
+        "published_date": "候选标注2026-09-01，目录无稳定事件日",
+        "disclosure_id": "DC_0160483A6A29",
+        "observed_dates": [
+          "2026-09-04"
+        ]
+      },
+      {
+        "date": "2026-09-25",
+        "claim": "CC_5D8B3424093C来自Quantum30 3.0GHz HFC概念演示新闻，涉及有线电视带宽扩展。",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-25/claim_candidates.csv#L25",
+        "url": "https://newsroom.ao-inc.com/news-releases/aoi-brings-first-live-quantum30-3-0ghz-concept-demo-to-scte-techexpo-in-atlanta/",
+        "match": "同公司，产品对象是HFC/CATV，不匹配800G数据中心收发模块承诺，排除。",
+        "published_date": "2026-09-24",
+        "event_date": "2026-09-24披露概念演示，非800G放量日期",
+        "disclosure_id": "DC_55510D59BAD2",
+        "claim_id": "CC_5D8B3424093C",
+        "observed_dates": [
+          "2026-09-25",
+          "2026-09-27",
+          "2026-09-28",
+          "2026-09-29",
+          "2026-09-30",
+          "2026-10-01",
+          "2026-10-02",
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08"
+        ],
+        "dedupe": "同一URL、哈希与同一主张在13期重复，合为1次观察。"
+      },
+      {
+        "date": "2026-11-11",
+        "claim": "55期现存staging中AAOI共14次披露观察、13次主张观察，仅2个URL/哈希版本与1条唯一原子引文，未取得8月6日Q2和11月5日Q3业绩稿。",
+        "ref": "/Users/jowang/Downloads/optical-module-research/calls/discovery_config.json#L5",
+        "url": "https://newsroom.ao-inc.com/news-releases/",
+        "match": "配置自身注明跨域IR财报未证明恢复。Daily缺少结果关联，兑现判断直接取自官方IR原文。"
+      }
+    ],
+    "search": [
+      "回读CM002、CL001/CL002/CL003、S_AAOI_Q1_RESULT_A、已存在的S_AAOI_2026Q2。",
+      "公开检索AAOI second quarter 2026 800G volume ramp，回读官方5月7日、8月6日、11月5日稿。",
+      "回读old node/17011与/pdf均404，确认同公司迁移后Q1带日期永久链接可读。",
+      "检查2026-09-04至2026-11-11现存55期staging的AAOI原子候选与披露，按URL/哈希及原句去重。",
+      "agy只读检索返回地域FAILED_PRECONDITION，使用官方web原件完成核对。"
+    ],
+    "original": {
+      "claim_id": "CL003",
+      "source_id": "S_AAOI_Q1_RESULT_A",
+      "date": "2026-05-07",
+      "url": "https://investors.ao-inc.com/node/17011",
+      "quote": "we continue to anticipate a strong volume ramp of our 800G products starting in Q2",
+      "locator": "CEO quote paragraph"
+    },
+    "checked_at": "2026-11-11"
+  },
+  {
+    "id": "CM003",
+    "target": "San Jose第二座InP半导体制造设施在2026年底前启用",
+    "due_date": "2026-12-31",
+    "old_status": "pending",
+    "verdict": "pending",
+    "assessment": "截至2026-11-11，目标窗口尚未结束。2025Q3承诺San Jose第二座InP设施在2026年底前启用。2025年报p.24曾写同城新compound semiconductor fab预计2027开始生产，2026Q1和5月补充募集说明随后称年内开始爬坡，Q2全文进一步明确Q4 2026后段按计划爬坡。Q3将部分制造投资现金支付移至2027，并重申光学制造扩张按计划推进。已找到项目重申和时间细化，尚缺实际启用、首批晶圆或爬坡启动声明。",
+    "missing": "早期年报“2027生产”与后续“2026Q4开始爬坡”可能涉及里程碑、有效产能或排程更新，原文未直接解释。San Jose、Sunnyvale既有Fab、Allentown封测与Arizona新项目须分别识别。现有付款时间变化无法确定哪一厂投产时点；截至核查日未核得同厂已启用/开始爬坡的明确动作、产出和日期。",
+    "proposal": "CM003保留pending及2026-12-31跟踪窗口。在assessment追加Q2的Q4后段计划、Q3付款时点说明和早期年度报告口径差异。下次以San Jose明确启用/晶圆投产材料裁决，保留“opening / begin ramping / production”的里程碑区别。",
+    "positions": [
+      "calls/commitments.csv · CM003 的assessment与后续证据引用候选",
+      "calls/claims.csv · CL052/CL057；calls/sources.csv · S_NOK_2026Q1、S_NOK_2026Q2及待新增Q3来源",
+      "calls/themes.csv · T008；同厂新增事件须另核对象、发生日及阶段"
+    ],
+    "evidence": [
+      {
+        "date": "2026-03-05",
+        "title": "Nokia 2025 Form 20-F",
+        "url": "https://www.nokia.com/system/files/2026-03/nokia-form-20-f-2025.pdf",
+        "locator": "p.24 Own manufacturing · San Jose购置、预期2027生产与建设至2028的段落",
+        "quote": ""
+      },
+      {
+        "date": "2026-04-23",
+        "title": "Nokia 2026Q1完整财报",
+        "url": "https://www.nokia.com/system/files/2026-04/nokia_results_2026_q1.pdf",
+        "locator": "p.2 CEO Commentary · OFC段末句，San Jose新InP设施年内开始爬坡",
+        "quote": ""
+      },
+      {
+        "date": "2026-05-25",
+        "title": "Nokia补充募集说明",
+        "url": "https://www.nokia.com/sites/default/files/2026-06/nokia-emtn-programme-supplementary-prospectus.pdf",
+        "locator": "p.5 Q1 2026 Operational Progress · San Jose段，同年后段开始爬坡",
+        "quote": ""
+      },
+      {
+        "date": "2026-07-23",
+        "title": "Nokia 2026Q2完整财报",
+        "url": "https://www.nokia.com/system/files/2026-07/nokia_results_2026_q2.pdf",
+        "locator": "p.3 Additional information · Nokia acquires further U.S. optical manufacturing capacity，Q4 2026及各厂区明确区分",
+        "quote": ""
+      },
+      {
+        "date": "2026-10-22",
+        "title": "Nokia 2026Q3完整财报",
+        "url": "https://www.nokia.com/system/files/2026-10/nokia_results_2026_q3.pdf",
+        "locator": "p.2 Outlook assumptions · Capital expenditures，部分付款时间变化与扩张计划说明",
+        "quote": "optical manufacturing expansion plans remain on-track"
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-10-25 至 2026-11-05（8次观察，1个正文哈希）",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-25/disclosure_candidates.csv#L101",
+        "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/",
+        "claim": "DC_E7C7B632B6AD · Daily已留存Nokia 2026Q3报告来源，具体付款与扩张说明需回原报告。",
+        "match": "同一后续财报来源。新增核读的完整报告p.2给出制造投资付款时点及扩张计划，但Daily抽取的主张只有Infinera整合和财报日程，未观察到San Jose开厂/爬坡事件。",
+        "dates": [
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-11-04",
+          "2026-11-05"
+        ],
+        "versions": [
+          {
+            "content_hash": "b44a56f2fe96090d8de1bff939884ca42a9799b4c5f32da6fd9714d4868669fe",
+            "dates": [
+              "2026-10-25",
+              "2026-10-26",
+              "2026-10-27",
+              "2026-10-28",
+              "2026-10-29",
+              "2026-10-30",
+              "2026-11-04",
+              "2026-11-05"
+            ]
+          }
+        ]
+      }
+    ],
+    "search": [
+      "截至2026-11-11，检索Nokia官网Newsroom及Investors；核读2026Q1、Q2、Q3全文与OFC2026发布、2026-05-25补充募集说明。",
+      "检索词包括 San Jose InP fab ramp Q4 2026、mid-2027 sampling、four DSP 13 solutions、volume production second half 2027、Q2 long-term AI Cloud orders revenue twelve months。",
+      "生产Daily只读检查2026-09-04至2026-11-11现存海外staging的披露、主张、事件、证据表。按同源URL/引文/正文哈希合并日期版本；San Jose、厂址、OFC家族和Q2订单批次分别对照。",
+      "Q3演示稿已定位18页PDF，但后续定位请求超时、直接获取403。本次细节以能读取的Q3完整财报为据。",
+      "对2025年度报告San Jose条款与Q1/Q2同厂声明逐段比对。官方招聘与既有Sunnyvale设施未用作新厂兑现证据。",
+      "Daily同Q3报告8次观察日期为2026-10-25, 2026-10-26, 2026-10-27, 2026-10-28, 2026-10-29, 2026-10-30, 2026-11-04, 2026-11-05；仅归为原文入口，未把同公司AI-RAN、PON、Telxius 800G部署或Infinera整合当成该厂投产。"
+    ],
+    "original": {
+      "claim_id": "CL052",
+      "source_id": "S_NOK_2025Q3",
+      "date": "2025-10-23",
+      "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2025-789295/",
+      "quote": "We are opening a second Indium Phosphide semiconductor fabrication facility in San Jose before the end of next year",
+      "locator": "CEO Q3 comments / Network Infrastructure paragraph"
+    },
+    "checked_at": "2026-11-11"
+  },
+  {
+    "id": "CM004",
+    "target": "下一代光网络产品在2027年中开始送样",
+    "due_date": "2027-06-30",
+    "old_status": "pending",
+    "verdict": "pending",
+    "assessment": "原指向OFC2026公布的四款DSP支撑的13项相干光解决方案家族。2026-03-16公司发布写明该新家族预计2027年中开始送样；4月Q1报告及5月补充募集说明保持同窗口。截至2026-11-11仍在未来。已查材料未提供该家族已送样或明确改期的后续陈述。",
+    "missing": "需要精确产品/方案、客户、样品交付或客户验证开始日期。1.6T/2.4T相干可插拔、3.2T coherent lite、双面可插拔等形态共用家族时间线，不能把任一旧800G ZR产品交付替代全家族送样。mid-2027是近似窗口，账本2027-06-30是跟踪用日期，并非公告逐日硬截止。",
+    "proposal": "CM004保留pending。把target/assessment具体化为OFC2026四DSP、13方案相干光家族，并记原文mid-2027和账本日期的精度。后续逐SKU补送样证据。与CM005维持送样、量产两个阶段。",
+    "positions": [
+      "calls/commitments.csv · CM004 的target/assessment候选",
+      "calls/claims.csv · CL056；calls/event_claims.csv · ECL010；calls/events.csv · EV010",
+      "calls/events.csv · EV010的program_id现为PRG_NOK_PSE6S，原锚实际为四DSP/13方案家族，建议人工检查项目标识一致性",
+      "calls/disclosures.csv · D_NOK_20260423_Q1；新OFC原始发布与补充募集说明可作来源候选"
+    ],
+    "evidence": [
+      {
+        "date": "2026-03-16",
+        "title": "Nokia OFC2026相干光解决方案发布",
+        "url": "https://www.nokia.com/newsroom/nokia-launches-suite-of-applicationoptimized-optical-solutions-for-ai-era-networks/",
+        "locator": "New suite of application-optimized coherent optical solutions · 四DSP、六类方案列表及sampling/GA句",
+        "quote": ""
+      },
+      {
+        "date": "2026-04-23",
+        "title": "Nokia 2026Q1完整财报",
+        "url": "https://www.nokia.com/system/files/2026-04/nokia_results_2026_q1.pdf",
+        "locator": "p.2 CEO Commentary · OFC段，四DSP、13方案及mid-2027送样",
+        "quote": "",
+        "quote_reference": "CM003"
+      },
+      {
+        "date": "2026-05-25",
+        "title": "Nokia补充募集说明",
+        "url": "https://www.nokia.com/sites/default/files/2026-06/nokia-emtn-programme-supplementary-prospectus.pdf",
+        "locator": "p.5 Q1 2026 Operational Progress · 同一产品家族的送样与量产窗口",
+        "quote": "",
+        "quote_reference": "CM003"
+      }
+    ],
+    "daily": [],
+    "search": [
+      "截至2026-11-11，检索Nokia官网Newsroom及Investors；核读2026Q1、Q2、Q3全文与OFC2026发布、2026-05-25补充募集说明。",
+      "检索词包括 San Jose InP fab ramp Q4 2026、mid-2027 sampling、four DSP 13 solutions、volume production second half 2027、Q2 long-term AI Cloud orders revenue twelve months。",
+      "生产Daily只读检查2026-09-04至2026-11-11现存海外staging的披露、主张、事件、证据表。按同源URL/引文/正文哈希合并日期版本；San Jose、厂址、OFC家族和Q2订单批次分别对照。",
+      "Q3演示稿已定位18页PDF，但后续定位请求超时、直接获取403。本次细节以能读取的Q3完整财报为据。",
+      "现存Daily未定位该OFC2026家族的同对象送样记录。Telxius 2026-09-15的ICE-X 800G部署/BRUSA演示属于旧产品与特定项目；同公司的50G PON及其他业务事件均未串为兑现。",
+      "已检索Q3财报及Nokia官网至2026-11-11的同家族送样/改期信息。未命中本身不用于判延期。"
+    ],
+    "original": {
+      "claim_id": "CL056",
+      "source_id": "S_NOK_2026Q1",
+      "date": "2026-04-23",
+      "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q1-2026/",
+      "quote": "Products will begin sampling in mid-2027",
+      "locator": "CEO Q1 comments / OFC optical conference paragraph"
+    },
+    "checked_at": "2026-11-11"
+  },
+  {
+    "id": "CM005",
+    "target": "下一代光网络产品在2027年下半年开始量产",
+    "due_date": "2027-12-31",
+    "old_status": "pending",
+    "verdict": "pending",
+    "assessment": "该目标与CM004属于同一OFC2026四DSP/13方案相干光家族。2026-03-16发布把一般可用性预期放在2027年下半年；Q1管理层明确为同期开始volume production，5月募集说明再述H2 2027目标。量产窗口未来，原始承诺尚待后续实发材料核验。",
+    "missing": "要确认具体方案、SKU、工厂、量产或商业供货的已发生状态，含客户侧收货或公司分产品出货说明。GA与volume production的措辞应各自保留。同期可用的multi-rail optical line system另有H2 2026计划，不能替代新相干产品家族的H2 2027。",
+    "proposal": "CM005保留pending和2027-12-31跟踪日期，assessment注明同家族的量产窗口以及GA/volume production表述。后续量产判定以具体产品和时间为准，并与CM004送样记录分开。",
+    "positions": [
+      "calls/commitments.csv · CM005 的target/assessment候选",
+      "calls/claims.csv · CL062；calls/events.csv · EV010；calls/event_claims.csv · ECL010只锚送样句，量产句如采纳需另行核锚",
+      "calls/events.csv · PRG_NOK_PSE6S项目标识与四DSP/13方案的实际指代需人工对照"
+    ],
+    "evidence": [
+      {
+        "date": "2026-03-16",
+        "title": "Nokia OFC2026相干光解决方案发布",
+        "url": "https://www.nokia.com/newsroom/nokia-launches-suite-of-applicationoptimized-optical-solutions-for-ai-era-networks/",
+        "locator": "新相干方案家族的H2 2027一般可用性；另列multi-rail in-line amplifier的H2 2026可用窗口",
+        "quote": "",
+        "quote_reference": "CM004"
+      },
+      {
+        "date": "2026-04-23",
+        "title": "Nokia 2026Q1完整财报",
+        "url": "https://www.nokia.com/system/files/2026-04/nokia_results_2026_q1.pdf",
+        "locator": "p.2 CEO Commentary · OFC段，volume production starting in the second half，承接mid-2027",
+        "quote": "",
+        "quote_reference": "CM003"
+      },
+      {
+        "date": "2026-05-25",
+        "title": "Nokia补充募集说明",
+        "url": "https://www.nokia.com/sites/default/files/2026-06/nokia-emtn-programme-supplementary-prospectus.pdf",
+        "locator": "p.5 Q1 2026 Operational Progress · 同家族量产当前目标2027年下半年",
+        "quote": "",
+        "quote_reference": "CM003"
+      }
+    ],
+    "daily": [],
+    "search": [
+      "截至2026-11-11，检索Nokia官网Newsroom及Investors；核读2026Q1、Q2、Q3全文与OFC2026发布、2026-05-25补充募集说明。",
+      "检索词包括 San Jose InP fab ramp Q4 2026、mid-2027 sampling、four DSP 13 solutions、volume production second half 2027、Q2 long-term AI Cloud orders revenue twelve months。",
+      "生产Daily只读检查2026-09-04至2026-11-11现存海外staging的披露、主张、事件、证据表。按同源URL/引文/正文哈希合并日期版本；San Jose、厂址、OFC家族和Q2订单批次分别对照。",
+      "Q3演示稿已定位18页PDF，但后续定位请求超时、直接获取403。本次细节以能读取的Q3完整财报为据。",
+      "对照2026-03-16发布中相干产品家族与独立multi-rail线放大器的不同交付窗口。",
+      "现存Daily没有同一新家族量产记录；Telxius旧800G部署、网络流量预测及AI-RAN事件没有并入量产证据。"
+    ],
+    "original": {
+      "claim_id": "CL062",
+      "source_id": "S_NOK_2026Q1",
+      "date": "2026-04-23",
+      "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q1-2026/",
+      "quote": "with volume production starting in the second half",
+      "locator": "CEO Q1 comments / OFC optical conference paragraph"
+    },
+    "checked_at": "2026-11-11"
+  },
+  {
+    "id": "CM006",
+    "target": "约一半2026Q2 AI与云长期订单在未来十二个月转为收入",
+    "due_date": "2027-07-23",
+    "old_status": "pending",
+    "verdict": "pending",
+    "assessment": "Q2原段先披露AI&Cloud订单流入28亿欧元，随后说明光网络与IP网络均取得长期订单，并预计约一半these orders在未来12个月转为收入。该转化对象覆盖两个网络业务，合同名单和产品拆分未公开。Q3披露AI&Cloud合计收入、新增订单和两业务收入增长，仍缺Q2所指订单批次的转收入对账。",
+    "missing": "需要Q2同批订单的确认口径、订单余额滚动、取消/更改、已确认收入和未来12个月窗口终点。Q3所有AI&Cloud收入可能含更早订单、Q3新增订单及其他业务；总收入或总合同负债不能识别原批次兑现。原文未把28亿全部明确界定为同一组长约的分母，不能直接把14亿欧元作已定义硬验收值。",
+    "proposal": "CM006保留pending及2027-07-23跟踪日期。assessment追加Q3经营更新与同批订单兑现仍缺证，要求同一队列的订单→确认收入桥。保留Optical Networks与IP Networks混合范围。日期为从2026-07-23披露日起折算12个月的账本跟踪值。",
+    "positions": [
+      "calls/commitments.csv · CM006 的assessment和证据引用候选",
+      "calls/claims.csv · CL058、CL059、CL061；calls/sources.csv · S_NOK_2026Q2及待新增Q3全文来源",
+      "calls/events.csv · EV011、calls/event_claims.csv · ECL011仅为供给约束叙事，可作背景索引，不能记录订单兑现"
+    ],
+    "evidence": [
+      {
+        "date": "2026-07-23",
+        "title": "Nokia 2026Q2完整财报",
+        "url": "https://www.nokia.com/system/files/2026-07/nokia_results_2026_q2.pdf",
+        "locator": "p.1 CEO Commentary · Q2 AI&Cloud order intake、长期订单与未来12个月；p.4按网络业务分项",
+        "quote": "",
+        "quote_reference": "CM003"
+      },
+      {
+        "date": "2026-10-22",
+        "title": "Nokia 2026Q3完整财报",
+        "url": "https://www.nokia.com/system/files/2026-10/nokia_results_2026_q3.pdf",
+        "locator": "pp.1、4、6：AI&Cloud新订单，光网络/IP增长和客户类型净销售额；p.21收入分解和p.13合同负债均无Q2批次桥",
+        "quote": "",
+        "quote_reference": "CM003"
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-10-25 至 2026-11-05（8次观察，1个正文哈希）",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-25/disclosure_candidates.csv#L101",
+        "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/",
+        "claim": "DC_E7C7B632B6AD · Daily已留存Nokia 2026Q3报告来源，提供AI与云经营更新入口。",
+        "match": "与原Q2指引连续的财报系列。核读Q3只能看到AI&Cloud合计收入、新订单及业务表现，缺Q2那批订单转收入的同批次归属。Daily对Infinera整合和日程的抽取与CM006无兑现对应。",
+        "dates": [
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-11-04",
+          "2026-11-05"
+        ],
+        "versions": [
+          {
+            "content_hash": "b44a56f2fe96090d8de1bff939884ca42a9799b4c5f32da6fd9714d4868669fe",
+            "dates": [
+              "2026-10-25",
+              "2026-10-26",
+              "2026-10-27",
+              "2026-10-28",
+              "2026-10-29",
+              "2026-10-30",
+              "2026-11-04",
+              "2026-11-05"
+            ]
+          }
+        ]
+      }
+    ],
+    "search": [
+      "截至2026-11-11，检索Nokia官网Newsroom及Investors；核读2026Q1、Q2、Q3全文与OFC2026发布、2026-05-25补充募集说明。",
+      "检索词包括 San Jose InP fab ramp Q4 2026、mid-2027 sampling、four DSP 13 solutions、volume production second half 2027、Q2 long-term AI Cloud orders revenue twelve months。",
+      "生产Daily只读检查2026-09-04至2026-11-11现存海外staging的披露、主张、事件、证据表。按同源URL/引文/正文哈希合并日期版本；San Jose、厂址、OFC家族和Q2订单批次分别对照。",
+      "Q3演示稿已定位18页PDF，但后续定位请求超时、直接获取403。本次细节以能读取的Q3完整财报为据。",
+      "Q3全文检索AI & Cloud、long-term orders、twelve months、order intake、Net sales by customer type、Contract liabilities，核对原批次是否分拆。",
+      "同一Q3来源8日重复观察仅计一次来源。Daily中两条机器抽取（Infinera整合、下期财报日程）与本承诺原批次没有直接兑现对应。"
+    ],
+    "original": {
+      "claim_id": "CL061",
+      "source_id": "S_NOK_2026Q2",
+      "date": "2026-07-23",
+      "url": "https://www.nokia.com/newsroom/nokia-corporation-report-for-q2-and-half-year-2026/",
+      "quote": "We expect around half of these orders to convert to revenue over the next twelve months",
+      "locator": "CEO Q2 comments / Network Infrastructure paragraph"
+    },
+    "checked_at": "2026-11-11"
+  },
+  {
+    "id": "CM007",
+    "target": "Vesta 样品在日历 2026 年第二季度可提供",
+    "due_date": "2026-06-30",
+    "old_status": "not_observed",
+    "verdict": "partially_fulfilled",
+    "assessment": "3 月 5 日原话是样品将于日历 Q2 可提供。9 月 3 日公司先披露取得 Vesta 样品订单，9 月 16 日 Investor Forum 原文进一步确认正为多家关键客户提供样品评估，客户包括 hyperscaler 和交换机 OEM。因此样品阶段在 9 月 16 日已被公开观察到，但首次样品可提供的日期未披露，无法核实是否在 6 月 30 日前按期实现。",
+    "missing": "缺首次样品可提供或发送日期、Q2 内客户送样或接受记录。现有送样阶段的肯定证据可支持部分兑现，按期性仍为 UNKNOWN。未找到公司明确延期表述。",
+    "proposal": "建议 CM007.status 从 not_observed 调整为 partially_fulfilled，保留原到期日。在 assessment 写明首次样品可用日未知，9 月 16 日是披露日。assessment 记录截至该日已送样评估、Q2 按期性待证。补录样品订单和送样阶段时使用独立、同对象的带日期主张。",
+    "positions": [
+      "calls/commitments.csv CM007 ↔ calls/claims.csv CL069",
+      "新增候选 calls/sources.csv：2026-09-03 Q3 和 2026-09-16 Investor Forum",
+      "calls/themes.csv T017，calls/events.csv EV012 / PRG_CIEN_VESTA 可作同产品阶段比较，须按已有事件实际字段核验"
+    ],
+    "evidence": [
+      {
+        "date": "2026-03-05",
+        "title": "Ciena FY2026 Q1 官方电话会",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_financials/2026/q1/641623.pdf",
+        "locator": "p. 5，Gary Smith，Vesta 段",
+        "quote": "available in calendar Q2 2026"
+      },
+      {
+        "date": "2026-03-16",
+        "title": "Ciena OFC 2026 官方展示材料",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_presentations/2026/03/Ciena-at-OFC-2026.pdf",
+        "locator": "slide 15：再次列明日历 Q2 客户样品时间",
+        "quote": ""
+      },
+      {
+        "date": "2026-09-03",
+        "title": "Ciena FY2026 Q3 官方电话会",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_financials/2026/q3/Ciena-Fiscal-Q3-2026-Financial-Results-Call_Transcript.pdf",
+        "locator": "p. 5，Gary Smith，Vesta 段",
+        "quote": "received sample orders from several anchor customers"
+      },
+      {
+        "date": "2026-09-16",
+        "title": "Ciena Investor Forum 官方逐字稿",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_events/2026/09/16/Ciena-Investor-Forum-2026-Full-Transcript-of-the-Day-s-Events-Final.pdf",
+        "locator": "p. 24，原件行 873–874，Vesta 200 CPX 段",
+        "quote": "we are sampling devices for multiple key customers"
+      },
+      {
+        "date": "2026-09-16",
+        "title": "Ciena Investor Forum 官方展示材料",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_events/2026/09/16/Ciena-Investor-Forum-2026-Event-Materials-Final.pdf",
+        "locator": "slide 55，Vesta 200 6.4T CPX，客户送样状态",
+        "quote": ""
+      },
+      {
+        "date": "2026-09-16",
+        "title": "Ciena ECOC 官方发布",
+        "url": "https://www.ciena.com/about/newsroom/press-releases/ciena-highlights-high-performance-ai-networking-at-ecoc-2026",
+        "locator": "Demonstrations，intra-data-center 与 CPO 演示段，属于展示证据",
+        "quote": ""
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-09-09",
+        "claim": "Ciena Reports Fiscal Third Quarter 2026 Financial Results",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-09/disclosure_candidates.csv#L49",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Third-Quarter-2026-Financial-Results/default.aspx",
+        "match": "同公司、同期官方材料的发现入口。该条为财报新闻稿或论坛财务目标新闻稿，未提取 Vesta 样品或 Hyper-Rail 里程碑，不能替代本次追补的逐字稿。",
+        "dates": [
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-12",
+          "2026-09-13",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17"
+        ],
+        "observations": [
+          {
+            "date": "2026-09-09",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-09/disclosure_candidates.csv#L49"
+          },
+          {
+            "date": "2026-09-10",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-10/disclosure_candidates.csv#L49"
+          },
+          {
+            "date": "2026-09-11",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-11/disclosure_candidates.csv#L51"
+          },
+          {
+            "date": "2026-09-12",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-12/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-13",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-13/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-14",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-14/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-15",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-15/disclosure_candidates.csv#L40"
+          },
+          {
+            "date": "2026-09-16",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-16/disclosure_candidates.csv#L42"
+          },
+          {
+            "date": "2026-09-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L40"
+          }
+        ],
+        "disclosure_id": "DC_9B16CE64F492",
+        "content_hash": "63bbb69d59661244567fbf4064bfef5a586e2abd82d708daf9148b34c67e9592",
+        "version_count": 1
+      },
+      {
+        "date": "2026-09-17",
+        "claim": "Ciena Announces Fiscal Year 2029 Financial Targets",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L19",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Announces-Fiscal-Year-2029-Financial-Targets/default.aspx",
+        "match": "同公司、同期官方材料的发现入口。该条为财报新闻稿或论坛财务目标新闻稿，未提取 Vesta 样品或 Hyper-Rail 里程碑，不能替代本次追补的逐字稿。",
+        "dates": [
+          "2026-09-17",
+          "2026-09-18",
+          "2026-09-19",
+          "2026-09-20",
+          "2026-09-21",
+          "2026-09-22",
+          "2026-09-23",
+          "2026-09-24",
+          "2026-09-25",
+          "2026-09-27",
+          "2026-09-28",
+          "2026-09-29",
+          "2026-09-30"
+        ],
+        "observations": [
+          {
+            "date": "2026-09-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L19"
+          },
+          {
+            "date": "2026-09-18",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-18/disclosure_candidates.csv#L25"
+          },
+          {
+            "date": "2026-09-19",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-19/disclosure_candidates.csv#L27"
+          },
+          {
+            "date": "2026-09-20",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-20/disclosure_candidates.csv#L24"
+          },
+          {
+            "date": "2026-09-21",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-21/disclosure_candidates.csv#L25"
+          },
+          {
+            "date": "2026-09-22",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-22/disclosure_candidates.csv#L29"
+          },
+          {
+            "date": "2026-09-23",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-23/disclosure_candidates.csv#L28"
+          },
+          {
+            "date": "2026-09-24",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-24/disclosure_candidates.csv#L29"
+          },
+          {
+            "date": "2026-09-25",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-25/disclosure_candidates.csv#L33"
+          },
+          {
+            "date": "2026-09-27",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-27/disclosure_candidates.csv#L32"
+          },
+          {
+            "date": "2026-09-28",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-28/disclosure_candidates.csv#L32"
+          },
+          {
+            "date": "2026-09-29",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-29/disclosure_candidates.csv#L32"
+          },
+          {
+            "date": "2026-09-30",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-30/disclosure_candidates.csv#L34"
+          }
+        ],
+        "disclosure_id": "DC_5B3581CF61C4",
+        "content_hash": "55dbbdecc408295eb0ff69749906236d27e667e756945a00641ce2d14d9e9468",
+        "version_count": 1
+      },
+      {
+        "date": "2026-09-15",
+        "claim": "Ciena Launches Ciena Ventures to Expand Innovation Across the AI Networking Ecosystem",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-15/disclosure_candidates.csv#L47",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Launches-Ciena-Ventures-to-Expand-Innovation-Across-the-AI-Networking-Ecosystem/default.aspx",
+        "match": "不匹配承诺对象。只披露风险投资平台或人事任命，无法支持 Vesta 样品、Hyper-Rail 客户标准化或收入爬坡。",
+        "dates": [
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18",
+          "2026-09-19",
+          "2026-09-20",
+          "2026-09-21",
+          "2026-09-22",
+          "2026-09-23",
+          "2026-09-24",
+          "2026-09-25",
+          "2026-09-27",
+          "2026-09-28"
+        ],
+        "observations": [
+          {
+            "date": "2026-09-15",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-15/disclosure_candidates.csv#L47"
+          },
+          {
+            "date": "2026-09-16",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-16/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L50"
+          },
+          {
+            "date": "2026-09-18",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-18/disclosure_candidates.csv#L54"
+          },
+          {
+            "date": "2026-09-19",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-19/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-09-20",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-20/disclosure_candidates.csv#L50"
+          },
+          {
+            "date": "2026-09-21",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-21/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-22",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-22/disclosure_candidates.csv#L55"
+          },
+          {
+            "date": "2026-09-23",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-23/disclosure_candidates.csv#L51"
+          },
+          {
+            "date": "2026-09-24",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-24/disclosure_candidates.csv#L49"
+          },
+          {
+            "date": "2026-09-25",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-25/disclosure_candidates.csv#L59"
+          },
+          {
+            "date": "2026-09-27",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-27/disclosure_candidates.csv#L58"
+          },
+          {
+            "date": "2026-09-28",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-28/disclosure_candidates.csv#L58"
+          }
+        ],
+        "disclosure_id": "DC_AC34CFB1B50E",
+        "content_hash": "5b0633a222c70ff1987eaf7c76ec667ffc72b1f6359232ff4fc7f5df1b69579e",
+        "version_count": 1
+      },
+      {
+        "date": "2026-10-13",
+        "claim": "Ciena Appoints Monika Fahlbusch as Chief People Officer",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-13/disclosure_candidates.csv#L56",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Appoints-Monika-Fahlbusch-as-Chief-People-Officer/default.aspx",
+        "match": "不匹配承诺对象。只披露风险投资平台或人事任命，无法支持 Vesta 样品、Hyper-Rail 客户标准化或收入爬坡。",
+        "dates": [
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26"
+        ],
+        "observations": [
+          {
+            "date": "2026-10-13",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-13/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-10-14",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-14/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-10-15",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-15/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-10-16",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-16/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-10-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-17/disclosure_candidates.csv#L51"
+          },
+          {
+            "date": "2026-10-24",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-24/disclosure_candidates.csv#L61"
+          },
+          {
+            "date": "2026-10-25",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-25/disclosure_candidates.csv#L76"
+          },
+          {
+            "date": "2026-10-26",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-26/disclosure_candidates.csv#L76"
+          }
+        ],
+        "disclosure_id": "DC_A050D8264E50",
+        "content_hash": "838b5d06c575d32d3fb38e8ad0303d9dea98e6af2e7bc44cc14040aed4994272",
+        "version_count": 1
+      }
+    ],
+    "search": [
+      "截至 2026-11-11 检索 Ciena 官方新闻、产品页、Q1/Q2/Q3 财报逐字稿、3 月 OFC 材料及 9 月 Investor Forum 原件。公司 IR 当前最近季度为 FY2026 Q3。该可见范围不保证捕获所有私下客户进展。",
+      "检查 55 个海外 staging 日期的披露、主张和事件候选。CIEN 共 43 次披露观察，4 个 URL/正文哈希版本，未找到含 Vesta/Hyper-Rail 的直接候选主张。保留两组相关资料入口，共 22 次观察，按来源 URL 和正文哈希折叠。 另列 2 组不匹配的相邻公司新闻，21 次观察。",
+      "公开检索以 Ciena Vesta 200 sample/sampling、Hyper-Rail initial customer standardization、Q2/Q3 2026、Investor Forum 2026 等词定位原件。agy 只读检索返回 FAILED_PRECONDITION，用户地区不支持该 API，无可用结果。"
+    ],
+    "original": {
+      "claim_id": "CL069",
+      "source_id": "S_CIEN_2026Q1",
+      "date": "2026-03-05",
+      "url": "https://s25.q4cdn.com/550667411/files/doc_events/2026/03/Q1-2026-Earnings-Call-Transcript.pdf",
+      "quote": "Samples of the Vesta product will be available in calendar Q2 2026",
+      "locator": "prepared remarks p.5 / Nubis and Vesta paragraph"
+    },
+    "checked_at": "2026-11-11"
+  },
+  {
+    "id": "CM008",
+    "target": "RLS Hyper-Rail 在 2026 年底开始客户选型/平台标准化",
+    "due_date": "2026-12-31",
+    "old_status": "pending",
+    "verdict": "pending",
+    "assessment": "Q1 所说 begin standardization 在 Q3 被明确为 initial customer standardization。这里指客户将 RLS Hyper-Rail 纳入其平台选型和部署规范。9 月 3 日公司重申年底目标，9 月 16 日论坛仍预计首个版本于年底推出。截至 11 月 11 日尚未到期。Q2 首个多轨订单和 ECOC 演示提供进展背景，但都没有确认客户标准化已完成。",
+    "missing": "缺具名或可定位客户的平台纳入、验收或正式部署里程碑。未找到该承诺明确引用某个 IEEE/OIF 标准项目或标准化组织会议。Open CPX 是 Vesta 相关 MSA，不应拼接到 Hyper-Rail 的客户标准化承诺。",
+    "proposal": "保留 CM008.status=pending 和 2026-12-31 到期日。将 target 中文修订为「Hyper-Rail 于 2026 年底开始客户选型/平台标准化」，assessment 加入 Q3 原话的 customer 限定和论坛年底版本计划。Q2 首单单独记录为订单阶段。",
+    "positions": [
+      "calls/commitments.csv CM008 ↔ calls/claims.csv CL070",
+      "calls/claims.csv CL072 的首单仅是商业前置信号",
+      "calls/themes.csv T021，相干光与 AI 数据中心互联采用阶段"
+    ],
+    "evidence": [
+      {
+        "date": "2026-03-05",
+        "title": "Ciena FY2026 Q1 官方电话会",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_financials/2026/q1/641623.pdf",
+        "locator": "p. 5，Hyper-Rail 段",
+        "quote": "",
+        "quote_reference": "CM007"
+      },
+      {
+        "date": "2026-06-04",
+        "title": "Ciena FY2026 Q2 官方电话会",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_financials/2026/q2/Ciena-Fiscal-Q2-2026-Financial-Results-Call.pdf",
+        "locator": "p. 3，Gary Smith，首个多轨订单段",
+        "quote": ""
+      },
+      {
+        "date": "2026-09-03",
+        "title": "Ciena FY2026 Q3 官方电话会",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_financials/2026/q3/Ciena-Fiscal-Q3-2026-Financial-Results-Call_Transcript.pdf",
+        "locator": "p. 5，RLS Hyper-Rail 段",
+        "quote": "",
+        "quote_reference": "CM007"
+      },
+      {
+        "date": "2026-09-16",
+        "title": "Ciena Investor Forum 官方逐字稿",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_events/2026/09/16/Ciena-Investor-Forum-2026-Full-Transcript-of-the-Day-s-Events-Final.pdf",
+        "locator": "p. 15，原件行 530–541，年底首版计划",
+        "quote": "",
+        "quote_reference": "CM007"
+      },
+      {
+        "date": "2026-09-16",
+        "title": "Ciena ECOC 官方发布",
+        "url": "https://www.ciena.com/about/newsroom/press-releases/ciena-highlights-high-performance-ai-networking-at-ecoc-2026",
+        "locator": "Demonstrations，RLS Hyper-Rail 32x 密度演示段",
+        "quote": "",
+        "quote_reference": "CM007"
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-09-09",
+        "claim": "Ciena Reports Fiscal Third Quarter 2026 Financial Results",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-09/disclosure_candidates.csv#L49",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Third-Quarter-2026-Financial-Results/default.aspx",
+        "match": "同公司、同期官方材料的发现入口。该条为财报新闻稿或论坛财务目标新闻稿，未提取 Vesta 样品或 Hyper-Rail 里程碑，不能替代本次追补的逐字稿。",
+        "dates": [
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-12",
+          "2026-09-13",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17"
+        ],
+        "observations": [
+          {
+            "date": "2026-09-09",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-09/disclosure_candidates.csv#L49"
+          },
+          {
+            "date": "2026-09-10",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-10/disclosure_candidates.csv#L49"
+          },
+          {
+            "date": "2026-09-11",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-11/disclosure_candidates.csv#L51"
+          },
+          {
+            "date": "2026-09-12",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-12/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-13",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-13/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-14",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-14/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-15",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-15/disclosure_candidates.csv#L40"
+          },
+          {
+            "date": "2026-09-16",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-16/disclosure_candidates.csv#L42"
+          },
+          {
+            "date": "2026-09-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L40"
+          }
+        ],
+        "disclosure_id": "DC_9B16CE64F492",
+        "content_hash": "63bbb69d59661244567fbf4064bfef5a586e2abd82d708daf9148b34c67e9592",
+        "version_count": 1
+      },
+      {
+        "date": "2026-09-17",
+        "claim": "Ciena Announces Fiscal Year 2029 Financial Targets",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L19",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Announces-Fiscal-Year-2029-Financial-Targets/default.aspx",
+        "match": "同公司、同期官方材料的发现入口。该条为财报新闻稿或论坛财务目标新闻稿，未提取 Vesta 样品或 Hyper-Rail 里程碑，不能替代本次追补的逐字稿。",
+        "dates": [
+          "2026-09-17",
+          "2026-09-18",
+          "2026-09-19",
+          "2026-09-20",
+          "2026-09-21",
+          "2026-09-22",
+          "2026-09-23",
+          "2026-09-24",
+          "2026-09-25",
+          "2026-09-27",
+          "2026-09-28",
+          "2026-09-29",
+          "2026-09-30"
+        ],
+        "observations": [
+          {
+            "date": "2026-09-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L19"
+          },
+          {
+            "date": "2026-09-18",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-18/disclosure_candidates.csv#L25"
+          },
+          {
+            "date": "2026-09-19",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-19/disclosure_candidates.csv#L27"
+          },
+          {
+            "date": "2026-09-20",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-20/disclosure_candidates.csv#L24"
+          },
+          {
+            "date": "2026-09-21",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-21/disclosure_candidates.csv#L25"
+          },
+          {
+            "date": "2026-09-22",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-22/disclosure_candidates.csv#L29"
+          },
+          {
+            "date": "2026-09-23",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-23/disclosure_candidates.csv#L28"
+          },
+          {
+            "date": "2026-09-24",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-24/disclosure_candidates.csv#L29"
+          },
+          {
+            "date": "2026-09-25",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-25/disclosure_candidates.csv#L33"
+          },
+          {
+            "date": "2026-09-27",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-27/disclosure_candidates.csv#L32"
+          },
+          {
+            "date": "2026-09-28",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-28/disclosure_candidates.csv#L32"
+          },
+          {
+            "date": "2026-09-29",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-29/disclosure_candidates.csv#L32"
+          },
+          {
+            "date": "2026-09-30",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-30/disclosure_candidates.csv#L34"
+          }
+        ],
+        "disclosure_id": "DC_5B3581CF61C4",
+        "content_hash": "55dbbdecc408295eb0ff69749906236d27e667e756945a00641ce2d14d9e9468",
+        "version_count": 1
+      },
+      {
+        "date": "2026-09-15",
+        "claim": "Ciena Launches Ciena Ventures to Expand Innovation Across the AI Networking Ecosystem",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-15/disclosure_candidates.csv#L47",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Launches-Ciena-Ventures-to-Expand-Innovation-Across-the-AI-Networking-Ecosystem/default.aspx",
+        "match": "不匹配承诺对象。只披露风险投资平台或人事任命，无法支持 Vesta 样品、Hyper-Rail 客户标准化或收入爬坡。",
+        "dates": [
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18",
+          "2026-09-19",
+          "2026-09-20",
+          "2026-09-21",
+          "2026-09-22",
+          "2026-09-23",
+          "2026-09-24",
+          "2026-09-25",
+          "2026-09-27",
+          "2026-09-28"
+        ],
+        "observations": [
+          {
+            "date": "2026-09-15",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-15/disclosure_candidates.csv#L47"
+          },
+          {
+            "date": "2026-09-16",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-16/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L50"
+          },
+          {
+            "date": "2026-09-18",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-18/disclosure_candidates.csv#L54"
+          },
+          {
+            "date": "2026-09-19",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-19/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-09-20",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-20/disclosure_candidates.csv#L50"
+          },
+          {
+            "date": "2026-09-21",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-21/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-22",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-22/disclosure_candidates.csv#L55"
+          },
+          {
+            "date": "2026-09-23",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-23/disclosure_candidates.csv#L51"
+          },
+          {
+            "date": "2026-09-24",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-24/disclosure_candidates.csv#L49"
+          },
+          {
+            "date": "2026-09-25",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-25/disclosure_candidates.csv#L59"
+          },
+          {
+            "date": "2026-09-27",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-27/disclosure_candidates.csv#L58"
+          },
+          {
+            "date": "2026-09-28",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-28/disclosure_candidates.csv#L58"
+          }
+        ],
+        "disclosure_id": "DC_AC34CFB1B50E",
+        "content_hash": "5b0633a222c70ff1987eaf7c76ec667ffc72b1f6359232ff4fc7f5df1b69579e",
+        "version_count": 1
+      },
+      {
+        "date": "2026-10-13",
+        "claim": "Ciena Appoints Monika Fahlbusch as Chief People Officer",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-13/disclosure_candidates.csv#L56",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Appoints-Monika-Fahlbusch-as-Chief-People-Officer/default.aspx",
+        "match": "不匹配承诺对象。只披露风险投资平台或人事任命，无法支持 Vesta 样品、Hyper-Rail 客户标准化或收入爬坡。",
+        "dates": [
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26"
+        ],
+        "observations": [
+          {
+            "date": "2026-10-13",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-13/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-10-14",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-14/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-10-15",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-15/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-10-16",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-16/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-10-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-17/disclosure_candidates.csv#L51"
+          },
+          {
+            "date": "2026-10-24",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-24/disclosure_candidates.csv#L61"
+          },
+          {
+            "date": "2026-10-25",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-25/disclosure_candidates.csv#L76"
+          },
+          {
+            "date": "2026-10-26",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-26/disclosure_candidates.csv#L76"
+          }
+        ],
+        "disclosure_id": "DC_A050D8264E50",
+        "content_hash": "838b5d06c575d32d3fb38e8ad0303d9dea98e6af2e7bc44cc14040aed4994272",
+        "version_count": 1
+      }
+    ],
+    "search": [
+      "截至 2026-11-11 检索 Ciena 官方新闻、产品页、Q1/Q2/Q3 财报逐字稿、3 月 OFC 材料及 9 月 Investor Forum 原件。公司 IR 当前最近季度为 FY2026 Q3。该可见范围不保证捕获所有私下客户进展。",
+      "检查 55 个海外 staging 日期的披露、主张和事件候选。CIEN 共 43 次披露观察，4 个 URL/正文哈希版本，未找到含 Vesta/Hyper-Rail 的直接候选主张。保留两组相关资料入口，共 22 次观察，按来源 URL 和正文哈希折叠。 另列 2 组不匹配的相邻公司新闻，21 次观察。",
+      "公开检索以 Ciena Vesta 200 sample/sampling、Hyper-Rail initial customer standardization、Q2/Q3 2026、Investor Forum 2026 等词定位原件。agy 只读检索返回 FAILED_PRECONDITION，用户地区不支持该 API，无可用结果。"
+    ],
+    "original": {
+      "claim_id": "CL070",
+      "source_id": "S_CIEN_2026Q1",
+      "date": "2026-03-05",
+      "url": "https://s25.q4cdn.com/550667411/files/doc_events/2026/03/Q1-2026-Earnings-Call-Transcript.pdf",
+      "quote": "we expect will begin standardization at the end of '26",
+      "locator": "prepared remarks p.5 / Hyper-Rail paragraph"
+    },
+    "checked_at": "2026-11-11"
+  },
+  {
+    "id": "CM009",
+    "target": "RLS Hyper-Rail 于 2027 年开始爬坡",
+    "due_date": "2027-12-31",
+    "old_status": "pending",
+    "verdict": "pending",
+    "assessment": "Q1 预计 2027 年开始爬坡，Q3 进一步描述为 2027 年内逐步形成有规模的收入。9 月 16 日 Investor Forum 将 Hyper-Rail 列为未来产品增长来源，但没有披露已经发生的 Hyper-Rail 规模收入。截至 11 月 11 日，承诺仍在未来窗口。现有 RLS 收入、首单、产品演示以及 WaveLogic 部署属于不同阶段或不同对象。",
+    "missing": "缺能单独归属 RLS Hyper-Rail 的交付、收入和客户部署数据。管理层未给出 2027 年内精确开始月份、爬坡规模或独立金额门槛。CM009 的 12 月 31 日是账本年度截止坐标。",
+    "proposal": "保留 CM009.status=pending 及原到期日。assessment 增补 Q3 的 2027 年有规模收入预期，保留其前瞻性质。后续核对 Hyper-Rail 特定收入，避免把全公司、RLS 全系列或 Vesta CPX 的增长并入本承诺。",
+    "positions": [
+      "calls/commitments.csv CM009 ↔ calls/claims.csv CL071",
+      "calls/themes.csv T021",
+      "calls/claims.csv CL072 首单与 CL063/CL064 旧 scale-across 项目须分开"
+    ],
+    "evidence": [
+      {
+        "date": "2026-03-05",
+        "title": "Ciena FY2026 Q1 官方电话会",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_financials/2026/q1/641623.pdf",
+        "locator": "p. 5，Hyper-Rail 段",
+        "quote": "",
+        "quote_reference": "CM007"
+      },
+      {
+        "date": "2026-06-04",
+        "title": "Ciena FY2026 Q2 官方电话会",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_financials/2026/q2/Ciena-Fiscal-Q2-2026-Financial-Results-Call.pdf",
+        "locator": "p. 3，首个多轨订单段",
+        "quote": "",
+        "quote_reference": "CM008"
+      },
+      {
+        "date": "2026-09-03",
+        "title": "Ciena FY2026 Q3 官方电话会",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_financials/2026/q3/Ciena-Fiscal-Q3-2026-Financial-Results-Call_Transcript.pdf",
+        "locator": "p. 5，Hyper-Rail 段",
+        "quote": "",
+        "quote_reference": "CM007"
+      },
+      {
+        "date": "2026-09-16",
+        "title": "Ciena Investor Forum 官方逐字稿",
+        "url": "https://s25.q4cdn.com/550667411/files/doc_events/2026/09/16/Ciena-Investor-Forum-2026-Full-Transcript-of-the-Day-s-Events-Final.pdf",
+        "locator": "pp. 31–32，Hyper-Rail 与多产品未来增长来源，未拆单产品收入",
+        "quote": "",
+        "quote_reference": "CM007"
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-09-09",
+        "claim": "Ciena Reports Fiscal Third Quarter 2026 Financial Results",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-09/disclosure_candidates.csv#L49",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Reports-Fiscal-Third-Quarter-2026-Financial-Results/default.aspx",
+        "match": "同公司、同期官方材料的发现入口。该条为财报新闻稿或论坛财务目标新闻稿，未提取 Vesta 样品或 Hyper-Rail 里程碑，不能替代本次追补的逐字稿。",
+        "dates": [
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-12",
+          "2026-09-13",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17"
+        ],
+        "observations": [
+          {
+            "date": "2026-09-09",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-09/disclosure_candidates.csv#L49"
+          },
+          {
+            "date": "2026-09-10",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-10/disclosure_candidates.csv#L49"
+          },
+          {
+            "date": "2026-09-11",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-11/disclosure_candidates.csv#L51"
+          },
+          {
+            "date": "2026-09-12",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-12/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-13",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-13/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-14",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-14/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-15",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-15/disclosure_candidates.csv#L40"
+          },
+          {
+            "date": "2026-09-16",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-16/disclosure_candidates.csv#L42"
+          },
+          {
+            "date": "2026-09-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L40"
+          }
+        ],
+        "disclosure_id": "DC_9B16CE64F492",
+        "content_hash": "63bbb69d59661244567fbf4064bfef5a586e2abd82d708daf9148b34c67e9592",
+        "version_count": 1
+      },
+      {
+        "date": "2026-09-17",
+        "claim": "Ciena Announces Fiscal Year 2029 Financial Targets",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L19",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Announces-Fiscal-Year-2029-Financial-Targets/default.aspx",
+        "match": "同公司、同期官方材料的发现入口。该条为财报新闻稿或论坛财务目标新闻稿，未提取 Vesta 样品或 Hyper-Rail 里程碑，不能替代本次追补的逐字稿。",
+        "dates": [
+          "2026-09-17",
+          "2026-09-18",
+          "2026-09-19",
+          "2026-09-20",
+          "2026-09-21",
+          "2026-09-22",
+          "2026-09-23",
+          "2026-09-24",
+          "2026-09-25",
+          "2026-09-27",
+          "2026-09-28",
+          "2026-09-29",
+          "2026-09-30"
+        ],
+        "observations": [
+          {
+            "date": "2026-09-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L19"
+          },
+          {
+            "date": "2026-09-18",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-18/disclosure_candidates.csv#L25"
+          },
+          {
+            "date": "2026-09-19",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-19/disclosure_candidates.csv#L27"
+          },
+          {
+            "date": "2026-09-20",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-20/disclosure_candidates.csv#L24"
+          },
+          {
+            "date": "2026-09-21",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-21/disclosure_candidates.csv#L25"
+          },
+          {
+            "date": "2026-09-22",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-22/disclosure_candidates.csv#L29"
+          },
+          {
+            "date": "2026-09-23",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-23/disclosure_candidates.csv#L28"
+          },
+          {
+            "date": "2026-09-24",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-24/disclosure_candidates.csv#L29"
+          },
+          {
+            "date": "2026-09-25",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-25/disclosure_candidates.csv#L33"
+          },
+          {
+            "date": "2026-09-27",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-27/disclosure_candidates.csv#L32"
+          },
+          {
+            "date": "2026-09-28",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-28/disclosure_candidates.csv#L32"
+          },
+          {
+            "date": "2026-09-29",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-29/disclosure_candidates.csv#L32"
+          },
+          {
+            "date": "2026-09-30",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-30/disclosure_candidates.csv#L34"
+          }
+        ],
+        "disclosure_id": "DC_5B3581CF61C4",
+        "content_hash": "55dbbdecc408295eb0ff69749906236d27e667e756945a00641ce2d14d9e9468",
+        "version_count": 1
+      },
+      {
+        "date": "2026-09-15",
+        "claim": "Ciena Launches Ciena Ventures to Expand Innovation Across the AI Networking Ecosystem",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-15/disclosure_candidates.csv#L47",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Launches-Ciena-Ventures-to-Expand-Innovation-Across-the-AI-Networking-Ecosystem/default.aspx",
+        "match": "不匹配承诺对象。只披露风险投资平台或人事任命，无法支持 Vesta 样品、Hyper-Rail 客户标准化或收入爬坡。",
+        "dates": [
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18",
+          "2026-09-19",
+          "2026-09-20",
+          "2026-09-21",
+          "2026-09-22",
+          "2026-09-23",
+          "2026-09-24",
+          "2026-09-25",
+          "2026-09-27",
+          "2026-09-28"
+        ],
+        "observations": [
+          {
+            "date": "2026-09-15",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-15/disclosure_candidates.csv#L47"
+          },
+          {
+            "date": "2026-09-16",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-16/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-17/disclosure_candidates.csv#L50"
+          },
+          {
+            "date": "2026-09-18",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-18/disclosure_candidates.csv#L54"
+          },
+          {
+            "date": "2026-09-19",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-19/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-09-20",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-20/disclosure_candidates.csv#L50"
+          },
+          {
+            "date": "2026-09-21",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-21/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-09-22",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-22/disclosure_candidates.csv#L55"
+          },
+          {
+            "date": "2026-09-23",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-23/disclosure_candidates.csv#L51"
+          },
+          {
+            "date": "2026-09-24",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-24/disclosure_candidates.csv#L49"
+          },
+          {
+            "date": "2026-09-25",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-25/disclosure_candidates.csv#L59"
+          },
+          {
+            "date": "2026-09-27",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-27/disclosure_candidates.csv#L58"
+          },
+          {
+            "date": "2026-09-28",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-09-28/disclosure_candidates.csv#L58"
+          }
+        ],
+        "disclosure_id": "DC_AC34CFB1B50E",
+        "content_hash": "5b0633a222c70ff1987eaf7c76ec667ffc72b1f6359232ff4fc7f5df1b69579e",
+        "version_count": 1
+      },
+      {
+        "date": "2026-10-13",
+        "claim": "Ciena Appoints Monika Fahlbusch as Chief People Officer",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-13/disclosure_candidates.csv#L56",
+        "url": "https://investor.ciena.com/news/news-details/2026/Ciena-Appoints-Monika-Fahlbusch-as-Chief-People-Officer/default.aspx",
+        "match": "不匹配承诺对象。只披露风险投资平台或人事任命，无法支持 Vesta 样品、Hyper-Rail 客户标准化或收入爬坡。",
+        "dates": [
+          "2026-10-13",
+          "2026-10-14",
+          "2026-10-15",
+          "2026-10-16",
+          "2026-10-17",
+          "2026-10-24",
+          "2026-10-25",
+          "2026-10-26"
+        ],
+        "observations": [
+          {
+            "date": "2026-10-13",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-13/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-10-14",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-14/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-10-15",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-15/disclosure_candidates.csv#L52"
+          },
+          {
+            "date": "2026-10-16",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-16/disclosure_candidates.csv#L56"
+          },
+          {
+            "date": "2026-10-17",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-17/disclosure_candidates.csv#L51"
+          },
+          {
+            "date": "2026-10-24",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-24/disclosure_candidates.csv#L61"
+          },
+          {
+            "date": "2026-10-25",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-25/disclosure_candidates.csv#L76"
+          },
+          {
+            "date": "2026-10-26",
+            "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-26/disclosure_candidates.csv#L76"
+          }
+        ],
+        "disclosure_id": "DC_A050D8264E50",
+        "content_hash": "838b5d06c575d32d3fb38e8ad0303d9dea98e6af2e7bc44cc14040aed4994272",
+        "version_count": 1
+      }
+    ],
+    "search": [
+      "截至 2026-11-11 检索 Ciena 官方新闻、产品页、Q1/Q2/Q3 财报逐字稿、3 月 OFC 材料及 9 月 Investor Forum 原件。公司 IR 当前最近季度为 FY2026 Q3。该可见范围不保证捕获所有私下客户进展。",
+      "检查 55 个海外 staging 日期的披露、主张和事件候选。CIEN 共 43 次披露观察，4 个 URL/正文哈希版本，未找到含 Vesta/Hyper-Rail 的直接候选主张。保留两组相关资料入口，共 22 次观察，按来源 URL 和正文哈希折叠。 另列 2 组不匹配的相邻公司新闻，21 次观察。",
+      "公开检索以 Ciena Vesta 200 sample/sampling、Hyper-Rail initial customer standardization、Q2/Q3 2026、Investor Forum 2026 等词定位原件。agy 只读检索返回 FAILED_PRECONDITION，用户地区不支持该 API，无可用结果。"
+    ],
+    "original": {
+      "claim_id": "CL071",
+      "source_id": "S_CIEN_2026Q1",
+      "date": "2026-03-05",
+      "url": "https://s25.q4cdn.com/550667411/files/doc_events/2026/03/Q1-2026-Earnings-Call-Transcript.pdf",
+      "quote": "will ramp in 2027",
+      "locator": "prepared remarks p.5 / Hyper-Rail paragraph"
+    },
+    "checked_at": "2026-11-11"
+  }
+]

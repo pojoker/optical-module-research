@@ -1,0 +1,413 @@
+[
+  {
+    "id": "G-dacd6464384279d8",
+    "verdict": "部分证实 · 已定位具体措施",
+    "confirmed": "商务部确认第八轮磋商将吉隆坡联合安排延期至2027-01-10。中国税委会11月9日公告自11月10日13:01起两个月暂停24个百分点加征税、保留10%。美国USTR的11月6日公告延长178项现有Section 301产品排除，DATES和Annex A/B把实际期限写到美东时间2027-01-09 23:59；说明正文写until January 10。该进口期限和双边安排的日期分别保留。白宫此前已经发布终止若干IEEPA额外关税的执行令，税项沿革须分开。",
+    "missing": "光模块各SKU是否落入任一产品排除仍需按进口当日有效HTSUS/Chapter 99、十位统计号及产品描述核对。纪要同段的光耦合、Lumentum与台英资料各自另核。",
+    "proposal": "补录联合安排及两国已查到的具体实施措施和日期。各自保留法源、覆盖货品及进口方向。",
+    "target": "当前复核清单 · 政策证据。旧政策条目及发文主体登记未定位。日后有获准的主体、事件口径及证据关系，才评估 calls/disclosures.csv 的 government_record 与 calls/events.csv 的 policy_market_access。",
+    "evidence": [
+      {
+        "title": "商务部美大司负责人解读第八轮中美经贸磋商成果",
+        "url": "https://www.mofcom.gov.cn/syxwfb/art/2026/art_d9ea01824fc44fd8a29f7dc3f8ca9c72.html",
+        "locator": "关于吉隆坡联合安排延期的答复",
+        "quote": "将吉隆坡经贸磋商联合安排延期至2027年1月10日"
+      },
+      {
+        "title": "国务院关税税则委员会 · 调整对原产于美国的进口商品加征关税措施",
+        "url": "https://gss.mof.gov.cn/gzdt/zhengcejiedu/202611/t20261109_4004261.htm",
+        "locator": "2026-11-09 · 首段，实施时间及税率",
+        "quote": "在2个月内继续暂停实施24%的对美加征关税税率，保留10%的对美加征关税税率。"
+      },
+      {
+        "title": "USTR · Section 301 排除延长两个月（2026-11-06）",
+        "url": "https://ustr.gov/sites/default/files/files/Issue_Areas/Enforcement/Section%20301/USTR%20FRN%20Extending%20Section%20301%20China%20FTT%20Exclusions%20to%20Jan%202027.pdf",
+        "locator": "DATES (p.1)、Determination (p.4)、Annex A/B (p.5) · 分别核实施窗口与政策说明",
+        "quote": "through 11:59 p.m. eastern time on January 9, 2027."
+      },
+      {
+        "title": "美国白宫 · Ending Certain Tariff Actions（2026-02-20）",
+        "url": "https://www.whitehouse.gov/presidential-actions/2026/02/ending-certain-tariff-actions/",
+        "locator": "Sec. 2 · IEEPA 额外从价税终止安排",
+        "quote": ""
+      }
+    ],
+    "search": [
+      "商务部 第八轮 2027年1月10日 吉隆坡；财政部税委会 2026-11-09 两个月。",
+      "USTR November 6 2026 exclusion extensions Jan 10 2027；白宫 Ending Certain Tariff Actions Sec. 2。"
+    ]
+  },
+  {
+    "id": "G-d000601e4e2f38ba",
+    "verdict": "原判断缺证 · 个案结果相反",
+    "confirmed": "H335829 是新易盛四组100G–800G收发器/AOC所述制程。中国完成SMT、光子组件、整机装配与温循；泰国负责固件与参数加载、调谐、老化、终测及包装。CBP仍判原产地为中国。另案 N344720 与 N358465 分别按不同实际工序判泰国、马来西亚。新易盛披露泰国子公司生产光模块，天孚披露新签泰国建设用地交易。",
+    "missing": "没有逐型号BOM、PCBA/光子组件关键工序所在国、批次记录及覆盖实际美国进口交易的裁决。原文中的每家工厂SMT、微光学对准、全温测试闭环，以及阻断关税风险，均欠同主体同SKU证据。",
+    "proposal": "保留H335829反例及两项独立对照个案。按公司/厂址/型号记录产能或投资，不把海外实体存在转换为原产地认可。",
+    "target": "当前复核清单 · CBP 裁决案例。旧监管个案条目及发布主体登记未定位。公司厂址/产能披露各自保留候选。",
+    "evidence": [
+      {
+        "title": "美国 CBP · HQ H335829（2025-02-26）",
+        "url": "https://rulings.cbp.gov/api/ruling/H335829",
+        "locator": "CROSS 官方 API text 字段 · FACTS / LAW AND ANALYSIS / HOLDING",
+        "quote": "the country of origin of the subject optical transceiver units is China."
+      },
+      {
+        "title": "美国 CBP · N344720（2025-01-13）",
+        "url": "https://rulings.cbp.gov/api/ruling/N344720",
+        "locator": "CROSS 官方 API text 字段 · Accelink OSFP 制程、原产地标记及 Section 301 结论",
+        "quote": "the country of origin for marking purposes would be Thailand"
+      },
+      {
+        "title": "美国 CBP · N358465（2026-02-27）",
+        "url": "https://rulings.cbp.gov/api/ruling/N358465",
+        "locator": "CROSS 官方 API text 字段 · Accelink 800G OSFP DR8、Malaysia/China 工序、末段认定",
+        "quote": "the country of origin of this product would be Malaysia"
+      },
+      {
+        "title": "新易盛《2025年年度报告》",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225172598.PDF",
+        "locator": "第三节管理层讨论与分析 · 主要控股参股公司分析 · 泰国新易盛",
+        "quote": "生产光模块"
+      },
+      {
+        "title": "天孚通信 · 关于泰国子公司签订《土地买卖协议》的公告（2026-065）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225645208.PDF",
+        "locator": "一、交易概述；六、本次交易的目的和对公司的影响",
+        "quote": "作为泰国工厂的建设用地"
+      }
+    ],
+    "search": [
+      "CBP CROSS 官方接口查 H335829、N344720、N358465。",
+      "巨潮资讯查公司定期报告、产能调研、土地公告。"
+    ]
+  },
+  {
+    "id": "G-c9477477a1987c4a",
+    "verdict": "历史案例证实 · 频率和重要性待证",
+    "confirmed": "337-TA-860曾调查VCSEL、VCSEL驱动器及含这些部件的收发器和AOC，并形成针对特定产品、权利要求及被申请人的停止令。337-TA-1399涉及光纤连接器、适配器等，2024年终止。",
+    "missing": "需要限定产品/技术、时间窗和可复核案件总体，并核查各案最新状态及救济范围，才能比较硅光、封装、耦合诉讼频率和行业风险排序。",
+    "proposal": "保留两个可指认的历史案件，逐案写明产品、专利、被申请人及程序结果。搁置行业普遍频发、主要风险的判断。",
+    "target": "当前复核清单 · 政策证据。旧政策条目及发文主体登记未定位。日后有获准的主体、事件口径及证据关系，才评估 calls/disclosures.csv 的 government_record 与 calls/events.csv 的 policy_market_access。",
+    "evidence": [
+      {
+        "title": "USITC · 337-TA-860 立案",
+        "url": "https://www.usitc.gov/press_room/news_release/2012/er1025ll184.htm",
+        "locator": "2012-10-25 · 正文首段产品范围",
+        "quote": "transceivers and active optical cables that include VCSELs and VCSEL drivers as components"
+      },
+      {
+        "title": "USITC · 337-TA-860 停止令",
+        "url": "https://www.usitc.gov/sites/default/files/publications/337/pub4852.pdf",
+        "locator": "337-TA-860 · CEASE AND DESIST ORDER，Mellanox Technologies, Inc.，US 5,596,595 claims 14, 19",
+        "quote": ""
+      },
+      {
+        "title": "USITC IDS · 337-TA-1399（Docket 3733）",
+        "url": "https://ids.usitc.gov/case/8185/investigation/8540",
+        "locator": "Full Title 与 Procedural History，2024-10-11 终止",
+        "quote": "Terminated"
+      }
+    ],
+    "search": [
+      "USITC IDS、Federal Register 与 USITC notices：optoelectronic / VCSEL transceivers / high-density fiber-optic connectors，核对 337-TA-860 和 337-TA-1399。"
+    ]
+  },
+  {
+    "id": "G-bfccb127bea191d2",
+    "verdict": "部分证实 · PUE指标与采购因果拆分",
+    "confirmed": "EED Article 12 对已装IT功率需求至少500 kW的数据中心规定披露范围，授权法规2024/1364要求向欧洲数据库报送相应数据，附录III以设施总能耗/IT设备能耗计算PUE，并列有WUE、ERF、REF。欧委会2026年9月通过的C(2026)3472文本以PUE和WUE设评级，另行推进最低绩效标准立法征询。",
+    "missing": "缺全生命周期碳足迹强制条款、LPO/NPO/相干光采购文件与因果证据。C(2026)3472须跟踪审查和Official Journal刊发，Art. 7规定刊发后第20天生效。对具体项目还需核当地实施细则。",
+    "proposal": "保留数据中心层级的年度报告义务、PUE计算与评级程序。将低功耗光学可能受益单列推论。",
+    "target": "当前复核清单 · 政策证据。旧政策条目及发文主体登记未定位。日后有获准的主体、事件口径及证据关系，才评估 calls/disclosures.csv 的 government_record 与 calls/events.csv 的 policy_market_access。 可对照 research_questions.yaml · TQ002 场景约束。",
+    "evidence": [
+      {
+        "title": "欧盟《能效指令》2023/1791",
+        "url": "https://eur-lex.europa.eu/eli/dir/2023/1791/oj/eng",
+        "locator": "Article 12(1)–(5), Annex VII",
+        "quote": "a power demand of the installed information technology (IT) of at least 500kW"
+      },
+      {
+        "title": "欧盟委员会授权法规 2024/1364",
+        "url": "https://eur-lex.europa.eu/eli/reg_del/2024/1364/oj/eng",
+        "locator": "Art. 1、3，Annex II、III、IV",
+        "quote": "PUE = E DC/E IT"
+      },
+      {
+        "title": "欧盟委员会授权法规文本 C(2026) 3472 final",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=PI_COM%3AC%282026%293472",
+        "locator": "Arts. 1、4、7 与 Annex I · PUE/WUE 评级与生效条件",
+        "quote": "the Power Usage Effectiveness (PUE) and Water Usage Effectiveness (WUE) classes"
+      },
+      {
+        "title": "欧盟委员会 · 数据中心能效方案说明",
+        "url": "https://cyprus.representation.ec.europa.eu/news/commission-enhances-energy-efficiency-and-sustainability-data-centres-eu-2026-09-22_en",
+        "locator": "Next steps · 欧洲议会与理事会审查、预计2027年首批标签",
+        "quote": "subject to 2-month scrutiny period"
+      },
+      {
+        "title": "欧盟委员会 · 数据中心最低能效标准公开征询",
+        "url": "https://energy.ec.europa.eu/news/minimum-performance-standards-data-centres-europe-public-consultation-launched-2026-09-21_en",
+        "locator": "2026-09-21 正文首段；意见截至 2026-12-14",
+        "quote": "the legislative proposal planned for the second quarter of 2027"
+      }
+    ],
+    "search": [
+      "EUR-Lex 查 Directive 2023/1791 Article 12/Annex VII、Delegated Regulation 2024/1364 Arts. 1/3 Annex II–IV、C(2026)3472 Arts. 1/4/7。",
+      "欧委会查 2026-09-21 minimum performance standards 征询及评分方案的审查和生效状态。"
+    ]
+  },
+  {
+    "id": "G-bc2d72a73d7fe163",
+    "verdict": "部分证实 · 报告指标应与达标门槛区分",
+    "confirmed": "有覆盖至少500 kW已装IT功率需求设施的能效数据报告机制，并用设施能耗与IT能耗算PUE。C(2026)3472正式文本设PUE/WUE评级，但另行最低绩效标准尚处公开征询。",
+    "missing": "从已核的EED与授权法规未得到已生效的欧盟统一PUE最低达标值。成员国项目可另有规定，需核具体国家及设施。纪要同段的展会新品和MSA另核。",
+    "proposal": "把‘强制考核PUE’改为‘对适用设施强制报告能效信息，以报告数据计算PUE；统一评级文本及最低绩效标准程序分开跟踪’。与G-bfccb127bea191d2共用法源。",
+    "target": "当前复核清单 · 政策证据。旧政策条目及发文主体登记未定位。日后有获准的主体、事件口径及证据关系，才评估 calls/disclosures.csv 的 government_record 与 calls/events.csv 的 policy_market_access。 可对照 research_questions.yaml · TQ002。",
+    "evidence": [
+      {
+        "title": "欧盟《能效指令》2023/1791",
+        "url": "https://eur-lex.europa.eu/eli/dir/2023/1791/oj/eng",
+        "locator": "Article 12(1)–(5), Annex VII",
+        "quote": "a power demand of the installed information technology (IT) of at least 500kW"
+      },
+      {
+        "title": "欧盟委员会授权法规 2024/1364",
+        "url": "https://eur-lex.europa.eu/eli/reg_del/2024/1364/oj/eng",
+        "locator": "Art. 1、3，Annex II、III、IV",
+        "quote": "PUE = E DC/E IT"
+      },
+      {
+        "title": "欧盟委员会授权法规文本 C(2026) 3472 final",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=PI_COM%3AC%282026%293472",
+        "locator": "Arts. 1、4、7 与 Annex I · PUE/WUE 评级与生效条件",
+        "quote": "the Power Usage Effectiveness (PUE) and Water Usage Effectiveness (WUE) classes"
+      },
+      {
+        "title": "欧盟委员会 · 数据中心能效方案说明",
+        "url": "https://cyprus.representation.ec.europa.eu/news/commission-enhances-energy-efficiency-and-sustainability-data-centres-eu-2026-09-22_en",
+        "locator": "Next steps · 欧洲议会与理事会审查、预计2027年首批标签",
+        "quote": "subject to 2-month scrutiny period"
+      },
+      {
+        "title": "欧盟委员会 · 数据中心最低能效标准公开征询",
+        "url": "https://energy.ec.europa.eu/news/minimum-performance-standards-data-centres-europe-public-consultation-launched-2026-09-21_en",
+        "locator": "2026-09-21 正文首段；意见截至 2026-12-14",
+        "quote": "the legislative proposal planned for the second quarter of 2027"
+      }
+    ],
+    "search": [
+      "EUR-Lex 查 Directive 2023/1791 Article 12/Annex VII、Delegated Regulation 2024/1364 Arts. 1/3 Annex II–IV、C(2026)3472 Arts. 1/4/7。",
+      "欧委会查 2026-09-21 minimum performance standards 征询及评分方案的审查和生效状态。"
+    ]
+  },
+  {
+    "id": "G-b56a487cd32b51e8",
+    "verdict": "部分证实 · Section 301 规则与价格、迁厂因果拆分",
+    "confirmed": "USTR通过特定清单、排除及延长实施Section 301。是否适用取决于产品、原产地和进口时有效税目；CBP H335829在Section 301语境逐案看实质性转变，判新易盛该特定制程中国原产；Accelink的N344720则按所列主要PCBA工序判泰国。",
+    "missing": "缺明确SKU、HTSUS/Chapter 99、完税价格、承担税负主体、排除状态和入境日期。价格竞争力和中资厂商迁厂因果需要可比价格、公司/客户一手决策材料，现有来源仅支持个别产能布局。",
+    "proposal": "分列Section 301适用条件、特定裁决和厂址投资事实。‘中国+1’及售价影响保留研究假设。",
+    "target": "当前复核清单 · 政策证据。旧政策条目及发文主体登记未定位。日后有获准的主体、事件口径及证据关系，才评估 calls/disclosures.csv 的 government_record 与 calls/events.csv 的 policy_market_access。",
+    "evidence": [
+      {
+        "title": "USTR · Section 301 排除延长两个月（2026-11-06）",
+        "url": "https://ustr.gov/sites/default/files/files/Issue_Areas/Enforcement/Section%20301/USTR%20FRN%20Extending%20Section%20301%20China%20FTT%20Exclusions%20to%20Jan%202027.pdf",
+        "locator": "DATES (p.1)、Determination (p.4)、Annex A/B (p.5) · 分别核实施窗口与政策说明",
+        "quote": "through 11:59 p.m. eastern time on January 9, 2027."
+      },
+      {
+        "title": "USTR · Section 301 排除延长公告（2025年12月）",
+        "url": "https://ustr.gov/sites/default/files/files/Press/Releases/2025/Extending%20Exclusions%20to%20Nov%202026%20-%20Final%20FRN%20for%20Posting.pdf",
+        "locator": "产品排除范围说明 · HTSUS 十位统计号及产品描述",
+        "quote": "ten-digit Harmonized Tariff Schedule of the United States (HTSUS) statistical reporting numbers and product descriptions"
+      },
+      {
+        "title": "美国 CBP · HQ H335829（2025-02-26）",
+        "url": "https://rulings.cbp.gov/api/ruling/H335829",
+        "locator": "CROSS 官方 API text 字段 · FACTS / LAW AND ANALYSIS / HOLDING",
+        "quote": "the country of origin of the subject optical transceiver units is China."
+      },
+      {
+        "title": "美国 CBP · N344720（2025-01-13）",
+        "url": "https://rulings.cbp.gov/api/ruling/N344720",
+        "locator": "CROSS 官方 API text 字段 · Accelink OSFP 制程、原产地标记及 Section 301 结论",
+        "quote": "the country of origin for marking purposes would be Thailand"
+      },
+      {
+        "title": "天孚通信 · 关于泰国子公司签订《土地买卖协议》的公告（2026-065）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225645208.PDF",
+        "locator": "一、交易概述；六、本次交易的目的和对公司的影响",
+        "quote": "作为泰国工厂的建设用地"
+      }
+    ],
+    "search": [
+      "CBP CROSS 官方接口查 H335829、N344720、N358465。",
+      "巨潮资讯查公司定期报告、产能调研、土地公告。",
+      "USTR forced technology transfer exclusions；核 HTSUS Chapter 99 U.S. Note 20 与产品排除。"
+    ]
+  },
+  {
+    "id": "G-8a2dab9d4f6a4673",
+    "verdict": "部分证实 · 个别公司布局证实",
+    "confirmed": "新易盛2025年年报写明泰国子公司生产光模块；中际旭创2026年5月投关披露泰国产能扩建；天孚泰国子公司拟购罗勇土地建厂，属于公司披露的海外布局。美国原产地标准见CBP个案。",
+    "missing": "需补相关越南/马来西亚的具体公司、工厂、投产阶段和产品；需具名CSP采购条款或客户自述，才能把多供应地要求与厂址动作绑定。没有各SKU的CBP适用认定。",
+    "proposal": "按公司、设施和进度写泰国产能或投资候选。将客户采购策略和美国进口原产地分开处理。",
+    "target": "对应公司原披露材料：300502、300308、300394。未定位同SKU旧产地判定或CSP采购约束。",
+    "evidence": [
+      {
+        "title": "新易盛《2025年年度报告》",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225172598.PDF",
+        "locator": "第三节管理层讨论与分析 · 主要控股参股公司分析 · 泰国新易盛",
+        "quote": "生产光模块"
+      },
+      {
+        "title": "中际旭创 · 投资者关系活动记录表（2026-05-15）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-15/1225311210.PDF",
+        "locator": "Q7/A7，第4项关于泰国产能",
+        "quote": "公司泰国产能在持续扩建中"
+      },
+      {
+        "title": "天孚通信 · 关于泰国子公司签订《土地买卖协议》的公告（2026-065）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225645208.PDF",
+        "locator": "一、交易概述；六、本次交易的目的和对公司的影响",
+        "quote": "作为泰国工厂的建设用地"
+      },
+      {
+        "title": "美国 CBP · HQ H335829（2025-02-26）",
+        "url": "https://rulings.cbp.gov/api/ruling/H335829",
+        "locator": "CROSS 官方 API text 字段 · FACTS / LAW AND ANALYSIS / HOLDING",
+        "quote": "the country of origin of the subject optical transceiver units is China."
+      },
+      {
+        "title": "美国 CBP · N358465（2026-02-27）",
+        "url": "https://rulings.cbp.gov/api/ruling/N358465",
+        "locator": "CROSS 官方 API text 字段 · Accelink 800G OSFP DR8、Malaysia/China 工序、末段认定",
+        "quote": "the country of origin of this product would be Malaysia"
+      }
+    ],
+    "search": [
+      "CBP CROSS 官方接口查 H335829、N344720、N358465。",
+      "巨潮资讯查公司定期报告、产能调研、土地公告。",
+      "核 300308 2026-05-15 Q7/A7，300502 2025年报与 300394 2026-065。"
+    ]
+  },
+  {
+    "id": "G-3319c9ab09fed680",
+    "verdict": "部分证实 · 厂址证据不足以确认全工序或原产地",
+    "confirmed": "中际旭创披露泰国产能扩建；新易盛的泰国子公司有光模块生产披露；天孚投关活动在泰国工厂举行，并另有罗勇拟购建设用地公告。CBP H335829的特定新易盛流程因主要制造在中国而判中国原产。",
+    "missing": "未核得三家同批次光模块的SMT、微光对准、全温测试均于同一海外厂完成及美国原产地裁决。还缺每个新旧厂址的SKU、产量/稼动与关键工序证据。",
+    "proposal": "把已有工厂、扩建、签约购地分别列为公司线索。用H335829提示实际生产流程核查，原产地和贸易风险判断保持待证。",
+    "target": "当前复核清单 · CBP 裁决案例。旧监管个案条目及发布主体登记未定位。公司厂址/产能披露各自保留候选。",
+    "evidence": [
+      {
+        "title": "中际旭创 · 投资者关系活动记录表（2026-05-15）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-05-15/1225311210.PDF",
+        "locator": "Q7/A7，第4项关于泰国产能",
+        "quote": "公司泰国产能在持续扩建中"
+      },
+      {
+        "title": "新易盛《2025年年度报告》",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225172598.PDF",
+        "locator": "第三节管理层讨论与分析 · 主要控股参股公司分析 · 泰国新易盛",
+        "quote": "生产光模块"
+      },
+      {
+        "title": "天孚通信 · 投资者关系活动记录表（2026-07-09）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-07-09/1225417924.PDF",
+        "locator": "活动时间及地点；泰国天孚工厂地址",
+        "quote": "泰国天孚工厂"
+      },
+      {
+        "title": "天孚通信 · 关于泰国子公司签订《土地买卖协议》的公告（2026-065）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225645208.PDF",
+        "locator": "一、交易概述；六、本次交易的目的和对公司的影响",
+        "quote": "作为泰国工厂的建设用地"
+      },
+      {
+        "title": "美国 CBP · HQ H335829（2025-02-26）",
+        "url": "https://rulings.cbp.gov/api/ruling/H335829",
+        "locator": "CROSS 官方 API text 字段 · FACTS / LAW AND ANALYSIS / HOLDING",
+        "quote": "the country of origin of the subject optical transceiver units is China."
+      }
+    ],
+    "search": [
+      "CBP CROSS 官方接口查 H335829、N344720、N358465。",
+      "巨潮资讯查公司定期报告、产能调研、土地公告。"
+    ]
+  },
+  {
+    "id": "G-26634119adc1d410",
+    "verdict": "部分证实 · 裁决含义需纠正",
+    "confirmed": "H335829是新易盛特定100G–800G收发器和AOC个案，因制造及组装在中国而认定中国原产。泰国完成固件、调谐、老化、终测和包装，并未改变该结果。天孚11月6日公告安排11月9日审议回购，11月9日公司决议文本显示方案获通过，属于独立公司治理事实。",
+    "missing": "未核得新易盛十月补交九月发货、Q4产能跃升、天孚CPO配套2027年起提量及各海外厂的SKU原产地。通过方案与实际回购执行需另分。",
+    "proposal": "将CBP裁决、公司回购决议、交付/经营预测分三条。政策只收裁决事实，回购可用公告作原文锚，产能及发货在取得公司同口径证据后另审。",
+    "target": "当前复核清单 · CBP 裁决案例。旧监管个案条目及发布主体登记未定位。公司厂址/产能披露各自保留候选。 天孚回购单列300394公司公告素材。",
+    "evidence": [
+      {
+        "title": "美国 CBP · HQ H335829（2025-02-26）",
+        "url": "https://rulings.cbp.gov/api/ruling/H335829",
+        "locator": "CROSS 官方 API text 字段 · FACTS / LAW AND ANALYSIS / HOLDING",
+        "quote": "the country of origin of the subject optical transceiver units is China."
+      },
+      {
+        "title": "美国 CBP · N358465（2026-02-27）",
+        "url": "https://rulings.cbp.gov/api/ruling/N358465",
+        "locator": "CROSS 官方 API text 字段 · Accelink 800G OSFP DR8、Malaysia/China 工序、末段认定",
+        "quote": "the country of origin of this product would be Malaysia"
+      },
+      {
+        "title": "天孚通信 · 关于公司股份回购事项的公告（2026-067）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-11-06/1225660605.PDF",
+        "locator": "股东会召开安排",
+        "quote": "公司将于2026年11月9日召开股东会，对本次回购股份方案进行审议。"
+      },
+      {
+        "title": "天孚通信 · 第四次临时股东会决议公告（2026-068）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-11-09/1225664191.PDF",
+        "locator": "一、会议召开和出席情况；二、议案审议表决情况",
+        "quote": "上述议案属于特别决议议案"
+      },
+      {
+        "title": "天孚通信 · 关于泰国子公司签订《土地买卖协议》的公告（2026-065）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225645208.PDF",
+        "locator": "一、交易概述；六、本次交易的目的和对公司的影响",
+        "quote": "作为泰国工厂的建设用地"
+      }
+    ],
+    "search": [
+      "CBP CROSS 官方接口查 H335829、N344720、N358465。",
+      "巨潮资讯查公司定期报告、产能调研、土地公告。",
+      "巨潮资讯：天孚通信2026-067、2026-068，核对回购审议及执行状态。"
+    ]
+  },
+  {
+    "id": "G-12ddeb2bc4d4c389",
+    "verdict": "立案范围证实 · 影响为公司估计",
+    "confirmed": "337-TA-1526案由Vicor主张美国专利10,903,734，调查范围是特定垂直供电系统、组件及包含它们的计算系统；立讯精密及东莞立讯技术是被调查方。USITC IDS记录待ALJ处理。立讯2026-107披露涉案品仍在客户验证、尚未量产，并预计现阶段生产经营及当期业绩无重大不利影响。",
+    "missing": "排除令和停止令系请求，未核得已经下令或最终侵权裁决。立讯声明不能外推其他主体、所有计算系统或行业影响。原行市场份额、LightCounting增速、其他法规/标准及海外工厂原产地应由对应条目另核。",
+    "proposal": "仅补立案范围、专利号、当事人、核查日程序状态。另记立讯自身估计和边界，光通信一般性限制、影响保证及市场统计不由此案推出。",
+    "target": "当前复核清单 · 政策证据。旧政策条目及发文主体登记未定位。日后有获准的主体、事件口径及证据关系，才评估 calls/disclosures.csv 的 government_record 与 calls/events.csv 的 policy_market_access。 立讯2026-107 可单独归入002475公司披露候选。",
+    "evidence": [
+      {
+        "title": "USITC · 337-TA-1526 立案公告（91 FR 65255）",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2026-10-14/pdf/2026-20993.pdf",
+        "locator": "SUMMARY、SCOPE OF INVESTIGATION 及 Respondents，US Patent No. 10,903,734",
+        "quote": "certain vertical power delivery systems, components thereof, and computing systems containing the same"
+      },
+      {
+        "title": "USITC IDS · 337-TA-1526（Docket 3936）",
+        "url": "https://ids.usitc.gov/case/8410/investigation/9001",
+        "locator": "Identifying Information / Procedural History · 核查于 2026-11-10",
+        "quote": "Pending before the ALJ"
+      },
+      {
+        "title": "立讯精密 · 涉及美国国际贸易委员会337调查的公告（2026-107）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-10/1225600359.pdf",
+        "locator": "一、事件基本情况；二、对公司的影响",
+        "quote": "预计本次调查不会对公司现阶段生产经营及当期经营业绩产生重大不利影响"
+      }
+    ],
+    "search": [
+      "USITC IDS Docket 3936 / Investigation 9001，govinfo 2026-20993 Federal Register 立案通知，巨潮资讯 002475 公告 2026-107。"
+    ]
+  }
+]

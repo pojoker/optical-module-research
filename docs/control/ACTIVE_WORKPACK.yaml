@@ -1,40 +1,93 @@
 workpack:
-  id: QA-PROVENANCE-SHARE-20260913
-  title: 打包14个主问题来源说明并发送飞书产业案头
+  id: OPTICAL-STEP5-AND-GITHUB-SYNC-20261122
+  title: Step 1-5 正式账本与海外合规闭环及 GitHub dev 分支同步
   status: delivered
-  authorization: 用户明确要求“打包一下 这个回答，发送到 飞书的产业案头”。
-objective:
-- 将本轮已给出的三段对话40轮提问到14个主问题的解释整理成可独立阅读的附件
-- 保留对应表、Q1来源区别、主题归属不等于逐子问覆盖的边界，以及可核对的原始提问索引
-- 使用现有飞书机器人发送到名称核对为产业案头的群，并核验发送结果
+  updated_at: "2026-11-22"
+  authorization: 用户审阅 Gemini 静态归档与实时云端增量后指示推进 Step 5（合规一手判例法条入库 + 11月中旬盲区新线索核验 + 自动化线索雷达增量价值答复），并在随后明确指示「当前这个版本更新到 github 上吧」（授权修改 .gitignore、scan.py 兼容远端 knowledge-daily/ 并执行 git commit 与 git push origin dev）。
 allowed_write_paths:
-- docs/control/ACTIVE_WORKPACK.yaml
-- out/光模块14问来源说明-20260913/**
+  - .gitignore
+  - docs/control/ACTIVE_WORKPACK.yaml
+  - knowledge.yaml
+  - refs/us-china-optical-transceiver-restrictions.md
+  - refs/entity-registry.yaml
+  - tree.yaml
+  - scan.py
+  - 光模块产业链全景图.html
+  - capability_details.csv
+  - output/pdf/光模块产业链公司能力明细.pdf
+  - corpus/ir/**
+  - corpus/web/**
+  - corpus/salvaged/entity_nodes.csv
+  - corpus/daily_review/**
+  - calls/**
+  - tests/test_step3_daily_and_v6.py
+  - tests/test_step5_compliance_and_blindspot.py
+  - out/step5-compliance-and-blindspot-20261122/**
 read_scope:
-  allowed:
-  - docs/source-conversations/README.md及三段原文Markdown
-  - site/optical-qa/index.html及本轮回答
-  - README.md、章程、工作包及本次差异
-  - 飞书技能与现有CLI身份状态、目标群查询、本次发送结果
-  - 原始语料已发布链接的精确Git远端及对应文件核验
+  - /Users/jowang/Downloads/workflow-rehearsal/{corpus,tmp}/**（只读源）
+  - /Users/jowang/Downloads/workflow-rehearsal-daily-state/**（只读源）
+  - /Users/jowang/Downloads/optical-module-research/out/daily-backfill-review-20261109/**（只读核查源）
+  - 根目录 canonical 账本、tree.yaml、knowledge.yaml、refs/*、calls/*、corpus/*、tests/*
 non_goals:
-- 不修改网页正文、原始对话或canonical账本
-- 不补充领域研究、不将索引对应视为全部子问题已回答
-- 不推送代码、不发布网站、不发送到其他群
-acceptance_criteria:
-- 附件保留14题对应关系和40轮提问的完整索引
-- Q1明确为基础导入，无独立同名原始用户提问
-- 文档能脱离本地绝对路径阅读，无脚本或外部资源依赖
-- 飞书API返回目标群消息ID，随后读取确认附件存在
+  - 不修改 /Users/jowang/Downloads/workflow-rehearsal/** 或 workflow-rehearsal-daily-state/**
+  - 不修改 /Users/jowang/Documents/Codex/2026-11-06/securities-audio-review-2026-11-06/outputs/securities-research-kb/**
+  - 不修改 archive/** 或历史评审目录 out/step1-*、out/step2-*、out/step3-*、out/step4-*、out/report-kb-review-*
+  - 不修改 calls/solution_links.csv（SL001/SL002 字节级冻结）
+  - 不在 refs/ 下新增文件（严格保持 ≤ 8 个文件），不在根目录新增白名单外文件
+  - 不绕过任何反爬/验证码/JS挑战门槛（遇到 403/JS 壳即诚实登记 http_403_or_gated 并降级为 url 锚）
+  - 不执行 git push --force，不向公开仓提交私有原件归档包或个人微信研报审阅目录
 canonical_policy:
-  writable: false
-validation:
-- 生成独立HTML和Markdown，包含14题对应表、40轮原始提问及4条已核对来源链接。
-- 40轮页面索引与源文件用户消息忽略空白后逐条一致；HTML有55个唯一锚点，内部链接全部有效，无脚本或外部资源依赖。
-- 三份原文及当前问答页与GitHub提交7a8053a3dce96b40d0a5998eb35702931f787637对应blob一致。
-- 以现有机器人codex yiji发送富文本说明并附HTML至产业案头，目标群oc_5d884e05d5da81aca3f809bb923fab6e。
-- 发送API返回成功；随后mget确认消息未删除、群ID一致、正文及HTML附件存在。
-- 未修改网页、原始对话或canonical；未推送或发布。
+  writable: true
+  scope: 从一手政府公报/CBP裁定/CNINFO公告核验并写入 KN011-KN014 与 DRQ0046 结案，核验 11 月中旬四大盲区新线索（朗特智能/科瑞思/羲禾科技/粤芯半导体/SC26-OIF）并更新队列与 Gemini 云端快照水位跟踪。
+architecture_budget:
+  new_relation_types: []
+  new_top_level_systems: []
+  new_schema_fields: []
+  new_engines: []
+completion_semantics:
+  forbidden_phrasing:
+    - 已覆盖
+    - 已完成
+    - 已回答
+acceptance_criteria:
+  - knowledge.yaml 新增 KN011-KN014（CBP实质性转变正反判例、FCC 26-50/S.5548 法律边界、商务部48号公告/波长光电两用物项合规、BIS EAR §734.9与欧盟EED Art.12边界），全带一手锚并过 scan ⑧
+  - scan.py 支持 review_queue.kb_target_ref 的 knowledge:KN### 前缀校验与 selftest 正反例，DRQ0046 正式转 ingested_to_kb
+  - 11月中旬四大盲区线索全部回查巨潮/官网一手原件，HTTP 200 落盘算 SHA256，实体对称补入观察池，未交割/IPO阶段诚实隔离入 pending_filing_anchor 或 watch_deferred
+  - sync_daily_queue.py 接入 workflow-rehearsal-daily-state/gemini/cloud-snapshot.json 只读水位监控（triaged_through_date=2026-11-18）
+  - 七道机器门与裸跑 pytest -q 全部退出码 0
+stop_conditions:
+  - refs/ 文件数超过 8 或根目录出现白名单外文件时立刻中止清理
+  - workflow-rehearsal/corpus/annual 项数变化或 calls/solution_links.csv 被改动时立刻回退
+previous_workpack: out/step5-compliance-and-blindspot-20261122/previous-active-workpack.yaml
 delivery:
-  message_id: om_x100b656bbb3ec4a0b04fd350786d7dc
-  message_url: https://applink.feishu.cn/client/chat/open?openChatId=oc_5d884e05d5da81aca3f809bb923fab6e&position=145
+  delivered_at: "2026-11-22"
+  workers:
+    - carbon-s5-compliance-kb (gemini-pro-orchestrator)
+    - carbon-s5-blindspot (gemini-pro-orchestrator)
+  artifacts:
+    - knowledge.yaml (KN011-KN014, total 14)
+    - refs/us-china-optical-transceiver-restrictions.md (§12 appended)
+    - refs/entity-registry.yaml (N174-N179 added, N138 updated)
+    - tree.yaml (observation_list updated & expanded)
+    - scan.py (knowledge:KN### ref validation & selftest 155/155)
+    - corpus/salvaged/entity_nodes.csv (N174-N179 added)
+    - corpus/daily_review/sync_daily_queue.py
+    - corpus/daily_review/review_queue.csv (105 rows)
+    - corpus/daily_review/triage_stats.json (gemini_cloud_snapshot watermark 2026-11-18)
+    - corpus/daily_review/README.md
+    - calls/events.csv (EV061 NVIDIA x Lambda SC26 CPO corroborated)
+    - out/step5-compliance-and-blindspot-20261122/compliance_manifest.json
+    - out/step5-compliance-and-blindspot-20261122/blindspot_leads_verdicts.json
+    - out/step5-compliance-and-blindspot-20261122/verification-summary.json
+    - out/step5-compliance-and-blindspot-20261122/report.md
+    - tests/test_step3_daily_and_v6.py
+    - tests/test_step5_compliance_and_blindspot.py
+  gates:
+    scan_selftest: "pass (155/155, exit 0)"
+    scan_check: "pass (语料距今1天, 缺席年报0家, ①-⑭全绿, exit 0)"
+    render_verify: "pass (两次临时重建一致, exit 0)"
+    participation_check: "pass (466/466, 确认 94, 待确认 13, exit 0)"
+    calls_check: "pass (39公司/180信源/79主张/61雷达事件, exit 0)"
+    daily_review_queue_check: "pass (105行零漂移, 入库57/待原文1/待法定锚8/观察39, exit 0)"
+    pytest_bare_full_repo: "pass (499 passed, 189 subtests passed, exit 0)"
+

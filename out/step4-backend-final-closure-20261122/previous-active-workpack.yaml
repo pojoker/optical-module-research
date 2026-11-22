@@ -1,0 +1,110 @@
+workpack:
+  id: OPTICAL-STEP3-DAILY-AND-V6-20261121
+  title: 第三步：9–11月高价值Daily并库、95/5持久待审池、v6宇宙对称扩容与全仓测试全绿
+  status: delivered
+  updated_at: "2026-11-21"
+  authorization: 用户确认并授权“好的 请继续”启动第三步，继续使用 Orchestrator (Carbon) 执行。
+allowed_write_paths:
+  - docs/control/ACTIVE_WORKPACK.yaml
+  - points.csv
+  - tree.yaml
+  - participation.py
+  - scan.py
+  - pytest.ini
+  - refs/entity-registry.yaml
+  - corpus/_frozen.csv
+  - corpus/annual/**
+  - corpus/ir/**
+  - corpus/qa/**
+  - corpus/content_ledger/content_ledger.csv
+  - corpus/relationships/relationship_timeline.csv
+  - corpus/salvaged/entity_nodes.csv
+  - corpus/daily_review/**
+  - calls/sources.csv
+  - calls/claims.csv
+  - calls/commitments.csv
+  - calls/disclosures.csv
+  - calls/events.csv
+  - calls/event_claims.csv
+  - calls/event_evidence.csv
+  - calls/watch_entities.csv
+  - calls/out/**
+  - capability_details.csv
+  - output/pdf/光模块产业链公司能力明细.pdf
+  - tests/research/test_question_completion_semantics.py
+  - tests/test_step2_archive_salvage.py
+  - tests/test_step3_daily_and_v6.py
+  - calls/tests/test_event_intelligence.py
+  - calls/tests/test_positioning.py
+  - out/**
+read_scope:
+  - /Users/jowang/Downloads/workflow-rehearsal-daily-state/{domestic,overseas,gemini}/**（只读源）
+  - /Users/jowang/Downloads/workflow-rehearsal/{corpus,tmp}/**（只读源）
+  - out/report-kb-review-20261119/、out/commitments-review-20261111/、out/daily-backfill-review-20261109/（只读参照）
+  - 根目录 canonical 账本、tree.yaml、knowledge.yaml、refs/*、calls/*、corpus/*、tests/*
+non_goals:
+  - 不修改 /Users/jowang/Downloads/workflow-rehearsal/** 或 workflow-rehearsal-daily-state/**
+  - 不修改 archive/** 或历史评审目录 out/report-kb-review-*、out/source-archive-*、out/step1-*、out/step2-*、out/commitments-review-*、out/daily-backfill-review-*
+  - 不修改 calls/solution_links.csv（SL001/SL002 字节级冻结）
+  - 不新增领域顶层体系、关系类型或架构预算字段
+  - 不将未下载原文核对的海外 staging 传闻/免责声明写入 reviewed calls 主张
+  - 不执行 git commit 或 git push
+canonical_policy:
+  writable: true
+  scope: 用户明确授权执行第三步：9–11月一手已核 Daily 并入主账本与海外事件账本、建立持久 Daily 95/5 审核池、完成 v6 宇宙分母对称扩容与联讯/云南锗业/未上市同行分级纳管，并修复遗留硬编码测试与 pytest 收集配置。
+architecture_budget:
+  new_relation_types: []
+  new_top_level_systems: []
+  new_schema_fields: []
+  new_engines: []
+completion_semantics:
+  forbidden_phrasing:
+    - 已覆盖
+    - 已完成
+    - 已回答
+acceptance_criteria:
+  - 12项一手已核 9–11 月国内/海外 Daily 增量并入 corpus/ir、corpus/qa、points.csv、content_ledger.csv、relationship_timeline.csv 与 calls/*.csv，新抽引语 100% 本地原文逐字命中
+  - 未核原文海外线索（Marvell×Lumentum、Lumentum FY27Q1、AXT Q3/通美、Tower正文及云南锗业2.7亿媒体线索）严格留置 corpus/daily_review/review_queue.csv，不越界写为 reviewed 实证
+  - 建立确定性 Daily 95/5 过滤与持久待审池 corpus/daily_review/{sync_daily_queue.py,review_queue.csv,triage_stats.json,README.md}，并接入 scan.py 机器门与 --selftest
+  - 完成 v6 宇宙分母对称扩容（联讯仪器 688808 转为 A股、云南锗业 002428 与可获年报主体入 _frozen.csv，staleness 缺席年报 0 家；微见智能/镭神技术入观察名单与待审池；workflow-rehearsal/corpus/annual 保持 463 项零改动）
+  - 修正 tests/research/test_question_completion_semantics.py:92、新增 pytest.ini 与 scan.py 根目录白名单、新增 tests/test_step3_daily_and_v6.py
+  - scan --selftest、scan --check、render --verify、participation --check、-m calls check 与裸 python3 -m pytest -q 七道机器门全部退出码 0
+stop_conditions:
+  - refs/ 文件数超过 8 或根目录出现白名单外文件时立刻中止清理
+  - workflow-rehearsal/corpus/annual 目录项数变化或 calls/solution_links.csv 发生任何改动时立即回退
+previous_workpack: out/step3-daily-and-v6-20261121/previous-active-workpack.yaml
+delivery:
+  delivered_at: "2026-11-21"
+  verifier_agent: carbon-s3-verifier
+  verifier_model: gemini-pro-orchestrator
+  artifacts:
+    - out/step3-daily-and-v6-20261121/ingest_domestic_daily.py
+    - out/step3-daily-and-v6-20261121/ingest_overseas_and_timeline.py
+    - out/step3-daily-and-v6-20261121/build_v6_and_daily_queue.py
+    - out/step3-daily-and-v6-20261121/光模块产业链全景图_公司能力细化版.html
+    - out/step3-daily-and-v6-20261121/verification-summary.json
+    - out/step3-daily-and-v6-20261121/report.md
+    - corpus/daily_review/sync_daily_queue.py
+    - corpus/daily_review/review_queue.csv
+    - corpus/daily_review/triage_stats.json
+    - corpus/daily_review/README.md
+    - pytest.ini
+    - tests/test_step3_daily_and_v6.py
+  summary:
+    shard_1_domestic_and_kerui: 同步81代码332份投关PDF/旁车与93代码去重问答(剔除637条重复)；更新points.csv 15点并从002957科瑞技术2025年报p.15新增P275(EQ3)/P276(EQ4)共271行(严守匿名边界)；content_ledger.csv新增CLG0598–CLG0633共36条(全表633行, 36/36 100.0%本地逐字命中)
+    shard_2_overseas_and_timeline: 兑现裁决CM001/CM002(fulfilled)/CM007(partially_fulfilled)，新增CL075/CL076、S_CIEN_2026_FORUM、WATCH_INNOLIGHT与雷达事件EV035(Cisco G300)/EV036(Tower×中际NPO标题级)；relationship_timeline.csv新增TL9001–TL9005共451行且与74条负剔除零碰撞；solution_links.csv字节级冻结
+    shard_3_v6_universe_and_daily_queue: 安全展开corpus/annual逐公司软链(外部只读源保持463项不变)，_frozen.csv与tree.yaml对称扩容至466家(联讯688808、云南锗业002428、科瑞技术002957全部进入已确认参与，总确认93家；微见智能/镭神技术入观察名单，entity_nodes达173节点)；建立95/5过滤与55行持久待审池review_queue.csv(15入库/32待全文/8待法定锚，保留DRQ0050盯防Lumentum/Coherent归属)
+    gates_and_pytest: scan.py新增_check_daily_review_queue与pytest.ini白名单(selftest 119->139全过)；修复遗留工作包ID测试与快照断言；全量重算派生层(capability_details 93公司/187行)；四份幂等脚本二次重跑SHA-256零漂移
+  gates:
+    scan_selftest: pass (139/139, exit 0)
+    scan_check: pass (语料距今0天, 缺席年报0家, ①-⑭全绿, exit 0)
+    render_verify: pass (两次临时重建一致, exit 0)
+    participation_check: pass (466/466, 确认 93, 待确认 15, exit 0)
+    calls_check: pass (39公司/167信源/72主张/36雷达事件, exit 0)
+    daily_review_queue_check: pass (55行零漂移, 95.04%/4.96%分流, exit 0)
+    pytest_bare_full_repo: pass (487 passed, 157 subtests passed, 0 errors, 0 deselected, 0 failures, exit 0)
+  pending_user_decisions:
+    - 是否指定优先拉取并复核 review_queue.csv 中 32 条 pending_primary_text 一手原文（Marvell×Lumentum、Lumentum FY27Q1、AXT Q3/通美融资、Tower×中际正文等）
+    - 是否持续追踪 8 条 pending_filing_anchor 法定锚点（云南锗业2.7亿公告、科瑞技术DRQ0050 Lumentum/Coherent具名客户归属、微见智能与镭神技术一手锚）
+    - 是否指定需人工复核并由内容台账/时间线提炼晋升至根级 knowledge.yaml 的专题结论
+    - 是否授权对 Step 1–Step 3 经核验的工作区改动执行 git commit

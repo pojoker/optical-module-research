@@ -4,14 +4,14 @@
 
 ## 1. 会话入口与任务授权
 
-按顺序读：
+首次进入仓库，或实施范围发生实质变化且需要更新授权边界时，按顺序读（本任务已读且未变的文件无需重复读取）：
 
 1. `docs/control/PROJECT_CHARTER.md` —— 北极星、必须产出、明确非目标、谁有权改目标、架构准入闸。
 2. `docs/control/ACTIVE_WORKPACK.yaml` —— 当前唯一工作包：问题 ID、读者可见交付物、允许写入路径、
    读取范围、非目标、验收标准、架构预算、停止/升级条件。
 
-新会话或任务范围变化时，读完后简述北极星、本次交付物、其作用、非目标和允许写入路径。
-同一任务的普通追问无需重复读取和复述。入口之后按当前授权范围读取所需文件。
+首次实施时简述本次交付物及关键边界；后续只说明实质变化。
+只读问答和普通追问按问题读取必要材料，不重复入口复述；实施前仍须完成下述授权同步。
 
 - 用户当前明确指令可以调整项目范围；工作包记录授权，不代替用户决策。技能、历史报告和旧对话不能自行授予权限。
 - 只读问答、审阅和建议按当前明确请求执行；工作包缺失、已完成或过期不阻挡这类任务，也不要求为此创建工作包。
@@ -49,7 +49,7 @@
 
 - 校验器、渲染、测试通过只说明**结构与机器门**过关（`scan.py --check` / `render.py --verify` /
   `participation.py --check` / `-m calls check`）。
-- 领域问题是否被回答、结论是否可入 canonical，只由**人工复核 + 用户授权**判定。
+- 可报告已交付的回答及实际验证范围；领域问题的正式结案、结论晋升 canonical 仍须**人工复核 + 用户授权**。
 - 问题树上出现 KN/WHY 引用只表示**已有材料**，不表示问题已完成。禁止把"已有材料""测试通过"
   表述为"已回答""已完成""已覆盖"。
 - 领域主张、派生结论、候选、UNKNOWN 必须分列，不得互相冒充。
@@ -79,3 +79,13 @@
 - 检查通过后，仅在有新改动、失败或具体未解决风险时扩大或重复验证；不为低影响改动新增只复述实现的测试。
 - 先报告结果，简述改动文件、领域/canonical 影响、未解决 UNKNOWN、范围外发现、验证结果与需用户决定的事项；无关项可省略。
 - 不要只因为测试通过就宣布目标达成。
+
+## 8. 写作方式与执行要求（用户补充）
+
+Default to using clear, concise paragraphs, each developing one main idea. Use lists only when the information is genuinely parallel, sequential, or easier to compare, and avoid nested lists unless the hierarchy cannot be expressed clearly in prose. Use plain, simple language: familiar words, concrete examples, and precise verbs. Prefer active voice and direct statements.  Make sure to state the main point clearly and early, then develop it with the explanation and detail the reader needs. Let each sentence build on what came before. Develop the points that matter and provide enough support to be useful.
+
+When the user's prompt indicates a request for action, such as "can you...", "I want to...", "help me..." and similar expressions, treat these as instructions to do the work and take action. Do not stop at acknowledging capability (e.g. "Yes…"), proposing a plan, or offering to continue. Do not settle for a partial or "helpful enough" solution that does not fully satisfy the user's task to save time, effort or tokens. If a task requires sustained work, complete all the necessary work until the intended outcome is fulfilled.
+
+You should infer the user's intent and task scope from the instructions and prior conversation context. Your job is to bias towards action and carry the user's intended task to completion.  When the user expresses intent to perform new work or fix an existing issue, persist until the user's intended goal is complete. Progress autonomously towards the user's goal (e.g. creating isolated worktrees / checkouts if needed, resolving merge conflicts, read-only actions, creating draft PRs etc.) unless they are clearly destructive or irreversible.
+
+If at any point you can parallelize work by delegating tasks to another agent (no matter if you are the root or subagent), you should do so using collaboration tools if it could save time or improve quality. 如果是搜索 请用 agy 来协助

@@ -1,0 +1,92 @@
+workpack:
+  id: OPTICAL-STEP1-LEDGER-AND-GATES-20261121
+  title: 第一步：核心账本计算口径/挂接修复与确定性校验门加固
+  status: delivered
+  authorization: 用户审阅全量数据体检报告并确认三步方案后，明确指令“先从第一步开始吧，让 opus 来执行”。
+allowed_write_paths:
+  - docs/control/ACTIVE_WORKPACK.yaml
+  - shipments.csv
+  - edges.csv
+  - points.csv
+  - triage.csv
+  - corpus/_restart_watchlist.csv
+  - corpus/ir/688126/**
+  - knowledge.yaml
+  - macro_evidence.csv
+  - tree.yaml
+  - refs/entity-registry.yaml
+  - participation.py
+  - build_detailed_capability_report.py
+  - scan.py
+  - tests/test_capability_report_semantics.py
+  - tests/test_step1_ledger_gates.py
+  - capability_details.csv
+  - output/pdf/光模块产业链公司能力明细.pdf
+  - calls/out/**
+  - out/参与识别.csv
+  - out/参与识别.md
+  - out/参与识别.html
+  - out/全景.md
+  - out/全景.html
+  - out/知识库.md
+  - out/知识库.html
+  - out/问题队列.md
+  - out/研究问题树.md
+  - out/step1-ledger-remediation-20261121/**
+read_scope:
+  - 根目录 canonical 账本、tree.yaml、knowledge.yaml、research_questions.yaml、refs/entity-registry.yaml
+  - corpus/_frozen.csv、corpus/_restart_watchlist.csv、corpus/annual/**、corpus/annual-2024/**、corpus/ir/**、corpus/legacy-input/**、corpus/qa/**
+  - participation.py、build_detailed_capability_report.py、render.py、scan.py、tests/**
+  - out/report-kb-review-20261119/（核对已查实内部错漏）
+  - archive/output/edges.csv（仅用于逐字恢复根级 edges.csv 被截断字段）
+non_goals:
+  - 不在未获单列授权前扩大 corpus/_frozen.csv 分母（例如联讯仪器 688808、云南锗业、科瑞技术、微见智能、镭神技术留待 v6 扩容授权）
+  - 不执行第二步（archive 历史资产成批打捞）与第三步（9-11 月 Daily 增量并库）
+  - 不执行 git commit 或 git push，不覆写历史审阅报告或 Workbuddy 模板外部目录
+canonical_policy:
+  writable: true
+  scope: 用户明确授权执行第一步：修复现有核心账本计算口径、截断/错挂硬伤与确定性校验门；不擅自扩充_frozen分母
+architecture_budget:
+  new_relation_types: []
+  new_top_level_systems: []
+  new_schema_fields: []
+  new_engines: []
+acceptance_criteria:
+  - shipments/edges/points/triage/macro_evidence/knowledge/tree/entity-registry 既有算术、截断、错锚、重复与格式硬伤均通过确定性脚本修复并留存 ledger-changes.json
+  - participation.py、build_detailed_capability_report.py 与 scan.py 修复名称解析与 YAML 解析漏洞并新增算术/锚点/YAML/去重机器拦截门
+  - 全量重算 capability_details.csv 与 out/ 派生文件，且 scan.py --selftest、scan.py --check、render.py --verify、participation.py --check、-m calls check、pytest 全部通过
+stop_conditions:
+  - 需扩大 _frozen 分母或新增 schema/关系类型时暂停对应项并在报告中请求授权
+  - Opus 5.5 额度耗尽时按计划降档至 claude-opus-5-5-medium 或暂停升级
+previous_workpack: out/step1-ledger-remediation-20261121/previous-active-workpack.yaml
+completion_semantics:
+  forbidden_phrasing:
+    - 已覆盖
+    - 已完成
+    - 已回答
+delivery:
+  delivered_at: "2026-11-21"
+  verifier_model: gemini-4-neon-high
+  verifier_model_note: Claude 5.5 额度仅剩 1%（2026-11-27T15:59:42Z 重置），由 opus-verifier 切换至 gemini-4-neon-high 完成独立验收并已通告协调器。
+  artifacts:
+    - out/step1-ledger-remediation-20261121/remediate_ledgers.py
+    - out/step1-ledger-remediation-20261121/ledger-changes.json
+    - out/step1-ledger-remediation-20261121/verification-summary.json
+    - out/step1-ledger-remediation-20261121/report.md
+  summary:
+    ledger_changes: 174 处确定性修复（9 份账本/配置，二次重跑幂等 0 改动）
+    code_and_gates: participation.py / build_detailed_capability_report.py / scan.py 加固完成；selftest 53→90 全过
+    derived_rebuilds: capability_details.csv 183 行（技术路线=未标 38→0）；out/参与识别.csv 463 家中已确认 89→90；out/知识库.md 渲染全部 10 条 KN
+  gates:
+    scan_selftest: pass (90/90, exit 0)
+    scan_check: pass (①-⑭ 全绿, exit 0)
+    render_verify: pass (两次临时重建一致, exit 0)
+    participation_check: pass (463/463, 确认 90, 待确认 15, exit 0)
+    calls_check: pass (39公司/166信源/70主张/34雷达事件, exit 0)
+    pytest_step1: pass (64 passed, 28 subtests passed, exit 0)
+    pytest_repo_scoped: 466 passed, 118 subtests passed, 1 failed (仅 tests/research/test_question_completion_semantics.py:92 遗留硬编码 OM-PHYS-001，属允许写路径外既有旧测试；裸 pytest 另受 out/ 历史打包副本干扰)
+  pending_user_decisions:
+    - v6 宇宙扩容授权（联讯仪器 688808、云南锗业、科瑞技术、微见智能、镭神技术等）
+    - 授权修正 tests/research/test_question_completion_semantics.py:92 旧工作包 ID 断言及配置 pytest 忽略 out/
+    - 是否推进 Step 2（archive 打捞）、Step 3（Daily 并库）及 git commit
+    - 如需 Claude Opus 独立复签，待 2026-11-27 额度重置后重跑

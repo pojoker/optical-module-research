@@ -1,0 +1,97 @@
+workpack:
+  id: OPTICAL-STEP4-BACKEND-FINAL-CLOSURE-20261122
+  title: 第四步：光模块数据底座三刀止血、旧锚与待判收尾、待审海外/国内原件补拉与封版冻结
+  status: delivered
+  updated_at: "2026-11-22"
+  authorization: 用户审阅全库数据残余问题与 Kimi K3.1 Pro 对谈结论后明确指示“好的，处理”，使用 Orchestrator (Carbon) 执行最终后端收口并封版。
+allowed_write_paths:
+  - docs/control/ACTIVE_WORKPACK.yaml
+  - points.csv
+  - triage.csv
+  - scan.py
+  - corpus/ir/**
+  - corpus/web/**
+  - corpus/content_ledger/**
+  - corpus/relationships/**
+  - corpus/daily_review/**
+  - calls/sources.csv
+  - calls/claims.csv
+  - calls/commitments.csv
+  - calls/disclosures.csv
+  - calls/events.csv
+  - calls/event_claims.csv
+  - calls/event_evidence.csv
+  - calls/watch_entities.csv
+  - calls/out/**
+  - capability_details.csv
+  - output/pdf/光模块产业链公司能力明细.pdf
+  - tests/test_step2_archive_salvage.py
+  - tests/test_step3_daily_and_v6.py
+  - tests/test_step4_backend_closure.py
+  - calls/tests/test_event_intelligence.py
+  - calls/tests/test_positioning.py
+  - out/**
+read_scope:
+  - /Users/jowang/Downloads/workflow-rehearsal/{corpus,tmp}/**（只读源）
+  - /Users/jowang/Downloads/workflow-rehearsal-daily-state/**（只读源）
+  - 根目录 canonical 账本、tree.yaml、knowledge.yaml、refs/*、calls/*、corpus/*、tests/*
+non_goals:
+  - 不修改 /Users/jowang/Downloads/workflow-rehearsal/** 或 workflow-rehearsal-daily-state/**
+  - 不修改 /Users/jowang/Documents/Codex/2026-11-06/securities-audio-review-2026-11-06/outputs/securities-research-kb/**
+  - 不修改 archive/** 或历史评审目录 out/step1-*、out/step2-*、out/step3-*、out/report-kb-review-*
+  - 不修改 calls/solution_links.csv（SL001/SL002 字节级冻结）
+  - 不绕过任何反爬/验证码门槛（遇到 403/JS 挑战即登记 http_403_or_gated 退出）
+  - 不新增领域顶层体系、关系类型或架构预算字段
+  - 不执行 git commit 或 git push
+canonical_policy:
+  writable: true
+  scope: 完成第一阶段“三刀止血”、points.csv 旧文字/Markdown 锚全量闭合、triage 待判尾项裁决、可执行待审 DRQ 原件抓核与 10–11 月海外季报补槽，然后冻结后端数据结构以衔接研序前端集成。
+architecture_budget:
+  new_relation_types: []
+  new_top_level_systems: []
+  new_schema_fields: []
+  new_engines: []
+completion_semantics:
+  forbidden_phrasing:
+    - 已覆盖
+    - 已完成
+    - 已回答
+acceptance_criteria:
+  - content_ledger.csv 仅真正连续去空白逐字命中（且声明#Lx..y区间命中）行标 verified_local，50条表格拼接标 table_normalized，CLG0633 行号及 README/quote_verification_report.json 更新至真实全表口径
+  - sync_daily_queue.py 取消未知条目静默归噪音（改归 unclassified），补齐 10–11 月 MACOM/Tower/GFS/Veeco/Soitec/Arista/Credo×Oracle 等真财报/并购并分流入队列
+  - scan.py 将 edge_negative_cuts 依 cut_category 拆分校验（合并归属检 replacement_edge_ids，非供货关系免供货边冲突，43 条真否定执行公司简称归一无碰撞检查）
+  - points.csv 历史无裸链接/无本地路径旧锚点清零（仅归一化 锚点URL，不改现有 引语 及 P074 检索日期），triage.csv 三条待判尾项裁决闭合
+  - 全部可 HTTP 200 直取的待审 DRQ 原文及 10–11 月海外重点季报完成拉取核验与入库或降级处置，真保密/私企/403 项诚实留置待审池并注明依据
+  - 七道机器门与裸跑 pytest -q 全部退出码 0
+stop_conditions:
+  - refs/ 文件数超过 8 或根目录出现白名单外文件时立刻中止清理
+  - workflow-rehearsal/corpus/annual 项数变化或 calls/solution_links.csv 被改动时立刻回退
+previous_workpack: out/step4-backend-final-closure-20261122/previous-active-workpack.yaml
+delivery:
+  delivered_at: "2026-11-22"
+  verifier_agent: carbon-s4-verifier
+  verifier_model: gemini-pro-orchestrator
+  artifacts:
+    - out/step4-backend-final-closure-20261122/remediate_content_ledger.py
+    - out/step4-backend-final-closure-20261122/remediate_points_and_domestic_drq.py
+    - out/step4-backend-final-closure-20261122/ingest_overseas_step4.py
+    - out/step4-backend-final-closure-20261122/shard1-content-ledger-summary.json
+    - out/step4-backend-final-closure-20261122/domestic-drq-verdicts.json
+    - out/step4-backend-final-closure-20261122/overseas-drq-verdicts.json
+    - out/step4-backend-final-closure-20261122/光模块产业链全景图_公司能力细化版.html
+    - out/step4-backend-final-closure-20261122/verification-summary.json
+    - out/step4-backend-final-closure-20261122/report.md
+    - corpus/daily_review/sync_daily_queue.py
+    - corpus/daily_review/review_queue.csv
+    - corpus/daily_review/triage_stats.json
+    - corpus/daily_review/README.md
+    - tests/test_step4_backend_closure.py
+  gates:
+    scan_selftest: "pass (153/153, exit 0)"
+    scan_check: "pass (语料距今1天, 缺席年报0家, ①-⑭全绿, exit 0)"
+    render_verify: "pass (两次临时重建一致, exit 0)"
+    participation_check: "pass (466/466, 确认 94, 待确认 13, exit 0)"
+    calls_check: "pass (39公司/180信源/79主张/60雷达事件, exit 0)"
+    daily_review_queue_check: "pass (97行零漂移, 54入库/2待全文/5待法定锚/36观察留置, 0默认静默噪音, exit 0)"
+    pytest_bare_full_repo: "pass (495 passed, 189 subtests passed, 0 errors, 0 deselected, 0 failures, exit 0)"
+
