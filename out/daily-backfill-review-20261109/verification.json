@@ -1,0 +1,17 @@
+{
+  "rows": 3063,
+  "by_stream": {
+    "海外": 661,
+    "国内": 2134,
+    "补充": 231,
+    "Gemini 合规": 37
+  },
+  "protected_files_unchanged": 30,
+  "anchor_refs": {
+    "web_reference": 1181,
+    "valid_line_reference": 17760,
+    "existing_local_reference": 18362
+  },
+  "days_in_range": 67,
+  "combined_days": 53
+}

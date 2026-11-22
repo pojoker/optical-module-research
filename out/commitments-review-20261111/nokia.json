@@ -1,0 +1,264 @@
+[
+  {
+    "id": "CM003",
+    "target": "San Jose第二座InP半导体制造设施在2026年底前启用",
+    "due_date": "2026-12-31",
+    "old_status": "pending",
+    "verdict": "pending",
+    "assessment": "截至2026-11-11，目标窗口尚未结束。2025Q3承诺San Jose第二座InP设施在2026年底前启用。2025年报p.24曾写同城新compound semiconductor fab预计2027开始生产，2026Q1和5月补充募集说明随后称年内开始爬坡，Q2全文进一步明确Q4 2026后段按计划爬坡。Q3将部分制造投资现金支付移至2027，并重申光学制造扩张按计划推进。已找到项目重申和时间细化，尚缺实际启用、首批晶圆或爬坡启动声明。",
+    "missing": "早期年报“2027生产”与后续“2026Q4开始爬坡”可能涉及里程碑、有效产能或排程更新，原文未直接解释。San Jose、Sunnyvale既有Fab、Allentown封测与Arizona新项目须分别识别。现有付款时间变化无法确定哪一厂投产时点；截至核查日未核得同厂已启用/开始爬坡的明确动作、产出和日期。",
+    "proposal": "CM003保留pending及2026-12-31跟踪窗口。在assessment追加Q2的Q4后段计划、Q3付款时点说明和早期年度报告口径差异。下次以San Jose明确启用/晶圆投产材料裁决，保留“opening / begin ramping / production”的里程碑区别。",
+    "positions": [
+      "calls/commitments.csv · CM003 的assessment与后续证据引用候选",
+      "calls/claims.csv · CL052/CL057；calls/sources.csv · S_NOK_2026Q1、S_NOK_2026Q2及待新增Q3来源",
+      "calls/themes.csv · T008；同厂新增事件须另核对象、发生日及阶段"
+    ],
+    "evidence": [
+      {
+        "date": "2026-03-05",
+        "title": "Nokia 2025 Form 20-F",
+        "url": "https://www.nokia.com/system/files/2026-03/nokia-form-20-f-2025.pdf",
+        "locator": "p.24 Own manufacturing · San Jose购置、预期2027生产与建设至2028的段落",
+        "quote": ""
+      },
+      {
+        "date": "2026-04-23",
+        "title": "Nokia 2026Q1完整财报",
+        "url": "https://www.nokia.com/system/files/2026-04/nokia_results_2026_q1.pdf",
+        "locator": "p.2 CEO Commentary · OFC段末句，San Jose新InP设施年内开始爬坡",
+        "quote": ""
+      },
+      {
+        "date": "2026-05-25",
+        "title": "Nokia补充募集说明",
+        "url": "https://www.nokia.com/sites/default/files/2026-06/nokia-emtn-programme-supplementary-prospectus.pdf",
+        "locator": "p.5 Q1 2026 Operational Progress · San Jose段，同年后段开始爬坡",
+        "quote": ""
+      },
+      {
+        "date": "2026-07-23",
+        "title": "Nokia 2026Q2完整财报",
+        "url": "https://www.nokia.com/system/files/2026-07/nokia_results_2026_q2.pdf",
+        "locator": "p.3 Additional information · Nokia acquires further U.S. optical manufacturing capacity，Q4 2026及各厂区明确区分",
+        "quote": ""
+      },
+      {
+        "date": "2026-10-22",
+        "title": "Nokia 2026Q3完整财报",
+        "url": "https://www.nokia.com/system/files/2026-10/nokia_results_2026_q3.pdf",
+        "locator": "p.2 Outlook assumptions · Capital expenditures，部分付款时间变化与扩张计划说明",
+        "quote": "optical manufacturing expansion plans remain on-track"
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-10-25 至 2026-11-05（8次观察，1个正文哈希）",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-25/disclosure_candidates.csv#L101",
+        "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/",
+        "claim": "DC_E7C7B632B6AD · Daily已留存Nokia 2026Q3报告来源，具体付款与扩张说明需回原报告。",
+        "match": "同一后续财报来源。新增核读的完整报告p.2给出制造投资付款时点及扩张计划，但Daily抽取的主张只有Infinera整合和财报日程，未观察到San Jose开厂/爬坡事件。",
+        "dates": [
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-11-04",
+          "2026-11-05"
+        ],
+        "versions": [
+          {
+            "content_hash": "b44a56f2fe96090d8de1bff939884ca42a9799b4c5f32da6fd9714d4868669fe",
+            "dates": [
+              "2026-10-25",
+              "2026-10-26",
+              "2026-10-27",
+              "2026-10-28",
+              "2026-10-29",
+              "2026-10-30",
+              "2026-11-04",
+              "2026-11-05"
+            ]
+          }
+        ]
+      }
+    ],
+    "search": [
+      "截至2026-11-11，检索Nokia官网Newsroom及Investors；核读2026Q1、Q2、Q3全文与OFC2026发布、2026-05-25补充募集说明。",
+      "检索词包括 San Jose InP fab ramp Q4 2026、mid-2027 sampling、four DSP 13 solutions、volume production second half 2027、Q2 long-term AI Cloud orders revenue twelve months。",
+      "生产Daily只读检查2026-09-04至2026-11-11现存海外staging的披露、主张、事件、证据表。按同源URL/引文/正文哈希合并日期版本；San Jose、厂址、OFC家族和Q2订单批次分别对照。",
+      "Q3演示稿已定位18页PDF，但后续定位请求超时、直接获取403。本次细节以能读取的Q3完整财报为据。",
+      "对2025年度报告San Jose条款与Q1/Q2同厂声明逐段比对。官方招聘与既有Sunnyvale设施未用作新厂兑现证据。",
+      "Daily同Q3报告8次观察日期为2026-10-25, 2026-10-26, 2026-10-27, 2026-10-28, 2026-10-29, 2026-10-30, 2026-11-04, 2026-11-05；仅归为原文入口，未把同公司AI-RAN、PON、Telxius 800G部署或Infinera整合当成该厂投产。"
+    ]
+  },
+  {
+    "id": "CM004",
+    "target": "下一代光网络产品在2027年中开始送样",
+    "due_date": "2027-06-30",
+    "old_status": "pending",
+    "verdict": "pending",
+    "assessment": "原指向OFC2026公布的四款DSP支撑的13项相干光解决方案家族。2026-03-16公司发布写明该新家族预计2027年中开始送样；4月Q1报告及5月补充募集说明保持同窗口。截至2026-11-11仍在未来。已查材料未提供该家族已送样或明确改期的后续陈述。",
+    "missing": "需要精确产品/方案、客户、样品交付或客户验证开始日期。1.6T/2.4T相干可插拔、3.2T coherent lite、双面可插拔等形态共用家族时间线，不能把任一旧800G ZR产品交付替代全家族送样。mid-2027是近似窗口，账本2027-06-30是跟踪用日期，并非公告逐日硬截止。",
+    "proposal": "CM004保留pending。把target/assessment具体化为OFC2026四DSP、13方案相干光家族，并记原文mid-2027和账本日期的精度。后续逐SKU补送样证据。与CM005维持送样、量产两个阶段。",
+    "positions": [
+      "calls/commitments.csv · CM004 的target/assessment候选",
+      "calls/claims.csv · CL056；calls/event_claims.csv · ECL010；calls/events.csv · EV010",
+      "calls/events.csv · EV010的program_id现为PRG_NOK_PSE6S，原锚实际为四DSP/13方案家族，建议人工检查项目标识一致性",
+      "calls/disclosures.csv · D_NOK_20260423_Q1；新OFC原始发布与补充募集说明可作来源候选"
+    ],
+    "evidence": [
+      {
+        "date": "2026-03-16",
+        "title": "Nokia OFC2026相干光解决方案发布",
+        "url": "https://www.nokia.com/newsroom/nokia-launches-suite-of-applicationoptimized-optical-solutions-for-ai-era-networks/",
+        "locator": "New suite of application-optimized coherent optical solutions · 四DSP、六类方案列表及sampling/GA句",
+        "quote": ""
+      },
+      {
+        "date": "2026-04-23",
+        "title": "Nokia 2026Q1完整财报",
+        "url": "https://www.nokia.com/system/files/2026-04/nokia_results_2026_q1.pdf",
+        "locator": "p.2 CEO Commentary · OFC段，四DSP、13方案及mid-2027送样",
+        "quote": ""
+      },
+      {
+        "date": "2026-05-25",
+        "title": "Nokia补充募集说明",
+        "url": "https://www.nokia.com/sites/default/files/2026-06/nokia-emtn-programme-supplementary-prospectus.pdf",
+        "locator": "p.5 Q1 2026 Operational Progress · 同一产品家族的送样与量产窗口",
+        "quote": ""
+      }
+    ],
+    "daily": [],
+    "search": [
+      "截至2026-11-11，检索Nokia官网Newsroom及Investors；核读2026Q1、Q2、Q3全文与OFC2026发布、2026-05-25补充募集说明。",
+      "检索词包括 San Jose InP fab ramp Q4 2026、mid-2027 sampling、four DSP 13 solutions、volume production second half 2027、Q2 long-term AI Cloud orders revenue twelve months。",
+      "生产Daily只读检查2026-09-04至2026-11-11现存海外staging的披露、主张、事件、证据表。按同源URL/引文/正文哈希合并日期版本；San Jose、厂址、OFC家族和Q2订单批次分别对照。",
+      "Q3演示稿已定位18页PDF，但后续定位请求超时、直接获取403。本次细节以能读取的Q3完整财报为据。",
+      "现存Daily未定位该OFC2026家族的同对象送样记录。Telxius 2026-09-15的ICE-X 800G部署/BRUSA演示属于旧产品与特定项目；同公司的50G PON及其他业务事件均未串为兑现。",
+      "已检索Q3财报及Nokia官网至2026-11-11的同家族送样/改期信息。未命中本身不用于判延期。"
+    ]
+  },
+  {
+    "id": "CM005",
+    "target": "下一代光网络产品在2027年下半年开始量产",
+    "due_date": "2027-12-31",
+    "old_status": "pending",
+    "verdict": "pending",
+    "assessment": "该目标与CM004属于同一OFC2026四DSP/13方案相干光家族。2026-03-16发布把一般可用性预期放在2027年下半年；Q1管理层明确为同期开始volume production，5月募集说明再述H2 2027目标。量产窗口未来，原始承诺尚待后续实发材料核验。",
+    "missing": "要确认具体方案、SKU、工厂、量产或商业供货的已发生状态，含客户侧收货或公司分产品出货说明。GA与volume production的措辞应各自保留。同期可用的multi-rail optical line system另有H2 2026计划，不能替代新相干产品家族的H2 2027。",
+    "proposal": "CM005保留pending和2027-12-31跟踪日期，assessment注明同家族的量产窗口以及GA/volume production表述。后续量产判定以具体产品和时间为准，并与CM004送样记录分开。",
+    "positions": [
+      "calls/commitments.csv · CM005 的target/assessment候选",
+      "calls/claims.csv · CL062；calls/events.csv · EV010；calls/event_claims.csv · ECL010只锚送样句，量产句如采纳需另行核锚",
+      "calls/events.csv · PRG_NOK_PSE6S项目标识与四DSP/13方案的实际指代需人工对照"
+    ],
+    "evidence": [
+      {
+        "date": "2026-03-16",
+        "title": "Nokia OFC2026相干光解决方案发布",
+        "url": "https://www.nokia.com/newsroom/nokia-launches-suite-of-applicationoptimized-optical-solutions-for-ai-era-networks/",
+        "locator": "新相干方案家族的H2 2027一般可用性；另列multi-rail in-line amplifier的H2 2026可用窗口",
+        "quote": ""
+      },
+      {
+        "date": "2026-04-23",
+        "title": "Nokia 2026Q1完整财报",
+        "url": "https://www.nokia.com/system/files/2026-04/nokia_results_2026_q1.pdf",
+        "locator": "p.2 CEO Commentary · OFC段，volume production starting in the second half，承接mid-2027",
+        "quote": ""
+      },
+      {
+        "date": "2026-05-25",
+        "title": "Nokia补充募集说明",
+        "url": "https://www.nokia.com/sites/default/files/2026-06/nokia-emtn-programme-supplementary-prospectus.pdf",
+        "locator": "p.5 Q1 2026 Operational Progress · 同家族量产当前目标2027年下半年",
+        "quote": ""
+      }
+    ],
+    "daily": [],
+    "search": [
+      "截至2026-11-11，检索Nokia官网Newsroom及Investors；核读2026Q1、Q2、Q3全文与OFC2026发布、2026-05-25补充募集说明。",
+      "检索词包括 San Jose InP fab ramp Q4 2026、mid-2027 sampling、four DSP 13 solutions、volume production second half 2027、Q2 long-term AI Cloud orders revenue twelve months。",
+      "生产Daily只读检查2026-09-04至2026-11-11现存海外staging的披露、主张、事件、证据表。按同源URL/引文/正文哈希合并日期版本；San Jose、厂址、OFC家族和Q2订单批次分别对照。",
+      "Q3演示稿已定位18页PDF，但后续定位请求超时、直接获取403。本次细节以能读取的Q3完整财报为据。",
+      "对照2026-03-16发布中相干产品家族与独立multi-rail线放大器的不同交付窗口。",
+      "现存Daily没有同一新家族量产记录；Telxius旧800G部署、网络流量预测及AI-RAN事件没有并入量产证据。"
+    ]
+  },
+  {
+    "id": "CM006",
+    "target": "约一半2026Q2 AI与云长期订单在未来十二个月转为收入",
+    "due_date": "2027-07-23",
+    "old_status": "pending",
+    "verdict": "pending",
+    "assessment": "Q2原段先披露AI&Cloud订单流入28亿欧元，随后说明光网络与IP网络均取得长期订单，并预计约一半these orders在未来12个月转为收入。该转化对象覆盖两个网络业务，合同名单和产品拆分未公开。Q3披露AI&Cloud合计收入、新增订单和两业务收入增长，仍缺Q2所指订单批次的转收入对账。",
+    "missing": "需要Q2同批订单的确认口径、订单余额滚动、取消/更改、已确认收入和未来12个月窗口终点。Q3所有AI&Cloud收入可能含更早订单、Q3新增订单及其他业务；总收入或总合同负债不能识别原批次兑现。原文未把28亿全部明确界定为同一组长约的分母，不能直接把14亿欧元作已定义硬验收值。",
+    "proposal": "CM006保留pending及2027-07-23跟踪日期。assessment追加Q3经营更新与同批订单兑现仍缺证，要求同一队列的订单→确认收入桥。保留Optical Networks与IP Networks混合范围。日期为从2026-07-23披露日起折算12个月的账本跟踪值。",
+    "positions": [
+      "calls/commitments.csv · CM006 的assessment和证据引用候选",
+      "calls/claims.csv · CL058、CL059、CL061；calls/sources.csv · S_NOK_2026Q2及待新增Q3全文来源",
+      "calls/events.csv · EV011、calls/event_claims.csv · ECL011仅为供给约束叙事，可作背景索引，不能记录订单兑现"
+    ],
+    "evidence": [
+      {
+        "date": "2026-07-23",
+        "title": "Nokia 2026Q2完整财报",
+        "url": "https://www.nokia.com/system/files/2026-07/nokia_results_2026_q2.pdf",
+        "locator": "p.1 CEO Commentary · Q2 AI&Cloud order intake、长期订单与未来12个月；p.4按网络业务分项",
+        "quote": ""
+      },
+      {
+        "date": "2026-10-22",
+        "title": "Nokia 2026Q3完整财报",
+        "url": "https://www.nokia.com/system/files/2026-10/nokia_results_2026_q3.pdf",
+        "locator": "pp.1、4、6：AI&Cloud新订单，光网络/IP增长和客户类型净销售额；p.21收入分解和p.13合同负债均无Q2批次桥",
+        "quote": ""
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-10-25 至 2026-11-05（8次观察，1个正文哈希）",
+        "ref": "/Users/jowang/Downloads/workflow-rehearsal-daily-state/overseas/staging/2026-10-25/disclosure_candidates.csv#L101",
+        "url": "https://www.nokia.com/newsroom/nokia-corporation-interim-report-for-q3-2026/",
+        "claim": "DC_E7C7B632B6AD · Daily已留存Nokia 2026Q3报告来源，提供AI与云经营更新入口。",
+        "match": "与原Q2指引连续的财报系列。核读Q3只能看到AI&Cloud合计收入、新订单及业务表现，缺Q2那批订单转收入的同批次归属。Daily对Infinera整合和日程的抽取与CM006无兑现对应。",
+        "dates": [
+          "2026-10-25",
+          "2026-10-26",
+          "2026-10-27",
+          "2026-10-28",
+          "2026-10-29",
+          "2026-10-30",
+          "2026-11-04",
+          "2026-11-05"
+        ],
+        "versions": [
+          {
+            "content_hash": "b44a56f2fe96090d8de1bff939884ca42a9799b4c5f32da6fd9714d4868669fe",
+            "dates": [
+              "2026-10-25",
+              "2026-10-26",
+              "2026-10-27",
+              "2026-10-28",
+              "2026-10-29",
+              "2026-10-30",
+              "2026-11-04",
+              "2026-11-05"
+            ]
+          }
+        ]
+      }
+    ],
+    "search": [
+      "截至2026-11-11，检索Nokia官网Newsroom及Investors；核读2026Q1、Q2、Q3全文与OFC2026发布、2026-05-25补充募集说明。",
+      "检索词包括 San Jose InP fab ramp Q4 2026、mid-2027 sampling、four DSP 13 solutions、volume production second half 2027、Q2 long-term AI Cloud orders revenue twelve months。",
+      "生产Daily只读检查2026-09-04至2026-11-11现存海外staging的披露、主张、事件、证据表。按同源URL/引文/正文哈希合并日期版本；San Jose、厂址、OFC家族和Q2订单批次分别对照。",
+      "Q3演示稿已定位18页PDF，但后续定位请求超时、直接获取403。本次细节以能读取的Q3完整财报为据。",
+      "Q3全文检索AI & Cloud、long-term orders、twelve months、order intake、Net sales by customer type、Contract liabilities，核对原批次是否分拆。",
+      "同一Q3来源8日重复观察仅计一次来源。Daily中两条机器抽取（Infinera整合、下期财报日程）与本承诺原批次没有直接兑现对应。"
+    ]
+  }
+]

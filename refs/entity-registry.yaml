@@ -332,6 +332,26 @@ identity_layer:
       source_ruling: 5
       notes: "顺丰速运之子/分支，法人分列；观察可走 branch scope"
 
+    # ---- 2026-07-25 天眼查对外投资数据修正(聚合库,pending_primary);2026-11-21 Step1 由文件尾游离列表迁入本层 ----
+    - entity_id: LEGAL_ZHIHE
+      identity_type: legal_entity
+      canonical_name: 成都智禾光通
+      legal_name: 成都智禾光通科技有限公司
+      identifiers: {信用代码: 91510100MA69GLFW85}
+      aliases:
+        - {name: 成都智禾光通科技有限公司, effective_from: "", effective_to: ""}
+      rename_evidence: {status: pending, anchor: "", retrieved: "2026-07-25"}
+      related:
+        member_of: [GROUP_INNOLIGHT]
+        parent_of: []
+        possible_same_as: []
+        predecessor_of: []
+      identity_decision: distinct_legal_entities
+      registry_ruling: "旭创系:中际旭创100%全资,天眼查对外投资,2021-01设立(聚合库,pending_primary)"
+      registry_status: 待补证
+      source_ruling: ""
+      notes: "修正:此前'承继原成都旭创且脱离旭创系'推断后半句错误,智禾在系内"
+
 # ====================== 第二层：观察 scope 层 ======================
 observation_scope_layer:
   default_policy: >
@@ -406,26 +426,2415 @@ observation_scope_layer:
       source_ruling: 5
       notes: "物流服务商，集团口径合理；西安顺丰为子/分支，可走 branch scope 独立观察"
 
-# 2026-07-25 天眼查对外投资数据修正(聚合库,pending_primary)
-- entity_id: LEGAL_ZHIHE
-  legal_name: 成都智禾光通科技有限公司
-  identifiers: {信用代码: 91510100MA69GLFW85}
-  related: {member_of: 旭创系(中际旭创100%全资,天眼查对外投资,2021-01设立)}
-  identity_decision: distinct_legal_entities
-  修正: 此前"承继原成都旭创且脱离旭创系"推断后半句错误,智禾在系内
-- 曾用名补充: {天孚通信: 苏州天孚精密陶瓷有限公司, 中际旭创: 龙口中际电工机械/山东中际电工装备}
-
-# 2026-07-25 标签解析会话:母公司/上市状态解析(专家知识+搜索验证)
-- 母公司关系:
-    北京通美晶体: {parent: AXT Inc(NASDAQ:AXTI), 持股: "85.51%", 备注: 科创板IPO2026-07终止注册拟转港股, 来源: 新浪财经/证券时报2026-07-10}
-    有研亿金新材料: {parent: 有研新材(600206), 持股: 全资, 来源: 专家知识}
-    大阳日酸特殊气体: {parent: 日本酸素HD(TSE:4091), 来源: 专家知识}
-    OharaQuartz: {parent: Ohara Inc(TSE:5218), 来源: 专家知识}
-    陕西兴化集团: {子公司上市: 兴化股份(002109), 自身: 未上市国企(延长石油系), 来源: 专家知识}
-- 上市状态解析:
+# ====================== 补充解析层（2026-07-25 会话；2026-11-21 Step1 迁入合法顶层键） ======================
+supplemental_resolutions:
+  曾用名补充:
+    天孚通信: 苏州天孚精密陶瓷有限公司
+    中际旭创: "龙口中际电工机械/山东中际电工装备"
+    深圳市宏钢光电封装技术股份有限公司: "深圳市宏钢机械设备有限公司(points.csv P258原登记名;301314科瑞思2026-10-26重组预案核实股份制现名)"
+  # 2026-07-25 标签解析会话:母公司/上市状态解析(专家知识+搜索验证)
+  母公司关系:
+    北京通美晶体: {parent: "AXT Inc(NASDAQ:AXTI)", 持股: "85.51%", 备注: "科创板IPO2026-07终止注册拟转港股", 来源: "新浪财经/证券时报2026-07-10"}
+    有研亿金新材料: {parent: "有研新材(600206)", 持股: 全资, 来源: 专家知识}
+    大阳日酸特殊气体: {parent: "日本酸素HD(TSE:4091)", 来源: 专家知识}
+    OharaQuartz: {parent: "Ohara Inc(TSE:5218)", 来源: 专家知识}
+    陕西兴化集团: {子公司上市: "兴化股份(002109)", 自身: "未上市国企(延长石油系)", 来源: 专家知识}
+    索尔思光电: {parent: "东山精密(002384)", 持股: 已完成收购并表, 备注: "原2023-11万通发展重大资产重组框架协议标的(未完成);points P200/P201为历史锚,并表后能力点见P130-P133", 来源: "东山精密2025年年度报告 https://static.cninfo.com.cn/finalpage/2026-04-22/1225139318.PDF", 日期: "2026-11-21"}
+  上市状态解析:
     广东瑞谷光网: {status: 新三板837597, 来源: 新浪新三板页}
-    武汉昱升光电: {status: 未上市(IPO辅导中,海通证券,哈勃投资), 来源: 搜索2026-07-25}
-    洛阳中超新材料: {status: 未上市(创业板IPO 2024-09撤回,曾挂新三板), 来源: 证券时报}
-    芯思杰技术: {status: 待核(疑曾挂新三板838275,中信证券IPO文件存在,未见代码确认), 保持: 未解析}
+    武汉昱升光电: {status: "未上市(IPO辅导中,海通证券,哈勃投资)", 来源: 搜索2026-07-25}
+    洛阳中超新材料: {status: "未上市(创业板IPO 2024-09撤回,曾挂新三板)", 来源: 证券时报}
+    芯思杰技术: {status: "待核(疑曾挂新三板838275,中信证券IPO文件存在,未见代码确认)", 保持: 未解析}
     西安卫光气体: {status: 待核, 保持: 未解析}
-- 光迅科技控股结构: {parent: 中国信科集团, 持股: "直接2.1%+经烽火科技间接36.13%=38.23%", 来源: 大唐电信2025年报(互查矩阵命中), 日期: 2026-07-25}
+    联讯仪器: {status: "科创板已上市688808(2026-04-24上市,见2026半年报股份变动情况说明)", 保持: "points.csv P061上市标签暂保持未上市私企;待v6扩容将688808补录入corpus/_frozen.csv后同步切为A股", 来源: "https://static.cninfo.com.cn/finalpage/2026-08-27/1225511954.PDF", 日期: "2026-11-21"}
+    索尔思光电: {status: "东山精密(002384)并表子公司(未单独上市)", 来源: "东山精密2025年年度报告", 日期: "2026-11-21"}
+  光迅科技控股结构: {parent: 中国信科集团, 持股: "直接2.1%+经烽火科技间接36.13%=38.23%", 来源: "大唐电信2025年报(互查矩阵命中)", 日期: "2026-07-25"}
+
+# ====================== 节点目录层（Step 2 收编 + Step 3 v6 对称扩容 + Step 5 盲区新线索同步） ======================
+node_directory:
+  source_table: corpus/salvaged/entity_nodes.csv
+  updated_date: '2026-11-22'
+  total_nodes: 179
+  in_frozen_universe_count: 44
+  with_points_count: 82
+  intermediary_count: 12
+  evaporated_panorama_entities_count: 6
+  status_corrections_2026:
+    联讯仪器:
+      node_id: N43
+      code_or_ticker: '688808'
+      status: 科创板2026-04-24上市(v6已纳入corpus/_frozen.csv并落盘招股书/半年报,points.csv P061切为A股)
+    索尔思(Source Photonics):
+      node_id: N31
+      code_or_ticker: 002384(东山精密并表)
+      status: 东山精密002384完成收购并表(并表后能力点见P130-P133,历史锚P200/P201)
+    波若威:
+      node_id: N130
+      code_or_ticker: 台股上柜3163
+      status: 台湾波若威科技(上柜3163)大陆子公司波若威光纤通讯(points P264/P265标台股)
+    云南锗业(归并云南鑫耀):
+      node_id: N170
+      code_or_ticker: 002428
+      status: 深主板002428纳入v6分母,participation.py建立控股84.53%子公司云南鑫耀(P202)别名归并
+    科瑞技术:
+      node_id: N171
+      code_or_ticker: 002957
+      status: 深主板002957纳入v6分母,2025年报p.15核出共晶贴片(P275)与50nm光耦合(P276)能力点,具名客户归属留DRQ0050待核
+    深圳宏钢(宏钢光电封装):
+      node_id: N138
+      code_or_ticker: 301314(科瑞思拟购100%预案)
+      status: 301314科瑞思2026-10-26披露拟发行股份及支付现金收购深圳市宏钢光电封装技术股份有限公司100%股份预案(1225620972.PDF),审计评估进行中未交割
+    成都奥捷:
+      node_id: N174
+      code_or_ticker: 300916(朗特智能拟购51%未交割)
+      status: 圈外朗特智能300916于2026-11-17公告拟现金6.63亿元收购成都奥捷通信技术有限公司51%股权(1225674762.PDF),尚待2026-12-02股东会审议及交割
+    上海羲禾科技:
+      node_id: N175
+      code_or_ticker: ''
+      status: 上海羲禾科技股份有限公司2026-10-14科创板第52次上市委过会、10-22获证监许可〔2026〕2940号同意注册批复,待发行挂牌上市
+    粤芯半导体:
+      node_id: N176
+      code_or_ticker: '301660'
+      status: 粤芯半导体技术股份有限公司2026-10-13创业板新上市(301660,不在v6 _frozen分母内,暂列observation_list观察90nm SiPho及3.2T NPO导入)
+  evaporated_panorama_entities:
+  - node_id: N17
+    canonical_name: 浙江粮油
+    aliases:
+    - 浙江省粮油食品进出口股份有限公司
+    - 浙江粮油(出口代理)
+    code_or_ticker: ''
+    is_intermediary_layer: true
+    disposition: panorama两头蒸发归宿:原leaf-029贸易/代理非BOM节点,在edges.csv#E016以EXT保留出口代理身份,不入BOM生产点
+  - node_id: N28
+    canonical_name: 等离子体所
+    aliases:
+    - 中国科学院合肥物质科学研究院等离子体物理研究所
+    - 等离子体所(客户)
+    code_or_ticker: ''
+    is_intermediary_layer: false
+    disposition: panorama两头蒸发归宿:原leaf-030跨行业科研院所(仅edges.csv#E013边schema参考),不入光模块BOM能力点
+  - node_id: N29
+    canonical_name: PINEWAVE
+    aliases:
+    - PINEWAVE(关联方)
+    code_or_ticker: ''
+    is_intermediary_layer: true
+    disposition: panorama两头蒸发归宿:原leaf-031关联方境外销售结算主体(edges.csv#E044),穿透终端前禁作终端算力客户
+  - node_id: N30
+    canonical_name: 索恩格(SEG Automotive)
+    aliases:
+    - 索恩格
+    - SEG Automotive
+    code_or_ticker: ''
+    is_intermediary_layer: false
+    disposition: panorama两头蒸发归宿:原leaf-030跨行业汽车电机客户(edges.csv#E046猎奇非光通信客户),不入光模块BOM能力点
+  - node_id: N158
+    canonical_name: 金信诺及其关联方
+    aliases:
+    - 金信诺
+    - 深圳金信诺高新技术股份有限公司
+    - 金信诺及其关联方轨道信号系统科技有限公司、赣州金信诺电缆技术有限公司、金信诺光纤光缆有限公司、东莞金信诺电子有限公司）
+    code_or_ticker: '300252'
+    is_intermediary_layer: false
+    disposition: panorama两头蒸发归宿:原leaf-028下游线缆连接器客户(edges.csv#E128 EXT),修复原nodes.csv名称左半截截断并补齐创业板代码300252
+  - node_id: N166
+    canonical_name: 顺丰速运
+    aliases:
+    - 顺丰速运(源杰释义:西安顺丰及其咸阳分公司)
+    - 顺丰速运(西安顺丰及其咸阳分公司)
+    - 西安顺丰速运
+    code_or_ticker: 002352(顺丰控股子)
+    is_intermediary_layer: false
+    disposition: panorama两头蒸发归宿:原leaf-029物流承运服务商(edges.csv#E200,顺丰控股子公司),修复原nodes.csv误标光/电芯片,不入BOM能力点
+  intermediary_entities:
+  - node_id: N17
+    canonical_name: 浙江粮油
+    country: 中国
+    intermediary_note: 出口代理贸易商夹层(浙江省粮油食品进出口股份有限公司;新易盛2023-2025年报收入确认政策点名E016,非终端客户)
+  - node_id: N23
+    canonical_name: Digicomm
+    country: 美国
+    intermediary_note: CATV分销商夹层(AAOI下游分销商E012,终端MSO运营商在报表中被遮蔽)
+  - node_id: N29
+    canonical_name: PINEWAVE
+    country: 境外(注册地待核)
+    intermediary_note: 关联方境外销售/结算平台夹层(中际旭创关联自然人任职E044,2025销售额4.3378亿美元对应客户E=30.97亿元/8.10%,非终端云厂)
+  - node_id: N36
+    canonical_name: 南央国际
+    country: 中国/日本
+    intermediary_note: 日系精密滑台进口代理商夹层(猎奇智能上游代理商,穿透原厂为日本滑台厂商)
+  - node_id: N37
+    canonical_name: 津微光电
+    country: 中国/日本
+    intermediary_note: 日本神津精机(Kohzu)代理商夹层(猎奇智能高精度运动台代理供应商)
+  - node_id: N45
+    canonical_name: 讯速信远
+    country: 中国
+    intermediary_note: 测试测量设备经销商夹层(联讯仪器经销渠道客户,非终端模块/芯片产线用户)
+  - node_id: N50
+    canonical_name: Broadex Technologies UK Limited
+    country: 英国
+    intermediary_note: 发行人自设境外销售子公司结算平台(长芯博创/博创科技英国全资销售平台E145/E147)
+  - node_id: N66
+    canonical_name: PRIME WORLD INTERNATIONAL HOLDINGS LTD.
+    country: 境外(AAOI子)
+    intermediary_note: 客户自设境外采购控股平台(仕佳光子招股书p.1-1-310明示为AAOI境外子公司E113)
+  - node_id: N84
+    canonical_name: 京瓷商贸有限公司
+    country: 中国(日资)
+    intermediary_note: 外资原厂在华商贸结算子公司(京瓷株式会社Kyocera在华商贸主体E169)
+  - node_id: N88
+    canonical_name: 分销商A(匿名)
+    country: 中国
+    intermediary_note: 匿名分销商夹层槽位(仅披露分销渠道身份,终端客户未具名)
+  - node_id: N117
+    canonical_name: 某分销商(匿名)
+    country: 中国
+    intermediary_note: 匿名分销商夹层槽位(仅披露分销商槽位,终端客户未具名)
+  - node_id: N164
+    canonical_name: 陕西电子信息国际商务有限公司
+    country: 中国
+    intermediary_note: 贸易/进出口代理及委托加工商务结算平台(源杰科技交易对手方E199)
+  edge_only_supplemental_entities:
+  - canonical_name: 苏世博
+    source_edge_id: E050
+    entity_role: 汽车底盘零部件客户(跨行业)
+    country: 德国/中国
+    disposition: 猎奇智能汽车自动化线客户(E050),原nodes.csv未编号,非光模块BOM节点
+  nodes:
+  - node_id: N01
+    canonical_name: Fabrinet
+    aliases: []
+    entity_role: 代工(EMS)
+    country: 泰国
+    code_or_ticker: NYSE:FN
+    listing_status: 美股上市(NYSE:FN)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P001
+  - node_id: N02
+    canonical_name: NVIDIA
+    aliases: []
+    entity_role: 算力终端/系统商
+    country: 美国
+    code_or_ticker: NASDAQ:NVDA
+    listing_status: 美股上市(NASDAQ:NVDA)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N03
+    canonical_name: Cisco
+    aliases: []
+    entity_role: 网络设备OEM
+    country: 美国
+    code_or_ticker: NASDAQ:CSCO
+    listing_status: 美股上市(NASDAQ:CSCO)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P219
+  - node_id: N04
+    canonical_name: Lumentum
+    aliases: []
+    entity_role: 光器件厂
+    country: 美国
+    code_or_ticker: NASDAQ:LITE
+    listing_status: 美股上市(NASDAQ:LITE)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P233
+    - P234
+    - P235
+    - P236
+    - P237
+    - P238
+    - P239
+  - node_id: N05
+    canonical_name: Acacia
+    aliases: []
+    entity_role: 相干光器件/DSP
+    country: 美国
+    code_or_ticker: NASDAQ:ACIA(已退市)
+    listing_status: 已退市(2021被Cisco收购并表)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N06
+    canonical_name: Infinera
+    aliases: []
+    entity_role: 系统设备商
+    country: 美国
+    code_or_ticker: NASDAQ:INFN(已退市)
+    listing_status: 已退市(2025-02被Nokia收购并表)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N07
+    canonical_name: NeoPhotonics
+    aliases: []
+    entity_role: 光器件厂(已消亡)
+    country: 美国
+    code_or_ticker: NYSE:NPTN(已退市)
+    listing_status: 已退市(2022-08被Lumentum收购并表)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N08
+    canonical_name: 华为(含海思)
+    aliases:
+    - 华为
+    - 海思
+    - 华为+海思
+    - 华为技术有限公司
+    entity_role: 系统设备商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市私企
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N09
+    canonical_name: Ciena
+    aliases: []
+    entity_role: 系统设备商
+    country: 美国
+    code_or_ticker: NYSE:CIEN
+    listing_status: 美股上市(NYSE:CIEN)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P218
+  - node_id: N10
+    canonical_name: 中际旭创
+    aliases: []
+    entity_role: 光模块厂
+    country: 中国
+    code_or_ticker: '300308'
+    listing_status: A股上市(创业板:300308)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P074
+    - P138
+  - node_id: N11
+    canonical_name: 新易盛
+    aliases: []
+    entity_role: 光模块厂
+    country: 中国
+    code_or_ticker: '300502'
+    listing_status: A股上市(创业板:300502)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P073
+    - P102
+    - P108
+  - node_id: N12
+    canonical_name: 天孚通信
+    aliases: []
+    entity_role: 光器件/组件厂
+    country: 中国
+    code_or_ticker: '300394'
+    listing_status: A股上市(创业板:300394)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P023
+    - P024
+    - P075
+    - P107
+    - P153
+    - P154
+    - P155
+    - P271
+  - node_id: N13
+    canonical_name: 猎奇智能
+    aliases: []
+    entity_role: 老化测试设备商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 创业板IPO在审
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P055
+    - P203
+  - node_id: N14
+    canonical_name: 罗博特科/ficonTEC
+    aliases:
+    - 罗博特科
+    - ficonTEC
+    - ficonTEC(罗博特科)
+    entity_role: 耦合封装设备商
+    country: 中国/德国
+    code_or_ticker: '300757'
+    listing_status: A股上市(创业板:300757,含并购标的德国ficonTEC)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P059
+    - P116
+    - P172
+    - P173
+  - node_id: N15
+    canonical_name: 博通(Broadcom)
+    aliases: []
+    entity_role: 芯片/CPO
+    country: 美国
+    code_or_ticker: NASDAQ:AVGO
+    listing_status: 美股上市(NASDAQ:AVGO)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P020
+  - node_id: N16
+    canonical_name: 凯格精机
+    aliases: []
+    entity_role: 组装设备商
+    country: 中国
+    code_or_ticker: '301338'
+    listing_status: A股上市(创业板:301338)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P208
+  - node_id: N17
+    canonical_name: 浙江粮油
+    aliases:
+    - 浙江省粮油食品进出口股份有限公司
+    - 浙江粮油(出口代理)
+    entity_role: 出口代理(贸易商)
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市国企控股
+    is_intermediary_layer: true
+    intermediary_note: 出口代理贸易商夹层(浙江省粮油食品进出口股份有限公司;新易盛2023-2025年报收入确认政策点名E016,非终端客户)
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N18
+    canonical_name: Coherent
+    aliases: []
+    entity_role: 光器件/模块厂
+    country: 美国
+    code_or_ticker: NYSE:COHR
+    listing_status: 美股上市(NYSE:COHR)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P220
+    - P221
+    - P222
+    - P223
+    - P224
+    - P225
+    - P226
+    - P227
+    - P228
+  - node_id: N19
+    canonical_name: Applied Optoelectronics(AAOI)
+    aliases:
+    - AAOI
+    - Applied Optoelectronics
+    entity_role: 光模块厂
+    country: 美国
+    code_or_ticker: NASDAQ:AAOI
+    listing_status: 美股上市(NASDAQ:AAOI)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P229
+    - P230
+    - P231
+    - P232
+  - node_id: N20
+    canonical_name: Microsoft
+    aliases: []
+    entity_role: 云巨头(终端)
+    country: 美国
+    code_or_ticker: NASDAQ:MSFT
+    listing_status: 美股上市(NASDAQ:MSFT)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N21
+    canonical_name: Oracle
+    aliases: []
+    entity_role: 云巨头(终端)
+    country: 美国
+    code_or_ticker: NYSE:ORCL
+    listing_status: 美股上市(NYSE:ORCL)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N22
+    canonical_name: ATX Networks
+    aliases: []
+    entity_role: CATV设备商
+    country: 加拿大
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N23
+    canonical_name: Digicomm
+    aliases:
+    - Digicomm International
+    entity_role: CATV分销商
+    country: 美国
+    code_or_ticker: ''
+    listing_status: 未上市私企
+    is_intermediary_layer: true
+    intermediary_note: CATV分销商夹层(AAOI下游分销商E012,终端MSO运营商在报表中被遮蔽)
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N24
+    canonical_name: Apple
+    aliases: []
+    entity_role: 消费电子终端
+    country: 美国
+    code_or_ticker: NASDAQ:AAPL
+    listing_status: 美股上市(NASDAQ:AAPL)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N25
+    canonical_name: Nokia
+    aliases: []
+    entity_role: 系统设备商
+    country: 芬兰
+    code_or_ticker: NYSE:NOK
+    listing_status: 美股上市(NYSE:NOK)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P240
+  - node_id: N26
+    canonical_name: Google
+    aliases: []
+    entity_role: 云巨头(终端)
+    country: 美国
+    code_or_ticker: NASDAQ:GOOGL
+    listing_status: 美股上市(NASDAQ:GOOGL)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N27
+    canonical_name: 派克新材
+    aliases: []
+    entity_role: 锻件厂(跨行业)
+    country: 中国
+    code_or_ticker: '605123'
+    listing_status: A股上市(沪主板:605123)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N28
+    canonical_name: 等离子体所
+    aliases:
+    - 中国科学院合肥物质科学研究院等离子体物理研究所
+    - 等离子体所(客户)
+    entity_role: 科研院所(跨行业)
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 科研事业单位(非上市)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N29
+    canonical_name: PINEWAVE
+    aliases:
+    - PINEWAVE(关联方)
+    entity_role: 旭创关联方(境外销售/结算主体)
+    country: 境外(注册地待核)
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: true
+    intermediary_note: 关联方境外销售/结算平台夹层(中际旭创关联自然人任职E044,2025销售额4.3378亿美元对应客户E=30.97亿元/8.10%,非终端云厂)
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N30
+    canonical_name: 索恩格(SEG Automotive)
+    aliases:
+    - 索恩格
+    - SEG Automotive
+    entity_role: 汽车电机厂
+    country: 德国/中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N31
+    canonical_name: 索尔思(Source Photonics)
+    aliases:
+    - 索尔思光电
+    - Source Photonics
+    entity_role: 光模块/光芯片厂
+    country: 中国/美国
+    code_or_ticker: 002384(东山精密并表)
+    listing_status: 东山精密002384收购并表子公司(未单独上市)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P200
+    - P201
+  - node_id: N32
+    canonical_name: 光迅科技
+    aliases: []
+    entity_role: 光模块/器件厂
+    country: 中国
+    code_or_ticker: 002281
+    listing_status: A股上市(深主板:002281)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P016
+    - P072
+    - P088
+    - P100
+    - P103
+    - P147
+    - P148
+    - P149
+    - P150
+  - node_id: N33
+    canonical_name: 源杰科技
+    aliases: []
+    entity_role: 光芯片厂
+    country: 中国
+    code_or_ticker: '688498'
+    listing_status: A股上市(科创板:688498)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P052
+    - P095
+    - P167
+  - node_id: N34
+    canonical_name: 星微科技
+    aliases: []
+    entity_role: 驱动控制供应商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N35
+    canonical_name: 奥普瑞
+    aliases: []
+    entity_role: 加工件供应商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N36
+    canonical_name: 南央国际
+    aliases: []
+    entity_role: 滑台类日本代理
+    country: 中国/日本
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: true
+    intermediary_note: 日系精密滑台进口代理商夹层(猎奇智能上游代理商,穿透原厂为日本滑台厂商)
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N37
+    canonical_name: 津微光电
+    aliases: []
+    entity_role: 神津精机代理
+    country: 中国/日本
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: true
+    intermediary_note: 日本神津精机(Kohzu)代理商夹层(猎奇智能高精度运动台代理供应商)
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N38
+    canonical_name: 烽火通信
+    aliases: []
+    entity_role: 系统设备商
+    country: 中国
+    code_or_ticker: '600498'
+    listing_status: A股上市(沪主板:600498)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids: []
+  - node_id: N39
+    canonical_name: 奥特维
+    aliases: []
+    entity_role: 组件封装设备商
+    country: 中国
+    code_or_ticker: '688516'
+    listing_status: A股上市(科创板:688516)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P205
+  - node_id: N40
+    canonical_name: 博众精工
+    aliases: []
+    entity_role: 自动化设备商
+    country: 中国
+    code_or_ticker: '688097'
+    listing_status: A股上市(科创板:688097)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P206
+  - node_id: N41
+    canonical_name: 快克智能
+    aliases: []
+    entity_role: 焊接设备商
+    country: 中国
+    code_or_ticker: '603203'
+    listing_status: A股上市(沪主板:603203)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P207
+  - node_id: N42
+    canonical_name: 普源精电
+    aliases: []
+    entity_role: 测试测量仪器
+    country: 中国
+    code_or_ticker: '688337'
+    listing_status: A股上市(科创板:688337)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P217
+  - node_id: N43
+    canonical_name: 联讯仪器
+    aliases:
+    - 苏州联讯仪器股份有限公司
+    entity_role: 通信/光电测试仪器设备商
+    country: 中国
+    code_or_ticker: '688808'
+    listing_status: A股上市(科创板:688808,2026-04-24上市;v6已纳入_frozen并同步P061)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P061
+  - node_id: N44
+    canonical_name: Power Master
+    aliases: []
+    entity_role: 功率器件封测(半导体)
+    country: 中国/新加坡
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N45
+    canonical_name: 讯速信远
+    aliases: []
+    entity_role: 测试设备经销
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: true
+    intermediary_note: 测试测量设备经销商夹层(联讯仪器经销渠道客户,非终端模块/芯片产线用户)
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N46
+    canonical_name: 士兰微
+    aliases: []
+    entity_role: 半导体IDM
+    country: 中国
+    code_or_ticker: '600460'
+    listing_status: A股上市(沪主板:600460)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids: []
+  - node_id: N47
+    canonical_name: 海信集团
+    aliases: []
+    entity_role: 光模块/宽带(海信宽带)
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N48
+    canonical_name: 三安光电
+    aliases: []
+    entity_role: 化合物半导体/光芯片
+    country: 中国
+    code_or_ticker: '600703'
+    listing_status: A股上市(沪主板:600703)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P098
+    - P128
+  - node_id: N49
+    canonical_name: ALFAFONET ENDUSTRIYEL TELEKOM URUNLERI A.S.
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 土耳其
+    code_or_ticker: ''
+    listing_status: 境外未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N50
+    canonical_name: Broadex Technologies UK Limited
+    aliases: []
+    entity_role: 供应链主体
+    country: 英国
+    code_or_ticker: 300548(英国子)
+    listing_status: 长芯博创(300548)境外全资子公司
+    is_intermediary_layer: true
+    intermediary_note: 发行人自设境外销售子公司结算平台(长芯博创/博创科技英国全资销售平台E145/E147)
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N51
+    canonical_name: Cloud Light Technology Limited
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 中国香港
+    code_or_ticker: NASDAQ:LITE(并表子)
+    listing_status: Lumentum(NASDAQ:LITE)2023-11收购并表子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N52
+    canonical_name: Corning Incorporated
+    aliases: []
+    entity_role: 线缆/系统/终端
+    country: 美国
+    code_or_ticker: NYSE:GLW
+    listing_status: 美股上市(NYSE:GLW)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N53
+    canonical_name: Corning(解匿)
+    aliases: []
+    entity_role: 线缆/系统/终端
+    country: 美国
+    code_or_ticker: NYSE:GLW
+    listing_status: 美股上市(NYSE:GLW,解匿映射实体)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N54
+    canonical_name: FOSTEC
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 德国/欧洲
+    code_or_ticker: ''
+    listing_status: 境外未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N55
+    canonical_name: Fibracem Teleinformática Ltda.
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 巴西
+    code_or_ticker: ''
+    listing_status: 境外未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N56
+    canonical_name: Furukawa Electric
+    aliases: []
+    entity_role: 供应链主体
+    country: 日本
+    code_or_ticker: TSE:5801
+    listing_status: 日股上市(TSE:5801,古河电工)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N57
+    canonical_name: HTI
+    aliases: []
+    entity_role: 线缆/系统/终端
+    country: 境外
+    code_or_ticker: ''
+    listing_status: 缩写待核(剑桥科技客户HTI)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N58
+    canonical_name: Intel(含其代工厂)
+    aliases: []
+    entity_role: 光/电芯片
+    country: 美国
+    code_or_ticker: NASDAQ:INTC
+    listing_status: 美股上市(NASDAQ:INTC,含成都封测厂等代工体系)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids: []
+  - node_id: N59
+    canonical_name: KUMPULAN ABEX SDN BHD
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 马来西亚
+    code_or_ticker: ''
+    listing_status: 境外未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N60
+    canonical_name: Kaiam Corporation
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 美国
+    code_or_ticker: ''
+    listing_status: 已破产重整(博创科技坏账核销对象E146)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N61
+    canonical_name: Maruwa Co.,Ltd
+    aliases: []
+    entity_role: 上游材料
+    country: 日本
+    code_or_ticker: TSE:5344
+    listing_status: 日股上市(TSE:5344)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P002
+  - node_id: N62
+    canonical_name: Marvell
+    aliases: []
+    entity_role: DSP芯片
+    country: 美国
+    code_or_ticker: NASDAQ:MRVL
+    listing_status: 美股上市(NASDAQ:MRVL)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P003
+  - node_id: N63
+    canonical_name: Mighty Lift.,Inc.
+    aliases: []
+    entity_role: 供应链主体
+    country: 美国
+    code_or_ticker: ''
+    listing_status: 境外未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N64
+    canonical_name: OharaQuartzCo.,Ltd.
+    aliases: []
+    entity_role: 上游材料
+    country: 日本
+    code_or_ticker: TSE:5218(Ohara子)
+    listing_status: Ohara Inc(TSE:5218)子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P004
+  - node_id: N65
+    canonical_name: Out Line S.r.l.
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 意大利
+    code_or_ticker: ''
+    listing_status: 境外未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N66
+    canonical_name: PRIME WORLD INTERNATIONAL HOLDINGS LTD.
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 境外(AAOI子)
+    code_or_ticker: NASDAQ:AAOI(子)
+    listing_status: AAOI(NASDAQ:AAOI)境外子公司
+    is_intermediary_layer: true
+    intermediary_note: 客户自设境外采购控股平台(仕佳光子招股书p.1-1-310明示为AAOI境外子公司E113)
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N67
+    canonical_name: SHARPNFLAT INC
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 美国/境外
+    code_or_ticker: ''
+    listing_status: 境外未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N68
+    canonical_name: 上海八界光电科技有限公司
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N69
+    canonical_name: 上海函泰电子科技有限公司
+    aliases: []
+    entity_role: 上游材料
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P006
+  - node_id: N70
+    canonical_name: 上海宽捷光电科技有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N71
+    canonical_name: 上海普恩化工有限公司
+    aliases: []
+    entity_role: 上游材料
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P007
+  - node_id: N72
+    canonical_name: 上海景仓通信技术有限公司
+    aliases: []
+    entity_role: 材料/设备供应商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P008
+  - node_id: N73
+    canonical_name: 上海橙科微电子科技有限公司
+    aliases: []
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N74
+    canonical_name: 上海诺基亚贝尔股份有限公司
+    aliases: []
+    entity_role: 线缆/系统/终端
+    country: 中国(中外合资)
+    code_or_ticker: NYSE:NOK(合资子)
+    listing_status: 诺基亚与中国华信合资旗舰企业
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N75
+    canonical_name: 上海飞博激光科技股份有限公司
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N76
+    canonical_name: 东莞福可喜玛通讯科技有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P266
+  - node_id: N77
+    canonical_name: 东莞铭普光磁股份有限公司
+    aliases:
+    - 铭普光磁
+    entity_role: 模块/光电子商
+    country: 中国
+    code_or_ticker: 002902
+    listing_status: A股上市(深主板:002902)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P078
+    - P181
+    - P182
+    - P183
+  - node_id: N78
+    canonical_name: 中国科学院半导体研究所
+    aliases: []
+    entity_role: 科研院所
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N79
+    canonical_name: 中国科学院长春光学精密机械与物理研究所
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N80
+    canonical_name: 中天科技(含关联方)
+    aliases:
+    - 中天科技
+    entity_role: 线缆/系统/终端
+    country: 中国
+    code_or_ticker: '600522'
+    listing_status: A股上市(沪主板:600522)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P135
+    - P136
+  - node_id: N81
+    canonical_name: 中盈优创资讯科技有限公司
+    aliases: []
+    entity_role: 线缆/系统/终端
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N82
+    canonical_name: 中航光电(含关联方)
+    aliases:
+    - 中航光电
+    entity_role: 线缆/系统/终端
+    country: 中国
+    code_or_ticker: 002179
+    listing_status: A股上市(深主板:002179)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N83
+    canonical_name: 亨通光电(含关联方)
+    aliases:
+    - 亨通光电
+    entity_role: 线缆/系统/终端
+    country: 中国
+    code_or_ticker: '600487'
+    listing_status: A股上市(沪主板:600487)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P139
+    - P140
+  - node_id: N84
+    canonical_name: 京瓷商贸有限公司
+    aliases:
+    - 京瓷
+    entity_role: 上游材料
+    country: 中国(日资)
+    code_or_ticker: TSE:6971(在华商贸子)
+    listing_status: 京瓷株式会社(TSE:6971)在华商贸子公司
+    is_intermediary_layer: true
+    intermediary_note: 外资原厂在华商贸结算子公司(京瓷株式会社Kyocera在华商贸主体E169)
+    in_frozen_universe: false
+    point_ids:
+    - P012
+  - node_id: N85
+    canonical_name: 仕佳光子
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: '688313'
+    listing_status: A股上市(科创板:688313)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P013
+    - P071
+    - P094
+    - P141
+    - P142
+  - node_id: N86
+    canonical_name: 光惠激光科技有限公司
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N87
+    canonical_name: 全科科技有限公司
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N88
+    canonical_name: 分销商A(匿名)
+    aliases: []
+    entity_role: 供应链主体
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 匿名槽位
+    is_intermediary_layer: true
+    intermediary_note: 匿名分销商夹层槽位(仅披露分销渠道身份,终端客户未具名)
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N89
+    canonical_name: 创鑫激光
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N90
+    canonical_name: 前五大终端客户(匿名合计)
+    aliases: []
+    entity_role: 供应链主体
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 匿名槽位
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N91
+    canonical_name: 剑桥科技
+    aliases: []
+    entity_role: 供应链主体
+    country: 中国
+    code_or_ticker: '603083'
+    listing_status: A股上市(沪主板:603083)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P077
+  - node_id: N92
+    canonical_name: 北京康特睿科光电科技有限公司
+    aliases: []
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P017
+  - node_id: N93
+    canonical_name: 北京通美晶体
+    aliases: []
+    entity_role: 上游材料
+    country: 中国
+    code_or_ticker: NASDAQ:AXTI(控股子)
+    listing_status: AXT Inc(NASDAQ:AXTI)控股子公司(科创板IPO终止)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P018
+  - node_id: N94
+    canonical_name: 华工科技
+    aliases: []
+    entity_role: 供应链主体
+    country: 中国
+    code_or_ticker: 000988
+    listing_status: A股上市(深主板:000988)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P209
+    - P210
+    - P211
+    - P212
+    - P213
+    - P214
+    - P215
+    - P216
+  - node_id: N95
+    canonical_name: 博创科技
+    aliases:
+    - 长芯博创
+    - 博创科技股份有限公司
+    entity_role: 供应链主体
+    country: 中国
+    code_or_ticker: '300548'
+    listing_status: A股上市(创业板:300548,现更名长芯博创)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P119
+    - P120
+    - P121
+    - P184
+  - node_id: N96
+    canonical_name: 博创科技股份有限公司
+    aliases:
+    - 长芯博创
+    - 博创科技
+    entity_role: 供应链主体
+    country: 中国
+    code_or_ticker: '300548'
+    listing_status: A股上市(创业板:300548,现更名长芯博创)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P119
+    - P120
+    - P121
+    - P184
+  - node_id: N97
+    canonical_name: 咸阳华汉光电密封制品有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N98
+    canonical_name: 四川乐飞光电科技有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N99
+    canonical_name: 四川九州光电子技术有限公司
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P246
+    - P247
+    - P248
+  - node_id: N100
+    canonical_name: 四川光恒通信技术有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P241
+    - P242
+    - P243
+    - P244
+  - node_id: N101
+    canonical_name: 四川飞普科技有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P245
+  - node_id: N102
+    canonical_name: 大科激光
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N103
+    canonical_name: 大阳日酸特殊气体有限公司
+    aliases:
+    - 大阳日酸特殊气体
+    entity_role: 上游材料
+    country: 中国(日资)
+    code_or_ticker: TSE:4091(子)
+    listing_status: 日本酸素HD(TSE:4091)子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P022
+  - node_id: N104
+    canonical_name: 太辰光
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: '300570'
+    listing_status: A股上市(创业板:300570)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P025
+    - P026
+    - P156
+  - node_id: N105
+    canonical_name: 常州太平通讯科技有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N106
+    canonical_name: 广东瑞谷光网通信股份有限公司
+    aliases: []
+    entity_role: 封装/代工
+    country: 中国
+    code_or_ticker: '837597'
+    listing_status: 新三板挂牌(837597)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P027
+  - node_id: N107
+    canonical_name: 德国罗森博格通讯有限公司
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 德国/中国
+    code_or_ticker: ''
+    listing_status: 德国Rosenberger集团主体
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P260
+  - node_id: N108
+    canonical_name: 成都中住光纤有限公司
+    aliases: []
+    entity_role: 上游材料
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P029
+  - node_id: N109
+    canonical_name: 成都储翰科技
+    aliases:
+    - 储翰科技
+    - 成都储翰科技股份有限公司
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: 831964(已摘牌/300308子)
+    listing_status: 新三板已摘牌(中际旭创300308控股子公司)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N110
+    canonical_name: 成都八九九科技有限公司
+    aliases: []
+    entity_role: 供应链主体
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N111
+    canonical_name: 成都智禾光通(原成都旭创科技)
+    aliases:
+    - 成都智禾光通
+    - 成都智禾光通科技有限公司
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: 300308(全资子)
+    listing_status: 中际旭创(300308)全资子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N112
+    canonical_name: 成都蓉博通信技术有限公司
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N113
+    canonical_name: 成都迪谱光电科技有限公司
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N114
+    canonical_name: 普利技术潜江有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N115
+    canonical_name: 有研亿金新材料有限公司
+    aliases: []
+    entity_role: 上游材料
+    country: 中国
+    code_or_ticker: 600206(全资子)
+    listing_status: 有研新材(600206)全资子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P032
+  - node_id: N116
+    canonical_name: 杜邦(含关联方)
+    aliases: []
+    entity_role: 材料/设备供应商
+    country: 美国/中国
+    code_or_ticker: NYSE:DD
+    listing_status: 美股上市(NYSE:DD)及在华关联方
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P034
+  - node_id: N117
+    canonical_name: 某分销商(匿名)
+    aliases: []
+    entity_role: 供应链主体
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 匿名槽位
+    is_intermediary_layer: true
+    intermediary_note: 匿名分销商夹层槽位(仅披露分销商槽位,终端客户未具名)
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N118
+    canonical_name: 桂林芯飞光电子科技有限公司
+    aliases: []
+    entity_role: 封装/代工
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P035
+  - node_id: N119
+    canonical_name: 武汉云岭光电有限公司
+    aliases:
+    - 武汉云岭光电股份有限公司
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: 874775(股改后)
+    listing_status: 武汉云岭光电股份有限公司(874775)股改前身
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P037
+  - node_id: N120
+    canonical_name: 武汉云岭光电股份有限公司
+    aliases: []
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: '874775'
+    listing_status: 新三板挂牌(874775)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P037
+  - node_id: N121
+    canonical_name: 武汉华日精密激光
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: '874868'
+    listing_status: 新三板挂牌(874868)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N122
+    canonical_name: 武汉昱升光电股份有限公司
+    aliases:
+    - 武汉昱升光电(原昱升光器件,同主体待补工商锚)
+    - 武汉昱升光器件有限公司
+    - 武汉昱升光电(原昱升光器件)
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市(IPO辅导中)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P038
+  - node_id: N123
+    canonical_name: 武汉正源高理光学有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: 000988(子)
+    listing_status: 华工科技(000988)子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N124
+    canonical_name: 武汉灿光光电有限公司
+    aliases: []
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P249
+    - P250
+    - P251
+    - P252
+  - node_id: N125
+    canonical_name: 武汉长飞智慧网络技术有限公司
+    aliases: []
+    entity_role: 线缆/系统/终端
+    country: 中国
+    code_or_ticker: 601869(关联子)
+    listing_status: 长飞光纤系子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N126
+    canonical_name: 武汉高跃科技有限责任公司
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N127
+    canonical_name: 汇聚科技（惠州）有限公司
+    aliases:
+    - 汇聚科技
+    - 汇聚科技(Huiju Technology)
+    entity_role: 模块/光电子商
+    country: 中国香港/中国
+    code_or_ticker: 01729.HK
+    listing_status: 港股上市(01729.HK汇聚科技境内全资子公司)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P270
+  - node_id: N128
+    canonical_name: 江苏南大光电材料股份有限公司
+    aliases: []
+    entity_role: 上游材料
+    country: 中国
+    code_or_ticker: '300346'
+    listing_status: A股上市(创业板:300346)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P044
+  - node_id: N129
+    canonical_name: 泛孟新材料有限公司
+    aliases:
+    - 泛孟新材料
+    entity_role: 上游材料
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P045
+  - node_id: N130
+    canonical_name: 波若威光纤通讯有限公司
+    aliases:
+    - 波若威
+    - 波若威光纤通讯（中山）有限公司
+    - Browave
+    entity_role: 光器件厂
+    country: 中国台湾/中国
+    code_or_ticker: 台股上柜3163
+    listing_status: 台股上柜3163(母公司波若威科技;大陆子公司)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P264
+    - P265
+  - node_id: N131
+    canonical_name: 泰库尼思科电子有限公司
+    aliases:
+    - 泰库尼思科电子
+    entity_role: 材料/设备供应商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P046
+  - node_id: N132
+    canonical_name: 泰科电子(含关联方)
+    aliases: []
+    entity_role: 材料/设备供应商
+    country: 瑞士/美国/中国
+    code_or_ticker: NYSE:TEL
+    listing_status: 美股上市(NYSE:TEL,TE Connectivity)及关联方
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P262
+    - P263
+  - node_id: N133
+    canonical_name: 洛阳中超新材料股份有限公司
+    aliases: []
+    entity_role: 上游材料
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P047
+  - node_id: N134
+    canonical_name: 深圳市东飞凌科技有限公司
+    aliases: []
+    entity_role: 封装/代工
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P048
+  - node_id: N135
+    canonical_name: 深圳市中迅实业有限公司
+    aliases: []
+    entity_role: 材料/设备供应商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N136
+    canonical_name: 深圳市亚美斯通电子有限公司
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N137
+    canonical_name: 深圳市力子光电科技有限公司
+    aliases: []
+    entity_role: 封装/代工
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P049
+  - node_id: N138
+    canonical_name: 深圳市宏钢机械设备有限公司
+    aliases:
+    - 深圳市宏钢光电封装技术股份有限公司
+    - 宏钢光电
+    - 深圳宏钢
+    - 深圳宏钢(宏钢光电封装)
+    entity_role: 材料/设备供应商
+    country: 中国
+    code_or_ticker: 301314(科瑞思拟购100%预案)
+    listing_status: 未上市私企(科瑞思301314于2026-10-26披露拟收购100%股份预案未交割)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P258
+  - node_id: N139
+    canonical_name: 深圳市星欣磊实业有限公司
+    aliases: []
+    entity_role: 材料/设备供应商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P259
+  - node_id: N140
+    canonical_name: 深圳市路维光电股份有限公司
+    aliases:
+    - 路维光电
+    entity_role: 材料/设备供应商
+    country: 中国
+    code_or_ticker: '688401'
+    listing_status: A股上市(科创板:688401)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P050
+    - P122
+  - node_id: N141
+    canonical_name: 湖北安一辰光电科技有限公司
+    aliases: []
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P051
+  - node_id: N142
+    canonical_name: 湖北瑞创信达光电有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N143
+    canonical_name: 炬光微光学有限公司
+    aliases:
+    - 炬光
+    - 炬光科技
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: 688167(子)
+    listing_status: 炬光科技(688167)子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P053
+    - P117
+    - P169
+  - node_id: N144
+    canonical_name: 直接客户A(匿名)
+    aliases: []
+    entity_role: 供应链主体
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 匿名槽位
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N145
+    canonical_name: 腾景科技股份有限公司
+    aliases:
+    - 腾景科技
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: '688195'
+    listing_status: A股上市(科创板:688195)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P076
+    - P176
+    - P177
+    - P178
+  - node_id: N146
+    canonical_name: 芯思杰技术股份有限公司
+    aliases:
+    - 芯思杰技术
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P062
+  - node_id: N147
+    canonical_name: 苏州单峰光子科技有限责任公司
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N148
+    canonical_name: 苏州旭创科技有限公司
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 中国
+    code_or_ticker: 300308(全资子)
+    listing_status: 中际旭创(300308)核心全资运营子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N149
+    canonical_name: 苏州星钥光子科技有限公司
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P256
+  - node_id: N150
+    canonical_name: 苏州焜原光电有限公司
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N151
+    canonical_name: 苏州环明电子科技有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N152
+    canonical_name: 苏州睿科晶创光电科技有限公司
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N153
+    canonical_name: 苏州邦皓电子新材料有限公司
+    aliases: []
+    entity_role: 上游材料
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N154
+    canonical_name: 苏州镓锐芯光科技有限公司
+    aliases: []
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N155
+    canonical_name: 西安卫光气体有限公司
+    aliases: []
+    entity_role: 上游材料
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P063
+  - node_id: N156
+    canonical_name: 诺力昂化学品有限公司
+    aliases:
+    - 诺力昂化学品
+    entity_role: 上游材料
+    country: 荷兰/中国
+    code_or_ticker: ''
+    listing_status: 跨国化工企业(Nouryon)在华子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P064
+  - node_id: N157
+    canonical_name: 郑州仕佳通信科技有限公司
+    aliases: []
+    entity_role: 光器件
+    country: 中国
+    code_or_ticker: 688313(子)
+    listing_status: 仕佳光子(688313)子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N158
+    canonical_name: 金信诺及其关联方
+    aliases:
+    - 金信诺
+    - 深圳金信诺高新技术股份有限公司
+    - 金信诺及其关联方轨道信号系统科技有限公司、赣州金信诺电缆技术有限公司、金信诺光纤光缆有限公司、东莞金信诺电子有限公司）
+    entity_role: 线缆/连接器系统商
+    country: 中国
+    code_or_ticker: '300252'
+    listing_status: A股上市(创业板:300252)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N159
+    canonical_name: 锐科激光
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: '300747'
+    listing_status: A股上市(创业板:300747)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids: []
+  - node_id: N160
+    canonical_name: 长光华芯
+    aliases: []
+    entity_role: 光/电芯片
+    country: 中国
+    code_or_ticker: '688048'
+    listing_status: A股上市(科创板:688048)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P066
+    - P079
+    - P096
+    - P097
+  - node_id: N161
+    canonical_name: 长飞光纤(合并)
+    aliases:
+    - 长飞光纤
+    - 长飞光纤合并
+    - YOFC
+    entity_role: 线缆/系统/终端
+    country: 中国
+    code_or_ticker: 601869/06869.HK
+    listing_status: A+H股上市(601869.SH/06869.HK,合并口径)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P185
+  - node_id: N162
+    canonical_name: 长飞光纤光缆股份有限公司(单体)
+    aliases:
+    - 长飞光纤
+    - 长飞光纤光缆股份有限公司
+    entity_role: 线缆/系统/终端
+    country: 中国
+    code_or_ticker: 601869/06869.HK
+    listing_status: A+H股上市(601869.SH/06869.HK,单体口径)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P185
+  - node_id: N163
+    canonical_name: 陕西兴化集团有限责任公司
+    aliases: []
+    entity_role: 上游材料
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市国企(延长石油系,下属兴化股份002109)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P070
+  - node_id: N164
+    canonical_name: 陕西电子信息国际商务有限公司
+    aliases: []
+    entity_role: 贸易/委托加工
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: true
+    intermediary_note: 贸易/进出口代理及委托加工商务结算平台(源杰科技交易对手方E199)
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N165
+    canonical_name: 青岛海信宽带多媒体技术有限公司
+    aliases:
+    - 海信宽带
+    entity_role: 模块/光电子商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 海信集团控股子公司(未单独上市)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids:
+    - P253
+    - P254
+    - P255
+  - node_id: N166
+    canonical_name: 顺丰速运
+    aliases:
+    - 顺丰速运(源杰释义:西安顺丰及其咸阳分公司)
+    - 顺丰速运(西安顺丰及其咸阳分公司)
+    - 西安顺丰速运
+    entity_role: 物流承运服务商
+    country: 中国
+    code_or_ticker: 002352(顺丰控股子)
+    listing_status: 顺丰控股(002352.SZ/06936.HK)全资子公司
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N167
+    canonical_name: 飞博激光
+    aliases: []
+    entity_role: 激光设备/科研
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N168
+    canonical_name: 飞顿国际
+    aliases:
+    - 飞顿国际有限公司、飞顿国际科技有限公司
+    - 飞顿贸易（北京）有限公司
+    - 飞顿国际科技（北京）有限公司
+    - 飞顿国际有限公司、飞顿国际科技有限公司）
+    entity_role: 激光设备/科研
+    country: 以色列/中国
+    code_or_ticker: ''
+    listing_status: 复锐医疗科技(01696.HK/Alma Lasers)关联业务主体
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N169
+    canonical_name: 香港新南利
+    aliases: []
+    entity_role: 模块/光电子商
+    country: 中国香港
+    code_or_ticker: ''
+    listing_status: 香港未上市
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N170
+    canonical_name: 云南锗业
+    aliases:
+    - 云南临沧鑫圆锗业股份有限公司
+    - 云南鑫耀半导体材料有限公司
+    - 云南鑫耀
+    entity_role: 化合物半导体衬底母公司(锗/磷化铟/砷化镓)
+    country: 中国
+    code_or_ticker: 002428
+    listing_status: A股上市(深主板:002428,控股84.53%子公司云南鑫耀)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P202
+  - node_id: N171
+    canonical_name: 科瑞技术
+    aliases:
+    - 深圳科瑞技术股份有限公司
+    entity_role: 自动化封测设备商(共晶贴片EQ3/光耦合EQ4)
+    country: 中国
+    code_or_ticker: 002957
+    listing_status: A股上市(深主板:002957)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: true
+    point_ids:
+    - P275
+    - P276
+  - node_id: N172
+    canonical_name: 微见智能
+    aliases:
+    - 微见智能封装技术（深圳）有限公司
+    - 微见智能封装技术(深圳)有限公司
+    entity_role: 高精度固晶/共晶贴片设备商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市私企(observation_list)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N173
+    canonical_name: 镭神技术
+    aliases:
+    - 镭神技术（深圳）有限公司
+    - 镭神技术(深圳)有限公司
+    entity_role: 高精度光耦合封装设备商
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 未上市私企(observation_list)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N174
+    canonical_name: 成都奥捷
+    aliases:
+    - 成都奥捷通信技术有限公司
+    entity_role: 光无源连接器件与光隔离器厂商(D6/D9观察)
+    country: 中国
+    code_or_ticker: 300916(朗特智能拟购51%未交割)
+    listing_status: 未上市私企(observation_list;朗特智能300916拟购51%待股东会及交割)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N175
+    canonical_name: 上海羲禾科技
+    aliases:
+    - 上海羲禾科技股份有限公司
+    - 羲禾科技
+    - Xphor
+    - Xphor Co. Ltd.
+    entity_role: 独立第三方硅光集成芯片设计商(C4观察)
+    country: 中国
+    code_or_ticker: ''
+    listing_status: 科创板IPO注册生效待发行挂牌(证监许可〔2026〕2940号;observation_list)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N176
+    canonical_name: 粤芯半导体
+    aliases:
+    - 粤芯半导体技术股份有限公司
+    - 广州粤芯半导体技术有限公司
+    - CanSemi
+    - CanSemi Technology Inc.
+    entity_role: 12英寸特色工艺及硅光晶圆代工厂(C4代工观察)
+    country: 中国
+    code_or_ticker: '301660'
+    listing_status: A股上市(创业板:301660;2026-10-13新上市暂列observation_list未入v6 _frozen)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N177
+    canonical_name: 安费诺(Amphenol)
+    aliases:
+    - 安费诺
+    - Amphenol
+    - Amphenol Corporation
+    - Amphenol Communications Solutions
+    entity_role: 高速连接器/笼子与光电互连组件商(D9/B2/MOD1观察)
+    country: 美国
+    code_or_ticker: NYSE:APH
+    listing_status: 美股上市(NYSE:APH;observation_list与泰科电子对称观察)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N178
+    canonical_name: Lambda
+    aliases:
+    - Lambda Inc.
+    - Lambda Cloud
+    - WATCH_LAMBDA
+    entity_role: AI算力云服务商(CPO交换集群商用终端)
+    country: 美国/加拿大
+    code_or_ticker: ''
+    listing_status: 境外未上市私企(observation_list/calls WATCH_LAMBDA)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []
+  - node_id: N179
+    canonical_name: 朗特智能
+    aliases:
+    - 深圳朗特智能控制股份有限公司
+    entity_role: 电子智能控制器厂商(拟跨界并购成都奥捷51%股权未交割)
+    country: 中国
+    code_or_ticker: '300916'
+    listing_status: A股上市(创业板:300916;不在_frozen分母内)
+    is_intermediary_layer: false
+    intermediary_note: ''
+    in_frozen_universe: false
+    point_ids: []

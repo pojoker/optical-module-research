@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "generated_date": "2026-11-21",
+  "source_truth_file": "archive/demo/truth.json",
+  "target_ledger": "edges.csv",
+  "total_count": 16,
+  "passed_count": 16,
+  "status": "16/16 PASSED",
+  "all_passed": true,
+  "assertions": [
+    {
+      "id": "T01",
+      "desc": "旭创2025客户1占比24.06",
+      "legacy_where": {
+        "供方": "中际旭创",
+        "财年": "2025",
+        "备注_contains": "客户 A"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "24.06"
+      },
+      "canonical_edge_id": "E055",
+      "canonical_supplier": "中际旭创",
+      "canonical_customer": "客户A(匿名)",
+      "canonical_period": "2025",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "24.06",
+      "normalize_commas": false,
+      "actual_field_value": "24.06%(9201495755.91元)",
+      "passed": true,
+      "schema_evolution_note": "demo 备注'客户 A'在根级 edges.csv 升格为 需方='客户A(匿名)'，字段名为'占比或金额原文'"
+    },
+    {
+      "id": "T02",
+      "desc": "旭创2025客户1金额",
+      "legacy_where": {
+        "供方": "中际旭创",
+        "财年": "2025",
+        "备注_contains": "客户 A"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "9201495755.91"
+      },
+      "canonical_edge_id": "E055",
+      "canonical_supplier": "中际旭创",
+      "canonical_customer": "客户A(匿名)",
+      "canonical_period": "2025",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "9201495755.91",
+      "normalize_commas": false,
+      "actual_field_value": "24.06%(9201495755.91元)",
+      "passed": true,
+      "schema_evolution_note": "中际旭创2025客户A销售额 9201495755.91 元载于 E055 占比或金额原文"
+    },
+    {
+      "id": "T03",
+      "desc": "旭创2025客户2占比18.26",
+      "legacy_where": {
+        "供方": "中际旭创",
+        "财年": "2025",
+        "备注_contains": "客户 B"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "18.26"
+      },
+      "canonical_edge_id": "E056",
+      "canonical_supplier": "中际旭创",
+      "canonical_customer": "客户B(匿名)",
+      "canonical_period": "2025",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "18.26",
+      "normalize_commas": false,
+      "actual_field_value": "18.26%(6981202208.21元)",
+      "passed": true,
+      "schema_evolution_note": "demo 备注'客户 B'在根级 edges.csv 对应 E056 需方='客户B(匿名)'"
+    },
+    {
+      "id": "T04",
+      "desc": "旭创2025客户3占比14.22",
+      "legacy_where": {
+        "供方": "中际旭创",
+        "财年": "2025",
+        "备注_contains": "客户 C"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "14.22"
+      },
+      "canonical_edge_id": "E057",
+      "canonical_supplier": "中际旭创",
+      "canonical_customer": "客户C(匿名)",
+      "canonical_period": "2025",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "14.22",
+      "normalize_commas": false,
+      "actual_field_value": "14.22%(5438189570.59元)",
+      "passed": true,
+      "schema_evolution_note": "demo 备注'客户 C'在根级 edges.csv 对应 E057 需方='客户C(匿名)'"
+    },
+    {
+      "id": "T05",
+      "desc": "旭创2025客户4占比11.34",
+      "legacy_where": {
+        "供方": "中际旭创",
+        "财年": "2025",
+        "备注_contains": "客户 D"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "11.34"
+      },
+      "canonical_edge_id": "E058",
+      "canonical_supplier": "中际旭创",
+      "canonical_customer": "客户D(匿名)",
+      "canonical_period": "2025",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "11.34",
+      "normalize_commas": false,
+      "actual_field_value": "11.34%(4337902496.40元)",
+      "passed": true,
+      "schema_evolution_note": "demo 备注'客户 D'在根级 edges.csv 对应 E058 需方='客户D(匿名)'"
+    },
+    {
+      "id": "T06",
+      "desc": "旭创2025客户E金额+解匿线索PINEWAVE",
+      "legacy_where": {
+        "供方": "中际旭创",
+        "财年": "2025",
+        "备注_contains": "解匿线索:PINEWAVE"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "3096780769.22"
+      },
+      "canonical_edge_id": "E044",
+      "canonical_supplier": "中际旭创",
+      "canonical_customer": "PINEWAVE(关联方)",
+      "canonical_period": "2025",
+      "canonical_field": "备注",
+      "expected_substring": "3096780769.22",
+      "normalize_commas": true,
+      "actual_field_value": "关联关系:关联自然人任职;获批额度5亿美元;客户E占比8.10%=前五大关联方销售占比8.10%且金额指纹吻合(判例#002)|多期打包待展开;2025年报核验:关联交易表PINEWAVE销售43,378万美元(第3937行),前五大客户表客户E=3,096,780,769.22元(8.10%,第1265行)",
+      "passed": true,
+      "schema_evolution_note": "中际旭创2025客户E已解匿并入 E044 需方='PINEWAVE(关联方)'(43378万美元)，Step 1 已在 E044 备注补齐前五大表人民币精确值 3,096,780,769.22 元(去千分位后与 3096780769.22 完全一致)"
+    },
+    {
+      "id": "T07",
+      "desc": "旭创2025供应商1占比35.76",
+      "legacy_where": {
+        "需方": "中际旭创",
+        "财年": "2025",
+        "供方_contains": "供应商第1名"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "35.76"
+      },
+      "canonical_edge_id": "E059",
+      "canonical_supplier": "供应商A(匿名)",
+      "canonical_customer": "中际旭创",
+      "canonical_period": "2025",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "35.76",
+      "normalize_commas": false,
+      "actual_field_value": "35.76%(8885926791.46元)",
+      "passed": true,
+      "schema_evolution_note": "中际旭创2025年报原文按字母称'供应商A'，根级 edges.csv 记为 E059 供方='供应商A(匿名)'"
+    },
+    {
+      "id": "T08",
+      "desc": "新易盛2025客户1占比22.97",
+      "legacy_where": {
+        "供方": "新易盛",
+        "财年": "2025",
+        "备注_contains": "第一名"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "22.97"
+      },
+      "canonical_edge_id": "E060",
+      "canonical_supplier": "新易盛",
+      "canonical_customer": "客户第一名(匿名)",
+      "canonical_period": "2025",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "22.97",
+      "normalize_commas": false,
+      "actual_field_value": "22.97%(5706560719.37元)",
+      "passed": true,
+      "schema_evolution_note": "新易盛2025第一名客户载于 E060 需方='客户第一名(匿名)'"
+    },
+    {
+      "id": "T09",
+      "desc": "新易盛2024客户1占比31.74",
+      "legacy_where": {
+        "供方": "新易盛",
+        "财年": "2024",
+        "备注_contains": "第一名"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "31.74"
+      },
+      "canonical_edge_id": "E060",
+      "canonical_supplier": "新易盛",
+      "canonical_customer": "客户第一名(匿名)",
+      "canonical_period": "2025",
+      "canonical_field": "备注",
+      "expected_substring": "31.74",
+      "normalize_commas": false,
+      "actual_field_value": "2024第一名31.74%(2744287306.63元)/2023即E015;云巨头直销槽位候选|多期打包待展开|原等级:半边槽位",
+      "passed": true,
+      "schema_evolution_note": "新易盛2024第一名客户占比 31.74%(2744287306.63元) 合并记载于 E060 多期备注中"
+    },
+    {
+      "id": "T10",
+      "desc": "新易盛2023客户1占比36.79+金额",
+      "legacy_where": {
+        "供方": "新易盛",
+        "财年": "2023",
+        "备注_contains": "第一名"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "36.79"
+      },
+      "canonical_edge_id": "E015",
+      "canonical_supplier": "新易盛",
+      "canonical_customer": "客户一(匿名)",
+      "canonical_period": "2023",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "36.79",
+      "normalize_commas": false,
+      "actual_field_value": "36.79%(1139711326.47元)",
+      "passed": true,
+      "schema_evolution_note": "新易盛2023第一名客户载于 E015 需方='客户一(匿名)'"
+    },
+    {
+      "id": "T11",
+      "desc": "新易盛2023客户1金额1139711326.47",
+      "legacy_where": {
+        "供方": "新易盛",
+        "财年": "2023",
+        "备注_contains": "第一名"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "1139711326.47"
+      },
+      "canonical_edge_id": "E015",
+      "canonical_supplier": "新易盛",
+      "canonical_customer": "客户一(匿名)",
+      "canonical_period": "2023",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "1139711326.47",
+      "normalize_commas": false,
+      "actual_field_value": "36.79%(1139711326.47元)",
+      "passed": true,
+      "schema_evolution_note": "新易盛2023第一名客户销售额 1139711326.47 元载于 E015 占比或金额原文"
+    },
+    {
+      "id": "T12",
+      "desc": "新易盛2025供应商1占比23.87",
+      "legacy_where": {
+        "需方": "新易盛",
+        "财年": "2025",
+        "供方_contains": "供应商第1名"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "23.87"
+      },
+      "canonical_edge_id": "E064",
+      "canonical_supplier": "供应商第一名(匿名)",
+      "canonical_customer": "新易盛",
+      "canonical_period": "2025",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "23.87",
+      "normalize_commas": false,
+      "actual_field_value": "23.87%(3666795583.83元)",
+      "passed": true,
+      "schema_evolution_note": "新易盛2025第一名供应商载于 E064 供方='供应商第一名(匿名)'"
+    },
+    {
+      "id": "T13",
+      "desc": "天孚2025 Fabrinet实名实边63.31",
+      "legacy_where": {
+        "供方": "天孚通信",
+        "财年": "2025",
+        "需方": "Fabrinet"
+      },
+      "legacy_expect": {
+        "field": "边等级",
+        "contains": "实边"
+      },
+      "canonical_edge_id": "E043",
+      "canonical_supplier": "天孚通信",
+      "canonical_customer": "Fabrinet",
+      "canonical_period": "2025",
+      "canonical_field": "边等级",
+      "expected_substring": "实边",
+      "normalize_commas": false,
+      "actual_field_value": "实边",
+      "passed": true,
+      "schema_evolution_note": "天孚通信2025对 Fabrinet 实名实边载于 E043(63.31%)"
+    },
+    {
+      "id": "T14",
+      "desc": "天孚2025 Fabrinet金额",
+      "legacy_where": {
+        "供方": "天孚通信",
+        "财年": "2025",
+        "需方": "Fabrinet"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "3268843594.94"
+      },
+      "canonical_edge_id": "E043",
+      "canonical_supplier": "天孚通信",
+      "canonical_customer": "Fabrinet",
+      "canonical_period": "2025",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "3268843594.94",
+      "normalize_commas": false,
+      "actual_field_value": "63.31%(3268843594.94元)",
+      "passed": true,
+      "schema_evolution_note": "天孚通信2025对 Fabrinet 销售额 3268843594.94 元载于 E043 占比或金额原文"
+    },
+    {
+      "id": "T15",
+      "desc": "天孚2025客户2匿名11.66",
+      "legacy_where": {
+        "供方": "天孚通信",
+        "财年": "2025",
+        "需方_contains": "客户第2名"
+      },
+      "legacy_expect": {
+        "field": "占比或金额",
+        "contains": "11.66"
+      },
+      "canonical_edge_id": "E065",
+      "canonical_supplier": "天孚通信",
+      "canonical_customer": "客户2(匿名)",
+      "canonical_period": "2025",
+      "canonical_field": "占比或金额原文",
+      "expected_substring": "11.66",
+      "normalize_commas": false,
+      "actual_field_value": "11.66%(601931536.36元)",
+      "passed": true,
+      "schema_evolution_note": "天孚通信2025第二名客户载于 E065 需方='客户2(匿名)'"
+    },
+    {
+      "id": "T16",
+      "desc": "旭创2025客户E被标关联方锁定候选",
+      "legacy_where": {
+        "供方": "中际旭创",
+        "财年": "2025",
+        "备注_contains": "客户 E"
+      },
+      "legacy_expect": {
+        "field": "备注",
+        "contains": "关联方锁定候选"
+      },
+      "canonical_edge_id": "E044",
+      "canonical_supplier": "中际旭创",
+      "canonical_customer": "PINEWAVE(关联方)",
+      "canonical_period": "2025",
+      "canonical_field": "备注",
+      "expected_substring": "判例#002",
+      "normalize_commas": false,
+      "actual_field_value": "关联关系:关联自然人任职;获批额度5亿美元;客户E占比8.10%=前五大关联方销售占比8.10%且金额指纹吻合(判例#002)|多期打包待展开;2025年报核验:关联交易表PINEWAVE销售43,378万美元(第3937行),前五大客户表客户E=3,096,780,769.22元(8.10%,第1265行)",
+      "passed": true,
+      "schema_evolution_note": "demo 阶段'关联方锁定候选'在根级 E044 已完成正式关联交易锚定(需方='PINEWAVE(关联方)', 备注载明客户E占比8.10%=前五大关联方销售占比8.10%且金额指纹吻合(判例#002))"
+    }
+  ]
+}

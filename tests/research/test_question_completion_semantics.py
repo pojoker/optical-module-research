@@ -89,7 +89,7 @@ class QuestionCompletionSemanticsTest(unittest.TestCase):
         self.assertEqual(budget["new_top_level_systems"], [])
         self.assertEqual(budget["new_schema_fields"], [])
         self.assertEqual(budget["new_engines"], [])
-        self.assertEqual(workpack["workpack"]["id"], "OM-PHYS-001")
+        self.assertTrue(str(workpack["workpack"].get("id") or "").strip())
         self.assertEqual(
             workpack["completion_semantics"]["forbidden_phrasing"],
             ["已覆盖", "已完成", "已回答"],

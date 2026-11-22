@@ -1,0 +1,126 @@
+{
+  "workpack_id": "OPTICAL-STEP5-COMPLIANCE-AND-BLINDSPOT-CLOSURE-20261122",
+  "verified_at": "2026-11-22",
+  "coordinator_plus_workers": [
+    "carbon-s5-compliance-kb (gemini-pro-orchestrator)",
+    "carbon-s5-blindspot (gemini-pro-orchestrator)"
+  ],
+  "passed": true,
+  "gates": {
+    "scan_selftest": {
+      "command": "/Users/jowang/miniconda3/bin/python3 scan.py --selftest",
+      "exit_code": 0,
+      "passed": true,
+      "elapsed_sec": 0.03,
+      "output_tail": [
+        "[PASS] ② 反例: edge_negative_cuts cut_category非法枚举 被拦",
+        "[PASS] ② 反例: edge_negative_cuts 真否定经_norm_co_name剥离股份有限公司/括号后与活跃边碰撞 被拦",
+        "",
+        "[selftest] 合计 155 用例, 通过 155, 失败 0"
+      ]
+    },
+    "scan_check": {
+      "command": "/Users/jowang/miniconda3/bin/python3 scan.py --check",
+      "exit_code": 0,
+      "passed": true,
+      "elapsed_sec": 0.57,
+      "output_tail": [
+        "[语料] 最新文件距今1天; 宇宙内缺席年报 0 家",
+        "不变量全绿(①-⑭)"
+      ]
+    },
+    "render_verify": {
+      "command": "/Users/jowang/miniconda3/bin/python3 render.py --verify",
+      "exit_code": 0,
+      "passed": true,
+      "elapsed_sec": 0.12,
+      "output_tail": [
+        "--verify: 两次临时重建一致(out/非canonical)"
+      ]
+    },
+    "participation_check": {
+      "command": "/Users/jowang/miniconda3/bin/python3 participation.py --check",
+      "exit_code": 0,
+      "passed": true,
+      "elapsed_sec": 0.04,
+      "output_tail": [
+        "参与识别: 全绿 | 宇宙 466 | 覆盖 466 | 确认 94 | 待确认 13"
+      ]
+    },
+    "calls_check": {
+      "command": "/Users/jowang/miniconda3/bin/python3 -m calls check",
+      "exit_code": 0,
+      "passed": true,
+      "elapsed_sec": 0.03,
+      "output_tail": [
+        "OK: validated 39 companies / 180 sources / 79 claims",
+        "OK: validated 21 themes / 12 cross-checks / 9 commitments / 4 technology feedback rows",
+        "OK: event ledger validated / 61 reviewed radar events; canonical references are closed; no canonical file was written"
+      ]
+    },
+    "daily_review_queue_check": {
+      "command": "/Users/jowang/miniconda3/bin/python3 corpus/daily_review/sync_daily_queue.py --check",
+      "exit_code": 0,
+      "passed": true,
+      "elapsed_sec": 0.14,
+      "output_tail": [
+        "daily_review check OK | queue=105 (ingested=57, pending_text=1, pending_anchor=8, deferred=39) | staging_sep_nov=504 (triggered=66, noise=102, unclassified=336)"
+      ]
+    },
+    "pytest_bare_full_repo": {
+      "command": "/Users/jowang/miniconda3/bin/python3 -m pytest -q",
+      "exit_code": 0,
+      "passed": true,
+      "elapsed_sec": 11.78,
+      "output_tail": [
+        ".................................................................................................................... [ 74%]",
+        "................................................. [ 84%]",
+        "............................................................................                                 [100%]",
+        "499 passed, 189 subtests passed in 11.43s"
+      ]
+    }
+  },
+  "deliverables": {
+    "knowledge_cards_added": [
+      "KN011",
+      "KN012",
+      "KN013",
+      "KN014"
+    ],
+    "knowledge_total_count": 14,
+    "compliance_primary_archived_http_200": 24,
+    "blindspot_primary_archived_http_200": 16,
+    "drq0046_closed": {
+      "status": "ingested_to_kb",
+      "kb_target_ref": "knowledge:KN011;knowledge:KN012;knowledge:KN013;knowledge:KN014"
+    },
+    "new_drq_rows": [
+      "DRQ0098",
+      "DRQ0099",
+      "DRQ0100",
+      "DRQ0101",
+      "DRQ0102",
+      "DRQ0103",
+      "DRQ0104",
+      "DRQ0105"
+    ],
+    "review_queue_total_rows": 105,
+    "pending_primary_text_count": 1,
+    "calls_newly_added_event": "EV061 (NVIDIA x Lambda SC26 CPO, corroborated, 61 reviewed events total)",
+    "entity_nodes_added": [
+      "N174",
+      "N175",
+      "N176",
+      "N177",
+      "N178",
+      "N179"
+    ],
+    "gemini_cloud_snapshot_watermark": "2026-11-18 (triaged_through_date=2026-11-18, untriaged=0)",
+    "refs_file_count": 8
+  },
+  "read_only_boundaries_preserved": {
+    "workflow_rehearsal_daily_state_untouched": true,
+    "securities_research_kb_untouched": true,
+    "calls_solution_links_untouched": true
+  }
+}

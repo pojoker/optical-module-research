@@ -1,0 +1,99 @@
+workpack:
+  id: OPTICAL-STEP2-ARCHIVE-SALVAGE-20261121
+  title: 第二步：archive 高价值历史遗珠清洗打捞、核心龙头工艺扩抽与时间线贯通
+  status: delivered
+  authorization: 用户审阅第一步成果并逐项确认第二步第 5–8 点合并方案后，明确指示“我觉得合理”，并指定统一使用 Orchestrator (Carbon) 执行。
+allowed_write_paths:
+  - docs/control/ACTIVE_WORKPACK.yaml
+  - corpus/annual-2023
+  - corpus/legacy-input/v16/**
+  - corpus/customs/**
+  - corpus/salvaged/**
+  - corpus/content_ledger/**
+  - corpus/relationships/**
+  - macro_evidence.csv
+  - points.csv
+  - knowledge.yaml
+  - refs/entity-registry.yaml
+  - refs/解匿判例库.md
+  - scan.py
+  - tests/test_step2_archive_salvage.py
+  - capability_details.csv
+  - output/pdf/光模块产业链公司能力明细.pdf
+  - calls/out/**
+  - out/参与识别.csv
+  - out/参与识别.md
+  - out/参与识别.html
+  - out/全景.md
+  - out/全景.html
+  - out/知识库.md
+  - out/知识库.html
+  - out/问题队列.md
+  - out/研究问题树.md
+  - out/step2-archive-salvage-20261121/**
+read_scope:
+  - archive/output/{edges.csv,nodes.csv}、archive/demo/{truth.json,data/*.pdf}、archive/flows/out/**、archive/flows/{content-ledger-schema-v1.md,discussion-content-layer.md}、archive/assets/registries/optics/{absence-watch.csv,diff-log.csv}、archive/seed/findings.md
+  - 根目录 canonical 账本、tree.yaml、knowledge.yaml、refs/{entity-registry.yaml,解匿判例库.md}
+  - corpus/_frozen.csv、corpus/annual/**、corpus/annual-2024/**、corpus/annual-2023/**、corpus/legacy-input/**、corpus/web/**
+  - scan.py、render.py、participation.py、build_detailed_capability_report.py、tests/**
+non_goals:
+  - 不修改或删除 archive/** 下受 git 追踪的历史文件
+  - 不扩充 corpus/_frozen.csv 分母（联讯仪器 688808 等 v6 对称扩容仍留待单列授权）
+  - 不执行第三步（9–11 月 Daily 增量并库）
+  - 不新增领域顶层体系、关系类型或自动 offers_product/implements_route 宣称（遵守 PROJECT_CHARTER §3）
+  - 不执行 git commit 或 git push
+canonical_policy:
+  writable: true
+  scope: 用户明确授权执行第二步：在既有架构与边界内收编历史高价值资产至 corpus/{customs,salvaged,content_ledger,relationships}、补充宏观测度/知识注记与 refs 反面判例、并扩展确定性校验门
+architecture_budget:
+  new_relation_types: []
+  new_top_level_systems: []
+  new_schema_fields: []
+  new_engines: []
+completion_semantics:
+  forbidden_phrasing:
+    - 已覆盖
+    - 已完成
+    - 已回答
+acceptance_criteria:
+  - corpus/annual-2023 收编全部 34 份 2023 年报且 archive/demo/data 30 份 PDF SHA-256 100% 对齐；truth.json 16/16 断言闭合
+  - corpus/salvaged/entity_nodes.csv 与 refs/entity-registry.yaml 完整吸收 169 个 nodes.csv 节点与 6 个蒸发主体及国别/代码/夹层标识
+  - 海关四维表（清零 61 处内嵌换行符，18 个月 0.000% 对账）与 HS 85177950 映射字典落地 corpus/customs/，并入 macro_evidence MC033–MC035
+  - corpus/content_ledger/content_ledger.csv 收纳既有 5 家 377 条并扩抽联讯/炬光与 13 家海内外核心龙头，新增条目 100% 原文逐字命中、issuer_self 隔离
+  - corpus/relationships/relationship_timeline.csv 完整拆解 E001–E236 并合入设备在手订单流与 Daily 高频事件挂接接口，配套 74 条边负记忆、15 对对账与卖方验真闹钟；#005 反面教材合入 refs/解匿判例库.md；KN007 补入老化毛利率下滑实证
+  - 全量重算派生层并通过 scan --selftest、scan --check、render --verify、participation --check、-m calls check 与 Step 2 回归测试
+stop_conditions:
+  - refs/ 文件数超过 8 个或根目录出现白名单外文件时立刻中止对应动作并清理
+  - 新增抽取条目引语无法 100% 逐字命中本地文本时剔除或重新精确摘引，严禁编造
+previous_workpack: out/step2-archive-salvage-20261121/previous-active-workpack.yaml
+delivery:
+  delivered_at: "2026-11-21"
+  verifier_agent: carbon-verifier
+  verifier_model: gemini-pro-orchestrator
+  artifacts:
+    - out/step2-archive-salvage-20261121/build_customs_and_entities.py
+    - out/step2-archive-salvage-20261121/build_content_ledger.py
+    - out/step2-archive-salvage-20261121/build_timelines_and_refs.py
+    - out/step2-archive-salvage-20261121/demo-pdf-dedupe-manifest.json
+    - out/step2-archive-salvage-20261121/光模块产业链全景图_公司能力细化版.html
+    - out/step2-archive-salvage-20261121/verification-summary.json
+    - out/step2-archive-salvage-20261121/report.md
+    - tests/test_step2_archive_salvage.py
+  summary:
+    shard_a_customs_and_entities: annual-2023 34份PDF与demo 30/30份SHA-256对齐+11份v16旁车；truth.json 16/16核验闭合；entity_nodes.csv 169节点(含6蒸发主体/12夹层)与entity-registry.yaml更新；海关四表清零换行且18个月0.000%对账，合入MC033–MC035
+    shard_b_content_ledger: content_ledger.csv 597条(20家：既有5家377条 + 新扩15家海内外龙头220条)，新扩220/220(100.0%)本地原文逐字命中；knowledge.yaml KN007增补猎奇老化设备毛利率37.45%/50.65%→12.55%实证
+    shard_c_relationships_and_refs: relationship_timeline.csv 446行(204对关系，236/236拆解E001–E236，合入FT-OB-20241213等设备池补充行，隔离三类特殊状态并预留Daily挂接列)；edge_negative_cuts.csv 74行0泄漏；counterparty_audit.csv 15行；sellside_watch_alarms.csv 7行；refs/解匿判例库.md合入判例#005(refs保持8文件)
+    gates_and_derived: scan.py扩展_CORPUS_PATH_RE与三项纯函数机器门(selftest 90→119全过)；全量重算render/participation/细化版全景图HTML；三份构建脚本37个输出文件二次重跑SHA-256零漂移
+  gates:
+    scan_selftest: pass (119/119, exit 0)
+    scan_check: pass (①-⑭ 全绿, exit 0)
+    render_verify: pass (两次临时重建一致, exit 0)
+    participation_check: pass (463/463, 确认 90, 待确认 15, exit 0)
+    calls_check: pass (39公司/166信源/70主张/34雷达事件, exit 0)
+    pytest_step1_step2_capability: pass (77 passed, 56 subtests passed, exit 0)
+    pytest_repo_active: pass (479 passed, 1 deselected, 146 subtests passed, exit 0; 仅排除允许写路径外旧OM-PHYS-001工作包ID断言)
+  pending_user_decisions:
+    - 是否授权启动 Step 3（2026 年 9–11 月 Daily 高频情报增量并库，直接接入 relationship_timeline.csv 日更契约）
+    - 是否单列授权 v6 宇宙对称扩容（联讯仪器 688808、云南锗业、科瑞技术、微见智能、镭神技术等纳入 corpus/_frozen.csv 并同步根级标签）
+    - 是否指定需人工复核并由内容台账/时间线进一步提炼晋升至根级 knowledge.yaml 的专题结论
+    - 是否授权修正允许写路径外 tests/research/test_question_completion_semantics.py:92 旧工作包 ID 硬编码并执行 git commit

@@ -1,0 +1,177 @@
+{
+  "docs/control/ACTIVE_WORKPACK.yaml": {
+    "sha256": "775ad2836b8413cafc623f917e4e4188a6b95dadb5153c3b6c3087851b13f379",
+    "bytes": 1824,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 34
+  },
+  "shipments.csv": {
+    "sha256": "ab93cb1a98f49e50ffce2ea510ea227034cb6d3c87064aa18a8ebe2692d065cf",
+    "bytes": 52168,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 104
+  },
+  "edges.csv": {
+    "sha256": "1e5c6739cd6ba1814da2a9186e131fa01e9502832aeec8230cd55dbef19fba1c",
+    "bytes": 86436,
+    "has_bom": true,
+    "crlf_count": 237,
+    "lf_count": 237
+  },
+  "points.csv": {
+    "sha256": "121a36c57a971b63ed7d16a59c52fac889533762eac9642dc0b9cf87d747319e",
+    "bytes": 108971,
+    "has_bom": true,
+    "crlf_count": 0,
+    "lf_count": 272
+  },
+  "triage.csv": {
+    "sha256": "cc309eea2e99004465acc3f233e3b7948f67439a072f5a84c4e93ab3b8c8c111",
+    "bytes": 198517,
+    "has_bom": true,
+    "crlf_count": 0,
+    "lf_count": 572
+  },
+  "corpus/_restart_watchlist.csv": {
+    "sha256": "501f40fc6ef6d74bfb5925d6e82ec7121fd54dfb0a7fe82eb87e1a4ed85bdff1",
+    "bytes": 4760,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 29
+  },
+  "knowledge.yaml": {
+    "sha256": "ecb9f6efefaba2085bf0e3f6121de17ab56e107953b3649e6bb07e64288b5c22",
+    "bytes": 32661,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 456
+  },
+  "macro_evidence.csv": {
+    "sha256": "506411fad43e26e3f8a77b7568457d5fc8a328ecbb290da1b5ff4ea9b43238a4",
+    "bytes": 8717,
+    "has_bom": true,
+    "crlf_count": 32,
+    "lf_count": 32
+  },
+  "tree.yaml": {
+    "sha256": "88ab14a1fe6146f9df5ac961a01c3ad06fe7e7eb160c88cdd3190f45658abe09",
+    "bytes": 10504,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 166
+  },
+  "refs/entity-registry.yaml": {
+    "sha256": "9d67cb57003f11c8f6db4ec8f10c98b49750f4af67d72432b0ccb1a0f542e004",
+    "bytes": 18654,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 431
+  },
+  "participation.py": {
+    "sha256": "650de1f84122d37abbeae970f9918110adb98d8d952df8379ef55062c639e8cf",
+    "bytes": 16298,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 358
+  },
+  "build_detailed_capability_report.py": {
+    "sha256": "1d7d049dbb81a23fe1da68566917c6ecb73e4c7630910d076556478efcbce3bf",
+    "bytes": 62218,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 1455
+  },
+  "scan.py": {
+    "sha256": "051277c3fec32869612328d0638bb4065acc897233e2d175241872bcaab85dbe",
+    "bytes": 59267,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 948
+  },
+  "capability_details.csv": {
+    "sha256": "8ca18e36b6602a43ad5f30d252a4d21c6449f8d3e8686b9a711b7adc81b7014c",
+    "bytes": 101102,
+    "has_bom": true,
+    "crlf_count": 182,
+    "lf_count": 182
+  },
+  "tests/test_capability_report_semantics.py": {
+    "sha256": "96d1d3b0b0464919d81c885aab9e6c2b80db2e94d4eaceb6f8fd117c169033ef",
+    "bytes": 12466,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 281
+  },
+  "out/参与识别.csv": {
+    "sha256": "dddd1dc496ebadbeb87b6d9bcf9364d5be812538822efb8591aff0349214499b",
+    "bytes": 91667,
+    "has_bom": true,
+    "crlf_count": 464,
+    "lf_count": 464
+  },
+  "out/参与识别.md": {
+    "sha256": "75debdea3d6ca8854ef1df927fcafbf27c88cc3fb5c3bd0f2185638acd795621",
+    "bytes": 27820,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 120
+  },
+  "out/参与识别.html": {
+    "sha256": "8f8b196a91e6817cd6f1c85cdb16d2453d5b87918d8ebc0f954bd81bf44bea48",
+    "bytes": 221519,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 512
+  },
+  "out/全景.md": {
+    "sha256": "d7269d55d27d117055cb31dd712907cdc5b81f17f3abb8fd838141cc5bbd59cd",
+    "bytes": 82811,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 611
+  },
+  "out/全景.html": {
+    "sha256": "a9ef6f66c142800640854087021cb4d64c420786342fbcb542cdf2292fe1987c",
+    "bytes": 83019,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 611
+  },
+  "out/知识库.md": {
+    "sha256": "0d367923468da0eae356e1d00903d8f39ee3fdf294537e738ad71328dbc5532d",
+    "bytes": 22728,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 384
+  },
+  "out/知识库.html": {
+    "sha256": "14dff6817fb265e7d46a79482a94e507134a69f4a254284d24028a4bc4826904",
+    "bytes": 22940,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 384
+  },
+  "out/问题队列.md": {
+    "sha256": "71a9de39fb4ddb94320c91ec503e09dafd8fbac083b032affdd9f792a8488682",
+    "bytes": 13932,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 109
+  },
+  "out/研究问题树.md": {
+    "sha256": "6751ef8f8d078a3522627c7f90d93b74d49b79a2a9758119efd280008c7db435",
+    "bytes": 14524,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 225
+  },
+  "README.md": {
+    "sha256": "bd434c4a35c4a9f731998620eefc1ed5f232a6bd6100797b2f49b2e2920c3b44",
+    "bytes": 16844,
+    "has_bom": false,
+    "crlf_count": 0,
+    "lf_count": 169
+  }
+}

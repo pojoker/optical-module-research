@@ -23,7 +23,7 @@ from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from html import escape
 from typing import Any, TYPE_CHECKING
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, urlencode, parse_qs
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
@@ -83,6 +83,10 @@ JSON_DATE_FIELDS = (
     "field_date", "published_at", "publish_date",
     "publication_date", "release_date", "date_posted",
 )
+AVICENA_DATELINE = re.compile(
+    r'(?:Sunnyvale|St\.\s*Louis|Copenhagen|Mountain View|San Diego),\s*'
+    r'(?:Calif\.|CA|MO|Denmark)(?:\s*(?:—\s*and\s*Basel, Switzerland|and\s*Bordeaux, France))?'
+    r'\s*(?:[—–-]|,)\s*([A-Za-z]+ \d{1,2}, 20\d{2})\s*[—–-]\s*Avicena(?:Tech|\s+Tech)?\b', re.I)
 _MONTHS = {name: index for index, name in enumerate(
     ("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"), 1)}
 
@@ -90,11 +94,14 @@ _MONTHS = {name: index for index, name in enumerate(
 def _trusted_date_class(class_value: str) -> bool:
     """class 里的日期 token 必须明确指向文章发布日期（如 "date"、"Type--Date"）；
     行情/更新时间类 class（share-price、updated 等）不可信。"""
+    if MARKER_CLASS_HINT.search(class_value):
+        return False
     for token in class_value.lower().split():
         if MARKER_CLASS_HINT.search(token):
             continue
         if token in {"date", "field_date", "publishdate", "published"} \
-                or token.endswith(("-date", "_date", "--date")) or "publish" in token:
+                or token.endswith(("-date", "_date", "--date")) \
+                or re.search(r"publish(?:ed)?[-_]?(?:date|time)", token):
             return True
     return False
 
@@ -105,6 +112,14 @@ def _month_number(name: str) -> int:
 
 def _date_only(value: str) -> str:
     value = (value or "").strip()
+    # Normalize ordinals only after the caller has bound a publication field.
+    value = re.sub(r"(\d{1,2})(?:st|nd|rd|th)\b", r"\1", value, flags=re.I)
+    match = re.search(r"(20\d{2})年(\d{1,2})月(\d{1,2})日", value)
+    if match:
+        try:
+            return date(*(int(part) for part in match.groups())).isoformat()
+        except ValueError:
+            return ""
     match = re.search(r"(20\d{2})[-/.](\d{1,2})[-/.](\d{1,2})", value)
     if match:
         try:
@@ -314,6 +329,18 @@ def _url_binds(node_url: str, canonical_url: str) -> bool:
     if node.query or canonical.query:
         return node.query == canonical.query
     return True
+
+
+def _pi_news_url(url: str, endpoint: "Endpoint") -> bool:
+    """PI's product redirects are not official-release article candidates."""
+    try:
+        parsed = urlparse(url)
+        return (parsed.scheme == 'https' and parsed.hostname == urlparse(endpoint.url).hostname
+                and parsed.username is None and parsed.password is None
+                and bool(endpoint.article_path_pattern)
+                and re.fullmatch(endpoint.article_path_pattern, parsed.path) is not None)
+    except (TypeError, ValueError):
+        return False
 
 
 def _node_binds_page(node: dict[str, Any], canonical_url: str, title: str,
@@ -578,7 +605,22 @@ def _site_publication_date(body: str, url: str, paragraphs: list[str]) -> str:
     """Known official release templates only; never infer dates from URL paths."""
     parsed = urlparse(url)
     patterns = []
-    if parsed.hostname == "newsroom.ao-inc.com" and parsed.path.startswith("/news-releases/"):
+    if parsed.hostname == 'avicena.tech':
+        regions = _publication_region(body, 'article', 'qodef-blog-item')
+        if len(regions) == 1:
+            page = _DatedListingHTML()
+            page.feed(regions[0])
+            def walk(node):
+                yield node
+                for child in node['children']:
+                    yield from walk(child)
+            dates = {_date_only(' '.join(n['text'])) for n in walk(page.root)
+                     if n['attrs'].get('itemprop') == 'dateCreated'
+                     and {'entry-date', 'published'} <= set(n['attrs'].get('class', '').split())}
+            datelines = {_date_only(value) for value in AVICENA_DATELINE.findall(' '.join(page.root['text']))}
+            if len(dates) == 1 and dates == datelines and '' not in dates:
+                return next(iter(dates))
+    elif parsed.hostname == "newsroom.ao-inc.com" and parsed.path.startswith("/news-releases/"):
         patterns = [r'<p[^>]*class=["\']post-date-author["\'][^>]*>\s*([A-Za-z]+ \d{1,2}, 20\d{2})']
     elif parsed.hostname in {"www.evgroup.com", "evgroup.com"} and parsed.path.startswith("/company/news/detail/"):
         for paragraph in paragraphs:
@@ -757,6 +799,9 @@ def discover_article_links(body: str, url: str, limit: int = 20, path_pattern: s
         normalized = link.split("#", 1)[0].rstrip("/")
         if parsed.scheme not in {"http", "https"} or parsed.netloc.lower() != origin:
             continue
+        # A visible news video/audio attachment is not an HTML article, even with an ID query.
+        if re.search(r"\.(?:mp4|m4a|webm|mov|wav|mp3|aac|ogg|opus)$", parsed.path, re.I):
+            continue
         if path_pattern and not re.search(path_pattern, parsed.path):
             continue
         if normalized in seen or (not path_pattern and (len(title) < 8 or not ARTICLE_HINT.search(parsed.path + " " + title))):
@@ -823,6 +868,16 @@ def discover_dated_article_links(body, url):
         site, pattern = 'accton', r'/[^/]+/?'
     elif host == 'www.semtech.com' and path == '/company/press':
         site, pattern = 'semtech', r'/company/press/(?!P\d+/?$)[^/]+'
+    elif host == 'avicena.tech' and path == '/press-releases':
+        site, pattern = 'avicena', r'/(?!avicena-technologies/?$)[^/]*(?:avicena|lightbundle)[^/]+/?'
+    elif host == 'sicoya.com' and path == '/news':
+        site, pattern = 'sicoya', r'/20\d{2}/\d{2}/\d{2}/[^/]+/?'
+    elif host == 'lightmatter.com' and path == '/press-releases':
+        site, pattern = 'lightmatter', r'/press-release/[^/]+/?'
+    elif host == 'ir.coherent.com' and path in {'/news-events/corporate-releases', '/news-events/financial-releases'}:
+        site, pattern = 'coherent', r'/news-releases/news-release-details/[^/]+/?'
+    elif host == 'www.hpe.com' and path.startswith('/us/en/newsroom/press-hub.html'):
+        site, pattern = 'hpe', r'/us/en/newsroom/(?:press-release|news-advisory)/.+\.html'
     else:
         return None
     parser = _DatedListingHTML()
@@ -865,14 +920,39 @@ def discover_dated_article_links(body, url):
         anchors = [n for n in walk(heading) if target(n)]
         if not anchors:
             anchors = [n for n in walk(card) if target(n)]
-        if not anchors:
+        # Never lend one card's title/date to a different linked article.
+        if not anchors or len({target(n) for n in anchors}) != 1:
             return
         link = target(anchors[0])
         title = text(heading) or anchors[0]['attrs'].get('title', '') or text(anchors[0])
         if title:
             records[link] = {'url': link, 'title': title, 'published_at': published}
 
-    if site == 'accton':
+    if site in {'avicena', 'sicoya', 'lightmatter', 'coherent', 'hpe'}:
+        card_class = {'avicena': 'qodef-e-content', 'lightmatter': 'group',
+                      'coherent': 'nir-widget-article', 'hpe': 'hpe-release-card'}.get(site)
+        for node in walk(parser.root):
+            if not (has(node, card_class) if card_class else node['tag'] == 'article'):
+                continue
+            children = list(walk(node))
+            headings = [n for n in children if n['tag'] in {'h1', 'h3', 'h5'}] if site != 'coherent' else [n for n in children if has(n, 'nir-widget--news--headline')]
+            if len(headings) != 1:
+                continue
+            if site == 'avicena':
+                excerpts = [n for n in children if has(n, 'qodef-e-excerpt')]
+                values = AVICENA_DATELINE.findall(text(excerpts[0])) if len(excerpts) == 1 else []
+            elif site == 'sicoya':
+                values = [text(n).split(' • ')[0].removeprefix('Published: ') for n in children if n['tag'] == 'p' and has(n, 'date') and text(n).startswith('Published: ')]
+            elif site == 'lightmatter':
+                values = [text(n) for n in children if has(n, 'allcaps-sm') and _date_only(text(n))]
+            elif site == 'coherent':
+                values = [text(n) for n in children if has(n, 'nir-widget--news--date-time')]
+            else:
+                values = [n['attrs'].get('datetime', '') for n in children if n['tag'] == 'time']
+            dates = {_date_only(value) for value in values}
+            published = next(iter(dates)) if len(values) == 1 and len(dates) == 1 and '' not in dates else ''
+            add(node, headings[0], published)
+    elif site == 'accton':
         for timeline in (n for n in walk(parser.root) if has(n, 'ctl-timeline')):
             year = ''
             for node in walk(timeline):
@@ -1018,7 +1098,7 @@ def _cisco_releases(body: str, url: str) -> list[dict[str, str]]:
 
 
 def _q4_items(payload: dict[str, Any], url: str,
-              article_failures: list[dict[str, str]] | None = None) -> list[dict[str, Any]]:
+              article_failures: list[dict[str, str]] | None = None, in_window=None) -> list[dict[str, Any]]:
     records = payload["GetPressReleaseListResult"]
     if not isinstance(records, list):
         raise ValueError("Q4 press release data is not a list")
@@ -1028,6 +1108,16 @@ def _q4_items(payload: dict[str, Any], url: str,
         try:
             if not isinstance(record, dict):
                 raise ValueError("Q4 press release record is not an object")
+            stamp = str(record.get("PressReleaseDate", ""))
+            try:
+                published = datetime.strptime(stamp, "%m/%d/%Y %H:%M:%S").date().isoformat()
+            except ValueError:
+                published = _date_only(stamp)
+            # A publisher-dated old shareholder PDF/proxy is outside this daily
+            # window. Do not fetch/parse it or turn it into a current failure.
+            # Unknown dates remain eligible and retain all original validators.
+            if published and in_window is not None and not in_window({'published_at': published}):
+                continue
             raw_link = record.get("LinkToDetailPage")
             if not isinstance(raw_link, str) or not raw_link.strip():
                 raise ValueError("Q4 press release has no article URL")
@@ -1039,11 +1129,7 @@ def _q4_items(payload: dict[str, Any], url: str,
                 raise ValueError("Q4 release points to an unsupported attachment")
             item = parse_html_item(str(record.get("Body") or ""), link, str(record.get("Headline", "")))
             # Q4 explicitly dates each release; numeric US dates are local here.
-            stamp = str(record.get("PressReleaseDate", ""))
-            try:
-                item["published_at"] = datetime.strptime(stamp, "%m/%d/%Y %H:%M:%S").date().isoformat()
-            except ValueError:
-                item["published_at"] = _date_only(stamp)
+            item["published_at"] = published
             items.append(item)
         except (ValueError, TypeError) as exc:
             if article_failures is None:
@@ -1054,6 +1140,43 @@ def _q4_items(payload: dict[str, Any], url: str,
 
 class EndpointBudgetExceeded(TimeoutError):
     pass
+
+
+def _unwrap_lightwave_duda_page(body: str, content_type: str, url: str) -> tuple[str, str, str]:
+    """Decode the observed official Duda HTML envelope; never execute its scripts.
+
+    This is page content, not an items feed. Bind its alias to the fetched page,
+    and leave all other JSON formats to the existing strict listing parser.
+    """
+    if urlparse(url).hostname not in {"www.lightwavelogic.com", "lightwavelogic.com"} or not body.lstrip().startswith("{"):
+        return body, content_type, url
+    payload = json.loads(body)
+    if not isinstance(payload, dict) or not {"alias", "content", "headsection", "collections"}.issubset(payload):
+        return body, content_type, url
+    path = urlparse(url).path.strip("/")
+    if not isinstance(payload["alias"], str) or payload["alias"].strip("/") != path:
+        raise ValueError("Duda page alias does not match the fetched page")
+    observed_url = payload.get("current_url")
+    if observed_url and (not isinstance(observed_url, str) or not _url_binds(observed_url, url)):
+        raise ValueError("Duda page URL does not match the fetched page")
+    fields = [payload.get("headsection", ""), payload.get("seometatags", ""), payload["content"]]
+    if any(not isinstance(value, str) for value in fields) or not payload["content"].strip():
+        raise ValueError("Duda page has no valid public HTML content")
+    title = payload.get("page_title", "")
+    if not isinstance(title, str):
+        raise ValueError("Duda page title must be text")
+    html = "<html><head><title>" + escape(title) + "</title>" + fields[0] + fields[1] + "</head><body>" + fields[2] + "</body></html>"
+    return html, "text/html", url
+
+
+def _decode_public_publisher_json(body: str) -> dict[str, Any]:
+    """The official embedded publisher may encode its JSON object as a JSON string."""
+    value = json.loads(body)
+    if isinstance(value, str):
+        value = json.loads(value)
+    if not isinstance(value, dict):
+        raise ValueError("embedded publisher response must be a JSON object")
+    return value
 
 
 class HttpFetcher:
@@ -1115,7 +1238,8 @@ class HttpFetcher:
             self._remaining()
             try:
                 with self._request_timer():
-                    return self._get(url)
+                    body, content_type, final_url = self._get(url)
+                    return self._parse(_unwrap_lightwave_duda_page, body, content_type, final_url)
             except EndpointBudgetExceeded:
                 raise
             except Exception as exc:
@@ -1157,6 +1281,165 @@ class HttpFetcher:
         when = date.fromisoformat(published)
         return self.run_date - timedelta(days=self.lookback_days) <= when <= self.run_date
 
+    def _fetch_lightwave_embedded_publisher(self, endpoint: "Endpoint") -> HttpFetchResult:
+        """Read the anonymous API explicitly used by the company's embedded IR feed.
+
+        Verified chain: official page -> Issuer Direct widget -> its declared
+        Accesswire proxy. No login, API key, script execution or denial fallback.
+        The original endpoint and provenance remain attached to every candidate.
+        """
+        query = {
+            "topics": "LWLG", "excludeTopics": "None", "noSrc": "qmr",
+            "src": "pzo,bayaw,prn,bwi,TheNewsWire,nfil,actw,irw,acn,cnw,nwd,glpr,nwmw",
+            "thumbnailurl": "true", "summary": "true", "summLen": "300",
+            "start": (self.run_date - timedelta(days=self.lookback_days)).isoformat(),
+            "end": self.run_date.isoformat(),
+        }
+        base = "https://www.accesswire.com/qm/data/"
+        items: list[dict[str, Any]] = []
+        failures: list[dict[str, str]] = []
+        try:
+            raw, _, _ = self._request(base + "getHeadlines.json?" + urlencode(query))
+            envelope = self._parse(_decode_public_publisher_json, raw)
+            results = envelope.get("results")
+            groups = results.get("news") if isinstance(results, dict) else None
+            if not isinstance(groups, list):
+                raise ValueError("embedded publisher has no valid news groups")
+            records = []
+            for group in groups:
+                if not isinstance(group, dict) or group.get("topicstring") != "LWLG":
+                    raise ValueError("embedded publisher returned a different company")
+                rows = group.get("newsitem")
+                if not isinstance(rows, list) or group.get("newsitemcount") != len(rows):
+                    raise ValueError("embedded publisher item count or shape is inconsistent")
+                records.extend(rows)
+        except Exception as exc:
+            return HttpFetchResult(endpoint.endpoint_id, (), f"official embedded publisher failed: {type(exc).__name__}: {exc}")
+        for index, record in enumerate(records):
+            link = endpoint.url
+            try:
+                if not isinstance(record, dict):
+                    raise ValueError("embedded publisher item must be an object")
+                news_id = str(record.get("newsid", ""))
+                title = record.get("headline")
+                link = record.get("storyurl", "")
+                parsed = urlparse(link)
+                if (not news_id.isdigit() or not isinstance(title, str)
+                        or not re.match(r"^Lightwave\s+Logic\b", title, re.I)
+                        or parsed.scheme != "https" or parsed.username or parsed.password
+                        or parsed.hostname != "api.quotemedia.com"
+                        or parsed.path.rstrip("/") != "/supplement/news-story"
+                        or parse_qs(parsed.query).get("storyId") != [news_id]):
+                    raise ValueError("embedded publisher item lacks a bound company release identity")
+                published = _date_only(str(record.get("datetime", "")))
+                if not published:
+                    raise ValueError("embedded publisher release has no publication date")
+                if not self._in_window({"published_at": published}):
+                    continue
+                if index >= self.max_items:
+                    raise EndpointBudgetExceeded("maximum items reached; remaining headlines not fetched")
+                raw, _, _ = self._request(base + "getStory.json?" + urlencode({"storyId": news_id, "newslang": "en"}))
+                envelope = self._parse(_decode_public_publisher_json, raw)
+                story = envelope.get("qmcistory", {}).get("qmnews", {}).get("qmstory")
+                if (not isinstance(story, dict) or not isinstance(story.get("qmtext"), str)
+                        or _norm_title_text(str(story.get("qmheadline", ""))) != _norm_title_text(title)
+                        or _date_only(str(story.get("datetime", ""))) != published
+                        or story.get("qmsource") != record.get("qmsource")):
+                    raise ValueError("embedded full text does not match its headline, date and publisher")
+                item = self._parse(parse_html_item, story["qmtext"], link, title)
+                if not item["paragraphs"]:
+                    raise ValueError("embedded release has no usable full-text paragraphs")
+                item.update({"title": title, "published_at": published,
+                    "published_at_basis": "official_embedded_publisher",
+                    "note": "公司官网公告页明确嵌入Issuer Direct发布组件；标题、日期与全文对应核验，来源链仍属同一发行人发布，不构成独立佐证"})
+                items.append(item)
+            except Exception as exc:
+                failures.append({"url": link, "detail": f"official embedded release failed: {type(exc).__name__}: {exc}"})
+                if isinstance(exc, EndpointBudgetExceeded):
+                    break
+                if isinstance(exc, HTTPError) and exc.code == 429:
+                    break
+        return HttpFetchResult(endpoint.endpoint_id, tuple(items), "", tuple(failures))
+
+    def _hpe_listing_html(self, body: str, url: str) -> tuple[str, list[dict[str, str]]]:
+        """Read only the exact public GET model declared by HPE's current page.
+
+        Keep releases/advisories separate from blogs. Two bounded type queries
+        share the original deadline and total item cap; no script execution,
+        credentials, pagination, or alternate route after a denial.
+        """
+        page = _DatedListingHTML()
+        self._parse(page.feed, body)
+        self._hpe_stop_requests = False
+        def walk(node):
+            yield node
+            for child in node['children']:
+                yield from walk(child)
+        widgets = [n for n in walk(page.root) if n['tag'] == 'media-browser']
+        expected = '/us/en/newsroom/press-hub/_jcr_content/polaris-body-zone/aem.model.json?type={type}&restype={restype}&date={date}&topic={topic}&offset={offset}&limit={limit}'
+        if len(widgets) != 1 or widgets[0]['attrs'].get('url') != expected:
+            raise ValueError('HPE page no longer declares the verified public listing model')
+        filters = json.loads(widgets[0]['attrs'].get('filters', '[]'))
+        options = {o.get('value') for f in filters if f.get('type') == 'type' for o in f.get('options', [])}
+        if not {'press-release', 'news-advisory'} <= options:
+            raise ValueError('HPE page no longer declares release/advisory types')
+        cards, failures, successful = [], [], 0
+        for index, (kind, label) in enumerate([('press-release', 'Press Release'), ('news-advisory', 'News Advisory')]):
+            per_type = self.max_items // 2 + (self.max_items % 2 if index == 0 else 0)
+            if per_type == 0:
+                failures.append({'url': url, 'detail': f'HPE {kind} not requested due to total item cap'})
+                continue
+            model_url = urljoin(url, expected.format(type=kind, restype='press-release_news-advisory',
+                                date='all-date', topic='all-topic', offset=0, limit=per_type))
+            try:
+                raw, _content_type, model_final = self._request(model_url)
+                if (urlparse(model_final).scheme != 'https' or urlparse(model_final).hostname != 'www.hpe.com'
+                        or urlparse(model_final).path != urlparse(model_url).path
+                        or parse_qs(urlparse(model_final).query, keep_blank_values=True) != parse_qs(urlparse(model_url).query, keep_blank_values=True)):
+                    raise ValueError('HPE listing model redirected away from declared source')
+                payload = self._parse(json.loads, raw)
+                rows = payload.get('items')
+                total = payload.get('stat', {}).get('total')
+                if (not isinstance(rows, list) or not isinstance(total, int) or isinstance(total, bool)
+                        or total < 0 or len(rows) > per_type or total < len(rows) or total > 0 and not rows):
+                    raise ValueError('invalid or over-limit HPE listing envelope')
+                local_cards = []
+                for row in rows:
+                    if not isinstance(row, dict):
+                        failures.append({'url': model_url, 'detail': 'HPE listing record is not an object'})
+                        continue
+                    link = row.get('cta', {}).get('link', '')
+                    parsed = urlparse(link)
+                    title = row.get('title')
+                    if row.get('label') != label:
+                        failures.append({'url': model_url, 'detail': 'HPE listing type does not match declared query'})
+                        continue
+                    published = _date_only(row.get('contentDate', ''))
+                    # Trust the card's date for window selection; old attachments
+                    # and other old page types cannot consume today's budget.
+                    if published and not self._in_window({'published_at': published}):
+                        continue
+                    if (not isinstance(title, str) or not title.strip()
+                            or parsed.scheme != 'https' or parsed.hostname != 'www.hpe.com'
+                            or not re.fullmatch(r'/us/en/newsroom/(?:press-release|news-advisory)/.+\.html', parsed.path)):
+                        failures.append({'url': link or model_url, 'detail': 'HPE in-window item title/official release URL unsupported'})
+                        continue
+                    local_cards.append('<article class="hpe-release-card"><h3><a href="' + escape(link, quote=True) + '">' + escape(title) + '</a></h3><time datetime="' + escape(published, quote=True) + '"></time></article>')
+                cards.extend(local_cards)
+                successful += 1
+                dates = [_date_only(row.get('contentDate', '')) for row in rows if isinstance(row, dict)]
+                if rows and (len(dates) != len(rows) or '' in dates or dates != sorted(dates, reverse=True)
+                             or total > len(rows) and self._in_window({'published_at': dates[-1]})):
+                    failures.append({'url': model_url, 'detail': f'HPE {kind} bounded first page does not prove full lookback coverage'})
+            except Exception as exc:
+                failures.append({'url': model_url, 'detail': f'HPE declared listing model failed: {type(exc).__name__}: {exc}'})
+                if isinstance(exc, EndpointBudgetExceeded) or isinstance(exc, HTTPError) and exc.code in {403, 429}:
+                    self._hpe_stop_requests = True
+                    break
+        if not successful:
+            raise ValueError('; '.join(row['detail'] for row in failures))
+        return '\n'.join(cards), failures
+
     def fetch(self, endpoint: "Endpoint") -> HttpFetchResult:
         self._deadline = time.monotonic() + self.endpoint_budget
         if getattr(endpoint, "unsupported_listing", False):
@@ -1170,6 +1453,12 @@ class HttpFetcher:
             body, content_type, final_url = self._request(endpoint.url)
         except Exception as exc:
             return HttpFetchResult(endpoint.endpoint_id, (), f"public GET failed: {type(exc).__name__}: {exc}")
+        # Use this path only while the fetched official page still declares the exact IR widget.
+        if (endpoint.entity_id == "LWLG"
+                and urlparse(final_url).hostname in {"www.lightwavelogic.com", "lightwavelogic.com"}
+                and urlparse(final_url).path.rstrip("/") == "/press-releases"
+                and re.search(r'https://feeds\.issuerdirect\.com/news\.html\?symbol=LWLG(?:&|&amp;)', body)):
+            return self._fetch_lightwave_embedded_publisher(endpoint)
         if urlparse(final_url).hostname == "www.sivers-semiconductors.com" and "/wp-json/sivers/v1/news-press" in urlparse(final_url).path:
             try:
                 envelope = self._parse(json.loads, body)
@@ -1191,14 +1480,25 @@ class HttpFetcher:
                 content_type = "text/html"
             except (ValueError, KeyError, TypeError, EndpointBudgetExceeded) as exc:
                 return HttpFetchResult(endpoint.endpoint_id, (), f"invalid Mitsubishi listing: {exc}")
-        stripped = body.lstrip()
         article_failures: list[dict[str, str]] = []
+        hpe_verified_listing = False
+        if (endpoint.entity_id == 'CAND_HPE' and urlparse(final_url).hostname == 'www.hpe.com'
+                and urlparse(final_url).path.startswith('/us/en/newsroom/press-hub.html')):
+            try:
+                body, article_failures = self._hpe_listing_html(body, final_url)
+                content_type = 'text/html'
+                hpe_verified_listing = True
+                if self._hpe_stop_requests:
+                    return HttpFetchResult(endpoint.endpoint_id, (), '', tuple(article_failures))
+            except Exception as exc:
+                return HttpFetchResult(endpoint.endpoint_id, (), f'public HPE listing parse failed: {type(exc).__name__}: {exc}')
+        stripped = body.lstrip()
         items: list[dict[str, Any]] = []
         try:
             if content_type == "application/json" or stripped.startswith(("{", "[")):
                 payload = self._parse(json.loads, body)
                 if isinstance(payload, dict) and "GetPressReleaseListResult" in payload:
-                    items = self._parse(_q4_items, payload, final_url, article_failures)
+                    items = self._parse(_q4_items, payload, final_url, article_failures, self._in_window)
                     for item in items:
                         if not item["paragraphs"]:
                             article_failures.append({"url": item["url"], "detail": "Q4 release has no usable article body"})
@@ -1227,8 +1527,11 @@ class HttpFetcher:
                     dated = [row for row in dated if not endpoint.article_path_pattern
                              or re.search(endpoint.article_path_pattern, urlparse(row['url']).path, re.I)]
                     eligible = [row for row in dated if self._in_window(row)]
-                    if dated and not eligible:
-                        return HttpFetchResult(endpoint.endpoint_id, (), '')
+                    # Prefer recent bound dates within the existing maximum and
+                    # budget. Unknown dates remain eligible, never assumed old.
+                    eligible.sort(key=lambda row: row.get('published_at', ''), reverse=True)
+                    if not eligible and (dated or hpe_verified_listing):
+                        return HttpFetchResult(endpoint.endpoint_id, (), '', tuple(article_failures))
                     article_links = [(row['url'], row['title']) for row in eligible[:self.max_items]]
                     embedded_dates.update({row['url']: row['published_at'] for row in dated})
                 else:
@@ -1264,9 +1567,26 @@ class HttpFetcher:
                             "detail": f"article GET failed: {type(exc).__name__}: {exc}",
                         })
                         continue
+                    if endpoint.entity_id == 'WATCH_PI' and not _pi_news_url(article_url, endpoint):
+                        article_failures.append({'url': link, 'detail': 'PI detail final URL is outside the verified official news article path'})
+                        continue
                     if "json" in article_type:
                         continue
-                    item = self._parse(parse_html_item, article_body, article_url, title)
+                    if hpe_verified_listing and (urlparse(article_url).scheme != 'https'
+                            or not _url_binds(article_url, link)):
+                        article_failures.append({'url': link, 'detail': 'HPE detail response left the selected official article URL'})
+                        continue
+                    item = self._parse(parse_html_item, article_body, article_url, '' if hpe_verified_listing else title)
+                    # With no canonical tag, parse_html_item keeps article_url,
+                    # already verified above. Dates still use original validators.
+                    if endpoint.entity_id == 'WATCH_PI' and not _pi_news_url(item['url'], endpoint):
+                        article_failures.append({'url': link, 'detail': 'PI detail canonical is outside the verified official news article path'})
+                        continue
+                    if hpe_verified_listing and (urlparse(item['url']).scheme != 'https'
+                            or not _url_binds(item['url'], link)
+                            or not _title_binds(item['title'], title)):
+                        article_failures.append({'url': link, 'detail': 'HPE detail canonical/title does not bind to selected official article'})
+                        continue
                     if item["url"].rstrip("/") == link.rstrip("/"):
                         card_date = embedded_dates.get(link, '')
                         if dated is not None and card_date:

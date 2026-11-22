@@ -390,19 +390,33 @@ def fetch_irm(code,since):
     print(f'[{code} {name}] {len(out)}条(空回答{n_empty}) → {fp}')
     return len(out)
 
-_p5w_down = {'v': False, 'reason': ''}  # 熔断: p5w首个连接失败后本轮跳过(2026-08-21: p5w不可达×重试预算→日更60min超时事故)
+# Keep a run-level circuit breaker, but permit bounded recovery from a transient outage.
+P5W_RECOVERY_COOLDOWN = 180  # seconds; retain normal request rate and per-company budget
+P5W_MAX_FAILED_PROBES = 4   # initial failure plus at most three recovery probes per run
+_p5w_down = {'v': False, 'reason': '', 'retry_after': 0.0, 'failed_probes': 0}
 
 def _p5w_guarded(code, since):
-    """p5w调用带熔断; 失败置down并记原因, 本轮后续直接跳过。返回 None=无产出(不等于零条)。"""
+    """Failure stays distinct from zero results; bounded half-open probes can recover."""
     if _p5w_down['v']:
-        print(f'[{code}] p5w已熔断,跳过({_p5w_down.get("reason","")})')
-        return None
+        exhausted = _p5w_down.get('failed_probes', 0) >= P5W_MAX_FAILED_PROBES
+        cooling = time.monotonic() < _p5w_down.get('retry_after', float('inf'))
+        if exhausted or cooling:
+            print(f'[{code}] p5w已熔断,跳过({_p5w_down.get("reason", "")})')
+            return None
+        print(f'[{code}] p5w冷却后尝试恢复（本轮失败探测上限{P5W_MAX_FAILED_PROBES}次）')
     try:
-        return fetch_p5w(code, since)
+        result = fetch_p5w(code, since)
+        if result is not None:
+            _p5w_down['v'] = False
+            _p5w_down['reason'] = ''
+            _p5w_down['retry_after'] = 0.0
+        return result
     except Exception as e:
         _p5w_down['v'] = True
+        _p5w_down['failed_probes'] = _p5w_down.get('failed_probes', 0) + 1
+        _p5w_down['retry_after'] = time.monotonic() + P5W_RECOVERY_COOLDOWN
         _p5w_down['reason'] = f'{type(e).__name__}: {str(e)[:60]}'
-        print(f'[{code}] p5w失败触发熔断,本轮后续跳过: {str(e)[:60]}')
+        print(f'[{code}] p5w失败触发熔断,保留失败状态: {str(e)[:60]}')
         return None
 
 def _primary(code,since):
@@ -417,7 +431,7 @@ def fetch(code,since):
     """主通道按市场分派；0条/失败时全景网兜底(全市场镜像,含沪深,纪律9双通道)。
     2026-08-15勘误: 主通道"部分返回"(非零但远低于历史)也会绕过兜底并覆盖写入丢历史;
     故非零也按"缩水"判定走p5w, 且各通道改并集合并落盘(见_merge_write)。
-    2026-08-21: p5w调用改经_p5w_guarded熔断(连接失败一次本轮不再尝试)。
+    2026-10-12: p5w运行级熔断增加180秒冷却恢复，本轮失败探测最多4次，失败仍不得推进水位。
     2026-09-05勘误: 通道全部无产出(返回None)时抛 FetchFailure, 不再返回 0/None——
     否则调用方无法区分"抓取失败"和"确实没有新问答", 会把失败当成成功无增量。"""
     _trunc['v']=False; _trunc['reason']=''

@@ -16,3 +16,11 @@ corpus/legacy-input/**/*.pdf
 
 # 中间产物(codex PDF渲染/临时脚本),不入库
 tmp/
+
+# 私有原件打包与本地研报/实验草稿目录，不入公开主仓
+out/source-archive-*/
+out/report-kb-review-*/
+out/agy-read-permission-*/
+out/ste-basics-experiment-*/
+out/ste-reader-experiment-*/
+out/证券行业智能研究服务方案-*/

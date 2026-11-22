@@ -47,7 +47,7 @@ knowledge:
     只有精度、没有光通信场景的，记"相邻能力观察"，不得入"生产中"能力点——
     不是因为它没提"光"，而是没有任何证据表明它做的是这一档、卖给这个市场。
   证据:
-  - 谁: 猎奇智能（专做光模块封测设备，科创板IPO在审）
+  - 谁: 猎奇智能（专做光模块封测设备，创业板IPO在审）
     原话: 在光模块封测过程中，将激光器驱动芯片、跨阻放大器芯片、激光器芯片、探测器芯片等各类芯片通过特定的粘合剂（共晶焊料/导电胶/紫外胶）将各类芯片精确地固定在PCB上
     出处: 招股说明书（申报稿）·释义章节
     锚型: local_file
@@ -58,7 +58,7 @@ knowledge:
     锚型: local_file
     锚: corpus/legacy-input/lieqi_prospectus.txt#核心竞争力章节
   - 谁: 猎奇智能（已在账本）
-    原话: 光通信/半导体/汽车自动化等领域智能生产装备；产品应用于贴片、光学耦合、老化测试三核心环节
+    原话: 公司产品已覆盖光模块封装测试的核心环节，包括贴片、耦合、老化测试等关键工序。公司在技术水平、产品指标、客户覆盖等方面均保持较高水平，公司生产的贴片设备、耦合设备可配套 800G/1.6T 光模块的生产需求
     出处: points.csv 已过闸能力点
     锚型: ledger_ref
     锚: P055
@@ -299,11 +299,23 @@ knowledge:
     **耦合**："耦合是光模块封装工时最长、最易产生不良品的步骤，它直接影响光模块的性能。"
     流程是：对准 → 透镜耦合 → 胶水固定 → 验证耦合效率。激光器发的光要经过微透镜
     准直聚焦后才能最大限度进入光纤——位置差一点，光就漏掉一截，模块性能直接打折。
-    所以耦合设备的核心是高精密运动平台+视觉引导（猎奇的耦合设备最小运动增量做到 50 纳米）。
+    所以耦合设备的核心是高精密运动平台+视觉引导。说“精度”要分清三个不同的物理量，不能互换：
+    ①最小运动增量（电机最轻推一下能走的最小步长）：招股书行业段说“部分国产厂商……耦合设备已能达到
+      最小运动增量 50nm”（第五节，1-1-122，第 9759–9760 行，主语是行业而非猎奇自述），技术门槛段说
+      光学器件位姿“调整最小运动增量达 50-100nm”（1-1-129，第 9984 行）；
+    ②分辨率（相当于尺子的最小刻度）：猎奇 10 纳米 vs ficonTEC 5 纳米；
+    ③重复定位精度（反复回到同一个点的误差）：猎奇 ±0.05 微米（=±50 纳米）vs ficonTEC ±0.02 微米（=±20 纳米）。
+    ②③都出自猎奇招股书自己的竞品参数表（第五节，1-1-146，第 10760–10784 行）——ficonTEC 两项都高约 2～2.5 倍。
+    刻度细、步子小，不等于每次都能扎准同一个点。
 
     **老化**："老化测试是光模块生产的核心工序之一，贯穿光模块生产的全过程"——
     芯片阶段测电流-功率-电压和光谱，装到载体上再老化一轮，成品模块还要再老化一轮。
-    目的是用高温通电模拟长期使用，把会早夭的品挑出来，别让它出厂。
+    目的是用高温通电模拟长期使用，把会早夭的品挑出来，别让它出厂。不过和前面拼亚微米
+    精度的贴片机、耦合机比起来，老化测试设备的工艺门槛与盈利稳定性明显弱一截：猎奇智能
+    招股书披露，2023—2025 年其贴片设备毛利率稳在 59.28%～60.51%，耦合设备稳在 53.99%～60.45%，
+    唯独老化测试设备毛利率从 2023 年的 37.45%、2024 年的 50.65% 塌缩至 2025 年的 12.55%
+    （公司解释主要是模块老化测试设备当期改型导致平均单位成本上升，第六节，1-1-228，第 18210–18222 行）——
+    同样造封测设备，老化环节一旦遇上改型与定制波动，毛利率弹性远不如贴片与耦合。
 
     这解释了结构图上为什么设备层单独有"耦合设备"（EQ4）和"测试/老化"（EQ7）两个格子：
     它们是光模块区别于普通电子组装的两道专属工序，设备市场也因此独立存在。
@@ -316,14 +328,14 @@ knowledge:
     原话: 耦合是光模块封装工时最长、最易产生不良品的步骤，它直接影响光模块的性能。耦合的目的是将光高效高质的从一端耦合进入到另一端，耦合的流程一般为：对准、透镜耦合、胶水固定、验证耦合效率
     出处: 招股说明书（申报稿）·主营业务
     锚型: local_file
-    锚: corpus/legacy-input/lieqi_prospectus.txt#主营业务·耦合设备段(1-1-92)
+    锚: corpus/legacy-input/lieqi_prospectus.txt#第五节·主营业务·耦合设备段(1-1-93,第8495行)
   - 谁: 猎奇智能
     原话: 老化测试是光模块生产的核心工序之一，贯穿光模块生产的全过程，涉及芯片LIV与光谱测试、COC&OE老化测试、模块老化测试等
     出处: 招股说明书（申报稿）·主营业务
     锚型: local_file
-    锚: corpus/legacy-input/lieqi_prospectus.txt#主营业务·老化测试设备段
+    锚: corpus/legacy-input/lieqi_prospectus.txt#第五节·主营业务·老化测试设备段(1-1-93,第8527行)
   - 谁: 猎奇智能（已在账本）
-    原话: 光通信/半导体/汽车自动化等领域智能生产装备；产品应用于贴片、光学耦合、老化测试三核心环节
+    原话: 公司产品已覆盖光模块封装测试的核心环节，包括贴片、耦合、老化测试等关键工序。公司在技术水平、产品指标、客户覆盖等方面均保持较高水平，公司生产的贴片设备、耦合设备可配套 800G/1.6T 光模块的生产需求
     出处: points.csv 已过闸能力点
     锚型: ledger_ref
     锚: P055
@@ -332,13 +344,31 @@ knowledge:
     出处: ficontec.com Technologies 页（datasheet试点快照）
     锚型: web_snapshot
     锚: {原URL: 'https://www.ficontec.com/technologies/', 存档路径: corpus/web/www.ficontec.com/2026-07-27/technologies.html, 抓取日期: '2026-07-27'}
-    说明: 印证"耦合设备核心=高精密运动平台"且给出档位量级(50nm),与猎奇耦合设备最小运动增量50nm互证
+    说明: 印证"耦合设备核心=高精密运动平台";官网"50 nm accuracy"为ficonTEC自述定位精度口径,与猎奇招股书竞品表所列ficonTEC重复精度±0.02µm(=±20nm)/分辨率5nm口径不同,更不得与招股书行业段"最小运动增量50nm"互证(2026-11-21按11/19审阅C07撤回原互证句)
   - 谁: ficonTEC（同上，电/光档位差原厂自述）
     原话: typical contact pads of 80 x 80 µm². Optical probing, however, requires much higher positional accuracies – in the submicron range——电学探针接触垫80×80微米即可,光学探针却须亚微米级定位
     出处: ficontec.com Technologies 页（datasheet试点快照）
     锚型: web_snapshot
     锚: {原URL: 'https://www.ficontec.com/technologies/', 存档路径: corpus/web/www.ficontec.com/2026-07-27/technologies.html, 抓取日期: '2026-07-27'}
     说明: 电/光两个世界的精度档位差由设备原厂直接说出——支撑KN001"同名设备不同档"的通用判断法
+  - 谁: 猎奇智能（招股书竞品参数表，自述）
+    原话: X/Y/Z 轴重复精度——发行人 ±0.05µm、镭神技术 ±0.05µm（单模）/±0.3µm（多模）、FiconTEC ±0.02µm；XYZ 轴分辨率——发行人 10nm、镭神技术 未披露、FiconTEC 5nm（表格逐格转录）
+    出处: 招股说明书（申报稿）·第五节 业务与技术·光耦合设备关键参数指标对比（1-1-146）
+    锚型: local_file
+    锚: corpus/legacy-input/lieqi_prospectus.txt#第五节·竞品参数表(10760-10784行)
+    说明: 重复定位精度猎奇±50nm vs ficonTEC±20nm、分辨率10nm vs 5nm——ficonTEC两项均高约2～2.5倍;分辨率≠重复定位精度≠最小运动增量
+  - 谁: 招股书行业段（非猎奇自述）
+    原话: 部分国产厂商的贴片机加工精度已达±3µm，支持多芯片贴装；耦合设备已能达到最小运动增量 50nm
+    出处: 招股说明书（申报稿）·第五节 业务与技术·行业技术发展趋势（1-1-122）
+    锚型: local_file
+    锚: corpus/legacy-input/lieqi_prospectus.txt#第五节·行业技术趋势段(9759-9760行)
+    说明: “最小运动增量”只讲步长,且主语是“部分国产厂商”,不得当作猎奇或ficonTEC的定位精度
+  - 谁: 猎奇智能（分产品毛利率披露）
+    原话: 报告期各期，公司老化测试设备的毛利率分别为 37.45%、50.65%和 12.55%，各期之间存在一定波动。公司老化测试设备包括芯片老化测试设备、模块老化测试设备两大类，应用场景以及单位售价、毛利率水平等存在一定差异。2025 年，公司老化测试设备的毛利率较 2024 年显著下降，主要系模块老化测试设备当期进行设备改型导致平均单位成本上升所致
+    出处: 招股说明书（申报稿）·第六节 财务会计信息与管理层分析·主营业务毛利率分产品构成及变动情况（1-1-228）
+    锚型: local_file
+    锚: corpus/legacy-input/lieqi_prospectus.txt#第六节·分产品毛利率分析(1-1-228,18218-18222行)
+    说明: 对比同期贴片设备毛利率59.28%/59.58%/60.51%、耦合设备60.45%/54.52%/53.99%(18210-18215行),老化测试设备毛利率在2025年由50.65%骤降至12.55%(吸收原diff-log D003实证)
   录入日期: '2026-07-26'
 
 - id: KN008
@@ -448,6 +478,308 @@ knowledge:
         SHA256: 586d0ed09f2e19d49bf92b23bb681c266d63db6c477d9c8e8c6cd6cf1d6a304f
       说明: 仅用于该3.2T_CPO_IA实例_不推广为所有CPO
   录入日期: '2026-08-31'
+
+- id: KN011
+  格: [MOD1, MOD2, MOD3, D12]
+  标题: 美国海关光模块原产地怎么判——主电路板表面贴装在哪国做，比最后在哪国刷固件、装光组件更关键
+  一句话: |
+    美国海关与边境保护局（CBP）按“实质性转变”判断光模块原产地时，四份公开裁定共同把“主印刷电路板组件（主 PCBA）在哪国经表面贴装（SMT）制成”当成决定性标尺：主电路板在中国贴装的，哪怕去泰国刷固件调测、甚至去台湾做光芯片与光学对准，仍判中国原产；主电路板在泰国或马来西亚贴装的，哪怕送回中国贴光收发组件再返当地总装，也判泰国或马来西亚原产。
+  说细点: |
+    一颗高速光收发模块内部主要由两大块组成：一块是焊有数字信号处理芯片（DSP）、微控制器及数百颗阻容元件的主印刷电路板组件（主 PCBA），另一块是负责电光与光电转换的光收发子组件（OSA，含发射组件 TOSA 与接收组件 ROSA）。美国对华加征 301 条款关税是否适用，取决于美国海关认定的“原产地”，而不是发货港或工厂注册地。
+
+    四份已公开的美国海关原产地裁定把正反边界划得非常清楚：
+
+    **两宗判“中国原产”的反例**：
+    ① 新易盛个案（HQ H335829，2025-02-26，涉 100G–800G 收发器与有源光缆）：中国境内做完主电路板表面贴装、光组件贴片打线、整机空白模块装配与冷热循环，运往泰国只做固件烧录、参数调谐、老化、终测与包装。海关认定物理制造与功能骨架已在中国确立，泰国工序未带来名称、特征或用途改变，原产地仍为中国。
+    ② 索尔思台湾个案（N359369，2026-03-17，涉 800G 2×FR4 与 400G DR4/FR4 三款模块）：这宗裁定更严苛——即便光芯片制造、光组件封装及光学对准工序放在台湾进行，只要承载 DSP 与控制电路的主电路板是在中国经表面贴装制成，海关仍认定主电路板是赋予产品本质特征的主导部件（dominant component），台湾工序未改变主电路板最终用途，301 关税项下原产地依旧判为中国。
+
+    **两宗判“非中国原产”的正例**：
+    光迅科技申报的两宗 800G OSFP DR8 裁定（N344720，2025-01-13 判泰国；N358465，2026-02-27 判马来西亚）：主电路板（含美系 DSP 等约 560 颗电子元器件，占全模块超四分之三零件）分别在泰国、马来西亚经锡膏印刷、贴片、回流焊、三维 X 光检测等多道表面贴装工序制成，随后寄回中国贴装硅光发射/接收组件、打线并对准透镜与光纤阵列，最后再运回泰国或马来西亚总装外壳、灌装软件与终测。海关认定泰、马制造的主电路板赋予了产品本质特征，后续中国光路贴装未对其产生实质性转变，故进口美国时原产地分别为泰国、马来西亚，不适用对华 301 关税。
+
+    此外还要分清关税缓冲窗口：美国贸易代表办公室（USTR）于 2026-11-06 公告将既有 178 项对华 301 产品排除延长至美东时间 2027-01-09 23:59；商务部确认第八轮中美经贸磋商将吉隆坡联合安排延期至 2027-01-10，国务院关税税则委员会自 2026-11-10 13:01 起两个月内继续暂停实施 24% 对美加征关税、保留 10%（白宫 2026-02-20 终止部分《国际紧急经济权力法》额外关税的执行令与 301 关税分属不同法源，不可混算）。
+  怎么用它判断: |
+    看到“某光模块厂在东南亚有超级工厂，因此彻底规避美国关税”的说法时，按三步核验：
+      ① 查具体型号的主电路板（含 DSP 的核心 PCBA）表面贴装（SMT）究竟在哪国进行，不能只看光耦合、总装、老化或买地建厂披露；
+      ② 认准每份美国海关裁定末尾的法定限制（19 CFR § 177.9(b)(1)）：裁定仅对申报书所载特定型号与工序事实有效，不等于整座海外工厂或同公司其他批次的通用免税证；
+      ③ 若原产地仍属中国，再逐项核对进口当日有效的美国协调关税表（HTSUS）第 99 章排除编码与美东 2027-01-09 23:59 窗口，缺型号级海关编码时一律标待核（UNKNOWN）。
+  证据:
+  - 谁: 美国海关与边境保护局（U.S. CBP，新易盛 HQ H335829 裁定）
+    原话: In this case, the entirety of the physical manufacturing and assembly of the optical transceiver devices occurs in China. ... Based on the information provided, we find that the country of origin of the subject optical transceiver units is China.
+    出处: CBP CROSS HQ H335829（2025-02-26）·LAW AND ANALYSIS 及 HOLDING
+    锚型: web_snapshot
+    锚:
+      原URL: https://rulings.cbp.gov/api/ruling/H335829
+      存档路径: corpus/web/step5_20261122/compliance/cbp_ruling_H335829.json
+      抓取日期: '2026-11-22'
+      SHA256: 8e268f6c51865bdb9977e9090d969e5a00b83f0dc17245d83c4b7c22f15b30d8
+    说明: 反例1——中国境内做完空白模块物理制造与温循、泰国仅烧录固件调测老化，原产地仍判中国
+  - 谁: 美国海关与边境保护局（U.S. CBP，索尔思台湾 N359369 裁定）
+    原话: In China, the main PCBA is manufactured using surface mount technology. ... The optical sub-assembly (OSA) is manufactured in Taiwan. ... the character of this product is imparted by the main PCBA which is considered the dominant component of this assembly ... the country of origin for purposes of applying trade remedies under Section 301 will be China.
+    出处: CBP CROSS N359369（2026-03-17）·正文工序事实与 Section 301 原产地结论段
+    锚型: web_snapshot
+    锚:
+      原URL: https://rulings.cbp.gov/api/ruling/N359369
+      存档路径: corpus/web/step5_20261122/compliance/cbp_ruling_N359369.json
+      抓取日期: '2026-11-22'
+      SHA256: 6fa2e0ec49195f777b417fafec9576fff9ac2806b26b66fe8dd91a2d82619160
+    说明: 反例2——即便光芯片制造、OSA封装与对准在台湾进行，只要主PCBA在中国SMT制造，301原产地仍判中国
+  - 谁: 美国海关与边境保护局（U.S. CBP，光迅科技 N344720 裁定）
+    原话: The Main Board PCBA contains approximately 560 electrical elements sourced from various countries of origin. ... The character of this product is imparted by the main PCBA which would be considered the dominant component of this assembly. ... the country of origin for marking purposes would be Thailand upon importation into the United States and as such, the Section 301 trade remedy would not be applicable.
+    出处: CBP CROSS N344720（2025-01-13）·Main Board PCBA (Thailand-origin) 及结论段
+    锚型: web_snapshot
+    锚:
+      原URL: https://rulings.cbp.gov/api/ruling/N344720
+      存档路径: corpus/web/step5_20261122/compliance/cbp_ruling_N344720.json
+      抓取日期: '2026-11-22'
+      SHA256: 1a34811ca90f34fe96cbe632fa22e809585780af5bca351718167e01cc266c62
+    说明: 正例1——主PCBA（约560颗元器件含美系DSP）在泰国经多道SMT制成，送中国贴硅光OSA后返泰总装，原产地判泰国
+  - 谁: 美国海关与边境保护局（U.S. CBP，光迅科技 N358465 裁定）
+    原话: Production in Malaysia includes the creation of the PCBA via surface mount technology (SMT). ... the country of origin of this product would be Malaysia upon importation into the United States and as such, the Section 301 trade remedy would not be applicable.
+    出处: CBP CROSS N358465（2026-02-27）·Manufacturing of the Main Board PCBA in Malaysia 及结论段
+    锚型: web_snapshot
+    锚:
+      原URL: https://rulings.cbp.gov/api/ruling/N358465
+      存档路径: corpus/web/step5_20261122/compliance/cbp_ruling_N358465.json
+      抓取日期: '2026-11-22'
+      SHA256: d41856f4adc0dc606d2977bf94b971698e06fd0f3d884e39224ab91d986dff30
+    说明: 正例2——主PCBA在马来西亚经SMT制成，送中国贴OSA后返马来西亚总装测试，原产地判马来西亚（依19 CFR 177.9(b)(1)仅限申报事实）
+  - 谁: 美国贸易代表办公室（USTR）
+    原话: The modifications announced in the annexes to this notice further extend the exclusions through 11:59 p.m. eastern time on January 9, 2027.
+    出处: USTR Notice Extending Section 301 China Exclusions to Jan 2027（2026-11-06）·p. 1 DATES
+    锚型: web_snapshot
+    锚:
+      原URL: https://ustr.gov/sites/default/files/files/Issue_Areas/Enforcement/Section%20301/USTR%20FRN%20Extending%20Section%20301%20China%20FTT%20Exclusions%20to%20Jan%202027.pdf
+      存档路径: corpus/web/step5_20261122/compliance/ustr_20261106_section301_exclusions_to_jan2027.pdf
+      抓取日期: '2026-11-22'
+      SHA256: a80555dd7faa1ee9ba95a38ff31f9e77f2024c3a144770a408ff0bdfa7d101da
+    说明: 既有178项301产品排除的实际海关截止时刻为美东时间2027-01-09 23:59
+  - 谁: 中国商务部美大司负责人、国务院关税税则委员会
+    原话: 中美双方同意在将吉隆坡经贸磋商联合安排延期至2027年1月10日的基础上，继续积极探讨这一事项……自2026年11月10日13时01分起……在2个月内继续暂停实施24%的对美加征关税税率，保留10%的对美加征关税税率。
+    出处: 商务部第八轮磋商成果解读（第八条）及税委会2026-11-09调整对美加征关税公告
+    锚型: web_snapshot
+    锚:
+      原URL: https://www.mofcom.gov.cn/syxwfb/art/2026/art_d9ea01824fc44fd8a29f7dc3f8ca9c72.html
+      存档路径: corpus/web/step5_20261122/compliance/mofcom_2026_8th_round_kuala_lumpur_extension.html
+      抓取日期: '2026-11-22'
+      SHA256: 3963cb6b0c4586da53c62a93b3dac99d5b359c958781d9c52dce89e0b80ae329
+    说明: 双边联合安排延期至2027-01-10（税委会配套公告存档于 gss_mof_20261109_us_tariff_suspension_2m.htm）
+  关联点: [P073, P074, P016, P133]
+  录入日期: '2026-11-22'
+
+- id: KN012
+  格: [MOD1, MOD2, B1]
+  标题: 美国 FCC 设备授权与国会 S.5548 提案边界——分清生效规则、受管制清单与待审法案
+  一句话: |
+    截至 2026 年 11 月，美国联邦通信委员会（FCC）已生效的 26-50 号规则只拦截“采用受管制清单（Covered List）已列名实体所造逻辑硬件组件”的新设备授权，一般商用光模块并未被列入该清单，更不存在所谓“3.2T 禁令”或“65% 美国物料红线”成文法条；参议院 S.5548 法案则仅属委员会待审的联邦政府关键系统远期采购提案。
+  说细点: |
+    市场上常把行政设备授权、受管制清单、国会提案与投行/媒体传闻混成一句“美国禁中国光模块”，回到四类官方一手文本可以逐层拆清：
+
+    **第一层：已于 2026-10-13 生效的 FCC 26-50 最终规则（91 FR 57798，修订 47 CFR § 2.903(b)(2)）**。
+    该条规制的是“含逻辑功能硬件组件”（产生并使用每秒超 9,000 次脉冲且采用数字技术的模块、子组件或集成电路）的新设备授权申请，但触发禁批必须同时满足两项法定前提：一是该逻辑组件由**已被列入 FCC 受管制清单（Covered List）的实体**生产；二是假使该实体生产整台设备，整机原本就会依 § 2.903(a) 被禁止获批。FCC 26-50 原文脚注 245 明确写明，Coherent 与中际旭创等光模块市场主要厂商均不在 Covered List 上；全文检索“3.2T”命中为 0，“65%”仅在同份文件后半段“第三次进一步拟议规则公告（Third FNPRM）”征求意见时援引联邦采购法（48 CFR 25.101(a)(1)）讨论无人机等“外国生产”定义选项时出现 2 次，绝非针对光模块的生效法令。
+
+    **第二层：FCC 受管制清单（Covered List）官方快照（DA 26-1130A1 / DA 26-1203A1）**。
+    核查 2026-10-21 完整受管制清单附录（DA 26-1130A1）及 2026-11-06 条件批准更新公告（DA 26-1203A1，涉及无人机、路由器、先进机器人与电力逆变器四类），全文“transceiver（收发器）”命中均为 0，商用光收发器未被单列为受限品类。
+
+    **第三层：国会参议院 S.5548 提案（2026-09-24 提出）**。
+    S.5548（《2026 年保护国家安全系统免受中国光收发器影响法案》）拟修订 2023 财年国防授权法第 5949 节，禁止美国联邦行政机构为“关键系统”采购特定受限光收发器（非关键系统明确豁免），且法条明文规定禁令在**法案正式成法 5 年后**才生效。国会官方状态 XML（BILLSTATUS）显示，该案自 2026-09-24 宣读两次并转交参议院国土安全与政府事务委员会后，无任何委员会表决或两院通过记录，也不直接约束北美商业云厂商的私营数据中心采购。至于 2026 年 11 月中旬外媒关于北美六家科技企业赴白宫游说及潜在规则起草的报道，在未见联邦公报或 FCC 新签发正式命令前，只能归入政策动向跟踪，不能当作既成法规事实。
+  怎么用它判断: |
+    遇到涉及美国光模块准入的政策消息时，先问三个问题分流定性：
+      ① 引用的文件是已刊登生效的《联邦公报》终局规则（47 CFR 正文），还是仍在征求意见的拟议规则（FNPRM），抑或仅是投行情景推演与媒体匿名信源报道？
+      ② 目标厂商或光模块品类是否真实出现在最新一期 FCC Covered List 官方附录上？（未上榜则不触发 § 2.903(b)(2) 组件禁批。）
+      ③ 若引用国会法案（如 S.5548 或国防授权法条款），管辖对象是“联邦政府/国防部采购”还是“全美私营商业市场”，是否已过两院表决与总统签署，法定过渡期是几年？
+    同时注意把政策传闻与发行人经营事实剥离核验（如景旺电子 P031 已在 2026 半年报披露批量交付 800G、1.6T 光模块印制电路板，不应与 S.5548 传闻混绑）。
+  证据:
+  - 谁: 美国联邦通信委员会（FCC，《联邦公报》91 FR 57798 最终规则）
+    原话: 'DATES: This final rule is effective October 13, 2026. ... § 2.903(b)(2) A logic-bearing hardware component produced by an entity identified on the Covered List pursuant to § 1.50002 of this chapter if—had such entity produced the device itself, rather than just a component—the device would be prohibited from receiving authorization under paragraph (a) of this section.'
+    出处: Federal Register Vol. 91, No. 175（2026-09-11）·p. 57798 DATES 及 p. 57801 47 CFR § 2.903(b)(2)
+    锚型: web_snapshot
+    锚:
+      原URL: https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf
+      存档路径: corpus/web/step5_20261122/compliance/govinfo_91FR57798_2026-18535.pdf
+      抓取日期: '2026-11-22'
+      SHA256: bdb6481a68caf926c5d0285e7971427480250cd67b7dbdbaa00d0e961898b0eb
+    说明: 明确2026-10-13生效的§2.903(b)(2)两项法定触发条件，仅针对Covered List已列名实体生产的逻辑硬件组件
+  - 谁: 美国联邦通信委员会（FCC 26-50 报告与命令及第三次拟议规则）
+    原话: listing the key players in the optical transceiver market, none of which appear on the Covered List ... We seek comment on this option.
+    出处: FCC-26-50A1（2026-07-23）·p. 35 脚注 245 及 p. 68 ¶200
+    锚型: web_snapshot
+    锚:
+      原URL: https://docs.fcc.gov/public/attachments/FCC-26-50A1.pdf
+      存档路径: corpus/web/step5_20261122/compliance/fcc_FCC-26-50A1.pdf
+      抓取日期: '2026-11-22'
+      SHA256: 2cd32b8af0f2f383b08ecb22b9c4359170d78d7e18b639ca6a7c7b272bf849a2
+    说明: 全文核实3.2T零命中，脚注245明言主要光模块厂商不在Covered List上，65%仅出现在拟议规则征求意见段
+  - 谁: FCC 公共安全与国土安全局（DA 26-1130A1 / DA 26-1203A1）
+    原话: COVERED LIST (October 21, 2026) ... Conditional Approval for certain foreign-produced uncrewed aircraft systems (UAS), routers, advanced robotic devices, and power inverters.
+    出处: FCC DA 26-1130A1（2026-10-21 附录A全表）及 DA 26-1203A1（2026-11-06 条件豁免公告 p. 1）
+    锚型: web_snapshot
+    锚:
+      原URL: https://docs.fcc.gov/public/attachments/DA-26-1130A1.pdf
+      存档路径: corpus/web/step5_20261122/compliance/fcc_DA-26-1130A1.pdf
+      抓取日期: '2026-11-22'
+      SHA256: 7fca7e9071c4f1ab9b2e618c10638f96c269e512d7a2c83721b1821ab1eb0f51
+    说明: 截至2026-10-21完整Covered List与2026-11-06增量公告（存档 fcc_DA-26-1203A1.pdf）均未列入一般商用光收发器
+  - 谁: 美国第 119 届国会参议院（S. 5548 提案原文与状态文件）
+    原话: To prohibit Federal procurement of certain optical transceivers ... The prohibitions under subsection (a), as they apply to covered optical transceivers, shall take effect five years after the date of the enactment of the Securing National Security Systems from Chinese Optical Transceivers Act of 2026.
+    出处: GovInfo BILLS-119s5548is.htm（§2）及 BILLSTATUS-119s5548.xml（2026-09-24 Referred To Committee）
+    锚型: web_snapshot
+    锚:
+      原URL: https://www.govinfo.gov/content/pkg/BILLS-119s5548is/html/BILLS-119s5548is.htm
+      存档路径: corpus/web/step5_20261122/compliance/govinfo_BILLS-119s5548is.htm
+      抓取日期: '2026-11-22'
+      SHA256: e0b2e902a0519d1daaac48a71db2adf8462ff4a99abbdf043e1854ec14f8b10a
+    说明: 仅限联邦关键系统采购（非关键系统豁免）、成法5年后生效，且官方XML（存档 govinfo_BILLSTATUS-119s5548.xml）证实仍停留在委员会待审阶段
+  - 谁: 景旺电子（已在账本）
+    原话: 报告期内公司已批量交付 800G、1.6T 光模块 PCB
+    出处: points.csv 已过闸能力点（2026年半年度报告第11页）
+    锚型: ledger_ref
+    锚: P031
+    说明: 发行人半年报法定披露的1.6T印制电路板批量交付事实独立成立，须与S.5548待审提案传闻严格分账
+  关联点: [P031, P073, P074, P133]
+  录入日期: '2026-11-22'
+
+- id: KN013
+  格: [M1, C1, D7, MOD1]
+  标题: 中国两用物项许可与智算互连技术出境合规——分清“管货物许可证”与“管万卡集群技术登记”
+  一句话: |
+    国内出境合规是两条并行的法律轨道：一条管实物货品（如磷化铟衬底、涉特定指标的精密光学镜片，未办两用物项出口许可证直接涉刑责）；另一条管技术转让与授权（商务部、科技部 2026 年第 48 号公告对超万张加速卡集群、双向带宽 ≥800 GB/s 的互连技术征求意见并实施出口前临时登记，不是管单只 800G 光模块的日常货物出口）。
+  说细点: |
+    光通信产业链出境合规不能笼统写成“光电产品全面受限”，必须把《出口管制法》下的两用物项货物许可与《技术进出口管理条例》下的技术出口管理拆开核对：
+
+    **第一条轨道：技术出境管理（商务部、科技部 2026 年第 48 号公告，2026-10-16 发布）**。
+    该公告就修订《中国禁止出口限制出口技术目录》（拟增列人工智能、生物医药、光伏三领域 40 项技术）公开征求意见至 2026-11-15——注意政策阶段是“公开征求意见”，尚未作为正式修订目录颁布；但公告第三节同步要求，自发布之日起至新目录正式实施前，出口附件所列技术（指知识产权转让、境内技术授权境外使用、实控人变更为境外主体等技术贸易行为）须在商务部系统办理**出口前临时登记**，且“已经开始但尚未办结（原文：尚未完成）的出口”也在登记范围内。
+    其中附件 1 人工智能限制出口部分第 11 项（编号 `266507X`，人工智能算力集群技术）控制要点 1 为：“用于大规模智能算力集群的片间或节点间高速互连技术，双向带宽 ≥800 吉字节每秒（GB/s）”，文末注释明确定义“大规模智能算力集群”指**人工智能加速卡总数超过 10,000 张**的运算主体。这里有两个关键数字不能搞混：一是单位为吉字节每秒（`GB/s`，1 字节 = 8 比特，800 GB/s 折合 6,400 Gbps），不是单只 800G（800 Gbps）可插拔光模块的端口速率；二是管控标的是向境外转让或授权万卡集群高速互连技术，而非正常报关销售标准光模块成品。
+
+    **第二条轨道：两用物项实物出口许可（波长光电公诉案与磷化铟衬底出口许可互参）**。
+    只要实物产品落入《两用物项出口管制清单》技术指标，出口每一批货物都必须事先向商务部申领两用物项出口许可证：
+    ① **反面司法实证（光学元件 D7）**：波长光电（`301421`）于 2026-10-08 披露《关于公司收到起诉书的公告》（2026-037），上海市人民检察院第三分院出具沪检三分刑诉〔2026〕176 号起诉书，指控公司及相关人员于 2023 年 8 月至 2025 年 4 月期间未按规定办理两用物项出口许可证，出口涉案光学镜片金额达人民币 `20,108,512.11 元`（约 `2,010.85 万元`），以涉嫌走私国家禁止进出口的货物罪提起公诉（截至披露日处于公诉起诉阶段，尚未审理宣判）。
+    ② **正面经营互参（磷化铟衬底 M1）**：上游激光器与探测器芯片核心衬底磷化铟（InP）受两用物项出口许可管理。云南锗业（`002428`，子公司云南鑫耀对应 `P202`）在 2026-11-10 投资者关系活动记录表中明确披露，云南鑫耀 6 英寸磷化铟晶片海外头部客户在手订单约 1.3 万片（合计约 3 亿元人民币），“目前，已有部分订单取得出口许可，并处于持续交付中”。这说明对受管制上游材料与精密光学件而言，“签下海外订单”与“拿到商务部出口许可证实现合规出货”之间隔着一道硬性行政许可闸门。
+  怎么用它判断: |
+    评估国内出口管制对一家光通信公司的影响时，按以下三条清单核对：
+      ① 先分清交易性质是“卖硬件货品”还是“向境外做技术转让/知识产权授权/跨境实控人变更”——第 48 号公告 `266507X` 管的是万卡集群（>10,000 张加速卡）且双向带宽 ≥800 GB/s 的高速互连技术出境登记，不能直接套用到普通 800G 光模块成品买卖；
+      ② 对磷化铟衬底（M1）、碲化镉/锗材料、特定指标激光器（C1）与精密光学镜片（D7）等硬件出口，不能只看在手订单金额，必须核验公司是否披露“取得两用物项出口许可证”及实际报关交付节奏；
+      ③ 遇到涉两用物项刑事或行政案件披露（如波长光电案），严格锁定公告载明的诉讼阶段（公诉起诉 vs 生效判决）与涉案期间，不得在缺管制编码和判决书前外推为全行业普适禁令。
+  证据:
+  - 谁: 中国商务部、科技部（2026 年第 48 号公告正文）
+    原话: 根据《中华人民共和国对外贸易法》和《中华人民共和国技术进出口管理条例》，商务部、科技部拟修订《中国禁止出口限制出口技术目录》，增列部分人工智能、生物医药、光伏技术。经批准，现向社会公开征求意见，并同步对相关技术实施出口前登记管理。
+    出处: 商务部 科技部公告2026年第48号（2026-10-16）·导语及第三节出口前登记要求
+    锚型: web_snapshot
+    锚:
+      原URL: https://www.mofcom.gov.cn/zcfb/dwmygl/art/2026/art_61446ab4beee4f63973d4d0ab3097648.html
+      存档路径: corpus/web/step5_20261122/compliance/mofcom_most_2026_no48_export_tech_catalog.html
+      抓取日期: '2026-11-22'
+      SHA256: 55b5bf8c75ce9a65ff97f496f79f461e87cac78c8891553f85e51e5b550e2325
+    说明: 核实政策处于公开征求意见阶段（2026-10-16至11-15），并同步对技术转让/授权出境实施出口前临时登记
+  - 谁: 中国商务部、科技部（2026 年第 48 号公告附件 1 征求意见稿）
+    原话: 266507X 人工智能算力集群技术：1.用于大规模智能算力集群的片间或节点间高速互连技术，双向带宽≥800吉字节每秒（GB/s）。……注：“大规模智能算力集群”指人工智能加速卡总数超过10,000张的运算主体。
+    出处: 2026年第48号公告附件1《拟列入目录的技术范围（征求意见稿）.wps》·一、人工智能限制出口部分第11项
+    锚型: web_snapshot
+    锚:
+      原URL: https://www.mofcom.gov.cn/api-gateway/jpaas-web-server/front/document/download?fileUrl=YW5UzzlvCwcM%2FNHHX%2FtT6KYc7i4iYCs13RxyX1cYsF7Mi050tv2zWwJDAqyqUOFf3lPQeAoPgP%2BrmQMGF7Tta7RdRW1C2hni5Ufl7eigFU2aoR9BIV7bpVR%2BwDBnd46wm5m7QVY2Mj%2FXPJaIbSdBzxKM6WqPb1yMuUzPhfLWixM%3D&fileName=1.%E6%8B%9F%E5%88%97%E5%85%A5%E3%80%8A%E4%B8%AD%E5%9B%BD%E7%A6%81%E6%AD%A2%E5%87%BA%E5%8F%A3%E9%99%90%E5%88%B6%E5%87%BA%E5%8F%A3%E6%8A%80%E6%9C%AF%E7%9B%AE%E5%BD%95%E3%80%8B%E7%9A%84%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E3%80%81%E7%94%9F%E7%89%A9%E5%8C%BB%E8%8D%AF%E3%80%81%E5%85%89%E4%BC%8F%E6%8A%80%E6%9C%AF%E8%8C%83%E5%9B%B4%EF%BC%88%E5%BE%81%E6%B1%82%E6%84%8F%E8%A7%81%E7%A8%BF%EF%BC%89.wps
+      存档路径: corpus/web/step5_20261122/compliance/mofcom_most_2026_no48_attachment1.wps
+      抓取日期: '2026-11-22'
+      SHA256: 213158bbda29e17f386f25acbf8bd45a746b5da9dba5fe57a64c2b1827cefbcd
+    说明: 落盘WPS原件并提取UTF-8旁车核实，800 GB/s与>10,000张加速卡系万卡智算集群互连技术指标而非单只800Gbps模块速率
+  - 谁: 商务部新闻发言人（出口技术目录修订答记者问）
+    原话: （参见第48号公告第三节同文规定：自本公告发布之日起，至目录正式修订并实施之日止，技术出口经营者在出口附件所列技术前应当登记，在途未结技术出口亦纳入登记范围）
+    出处: 商务部中国出口管制信息网·就修订出口技术目录答记者问（2026-10）
+    锚型: url
+    锚: https://cms.exportcontrol.mofcom.gov.cn/article/gndt/202610/1329.html
+    说明: 子站域名TLS证书主机名不匹配，严守不绕证书校验规则按url锚著录，核心登记范围条款已由上方www.mofcom.gov.cn第48号公告原件逐字印证
+  - 谁: 南京波长光电科技股份有限公司（301421）
+    原话: 1. 案件所处的诉讼阶段：公诉起诉阶段……3. 涉案的金额：人民币 2,010.85 万元（2023 年 8 月至 2025 年 4 月）……被告单位及被告人出口国家禁止进出口货物（光学镜片）数额达人民币 20,108,512.11 元。上海市人民检察院第三分院依法审查后认为，被告单位及被告人于 2023 年 8 月至 2025 年 4 月期间，未按规定办理两用物项出口许可证
+    出处: 关于公司收到起诉书的公告（公告编号：2026-037，沪检三分刑诉〔2026〕176号）
+    锚型: local_file
+    锚: corpus/ir/301421/301421_2026-10-08_关于公司收到起诉书的公告_1225597511.PDF.txt#L17..78
+    说明: 精确核实\n行号#L17(公诉起诉阶段)、#L21(2,010.85万元)、#L34(案号)与#L68..72(20,108,512.11元及未按规定办理两用物项出口许可证)
+  - 谁: 云南锗业（002428，控股子公司云南鑫耀）
+    原话: 公司自 2026 年 6 月起与下游客户签订了多份 6 英寸磷化铟晶片正式销售合同。截至目前，云南鑫耀 6 英寸磷化铟晶片在手订单约 1.3 万片，金额合计约 3 亿元人民币，客户主要为海外头部下游厂商。目前，已有部分订单取得出口许可，并处于持续交付中。
+    出处: 2026年11月10日投资者关系活动记录表·问答第五题
+    锚型: local_file
+    锚: corpus/ir/002428/002428_2026-11-10_2026年11月10日投资者关系活动记录表.pdf.txt#L53..56
+    说明: 与波长光电无证出口涉诉案形成正向互参——受两用物项管制的磷化铟衬底对海外交付须分批申领出口许可证
+  - 谁: 云南鑫耀半导体材料有限公司（已在账本）
+    原话: 公司子公司云南鑫耀半导体材料有限公司生产的化合物半导体材料砷化镓晶片（衬底）、磷化铟晶片（衬底）可用于生产垂直腔面发射激光器（VCSEL）、大功率激光器、光通信用激光器和探测器等光电子器件
+    出处: points.csv 已过闸能力点
+    锚型: ledger_ref
+    锚: P202
+  关联点: [P202]
+  录入日期: '2026-11-22'
+
+- id: KN014
+  格: [C5, EQ7, MOD1, MOD2]
+  标题: 美国 BIS 出口管制与欧盟 EED 能效指令——逐笔四要素审查与数据中心 PUE 报送，都不是光模块一刀切禁购令
+  一句话: |
+    美国商务部工业与安全局（BIS）《出口管理条例》（EAR）并无“凡光模块总带宽达某速率即禁运电芯片”的统一红线，而是按物项编码、目的地、最终用途和最终用户四要素逐笔判定许可；欧盟《能效指令》（EED）现行生效的则是装机 IT 功率 ≥500kW 数据中心的年度能效报送与 PUE 评级程序，最低绩效标准尚在公开征询，并不存在“法定强制采购 LPO/NPO 光模块”的条款。
+  说细点: |
+    在跨国供应链与下游合规解读里，最常见的两类过度外推是把“美国芯片出口管制”说成按模块速率一刀切，以及把“欧盟数据中心能效披露”直接等同于强制采购特定低功耗光模块。核对美欧一手法规文本可见：
+
+    **一、美国 BIS EAR § 734.9（外国直接产品规则 FDPR）与 Part 744 的四要素逐笔机制**。
+    `15 CFR § 734.9` 导言明确指出：即便某一境外制造物项因使用了受管控软件或设备而落入 EAR 管辖范围（subject to the EAR），“并非所有涉及受 EAR 管辖境外制造物项的交易都需要许可证”，必须针对具体交易分别评估四项要素——**物项分类编码（item classification，即 ECCN）、目的地（destination）、最终用途（end-use）与最终用户（end-user）**。`Part 744` 下属的 `§ 744.23`（特定超级计算机与半导体制造最终用途）、`§ 744.24`（受关注目的地与终端用户的数据中心最终用途）及补编 4 实体清单（Entity List），均围绕特定算力芯片/设备技术参数与受限主体名单运作。对光模块上游高速数字信号处理芯片（DSP，C5）及高速误码仪/采样示波器（EQ7）而言，合规边界取决于具体芯片或仪表的 ECCN 分类及买方是否触碰实体清单或受限超算/数据中心最终用途，法规中并不存在以“800G/1.6T 光模块总速率”直接划定的普遍禁运红线。
+
+    **二、欧盟《能效指令》（EED 2023/1791）第 12 条与数据中心 PUE 法规的三阶段分界**。
+    ① **已生效的年度信息报送义务**：指令 `(EU) 2023/1791` 第 12 条与欧委会授权法规 `(EU) 2024/1364` 要求已装机信息技术（IT）功率需求达到 `500 kW 及以上`的数据中心向欧洲数据库报送年度能效数据，并按设施总能耗除以 IT 设备能耗计算电能利用效率（`PUE = E_DC / E_IT`），同时包含水利用效率（WUE）、能源再利用系数等指标——这是**强制报送数据**，不是全欧统一淘汰红线。
+    ② **审查中的评级标签程序**：欧委会于 2026 年 9 月通过的通用评级授权法规文本 `C(2026) 3472` 设立 PUE 与 WUE 评级分档，按欧委会 2026-09-22 官方通稿正处于欧洲议会与理事会 **2 个月审查期**，首批单个数据中心可持续性标签预计在 **2027 年**展示。
+    ③ **尚在征询的最低能效绩效标准（MPS）**：欧委会能源总司于 `2026-09-21` 启动数据中心最低绩效标准公开征询（反馈截止 `2026-12-14`），正式立法提案计划在 **2027 年第二季度**才提出。因此，“机房降功耗压力利好线性直驱（LPO）、近封装光学（NPO）或高能效硅光方案”属于合理的工程与商业推论，但绝不能改写成“欧盟指令已强制考核 PUE 达标线并法定强制采购某类光模块”。
+  怎么用它判断: |
+    读到涉及美方芯片断供或欧方绿色法规的研报主张时，按两条标尺纠偏：
+      ① 涉及 BIS EAR 管制 DSP 电芯片（C5）或测试仪表（EQ7）时，必须追问具体型号的 ECCN 编码、收货方是否在 Entity List 上、终端机房是否触发 § 744.23/§ 744.24 特定最终用途；缺失这四要素的笼统“高速带宽禁令”一律降级为待核背景；
+      ② 涉及欧盟 EED / PUE 政策时，严格区分“≥500kW 数据中心年度数据报送（已生效）”“PUE/WUE 评级标签（议会审查中，预计 2027 年贴标）”与“最低能效准入门槛（公开征询中，拟 2027Q2 提案）”三个阶段，并把“降功耗需求拉动 LPO/NPO 选型”标为工程经济推论而非法律强制义务。
+  证据:
+  - 谁: 美国商务部工业与安全局（BIS，15 CFR Part 734 § 734.9）
+    原话: If a foreign-produced item is subject to the EAR, then you should separately determine the license requirements that apply to that foreign-produced item (e.g., by assessing the item classification, destination, end-use, and end-user in the relevant transaction). Not all transactions involving foreign-produced items that are subject to the EAR require a license.
+    出处: BIS Export Administration Regulations Part 734·§ 734.9 Foreign-Direct Product (FDP) Rules 导言
+    锚型: web_snapshot
+    锚:
+      原URL: https://www.bis.gov/regulations/ear/734
+      存档路径: corpus/web/step5_20261122/compliance/bis_ear_734.html
+      抓取日期: '2026-11-22'
+      SHA256: 680e27fb3aa3fe4f806c220188ff36adf5604b3cdbae6b88f6d6f0ddec449214
+    说明: 法规原文证实FDPR许可要求须按物项分类、目的地、最终用途与最终用户逐笔判定，并非统一带宽禁线
+  - 谁: 美国商务部工业与安全局（BIS，15 CFR Part 744）
+    原话: 'Section 744.23 sets forth restrictions on exports, reexports, and transfers (in-country) for certain "supercomputer" and semiconductor manufacturing end use. Section 744.24 sets forth restrictions on exports, reexports, and transfers (in-country) for an item that will be or is intended to be used in a data center for end users and destinations of concern.'
+    出处: BIS Export Administration Regulations Part 744·§§ 744.1, 744.23, 744.24 及 Supplement No. 4 (Entity List)
+    锚型: web_snapshot
+    锚:
+      原URL: https://www.bis.gov/regulations/ear/744
+      存档路径: corpus/web/step5_20261122/compliance/bis_ear_744.html
+      抓取日期: '2026-11-22'
+      SHA256: 4081a09c0d244771b7ed8290226b7acf1ad94c74e70433525516ee20b4c933dd
+    说明: 核实超算、半导体制造、特定受关注数据中心最终用途与实体清单的定向审查框架
+  - 谁: 欧洲议会与欧盟理事会（《能效指令》Directive (EU) 2023/1791）
+    原话: （法条定界）对已装机信息技术（IT）功率需求至少 500 kW 的数据中心实施年度可持续发展指标监测与公开报送（a power demand of the installed information technology (IT) of at least 500kW）。
+    出处: Directive (EU) 2023/1791·Article 12(1)–(5) 及 Annex VII
+    锚型: url
+    锚: https://eur-lex.europa.eu/eli/dir/2023/1791/oj/eng
+    说明: EUR-Lex对脚本直连返回HTTP 202 WAF挑战壳，严守不绕反爬规则按url锚著录
+  - 谁: 欧盟委员会（授权法规 Delegated Regulation (EU) 2024/1364）
+    原话: （法条定界）建立欧盟数据中心能效通用报送方案，附录 III 规定以数据中心总能耗除以信息技术设备能耗计算电能利用效率（PUE = E_DC / E_IT），并同步定义 WUE、ERF、REF 指标。
+    出处: Commission Delegated Regulation (EU) 2024/1364·Arts. 1, 3 及 Annexes II–IV
+    锚型: url
+    锚: https://eur-lex.europa.eu/eli/reg_del/2024/1364/oj/eng
+    说明: EUR-Lex返回HTTP 202 WAF挑战壳（同见 C(2026)3472），严守不绕反爬规则按url锚著录，并由下方欧委会两篇HTTP 200官稿交叉印证
+  - 谁: 欧盟委员会（数据中心通用评级授权法规官方通稿，2026-09-22）
+    原话: Delegated Regulation establishing the common rating scheme is now subject to 2-month scrutiny period by the European Parliament and the Council before entering into force. ... The first sustainability labels for individual data centres are expected to be displayed in 2027.
+    出处: European Commission News（2026-09-22）·Next steps（配套 C(2026) 3472 final）
+    锚型: web_snapshot
+    锚:
+      原URL: https://cyprus.representation.ec.europa.eu/news/commission-enhances-energy-efficiency-and-sustainability-data-centres-eu-2026-09-22_en
+      存档路径: corpus/web/step5_20261122/compliance/ec_data_centres_rating_scheme_20260922.html
+      抓取日期: '2026-11-22'
+      SHA256: f172147165cb59dbef6feb8f8ff68ab3f3148d841e134de955f9645bf732d308
+    说明: 证实PUE/WUE通用评级方案尚在2个月立法审查期、预计2027年首次贴标
+  - 谁: 欧盟委员会能源总司（数据中心最低能效绩效标准公开征询，2026-09-21）
+    原话: The feedback received will support the Commission’s preparatory work for the legislative proposal planned for the second quarter of 2027. Interested parties are invited to submit their input by 14 December 2026.
+    出处: European Commission DG ENER News（2026-09-21）·正文首段
+    锚型: web_snapshot
+    锚:
+      原URL: https://energy.ec.europa.eu/news/minimum-performance-standards-data-centres-europe-public-consultation-launched-2026-09-21_en
+      存档路径: corpus/web/step5_20261122/compliance/ec_energy_mps_consultation_20260921.html
+      抓取日期: '2026-11-22'
+      SHA256: cc78a6b531b9f43dc3169f79051ed600a7653caa3f79ac6ee2fe251f3e9f880b
+    说明: 证实欧盟数据中心最低能效标准仍处立法前公开征询阶段（拟2027Q2提案），现行法规不构成特定光模块架构强制采购令
+  关联点: [P073, P074, P209]
+  录入日期: '2026-11-22'
 
 # 跨体系 Why 关联（ADR-0009）：连接技术路线体系与物理知识体系的有类型、有条件、有证据因果链。
 # 首版为空是允许状态；页面显示 4 个待研究桥问题和"尚无已验证 Why 关联"。

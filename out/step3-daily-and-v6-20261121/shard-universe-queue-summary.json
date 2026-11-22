@@ -1,0 +1,207 @@
+{
+  "worker": "carbon-universe-queue",
+  "workpack_id": "OPTICAL-STEP3-DAILY-AND-V6-20261121",
+  "generated_date": "2026-11-21",
+  "annual_symlink_expansion": {
+    "corpus_annual_is_top_symlink": false,
+    "corpus_annual_is_real_dir": true,
+    "per_company_symlinks_verified": 463,
+    "workflow_rehearsal_annual_count": 463
+  },
+  "v6_annual_corpus": {
+    "688808_files": [
+      "corpus/annual/688808/688808_联讯仪器_2026_2026年半年度报告.pdf",
+      "corpus/annual/688808/688808_联讯仪器_2026_2026年半年度报告.pdf.txt",
+      "corpus/annual/688808/688808_联讯仪器_2026_招股说明书.pdf",
+      "corpus/annual/688808/688808_联讯仪器_2026_招股说明书.pdf.txt"
+    ],
+    "688808_h1_downloaded": true,
+    "002428_pdfs": [
+      "corpus/annual/002428/002428__em_云南锗业_em__2025_2025年年度报告.pdf",
+      "corpus/annual/002428/002428__em_云南锗业_em__2024_2024年年度报告.pdf"
+    ],
+    "002957_included_in_frozen": true,
+    "002957_pdfs": [
+      "corpus/annual/002957/002957/002957__em_科瑞技术_em__2025_2025年年度报告.pdf"
+    ]
+  },
+  "v6_universe_and_entities": {
+    "frozen_unique_count": 466,
+    "frozen_total_rows": 466,
+    "v6_added_codes": [
+      "688808",
+      "002428",
+      "002957"
+    ],
+    "observation_added": [
+      "微见智能",
+      "镭神技术"
+    ],
+    "entity_nodes_total": 173,
+    "entity_nodes_in_frozen": 44,
+    "refs_file_count": 8
+  },
+  "in_memory_gate_checks": {
+    "missing_annual_reports_count": 0,
+    "participation_total_universe": 466,
+    "participation_confirmed_count": 93,
+    "participation_pending_count": 15,
+    "participation_uncovered_count": 0,
+    "688808_conclusion": "已确认参与",
+    "002428_conclusion": "已确认参与",
+    "002957_conclusion": "已确认参与"
+  },
+  "daily_review_triage": {
+    "schema_version": 1,
+    "as_of_date": "2026-11-21",
+    "kerui_002957_in_frozen_universe": true,
+    "overseas_staging": {
+      "snapshot_count": 65,
+      "snapshot_start_date": "2026-09-04",
+      "snapshot_end_date": "2026-11-21",
+      "unique_disclosure_candidates_all": 533,
+      "unique_claim_candidates_all": 344,
+      "unique_event_candidates_all": 233,
+      "active_in_latest_rolling_window": 111,
+      "slid_out_of_rolling_window_total": 422,
+      "all_snapshots_95_5_split": {
+        "total_unique_disclosures": 533,
+        "auto_folded_noise_count": 508,
+        "auto_folded_noise_pct": 95.31,
+        "triggered_state_transition_count": 25,
+        "triggered_state_transition_pct": 4.69,
+        "noise_breakdown": {
+          "award_ranking_hr_csr": 32,
+          "investor_lawsuit_spam": 4,
+          "ir_calendar_or_index_page": 14,
+          "non_optical_corporate_line": 19,
+          "routine_pr_without_state_transition": 439
+        },
+        "trigger_breakdown": {
+          "T1_lifecycle_shift": 17,
+          "T2_supply_relationship_or_ma": 3,
+          "T3_commitment_verification": 3,
+          "T4_universe_blindspot": 2
+        }
+      },
+      "sep_to_nov_2026_published_95_5_split": {
+        "total_unique_disclosures": 504,
+        "auto_folded_noise_count": 479,
+        "auto_folded_noise_pct": 95.04,
+        "triggered_state_transition_count": 25,
+        "triggered_state_transition_pct": 4.96,
+        "noise_breakdown": {
+          "award_ranking_hr_csr": 32,
+          "investor_lawsuit_spam": 4,
+          "ir_calendar_or_index_page": 12,
+          "non_optical_corporate_line": 13,
+          "routine_pr_without_state_transition": 418
+        },
+        "trigger_breakdown": {
+          "T1_lifecycle_shift": 17,
+          "T2_supply_relationship_or_ma": 3,
+          "T3_commitment_verification": 3,
+          "T4_universe_blindspot": 2
+        }
+      },
+      "slid_out_triggered_rescued_count": 21,
+      "slid_out_triggered_rescued_dc_ids": [
+        "DC_286D42235853",
+        "DC_3841FCD60F32",
+        "DC_425841A754F4",
+        "DC_430D7977BA22",
+        "DC_4A9C0B800414",
+        "DC_4B0F75924A65",
+        "DC_501FC1F61B62",
+        "DC_535D459775E6",
+        "DC_573401DC530B",
+        "DC_66D313EC13F4",
+        "DC_741EFE5BF486",
+        "DC_7B475AB0DF5A",
+        "DC_7CED25D6E66F",
+        "DC_839378F484E4",
+        "DC_9B16CE64F492",
+        "DC_A038F7C2DD93",
+        "DC_BF393C7C7BE8",
+        "DC_D527C3DC5ED2",
+        "DC_DC1ABE67C305",
+        "DC_E1BEF90B2480",
+        "DC_FD32C455D502"
+      ]
+    },
+    "historical_backfill_20261109": {
+      "source_file": "out/daily-backfill-review-20261109/review.json",
+      "total_rows": 3063,
+      "by_prefix": {
+        "D-": 2134,
+        "G-": 268,
+        "O-": 661
+      },
+      "by_stream": {
+        "Gemini 合规": 37,
+        "国内": 2134,
+        "海外": 661,
+        "补充": 231
+      },
+      "by_disposition": {
+        "仅作线索": 2604,
+        "待定位": 183,
+        "待逐条复核": 259,
+        "缺锚点": 17
+      },
+      "compliance_audit_g_items": 37,
+      "review_disposition_total": 259,
+      "overseas_o_review_rows": 29,
+      "overseas_o_deduplicated_disclosures": 14,
+      "domestic_d_review_rows": 230,
+      "domestic_d_deduplicated_groups": 201,
+      "domestic_d_non_mechanical_groups": 166,
+      "bespoke_high_signal_review_rows": 31,
+      "auto_folded_clue_or_mechanical_rows": 2839,
+      "auto_folded_pct": 92.69
+    },
+    "persistent_queue": {
+      "total_rows": 55,
+      "by_status": {
+        "ingested_to_kb": 15,
+        "pending_filing_anchor": 8,
+        "pending_primary_text": 32
+      },
+      "by_priority": {
+        "P0": 23,
+        "P1": 21,
+        "P2": 11
+      },
+      "by_trigger_type": {
+        "T1_lifecycle_shift": 33,
+        "T2_supply_relationship_or_ma": 9,
+        "T3_commitment_verification": 5,
+        "T4_universe_blindspot": 8
+      },
+      "all_queue_ids_unique": true,
+      "all_pending_have_verification_gate": true,
+      "all_ingested_have_kb_target_ref": true
+    }
+  },
+  "output_sha256": {
+    "corpus/_frozen.csv": "bb8f47269c5a204d9f8f51c31e73f83f96f761d6e7ceda655d07f9f137616645",
+    "corpus/annual/002428/002428__em_云南锗业_em__2024_2024年年度报告.pdf": "085697c548d158819c0e053e881e56869b892a48bf7db0b27f605b70ee98a98c",
+    "corpus/annual/002428/002428__em_云南锗业_em__2024_2024年年度报告.pdf.txt": "ae553bcc7c6c03dd09a00ad463c8031c58520207c3e70c300d05f5cebdf05b45",
+    "corpus/annual/002428/002428__em_云南锗业_em__2025_2025年年度报告.pdf": "398ab0319ed700e2db48d7329cd7181d70573b6c1dba46f24890c71c2844e2ad",
+    "corpus/annual/002428/002428__em_云南锗业_em__2025_2025年年度报告.pdf.txt": "5e0949d7f6c48903e83a6c24cb9ba59a0961443a8c08a0dd55a0a4c44a4af722",
+    "corpus/annual/002957/002957/002957__em_科瑞技术_em__2025_2025年年度报告.pdf": "0449ea0b1f93c5812c28013c324c79d89eb730fd828bf87e90b8c17f41106d74",
+    "corpus/annual/002957/002957/002957__em_科瑞技术_em__2025_2025年年度报告.pdf.txt": "94e70f01557db7197520fe109babfa1df9e8d5549950d57c879b24d00d54c772",
+    "corpus/annual/688808/688808_联讯仪器_2026_2026年半年度报告.pdf": "27741390e476ecab273149af3ce46803f832adb28e6f470f90dbbe8efad11fd7",
+    "corpus/annual/688808/688808_联讯仪器_2026_2026年半年度报告.pdf.txt": "64276fd33b4f6a9342f620d973478ac98ba0ec7f1294fce2362ee63e13db4c13",
+    "corpus/annual/688808/688808_联讯仪器_2026_招股说明书.pdf": "e2d523a4eeede471780888c5bb8d9d15539cede9110eead51d8918910252da8f",
+    "corpus/annual/688808/688808_联讯仪器_2026_招股说明书.pdf.txt": "5f27213b0f8e45f5d3f657e4700f68f974a7cc39186cb2de45ed36e7ac0f89b1",
+    "corpus/daily_review/README.md": "d30c301a5841e55ddd1cdb563dc0a7ceb0680b35a47af15ac4b20565f0207093",
+    "corpus/daily_review/review_queue.csv": "4e061d8fcb2d06f482d198cd32a4d6e5ec34e9943ff022f664cdc3122084ffaa",
+    "corpus/daily_review/sync_daily_queue.py": "409bf567a113e8b66dfea07382047645d66dfdad7a1a54d1c441456c4aaf59ad",
+    "corpus/daily_review/triage_stats.json": "6cdf53ae3993afaaeab633e485f349d018e1fbb21dda5da505e76edc3d1ad55e",
+    "corpus/salvaged/entity_nodes.csv": "36f972a0a9064d5f65bdf2a276f4fdedb5deca2fd2d90ac32bc30732cbd32915",
+    "participation.py": "acedcbef313273d27aa8d338d3bcb187e79bcff6d8962dda062fd984bc99194f",
+    "refs/entity-registry.yaml": "4efc1c8302daf98eb2e76e23ad75e9e5ca80dcbae4e69ff64b6d2a9a80642ffc",
+    "tree.yaml": "f82fe52a644a414ac67916d5e4679f555e7b375cfbff8917bbab54cc6ae93c50"
+  }
+}

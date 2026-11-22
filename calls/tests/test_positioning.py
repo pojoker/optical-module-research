@@ -465,10 +465,10 @@ class PositioningTest(unittest.TestCase):
         projection = self.projection()
         match = next(m for m in projection["requirement_matches"] if m["point_id"] == "P074")
         self.assertEqual(match["requirement_as_of"], "2026-08-04")
-        self.assertEqual(match["point_as_of"], "2026-07-25")
+        self.assertEqual(match["point_as_of"], "2026-11-21")
         block = render_positioning_block(projection, "T002")
         self.assertIn("requirement as of 2026-08-04", block)
-        self.assertIn("point as of 2026-07-25", block)
+        self.assertIn("point as of 2026-11-21", block)
         self.assertIn("cell_only", block)
 
     # ---- 13. deterministic derivation ----

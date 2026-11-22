@@ -1,0 +1,1055 @@
+{
+  "shard": "Step 4 Worker 2 (carbon-s4-points-triage)",
+  "workpack_id": "OPTICAL-STEP4-BACKEND-FINAL-CLOSURE-20261122",
+  "checked_date": "2026-11-22",
+  "script": "out/step4-backend-final-closure-20261122/remediate_points_and_domestic_drq.py",
+  "points_remediation_summary": {
+    "sha256": "1fff1f61e0cd2d1b7fcd0c831b14271be7bcbe0a88aa862a3f216c6992b766fd",
+    "total_rows": 272,
+    "added_point_ids": [
+      "P277"
+    ],
+    "pure_http_anchor_rows": 193,
+    "leading_http_multi_anchor_rows": 20,
+    "leading_corpus_anchor_rows": 59,
+    "bare_text_anchor_rows": 0,
+    "markdown_wrapped_anchor_rows": 0,
+    "verified_corpus_lf_line_spans": 63,
+    "p074_as_of_preserved": "2026-11-21"
+  },
+  "triage_adjudication_summary": {
+    "sha256": "c85dec5cc3cadbc933b72c1bb2eb62668a8ab9865348b33c272dbf6e97a0144e",
+    "total_rows": 569,
+    "adjudicated_items": {
+      "凯盛科技客户京瓷+M3+互查矩阵": "驳回-非本格",
+      "中润光学+D6+2025年报": "驳回-非本格",
+      "FIT+ANY+FIT_2025_Annual_Report.pdf": "待判",
+      "天准科技+EQ6+688003__em_天准科技_em__2025_2025年年度报告.pdf": "已入点"
+    },
+    "remaining_pending_total": 12,
+    "remaining_pending_scan_qd": [
+      "三安光电+M2b+2025年报"
+    ]
+  },
+  "newly_archived_cninfo_ir_files": [
+    {
+      "drq_id": "DRQ0036",
+      "code": "000988",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225647394.PDF",
+      "local_pdf": "corpus/ir/000988/000988_2026-10-30_2026年10月30日投资者关系活动记录表.pdf",
+      "local_txt": "corpus/ir/000988/000988_2026-10-30_2026年10月30日投资者关系活动记录表.pdf.txt",
+      "pdf_sha256": "a55b6ace27770d71969c89fe4d8e6c22c0786ff5c89973f5c59c4c79b0249d11",
+      "txt_sha256": "afe1ecc76070ba9a6311e394b13593d86629f66206612e5db44b9ac4bb09abcb",
+      "txt_line_count_lf": 246
+    },
+    {
+      "drq_id": "DRQ0035",
+      "code": "603228",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225493416.PDF",
+      "local_pdf": "corpus/ir/603228/603228_2026-08-22_2026年半年度报告.pdf",
+      "local_txt": "corpus/ir/603228/603228_2026-08-22_2026年半年度报告.pdf.txt",
+      "pdf_sha256": "0e6a88e8e86d9d2fa81247260d67e5aefd903df0a312869ea0bfda5cf5a122d4",
+      "txt_sha256": "fbc6b2f3d1e077120c9cc62a66ab13c38a80c8bd8c787eef34f8fd71d7220b9c",
+      "txt_line_count_lf": 8927
+    },
+    {
+      "drq_id": "DRQ0047",
+      "code": "002428",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-11-18/1225676124.PDF",
+      "local_pdf": "corpus/ir/002428/002428_2026-11-18_关于增加高品质磷化铟单晶片建设项目投资额的公告.pdf",
+      "local_txt": "corpus/ir/002428/002428_2026-11-18_关于增加高品质磷化铟单晶片建设项目投资额的公告.pdf.txt",
+      "pdf_sha256": "3119cfb6389d4317b7bad519947dfa56b1c433b0c875fda370b6dac74ee9dba1",
+      "txt_sha256": "c3b2dc94146d282da21fe64ab0ae431ed54ea71a9c85d5ade358515f4e5bfa46",
+      "txt_line_count_lf": 73
+    },
+    {
+      "drq_id": "DRQ0047",
+      "code": "002428",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-11-10/1225665965.PDF",
+      "local_pdf": "corpus/ir/002428/002428_2026-11-10_2026年11月10日投资者关系活动记录表.pdf",
+      "local_txt": "corpus/ir/002428/002428_2026-11-10_2026年11月10日投资者关系活动记录表.pdf.txt",
+      "pdf_sha256": "226fba63ad662339ccdc5d9abde213fc7d12d3b22b11368f38a525354c308874",
+      "txt_sha256": "a4e36c299cf28a133f8369967172fe2bab867fcb024597ca30d5b26f5a0c75a1",
+      "txt_line_count_lf": 100
+    },
+    {
+      "drq_id": "DRQ0051",
+      "code": "688003",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225482975.PDF",
+      "local_pdf": "corpus/ir/688003/688003_2026-08-20_2026年半年度报告.pdf",
+      "local_txt": "corpus/ir/688003/688003_2026-08-20_2026年半年度报告.pdf.txt",
+      "pdf_sha256": "01f0933cd91d104fcfd5f7f3afd1cdf7d939956670640547675da063601a312b",
+      "txt_sha256": "64ac4f1683588254984067d563fbfccf3e617fe932f8fbc16cf8bcb98cdd862d",
+      "txt_line_count_lf": 10697
+    },
+    {
+      "drq_id": "DRQ0053",
+      "code": "688135",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-11-14/1225671802.PDF",
+      "local_pdf": "corpus/ir/688135/688135_2026-11-14_关于签署股权收购协议的公告.pdf",
+      "local_txt": "corpus/ir/688135/688135_2026-11-14_关于签署股权收购协议的公告.pdf.txt",
+      "pdf_sha256": "6c1269029ad3c969bcd8c38a679d3282fcaf91e28345d2aed5d40859f66bdbb7",
+      "txt_sha256": "b352d850a141d7760e4e19fc8059ce5178322942ff1009879d13400563a5b315",
+      "txt_line_count_lf": 700
+    }
+  ],
+  "cninfo_api_queries": {
+    "002384": {
+      "checked_date": "2026-11-22",
+      "query_window": "2026-08-01~2026-11-22",
+      "stock_param": "002384,9900011647",
+      "fulltext_status": "ok_json",
+      "fulltext_total": 37,
+      "fulltext_top_announcements": [
+        {
+          "date": "2026-11-12",
+          "title": "关于召开2026年度第三次临时股东会的通知",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-12/1225667010.PDF"
+        },
+        {
+          "date": "2026-11-07",
+          "title": "H股公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-07/1225662600.PDF"
+        },
+        {
+          "date": "2026-11-06",
+          "title": "第七届董事会第七次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-06/1225660616.pdf"
+        },
+        {
+          "date": "2026-11-06",
+          "title": "关于公司股份回购事项的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-06/1225660615.pdf"
+        },
+        {
+          "date": "2026-11-06",
+          "title": "关于注销部分A股回购股份暨减少注册资本的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-06/1225660614.pdf"
+        },
+        {
+          "date": "2026-11-05",
+          "title": "H股公告（证券变动月报表）",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-05/1225657882.PDF"
+        },
+        {
+          "date": "2026-11-04",
+          "title": "关于控股股东提议未来三年股东回报相关事项的提示性公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-04/1225656254.PDF"
+        },
+        {
+          "date": "2026-11-03",
+          "title": "关于回购公司股份的进展公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-03/1225653637.PDF"
+        }
+      ],
+      "relation_status": "ok_json",
+      "relation_total": 3,
+      "relation_top_announcements": [
+        {
+          "date": "2026-11-02",
+          "title": "002384投资者关系活动记录表20261102",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-02/1225654366.PDF"
+        },
+        {
+          "date": "2026-10-08",
+          "title": "002384投资者关系活动记录表20261008",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-08/1225598207.PDF"
+        },
+        {
+          "date": "2026-08-24",
+          "title": "002384投资者关系活动记录表20260824",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-24/1225497036.PDF"
+        }
+      ]
+    },
+    "001267": {
+      "checked_date": "2026-11-22",
+      "query_window": "2026-08-01~2026-11-22",
+      "stock_param": "001267,gssz0000765",
+      "fulltext_status": "ok_json",
+      "fulltext_total": 59,
+      "fulltext_top_announcements": [
+        {
+          "date": "2026-11-11",
+          "title": "关于控股股东、实际控制人部分股份质押的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-11/1225665227.PDF"
+        },
+        {
+          "date": "2026-11-07",
+          "title": "关于汇绿生态科技集团股份有限公司2026年第四次临时股东会的法律意见书",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-07/1225662203.PDF"
+        },
+        {
+          "date": "2026-11-07",
+          "title": "2026年第四次临时股东会决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-07/1225662202.PDF"
+        },
+        {
+          "date": "2026-11-07",
+          "title": "关于重大资产重组进展的提示性公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-07/1225660768.PDF"
+        },
+        {
+          "date": "2026-11-04",
+          "title": "关于持股5%以上股东部分股份质押的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-04/1225654854.PDF"
+        },
+        {
+          "date": "2026-10-29",
+          "title": "2026年三季度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225634080.PDF"
+        },
+        {
+          "date": "2026-10-21",
+          "title": "关于独立董事任期届满暨补选独立董事、董事会专门委员会调整及高级管理人员变动的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-21/1225611922.PDF"
+        },
+        {
+          "date": "2026-10-21",
+          "title": "独立董事提名人声明与承诺（龚翔）",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-21/1225611921.PDF"
+        }
+      ],
+      "relation_status": "ok_json",
+      "relation_total": 4,
+      "relation_top_announcements": [
+        {
+          "date": "2026-11-06",
+          "title": "001267汇绿生态投资者关系管理信息20261106",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-06/1225662140.PDF"
+        },
+        {
+          "date": "2026-11-03",
+          "title": "001267汇绿生态投资者关系管理信息20261103",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-03/1225655440.PDF"
+        },
+        {
+          "date": "2026-09-16",
+          "title": "001267汇绿生态投资者关系管理信息20260916",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-16/1225567430.PDF"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "001267汇绿生态投资者关系管理信息20260909",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-09/1225555817.PDF"
+        }
+      ]
+    },
+    "002463": {
+      "checked_date": "2026-11-22",
+      "query_window": "2026-08-01~2026-11-22",
+      "stock_param": "002463,9900013929",
+      "fulltext_status": "ok_json",
+      "fulltext_total": 39,
+      "fulltext_top_announcements": [
+        {
+          "date": "2026-11-21",
+          "title": "关于以集中竞价交易方式首次回购公司股份的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-21/1225682149.PDF"
+        },
+        {
+          "date": "2026-11-20",
+          "title": "关于为控股子公司提供担保的进展公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-20/1225678964.PDF"
+        },
+        {
+          "date": "2026-11-14",
+          "title": "关于回购股份事项前十名股东和前十名无限售条件股东持股情况的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-14/1225671034.PDF"
+        },
+        {
+          "date": "2026-11-14",
+          "title": "关于取得金融机构股票回购专项贷款承诺函的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-14/1225671033.PDF"
+        },
+        {
+          "date": "2026-11-10",
+          "title": "第八届董事会第二十三次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-10/1225664247.PDF"
+        },
+        {
+          "date": "2026-11-10",
+          "title": "关于实际控制人增持股份计划的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-10/1225664246.PDF"
+        },
+        {
+          "date": "2026-11-10",
+          "title": "关于以集中竞价交易方式回购公司股份方案暨回购报告书的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-10/1225664245.PDF"
+        },
+        {
+          "date": "2026-11-07",
+          "title": "关于董事长提议回购公司股份的提示性公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-07/1225661967.PDF"
+        }
+      ],
+      "relation_status": "ok_json",
+      "relation_total": 14,
+      "relation_top_announcements": [
+        {
+          "date": "2026-11-19",
+          "title": "2026年11月19日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-19/1225679508.PDF"
+        },
+        {
+          "date": "2026-11-12",
+          "title": "2026年11月12日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-12/1225669955.PDF"
+        },
+        {
+          "date": "2026-11-11",
+          "title": "2026年11月11日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-11/1225666536.PDF"
+        },
+        {
+          "date": "2026-11-09",
+          "title": "2026年11月9日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-09/1225664280.PDF"
+        },
+        {
+          "date": "2026-10-20",
+          "title": "2026年10月20日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-20/1225612453.PDF"
+        },
+        {
+          "date": "2026-10-16",
+          "title": "2026年10月16日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-16/1225608881.PDF"
+        },
+        {
+          "date": "2026-10-15",
+          "title": "2026年10月15日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-15/1225607039.PDF"
+        },
+        {
+          "date": "2026-09-23",
+          "title": "2026年9月23日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-23/1225579609.PDF"
+        }
+      ]
+    },
+    "301205": {
+      "checked_date": "2026-11-22",
+      "query_window": "2026-08-01~2026-11-22",
+      "stock_param": "301205,9900052495",
+      "fulltext_status": "ok_json",
+      "fulltext_total": 44,
+      "fulltext_top_announcements": [
+        {
+          "date": "2026-11-19",
+          "title": "关于完成工商变更登记并换发营业执照的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-19/1225679324.PDF"
+        },
+        {
+          "date": "2026-11-12",
+          "title": "2026年第四次临时股东会决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-12/1225668554.PDF"
+        },
+        {
+          "date": "2026-11-12",
+          "title": "北京国枫律师事务所关于武汉联特科技股份有限公司2026年第四次临时股东会的法律意见书",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-12/1225668555.PDF"
+        },
+        {
+          "date": "2026-10-27",
+          "title": "武汉联特科技股份有限公司章程（2026年10月修订）",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225623235.PDF"
+        },
+        {
+          "date": "2026-10-27",
+          "title": "关于变更注册资本、修订《公司章程》并办理工商变更登记的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225623234.PDF"
+        },
+        {
+          "date": "2026-10-27",
+          "title": "关于与专业投资机构共同投资的进展公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225623233.PDF"
+        },
+        {
+          "date": "2026-10-27",
+          "title": "关于召开2026年第四次临时股东会的通知",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225623232.PDF"
+        },
+        {
+          "date": "2026-10-27",
+          "title": "第三届董事会第二次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225623231.PDF"
+        }
+      ],
+      "relation_status": "ok_json",
+      "relation_total": 1,
+      "relation_top_announcements": [
+        {
+          "date": "2026-10-28",
+          "title": "301205联特科技投资者关系管理信息20261028",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225635041.PDF"
+        }
+      ]
+    },
+    "301165": {
+      "checked_date": "2026-11-22",
+      "query_window": "2026-08-01~2026-11-22",
+      "stock_param": "301165,nssc1000760",
+      "fulltext_status": "ok_json",
+      "fulltext_total": 29,
+      "fulltext_top_announcements": [
+        {
+          "date": "2026-11-19",
+          "title": "第四届董事会第十九次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-19/1225677669.PDF"
+        },
+        {
+          "date": "2026-11-19",
+          "title": "关于对外投资设立产业基金暨关联交易的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-19/1225677668.PDF"
+        },
+        {
+          "date": "2026-10-20",
+          "title": "关于2026年前三季度计提资产减值准备的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-20/1225610293.PDF"
+        },
+        {
+          "date": "2026-10-20",
+          "title": "第四届董事会第十八次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-20/1225610292.PDF"
+        },
+        {
+          "date": "2026-10-20",
+          "title": "2026年三季度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-20/1225610290.PDF"
+        },
+        {
+          "date": "2026-09-29",
+          "title": "第四届董事会第十七次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-29/1225588228.PDF"
+        },
+        {
+          "date": "2026-09-29",
+          "title": "锐捷网络股份有限公司2026年限制性股票激励计划（草案）",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-29/1225588223.PDF"
+        },
+        {
+          "date": "2026-09-29",
+          "title": "锐捷网络股份有限公司2026年限制性股票激励计划实施考核管理办法",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-29/1225588224.PDF"
+        }
+      ],
+      "relation_status": "ok_json",
+      "relation_total": 2,
+      "relation_top_announcements": [
+        {
+          "date": "2026-10-21",
+          "title": "2026年10月19日至10月21日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-21/1225614287.PDF"
+        },
+        {
+          "date": "2026-08-17",
+          "title": "2026年8月14日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-17/1225476404.PDF"
+        }
+      ]
+    },
+    "603228": {
+      "checked_date": "2026-11-22",
+      "query_window": "2026-08-01~2026-11-22",
+      "stock_param": "603228,9900029802",
+      "fulltext_status": "ok_json",
+      "fulltext_total": 60,
+      "fulltext_top_announcements": [
+        {
+          "date": "2026-11-18",
+          "title": "景旺电子股票交易异常波动公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-18/1225676726.PDF"
+        },
+        {
+          "date": "2026-11-05",
+          "title": "H股公告-截至二零二六年十月三十一日止股份发行人的证券变动月报表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-05/1225657772.PDF"
+        },
+        {
+          "date": "2026-11-05",
+          "title": "景旺电子关于完成工商变更登记的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-05/1225656896.PDF"
+        },
+        {
+          "date": "2026-11-04",
+          "title": "景旺电子关于以集中竞价交易方式回购公司A股股份的进展公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-04/1225656051.PDF"
+        },
+        {
+          "date": "2026-11-03",
+          "title": "H股公告-翌日披露报表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-03/1225652313.PDF"
+        },
+        {
+          "date": "2026-10-31",
+          "title": "景旺电子关于以集中竞价交易方式首次回购公司A股股份的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225649213.PDF"
+        },
+        {
+          "date": "2026-10-31",
+          "title": "景旺电子关于回购股份事项前十大股东和前十大无限售条件股东持股情况的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225649173.PDF"
+        },
+        {
+          "date": "2026-10-31",
+          "title": "H股公告-致登记股东通知函-发布公司通讯之安排",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225648616.PDF"
+        }
+      ],
+      "relation_status": "ok_json",
+      "relation_total": 0,
+      "relation_top_announcements": []
+    },
+    "000988": {
+      "checked_date": "2026-11-22",
+      "query_window": "2026-08-01~2026-11-22",
+      "stock_param": "000988,gssz0000988",
+      "fulltext_status": "ok_json",
+      "fulltext_total": 29,
+      "fulltext_top_announcements": [
+        {
+          "date": "2026-10-30",
+          "title": "关于调整2026年限制性股票激励计划相关事项的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225643863.PDF"
+        },
+        {
+          "date": "2026-10-30",
+          "title": "董事会薪酬与考核委员会关于公司2026年限制性股票激励计划授予相关事项的核查意见",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225643862.PDF"
+        },
+        {
+          "date": "2026-10-30",
+          "title": "北京金诚同达（上海）律师事务所关于华工科技产业股份有限公司2026年限制性股票激励计划调整和授予事项的法律意见书",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225643861.PDF"
+        },
+        {
+          "date": "2026-10-30",
+          "title": "关于向2026年限制性股票激励计划激励对象授予限制性股票的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225643860.PDF"
+        },
+        {
+          "date": "2026-10-30",
+          "title": "第九届董事会第二十八次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225643859.PDF"
+        },
+        {
+          "date": "2026-10-30",
+          "title": "2026年三季度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225643857.PDF"
+        },
+        {
+          "date": "2026-10-28",
+          "title": "2025年度第二期短期融资券（科创债）兑付完成的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225630224.PDF"
+        },
+        {
+          "date": "2026-10-28",
+          "title": "关于控股股东及其一致行动人增持公司股份计划实施完毕的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225630223.PDF"
+        }
+      ],
+      "relation_status": "ok_json",
+      "relation_total": 2,
+      "relation_top_announcements": [
+        {
+          "date": "2026-10-30",
+          "title": "2026年10月30日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225647394.PDF"
+        },
+        {
+          "date": "2026-08-27",
+          "title": "2026年8月27日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225519368.PDF"
+        }
+      ]
+    },
+    "002428": {
+      "checked_date": "2026-11-22",
+      "query_window": "2026-08-01~2026-11-22",
+      "stock_param": "002428,9900012834",
+      "fulltext_status": "ok_json",
+      "fulltext_total": 15,
+      "fulltext_top_announcements": [
+        {
+          "date": "2026-11-18",
+          "title": "关于增加高品质磷化铟单晶片建设项目投资额的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-18/1225676124.PDF"
+        },
+        {
+          "date": "2026-11-18",
+          "title": "第九届董事会第九次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-18/1225676123.PDF"
+        },
+        {
+          "date": "2026-11-07",
+          "title": "关于控股股东及其一致行动人自愿承诺未来12个月内不减持公司股份的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-07/1225661930.PDF"
+        },
+        {
+          "date": "2026-11-04",
+          "title": "关于签订日常经营重大合同的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-04/1225655614.PDF"
+        },
+        {
+          "date": "2026-10-21",
+          "title": "第九届董事会第八次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-21/1225612955.PDF"
+        },
+        {
+          "date": "2026-10-21",
+          "title": "2026年三季度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-21/1225612953.PDF"
+        },
+        {
+          "date": "2026-09-23",
+          "title": "关于控股股东部分股份质押的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-23/1225576667.PDF"
+        },
+        {
+          "date": "2026-09-17",
+          "title": "关于控股孙公司申请固定资产贷款的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-17/1225568481.PDF"
+        }
+      ],
+      "relation_status": "ok_json",
+      "relation_total": 3,
+      "relation_top_announcements": [
+        {
+          "date": "2026-11-10",
+          "title": "2026年11月10日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-10/1225665965.PDF"
+        },
+        {
+          "date": "2026-09-11",
+          "title": "2026年9月11日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-11/1225561280.PDF"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "2026年9月4日投资者关系活动记录表",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-04/1225549171.PDF"
+        }
+      ]
+    },
+    "688003": {
+      "checked_date": "2026-11-22",
+      "query_window": "2026-08-01~2026-11-22",
+      "stock_param": "688003,gfbj0833231",
+      "fulltext_status": "ok_json",
+      "fulltext_total": 23,
+      "fulltext_top_announcements": [
+        {
+          "date": "2026-11-17",
+          "title": "浙江六和律师事务所关于天准科技2026年第三次临时股东会的法律意见书",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-17/1225673484.PDF"
+        },
+        {
+          "date": "2026-11-17",
+          "title": "2026年第三次临时股东会决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-17/1225673476.PDF"
+        },
+        {
+          "date": "2026-11-07",
+          "title": "中证鹏元关于关注苏州天准科技股份有限公司变更董事长、法定代表人及调整董事会专门委员会成员事项的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-07/1225661385.PDF"
+        },
+        {
+          "date": "2026-11-07",
+          "title": "2026年第三次临时股东会会议资料",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-07/1225661380.PDF"
+        },
+        {
+          "date": "2026-10-31",
+          "title": "关于召开2026年第三次临时股东会的通知",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225649287.PDF"
+        },
+        {
+          "date": "2026-10-31",
+          "title": "关于变更董事长、法定代表人及调整董事会专门委员会成员的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225649267.PDF"
+        },
+        {
+          "date": "2026-10-31",
+          "title": "关于作废部分已授予尚未归属的限制性股票的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225649241.PDF"
+        },
+        {
+          "date": "2026-10-31",
+          "title": "北京金诚同达（上海）律师事务所关于苏州天准科技股份有限公司部分限制性股票作废事项的法律意见书",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225649186.PDF"
+        }
+      ],
+      "relation_status": "ok_json",
+      "relation_total": 0,
+      "relation_top_announcements": []
+    },
+    "688135": {
+      "checked_date": "2026-11-22",
+      "query_window": "2026-08-01~2026-11-22",
+      "stock_param": "688135,gfbj0833474",
+      "fulltext_status": "ok_json",
+      "fulltext_total": 53,
+      "fulltext_top_announcements": [
+        {
+          "date": "2026-11-17",
+          "title": "2026年第二次临时股东会会议资料",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-17/1225673569.PDF"
+        },
+        {
+          "date": "2026-11-14",
+          "title": "第四届董事会第二十七次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-14/1225671807.PDF"
+        },
+        {
+          "date": "2026-11-14",
+          "title": "关于召开2026年第二次临时股东会的通知",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-14/1225671805.PDF"
+        },
+        {
+          "date": "2026-11-14",
+          "title": "关于签署股权收购协议的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-14/1225671802.PDF"
+        },
+        {
+          "date": "2026-11-14",
+          "title": "关于续聘会计师事务所的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-14/1225671792.PDF"
+        },
+        {
+          "date": "2026-10-29",
+          "title": "第四届董事会第二十六次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225638473.PDF"
+        },
+        {
+          "date": "2026-10-29",
+          "title": "2026年第三季度报告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225638468.PDF"
+        },
+        {
+          "date": "2026-10-29",
+          "title": "关于召开2026年第三季度业绩说明会的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225638463.PDF"
+        }
+      ],
+      "relation_status": "ok_json",
+      "relation_total": 0,
+      "relation_top_announcements": []
+    },
+    "300120": {
+      "checked_date": "2026-11-22",
+      "query_window": "2026-08-01~2026-11-22",
+      "stock_param": "300120,9900013694",
+      "fulltext_status": "ok_json",
+      "fulltext_total": 47,
+      "fulltext_top_announcements": [
+        {
+          "date": "2026-11-18",
+          "title": "关于交易对手方首次增持公司股份的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-18/1225678041.PDF"
+        },
+        {
+          "date": "2026-10-30",
+          "title": "关于担保进展的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225649677.PDF"
+        },
+        {
+          "date": "2026-10-28",
+          "title": "薪酬与考核委员会关于公司2026年限制性股票激励计划激励对象名单调整及授予相关事项的核查意见",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225630722.PDF"
+        },
+        {
+          "date": "2026-10-28",
+          "title": "北京中银（深圳）律师事务所关于天津经纬辉开光电股份有限公司2026年限制性股票激励计划调整及授予相关事项的法律意见书",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225630721.PDF"
+        },
+        {
+          "date": "2026-10-28",
+          "title": "2026年限制性股票激励计划授予激励对象名单",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225630720.PDF"
+        },
+        {
+          "date": "2026-10-28",
+          "title": "关于向2026年限制性股票激励计划激励对象授予限制性股票的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225630719.PDF"
+        },
+        {
+          "date": "2026-10-28",
+          "title": "关于调整2026年股票激励计划激励对象名单的公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225630718.PDF"
+        },
+        {
+          "date": "2026-10-28",
+          "title": "第六届董事会第二十五次会议决议公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225630717.PDF"
+        }
+      ],
+      "relation_status": "ok_json",
+      "relation_total": 2,
+      "relation_top_announcements": [
+        {
+          "date": "2026-11-17",
+          "title": "300120经纬辉开投资者关系管理信息20261117",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-11-17/1225676140.PDF"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "300120经纬辉开投资者关系管理信息20260903",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-09-03/1225547319.PDF"
+        }
+      ]
+    }
+  },
+  "domestic_drq_verdict_counts": {
+    "verified_ingested": 8,
+    "confirmed_deferred_no_filing": 2,
+    "still_pending": 1
+  },
+  "domestic_drq_verdicts": [
+    {
+      "queue_id": "DRQ0020",
+      "entity_name": "东山精密",
+      "stock_code": "002384",
+      "checked_date": "2026-11-22",
+      "recommended_verdict": "verified_ingested",
+      "recommended_queue_status": "ingested_to_kb",
+      "recommended_kb_target_ref": "points:P130;points:P133",
+      "official_source_url": "https://static.cninfo.com.cn/finalpage/2026-11-02/1225654366.PDF",
+      "local_corpus_refs": [
+        "corpus/ir/002384/002384_2026-11-02_002384投资者关系活动记录表20261102.pdf.txt#L54..60",
+        "corpus/ir/002384/002384_2026-11-02_002384投资者关系活动记录表20261102.pdf.txt#L102..122"
+      ],
+      "cninfo_announcement_counts": {
+        "fulltext_total": 37,
+        "relation_total": 3
+      },
+      "verbatim_excerpt": "问题 3：公司光芯片明后年外售的规划以及后续 CW 产品的销售规划如何？ 回复：感谢您对公司的关注与支持。公司今年已有小批量光芯片外售，为优先保障自用，尚未大规模对外销售。光芯片大规模外售取决于柜内互联等下一代技术普及进度，预计后续需求逐步起量。 / 问题 8：公司今年三季度 1.6T 产品主要做客户测试验证，四季度起进入相对批量出货。",
+      "factual_boundary_and_action": "已回读2026-11-02投关原件全文：虽提问含CW字样，公司正式回复仅泛称“小批量光芯片外售”而未细分CW/EML/DFB品类或客户范围；已将该严格边界写入P130(C1)与P133(MOD1)注记，保留原引语不变，杜绝把泛称光芯片外售直接缩窄为CW外售。"
+    },
+    {
+      "queue_id": "DRQ0031",
+      "entity_name": "汇绿生态(武汉钧恒)",
+      "stock_code": "001267",
+      "checked_date": "2026-11-22",
+      "recommended_verdict": "verified_ingested",
+      "recommended_queue_status": "ingested_to_kb",
+      "recommended_kb_target_ref": "points:P039;content:CLG0631",
+      "official_source_url": "https://static.cninfo.com.cn/finalpage/2026-11-03/1225655440.PDF",
+      "local_corpus_refs": [
+        "corpus/ir/001267/001267_2026-11-03_001267汇绿生态投资者关系管理信息20261103.pdf.txt#L51..77",
+        "corpus/ir/001267/001267_2026-11-06_001267汇绿生态投资者关系管理信息20261106.pdf.txt#L37..49"
+      ],
+      "cninfo_announcement_counts": {
+        "fulltext_total": 59,
+        "relation_total": 4
+      },
+      "verbatim_excerpt": "公司目前光模块产能为：武汉本部约 300 万支/年、2025 年年底投产的鄂州工厂一期约 150 万支/年、2026 年 4 月底投产的马来西亚工厂约 100 万-150 万支/年。根据公告，公司计划总投资 3.09 亿元设立研发生产基地。建成后现有 150 万支产线全面技术升级、新增 200 万支高速率产线，武汉区域预计合计达 350 万支高速率光模块年产能，现有厂房停止使用。",
+      "factual_boundary_and_action": "已精读11/03(编号2026-008)及11/06(编号2026-009)投关原件：严格拆分现有已投产产能(武汉300万+鄂州一期150万+大马100-150万支/年)与3.09亿元武汉新基地远期扩建规划(建成后合计350万支/年且旧厂停用)；400G/800G为主力出货(800G正上量，未披露精确占比)，NPO处导入早期阶段；已同步更新P039本地行号锚点与判定注记。"
+    },
+    {
+      "queue_id": "DRQ0032",
+      "entity_name": "沪电股份",
+      "stock_code": "002463",
+      "checked_date": "2026-11-22",
+      "recommended_verdict": "confirmed_deferred_no_filing",
+      "recommended_queue_status": "watch_deferred",
+      "recommended_kb_target_ref": "",
+      "official_source_url": "https://static.cninfo.com.cn/finalpage/2026-10-16/1225608881.PDF",
+      "local_corpus_refs": [
+        "corpus/ir/002463/002463_2026-10-15_2026年10月15日投资者关系活动记录表.pdf.txt#L42..51",
+        "corpus/ir/002463/002463_2026-10-16_2026年10月16日投资者关系活动记录表.pdf.txt#L42..51",
+        "corpus/ir/002463/002463_2026-11-19_2026年11月19日投资者关系活动记录表.pdf.txt#L42..51"
+      ],
+      "cninfo_announcement_counts": {
+        "fulltext_total": 39,
+        "relation_total": 14
+      },
+      "verbatim_excerpt": "在算力产品领域，公司围绕各类超节点架构，统筹推进计算、交换、互连方向核心技术攻关及产品落地，适配 224Gbps 传输速率的核心产品已实现小批量供货，并启动支持 448Gbps 传输速率的产品预研；在高速网络交换机方面，应用于 1.6T 交换机的产品已实现批量出货，并推进 3.2T 交换机配套的产品预研。",
+      "factual_boundary_and_action": "核查巨潮14份投关记录表(含10/15、10/16至11/19最新表)及39份正式公告：全部“适配224Gbps小批量供货”与“1.6T批量出货”均明确归属超节点计算/交换互连与1.6T高速网络交换机PCB(树外系统板/背板)，全文“光模块”零命中，未见B1光模块内部PCB披露；严守B1边界不入points.csv，建议转为watch_deferred。"
+    },
+    {
+      "queue_id": "DRQ0033",
+      "entity_name": "联特科技",
+      "stock_code": "301205",
+      "checked_date": "2026-11-22",
+      "recommended_verdict": "verified_ingested",
+      "recommended_queue_status": "ingested_to_kb",
+      "recommended_kb_target_ref": "points:P174",
+      "official_source_url": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225635041.PDF",
+      "local_corpus_refs": [
+        "corpus/ir/301205/301205_2026-10-28_301205联特科技投资者关系管理信息20261028.pdf.txt#L55..76"
+      ],
+      "cninfo_announcement_counts": {
+        "fulltext_total": 44,
+        "relation_total": 1
+      },
+      "verbatim_excerpt": "公司的800G产品已经实现批量发货，发货量每个季度都环比提升。1.6T的产品方案多元化，包括FRO、LRO、LPO等全系列产品，并已经成功送样给北美大型csp客户，并取得积极反馈。公司也在近期实机演示了1.6T LPO产品……800G、1.6T产品在客户端验证进展顺利，已获一些客户验证通过。",
+      "factual_boundary_and_action": "已精读10/28投关原件(编号2026-003)：严格拆分800G批量发货环比提升与1.6T(FRO/LRO/LPO)北美CSP送样/部分客户验证通过/实机演示时态，已更新P174(MOD1)锚点与注记。"
+    },
+    {
+      "queue_id": "DRQ0034",
+      "entity_name": "锐捷网络",
+      "stock_code": "301165",
+      "checked_date": "2026-11-22",
+      "recommended_verdict": "verified_ingested",
+      "recommended_queue_status": "ingested_to_kb",
+      "recommended_kb_target_ref": "points:P187",
+      "official_source_url": "https://static.cninfo.com.cn/finalpage/2026-10-21/1225614287.PDF",
+      "local_corpus_refs": [
+        "corpus/ir/301165/301165_2026-10-21_2026年10月19日至10月21日投资者关系活动记录表.pdf.txt#L135..138",
+        "corpus/ir/301165/301165_2026-10-21_2026年10月19日至10月21日投资者关系活动记录表.pdf.txt#L276..286"
+      ],
+      "cninfo_announcement_counts": {
+        "fulltext_total": 29,
+        "relation_total": 2
+      },
+      "verbatim_excerpt": "LPO 已规模量产交付 400G 产品，1.6T LPO 已推出原型样品……Q9 A: 公司 LPO 光模块产品均搭配自有交换机完成适配后销售，目前出货量较大的是 400G LPO 产品，与 400G 交换机搭配销售，不作为通用配件单独销售……因此公司下一步推出的 800G 甚至 1.6T LPO 产品，仍将主要搭配自有交换机销售。",
+      "factual_boundary_and_action": "已核对10/19-21投关原件(编号2026-04)并完成两项关键纠偏：①目前规模量产交付仅400G LPO(800G/1.6T LPO属下一步推出，1.6T LPO为原型样品)；②明确全部LPO光模块均搭配自有交换机适配捆绑销售、“不作为通用配件单独销售”；已写入P187(MOD1)锚点与注记。"
+    },
+    {
+      "queue_id": "DRQ0035",
+      "entity_name": "景旺电子",
+      "stock_code": "603228",
+      "checked_date": "2026-11-22",
+      "recommended_verdict": "verified_ingested",
+      "recommended_queue_status": "ingested_to_kb",
+      "recommended_kb_target_ref": "points:P031;content:CLG0624;content:CLG0625",
+      "official_source_url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225493416.PDF#page=11",
+      "local_corpus_refs": [
+        "corpus/ir/603228/603228_2026-08-22_2026年半年度报告.pdf",
+        "corpus/ir/603228/603228_2026-08-22_2026年半年度报告.pdf.txt#L493..495"
+      ],
+      "cninfo_announcement_counts": {
+        "fulltext_total": 60,
+        "relation_total": 0
+      },
+      "verbatim_excerpt": "高速光模块领域，随着公司新增 mSAP 产线安装调试完成，大批量产能落地，报告期内公司已批量交付 800G、1.6T 光模块 PCB，2026 年二季度，800G 及以上速率光模块收入环比增长近 1500%。公司深度参与多家全球领先客户的高速光模块 PCB 供应。",
+      "factual_boundary_and_action": "已下载归档景旺电子2026年半年度报告PDF及旁车文本至corpus/ir/603228/，精准核实第11页(#L493..495)逐字匹配P031引语，并在P031判定注记补齐本地行号定位与S.5548二手传闻剥离说明。"
+    },
+    {
+      "queue_id": "DRQ0036",
+      "entity_name": "华工科技",
+      "stock_code": "000988",
+      "checked_date": "2026-11-22",
+      "recommended_verdict": "verified_ingested",
+      "recommended_queue_status": "ingested_to_kb",
+      "recommended_kb_target_ref": "points:P209;content:CLG0612;content:CLG0613",
+      "official_source_url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225647394.PDF#page=6",
+      "local_corpus_refs": [
+        "corpus/ir/000988/000988_2026-10-30_2026年10月30日投资者关系活动记录表.pdf",
+        "corpus/ir/000988/000988_2026-10-30_2026年10月30日投资者关系活动记录表.pdf.txt#L169..204"
+      ],
+      "cninfo_announcement_counts": {
+        "fulltext_total": 29,
+        "relation_total": 2
+      },
+      "verbatim_excerpt": "800G LPO 产品已在下半年开始提量交付，目前泰国工厂月出货量约 10 万只，并已签订长单，明年 800G 系列 LPO 交付量预计为 120 万-150 万只，1.6T LPO 系列产品正在快速送样测试，预计 Q1 完成测试……已在北美获得一家知名客户的 6.4T NPO 产品供应商资格，产品已定型完成，正在推进送样测试，预计明年 7 月进入批量交付。",
+      "factual_boundary_and_action": "已从巨潮下载归档000988 2026-10-30正式投关记录表(编号2026-04)至corpus/ir/000988/：证实p.6第2问确有泰国工厂800G LPO月出货约10万只及1.6T LPO送样定量原话，同时核实全文无任何“原产地实质性改变/关税豁免”表述；已在P209注记补入本地原件行号并剔除关税外推。"
+    },
+    {
+      "queue_id": "DRQ0047",
+      "entity_name": "云南锗业(云南鑫耀)",
+      "stock_code": "002428",
+      "checked_date": "2026-11-22",
+      "recommended_verdict": "verified_ingested",
+      "recommended_queue_status": "ingested_to_kb",
+      "recommended_kb_target_ref": "points:P202",
+      "official_source_url": "https://static.cninfo.com.cn/finalpage/2026-11-18/1225676124.PDF",
+      "local_corpus_refs": [
+        "corpus/ir/002428/002428_2026-11-18_关于增加高品质磷化铟单晶片建设项目投资额的公告.pdf",
+        "corpus/ir/002428/002428_2026-11-18_关于增加高品质磷化铟单晶片建设项目投资额的公告.pdf.txt#L14..48",
+        "corpus/ir/002428/002428_2026-11-10_2026年11月10日投资者关系活动记录表.pdf.txt#L31..58"
+      ],
+      "cninfo_announcement_counts": {
+        "fulltext_total": 15,
+        "relation_total": 3
+      },
+      "verbatim_excerpt": "2026 年 11 月 16 日，公司第九届董事会第九次会议审议通过《关于增加“高品质磷化铟单晶片建设项目”投资额的议案》……同意将“高品质磷化铟单晶片建设项目”的总投资额增加至 26,999 万元（调整前为 18,856 万元），其中：固定资产投资 23,393 万元（调整前为 15,250 万元），铺底流动资金 3,606 万元……合计新增机器设备 294 台（套），最终达到年产 45 万片（折合 4 英寸）高品质磷化铟单晶片的产能。",
+      "factual_boundary_and_action": "巨潮查获深交所2026-11-18正式公告《关于增加高品质磷化铟单晶片建设项目投资额的公告》(公告编号2026-057)及2026-11-10投关记录表并已落盘corpus/ir/002428/！一手原件将媒体概数“1.89亿调至2.7亿元”校准为精确法定数值“18,856万元调增8,143万元至26,999万元”(在董事会权限内无需股东会审议)，并同步披露6英寸磷化铟在手订单约1.3万片(约3亿元)、部分已获出口许可持续交付；已更新P202锚点与判定注记。"
+    },
+    {
+      "queue_id": "DRQ0051",
+      "entity_name": "天准科技",
+      "stock_code": "688003",
+      "checked_date": "2026-11-22",
+      "recommended_verdict": "verified_ingested",
+      "recommended_queue_status": "ingested_to_kb",
+      "recommended_kb_target_ref": "points:P277",
+      "official_source_url": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225482975.PDF#page=14",
+      "local_corpus_refs": [
+        "corpus/ir/688003/688003_2026-08-20_2026年半年度报告.pdf",
+        "corpus/ir/688003/688003_2026-08-20_2026年半年度报告.pdf.txt#L680..683",
+        "corpus/annual/688003/688003/688003__em_天准科技_em__2025_2025年年度报告.pdf.txt#L816..817"
+      ],
+      "cninfo_announcement_counts": {
+        "fulltext_total": 23,
+        "relation_total": 0
+      },
+      "verbatim_excerpt": "在光通信领域，天准为 800G、1.6T 等光模块提供精密量检测装备，覆盖了光模块领域大部分客户，长期服务于中际旭创、新易盛、天孚通信等头部客户。2026 年，天准获得工业富联 CPO 量产项目的在线 AOI 检测设备首批小批量订单，部分设备已交付客户现场，打开了 CPO、NPO 等光通信新领域量检测装备的增量市场空间。",
+      "factual_boundary_and_action": "巨潮核出688003《2026年半年度报告》(1225482975.PDF)第14页及2025年报第18页光模块与CPO在线AOI专属交付一手原文并落盘corpus/ir/688003/！满足KN001准入①及DRQ0051全部门槛(688003已在_frozen.csv v3分母)，已新增能力点P277(EQ6,生产中,A股)并同步将triage天准科技+EQ6更新为已入点。"
+    },
+    {
+      "queue_id": "DRQ0053",
+      "entity_name": "利扬芯片(拟收购众望达光电)",
+      "stock_code": "688135",
+      "checked_date": "2026-11-22",
+      "recommended_verdict": "still_pending",
+      "recommended_queue_status": "pending_filing_anchor",
+      "recommended_kb_target_ref": "",
+      "official_source_url": "https://static.cninfo.com.cn/finalpage/2026-11-14/1225671802.PDF",
+      "local_corpus_refs": [
+        "corpus/ir/688135/688135_2026-11-14_关于签署股权收购协议的公告.pdf",
+        "corpus/ir/688135/688135_2026-11-14_关于签署股权收购协议的公告.pdf.txt#L9..27",
+        "corpus/ir/688135/688135_2026-11-14_关于签署股权收购协议的公告.pdf.txt#L171..198",
+        "corpus/ir/688135/688135_2026-11-14_关于签署股权收购协议的公告.pdf.txt#L675..679"
+      ],
+      "cninfo_announcement_counts": {
+        "fulltext_total": 53,
+        "relation_total": 0
+      },
+      "verbatim_excerpt": "公司与深圳市众望达光电有限公司股东郑鸿章、邓荣辉签署了《股权收购协议》，拟筹划以现金方式收购众望达 51%的股权（整体估值 6.00 亿元，交易对价 30,600.00 万元）……众望达专注光通讯检测、自动化测试技术、自动化耦合的研发、设计、生产、销售与技术服务，面向光器件、光模块、硅光、CPO、光纤传感、光纤激光行业客户……截至本公告披露日，标的资产相关的审计、资产评估工作尚未完成……本次交易尚需提交公司股东会审议批准……存在不能按期顺利完成交割的风险。",
+      "factual_boundary_and_action": "巨潮查获2026-11-14正式公告(2026-071,1225671802.PDF)及11-17临时股东会资料并已落盘corpus/ir/688135/；但原件明确截至2026-11-22：①审计评估尚未完成(2026H1营收10,466.48万元未经审计)；②尚待股东会审议批准；③尚未完成股权交割并表且无具名客户披露。严格维持pending_filing_anchor，未交割前禁入points.csv EQ7/EQ4。"
+    },
+    {
+      "queue_id": "DRQ0054",
+      "entity_name": "经纬辉开(参股铱加科技)",
+      "stock_code": "300120",
+      "checked_date": "2026-11-22",
+      "recommended_verdict": "confirmed_deferred_no_filing",
+      "recommended_queue_status": "watch_deferred",
+      "recommended_kb_target_ref": "",
+      "official_source_url": "https://static.cninfo.com.cn/finalpage/2026-11-17/1225676140.PDF",
+      "local_corpus_refs": [
+        "corpus/ir/300120/300120_2026-11-17_300120经纬辉开投资者关系管理信息20261117.pdf.txt#L61..93"
+      ],
+      "cninfo_announcement_counts": {
+        "fulltext_total": 47,
+        "relation_total": 2
+      },
+      "verbatim_excerpt": "公司全资子公司中兴系统持有铱加科技 7.71%股权……铱加目前不在上市公司合并报表内。研发上，铱加 1.6T/3.2T CPO 项目已通过深圳市科创委专项项目阶段性验收，完成硅光芯片、2.5D/3D 封装及原型验证，已有 25G-800G 光组件产品……目前公司对铱加持股比例较小，其营收规模也较小，对公司业绩基本无贡献。",
+      "factual_boundary_and_action": "巨潮检索47条正式公告未见铱加科技专项公告；2026-11-17正式投关表(编号2026-03)明确证实：①仅通过中兴系统间接参股7.71%且不在合并报表内；②1.6T/3.2T CPO仅属深圳市科创委科研专项阶段性验收(原型验证)，对上市公司业绩基本无贡献。按规则非控股参股+原型验证严禁入points.csv，建议转为watch_deferred。"
+    }
+  ],
+  "verifier_handoff_notes": {
+    "participation_projection_delta": "新增 P277 天准科技(688003, EQ6, 生产中, A股)使参与识别“已确认参与”由 93 增至 94 家；triage 裁决 600552 凯盛科技与 688307 中润光学为“驳回-非本格”(FIT 维持待判并刷新 2026-11-22 核查理由)，使参与识别“待确认”由 15 减至 13 家；请 carbon-s4-verifier 重跑 participation.py / render.py / build_detailed_capability_report.py 并同步对齐 tests/test_step3_daily_and_v6.py:344 及 review_queue.csv / entity_nodes.csv。",
+    "review_queue_sync_suggestions": {
+      "ingested_to_kb": [
+        "DRQ0020",
+        "DRQ0031",
+        "DRQ0033",
+        "DRQ0034",
+        "DRQ0035",
+        "DRQ0036",
+        "DRQ0047",
+        "DRQ0051"
+      ],
+      "watch_deferred": [
+        "DRQ0032",
+        "DRQ0054"
+      ],
+      "pending_filing_anchor": [
+        "DRQ0053"
+      ]
+    }
+  }
+}

@@ -10,7 +10,7 @@
 - 可用来源：4/4 个季度槽有 `available` 材料
 - 陈述登记：5 条 `claims.csv` 陈述（含 candidate/rejected）
 - 已核陈述：5 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：0 条已审核雷达事件（asserted 0 / corroborated 0）
+- 已核事件：1 条已审核雷达事件（asserted 1 / corroborated 0）
 
 ## 四季度覆盖
 
@@ -31,7 +31,7 @@
 - `CL008` · fact · announced · [S_CSCO_2026Q2_A](https://investor.cisco.com/files/doc_events/2026/02/Q2FY26-Prepared-Remarks-1.pdf) `Q2 FY26 prepared remarks p.4 / first product atomic summary`
   - 归纳：Cisco宣布1.6T OSFP可插拔光模块；不与800G产品作跨代比较
   - 原文短引：“We also announced two new pluggable optics: a 1.6 terabits-per-second OSFP and an 800G LPO”
-- `CL009` · forward_looking · scaled · [S_CSCO_2026Q1_A](https://investor.cisco.com/files/doc_events/2025/11/1/Q1FY26-Prepared-Remarks.pdf) `Q1 FY26 prepared remarks p.4`
+- `CL009` · forward_looking · scaled · [S_CSCO_2026Q1_A](https://investor.cisco.com/files/doc_events/2025/11/1/Q1FY26-Prepared-Remarks.pdf) `p. 3, Demand for Silicon One`
   - 归纳：Cisco预计在FY26 Q2出货第100万颗Silicon One交换芯片
   - 原文短引：“We expect to ship our 1-millionth chip in Q2 FY26.”
 - `CL010` · fact · scaled · [S_CSCO_2026Q2_A](https://investor.cisco.com/files/doc_events/2026/02/Q2FY26-Prepared-Remarks-1.pdf) `Q2 FY26 prepared remarks p.4`

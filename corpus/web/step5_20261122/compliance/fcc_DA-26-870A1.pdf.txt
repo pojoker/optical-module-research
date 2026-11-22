@@ -1,0 +1,478 @@
+                                                                                                DA 26-870
+                                                                                  Released: August 20, 2026
+
+ FOLLOWING NEW NATIONAL SECURITY DETERMINATION, FCC ANNOUNCES
+   MODIFICATION OF POWER INVERTERS ENTRY ON THE COVERED LIST
+
+              WC Docket No. 18-89, ET Docket No. 21-232, EA Docket No. 21-233
+
+         The Federal Communications Commission’s (FCC or Commission) Public Safety and Homeland
+Security Bureau (PSHSB) maintains a list of equipment and services (Covered List) that have been
+determined to “pose an unacceptable risk to the national security of the United States or the security and
+safety of United States persons.”1 Pursuant to Section 2 of the Secure and Trusted Communications
+Networks Act of 2019 (Secure Networks Act)2 and Sections 1.50002(a) and 1.50003 of the Commission’s
+rules,3 PSHSB announces that the Department of War (DoW) has made the following determinations:
+First, DoW has determined that certain foreign‑produced power inverters that are eligible for certain
+clean energy tax credits do not pose unacceptable risks to the national security of the United States or to
+the safety and security of U.S. persons. Second, DoW has determined that the definition of “power
+inverters” should be revised to accurately reflect the specific power inverters that the Executive Branch
+interagency body and the DoW previously determined to pose unacceptable risks to the national security
+of the United States or to the security and safety of U.S. persons.4 The Commission has also updated its
+FAQ page accordingly.5
+
+Addition of Foreign-Produced Inverters to Covered List
+
+        On July 28, 2026, PSHSB added power inverters produced in a foreign country to the Covered
+List.6 This action was based on a National Security Determination from an Executive Branch interagency
+body, including several appropriate national security agencies, determining (among other things) that
+
+1 Secure and Trusted Communications Networks Act of 2019, Pub. L. No. 116-124, 133 Stat. 158 (2020) (codified
+
+as amended at 47 U.S.C. §§ 1601-1609) (Secure Networks Act); 47 CFR §§ 1.50002, 1.50003. For the current
+version of the Covered List, see Federal Communications Commission (FCC), List of Equipment and Services
+Covered By Section 2 of The Secure Networks Act, https://www.fcc.gov/supplychain/coveredlist (last updated Aug.
+20, 2026).
+2 47 U.S.C. § 1601.
+
+3 47 CFR §§ 1.50002(a), 1.50003; see also Protecting Against National Security Threats to the Communications
+
+Supply Chain Through FCC Programs, WC Docket No. 18-89, Second Report and Order, 35 FCC Rcd 14284
+(2020) (Supply Chain Second Report and Order).
+4 See Appendix B.
+
+5 FAQs on Recent Updates to FCC Covered List Regarding Foreign-Produced Advanced Robotic Devices and
+
+Power Inverters (last updated Aug. 20, 2026), https://www.fcc.gov/covered-list-faqs-robots-inverters.
+6 See FCC, FCC’s Public Safety and Homeland Security Bureau Announces Addition of Foreign-Produced Power
+
+Inverters and Advanced Robotic Devices to FCC Covered List, WC Docket No. 18-89, ET Docket No. 21-232, EA
+Docket No. 21-233, Public Notice, DA 26-786 (PSHSB July 28, 2026) (July 2026 Power Inverters PN).
+                                    Federal Communications Commission                                     DA 26-870
+
+
+power inverters produced in a foreign country pose an unacceptable risk to the national security of the
+United States and to the safety and security of U.S. persons (First Power Inverter National Security
+Determination). In the Public Notice, we stated, “If we receive a further specific determination from
+DoW or DHS that a given power inverter . . . , or class of such devices, does not pose unacceptable risks,
+we will further update the Covered List.”7
+
+Second Power Inverter National Security Determination
+
+       On August 19, 2026, the Commission received another National Security Determination from
+DoW that contains additional determinations in follow-up to the First Power Inverter National Security
+Determination.8
+
+         Advanced Manufacturing Tax Credit. The Second Power Inverter National Security
+Determination has determined that “certain foreign-produced power inverters that are eligible for certain
+clean energy tax credits do not pose unacceptable risks to the national security of the United States and to
+the safety and security of U.S. persons.”9 Among other things, the Second Power Inverter National
+Security Determination states:
+
+                  “The One Big Beautiful Bill Act . . . modified and established certain
+                  conditions on access to the Advanced Manufacturing Tax Credit for
+                  domestic production of certain energy-related components (codified at 26
+                  U.S.C. § 45X)(section 45X).10 Specifically, section 45x(c)(1)(C) prevents
+                  any ‘eligible component’ (including certain power inverters) from
+                  including any property which includes any material assistance from a
+                  prohibited foreign entity (as defined in section 7701(a)(52)).’11 The
+                  United States Congress and President Trump, as part of the Trump
+                  Administration’s efforts to reshore and secure critical supply chains,
+                  through The One Big Beautiful Bill Act clearly determined that foreign-
+                  produced power inverters that comply with section 45X should be eligible
+                  for a tax credit for domestic production. Therefore, President Trump and
+                  the United States Congress determined that such power inverters should
+                  be considered domestically-produced.”12
+
+        As a result, DoW has “determine[d] that foreign-produced power inverters that are eligible for the
+section 45X tax credit do not pose the unacceptable security risks identified in the First Power Inverter
+National Security Determination and should be removed from the FCC’s Covered List as not ‘foreign-
+produced.’”13
+
+
+
+
+7 July 2026 Power Inverters PN, at 3.
+
+8 The second Power Inverters National Security Determination is attached as Appendix B to this Public Notice
+
+(Second Power Inverter National Security Determination).
+9 Second Power Inverter National Security Determination at 1.
+
+10 Id. at 1 (citing The One Big Beautiful Bill Act, Pub. L. No. 119-21, 70514, 139 Stat. 72 (2025) (codified at 26
+
+U.S.C. § 45X).
+11 Second Power Inverter National Security Determination at 1-2 (citing 47 U.S.C. § 45X(d)(4)(A)).
+
+12 Second Power Inverter National Security Determination at 2.
+
+13 Id. at 2.
+
+
+                                                          2
+                                     Federal Communications Commission                               DA 26-870
+
+
+         Type of Power Inverters Covered. In this Second Power Inverter National Security
+Determination, DoW has also determined that “pursuant to the First Power Inverter National Security
+Determination and the Secure and Trusted Communications Networks Act, 47 U.S.C. § 1601(c)(4), that
+the definition of ‘power inverters’ should be revised to accurately reflect which foreign-produced power
+inverters the Executive Branch interagency body and the DoW have determined to pose unacceptable
+risks to the national security of the United States or the security and safety of United States persons.”14
+The DoW notes that “[t]he First Power Inverter National Security Determination concerned foreign-
+produced power inverters that ‘[c]ontain[ed] components that enable remote communication, control,
+sensing, data collection, or monitoring through WiFi, cellular, Bluetooth, or other similar connection.’”15
+DoW states that “the interagency body, including DoW, interpret the term ‘similar connection’ to include
+components with wired connectivity and understand the First Power Inverter National Security
+Determination to have included power inverters designed, equipped, or configured to contain these
+connected components.”16 DoW states that, “[f]or the avoidance of doubt, DoW determines that power
+inverters that contain, or are designed, equipped, or configured to accept, a component that enables
+remote communication, control, sensing, data-collection, or monitoring through Ethernet or other similar
+connections pose the same unacceptable risks described in the First Power Inverter National Security
+Determination as power inverters with wireless connectivity.”17 The DoW states that “[t]hese
+unacceptable risks include: (i) facilitating a supply chain vulnerability that could disrupt U.S. economic
+security, including sectors critical to national security, and (ii) creating a cybersecurity risk that threatens
+the security of critical infrastructure and the safety of U.S. persons.”18
+          Additionally, in the Second Power Inverter National Security Determination, DoW also has
+determined that certain classes of power inverters do not pose unacceptable risks to the national security
+of the United States or the security and safety of United States persons and should be removed from the
+FCC’s Covered List.19 DoW states that “[t]hese classes of power inverters are those that are not
+electronic devices that ‘change[] dc power to ac power, to include bidirectional devices, that is intended
+for use in parallel with an electric utility to supply common loads and sometimes deliver power to the
+utility, i.e. a utility-interactive inverter as that term is defined in UL 1741 [Underwriter Laboratories
+Standard UL 1741, Inverters, Converters, Controllers and Interconnection System Equipment for Use
+with Distributed Energy Resources] sections 2.1.23, 2.1.52.’”20 DoW has determined that “power
+inverters described in the First Power Inverter National Security Determination, but which do not meet
+the definition set forth in UL 1741, do not pose unacceptable risks to the national security of the United
+States or the security and safety of United States person.”21 DoW additionally states that “[p]ower
+inverters that are incapable of connection to the utility grid (i.e., non-utility-interactive inverters)
+generally do not pose risk to the public utility grid” and that “[t]he risk of such power inverter systems is
+thus limited to local impacts which can generally be managed on a local system level and do not threaten
+the interconnected power system.”22
+           The DoW concludes that, in light of the above determinations, that:
+
+14 Id.at 1.
+
+15   Id.at 2.
+16 Id.
+
+17 Id. at 2 (citing First Power Inverter National Security Determination).
+
+18 Id. at 2.
+
+19 Id. at 3.
+
+20 Id.
+
+21 Id.
+
+22 Id.
+
+
+                                                           3
+                                   Federal Communications Commission                                   DA 26-870
+
+
+
+                 “the FCC should include on its Covered List only foreign-produced power
+                 inverters that are defined to be an electronic device that:
+                         (a) Changes dc power to ac power, to include
+                              bidirectional devices, that is intended for use in
+                              parallel with an electric utility to supply common
+                              loads and sometimes deliver power to the utility, i.e.,
+                              a utility-interactive inverter as that term is defined in
+                              UL 1741 sections 2.1.23, 2.1.52 and
+                         (b) Contains, or is designed, equipped, or configured to
+                              accept, a component that enables remote
+                              communication, control, sensing, data-collection, or
+                              monitoring through Ethernet, Wi-Fi, cellular,
+                              Bluetooth, or other similar connections, whether
+                              wired or wireless.”23
+
+          As a result of all these determinations, DoW states that “the FCC should update the Covered List
+as it relates to foreign-produced power inverters and amend the definition of power inverter.”24
+
+The Covered List
+
+        We find that the Second Power Inverter National Security Determination constitutes a specific
+determination of an unacceptable risk to the national security of the United States or the security or safety
+of United States persons pursuant to section 2 of the Secure Networks Act and the First Power Inverter
+National Security Determination.25 First, we find that the Second Power Inverter National Security
+Determination constitutes a specific determination that certain foreign-produced power inverters pose an
+unacceptable risk to the national security of the United States or the security or safety of United States
+persons pursuant to section 2 of the Secure Networks Act, i.e. those that “[c]ontain[], or [are] designed,
+equipped, or configured to accept, a component that enables remote communication, control, sensing,
+data-collection, or monitoring through Ethernet, Wi-Fi, cellular, Bluetooth, or other similar connections,
+whether wired or wireless.”26 Second, we find that this constitutes a specific determination that power
+inverters that are eligible for the Advanced Manufacturing Tax Credit in 26 U.S.C. § 45X for domestic
+production do not pose unacceptable risks to the national security of the United States or the security or
+safety of United States persons, as they should not be considered “foreign-produced.”27 Therefore, we
+update the Covered List as follows:
+
+                 “Foreign-produced power inverters, except power inverters which have
+                 been granted a Conditional Approval by DoW or DHS.”
+
+
+23 Id. at 3.
+
+24 Id. at 1.
+
+25 47 U.S.C. § 1601(c); First Power Inverter National Security Determination at 2 (reaching a specific determination
+
+pursuant to section 2 of the Secure Networks Act about foreign-produced power inverters, “unless the Department of
+War or Department of Homeland Security makes a specific determination to the FCC that a given power inverter or
+class of power inverters do not pose such risks.”)
+26 Second Power Inverter National Security Determination at 2-3.   We read the Second Power Inverter National
+Security Determination to both clarify the scope of the First Power Inverter National Security Determination and to
+constitute a new such specific determination pursuant to DoW’s authority to make specific determinations under the
+Secure Networks Act as an “appropriate national security agency.” See 47 U.S.C. §§ 1601(c)(4), 1608(2).
+27 Second Power Inverter National Security Determination at 1-2; First Power Inverter Determination at 2.
+
+
+                                                         4
+                                   Federal Communications Commission                                 DA 26-870
+
+
+        In making this update to the Covered List, we incorporate the definitions of “power inverters” and
+“foreign-produced power inverters” as stated in the Second Power Inverter National Security
+Determination.28 Specifically, we adopt the following definitions:
+
+             •   Power inverters: The term “power inverters” shall mean—
+
+                          (a) Changes dc power to ac power, to include bidirectional
+                              devices, that is intended for use in parallel with an electric
+                              utility to supply common loads and sometimes deliver power
+                              to the utility, i.e., a utility-interactive inverter as that term is
+                              defined in UL 1741 sections 2.1.23, 2.1.52; and
+                          (b) Contains, or is designed, equipped, or configured to accept, a
+                              component that enables remote communication, control,
+                              sensing, data-collection, or monitoring through Ethernet, Wi-
+                              Fi, cellular, Bluetooth, or other similar connections, whether
+                              wired or wireless.
+
+             •   Foreign-produced power inverters: The term “foreign-produced power
+                 inverters” shall mean power inverters as defined above that are not
+                 either—
+
+                          (a) Eligible for the Advanced Manufacturing Tax Credit in 26
+                              U.S. Code § 45X for domestic production or
+                          (b) A domestic end product as defined in 48 CFR § 25.101(a)
+                              because they are manufactured in the United States and the
+                              cost of domestic components exceeds 65% of the total
+                              component cost for items delivered in calendar years 2024
+                              through 2028 or 75% for items delivered starting in calendar
+                              year 2029.
+
+Conditional Approvals
+
+         We reiterate that the Executive Branch interagency body has established a process in which
+entities producing power inverters in a foreign country can request an evaluation as to whether their
+devices do not pose unacceptable risks to national security and receive Conditional Approvals that would
+exempt the devices from the Covered List. DoW or DHS may evaluate such submissions for power
+inverters. Entities seeking Conditional Approvals for power inverters must provide the information
+requested in the Power Inverters Guidance Document.
+
+         If we receive a further specific determination from DoW or DHS that a given power inverter, or
+class of such devices, does not pose unacceptable risks, we will further update the Covered List and
+release a subsequent Public Notice.
+
+         PSHSB takes this action under its authority and obligation to publish and maintain the Covered
+List. Sections 1.50002(a) and 1.50003 of the Commission’s rules require PSHSB to publish the Covered
+List on the Commission's website, to maintain and update the Covered List, and to monitor the status of
+
+
+
+28 Second Power Inverter National Security Determination at 4.
+
+
+                                                        5
+                                     Federal Communications Commission                                       DA 26-870
+
+
+determinations.29
+
+         Equipment Authorization Impacts of the Covered List. Under the Commission’s existing rules in
+section 2.903(a), once added to the Covered List, “covered” equipment is prohibited from receiving
+equipment authorizations.30 Moreover, pursuant to section 2.911 of the Commission’s rules, all
+applications seeking equipment authorization from the Commission must certify that the equipment is not
+prohibited from receiving an equipment authorization by virtue of being “covered equipment.”31 By so
+certifying, the applicant would be certifying that the equipment does not qualify as equipment listed in
+this Public Notice as “covered.” We clarify that these updates will not implicate various rules and
+programs applicable to entities “identified” on the Covered List, because this newly-covered equipment is
+identified by place of production, not by entity.32
+
+         On July 28, 2026, the Office of Engineering and Technology issued a Public Notice waiving the
+applicability of the prohibitions against Class I and Class II permissive changes under 47 CFR §§
+2.932(b) and 2.1043(b) to software and firmware updates that mitigate harm to U.S. consumers for
+“covered” power inverters and advanced robotic devices that received FCC authorization prior to the
+addition of those devices to the Covered List.33 We clarify that July 28 waiver of the FCC’s permissive
+changes rules apply to “power inverters” and “foreign-produced power inverters” under the revised
+definitions in the Second Power Inverter National Security Determination.
+
+        The updated Covered List is attached as Appendix A to this Public Notice and is published on the
+Bureau’s website at https://www.fcc.gov/supplychain/coveredlist.34 The Second Power Inverters National
+Security Determination is attached as Appendix B.
+
+        We note the continued availability of FCC staff guidance pursuant to sections 0.191 and 0.31(i)
+of the Commission’s rules. Commission staff will provide guidance to TCBs, test labs, and equipment
+authorization applicants on the impact of these updates.
+
+       For further information, please contact Matthew Chai, Attorney Advisor, Operations and
+Emergency Management Division, Public Safety and Homeland Security Bureau at 202-418-1112 or
+Matthew.Chai@fcc.gov.
+
+
+
+
+29 47 CFR §§ 1.50002(a), 1.50003.    See Supply Chain Second Report and Order, 35 FCC Rcd at 14317, 14319,
+14325, paras. 72, 77, 92.
+30 47 CFR § 2.903(a).
+
+31 47 CFR § 2.911(d)(5)(i).
+
+32 See 47 CFR §§ 2.903, 2.906, 2.907, 2.911, 2.929, 2.932, 2.938, 2.1033, 2.1043.
+
+33 See FCC, Office of Engineering and Technology Announces Waiver of Prohibitions on Certain Class I and Class
+
+II Permissive Changes to Covered Foreign-Produced Advance Robotic Devises and Covered Foreign-Produced
+Power Inverters, ET Docket No. 21-232, Public Notice, DA 26-789 (OET July 28, 2026).
+34 The FCC website also contains a list of certain affiliates and subsidiaries of entities identified on the Covered List.
+
+The list of affiliates and subsidiaries does not constitute a comprehensive list of all entities that the Commission may
+find, upon further examination, to qualify as relevant subsidiaries or affiliates of entities on the Covered List. Those
+entities, whether or not they currently provide covered communications equipment or services, are subject to the
+Commission’s prohibitions, such as the prohibition against obtaining authorizations for covered equipment. See
+Reminder: Communications Equipment And Services On The Covered List Pose An Unacceptable Risk To National
+Security, National Security Advisory No. 2025-01, DA 25-927, note 3 (PSHSB Oct. 14, 2025).
+                                                            6
+                                    Federal Communications Commission                            DA 26-870
+
+
+                                                 APPENDIX A
+                                COVERED LIST (Updated August 20, 2026)*†±
+
+                        Covered Equipment or Services*                                   Date of Inclusion on
+                                                                                            Covered List
+Telecommunications equipment produced or provided by Huawei Technologies
+Company, including telecommunications or video surveillance services produced               March 12, 2021
+or provided by such entity or using such equipment.
+Telecommunications equipment produced or provided by ZTE Corporation,
+including telecommunications or video surveillance services provided or provided            March 12, 2021
+by such entity or using such equipment.
+Video surveillance and telecommunications equipment produced or provided by
+Hytera Communications Corporation, to the extent it is used for the purpose of
+public safety, security of government facilities, physical security surveillance of         March 12, 2021
+critical infrastructure, and other national security purposes, including
+telecommunications or video surveillance services produced or provided by such
+entity or using such equipment.
+Video surveillance and telecommunications equipment produced or provided by
+Hangzhou Hikvision Digital Technology Company, to the extent it is used for
+the purpose of public safety, security of government facilities, physical security          March 12, 2021
+surveillance of critical infrastructure, and other national security purposes,
+including telecommunications or video surveillance services produced or provided
+by such entity or using such equipment.
+Video surveillance and telecommunications equipment produced or provided by
+Dahua Technology Company, to the extent it is used for the purpose of public
+safety, security of government facilities, physical security surveillance of critical       March 12, 2021
+infrastructure, and other national security purposes, including telecommunications
+or video surveillance services produced or provided by such entity or using such
+equipment.
+Information security products, solutions, and services supplied, directly or
+indirectly, by AO Kaspersky Lab or any of its predecessors, successors, parents,            March 25, 2022
+subsidiaries, or affiliates.
+International telecommunications services provided by China Mobile                          March 25, 2022
+International USA Inc. subject to section 214 of the Communications Act of
+1934.
+Telecommunications services provided by China Telecom (Americas) Corp.                      March 25, 2022
+subject to section 214 of the Communications Act of 1934.
+International telecommunications services provided by Pacific Networks Corp.
+and its wholly-owned subsidiary ComNet (USA) LLC subject to section 214 of the            September 20, 2022
+Communications Act of 1934.
+International telecommunications services provided by China Unicom (Americas)             September 20, 2022
+Operations Limited subject to section 214 of the Communications Act of 1934.
+Cybersecurity and anti-virus software produced or provided by Kaspersky Lab,                 July 23, 2024
+Inc. or any of its successors and assignees.
+Uncrewed aircraft systems (UAS) and UAS critical components produced in a
+foreign country††—except:
+(a) UAS and UAS critical components included on the Defense Contract                      December 22, 2025
+Management Agency’s (DCMA’s) Blue UAS Cleared List, until January 1, 2028,#
+(b) UAS and UAS critical components that qualify as “domestic end products”             Updated: January 7, 2026
+under the Buy American Standard, 48 CFR 25.101(a), until January 1, 2028;
+(c) devices which have been granted a Conditional Approval by DoW or DHS; and           Updated: March 18, 2026
+                                                        1
+                                   Federal Communications Commission                              DA 26-870
+
+
+(d) foreign-produced “Toy Drones,” as defined in the National Security
+Determination, and “Toy Drones that contain foreign-produced components.”                Updated: June 15, 2026
+
+All communications and video surveillance equipment and services listed in               Updated: July 21, 2026
+Section 1709(a)(1) of the FY25 National Defense Authorization Act (Pub. L. 118-
+159).
+Routers^ produced in a foreign country, except routers which have been granted a             March 23, 2026
+Conditional Approval by DoW or DHS.
+International telecommunications services provided by Digitalsystem Technology                 July 7, 2026
+Inc., subject to section 214 of the Communications Act of 1934.
+Foreign-produced power inverters,£ except power inverters which have been                     July 28, 2026
+granted a Conditional Approval by DoW or DHS.
+                                                                                       Updated: August 20, 2026
+Foreign-produced advanced robotic devices,³ except advanced robotic devices                  July 28, 2026
+which have been granted a Conditional Approval by DoW.
+
+  *The inclusion of producers or providers of equipment or services named on this list should be read to
+  include the subsidiaries and affiliates of such entities.
+  †Where equipment or services on the list are identified by category, such category should be construed to
+
+  include only equipment or services capable of the functions outlined in sections 2(b)(2)(A), (B), or (C) of
+  the Secure and Trusted Communications Networks Act of 2019, 47 U.S.C. § 1601(b)(2)(A)-(C).
+  ±The scope of the Covered List is affected by the Conditional Approvals that we have received.
+
+
+  ††For purposes of inclusion of UAS and UAS critical components, we incorporate the definitions included
+
+  in the associated National Security Determination.
+  #The “Blue UAS list” referred to in the National Security Determination is the combination of the “Blue
+
+  UAS Cleared List” at https://bluelist.appsplatformportals.us/Cleared-List/ and the list of compliant UAS
+  components and software at https://bluelist.appsplatformportals.us/Framework/. We use the term “Blue
+  UAS Cleared List” to refer to both lists.
+
+  ^For purposes of inclusion of routers, we incorporate the definitions included in the associated National
+  Security Determination.
+  ³For purposes of inclusion of advanced robotic devices, we incorporate the definitions included in the
+
+  associated National Security Determination.
+  £For purposes of inclusion of power inverters, we incorporate the definitions included in the associated
+
+  National Security Determination.
+
+
+
+
+                                                       2
+Federal Communications Commission   DA 26-870
+
+          APPENDIX B
+
+
+
+
+               1
+Federal Communications Commission   DA 26-870
+
+
+
+
+               2
+Federal Communications Commission   DA 26-870
+
+
+
+
+               3
+Federal Communications Commission   DA 26-870
+
+
+
+
+               4
+

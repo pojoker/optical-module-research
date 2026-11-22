@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import base64
 import csv
 import datetime as dt
 import hashlib
@@ -22,6 +23,7 @@ QA_KEYS = ("code", "question", "answer", "answer_date", "index_id", "empty", "fe
 IR_ENDPOINT = "https://www.cninfo.com.cn/new/hisAnnouncement/query"
 BACKFILL_START = "2023-01-01"
 QA_OVERLAP_DAYS = 7
+SW_DENOMINATOR_CATEGORIES = frozenset(("半导体", "光学光电子", "通信设备", "元件"))
 
 
 def _rows(path):
@@ -163,13 +165,37 @@ class RequestsClient:
         return self._post(data)
 
     def rescreen(self, code, until):
-        response = self.session.get("https://webapi.cninfo.com.cn/api/stock/p_stock2110", params={"scode": code, "sdate": "1990-01-01", "edate": until}, timeout=30)
-        if response.status_code == 401 or "未经授权" in response.text or '"resultcode":401' in response.text:
+        from Crypto.Cipher import AES
+        from Crypto.Util.Padding import pad
+
+        # The public data-service client sends a fresh Accept-Enckey for each request.
+        key = b"1234567887654321"
+        timestamp = str(int(time.time())).encode("ascii")
+        enckey = base64.b64encode(AES.new(key, AES.MODE_CBC, iv=key).encrypt(pad(timestamp, 16))).decode("ascii")
+        response = self.session.post(
+            "https://webapi.cninfo.com.cn/api/stock/p_stock2110",
+            params={"scode": code, "sdate": "1990-01-01", "edate": until},
+            headers={"Accept-Enckey": enckey, "Origin": "https://webapi.cninfo.com.cn",
+                     "Referer": "https://webapi.cninfo.com.cn/", "User-Agent": "Mozilla/5.0"},
+            timeout=30,
+        )
+        if response.status_code == 401:
             raise RuntimeError("p_stock2110 需token(401)")
-        try: records = response.json()
-        except ValueError: return None
-        if isinstance(records, dict): records = records.get("result") or records.get("data") or []
+        response.raise_for_status()
+        payload = response.json()
+        if not isinstance(payload, dict):
+            raise RuntimeError("p_stock2110 响应格式错误")
+        resultcode = str(payload.get("resultcode"))
+        if resultcode == "401":
+            raise RuntimeError("p_stock2110 需token(401)")
+        if resultcode in {"404", "405", "406", "407", "408", "409", "410", "411", "412"}:
+            raise RuntimeError(f"p_stock2110 授权失败({resultcode})")
+        if resultcode != "200" or not isinstance(payload.get("records"), list):
+            raise RuntimeError(f"p_stock2110 响应失败({resultcode})")
+        records = payload["records"]
         for row in records:
+            if not isinstance(row, dict):
+                raise RuntimeError("p_stock2110 记录格式错误")
             if str(row.get("F001V") or row.get("f001v") or "") == "008003" and str(row.get("F008C") or row.get("f008c") or "") == "1":
                 return str(row.get("F005V") or row.get("f005v") or "").strip() or None
         return None
@@ -197,7 +223,11 @@ class FixtureClient:
         self.qa_since[code] = since
         return self._get("qa", code)
     def query_announcements(self, code, since, until): return self._get("announcements", code)
-    def rescreen(self, code, until): return self._get("rescreen", code)
+    def rescreen(self, code, until):
+        if "rescreen" not in self.data:
+            self.calls.append(("rescreen", code))
+            return "半导体"
+        return self._get("rescreen", code)
 
 
 class DailyMirror:
@@ -210,7 +240,9 @@ class DailyMirror:
         if not 0 < qa_timeout < float("inf"):
             raise ValueError("qa_timeout must be positive and finite")
         self.qa_timeout = qa_timeout
-        self.frozen = {r["代码"]: r["名称"] for r in _rows(self.source / "corpus/_frozen.csv")}
+        frozen_rows = _rows(self.source / "corpus/_frozen.csv")
+        self.frozen = {r["代码"]: r["名称"] for r in frozen_rows}
+        self.frozen_categories = {r["代码"]: r.get("行业分类", "") for r in frozen_rows}
         self.watch = []
         for row in _rows(self.source / "corpus/_restart_watchlist.csv"):
             try:
@@ -632,27 +664,35 @@ class DailyMirror:
                 rescreen = None
                 marker = self.state / "monthly" / f".rescreen-{today[:7]}.done"
                 if not marker.exists() and (day.day == 1 or not (self.state / "daily" / f"{today}.txt").exists()):
-                    rescreen = {"month": today[:7], "checked": 0, "moved_out": [], "unresolved": 0, "blocked": False}
+                    rescreen_codes = [code for code in self.frozen if re.fullmatch(r"\d{6}", code)]
+                    rescreen = {"month": today[:7], "checked": 0, "moved_out": [], "unresolved": 0,
+                                "skipped_non_a": len(self.frozen) - len(rescreen_codes), "blocked": False}
                     self._progress["stage"] = "月度重筛"
-                    self._progress["total"] += len(self.frozen)
-                    for code in self.frozen:
+                    self._progress["total"] += len(rescreen_codes)
+                    for code in rescreen_codes:
                         try:
                             result = self.client.rescreen(code, today)
-                            rescreen["checked"] += 1
-                            if result and result not in ("半导体", "光学光电子", "通信设备", "元件"): rescreen["moved_out"].append((code, self.frozen[code], result))
+                            if not result:
+                                rescreen["unresolved"] += 1
+                                self._emit(f"[重筛] {code} 无当前申万分类,本月重筛未完成")
+                            else:
+                                rescreen["checked"] += 1
+                                if (self.frozen_categories.get(code) in SW_DENOMINATOR_CATEGORIES
+                                        and result not in SW_DENOMINATOR_CATEGORIES):
+                                    rescreen["moved_out"].append((code, self.frozen[code], result))
                         except Exception as exc:
                             message = str(exc)
-                            if "401" in message or "token" in message or "未经授权" in message:
+                            if "401" in message or "token" in message or "未经授权" in message or "授权失败" in message:
                                 rescreen["blocked"] = True
-                                rescreen["unresolved"] = len(self.frozen) - rescreen["checked"]
-                                self._emit("[重筛] p_stock2110 需token(401), 本月重筛未完成(降级,不计为成功)")
+                                rescreen["unresolved"] = len(rescreen_codes) - rescreen["checked"]
+                                self._emit(f"[重筛] {message}, 本月重筛未完成(降级,不计为成功)")
                                 break
                             rescreen["unresolved"] += 1
                             self._emit(f"[重筛] {code} 失败: {message[:50]}")
                         finally:
                             self._progress["processed"] += 1
                             self._write_run_status("running", {"qa_failed": qa_failed, "qa_backfill": qa_backfill})
-                    if not rescreen["blocked"]:
+                    if not rescreen["blocked"] and not rescreen["unresolved"]:
                         staged_marker = staging / "monthly" / marker.name
                         staged_marker.parent.mkdir(parents=True, exist_ok=True)
                         staged_marker.write_text(today, encoding="utf-8")
@@ -699,7 +739,11 @@ class DailyMirror:
                         out.append(f"- [{company}|{cell}] {word} | {segment[:60]}")
                 gate = "有增量,值得开闸复核" if evidence else ("本次运行不完整，不能判断无新增" if run_status != "complete" else "无实质增量,今日免开闸")
                 out += ["\n## 校验", *[f"- {line}" for line in check_lines], f"\n> 判定闸建议: {gate}", f"\n## 补录候选(宇宙外·光通信命中) {len(outliers)} 条"] + ([f"- {n} | {d} | {t[:60]}" for n, d, t in outliers[:30]] or ["- 无"])
-                if rescreen: out += [f"\n## 分母差分(月度重筛 {rescreen['month']})", f"- 复核存量 {rescreen['checked']} 家 / 移出 {len(rescreen['moved_out'])} 家 / 新增 0 家", "- 仅报 diff,不改 _frozen.csv"]
+                if rescreen:
+                    out += [f"\n## 分母差分(月度重筛 {rescreen['month']})",
+                            f"- 复核存量 {rescreen['checked']} 家 / 移出 {len(rescreen['moved_out'])} 家 / 新增 0 家",
+                            f"- 非A股代码不适用本重筛 {rescreen['skipped_non_a']} 家",
+                            "- 仅报 diff,不改 _frozen.csv"]
                 if logs: out += ["\n## 日志"] + [f"- {x}" for x in logs]
                 daily = staging / "daily"; daily.mkdir(parents=True, exist_ok=True); (daily / f"{today}.txt").write_text("\n".join(out), encoding="utf-8"); (daily / "queue-latest.txt").write_text("\n".join(current), encoding="utf-8"); (daily / "queue-prev.txt").write_text("\n".join(previous), encoding="utf-8")
                 (staging / "qa_watermarks.json").write_bytes(_json_bytes(qa_watermarks))

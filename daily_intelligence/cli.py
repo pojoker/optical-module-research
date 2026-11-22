@@ -17,6 +17,10 @@ def build_parser() -> argparse.ArgumentParser:
     combine.add_argument("--domestic-state-root", required=True, type=Path)
     combine.add_argument("--overseas-state-root", required=True, type=Path)
     combine.add_argument("--output-root", required=True, type=Path)
+    combine.add_argument("--gemini-source-root", type=Path,
+                         help="Gemini tracker directory (default: project root)")
+    combine.add_argument("--gemini-state-root", type=Path,
+                         help="cloud snapshot directory (default: sibling of domestic state root)")
     publish = subparsers.add_parser(
         "publish",
         help="publish the accepted domestic TXT and overseas HTML verbatim behind one index",
@@ -45,6 +49,8 @@ def main(argv: list[str] | None = None) -> int:
             domestic_state_root=args.domestic_state_root,
             overseas_state_root=args.overseas_state_root,
             output_root=args.output_root,
+            gemini_source_root=args.gemini_source_root,
+            gemini_state_root=args.gemini_state_root,
         )
         if result["assembly_status"] == "complete" and result["collection_status"] == "complete":
             print(f"OK: combined daily {args.date}: complete -> {result['markdown_path']}")

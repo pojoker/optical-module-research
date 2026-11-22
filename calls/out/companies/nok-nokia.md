@@ -10,7 +10,7 @@
 - 可用来源：4/4 个季度槽有 `available` 材料
 - 陈述登记：10 条 `claims.csv` 陈述（含 candidate/rejected）
 - 已核陈述：10 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：4 条已审核雷达事件（asserted 4 / corroborated 0）
+- 已核事件：5 条已审核雷达事件（asserted 5 / corroborated 0）
 
 ## 四季度覆盖
 

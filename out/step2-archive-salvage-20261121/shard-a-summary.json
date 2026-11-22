@@ -1,0 +1,141 @@
+{
+  "shard": "A",
+  "agent": "carbon-customs-entity",
+  "generated_date": "2026-11-21",
+  "script": "out/step2-archive-salvage-20261121/build_customs_and_entities.py",
+  "task1_demo_and_v16": {
+    "demo_pdf_count": 30,
+    "demo_matched_count": 30,
+    "demo_2023_pdf_count": 10,
+    "corpus_annual_2023_pdf_count": 34,
+    "v16_sidecars_total": 11,
+    "v16_sidecars_verified": 11,
+    "v16_sidecars": [
+      {
+        "source_archive_txt": "archive/flows/out/_v16_txt_grok/300548__em_博创科技_em__2023_2023年年度报告.txt",
+        "target_sidecar_txt": "corpus/legacy-input/v16/300548/300548/300548__em_博创科技_em__2023_2023年年度报告.pdf.txt",
+        "sha256": "2c1b91e7c2f71a177321c4312d8847b4940df3f8de5bb9b5877cd6216e46b39d",
+        "size_bytes": 400146
+      },
+      {
+        "source_archive_txt": "archive/flows/out/_v16_txt_grok/300548__em_博创科技_em__2024_2024年年度报告.txt",
+        "target_sidecar_txt": "corpus/legacy-input/v16/300548/300548/300548__em_博创科技_em__2024_2024年年度报告.pdf.txt",
+        "sha256": "af55f78da62d8ca154734cf166cdce7afe5b996a26666ea6643ef8fcf0043e76",
+        "size_bytes": 405286
+      },
+      {
+        "source_archive_txt": "archive/flows/out/_v16_txt_grok/300548__em_长芯博创_em__2025_2025年年度报告.txt",
+        "target_sidecar_txt": "corpus/legacy-input/v16/300548/300548/300548__em_长芯博创_em__2025_2025年年度报告.pdf.txt",
+        "sha256": "bfbd7fae625831135f34e593c75ed918046f051706940dd7742e14df6b06f699",
+        "size_bytes": 397433
+      },
+      {
+        "source_archive_txt": "archive/flows/out/_v16_txt_grok/688048__em_长光华芯_em__2023_2023年年度报告.txt",
+        "target_sidecar_txt": "corpus/legacy-input/v16/688048/688048/688048__em_长光华芯_em__2023_2023年年度报告.pdf.txt",
+        "sha256": "274d09bb57789af7ab88210532b6d70c4cb775d66682c70d03c0277999378057",
+        "size_bytes": 512440
+      },
+      {
+        "source_archive_txt": "archive/flows/out/_v16_txt_grok/688048__em_长光华芯_em__2025_2025年年度报告.txt",
+        "target_sidecar_txt": "corpus/legacy-input/v16/688048/688048/688048__em_长光华芯_em__2025_2025年年度报告.pdf.txt",
+        "sha256": "54f5b61be6201d09ca5276d0c6f68def1c3fb92fb7c9613f1873cb75ff0ed93f",
+        "size_bytes": 461559
+      },
+      {
+        "source_archive_txt": "archive/flows/out/_v16_txt_grok/688313__em_仕佳光子_em__2023_2023年年度报告.txt",
+        "target_sidecar_txt": "corpus/legacy-input/v16/688313/688313/688313__em_仕佳光子_em__2023_2023年年度报告.pdf.txt",
+        "sha256": "dfcd6b818e5cb2a5ca5ebe17c88cdb1e434d4f58ccf0868978e297bb6e35113c",
+        "size_bytes": 504705
+      },
+      {
+        "source_archive_txt": "archive/flows/out/_v16_txt_grok/688313__em_仕佳光子_em__2024_2024年年度报告.txt",
+        "target_sidecar_txt": "corpus/legacy-input/v16/688313/688313/688313__em_仕佳光子_em__2024_2024年年度报告.pdf.txt",
+        "sha256": "599ae9eabc44227c33aa1411e927664d0e2ab9bc161a2e8338fd65092a27acaa",
+        "size_bytes": 503246
+      },
+      {
+        "source_archive_txt": "archive/flows/out/_v16_txt_grok/688313__em_仕佳光子_em__2025_2025年年度报告.txt",
+        "target_sidecar_txt": "corpus/legacy-input/v16/688313/688313/688313__em_仕佳光子_em__2025_2025年年度报告.pdf.txt",
+        "sha256": "5fdac170830f25d5fb3cb689fedcd9e167e68eac78b0edddc59f49fb84f2289a",
+        "size_bytes": 491725
+      },
+      {
+        "source_archive_txt": "archive/flows/out/_v16_txt_grok/688498__em_源杰科技_em__2023_陕西源杰半导体科技股份有限公司2023年年度报告.txt",
+        "target_sidecar_txt": "corpus/legacy-input/v16/688498/688498/688498__em_源杰科技_em__2023_陕西源杰半导体科技股份有限公司2023年年度报告.pdf.txt",
+        "sha256": "633f73d4c2622936b50ac81c0acca52d5316613aeb785bbfec62ba46e922ec22",
+        "size_bytes": 504479
+      },
+      {
+        "source_archive_txt": "archive/flows/out/_v16_txt_grok/688498__em_源杰科技_em__2024_陕西源杰半导体科技股份有限公司2024年年度报告.txt",
+        "target_sidecar_txt": "corpus/legacy-input/v16/688498/688498/688498__em_源杰科技_em__2024_陕西源杰半导体科技股份有限公司2024年年度报告.pdf.txt",
+        "sha256": "95394a45b8efe9e9b0b31a8b0731336e497d6da94c7f30d13306383b0778a79d",
+        "size_bytes": 513176
+      },
+      {
+        "source_archive_txt": "archive/flows/out/_v16_txt_grok/688498__em_源杰科技_em__2025_陕西源杰半导体科技股份有限公司2025年年度报告.txt",
+        "target_sidecar_txt": "corpus/legacy-input/v16/688498/688498/688498__em_源杰科技_em__2025_陕西源杰半导体科技股份有限公司2025年年度报告.pdf.txt",
+        "sha256": "35cc3dc80477e2659e6eee36d99e459e1c701b970296574d84537ec30b964105",
+        "size_bytes": 501411
+      }
+    ]
+  },
+  "task2_truth_and_points": {
+    "truth_total": 16,
+    "truth_passed": 16,
+    "points_rows_total": 269,
+    "points_remediated_target_ids": [
+      "P013",
+      "P025",
+      "P026",
+      "P058"
+    ],
+    "points_dangling_refs_remaining": 0
+  },
+  "task3_entities_and_registry": {
+    "entity_nodes_total": 169,
+    "in_frozen_count": 41,
+    "with_points_count": 80,
+    "intermediary_count": 12,
+    "evaporated_entities_count": 6,
+    "entity_registry_yaml_valid": true,
+    "refs_file_count": 8
+  },
+  "task4_customs_and_macro": {
+    "customs_monthly_rows": 30,
+    "customs_partners_rows": 2881,
+    "customs_partners_physical_lines": 2882,
+    "customs_partners_newlines_stripped": 61,
+    "customs_province_rows": 2246,
+    "customs_trademode_rows": 731,
+    "reconciled_months": 18,
+    "max_usd_reconciliation_error_pct": 0.0,
+    "max_kg_reconciliation_error_pct": 0.0,
+    "hs85177950_catalog_rows": 25,
+    "hs85177950_linkage_rows": 27,
+    "usd_2024_total": 6232747177,
+    "usd_2025_total": 5189328259,
+    "kg_2025_total": 3885012,
+    "usd_2026h1_total": 3427389890,
+    "kg_2026h1_total": 2087064,
+    "shares_2025_pct": {
+      "马来西亚": 34.6284,
+      "美国": 16.6395,
+      "泰国": 9.5958,
+      "中国台湾": 7.9736
+    },
+    "shares_2026h1_pct": {
+      "马来西亚": 41.7985,
+      "中国台湾": 14.3432,
+      "泰国": 9.0025,
+      "美国": 6.87,
+      "美国较2025变动_pp": -9.7695
+    },
+    "macro_evidence_total_rows": 35,
+    "macro_added_ids": [
+      "MC033",
+      "MC034",
+      "MC035"
+    ],
+    "macro_encoding": "UTF-8-BOM+CRLF"
+  }
+}

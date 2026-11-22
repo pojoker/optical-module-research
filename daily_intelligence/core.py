@@ -8,6 +8,8 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from .gemini import load_gemini_supplement, render_gemini_supplement
+
 
 def _read_json(path: Path) -> tuple[dict[str, Any] | None, str | None]:
     if not path.is_file():
@@ -551,6 +553,8 @@ def combine_daily_reports(
     domestic_state_root: str | Path,
     overseas_state_root: str | Path,
     output_root: str | Path,
+    gemini_source_root: str | Path | None = None,
+    gemini_state_root: str | Path | None = None,
 ) -> dict[str, Any]:
     _validate_date(run_date)
     domestic_state_root = Path(domestic_state_root).resolve()
@@ -559,6 +563,13 @@ def combine_daily_reports(
     _require_disjoint_output(output_root, domestic_state_root, overseas_state_root)
     domestic = _load_domestic(domestic_state_root, run_date)
     overseas = _load_overseas(overseas_state_root, run_date)
+    gemini = load_gemini_supplement(
+        run_date=run_date,
+        source_root=Path(gemini_source_root).resolve() if gemini_source_root is not None
+        else Path(__file__).resolve().parent.parent,
+        state_root=Path(gemini_state_root).resolve() if gemini_state_root is not None
+        else domestic_state_root.parent / "gemini",
+    )
     markdown_path = output_root / "daily" / f"{run_date}.md"
     json_path = output_root / "daily" / f"{run_date}.json"
     assembly_status = (
@@ -575,6 +586,7 @@ def combine_daily_reports(
 
     payload = {
         "run_date": run_date,
+        "gemini": gemini,
         "assembly_status": assembly_status,
         "collection_status": collection_status,
         "collection": {
@@ -588,6 +600,7 @@ def combine_daily_reports(
     }
     _atomic_write(
         markdown_path, _render_markdown(run_date, domestic, overseas, assembly_status)
+        + render_gemini_supplement(gemini)
     )
     _atomic_write(
         json_path,

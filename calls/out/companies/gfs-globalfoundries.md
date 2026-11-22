@@ -10,16 +10,16 @@
 - 可用来源：4/4 个季度槽有 `available` 材料
 - 陈述登记：0 条 `claims.csv` 陈述（含 candidate/rejected）
 - 已核陈述：0 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：1 条已审核雷达事件（asserted 1 / corroborated 0）
+- 已核事件：2 条已审核雷达事件（asserted 2 / corroborated 0）
 
 ## 四季度覆盖
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
+| 2026Q3 | [S_GFS_2026Q3](https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-third-quarter-2026-financial-results) | A | available | 公司IR官方2026Q3业绩新闻稿；本地存档HTML与清洗TXT；归档 corpus/web/step4_20261122/gfs_20261104_2026q3_results.txt |
 | 2026Q2 | [S_GFS_2026Q2](https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-second-quarter-2026-financial-results) | A | available | 公司IR直接业绩稿与电话会入口；同日SEC 6-K |
 | 2026Q1 | [S_GFS_2026Q1](https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-first-quarter-2026-financial-results) | A | available | 公司IR直接业绩稿与电话会入口 |
 | 2025Q4 | [S_GFS_2025Q4](https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-fourth-quarter-2025-and-fiscal-year-2025) | A | available | 公司IR直接业绩稿与电话会入口 |
-| 2025Q3 | [S_GFS_2025Q3](https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-third-quarter-2025-financial-results) | A | available | 公司IR直接业绩稿与电话会入口 |
 
 ## 已审核管理层陈述
 

@@ -16,11 +16,11 @@
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
+| FY2027Q1 | [S_FN_2027Q1](https://investor.fabrinet.com/news-releases/news-release-details/fabrinet-announces-first-quarter-fiscal-year-2027-financial) | A | available | 公司IR官方FY2027Q1业绩新闻稿；本地存档HTML与清洗TXT；归档 corpus/web/step4_20261122/fn_20261102_fy27q1_results.txt |
 | FY2026Q4 | [S_FN_2026Q4](https://investor.fabrinet.com/node/13666) | A | available | 公司官方季度及全年业绩新闻稿 |
 | FY2026Q3 | [S_FN_2026Q3_C](https://www.fool.com/earnings/call-transcripts/2026/05/04/fabrinet-fn-q3-2026-earnings-transcript/) | C | available | 免费公开第三方完整逐字稿；仅保存管理层短引文和行号锚 |
 | FY2026Q3 | [S_FN_2026Q3](https://investor.fabrinet.com/news-releases/news-release-details/fabrinet-announces-third-quarter-fiscal-year-2026-financial) | A | available | 公司官方季度业绩新闻稿 |
 | FY2026Q2 | [S_FN_2026Q2](https://investor.fabrinet.com/news-releases/news-release-details/fabrinet-announces-second-quarter-fiscal-year-2026-financial) | A | available | 公司官方季度业绩新闻稿 |
-| FY2026Q1 | [S_FN_2026Q1](https://investor.fabrinet.com/news-releases/news-release-details/fabrinet-announces-first-quarter-fiscal-year-2026-financial) | A | available | 公司官方季度业绩新闻稿 |
 
 ## 已审核管理层陈述
 

@@ -1,0 +1,63 @@
+URL: https://openlightphotonics.com/newsroom/openlight-advances-heterogeneous-silicon-photonics-toward-volume-production
+REQUESTED_URL: https://openlightphotonics.com/newsroom/openlight-advances-heterogeneous-silicon-photonics-toward-volume-production
+TITLE: OpenLight Advances Heterogeneous Silicon Photonics Toward Volume…
+PUBLISHED_AT: 2026-10-07
+RETRIEVED_AT: 2026-11-22
+--- PARSED PARAGRAPHS ---
+[p1] In a post-ECOC 2026 interview with Jim Carroll of Converge Network Digest, OpenLight CEO Adam Carter explained how the company is tackling volume production, 3.2T silicon photonics, wafer-level testing, NPO/CPO architectures and the scaling of heterogeneous InP-on-silicon photonics for AI.
+[p2] The central challenge of the industry is whether it can manufacture at the scale demanded by next-generation, AI infrastructure, stated Carter. OpenLight is at the forefront of addressing this challenge, turning its proven heterogeneous III-V/silicon integration technology into a repeatable, commercially viable, semiconductor manufacturing process. It is also expanding beyond a PDK business model to produce customer designs and reference PICs, whilst providing wafer-level testing, burn-in and OSAT-style manufacturing.
+[p3] In addition, OpenLight has secured $84 million in publicly disclosed funding and appointed Kevin Soukup as COO and Kirk Ouellette as Chief Strategy Officer & Interim CRO. They join from GlobalFoundries and STMicroelectronics respectively, bringing extensive senior leadership and business-scaling experience.
+[p4] Read the full article here...
+[p5] The Electro Optics article, following OFC 2026, covered OpenLight’s demonstration of its heterogeneous III-V silicon photonics devices. It included…
+[p6] Adam Carter, CEO of OpenLight, has his article "200G Plus Per Lane: Powering the Next-Gen Data Deluge" published in this month's PIC magazine, Issue…
+[p7] The 'Fibre Systems' article highlights OpenLight’s latest advancements in high-speed PICs for AI applications.
+[p8] © 2026 OpenLight Photonics Inc. All rights reserved.
+--- FULL BLOCK TEXT ---
+OpenLight Advances Heterogeneous Silicon… | OpenLight Photonics
+The central challenge of the industry is whether it can manufacture at the scale demanded by next-generation, AI infrastructure, stated Carter. OpenLight is at the forefront of addressing this challenge, turning its proven heterogeneous III-V/silicon integration technology into a repeatable, commercially viable, semiconductor manufacturing process. It is also expanding beyond a PDK business model to produce customer designs and reference PICs, whilst providing wafer-level testing, burn-in and OSAT-style manufacturing.
+In addition, OpenLight has secured $84 million in publicly disclosed funding and appointed Kevin Soukup as COO and Kirk Ouellette as Chief Strategy Officer & Interim CRO. They join from GlobalFoundries and STMicroelectronics respectively, bringing extensive senior leadership and business-scaling experience.
+Read the full article here...
+More In the Media
+Apr 2026
+Electro Optics: OpenLight showcased 400G-per-lane III-V silicon photonics at OFC 2026
+The Electro Optics article, following OFC 2026, covered OpenLight’s demonstration of its heterogeneous III-V silicon photonics devices. It included…
+Electro Optics: OpenLight showcased 400G-per-lane III-V silicon photonics at OFC 2026
+Mar 2025
+Read Adam Carter's article on 200G per lane integrated photonics technology in PIC Magazine.
+Adam Carter, CEO of OpenLight, has his article "200G Plus Per Lane: Powering the Next-Gen Data Deluge" published in this month's PIC magazine, Issue…
+Read Adam Carter's article on 200G per lane integrated photonics technology in PIC Magazine.
+Mar 2026
+OpenLight enters 3.2T era with first volume production orders
+The 'Fibre Systems' article highlights OpenLight’s latest advancements in high-speed PICs for AI applications.
+OpenLight enters 3.2T era with first volume production orders
+Close modal
+Search
+Close slideover
+Mobile Navigation
+What we do
+PASIC Design Enablement
+PASIC Inhouse Design
+PASIC Production
+Products
+3.2T and 1.6T
+Technology
+Overview
+3.2T and 1.6T
+Patent Portfolio
+Applications
+About
+Custom PASIC Design
+History
+Leadership Team
+Board of Directors
+Strategic Advisors
+Investors
+Intellectual Property
+Careers
+Newsroom
+Press releases
+Videos
+Events
+View All
+In the Media
+Contact

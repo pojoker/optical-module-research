@@ -30,6 +30,52 @@ def accton_story(slug, title, day, year=''):
 
 
 class ListingDatesTest(unittest.TestCase):
+    def test_sicoya_ordinal_date_binds_to_own_article_not_url(self):
+        body = '<article><h1><a href="/2026/08/27/a/">Release A</a></h1><p class="date">Published: Thursday August 27th, 2026 • In News</p></article>'
+        body += '<article><h1><a href="/2024/09/17/b/">Unknown B</a></h1><p class="date">• In News</p></article>'
+        rows = http.discover_dated_article_links(body, 'https://sicoya.com/news/')
+        self.assertEqual([r['published_at'] for r in rows], ['2026-08-27', ''])
+
+    def test_avicena_dateline_card_and_navigation_exclusion(self):
+        body = '<a href="/avicena-technologies/">Avicena Technologies</a><div class="qodef-e-content"><h5><a href="/avicena-release/">Release A</a></h5><p class="qodef-e-excerpt">Sunnyvale, CA, September 3, 2025 — Avicena, the leader announces something.</p></div>'
+        rows = http.discover_dated_article_links(body, 'https://avicena.tech/press-releases/')
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]['published_at'], '2025-09-03')
+
+    def test_avicena_event_date_does_not_become_publication(self):
+        body = '<div class="qodef-e-content"><h5><a href="/avicena-show/">Event</a></h5><p class="qodef-e-excerpt">Visit Avicena September 3, 2026 at our booth.</p></div>'
+        self.assertEqual(http.discover_dated_article_links(body, 'https://avicena.tech/press-releases/')[0]['published_at'], '')
+
+    def test_lightmatter_multiple_targets_cannot_borrow_heading_date(self):
+        body = '<a class="group" href="/press-release/a/"><h3>Release A</h3><span class="allcaps-sm">Oct 12, 2026</span></a>'
+        rows = http.discover_dated_article_links(body, 'https://lightmatter.com/press-releases/')
+        self.assertEqual(rows[0]['published_at'], '2026-10-12')
+        bad = '<div class="group"><h3>Release A</h3><span class="allcaps-sm">Oct 12, 2026</span><a href="/press-release/b/">Release B</a><a href="/press-release/a/">Release A</a></div>'
+        rows = http.discover_dated_article_links(bad, 'https://lightmatter.com/press-releases/')
+        self.assertTrue(rows)
+        self.assertTrue(all(not r['published_at'] for r in rows))
+
+    def test_coherent_card_date_binds_only_to_own_headline(self):
+        body = '<article class="nir-widget-article"><div class="nir-widget--news--headline"><a href="/news-releases/news-release-details/a">Release A</a></div><div class="nir-widget--news--date-time">September 21, 2026</div></article>'
+        rows = http.discover_dated_article_links(body, 'https://ir.coherent.com/news-events/corporate-releases')
+        self.assertEqual(rows[0]['published_at'], '2026-09-21')
+
+    def test_recent_dates_precede_unknown_and_old_is_never_requested(self):
+        url = 'https://sicoya.com/news/'
+        body = '<article><h1><a href="/2024/01/01/unknown/">Unknown</a></h1></article>'
+        body += '<article><h1><a href="/2026/08/27/old/">Old</a></h1><p class="date">Published: August 27th, 2026 • In News</p></article>'
+        body += '<article><h1><a href="/2026/10/12/current/">Current</a></h1><p class="date">Published: October 12th, 2026 • In News</p></article>'
+        endpoint = Endpoint('WATCH_SICOYA', 'test', 'official_ir', url, 'official_release', 'commercial_disclosure', 'first_party', ())
+        fetcher = http.HttpFetcher('2026-10-13', max_items=1)
+        requested = []
+        def request(u):
+            requested.append(u)
+            return (body if u == url else '<h1>Current</h1><p>This release describes a newly introduced silicon photonics product.</p>', 'text/html', u)
+        fetcher._request = request
+        result = fetcher.fetch(endpoint)
+        self.assertEqual(requested, [url, 'https://sicoya.com/2026/10/12/current'])
+        self.assertEqual(result.items[0]['published_at'], '2026-10-12')
+
     def test_asmpt_card_binding_and_unknown_nav(self):
         html = '<a href="home"><img alt="Logo"></a><a href="new-ceo/">CEO</a>'
         html += asmpt_card('asmpt-announces-2026-interim-results', '2026-07-29')

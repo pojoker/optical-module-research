@@ -1,0 +1,456 @@
+{
+  "shard": "Step 3 Worker 1 (carbon-daily-domestic)",
+  "workpack_id": "OPTICAL-STEP3-DAILY-AND-V6-20261121",
+  "script": "out/step3-daily-and-v6-20261121/ingest_domestic_daily.py",
+  "domestic_ir_sync": {
+    "synced_code_count": 81,
+    "pdf_count": 166,
+    "pdf_txt_count": 166,
+    "total_synced_files": 332,
+    "key_ir_files": [
+      "corpus/ir/001267/001267_2026-09-09_001267汇绿生态投资者关系管理信息20260909.pdf",
+      "corpus/ir/001267/001267_2026-09-09_001267汇绿生态投资者关系管理信息20260909.pdf.txt",
+      "corpus/ir/001267/001267_2026-11-03_001267汇绿生态投资者关系管理信息20261103.pdf",
+      "corpus/ir/001267/001267_2026-11-03_001267汇绿生态投资者关系管理信息20261103.pdf.txt",
+      "corpus/ir/001267/001267_2026-11-06_001267汇绿生态投资者关系管理信息20261106.pdf",
+      "corpus/ir/001267/001267_2026-11-06_001267汇绿生态投资者关系管理信息20261106.pdf.txt",
+      "corpus/ir/002384/002384_2026-10-08_002384投资者关系活动记录表20261008.pdf",
+      "corpus/ir/002384/002384_2026-10-08_002384投资者关系活动记录表20261008.pdf.txt",
+      "corpus/ir/002384/002384_2026-11-02_002384投资者关系活动记录表20261102.pdf",
+      "corpus/ir/002384/002384_2026-11-02_002384投资者关系活动记录表20261102.pdf.txt",
+      "corpus/ir/300308/300308_2026-10-29_投资者关系活动记录表20261029.pdf",
+      "corpus/ir/300308/300308_2026-10-29_投资者关系活动记录表20261029.pdf.txt",
+      "corpus/ir/300308/300308_2026-11-03_投资者关系活动记录表20261103.pdf",
+      "corpus/ir/300308/300308_2026-11-03_投资者关系活动记录表20261103.pdf.txt",
+      "corpus/ir/300394/300394_2026-10-09_2026年10月9日天孚通信投资者关系活动记录表.pdf",
+      "corpus/ir/300394/300394_2026-10-09_2026年10月9日天孚通信投资者关系活动记录表.pdf.txt",
+      "corpus/ir/300394/300394_2026-10-16_2026年10月16日天孚通信投资者关系活动记录表.pdf",
+      "corpus/ir/300394/300394_2026-10-16_2026年10月16日天孚通信投资者关系活动记录表.pdf.txt",
+      "corpus/ir/300394/300394_2026-10-22_2026年10月22日天孚通信投资者关系活动记录表.pdf",
+      "corpus/ir/300394/300394_2026-10-22_2026年10月22日天孚通信投资者关系活动记录表.pdf.txt",
+      "corpus/ir/300394/300394_2026-10-28_2026年10月28日天孚通信投资者关系活动记录表.pdf",
+      "corpus/ir/300394/300394_2026-10-28_2026年10月28日天孚通信投资者关系活动记录表.pdf.txt",
+      "corpus/ir/300394/300394_2026-10-29_2026年10月29日天孚通信投资者关系活动记录表.pdf",
+      "corpus/ir/300394/300394_2026-10-29_2026年10月29日天孚通信投资者关系活动记录表.pdf.txt",
+      "corpus/ir/300502/300502_2026-09-12_300502新易盛投资者关系管理信息20260911.pdf",
+      "corpus/ir/300502/300502_2026-09-12_300502新易盛投资者关系管理信息20260911.pdf.txt",
+      "corpus/ir/300502/300502_2026-10-29_300502新易盛投资者关系管理信息20261029.pdf",
+      "corpus/ir/300502/300502_2026-10-29_300502新易盛投资者关系管理信息20261029.pdf.txt",
+      "corpus/ir/300757/300757_2026-10-29_300757罗博特科投资者关系管理信息20261029.pdf",
+      "corpus/ir/300757/300757_2026-10-29_300757罗博特科投资者关系管理信息20261029.pdf.txt",
+      "corpus/ir/301205/301205_2026-10-28_301205联特科技投资者关系管理信息20261028.pdf",
+      "corpus/ir/301205/301205_2026-10-28_301205联特科技投资者关系管理信息20261028.pdf.txt",
+      "corpus/ir/301338/301338_2026-09-03_2026年9月3日投资者关系活动记录表.pdf",
+      "corpus/ir/301338/301338_2026-09-03_2026年9月3日投资者关系活动记录表.pdf.txt"
+    ],
+    "note_688808_002428": "workflow-rehearsal-daily-state/domestic/{ir,qa} 暂未含 688808(联讯仪器) 与 002428(云南锗业) 日更子目录；两家一手年报/半年报/招股书已在 points.csv 完成锚定。"
+  },
+  "domestic_qa_sync": {
+    "synced_qa_code_count": 93,
+    "total_corpus_qa_dirs": 113,
+    "total_source_lines": 46276,
+    "total_deduped_lines": 45639,
+    "total_duplicates_removed": 637,
+    "focus_code_dedup_stats": {
+      "300308": {
+        "source_lines": 1290,
+        "deduped_lines": 1281,
+        "duplicates_removed": 9,
+        "legacy_only_preserved": 0
+      },
+      "300757": {
+        "source_lines": 1470,
+        "deduped_lines": 1465,
+        "duplicates_removed": 5,
+        "legacy_only_preserved": 0
+      },
+      "300394": {
+        "source_lines": 1010,
+        "deduped_lines": 1004,
+        "duplicates_removed": 6,
+        "legacy_only_preserved": 0
+      },
+      "000988": {
+        "source_lines": 1876,
+        "deduped_lines": 1859,
+        "duplicates_removed": 17,
+        "legacy_only_preserved": 0
+      },
+      "300502": {
+        "source_lines": 629,
+        "deduped_lines": 628,
+        "duplicates_removed": 1,
+        "legacy_only_preserved": 0
+      },
+      "603083": {
+        "source_lines": 297,
+        "deduped_lines": 289,
+        "duplicates_removed": 8,
+        "legacy_only_preserved": 0
+      },
+      "688097": {
+        "source_lines": 225,
+        "deduped_lines": 208,
+        "duplicates_removed": 17,
+        "legacy_only_preserved": 0
+      },
+      "688167": {
+        "source_lines": 325,
+        "deduped_lines": 324,
+        "duplicates_removed": 1,
+        "legacy_only_preserved": 0
+      },
+      "603228": {
+        "source_lines": 370,
+        "deduped_lines": 350,
+        "duplicates_removed": 20,
+        "legacy_only_preserved": 0
+      },
+      "688048": {
+        "source_lines": 286,
+        "deduped_lines": 280,
+        "duplicates_removed": 6,
+        "legacy_only_preserved": 0
+      },
+      "688498": {
+        "source_lines": 144,
+        "deduped_lines": 142,
+        "duplicates_removed": 2,
+        "legacy_only_preserved": 0
+      },
+      "002281": {
+        "source_lines": 1374,
+        "deduped_lines": 1365,
+        "duplicates_removed": 9,
+        "legacy_only_preserved": 0
+      },
+      "301338": {
+        "source_lines": 978,
+        "deduped_lines": 970,
+        "duplicates_removed": 8,
+        "legacy_only_preserved": 0
+      }
+    }
+  },
+  "yng_002428_2025_annual_verified_quotes": {
+    "capacity_quote": "砷化镓晶片产能为80万片/年（2—6英寸），磷化铟晶片产能为15万片/年（2—4英寸）。",
+    "output_quote": "生产化合物半导体材料：砷化镓晶片7.63万片（1-6寸合计），磷化铟晶片10.01万片（2-4寸合计）。",
+    "sales_growth_quote": "使得砷化镓产品（折合4寸）销量较上年上升33.18%，磷化铟产品（折合4寸）销量较上年上升73.77%所致。"
+  },
+  "points_csv_update": {
+    "sha256": "335127dd1fe1613d4fe4b36e23cc205e351b75b06273b7a8d582257635aee536",
+    "total_rows": 271,
+    "updated_point_count": 17,
+    "updated_points": [
+      {
+        "point_id": "P061",
+        "csv_line_no": 60,
+        "company": "联讯仪器",
+        "cell_id": "EQ7",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "上市标签",
+          "判定会话日期",
+          "判定等级",
+          "检索日期"
+        ]
+      },
+      {
+        "point_id": "P059",
+        "csv_line_no": 58,
+        "company": "罗博特科/ficonTEC",
+        "cell_id": "EQ7",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P172",
+        "csv_line_no": 169,
+        "company": "罗博特科",
+        "cell_id": "EQ4",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P173",
+        "csv_line_no": 170,
+        "company": "罗博特科",
+        "cell_id": "EQ7",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P271",
+        "csv_line_no": 267,
+        "company": "天孚通信",
+        "cell_id": "D12",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P155",
+        "csv_line_no": 152,
+        "company": "天孚通信",
+        "cell_id": "D9",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P074",
+        "csv_line_no": 72,
+        "company": "中际旭创",
+        "cell_id": "MOD1",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P138",
+        "csv_line_no": 135,
+        "company": "中际旭创",
+        "cell_id": "MOD3",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P073",
+        "csv_line_no": 71,
+        "company": "新易盛",
+        "cell_id": "MOD1",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P077",
+        "csv_line_no": 75,
+        "company": "剑桥科技",
+        "cell_id": "MOD1",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期"
+        ]
+      },
+      {
+        "point_id": "P117",
+        "csv_line_no": 115,
+        "company": "炬光科技",
+        "cell_id": "D9",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P169",
+        "csv_line_no": 166,
+        "company": "炬光科技",
+        "cell_id": "D7",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P206",
+        "csv_line_no": 202,
+        "company": "博众精工",
+        "cell_id": "EQ3",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P209",
+        "csv_line_no": 205,
+        "company": "华工科技",
+        "cell_id": "MOD1",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "判定等级"
+        ]
+      },
+      {
+        "point_id": "P202",
+        "csv_line_no": 199,
+        "company": "云南鑫耀半导体材料有限公司",
+        "cell_id": "M1",
+        "listing_tag": "未上市(母上市)",
+        "updated_columns": [
+          "判定会话日期",
+          "判定等级",
+          "检索日期"
+        ]
+      },
+      {
+        "point_id": "P275",
+        "csv_line_no": 271,
+        "company": "科瑞技术",
+        "cell_id": "EQ3",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "cell_id",
+          "point_id",
+          "上市标签",
+          "公司",
+          "判定会话日期",
+          "判定等级",
+          "命中引语",
+          "检索日期",
+          "状态",
+          "锚点URL"
+        ]
+      },
+      {
+        "point_id": "P276",
+        "csv_line_no": 272,
+        "company": "科瑞技术",
+        "cell_id": "EQ4",
+        "listing_tag": "A股",
+        "updated_columns": [
+          "cell_id",
+          "point_id",
+          "上市标签",
+          "公司",
+          "判定会话日期",
+          "判定等级",
+          "命中引语",
+          "检索日期",
+          "状态",
+          "锚点URL"
+        ]
+      }
+    ],
+    "id_mapping_note": "points.csv 中 `云南鑫耀半导体材料有限公司` 精确行号为 L199 `P202`（母公司云南锗业 002428），而 L253 `P257` 为 `珠海鼎泰芯源晶体有限公司`（博杰股份参股）；已精确更新 `P202` 并保持 `P257` 零改动。"
+  },
+  "content_ledger_update": {
+    "sha256": "326ccb4b204eb0cfede189fb891b6d26a3c31bc4fd328847426c8599ddd5fda0",
+    "base_rows": 597,
+    "added_rows": 36,
+    "total_rows": 633,
+    "physical_csv_lines": 634,
+    "batch": "step3_daily_2026q4",
+    "added_cid_range": "CLG0598..CLG0633",
+    "added_cids": [
+      "CLG0598",
+      "CLG0599",
+      "CLG0600",
+      "CLG0601",
+      "CLG0602",
+      "CLG0603",
+      "CLG0604",
+      "CLG0605",
+      "CLG0606",
+      "CLG0607",
+      "CLG0608",
+      "CLG0609",
+      "CLG0610",
+      "CLG0611",
+      "CLG0612",
+      "CLG0613",
+      "CLG0614",
+      "CLG0615",
+      "CLG0616",
+      "CLG0617",
+      "CLG0618",
+      "CLG0619",
+      "CLG0620",
+      "CLG0621",
+      "CLG0622",
+      "CLG0623",
+      "CLG0624",
+      "CLG0625",
+      "CLG0626",
+      "CLG0627",
+      "CLG0628",
+      "CLG0629",
+      "CLG0630",
+      "CLG0631",
+      "CLG0632",
+      "CLG0633"
+    ],
+    "added_csv_line_range": "L599..L634",
+    "verbatim_quote_hits": "36/36 (100.0%)",
+    "companies_covered_in_batch": {
+      "300308 中际旭创": 4,
+      "300757 罗博特科/ficonTEC": 4,
+      "300394 天孚通信": 3,
+      "300502 新易盛": 3,
+      "000988 华工科技": 2,
+      "603083 剑桥科技": 3,
+      "688097 博众精工": 2,
+      "688048 长光华芯": 3,
+      "002281 光迅科技": 2,
+      "603228 景旺电子": 2,
+      "688167 炬光科技": 1,
+      "301338 凯格精机": 1,
+      "002384 东山精密/索尔思": 2,
+      "688313 仕佳光子": 1,
+      "001267 汇绿生态": 1,
+      "002957 科瑞技术": 2
+    },
+    "fact_type_counts_in_batch": {
+      "代际事件": 16,
+      "技术参数": 8,
+      "工序步骤": 3,
+      "设备-工序能力": 4,
+      "产品构成": 5
+    },
+    "stance_counts_in_batch": {
+      "neutral": 33,
+      "industry": 1,
+      "issuer_self": 2
+    }
+  },
+  "downstream_test_note": "tests/test_step2_archive_salvage.py:202,205 此前对 content_ledger.csv 总行数写死 assertEqual(len(rows), 597) 与 assertEqual(len(companies), 20)；本轮按指令追加 batch=step3_daily_2026q4 后总行数为 633、唯一公司数为 25 (其中 v1_salvage+step2_expansion 仍精确保持 597 行与 20 家公司)，供终验合成器在回归测试门对齐。"
+}

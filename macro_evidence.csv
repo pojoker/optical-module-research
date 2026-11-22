@@ -1,32 +1,36 @@
 ﻿claim_id,量化结论,证据等级,证据类型,处理方式,来源描述,链接,口径备注
-MC001,2026数通光模块市场约228亿美元,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径",LightCounting《Optics for AI》2026-01月报（以太网+CPO收发器2026预测260亿美元；数通口径228亿）,https://lightcounting.com/newsletter/en/january-2026-optics-for-ai-clusters-366 https://www.c-light.com/news/details/2026_Telecom_Optical_Module_Market.html,口径=数通/数据中心，非全品类；中金/新浪亦引用228亿
-MC002,中国厂商全球份额超过60%,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径",LightCounting 2024全球前十（中国占7席：旭创/新易盛/华为/光迅/海信宽带/华工/东山）+2026预测合计>60%,https://caifuhao.eastmoney.com/news/20260529091238662831220 https://www.c-light.com/news/details/2026_Telecom_Optical_Module_Market.html,60%≈高端800G/1.6T数通；前十占七席为2024排名
-MC003,上游总成本占比70-80%（型号相关，800G/1.6T偏高）,C,多型号混合口径,"二手汇总,仅方向性参考不上首页",同花顺《光模块全产业链深度拆解(2026)》；雪球ssgsmarketing,https://t.10jqka.com.cn/pid_619115549.shtml https://ssgsmarketing@xueqiu.com/7831343781/395687338,与B3同源；非全行业恒定比例
+MC001,2026年全球数通光模块市场约228亿美元（800G+1.6T合计146亿美元）,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径","中际旭创2025年年度报告(第737-745行)援引LightCounting预测:2026年全球数通光模块市场规模有望达228亿美元,800G和1.6T合计146亿美元(约占64%);2030年414亿美元",https://static.cninfo.com.cn/finalpage/2026-03-31/1225056459.PDF,口径=数通光模块(非全品类、非以太网+CPO收发器口径);260亿美元以太网+CPO口径另见MC032;中金/新浪转引同数
+MC002,中国厂商全球份额超过60%,C,二手汇总,"二手汇总,仅方向性参考不上首页",LightCounting 2024全球前十（中国占7席：旭创/新易盛/华为/光迅/海信宽带/华工/东山）+2026预测合计>60%,https://caifuhao.eastmoney.com/news/20260529091238662831220 https://www.c-light.com/news/details/2026_Telecom_Optical_Module_Market.html,"60%≈高端800G/1.6T数通；前十占七席为2024排名;等级复审(2026-11-21 Step1):中际旭创2025年报未载中国厂商份额,现仅东方财富财富号/c-light二手转述,B→C"
+MC003,上游总成本占比70-80%（型号相关，800G/1.6T偏高）,C,多型号混合口径,"二手汇总,仅方向性参考不上首页",同花顺《光模块全产业链深度拆解(2026)》；雪球ssgsmarketing,https://t.10jqka.com.cn/pid_619115549.shtml https://xueqiu.com/7831343781/395687338,与B3同源；非全行业恒定比例
 MC004,高端DSP国产化<3%（800G/1.6T PAM4精确口径<5%）,C,机构报告/厂商规格,"二手汇总,仅方向性参考不上首页",同花顺（112G/224G PAM4不足3%）/东方财富/雪球/澎湃；头条称DSP国产化0%,https://t.10jqka.com.cn/pid_619115549.shtml https://www.toutiao.com/a7663023966503567907,"按速率分层：低端25/50G≈40%、400G≈10%、800G/1.6T<5%；等级复审:同花顺/东方财富/雪球互引=回声室,与B5/B6同判压回C"
-MC005,1.6T CPO功耗9W而传统方案30W,D,缺少同边界同口径原始测试,"缺可比原始数据,不采用",缺同边界（CPO vs 传统）可比原始测试；各厂商方案功耗差异大,,从正文删除，仅作诚实标注
+MC005,1.6T CPO功耗9W而传统方案30W,D,缺少同边界同口径原始测试,"缺可比原始数据,不采用","出自英伟达2025-08官方技术博客《Scaling AI Factories with Co-Packaged Optics for Better Power Efficiency》图3:1.6Tb/s单接口示例,可插拔约30W vs CPO约9W(约-70%);缺含外置激光源(ELS)与液冷整机的跨厂同边界可比实测",https://developer.nvidia.com/blog/scaling-ai-factories-with-co-packaged-optics-for-better-power-efficiency/,"维持D:单厂单接口示例,禁作全行业整机结论;从正文删除,仅作诚实标注(11/19审阅C11补出处)"
 MC006,800G DR8采用8路100G通道,A,IEEE 802.3df标准材料,进入路线BOM,,https://www.ieee802.org/3/df/KeyMotions_3df_220914.pdf,
 MC007,1.6TBASE-DR8采用8路200G方向,B,IEEE P802.3dj制定中材料,进入路线BOM并标记标准制定中,,https://www.ieee802.org/3/B400G/email/msg01775.html,
 MC008,400ZR采用单载波DP-16QAM与相干DSP,A,OIF Implementation Agreement,进入路线BOM,,https://www.oiforum.com/oif-publishes-implementation-agreement-for-400zr-coherent-optical-interface/,
-MC009,已确认公司数,A,内部证据账本可重算,首页展示,,capability_details.csv,
-MC010,能力记录数与覆盖节点数,A,内部证据账本可重算,首页展示,,capability_details.csv,
-MC011,数通占比>70%,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径",LC数通228亿 vs 电信53亿≈81%；新浪/中金一致称数通超70%,https://finance.sina.com.cn/stock/relnews/cn/2026-04-27/doc-inhvwwmp2518726.shtml https://www.c-light.com/news/details/2026_Telecom_Optical_Module_Market.html,多家分析一致
-MC012,GB200 NVL72单机架72个OSFP端口（每GPU一个，400G/800G scale-out；机柜内GPU经铜缆NVLink互联，不耗光模块）,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径",NVIDIA GB200 NVL72规格(72 Blackwell GPU/72 IB NIC) + SemiAnalysis拆解,https://www.nvidia.com/en-us/data-center/gb200-nvl2 https://www.baidu.com/s?wd=SemiAnalysis,原“72个800G/1.6T”措辞有误，已修正
+MC009,已确认公司数,A,内部证据账本可重算,首页展示,,capability_details.csv,"内部证据账本可重算:由capability_details.csv实时重算(首页headline规则必需A级,非外部链接)"
+MC010,能力记录数与覆盖节点数,A,内部证据账本可重算,首页展示,,capability_details.csv,"内部证据账本可重算:由capability_details.csv实时重算(首页headline规则必需A级,非外部链接)"
+MC011,数通占比>70%,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径","中际旭创2025年年度报告援引LightCounting:2026年全球数通光模块228亿美元(第737行)、电信光模块53亿美元(第774行),数通占二者合计≈81%",https://static.cninfo.com.cn/finalpage/2026-03-31/1225056459.PDF,"分母仅数通+电信两类(不含新兴市场),≈81%为本库按年报两数自算;原新浪/c-light转述链接已替换为一手年报"
+MC012,GB200 NVL72单机架72个OSFP端口（每GPU一个，400G/800G scale-out；机柜内GPU经铜缆NVLink互联，不耗光模块）,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径","NVIDIA GB200 NVL72官网规格(72 Blackwell GPU/72 IB NIC);SemiAnalysis拆解原无可核URL(搜索占位链接已删除),仅作背景不作锚",https://www.nvidia.com/en-us/data-center/gb200-nvl72/,原“72个800G/1.6T”措辞有误，已修正
 MC013,LPO新易盛全球市占~75%,C,二手汇总,"二手汇总,仅方向性参考不上首页",C114/头条/雪球/高盛多家一致确认800G LPO新易盛市占75%,https://m.c114.com.cn/w241-1307289.html https://www.toutiao.com/article/7651730571244175926/,"细分LPO赛道；Meta/亚马逊60%+订单；等级复审:出处为C114/头条/雪球/高盛多家二手互引=回声室,非一手,压回C(2026-07-28闸主裁定)"
 MC014,源杰科技10G DFB全球出货第一,C,二手汇总,"二手汇总,仅方向性参考不上首页",钛媒体/雪球/东方财富一致：10G DFB全球市占≈20%居第一（超住友/三菱）,https://www.tmtpost.com/7957602.html https://xueqiu.com/2511366191/386852774,"2.5G以下国产化>90%；等级复审:钛媒体/雪球/东方财富互引=回声室,压回C(同上)"
-MC015,电芯片(DSP)占BOM 25-40%（速率越高占比越大）,C,二手汇总,"二手汇总,仅方向性参考不上首页",雪球ssgsmarketing（800G/1.6T DSP 25-40%）；同花顺,https://ssgsmarketing@xueqiu.com/7831343781/395687338 https://t.10jqka.com.cn/pid_619115549.shtml,DSP单颗近百美元、毛利60%+
-MC016,光芯片占BOM 30-50%，1.6T达60%+,C,二手汇总,"二手汇总,仅方向性参考不上首页",同花顺(30-50%/高端70%)；雪球ssgsmarketing,https://t.10jqka.com.cn/pid_619115549.shtml https://ssgsmarketing@xueqiu.com/7831343781/395687338,成本集中在TOSA/ROSA内光芯片
-MC017,无源器件+结构件占BOM 15-20%，毛利30-40%,C,二手汇总,"二手汇总,仅方向性参考不上首页","ssgsmarketing(15-20%,毛利30-40%)；同花顺",https://ssgsmarketing@xueqiu.com/7831343781/395687338 https://t.10jqka.com.cn/pid_619115549.shtml,国产已占优的“卖水”环节
-MC018,封装组装约10%，毛利约20%,C,二手汇总,"二手汇总,仅方向性参考不上首页",ssgsmarketing（封装只赚辛苦钱）,https://ssgsmarketing@xueqiu.com/7831343781/395687338,模块厂本质是高端组装
-MC019,辅助材料/PCB占BOM 5-10%,C,二手汇总,"二手汇总,仅方向性参考不上首页",同花顺；雪球ssgsmarketing,https://t.10jqka.com.cn/pid_619115549.shtml https://ssgsmarketing@xueqiu.com/7831343781/395687338,高速板材要求高
-MC020,DSP单颗近百美元、毛利60-65%；DSP市场博通+Marvell+Inphi合计>80%,C,二手汇总,"二手汇总,仅方向性参考不上首页","ssgsmarketing（“单价近百美元,毛利率60%-65%”）；同花顺",https://ssgsmarketing@xueqiu.com/7831343781/395687338 https://t.10jqka.com.cn/pid_619115549.shtml,最大短板环节
+MC015,电芯片(DSP)占BOM 25-40%（速率越高占比越大）,C,二手汇总,"二手汇总,仅方向性参考不上首页",雪球ssgsmarketing（800G/1.6T DSP 25-40%）；同花顺,https://xueqiu.com/7831343781/395687338 https://t.10jqka.com.cn/pid_619115549.shtml,DSP单颗近百美元、毛利60%+
+MC016,光芯片占BOM 30-50%，1.6T达60%+,C,二手汇总,"二手汇总,仅方向性参考不上首页",同花顺(30-50%/高端70%)；雪球ssgsmarketing,https://t.10jqka.com.cn/pid_619115549.shtml https://xueqiu.com/7831343781/395687338,成本集中在TOSA/ROSA内光芯片
+MC017,无源器件+结构件占BOM 15-20%，毛利30-40%,C,二手汇总,"二手汇总,仅方向性参考不上首页","ssgsmarketing(15-20%,毛利30-40%)；同花顺",https://xueqiu.com/7831343781/395687338 https://t.10jqka.com.cn/pid_619115549.shtml,国产已占优的“卖水”环节
+MC018,封装组装约10%，毛利约20%,C,二手汇总,"二手汇总,仅方向性参考不上首页",ssgsmarketing（封装只赚辛苦钱）,https://xueqiu.com/7831343781/395687338,模块厂本质是高端组装
+MC019,辅助材料/PCB占BOM 5-10%,C,二手汇总,"二手汇总,仅方向性参考不上首页",同花顺；雪球ssgsmarketing,https://t.10jqka.com.cn/pid_619115549.shtml https://xueqiu.com/7831343781/395687338,高速板材要求高
+MC020,DSP单颗近百美元、毛利60-65%；DSP市场博通+Marvell+Inphi合计>80%,C,二手汇总,"二手汇总,仅方向性参考不上首页","ssgsmarketing（“单价近百美元,毛利率60%-65%”）；同花顺",https://xueqiu.com/7831343781/395687338 https://t.10jqka.com.cn/pid_619115549.shtml,最大短板环节
 MC021,高端EML毛利50%+,C,二手汇总,"二手汇总,仅方向性参考不上首页",同花顺（毛利率区间50%-60%）,https://t.10jqka.com.cn/pid_619115549.shtml,—
-MC022,100G→800G用3年，800G→1.6T仅2年,C,二手汇总,"二手汇总,仅方向性参考不上首页",东方财富长文（速率迭代周期约2年）；头条,https://www.baidu.com/s?wd=%E4%B8%9C%E6%96%B9%E8%B4%A2%E5%AF%8C/%E5%A4%B4%E6%9D%A1,行业叙事，非精确线
+MC022,100G→800G用3年，800G→1.6T仅2年,C,二手汇总,"二手汇总,仅方向性参考不上首页","东方财富长文（速率迭代周期约2年）；头条(原搜索占位链接已删除,无可核一手URL)",,行业叙事，非精确线
 MC023,万卡集群需1.6T模块>1.5万只,C,二手汇总,"二手汇总,仅方向性参考不上首页",测算值，无厂商直报,,标注为测算
 MC024,交付周期8-10周压缩至4周以内,C,二手汇总,"二手汇总,仅方向性参考不上首页",上海证券报2026-05-29（原文：传统12周压缩到8周甚至更短）,https://caifuhao.eastmoney.com/news/20260529091238662831220,原文为12→8周，4周为更激进口径
 MC025,电信市场≈30%（基本盘）,C,二手汇总,"二手汇总,仅方向性参考不上首页",由数通>70%镜像推导,,推导值
 MC026,10G及以下光芯片国产化>65%（源杰DFB全球第一）,C,二手汇总,"二手汇总,仅方向性参考不上首页",头条(10G DFB约60%/低端10G突破90%)、雪球(10G DFB国产化约60%),https://www.toutiao.com/a7663023966503567907 https://xueqiu.com/2511366191/386852774,口径有分歧，部分称10G>90%
-MC027,无源器件全球份额>30%,C,二手汇总,"二手汇总,仅方向性参考不上首页",天孚龙头但精确值缺；雪球(天孚占全球光器件约12%),https://www.baidu.com/s?wd=%E5%A4%A9%E5%AD%9A/%E9%9B%AA%E7%90%83%E4%BC%B0%E7%AE%97,估算
-MC028,测试/老化设备是德/安立垄断，国产<20%,C,二手汇总,"二手汇总,仅方向性参考不上首页",ssgsmarketing（“国产化率不到20%”）,https://ssgsmarketing@xueqiu.com/7831343781/395687338,扩产最先受益的隐藏环节
-MC029,200G+ EML海外垄断，交期排至2027+；高端EML国产化<10%,C,二手汇总,"二手汇总,仅方向性参考不上首页","头条(200G EML自给率<5%,缺口七成)、英伟达锁Lumentum/Coherent 40亿产能",https://www.toutiao.com/a7663023966503567907 https://www.baidu.com/s?wd=%E8%8B%B1%E4%BC%9F%E8%BE%BE%E9%94%81%E4%BA%A7%E8%83%BD,可升B
-MC030,高端产线设备投资占总投资>90%，老化/测试设备占40-56%,C,二手汇总,"二手汇总,仅方向性参考不上首页",ssgsmarketing,https://ssgsmarketing@xueqiu.com/7831343781/395687338,—
+MC027,无源器件全球份额>30%,C,二手汇总,"二手汇总,仅方向性参考不上首页","天孚龙头但精确值缺；雪球(天孚占全球光器件约12%)(原搜索占位链接已删除,无可核一手URL)",,估算
+MC028,测试/老化设备是德/安立垄断，国产<20%,C,二手汇总,"二手汇总,仅方向性参考不上首页",ssgsmarketing（“国产化率不到20%”）,https://xueqiu.com/7831343781/395687338,扩产最先受益的隐藏环节
+MC029,200G+ EML海外垄断，交期排至2027+；高端EML国产化<10%,C,二手汇总,"二手汇总,仅方向性参考不上首页","头条(200G EML自给率<5%,缺口七成)、英伟达锁Lumentum/Coherent 40亿产能(英伟达锁产能一说原挂搜索占位链接,已删除)",https://www.toutiao.com/a7663023966503567907,可升B
+MC030,高端产线设备投资占总投资>90%，老化/测试设备占40-56%,C,二手汇总,"二手汇总,仅方向性参考不上首页",ssgsmarketing,https://xueqiu.com/7831343781/395687338,—
 MC031,国产替代窗口期2-3年,C,二手汇总,"二手汇总,仅方向性参考不上首页",头条（2到3年的关键窗口期）,https://www.toutiao.com/a7663023966503567907,—
+MC032,2026年以太网+CPO光收发器市场预测约260亿美元,B,机构报告/厂商规格,"机构一手或厂商规格,可引用需附口径","LightCounting《Optics for AI》2026-01月报(以太网+CPO光收发器2026预测约260亿美元,原载MC001来源描述,本轮拆出);另附2026-05月报全收发器约400亿美元口径",https://lightcounting.com/newsletter/en/january-2026-optics-for-ai-clusters-366 https://www.lightcounting.com/newsletter/en/may-2026-silicon-photonics-lpolro-and-npocpo-377,口径=以太网+CPO光收发器(1月月报);5月月报400亿美元为全收发器口径;二者均不得与MC001数通228亿口径混用
+MC033,2025年中国关境HS 85177950光通信激光收发模块全年出口额51.89亿美元(12个月四维底表精确汇总;不含海外基地直接出货),A,内部证据账本可重算,首页展示或正文引用(须附中国关境口径),"中华人民共和国海关总署统计在线查询平台(HS 85177950“光通信设备的激光收发模块”,202501-202512月度及伙伴/省/贸易方式四维底表精确汇总=5,189,328,259美元,出口量3,885,012千克)",http://stats.customs.gov.cn/,"由corpus/customs/customs_monthly.csv精确汇总(202501-202512=5,189,328,259美元=51.8933亿美元,与customs_partners/province/trademode三表逐月对账误差0.000%;不含海外工厂直发)"
+MC034,"2026H1中国关境HS 85177950出口额34.27亿美元(马来西亚占41.8%/泰国9.0%/直美降至6.9%,较2025全年降9.7pp)",A,内部证据账本可重算,正文引用(须附中国关境与不分公司口径),"中华人民共和国海关总署统计在线查询平台(HS 85177950,202601-202606总额3,427,389,890美元:马来西亚1,432,598,334美元[41.80%]、中国台湾491,595,736美元[14.34%]、泰国308,549,393美元[9.00%]、美国235,462,089美元[6.87%])",http://stats.customs.gov.cn/,"由corpus/customs/customs_partners.csv与corpus/customs/customs_monthly.csv精确汇总(直美占比由2025全年16.64%[863,480,856/5,189,328,259]降至2026H1的6.87%,精确变动-9.77pp,一位小数口径6.9%-16.6%=-9.7pp)"
+MC035,"Yole CPO市场预测2030年54亿美元/CAGR 121%为机柜内(Scale-Up)自洽口径,新闻稿137%系跨表口径拼接",C,机构报告口径核查,"二手汇总,仅方向性参考不上首页",Yole Group CPO市场报告与官方新闻稿跨口径核查(原卖方溯源F-016与diff-log D002质检裁决),,吸收自原diff-log.csv D002对Yole原报告与新闻稿之口径核查

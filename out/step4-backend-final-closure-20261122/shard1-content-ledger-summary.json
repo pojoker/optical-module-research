@@ -1,0 +1,290 @@
+{
+  "shard": "Step 4 Worker 1 (carbon-s4-content-ledger)",
+  "workpack_id": "OPTICAL-STEP4-BACKEND-FINAL-CLOSURE-20261122",
+  "script": "out/step4-backend-final-closure-20261122/remediate_content_ledger.py",
+  "schema_preserved": {
+    "column_count": 16,
+    "columns": [
+      "cid",
+      "company",
+      "stock_code_or_ticker",
+      "source_doc",
+      "doc_year",
+      "fact_type",
+      "stance",
+      "tense",
+      "cell_ids",
+      "atomic_fact",
+      "verbatim_quote",
+      "section_ref",
+      "local_source_path",
+      "anchor_url",
+      "quote_verification_status",
+      "batch"
+    ],
+    "encoding": "utf-8-sig (UTF-8 with BOM)",
+    "line_terminator": "\\n",
+    "physical_lines": 634,
+    "embedded_cr_or_lf_count": 0,
+    "note": "既有 16 列无独立 verification_note 列，严格保持列名零改动；37 条 table_normalized 行的 table_cell_slash_normalized 标识同步写入 quote_verification_report.json 与本摘要。"
+  },
+  "before_after_comparison": {
+    "total_rows": {
+      "before": 633,
+      "after": 633
+    },
+    "report_documented_rows": {
+      "before": 597,
+      "after": 633
+    },
+    "readme_documented_rows": {
+      "before": 597,
+      "after": 633
+    },
+    "quote_verification_status_counts": {
+      "before": {
+        "verified_local": 630,
+        "table_normalized": 0,
+        "segmented_verified": 0,
+        "inherited_v1_verified": 3
+      },
+      "after": {
+        "verified_local": 578,
+        "table_normalized": 37,
+        "segmented_verified": 15,
+        "inherited_v1_verified": 3
+      }
+    },
+    "strict_contiguous_raw_hits": {
+      "before": 574,
+      "after": 578,
+      "note": "修复 4 条 v1 标点/页首转录微瑕（SJ24-22、C38 英文直引号还原中文弯引号，C51 去除句中摘录末尾人工句号，C29 去除跨页前 2 字介词使引语完整落于 p.1-1-88 L8271-L8272）后，严格去空白连续命中由 574 升至 578 条（v1_salvage 322 + step2_expansion 220 + step3_daily_2026q4 36）。"
+    },
+    "sha256": {
+      "corpus/content_ledger/content_ledger.csv": {
+        "before": "326ccb4b204eb0cfede189fb891b6d26a3c31bc4fd328847426c8599ddd5fda0",
+        "after": "e95217ebaf9401773123792c5dc9d8d3b3d43a468062dc90ac8ca4e90485fdcf"
+      },
+      "corpus/content_ledger/quote_verification_report.json": {
+        "before": "c6237e33e7241d649c72469f49cd9087d74987a34a3e863c92150fa5e72b267c",
+        "after": "e0947b7524022c7b075b4607a36e6c7cf5737713e9ab704b5c253963fa771a96"
+      },
+      "corpus/content_ledger/README.md": {
+        "before": "58b617d8159d84507d86ad6adfb1ff80decf07526237bfcbf5c457a7df99c722",
+        "after": "2a1c358fb97b84c80b596fed7cac492eae2535641b42a4d12c97cf5c0730b6d7"
+      }
+    }
+  },
+  "clg0633_remediation": {
+    "cid": "CLG0633",
+    "company": "科瑞技术",
+    "stock_code_or_ticker": "002957",
+    "before_local_source_path": "corpus/annual/002957/002957/002957__em_科瑞技术_em__2025_2025年年度报告.pdf.txt#L642..648",
+    "after_local_source_path": "corpus/annual/002957/002957/002957__em_科瑞技术_em__2025_2025年年度报告.pdf.txt#L630..631",
+    "before_section_ref": "第三节 管理层讨论与分析·二、报告期内公司从事的主要业务（p.15，L630-L648）",
+    "after_section_ref": "第三节 管理层讨论与分析·二、报告期内公司从事的主要业务（p.15，L630-L631）",
+    "exact_nl_line_range": [
+      630,
+      631
+    ],
+    "matched_nl_lines_1based": {
+      "L630": "高精度可达 50nm；共晶设备精度突破 1um、光耦合设备精度达 50nm，达到行业领先水平，技术产业化成果突出，在光",
+      "L631": "模块领域提供多个核心工序的工艺设备并获得海外头部客户验证和认可。公司精准对接半导体及光模块行业不同应用场"
+    },
+    "note": "原声明 #L642..648 对应光模块芯片共晶贴片设备段落（CLG0632），光耦合设备 50nm 原话按 text.split('\\n') 精确位于第 630..631 行（因第 638 行含 \\f 分页符，严禁使用 splitlines()）。"
+  },
+  "line_range_closure_audit": {
+    "counting_method": "raw_text.split('\\n') (1-based closed interval; splitlines() forbidden)",
+    "local_source_path_hash_L_rows": [
+      {
+        "cid": "CLG0632",
+        "local_source_path": "corpus/annual/002957/002957/002957__em_科瑞技术_em__2025_2025年年度报告.pdf.txt#L642..648",
+        "start_line": 642,
+        "end_line": 648,
+        "in_nl_slice": true
+      },
+      {
+        "cid": "CLG0633",
+        "local_source_path": "corpus/annual/002957/002957/002957__em_科瑞技术_em__2025_2025年年度报告.pdf.txt#L630..631",
+        "start_line": 630,
+        "end_line": 631,
+        "in_nl_slice": true
+      }
+    ],
+    "section_ref_line_ranges_verified": "237/237 (100.0%)",
+    "section_ref_splitlines_and_offby1_aligned_count": 18,
+    "section_ref_aligned_rows": [
+      {
+        "cid": "CJGZ-12",
+        "aligned_section_ref": "第五节 业务与技术 / 二、关键指标对比表（1-1-125，L6137-L6158）"
+      },
+      {
+        "cid": "HGKJ25-01",
+        "aligned_section_ref": "第三节 管理层讨论与分析 / 一、报告期内公司从事的主要业务（p.8，L365-L369）"
+      },
+      {
+        "cid": "DSJM25-02",
+        "aligned_section_ref": "第三节 管理层讨论与分析 / 十一、未来发展展望（p.36，L1948-L1951）"
+      },
+      {
+        "cid": "CLG0598",
+        "aligned_section_ref": "三、投资者问答环节·Q8（L174-L177）"
+      },
+      {
+        "cid": "CLG0599",
+        "aligned_section_ref": "三、投资者问答环节·Q4（L141-L146）"
+      },
+      {
+        "cid": "CLG0600",
+        "aligned_section_ref": "三、投资者问答环节·Q14（L216-L219）"
+      },
+      {
+        "cid": "CLG0601",
+        "aligned_section_ref": "二、Q&A·Q7（L117-L120）"
+      },
+      {
+        "cid": "CLG0602",
+        "aligned_section_ref": "二、问题交流·问题7（L164-L167）"
+      },
+      {
+        "cid": "CLG0603",
+        "aligned_section_ref": "二、问题交流·问题2（L77-L81）"
+      },
+      {
+        "cid": "CLG0606",
+        "aligned_section_ref": "投资者关系活动主要内容介绍·问题2（L48-L51）"
+      },
+      {
+        "cid": "CLG0607",
+        "aligned_section_ref": "投资者关系活动主要内容介绍·问题3（L58-L60）"
+      },
+      {
+        "cid": "CLG0608",
+        "aligned_section_ref": "投资者关系活动主要内容介绍·问题5（L77-L79）"
+      },
+      {
+        "cid": "CLG0609",
+        "aligned_section_ref": "投资者关系活动主要内容介绍·问题10（L114-L116）"
+      },
+      {
+        "cid": "CLG0610",
+        "aligned_section_ref": "投资者关系活动主要内容介绍·问题3（L83-L85）"
+      },
+      {
+        "cid": "CLG0627",
+        "aligned_section_ref": "投资者关系活动主要内容介绍·问题4（L72-L82）"
+      },
+      {
+        "cid": "CLG0628",
+        "aligned_section_ref": "投资者提出的问题及公司回复情况·问题17（L190-L194）"
+      },
+      {
+        "cid": "CLG0629",
+        "aligned_section_ref": "投资者提出的问题及公司回复情况·问题7（L93-L101）"
+      },
+      {
+        "cid": "CLG0631",
+        "aligned_section_ref": "投资者关系活动主要内容介绍·问题六（L70-L72）"
+      }
+    ]
+  },
+  "verification_tiers_detail": {
+    "verified_local": {
+      "count": 578,
+      "by_batch": {
+        "v1_salvage": 322,
+        "step2_expansion": 220,
+        "step3_daily_2026q4": 36
+      },
+      "yanxu_frontend_eligibility": "direct_verified_citation"
+    },
+    "table_normalized": {
+      "count": 37,
+      "verification_note_tag": "table_cell_slash_normalized",
+      "separator": " / ",
+      "cids": [
+        "SJZ39",
+        "SJZ40",
+        "SJZ42",
+        "SJZ43",
+        "SJZ44",
+        "SJZ48",
+        "SJZ51",
+        "SJZ52",
+        "SJZ55",
+        "SJZ57",
+        "YJ21",
+        "CGHX03",
+        "CGHX04",
+        "CGHX05",
+        "CGHX06",
+        "CGHX07",
+        "CGHX08",
+        "CGHX09",
+        "CGHX25",
+        "CGHX27",
+        "CGHX31",
+        "CGHX32",
+        "CGHX33",
+        "CGHX34",
+        "CGHX35",
+        "CGHX36",
+        "CGHX43",
+        "CGHX44",
+        "CGHX45",
+        "CGHX46",
+        "CGHX50",
+        "CGHX51",
+        "CGHX52",
+        "CGHX53",
+        "TCG24-15",
+        "TCG24-20",
+        "C60"
+      ],
+      "all_ge4_segments_in_local_source": true,
+      "all_nonempty_segments_in_local_source": true,
+      "yanxu_frontend_eligibility": "locatable_candidate_only"
+    },
+    "segmented_verified": {
+      "count": 15,
+      "separator_regex": "……|…|\\.\\.\\.",
+      "cids": [
+        "SJZ08",
+        "SJZ30",
+        "C01",
+        "C36",
+        "C39",
+        "C42",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C50",
+        "C52",
+        "C64",
+        "C76",
+        "C77"
+      ],
+      "includes_cross_page_header_elision_cids": [
+        "SJZ08",
+        "SJZ30",
+        "C01"
+      ],
+      "all_ge4_segments_in_local_source": true,
+      "all_nonempty_segments_in_local_source": true,
+      "yanxu_frontend_eligibility": "locatable_candidate_only"
+    },
+    "inherited_v1_verified": {
+      "count": 3,
+      "cids": [
+        "C43",
+        "C48",
+        "C72"
+      ],
+      "reason": "猎奇智能招股书多栏表格在 1-1-163/164/167 跨页处将下页表头嵌入词中，首尾 >=20 字锚点均 100% 命中本地原文",
+      "yanxu_frontend_eligibility": "locatable_candidate_only"
+    },
+    "anomalous_unverified_count": 0
+  },
+  "downstream_verifier_note": "tests/test_step3_daily_and_v6.py:169-173 此前对 CLG0632 与 CLG0633 共同写死断言 local_source_path == '...002957__em_科瑞技术_em__2025_2025年年度报告.pdf.txt#L642..648'；本轮按指令将 CLG0633 修正为精确 \\n 行号 '#L630..631'（CLG0632 保持 '#L642..648'），请 @carbon-s4-verifier 在对齐 tests/test_step3_daily_and_v6.py 时同步更新第 169-173 行断言。"
+}

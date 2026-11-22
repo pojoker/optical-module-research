@@ -1,0 +1,296 @@
+[
+  {
+    "id": "G-f46ef070f67d25cb",
+    "verdict": "官方证实部分主张",
+    "confirmed": "波长光电2026年10月8日披露收到沪检三分刑诉〔2026〕176号起诉书。按公告转述，检方指控2023年8月至2025年4月出口涉案光学镜片未按规定办理两用物项出口许可证。公告载为公诉起诉阶段，涉案金额约2,010.85万元。深交所截至11月10日的发行人披露列表未见后续专门判决公告。",
+    "missing": "缺生效判决、涉案镜片技术参数、管制编码及各批次当时适用规则。单案无法验证行业整体“严查”趋势。",
+    "proposal": "以发行人公告记录收到起诉书及检方指控，结论限于2026年10月8日披露时的诉讼阶段。保留后续司法结果 UNKNOWN。",
+    "target": "corpus/_frozen.csv 301421 波长光电（主体锚）；同案现有合规条目 UNKNOWN。不得写入产品能力点。",
+    "evidence": [
+      {
+        "title": "波长光电关于公司收到起诉书的公告（2026-037）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-08/1225597511.PDF",
+        "locator": "第1页重要内容提示、第2页第三节",
+        "quote": "公诉起诉阶段"
+      }
+    ],
+    "search": [
+      "波长光电 两用物项 出口 诉讼 许可证 光学镜片",
+      "深交所301421，2026-10-09至2026-11-10专门诉讼公告检索"
+    ]
+  },
+  {
+    "id": "G-bc3dd6a3b5bc8042",
+    "verdict": "官方原文纠正扩大适用范围",
+    "confirmed": "条例第十四条规定清单、临时管制及出口管制法第十二条第三款等情形的许可要求。波长光电起诉公告指向该个案的光学镜片。条例自2024年12月1日起施行，案涉期间跨越生效日。",
+    "missing": "缺镜片参数、清单项和适用于各出口批次的规则。不能以精度或产品通称替代物项识别，也不能把2024年12月生效规则倒推至此前批次。",
+    "proposal": "只提交法条边界候选：逐产品按技术指标、用途、适用时点判断许可。与G-f46ef070f67d25cb是同一案件，案件事实只保留一条。",
+    "target": "同条款的合规旧条目 UNKNOWN。corpus/_frozen.csv 301421只供主体定位。",
+    "evidence": [
+      {
+        "title": "中华人民共和国两用物项出口管制条例（国务院令第792号）",
+        "url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1735",
+        "locator": "第十四条、第50条",
+        "quote": "出口两用物项出口管制清单所列两用物项或者实施临时管制的两用物项，出口经营者应当向国务院商务主管部门申请许可。"
+      },
+      {
+        "title": "波长光电关于公司收到起诉书的公告（2026-037）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-08/1225597511.PDF",
+        "locator": "第1页重要内容提示、第2页第三节",
+        "quote": "公诉起诉阶段"
+      }
+    ],
+    "search": [
+      "两用物项出口管制条例 第十四条 许可证 技术指标",
+      "波长光电 2026-037 公诉阶段"
+    ]
+  },
+  {
+    "id": "G-9ab4ac6f52ae4f02",
+    "verdict": "官方原文纠正政策阶段",
+    "confirmed": "商务部、科技部于2026年10月16日发布第48号公告，拟增列人工智能、生物医药、光伏三个领域共40项技术，公开征求意见至11月15日。公告同时要求对附件所列技术实施出口前临时登记，涵盖已开始但尚未完成的出口。 附件1人工智能条目266507X列出用于大规模智能算力集群的片间或节点间高速互连技术，双向带宽门槛≥800 GB/s。该集群的注释为加速卡总数超过10,000张。",
+    "missing": "原纪要将征求意见表述为正式调整，并泛称光电先进制造和两用物项审核。附件的条目是满足指标和用途的技术，800 GB/s也不是单个800G光模块的速率。具体光模块相关交易能否落入登记要求仍需核对技术、用途、适用时点和交易形态。需继续查最终目录和正式实施日期。",
+    "proposal": "记录2026-10-16的目录修订征求意见和附件技术的临时登记要求。可单列266507X的高速互连技术阈值、集群规模定义与生效阶段。具体光模块交易的适用性保持 UNKNOWN。",
+    "target": "同文号合规旧条目 UNKNOWN。该法源属于技术贸易管理，勿并入产品性能或产能点。",
+    "evidence": [
+      {
+        "title": "商务部、科技部公告2026年第48号",
+        "url": "https://www.mofcom.gov.cn/zcfb/dwmygl/art/2026/art_61446ab4beee4f63973d4d0ab3097648.html",
+        "locator": "正文开头、第一节及第三节",
+        "quote": "现向社会公开征求意见，并同步对相关技术实施出口前登记管理。"
+      },
+      {
+        "title": "2026年第48号公告附件1（技术范围征求意见稿）",
+        "url": "https://www.mofcom.gov.cn/zcfb/dwmygl/art/2026/art_61446ab4beee4f63973d4d0ab3097648.html",
+        "locator": "附件1，人工智能限制出口部分，第11项266507X控制要点1及注（原WPS，以 Referer 回读）",
+        "quote": "用于大规模智能算力集群的片间或节点间高速互连技术，双向带宽≥800吉字节每秒（GB/s）。"
+      },
+      {
+        "title": "商务部新闻发言人就修订出口技术目录答记者问",
+        "url": "https://cms.exportcontrol.mofcom.gov.cn/article/gndt/202610/1329.html",
+        "locator": "第三问",
+        "quote": "已经开始但尚未完成的出口，在登记范围内。"
+      }
+    ],
+    "search": [
+      "商务部 科技部 2026第48号 10月16日 出口技术目录",
+      "商务部中国出口管制信息网第48号答记者问",
+      "商务部公告附件1（WPS）回读并定位第11项266507X"
+    ]
+  },
+  {
+    "id": "G-b5c2b9b1b4dbd9d4",
+    "verdict": "官方证实企业表态，政策和散热推断待证",
+    "confirmed": "天孚通信于10月9日和10月22日回应市场传闻，称目前发布的相关政策未对其所述光器件产品形成约束、未影响公司业务，10月22日另称泰国建有量产基地。公司半年报仍列示海外贸易政策风险。",
+    "missing": "缺外交部所指记者会与完整问答、对应法域及政策文号、产品和交易范围。三级散热说法需典型产品BOM、热路径设计及验证，技术线索与公司合规表态分开。",
+    "proposal": "记录天孚通信10月22日对市场传闻的公司自述，并保留该时点和对象。三级散热与行业合规判断不提交。",
+    "target": "points.csv P023/D6、P271/D12只关联企业业务，不能承载合规结论。技术可路由 research_questions.yaml PQ005/TQ003，仍需直接技术证据。",
+    "evidence": [
+      {
+        "title": "天孚通信2026年10月9日投资者关系活动记录表",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-09/1225600182.PDF",
+        "locator": "“近期海外进出口传闻的政策限制对公司是否有影响”答复",
+        "quote": "目前发布的相关政策未对光器件产品进行约束"
+      },
+      {
+        "title": "天孚通信2026年10月22日投资者关系活动记录表",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-22/1225617545.PDF",
+        "locator": "第2页，第3问",
+        "quote": "公司在泰国建有量产基地"
+      },
+      {
+        "title": "天孚通信2026年半年度报告",
+        "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-19/788b066c-b687-4f11-8ae4-c6197f019370.PDF",
+        "locator": "第三节管理层讨论与分析，“公司面临的风险和应对措施”",
+        "quote": "包括关税政策和进出口条件等对公司的业务产生不利影响。"
+      }
+    ],
+    "search": [
+      "巨潮300394 2026-10-09、2026-10-22投资者关系活动记录表",
+      "外交部 2026年10月23日 光模块 市场经济原则"
+    ]
+  },
+  {
+    "id": "G-4c03df04613bd868",
+    "verdict": "官方证实企业披露，归类为经营与资本动作",
+    "confirmed": "中际旭创11月6日披露主要客户订单基本覆盖2027全年，部分重点客户给出2028需求指引，预期NPO/XPO需求在2027下半年逐步释放。新易盛称截至11月5日累计成交7.9986380947亿元，回购仍在实施期，订单充足。天孚通信表态将适时研究政策工具，当日公告所列1至1.5亿元回购方案尚待股东会审议。立讯、领益、鹏鼎披露累计成交约10亿、5.60亿、3.30亿元，截止时点分别为10月31日、11月6日午间、11月3日。胜宏公告称经营正常、供应链稳定和产能利用率良好。",
+    "missing": "2028需求指引不是订单，下一代需求展望不证明批量交付。上市公司自述和回购记录无法验证行业流动性“筑底”，也不涉及贸易限制。未用这一组公告推断海光信息存在同批同类公告。",
+    "proposal": "单独为P074留11月6日公司订单与需求指引候选，明确年度、订单与指引口径。新易盛经营自述可留P073上下文。各回购数据留公司事件资料，不进贸易合规。",
+    "target": "points.csv P074/MOD1（中际旭创）、P073/MOD1（新易盛）。其余回购与合规知识库无同主题目标。",
+    "evidence": [
+      {
+        "title": "中际旭创关于股份回购事项的公告（2026-107）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-11-06/1225660601.PDF",
+        "locator": "第二节，公司目前经营情况及未来展望，空白归一",
+        "quote": "主要客户订单已基本覆盖2027年全年"
+      },
+      {
+        "title": "新易盛关于公司回购股份事项的公告（2026-068）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-11-06/1225660606.PDF",
+        "locator": "第1页，回购进展及经营情况",
+        "quote": "成交总金额为799,863,809.47元"
+      },
+      {
+        "title": "天孚通信关于公司股份回购事项的公告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-11-06/1225660605.PDF",
+        "locator": "第1页，回购方案与政策表述",
+        "quote": "适时研究并依法合规充分运用政策工具"
+      },
+      {
+        "title": "立讯精密关于公司股份回购事项的公告",
+        "url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-11-06/ad33824c-df06-44db-8bef-4e3e18434bf1.pdf",
+        "locator": "第1页，回购进展",
+        "quote": "999,915,944.13元（不含交易费用）"
+      },
+      {
+        "title": "领益智造关于公司股份回购事项的公告",
+        "url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-11-06/d929456a-7c60-4b98-873f-e97cf594a44b.pdf",
+        "locator": "回购进展，截至11月6日午间收盘",
+        "quote": "560,301,481.31元（不含交易费用）"
+      },
+      {
+        "title": "鹏鼎控股关于公司股份回购事项的公告",
+        "url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-11-06/ef52d86c-8e98-46d5-bb3c-dbca208f3a97.pdf",
+        "locator": "回购进展，截至11月3日",
+        "quote": "329,986,697.65元（不含交易佣金等交易税费）"
+      },
+      {
+        "title": "胜宏科技关于公司经营和回购情况的公告",
+        "url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-11-06/b1fd9238-ef02-4223-aeae-837d3fa53e3b.pdf",
+        "locator": "公司目前经营情况",
+        "quote": "公司目前生产经营一切正常，供应链稳定，产能利用率处于良好水平"
+      }
+    ],
+    "search": [
+      "深交所listedNotice_disc，2026-11-06，300308/300502/300394/002475/002600/002938/300476等主体",
+      "巨潮核对2026-107、2026-068两份原件"
+    ]
+  },
+  {
+    "id": "G-c0308a66e32bf867",
+    "verdict": "官方证实出货口径，原产地推断缺证",
+    "confirmed": "华工科技10月30日投关纪要称，800G LPO下半年提量，泰国工厂月出货约10万只并已签长单。纪要原文的396%对应光模块产品前三季度在北美及东南亚出口增长，未注明是实物量。1.6T LPO正在送样测试。半年报另披露自研硅光芯片规模应用和1.6T光模块批量交付，不能与特定1.6T LPO客户阶段互换。",
+    "missing": "缺北美主要云厂商、对应型号和订单的原始证据。缺华工科技具体模块的物料清单、关键工序地点、对应CBP裁定及进口时点适用税目和税率。其他公司裁定不能替代。",
+    "proposal": "为P209补2026-10-30公司自述的泰国800G LPO月出货约10万只及1.6T LPO送样状态。396%保留原文地理范围且注明数量或金额口径未知。原产地和豁免保留 UNKNOWN。",
+    "target": "points.csv P209/MOD1，P212/C4作为硅光业务基线。华工泰国产品的合规旧条目 UNKNOWN。",
+    "evidence": [
+      {
+        "title": "华工科技2026年10月30日投资者关系活动记录表",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225647394.PDF",
+        "locator": "第4页光互联业务、第6页交流问答，空白归一",
+        "quote": "目前泰国工厂月出货量约10万只"
+      },
+      {
+        "title": "华工科技2026年10月30日投资者关系活动记录表（出口增速口径）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225647394.PDF",
+        "locator": "第4页，光互联业务，空白归一",
+        "quote": "光模块产品前三季度在北美及东南亚出口增长396%。"
+      },
+      {
+        "title": "华工科技2026年半年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513179.PDF",
+        "locator": "第12页，“产品力打造”光互联业务",
+        "quote": "自研硅光芯片已实现规模化应用，配套400G、800G、1.6T光模块批量交付"
+      },
+      {
+        "title": "美国 CBP HQ H335829，Eoptolink 特定光收发模块",
+        "url": "https://rulings.cbp.gov/api/ruling/H335829",
+        "locator": "2025-02-26，LAW AND ANALYSIS、HOLDING，官方 JSON 的 text 字段",
+        "quote": "the country of origin of the subject optical transceiver units is China."
+      },
+      {
+        "title": "美国 CBP N358465，Accelink 特定 800G OSFP DR8",
+        "url": "https://rulings.cbp.gov/api/ruling/N358465",
+        "locator": "2026-02-27，原产地结论，官方 JSON 的 text 字段",
+        "quote": "the country of origin of this product would be Malaysia"
+      }
+    ],
+    "search": [
+      "华工科技 000988 2026-10-30 泰国 800G LPO 10万 396%",
+      "CBP CROSS H335829、N358465 官方 API"
+    ]
+  },
+  {
+    "id": "G-99a3b35d6ff9173b",
+    "verdict": "官方规格书部分证实，采购交付和合规待证",
+    "confirmed": "FS一手规格书列出1.6T DR8 OSFP 500m 双MPO-12/APC，及1.6T 2×FR4 OSFP 2km 双双工LC/UPC。后者资料写的是2×FR4，不能据此确认纪要的FR8型号。FS另有1.6T有源DAC规格书和OSFP224无源铜缆产品条目。",
+    "missing": "缺纪要日期的可交易存档、所有型号的库存与实际发货记录、行业渗透证据，以及具体型号的BOM、工序和原产地裁定。规格书不能证明渠道全面铺开。",
+    "proposal": "为TQ005保留FS两款确有规格书的1.6T光链路型号及接口、距离差异。DAC可作为独立电链路资料，贸易合规结论保持 UNKNOWN。",
+    "target": "research_questions.yaml TQ005（产品/链路标准轴）；未定位到FS自有制造点或同一产品合规旧条目。",
+    "evidence": [
+      {
+        "title": "FS OSFP-DR8-1.6T-FL 技术规格书",
+        "url": "https://resource.fs.com/mall/resource/osfp-dr8-16t-fl-data-sheet.pdf",
+        "locator": "首页型号及规格",
+        "quote": "1.6T DR8 OSFP Flat Top 1310nm 500m"
+      },
+      {
+        "title": "FS OSFP-2FR4-1.6T-FL 技术规格书",
+        "url": "https://resource.fs.com/mall/resource/osfp-2fr4-16t-fl-data-sheet.pdf",
+        "locator": "首页型号及规格",
+        "quote": "1.6T 2x FR4 OSFP FLAT TOP 1310NM 2KM DUAL DUPLEX LC/UPC DOM TRANSCEIVER"
+      },
+      {
+        "title": "FS OSFPFL-1.6T-ACxxx 技术规格书",
+        "url": "https://resource.fs.com/mall/resource/osfpfl-16t-acxxx-data-sheet.pdf",
+        "locator": "首页型号及规格",
+        "quote": "1.6T OSFP FLAT TOP ACTIVE DIRECT ATTACH COPPER TWINAX CABLE"
+      },
+      {
+        "title": "FS 1.6T OSFP224 无源铜缆产品问答（244361）",
+        "url": "https://cn.fs.com/qa-list/244361?tag=0",
+        "locator": "产品标题",
+        "quote": "1.6T OSFP224 8 x 200G PAM4 IHS顶部带散热片无源铜缆"
+      },
+      {
+        "title": "美国 CBP HQ H335829，Eoptolink 特定光收发模块",
+        "url": "https://rulings.cbp.gov/api/ruling/H335829",
+        "locator": "2025-02-26，LAW AND ANALYSIS、HOLDING，官方 JSON 的 text 字段",
+        "quote": "the country of origin of the subject optical transceiver units is China."
+      }
+    ],
+    "search": [
+      "FS OSFP-DR8-1.6T-FL 500m、OSFP-2FR4-1.6T-FL 2km、OSFPFL-1.6T-ACxxx",
+      "FS 244361 1.6T OSFP224 无源铜缆",
+      "CBP CROSS H335829 官方 API"
+    ]
+  },
+  {
+    "id": "G-339d80a17d919a12",
+    "verdict": "官方证实企业表态，通用原产地结论无证据且有反例",
+    "confirmed": "天孚通信10月22日确有公司层面回应并披露泰国量产基地。CBP H335829对新易盛申报的特定光收发模块判原产中国，事实是物理制造及组装全部在中国、泰国装载固件。N358465对光迅一款800G OSFP DR8判原产马来西亚，基于其主PCBA在马来西亚制造等具体事实。N359369对索尔思台湾申报的三款光模块基于主PCBA在中国制造等事实判Section 301原产中国。",
+    "missing": "缺中际旭创及新易盛当前各海外工厂同一SKU的完整BOM、工序地图与原产地文件。既有CBP裁定只覆盖申报事实，不能据此确定其他批次、税目、税率或出口限制。天孚表态不等于主管机关裁定。",
+    "proposal": "用H335829、N358465和N359369保留三个分开的产品个案与关键事实，不提交厂级豁免。天孚10月22日表态与G-b5c2b9b1b4dbd9d4去重。",
+    "target": "points.csv P073/MOD1为新易盛产品主体锚，P074/MOD1为中际旭创业务锚。具体裁定无同文号合规旧条目。",
+    "evidence": [
+      {
+        "title": "天孚通信2026年10月22日投资者关系活动记录表",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-10-22/1225617545.PDF",
+        "locator": "第2页，第3问",
+        "quote": "公司在泰国建有量产基地"
+      },
+      {
+        "title": "美国 CBP HQ H335829，Eoptolink 特定光收发模块",
+        "url": "https://rulings.cbp.gov/api/ruling/H335829",
+        "locator": "2025-02-26，LAW AND ANALYSIS、HOLDING，官方 JSON 的 text 字段",
+        "quote": "the country of origin of the subject optical transceiver units is China."
+      },
+      {
+        "title": "美国 CBP N358465，Accelink 特定 800G OSFP DR8",
+        "url": "https://rulings.cbp.gov/api/ruling/N358465",
+        "locator": "2026-02-27，原产地结论，官方 JSON 的 text 字段",
+        "quote": "the country of origin of this product would be Malaysia"
+      },
+      {
+        "title": "美国 CBP N359369，Source Photonics Taiwan 三款光模块",
+        "url": "https://rulings.cbp.gov/api/ruling/N359369",
+        "locator": "2026-03-17，Section 301 原产地结论，官方 JSON 的 text 字段",
+        "quote": "the country of origin for purposes of applying trade remedies under Section 301 will be China."
+      }
+    ],
+    "search": [
+      "巨潮300394 2026-10-22 进出口政策问答",
+      "CBP CROSS H335829、N358465、N359369 官方 API"
+    ]
+  }
+]

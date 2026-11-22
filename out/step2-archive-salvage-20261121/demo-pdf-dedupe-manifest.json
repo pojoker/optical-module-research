@@ -1,0 +1,349 @@
+{
+  "schema_version": 1,
+  "generated_date": "2026-11-21",
+  "demo_dir": "archive/demo/data",
+  "demo_pdf_count": 30,
+  "demo_2023_pdf_count": 10,
+  "corpus_annual_2023_pdf_count": 34,
+  "matched_count": 30,
+  "unmatched_count": 0,
+  "all_30_matched": true,
+  "archive_files_preserved": true,
+  "entries": [
+    {
+      "demo_path": "archive/demo/data/002281/002281__em_光迅科技_em__2023_2023年年度报告.pdf",
+      "stock_code": "002281",
+      "report_year": "2023",
+      "size_bytes": 1183125,
+      "sha256": "da9c5b92a92e6d776d575a4d9b4c3812f300b562950fc91ee0ad3d371087bc61",
+      "corpus_matches": [
+        "corpus/annual-2023/002281/002281__em_光迅科技_em__2023_2023年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/002281/002281__em_光迅科技_em__2024_2024年年度报告.pdf",
+      "stock_code": "002281",
+      "report_year": "2024",
+      "size_bytes": 3905599,
+      "sha256": "a4f57ef8f3787cde4b73bf6547a4bf1011859cba22225b5a2eb5bf3580ac4281",
+      "corpus_matches": [
+        "corpus/annual-2024/002281/002281__em_光迅科技_em__2024_2024年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/002281/002281__em_光迅科技_em__2025_2025年年度报告.pdf",
+      "stock_code": "002281",
+      "report_year": "2025",
+      "size_bytes": 1515825,
+      "sha256": "8363cd690d29f4d6f913339f9dc7a70b7bc14f260f0140175c5cb45593053869",
+      "corpus_matches": [
+        "corpus/annual/002281/002281/002281__em_光迅科技_em__2025_2025年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300308/300308__em_中际旭创_em__2023_2023年年度报告.pdf",
+      "stock_code": "300308",
+      "report_year": "2023",
+      "size_bytes": 6702448,
+      "sha256": "2276f88c03aca66b37e4d7a03c88df1dfa7eb6bdf1487bf7d3a76d21b84948a9",
+      "corpus_matches": [
+        "corpus/annual-2023/300308/300308__em_中际旭创_em__2023_2023年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300308/300308__em_中际旭创_em__2024_2024年年度报告.pdf",
+      "stock_code": "300308",
+      "report_year": "2024",
+      "size_bytes": 6966927,
+      "sha256": "1c13639ab218395ef3c81bfbcddb64ba48262d2afcc8ac9ed1588a9dbd4a513f",
+      "corpus_matches": [
+        "corpus/annual-2024/300308/300308__em_中际旭创_em__2024_2024年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300308/300308__em_中际旭创_em__2025_2025年年度报告.pdf",
+      "stock_code": "300308",
+      "report_year": "2025",
+      "size_bytes": 6150814,
+      "sha256": "0290f380253dde79613d43a1c6203674ae36cb89f849f063668ccde9a8789b5e",
+      "corpus_matches": [
+        "corpus/annual/300308/300308/300308__em_中际旭创_em__2025_2025年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300394/300394__em_天孚通信_em__2023_2023年年度报告.pdf",
+      "stock_code": "300394",
+      "report_year": "2023",
+      "size_bytes": 2482981,
+      "sha256": "0781dc909b8610714f1abd226cfd52e519b63d96350aeef550bd9c8e42f2d2fd",
+      "corpus_matches": [
+        "corpus/annual-2023/300394/300394__em_天孚通信_em__2023_2023年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300394/300394__em_天孚通信_em__2024_2024年年度报告.pdf",
+      "stock_code": "300394",
+      "report_year": "2024",
+      "size_bytes": 3688060,
+      "sha256": "b411f1cfbc224f0d12c20a6df89cb0896ffd36b9b2b9f64377a897c2161a2e6c",
+      "corpus_matches": [
+        "corpus/annual-2024/300394/300394__em_天孚通信_em__2024_2024年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300394/300394__em_天孚通信_em__2025_2025年年度报告.pdf",
+      "stock_code": "300394",
+      "report_year": "2025",
+      "size_bytes": 2317596,
+      "sha256": "969e5142ee753b68e1f01c26e25215310d643dda43e4a25ae72bcc01f1265268",
+      "corpus_matches": [
+        "corpus/annual/300394/300394/300394__em_天孚通信_em__2025_2025年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300502/300502__em_新易盛_em__2023_2023年年度报告.pdf",
+      "stock_code": "300502",
+      "report_year": "2023",
+      "size_bytes": 8115195,
+      "sha256": "ce36d96ed95c6cabc7acfe077c8e316eb88a01b267e78ab731b5c660c73e9e32",
+      "corpus_matches": [
+        "corpus/annual-2023/300502/300502__em_新易盛_em__2023_2023年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300502/300502__em_新易盛_em__2024_2024年年度报告.pdf",
+      "stock_code": "300502",
+      "report_year": "2024",
+      "size_bytes": 8849287,
+      "sha256": "148155f6d95c86f8f77c6aa5ec7e486e97cea2e9f73c9aaa235079df94140aec",
+      "corpus_matches": [
+        "corpus/annual-2024/300502/300502__em_新易盛_em__2024_2024年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300502/300502__em_新易盛_em__2025_2025年年度报告.pdf",
+      "stock_code": "300502",
+      "report_year": "2025",
+      "size_bytes": 2902416,
+      "sha256": "3432905a431a8254c2274c2188269e94cfc5a69e92c7d34332a5a3a7da8b15b6",
+      "corpus_matches": [
+        "corpus/annual/300502/300502/300502__em_新易盛_em__2025_2025年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300757/300757__em_罗博特科_em__2023_2023年年度报告.pdf",
+      "stock_code": "300757",
+      "report_year": "2023",
+      "size_bytes": 3396487,
+      "sha256": "0a769afb6c69b98b0a79d0859da021dd4f6d418fbd93cf6ec636d6f834bf52d0",
+      "corpus_matches": [
+        "corpus/annual-2023/300757/300757__em_罗博特科_em__2023_2023年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300757/300757__em_罗博特科_em__2024_2024年年度报告.pdf",
+      "stock_code": "300757",
+      "report_year": "2024",
+      "size_bytes": 3613267,
+      "sha256": "afebd6773777a5620320f480ad040e5ec8d90a33ab016effc2fcc7bdae4d7fd4",
+      "corpus_matches": [
+        "corpus/annual-2024/300757/300757__em_罗博特科_em__2024_2024年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/300757/300757__em_罗博特科_em__2025_2025年年度报告.pdf",
+      "stock_code": "300757",
+      "report_year": "2025",
+      "size_bytes": 1705541,
+      "sha256": "4cc8a148a14fe3096054f72bf26d82f960b05f128785a9b960ab35f835afd9e9",
+      "corpus_matches": [
+        "corpus/annual/300757/300757__em_罗博特科_em__2025_2025年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/301338/301338__em_凯格精机_em__2023_2023年年度报告.pdf",
+      "stock_code": "301338",
+      "report_year": "2023",
+      "size_bytes": 5069769,
+      "sha256": "7636608e8a34d3bae3232776c43b885b681e3db13b1461bdc0b28b261ff86003",
+      "corpus_matches": [
+        "corpus/annual-2023/301338/301338__em_凯格精机_em__2023_2023年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/301338/301338__em_凯格精机_em__2024_2024年年度报告.pdf",
+      "stock_code": "301338",
+      "report_year": "2024",
+      "size_bytes": 4189285,
+      "sha256": "8f46d5df0b941b72b88ba7b70d2f09feb22cad98bd9d1d3497f2981e423ca383",
+      "corpus_matches": [
+        "corpus/annual-2024/301338/301338__em_凯格精机_em__2024_2024年年度报告.pdf",
+        "corpus/annual/301338/301338/301338__em_凯格精机_em__2024_2024年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/301338/301338__em_凯格精机_em__2025_2025年年度报告.pdf",
+      "stock_code": "301338",
+      "report_year": "2025",
+      "size_bytes": 4278629,
+      "sha256": "b38a3c09d516f9b64c65d6fc0cf94008ee1d1478c540919a4df75c8c553e43d4",
+      "corpus_matches": [
+        "corpus/annual/301338/301338/301338__em_凯格精机_em__2025_2025年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/603203/603203__em_快克智能_em__2023_快克智能2023年年度报告.pdf",
+      "stock_code": "603203",
+      "report_year": "2023",
+      "size_bytes": 4514367,
+      "sha256": "37b4c28ad024c4a66d24c91aa03243b95fd3874c780ebbddcc061e332bdd8a69",
+      "corpus_matches": [
+        "corpus/annual-2023/603203/603203__em_快克智能_em__2023_快克智能2023年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/603203/603203__em_快克智能_em__2024_快克智能2024年年度报告.pdf",
+      "stock_code": "603203",
+      "report_year": "2024",
+      "size_bytes": 1990572,
+      "sha256": "8e2f35fdb80a2b494242464fb9e85e3220583c467ca7f4f95450ef75122f569c",
+      "corpus_matches": [
+        "corpus/annual-2024/603203/603203__em_快克智能_em__2024_快克智能2024年年度报告.pdf",
+        "corpus/annual/603203/603203/603203__em_快克智能_em__2024_快克智能2024年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/603203/603203__em_快克智能_em__2025_快克智能2025年年度报告.pdf",
+      "stock_code": "603203",
+      "report_year": "2025",
+      "size_bytes": 1746539,
+      "sha256": "a8526267b8ef26a079784d3bf280a345d52ee4b0901f3943bf7f0e9665aa37b3",
+      "corpus_matches": [
+        "corpus/annual/603203/603203/603203__em_快克智能_em__2025_快克智能2025年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/688097/688097__em_博众精工_em__2023_博众精工2023年年度报告.pdf",
+      "stock_code": "688097",
+      "report_year": "2023",
+      "size_bytes": 5923896,
+      "sha256": "625050861949a8fd0c9b98907209c22be4027e24f68706b20f5e0bfac3f642ee",
+      "corpus_matches": [
+        "corpus/annual-2023/688097/688097__em_博众精工_em__2023_博众精工2023年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/688097/688097__em_博众精工_em__2024_2024年年度报告.pdf",
+      "stock_code": "688097",
+      "report_year": "2024",
+      "size_bytes": 5372726,
+      "sha256": "9a272268b98dedcd462b02c68d9449fecd9ade01086c2927dc8315915e71d2e1",
+      "corpus_matches": [
+        "corpus/annual-2024/688097/688097__em_博众精工_em__2024_2024年年度报告.pdf",
+        "corpus/annual/688097/688097/688097__em_博众精工_em__2024_2024年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/688097/688097__em_博众精工_em__2025_2025年年度报告.pdf",
+      "stock_code": "688097",
+      "report_year": "2025",
+      "size_bytes": 4933424,
+      "sha256": "fb4bb7e30f81c4e850505b2b5abd4172e01da59b05978a23fd7303de13043fd9",
+      "corpus_matches": [
+        "corpus/annual/688097/688097/688097__em_博众精工_em__2025_2025年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/688337/688337__em_普源精电_em__2023_普源精电科技股份有限公司2023年年度报告.pdf",
+      "stock_code": "688337",
+      "report_year": "2023",
+      "size_bytes": 4843686,
+      "sha256": "14001241e6431a57f4f56ef034335152b2f004df03b7b1e56863c7add35ebe73",
+      "corpus_matches": [
+        "corpus/annual-2023/688337/688337__em_普源精电_em__2023_普源精电科技股份有限公司2023年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/688337/688337__em_普源精电_em__2024_普源精电科技股份有限公司2024年年度报告.pdf",
+      "stock_code": "688337",
+      "report_year": "2024",
+      "size_bytes": 5291781,
+      "sha256": "8d3294c5c575e4159661a730f4b0006d7151261cb87dc6440c2ff3c7382819bc",
+      "corpus_matches": [
+        "corpus/annual-2024/688337/688337__em_普源精电_em__2024_普源精电科技股份有限公司2024年年度报告.pdf",
+        "corpus/annual/688337/688337/688337__em_普源精电_em__2024_普源精电科技股份有限公司2024年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/688337/688337__em_普源精电_em__2025_普源精电科技股份有限公司2025年年度报告.pdf",
+      "stock_code": "688337",
+      "report_year": "2025",
+      "size_bytes": 2566217,
+      "sha256": "164ca07a2e1a2c3367a64b5eb89ce9bb80f9bff61ae58d75621f0cbb5598ca1a",
+      "corpus_matches": [
+        "corpus/annual/688337/688337/688337__em_普源精电_em__2025_普源精电科技股份有限公司2025年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/688516/688516__em_奥特维_em__2023_无锡奥特维科技股份有限公司2023年年度报告.pdf",
+      "stock_code": "688516",
+      "report_year": "2023",
+      "size_bytes": 5226819,
+      "sha256": "cf534fbad4f4c018fc44b16daa271da3d0985c38a26bd43135cebeb06c99136f",
+      "corpus_matches": [
+        "corpus/annual-2023/688516/688516__em_奥特维_em__2023_无锡奥特维科技股份有限公司2023年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/688516/688516__em_奥特维_em__2024_无锡奥特维科技股份有限公司2024年年度报告.pdf",
+      "stock_code": "688516",
+      "report_year": "2024",
+      "size_bytes": 1820485,
+      "sha256": "8a2787d8ed3b5ddaa751ab5d5637b8adfd3eb7b984373f09ccb15a672076d499",
+      "corpus_matches": [
+        "corpus/annual-2024/688516/688516__em_奥特维_em__2024_无锡奥特维科技股份有限公司2024年年度报告.pdf",
+        "corpus/annual/688516/688516/688516__em_奥特维_em__2024_无锡奥特维科技股份有限公司2024年年度报告.pdf"
+      ],
+      "matched": true
+    },
+    {
+      "demo_path": "archive/demo/data/688516/688516__em_奥特维_em__2025_无锡奥特维科技股份有限公司2025年年度报告.pdf",
+      "stock_code": "688516",
+      "report_year": "2025",
+      "size_bytes": 1746950,
+      "sha256": "b8060cf0a98504d7f1fde3621ebb2cc55dd83304cb978aacd0dec19d6f473ad0",
+      "corpus_matches": [
+        "corpus/annual/688516/688516/688516__em_奥特维_em__2025_无锡奥特维科技股份有限公司2025年年度报告.pdf"
+      ],
+      "matched": true
+    }
+  ]
+}

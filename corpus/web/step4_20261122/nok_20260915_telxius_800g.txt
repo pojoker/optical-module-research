@@ -1,0 +1,106 @@
+URL: https://www.nokia.com/newsroom/telxius-boosts-global-network-capacity-and-efficiency-with-nokia-800g-coherent-pluggable-deployment/
+REQUESTED_URL: https://www.nokia.com/newsroom/telxius-boosts-global-network-capacity-and-efficiency-with-nokia-800g-coherent-pluggable-deployment/
+TITLE: Telxius boosts global network capacity and efficiency with Nokia 800G Coherent Pluggable deployment
+PUBLISHED_AT: 2026-09-15
+RETRIEVED_AT: 2026-11-22
+--- PARSED PARAGRAPHS ---
+[p1] Scale the interconnection and operations of your network infrastructure with advanced optical, IP and datacenter switching technologies that help maximize the return on your AI investments.
+[p2] Advancing connectivity to secure the mission-critical environment in the AI era.
+[p3] Stay ahead in the AI supercycle with AI-native networks.
+[p4] Explore Bell Labs' century of innovation, from pioneering the transistor, shaping communications to driving future technologies with real-world impact.
+[p5] Discover networking innovations transforming the world.
+[p6] We are spearheading global technology standards for a safer, modern world
+[p7] Working together to seize more opportunities in the AI era.
+[p8] Shaping the future of connectivity together
+[p9] Build on our patents to make innovative products.
+[p10] Multimedia-rich media hub showcasing the latest news and insights from across Nokia.
+[p11] Expand your bubble and search for opportunities.
+[p12] Explore upcoming and past events.
+[p13] We have limited content available for some countries. Find office information and country specific information through our country hub.
+[p14] Telxius and Nokia are collaborating to deploy 800G coherent pluggable optics across Telxius’ terrestrial transport networks in Europe, the United States and Latin America. The deployment supports the continual evolution of Telxius’ network in response to growing customer demand for scalable, high-capacity connectivity across key international network corridors.
+[p15] Cloud services, AI workloads and data center interconnection are driving rapid traffic growth across global networks, creating pressure for operators. Telxius is leveraging Nokia's ICE-X 800G ZR/ZR+ coherent pluggable technology to add capacity across its existing terrestrial infrastructure with IP-over-DWDM networking, while reducing the power and space required for network expansion. This increases network efficiency and simplifies operations to deliver resilient, high-performance connectivity for customers.
+[p16] The deployment also utilizes Nokia network automation, giving Telxius greater visibility and control across its optical transport network. This provides full visibility, fault and performance monitoring, and coordinated service provisioning, supporting faster operations and more predictable service quality for Telxius customers.
+[p17] This initiative builds on Nokia and Telxius' recent industry-record setting demonstration of ICE-X 800G ZR+ coherent pluggable optics over the BRUSA subsea cable system. The trial delivered 400Gb/s per wavelength across 5,600+ km, demonstrating the technology’s ability to support ultra-long-haul subsea infrastructure, as well as terrestrial networks.
+[p18] At Telxius, we are continuously upgrading our international network to deliver the high-capacity, resilient and energy-efficient connectivity our customers need across the world’s main digital corridors. This deployment, together with the successful subsea trial on BRUSA, reinforces Telxius’ position at the forefront of optical innovation. It underlines our commitment to adopting advanced technologies early, especially when they bring clear benefits to our customers and our global network.
+[p19] As AI workloads drive unprecedented growth in traffic between hyperscale data centers and global network hubs, operators need transport solutions that combine scalability, efficiency, and operational simplicity. With Nokia's ICE-X 800G ZR+ coherent pluggable technology and network automation solutions, Telxius can efficiently expand capacity across its terrestrial infrastructure, creating a high-performance foundation for data center interconnection and seamless connectivity between terrestrial and subsea networks.
+[p20] Multimedia, technical information and related news
+[p21] Product Page: ICE-X 800G ZR/ZR+
+[p22] Product Page: 1830 Global Express (GX)
+[p23] Product Page: Transcend Network Automation Suite
+[p24] Web Page: Nokia Optical Networks
+[p25] Web Page: Network automation page
+[p26] Email: Press.Services@nokia.com
+[p27] Nokia is a global leader in connectivity infrastructure, enabling the AI supercycle. We build networks that connect intelligence and deliver a comprehensive connectivity solution across fixed, mobile, IP, optical, core, and data center networks. With security by design, AI-driven innovation, and AI-optimized architecture, Nokia delivers trusted infrastructure that enables AI to scale and advances connectivity to secure a brighter world.
+[p28] Telxius is a global connectivity provider operating a network spanning more than 100,000 km of high-capacity subsea cable systems and terrestrial fiber across Europe and the Americas, connecting key data centers and digital hubs.
+[p29] Through its integrated network of subsea infrastructure, terrestrial backhaul and landing gateways & edge data centers, Telxius enables hyperscalers, carriers and enterprises to interconnect their infrastructure and scale operations with secure, reliable and high-performance connectivity. Its Tier 1 IP network provides direct global reach, enabling efficient routing and full control over traffic paths.
+[p30] Telxius offers a comprehensive portfolio of connectivity, infrastructure and interconnection services across Network & Transport, Infrastructure, Internet & Cloud, Interconnection, Security and CDN, supporting a wide range of use cases from enterprise and cloud connectivity to large-scale network interconnection and data transport.
+[p31] At Telxius, we help our customers operate with predictable performance, dedicated capacity, and the confidence of a network built for increasingly distributed and complex environments.
+[p32] An error occurred while preparing your download
+--- FULL BLOCK TEXT ---
+Telxius boosts global network capacity and efficiency with Nokia 800G Coherent Pluggable deployment Skip to main content
+Newsroom Nokia
+Telxius boosts global network capacity and efficiency with Nokia 800G Coherent Pluggable deployment
+Madrid, Spain and Espoo, Finland,
+September
+2026
+09:00 AM
+Europe/Amsterdam
+Telxius boosts global network capacity and efficiency with Nokia 800G Coherent Pluggable deployment
+Press Release
+Summary
+Telxius is evolving its high-capacity international network with next generation IP-over-DWDM technology to support growing cloud, AI and data center connectivity demands.
+The news follows a joint industry-record demonstration of Nokia ICE-X 800G coherent pluggable optics over Telxius' BRUSA subsea cable.
+The deployment enables Telxius to reduce power consumption, optimize space utilization and lower the cost of network expansion.
+Telxius and Nokia are collaborating to deploy 800G coherent pluggable optics across Telxius’ terrestrial transport networks in Europe, the United States and Latin America. The deployment supports the continual evolution of Telxius’ network in response to growing customer demand for scalable, high-capacity connectivity across key international network corridors.
+Cloud services, AI workloads and data center interconnection are driving rapid traffic growth across global networks, creating pressure for operators. Telxius is leveraging Nokia's ICE-X 800G ZR/ZR+ coherent pluggable technology to add capacity across its existing terrestrial infrastructure with IP-over-DWDM networking, while reducing the power and space required for network expansion. This increases network efficiency and simplifies operations to deliver resilient, high-performance connectivity for customers.
+The deployment also utilizes Nokia network automation, giving Telxius greater visibility and control across its optical transport network. This provides full visibility, fault and performance monitoring, and coordinated service provisioning, supporting faster operations and more predictable service quality for Telxius customers.
+This initiative builds on Nokia and Telxius' recent industry-record setting demonstration of ICE-X 800G ZR+ coherent pluggable optics over the BRUSA subsea cable system. The trial delivered 400Gb/s per wavelength across 5,600+ km, demonstrating the technology’s ability to support ultra-long-haul subsea infrastructure, as well as terrestrial networks.
+At Telxius, we are continuously upgrading our international network to deliver the high-capacity, resilient and energy-efficient connectivity our customers need across the world’s main digital corridors. This deployment, together with the successful subsea trial on BRUSA, reinforces Telxius’ position at the forefront of optical innovation. It underlines our commitment to adopting advanced technologies early, especially when they bring clear benefits to our customers and our global network.
+Jesús María Rubio, Chief Technology and Information Officer, Telxius
+As AI workloads drive unprecedented growth in traffic between hyperscale data centers and global network hubs, operators need transport solutions that combine scalability, efficiency, and operational simplicity. With Nokia's ICE-X 800G ZR+ coherent pluggable technology and network automation solutions, Telxius can efficiently expand capacity across its terrestrial infrastructure, creating a high-performance foundation for data center interconnection and seamless connectivity between terrestrial and subsea networks.
+Ron Johnson, Senior Vice President and General Manager, Optical Networks, at Nokia
+Multimedia, technical information and related news
+Product Page: ICE-X 800G ZR/ZR+
+Product Page: 1830 Global Express (GX)
+Product Page: Transcend Network Automation Suite
+Web Page: Nokia Optical Networks
+Web Page: Network automation page
+Media inquiries
+Nokia Press Office
+Email: Press.Services@nokia.com
+About Nokia
+Nokia is a global leader in connectivity infrastructure, enabling the AI supercycle. We build networks that connect intelligence and deliver a comprehensive connectivity solution across fixed, mobile, IP, optical, core, and data center networks. With security by design, AI-driven innovation, and AI-optimized architecture, Nokia delivers trusted infrastructure that enables AI to scale and advances connectivity to secure a brighter world.
+About Telxius
+Telxius is a global connectivity provider operating a network spanning more than 100,000 km of high-capacity subsea cable systems and terrestrial fiber across Europe and the Americas, connecting key data centers and digital hubs.
+Through its integrated network of subsea infrastructure, terrestrial backhaul and landing gateways & edge data centers, Telxius enables hyperscalers, carriers and enterprises to interconnect their infrastructure and scale operations with secure, reliable and high-performance connectivity. Its Tier 1 IP network provides direct global reach, enabling efficient routing and full control over traffic paths.
+Telxius offers a comprehensive portfolio of connectivity, infrastructure and interconnection services across Network & Transport, Infrastructure, Internet & Cloud, Interconnection, Security and CDN, supporting a wide range of use cases from enterprise and cloud connectivity to large-scale network interconnection and data transport.
+At Telxius, we help our customers operate with predictable performance, dedicated capacity, and the confidence of a network built for increasingly distributed and complex environments.
+Share this page
+Telxius boosts global network capacity and efficiency with Nokia 800G Coherent Pluggable deployment
+Share on: X
+Share on: Facebook
+Share on: LinkedIn
+Latest news
+Nov
+2026
+Nokia powers CMC Networks’ EMEA-R corridor, connecting key hubs across Europe, the Middle East and Africa
+Nov
+2026
+Nokia Fiber on the Go brings broadband to the next billion people and opens new growth markets for operators
+Nov
+2026
+Nokia signs patent license agreement with ASUS
+Nov
+2026
+European technology leaders form AI Gigafactory Northern consortium to build trusted, sustainable AI infrastructure
+Nov
+2026
+Nokia Corporation - Managers' transactions (Sahgal)
+Nov
+2026
+Nokia Corporation - Managers' transactions (Owczarek)
+Nokia logo
+Download Media Kit
+Preparing your download...
+Download
+An error occurred while preparing your download

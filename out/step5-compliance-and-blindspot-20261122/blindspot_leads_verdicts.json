@@ -1,0 +1,685 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-22",
+  "workpack_id": "OPTICAL-STEP5-COMPLIANCE-AND-BLINDSPOT-CLOSURE-20261122",
+  "summary": {
+    "total_lead_groups": 4,
+    "archived_http_200_primary_files": 16,
+    "archived_in_blindspots_dir": 13,
+    "archived_in_ir_301314_dir": 3,
+    "gated_or_js_shell_urls_count": 4,
+    "ir_frozen_boundary_respected": true,
+    "non_frozen_codes_isolated_to_web_blindspots": [
+      "300916",
+      "301660"
+    ],
+    "frozen_codes_archived_to_ir": [
+      "301314"
+    ],
+    "observation_list_updated_entities": [
+      "深圳宏钢(宏钢光电封装)",
+      "成都奥捷",
+      "上海羲禾科技",
+      "粤芯半导体",
+      "安费诺(Amphenol)",
+      "Lambda"
+    ],
+    "entity_nodes_added": [
+      "N174",
+      "N175",
+      "N176",
+      "N177",
+      "N178",
+      "N179"
+    ],
+    "entity_nodes_updated": [
+      "N138"
+    ],
+    "calls_newly_ingested": {
+      "watch_entity_id": "WATCH_LAMBDA",
+      "disclosure_ids": [
+        "D_NVDA_20261116_LAMBDA_CPO",
+        "D_LAMBDA_20261116_NVDA_CPO"
+      ],
+      "event_claim_ids": [
+        "ECL064",
+        "ECL065"
+      ],
+      "event_id": "EV061",
+      "event_status": "corroborated",
+      "evidence_ids": [
+        "EE064",
+        "EE065"
+      ]
+    },
+    "forbidden_phrasing_hits": 0,
+    "enrolled_queue_ids": [
+      "DRQ0098",
+      "DRQ0099",
+      "DRQ0100",
+      "DRQ0101",
+      "DRQ0102",
+      "DRQ0103",
+      "DRQ0104",
+      "DRQ0105"
+    ]
+  },
+  "leads": [
+    {
+      "lead_id": "LEAD_1_300916_CHENGDU_AOJIE",
+      "title": "朗特智能(300916.SZ)拟现金6.63亿元收购成都奥捷通信技术有限公司51%股权",
+      "acquirer": {
+        "legal_name": "深圳朗特智能控制股份有限公司",
+        "short_name": "朗特智能",
+        "stock_code": "300916.SZ",
+        "in_frozen_universe": false,
+        "entity_node_id": "N179"
+      },
+      "target": {
+        "legal_name": "成都奥捷通信技术有限公司",
+        "short_name": "成都奥捷",
+        "unified_social_credit_code": "915101225972945308",
+        "established_date": "2012-06-26",
+        "registered_capital_rmb_wan": 2460.6065,
+        "in_frozen_universe": false,
+        "entity_node_id": "N174"
+      },
+      "verified_facts": {
+        "announcement_no": "2026-042（董事会决议公告编号：2026-041；前序意向协议披露日：2026-10-23）",
+        "equity_ratio_pct": 51.0,
+        "consideration_rmb_yi": 6.63,
+        "payment_method": "现金收购（终止IPO部分募投项目并将剩余募集资金投入新项目结合自有/自筹资金）",
+        "valuation_benchmark_date": "2026-07-31",
+        "book_net_assets_rmb_wan": 25500.03,
+        "appraised_equity_value_rmb_wan": 130900.0,
+        "appreciation_rate_pct": 413.33,
+        "product_scope": "光通信领域光无源器件（涵盖10G至3.2T全系列光无源连接器件，主要产品包括光模块组件、光互联产品、MPO/FA/MT连接器组件、光隔离器及配套自研自动化设备）",
+        "audited_financials_sichuan_huaxin": {
+          "2025_full_year": {
+            "revenue_rmb_wan": 34600.92,
+            "net_profit_rmb_wan": 3815.21,
+            "net_profit_parent_rmb_wan": 3690.8
+          },
+          "2026_jan_to_jul": {
+            "revenue_rmb_wan": 35836.08,
+            "net_profit_rmb_wan": 5687.8,
+            "net_profit_parent_rmb_wan": 5081.67
+          }
+        },
+        "performance_commitment": "2026年度、2027年度、2028年度实现净利润分别不低于8,000万元、12,000万元、16,000万元，三年累积实现净利润不低于36,000万元",
+        "legal_stage": "2026-11-16签署附条件生效《股权收购协议》并经第四届董事会第七次会议审议通过（构成关联交易，不构成重大资产重组）；尚须提交2026-12-02召开的2026年第三次临时股东会审议通过后生效实施，当前尚未过股东会、尚未办理股权交割过户"
+      },
+      "verbatim_quotes": [
+        {
+          "source_item_id": "L1_300916_ACQ_AOJIE_20261117",
+          "quote": "2026 年 11 月 16 日，公司与相关交易方签署了附条件生效的《股权收购协议》，公司拟以现金方式收购成都奥捷 51%的股权，交易对价合计为 6.63 亿元。《股权收购协议》于公司股东会批准后生效。"
+        },
+        {
+          "source_item_id": "L1_300916_ACQ_AOJIE_20261117",
+          "quote": "标的公司主要从事光通信领域中光无源器件的研发、生产、销售，主要产品包括光模块组件、光互联产品、光隔离器和配套自研自动化设备等。"
+        },
+        {
+          "source_item_id": "L1_300916_ACQ_AOJIE_20261117",
+          "quote": "本次交易设置业绩承诺，业绩承诺人承诺标的公司 2026 年度、2027 年度、2028 年度实现净利润分别不低于 8,000 万元、12,000 万元、16,000 万元，即累积实现的净利润不低于 36,000 万元。"
+        }
+      ],
+      "disposition": {
+        "queue_status": "pending_filing_anchor",
+        "trigger_type": "T2_supply_relationship_or_ma",
+        "priority": "P1",
+        "rationale": "300916不在光模块v6 _frozen分母内，且附条件生效《股权收购协议》尚待2026-12-02第三次临时股东会审议批准与工商交割过户；按未交割并购纪律将成都奥捷补入tree.yaml观察池并留置pending_filing_anchor盯防股东会决议与交割结果",
+        "queue_id": "DRQ0098"
+      }
+    },
+    {
+      "lead_id": "LEAD_2_301314_SHENZHEN_HONGGANG",
+      "title": "科瑞思(301314.SZ)披露重组预案拟发行股份及支付现金收购深圳市宏钢光电封装技术股份有限公司100%股份",
+      "acquirer": {
+        "legal_name": "珠海科瑞思科技股份有限公司",
+        "short_name": "科瑞思",
+        "stock_code": "301314.SZ",
+        "in_frozen_universe": true
+      },
+      "target": {
+        "legal_name": "深圳市宏钢光电封装技术股份有限公司",
+        "former_or_alias_name_in_points": "深圳市宏钢机械设备有限公司（对应既有P258/N138）",
+        "short_name": "宏钢光电 / 深圳宏钢(宏钢光电封装)",
+        "unified_social_credit_code": "914403007362785236",
+        "established_date": "2002-04-10",
+        "registered_capital_rmb_wan": 3603.25,
+        "in_frozen_universe": false,
+        "entity_node_id": "N138"
+      },
+      "verified_facts": {
+        "transaction_structure": "拟通过发行股份及支付现金方式向李刚、深圳宏钢投资合伙企业（有限合伙）等7名交易对方购买深圳市宏钢光电封装技术股份有限公司100%股份，并向不超过35名特定对象发行股份募集配套资金（构成重大资产重组暨关联交易，不构成重组上市）",
+        "consideration_and_valuation": "截至预案签署日，标的资产审计、评估工作尚在进行中，评估值、最终交易作价、股份与现金支付比例及业绩补偿协议均尚未确定",
+        "product_scope": "激光器封装外壳、光通信器件封装壳体（50G PON管壳、直插与车载蝶形管壳、TOSA/ROSA外壳、光开关外壳、HTCC高温共烧陶瓷气密管壳与金属管壳）、功率半导体TO封装外壳、通讯类及光纤激光器预置金锡热沉（AuSn）、钨铜预置金锡热沉及陶瓷薄膜电路；披露下游客户含IPG Photonics、锐科激光、长光华芯、光迅科技、高意(Coherent)、昂纳科技、Fabrinet等",
+        "unaudited_financials": {
+          "2024_full_year": {
+            "revenue_rmb_wan": 43766.48,
+            "net_profit_rmb_wan": 3163.55
+          },
+          "2025_full_year": {
+            "revenue_rmb_wan": 52659.09,
+            "net_profit_rmb_wan": 3044.69
+          },
+          "2026_h1": {
+            "revenue_rmb_wan": 28901.2,
+            "net_profit_rmb_wan": 2463.77
+          }
+        },
+        "legal_stage": "2026-10-13停牌、2026-10-26披露重组预案并复牌，同日披露暂不召开股东会公告；截至2026-11-22审计与评估工作尚未办结，尚须再次召开董事会审议正式重组报告书、股东会批准、深交所审核通过及中国证监会同意注册后方可交割"
+      },
+      "verbatim_quotes": [
+        {
+          "source_item_id": "L2_301314_PREPLAN_20261026",
+          "quote": "上市公司本次发行股份及支付现金购买资产的交易标的为宏钢光电 100.00%的股份"
+        },
+        {
+          "source_item_id": "L2_301314_PREPLAN_20261026",
+          "quote": "截至本预案签署日，本次交易相关的审计、评估工作尚未完成，本预案涉及的相关数据尚未经过符合《证券法》规定的审计机构、评估机构的审计、评估"
+        },
+        {
+          "source_item_id": "L2_301314_PREPLAN_20261026",
+          "quote": "金属封装外壳方面，产品覆盖 10W-3000W 全系列激光器管壳、光通信器件管壳（50G PON 管壳、直插与车载蝶形管壳、TOSA/ROSA 外壳、光开关外壳）"
+        },
+        {
+          "source_item_id": "L2_301314_PREPLAN_20261026",
+          "quote": "芯片热沉方面，产品覆盖光纤激光器预置金锡热沉、通讯类预置金锡热沉、钨铜预置金锡热沉及陶瓷薄膜电路等"
+        }
+      ],
+      "disposition": {
+        "queue_status": "pending_filing_anchor",
+        "trigger_type": "T2_supply_relationship_or_ma",
+        "priority": "P0",
+        "rationale": "301314科瑞思在v6 _frozen分母内（预案原件归档corpus/ir/301314/），标的宏钢光电对应既有P258/N138；因本次重组尚处预案阶段、审计评估未完结、交易作价未定且未交割，严禁提前将宏钢光电并入301314上市公司能力点，留置pending_filing_anchor跟踪重组报告书与证监会注册交割",
+        "queue_id": "DRQ0099"
+      }
+    },
+    {
+      "lead_id": "LEAD_3_XIHE_TECH_AND_CANSEMI_301660",
+      "title": "上海羲禾科技科创板IPO注册生效 & 粤芯半导体(301660.SZ)创业板上市12英寸硅光披露核实",
+      "sub_leads": [
+        {
+          "sub_id": "LEAD_3A_SHANGHAI_XIHE",
+          "legal_name": "上海羲禾科技股份有限公司",
+          "english_name": "Xphor Co., Ltd.",
+          "unified_social_credit_code": "91310000MA1H3R9H0H",
+          "ipo_status": "2026-06-30科创板受理，2026-10-14上交所上市委2026年第52次审议会议过会并报送注册稿，2026-10-22获中国证监会《关于同意上海羲禾科技股份有限公司首次公开发行股票注册的批复》（证监许可〔2026〕2940号，10-23挂网）；截至2026-11-22尚未启动招股申购与挂牌上市，无二级市场股票代码",
+          "real_main_business_vs_ipo_plan": {
+            "commercialized_products": "高性能硅光集成芯片（400G、800G、1.6T速率系列硅光PIC，以及单芯片16×100G的1.6T NPO/CPO收发一体芯片已实现销售，客户可用2颗1.6T芯片组装3.2T NPO/CPO光引擎）；2025年全球硅光集成芯片市占率约13%（F&S口径）",
+            "prototype_or_customer_validation_only": "单通道400G硅光芯片仅处于样品展示阶段；原生单芯片3.2T（16×200G）及6.4T NPO/CPO收发一体芯片处于终端验证与在研阶段（非规模量产出货）",
+            "ipo_fundraising_plan_rmb_wan": {
+              "total_planned_proceeds": 183000.0,
+              "ai_datacenter_sipho_industrialization_3yr": 56377.9,
+              "next_gen_400g_lane_and_npo_cpo_rnd_5yr": 95229.65,
+              "rnd_center_construction": 31778.24
+            },
+            "audited_financials": {
+              "2024": {
+                "revenue_rmb_wan": 7095.01,
+                "net_profit_parent_rmb_wan": -2246.25
+              },
+              "2025": {
+                "revenue_rmb_wan": 46091.04,
+                "net_profit_parent_rmb_wan": 17554.99
+              },
+              "2026_h1": {
+                "revenue_rmb_wan": 56911.68,
+                "net_profit_parent_rmb_wan": 16104.54,
+                "top5_customers_pct": 92.26,
+                "top1_customer_pct": 55.55,
+                "top1_supplier_pct": 90.08
+              }
+            }
+          },
+          "verbatim_quotes": [
+            {
+              "source_item_id": "L3A_XIHE_SPONSOR_REPORT_20261014",
+              "quote": "羲禾科技专注于硅光集成技术的研发及商业化，主要产品为高性能硅光集成芯片，产品速率覆盖 400G、800G 及 1.6T，并已拓展 3.2T 及 6.4T NPO/CPO 收发集成芯片。"
+            },
+            {
+              "source_item_id": "L3A_XIHE_PROSPECTUS_REG_20261014",
+              "quote": "公司 1.6T NPO/CPO 收发一体芯片已实现销售，3.2T/6.4T NPO/CPO 收发一体芯片已在终端验证，支持下一代先进光互连架构升级。"
+            },
+            {
+              "source_item_id": "L3A_XIHE_CSRC_APPROVAL_20261023",
+              "quote": "一、同意你公司首次公开发行股票的注册申请。"
+            }
+          ],
+          "disposition": {
+            "queue_status": "pending_filing_anchor",
+            "trigger_type": "T4_universe_blindspot",
+            "priority": "P0",
+            "entity_node_id": "N175",
+            "rationale": "已取得上交所注册稿招股书与证监会证监许可〔2026〕2940号批复一手原件，补入tree.yaml观察池；因尚未挂牌上市进入A股分母且前五大客户匿名披露（客户A-E未具名）、3.2T/6.4T单芯片仍处终端验证与五年期募投研发阶段，留置pending_filing_anchor待正式挂牌及v7宇宙扩容审阅后按路径①/②转正入点",
+            "queue_id": "DRQ0101"
+          }
+        },
+        {
+          "sub_id": "LEAD_3B_CANSEMI_301660",
+          "legal_name": "粤芯半导体技术股份有限公司",
+          "english_name": "CanSemi Technology Inc.",
+          "stock_code": "301660.SZ",
+          "listing_date": "2026-10-13（深交所创业板上市，证监许可〔2026〕2196号；未盈利企业）",
+          "real_main_business_vs_ipo_plan": {
+            "core_main_business": "12英寸特色工艺晶圆代工（180nm-55nm MS/HV/CIS/BCD/eNVM/MOSFET/IGBT/SiPho），2025年主营收入251,087.66万元（集成电路代工78.68%、功率器件代工21.32%，未单列SiPho分项收入）；2026年前三季度总营收30.15亿元（2026年三季报全文未提及硅光或光模块）",
+            "sipho_actual_status": "2024年底推出12英寸90nm SiPho工艺技术平台，截至招股说明书签署日硅光平台累计投片量超过7,000片（支持单通道100G/200G，涵盖400G、800G及1.6T可插拔硅光模块应用）",
+            "npo_cpo_and_fundraising_boundary": "招股书原文明确3.2T NPO处于“目前正在导入 3.2T NPO 产品”阶段（绝非已规模量产出货）；募投项目《基于65nm逻辑的硅光工艺及光电共封关键技术研发项目》（总投资7.70亿元、拟募资投入7.30亿元）属面向800G+光模块、CPO光引擎集成与微环调制器的新一代在研项目"
+          },
+          "verbatim_quotes": [
+            {
+              "source_item_id": "L3B_301660_PROSPECTUS_20261008",
+              "quote": "截至本招股说明书签署日，公司的硅光工艺技术平台累计投片量已超过 7,000 片；根据 Frost & Sullivan 数据，截至 2026 年 4 月末，公司是中国大陆唯一具备 12 英寸硅光晶圆大规模量产能力的企业。"
+            },
+            {
+              "source_item_id": "L3B_301660_PROSPECTUS_20261008",
+              "quote": "公司的硅光产品涵盖 400G、800G 及 1.6T 高速可插拔硅光光模块应用，与国际领先水平相当。同时，公司与业界先进水平保持同步，开展近封装光学（NPO）的工艺制造技术研发，目前正在导入 3.2T NPO 产品。"
+            },
+            {
+              "source_item_id": "L3B_301660_PROCEEDS_USE_20260915",
+              "quote": "公司将基于已有 90nm SiPho 工艺技术平台及 CMOS 工艺基础，开展 65nm 硅光集成核心技术研发，包括微环调制器、锗探测器工艺、硅波导、低损耗氮化硅波导、表面和端面耦合器、热调和电调制器等"
+            }
+          ],
+          "disposition": {
+            "queue_status": "watch_deferred",
+            "trigger_type": "T4_universe_blindspot",
+            "priority": "P1",
+            "entity_node_id": "N176",
+            "rationale": "301660系2026-10-13创业板新上市综合晶圆代工厂（不在v6 _frozen.csv 466家分母内，严守红线不建corpus/ir/301660/），财报以模拟与功率代工为主且未拆分硅光收入，3.2T NPO尚处导入期、65nm硅光/CPO属募投研发；补入tree.yaml观察池并归入watch_deferred备v7分母扩容评估",
+            "queue_id": "DRQ0102"
+          }
+        }
+      ]
+    },
+    {
+      "lead_id": "LEAD_4_OIF_Q4_AND_SC26_OVERSEAS",
+      "title": "OIF 2026Q4曼谷会议7大新立项标准 & SC26超算大会（NVIDIA×Lambda商用CPO集群 / Amphenol 12.8T XPO-LPO）",
+      "sub_leads": [
+        {
+          "sub_id": "LEAD_4A_OIF_Q4_STANDARDS",
+          "entity": "Optical Internetworking Forum (OIF)",
+          "verified_facts": {
+            "meeting": "OIF Q4 2026 Technical and MA&E Committees Meeting（2026年11月2-5日于泰国曼谷召开，11月中旬发布官稿）",
+            "seven_new_projects": [
+              "EEI-448G Retimed Transmit Linear Receive (RTLR) IA（单通道448Gbps半重定时高能效电接口规范立项）",
+              "BiDi O-band Single Mode Fiber (SMF) 200G/Lane IA（面向AI Scale-Up的O波段单模光纤双向200G/通道光互连规范立项）",
+              "ELSFP IA 3.0（外置激光源小型可插拔实施协议3.0版修订立项）",
+              "Type-3 Elongated ELSFP Power Class 8 High Power Mode (40W)（支持40W高功率模式的加长型Type-3外置光源规范立项）",
+              "MACsec Management for Pluggable Modules",
+              "CMIS Management Communication Interface (MCI) over USB",
+              "ZRsec (FlexOsec) for Coherent Optical Interfaces"
+            ],
+            "boundary": "全部7项均为联盟新启动的标准制定立项（newly initiated technical projects），属于行业标准预研与规范起草起点，不代表商业芯片或模块出货"
+          },
+          "verbatim_quotes": [
+            {
+              "source_item_id": "L4_OIF_Q4_7PROJECTS_20261111",
+              "quote": "Energy Efficient Interfaces (EEI) EEI-448G Retimed Transmit Linear Receive (RTLR) IA: Establishes a new project to define energy efficient half-retimed electrical interface requirements at 448 Gbps per lane, complementing OIF’s expanding CEI-448G portfolio."
+            },
+            {
+              "source_item_id": "L4_OIF_Q4_7PROJECTS_20261111",
+              "quote": "Type-3 Elongated ELSFP to support Electrical Power Class 8 High Power Mode (40W): Establishes a project to develop support for an ELSFP variant supporting higher-power requirements for external laser applications."
+            }
+          ],
+          "disposition": {
+            "queue_status": "watch_deferred",
+            "trigger_type": "T1_lifecycle_shift",
+            "priority": "P2",
+            "rationale": "OIF为行业互操作标准联盟（非calls公司主体），HTTP 200一手官稿已归档blindspots/，以一手标准链接锚记入review_queue.csv watch_deferred供单波400G与CPO/NPO外置光源路线图参考",
+            "queue_id": "DRQ0103"
+          }
+        },
+        {
+          "sub_id": "LEAD_4B_NVDA_LAMBDA_SC26_CPO",
+          "entity": "NVIDIA Corporation (NVDA) × Lambda Inc. (WATCH_LAMBDA)",
+          "verified_facts": {
+            "deployment_scale": "加拿大魁北克142MW可再生能源园区规模化部署NVIDIA Photonics CPO交换机，连接超10,000颗NVIDIA Blackwell Ultra GPU（GB300 NVL72机柜）",
+            "switch_and_optics_architecture": "单台NVIDIA Photonics交换机提供144个800Gb/s端口（液冷散热）并配备18个可现场拆卸更换的外置光源（removable external light sources），将电光转换引擎共封装于交换ASIC旁，省去重定时器芯片",
+            "measured_benchmarks": "机架级至Pod级吞吐量与传统可插拔持平，延迟在机架级降低3.8%（NVIDIA博客约4%）、Pod级降低10.1%（NVIDIA博客约10%）；CPO光学运行中位温度为36°C（传统可插拔51°C）；NVIDIA称较传统可插拔最高实现5倍能效、15倍可靠性及减少4倍激光器数量",
+            "boundary": "双独立官网（blogs.nvidia.com 与 lambda.com）均返回HTTP 200（BusinessWire分发链返回HTTP 403），但两篇官稿均未披露部署交换机具体台数、合同金额及外置光源/FAU上游制造厂商名称"
+          },
+          "verbatim_quotes": [
+            {
+              "source_item_id": "L4_NVDA_LAMBDA_SC26_CPO_20261116",
+              "quote": "Lambda’s deployment uses NVIDIA Photonics switches, each with 144 ports running at 800Gb/s. Liquid cooling carries heat away from the switch chip and optical engines."
+            },
+            {
+              "source_item_id": "L4_LAMBDA_NVDA_SC26_CPO_20261116",
+              "quote": "SAN FRANCISCO, CA, November 16, 2026 — Lambda , the Superintelligence Cloud, today announced the world’s first large-scale deployment of co-packaged optics (CPO) networking, connecting 10,000+ NVIDIA Blackwell Ultra GPUs using NVIDIA Photonics networking switches at its Quebec campus."
+            }
+          ],
+          "disposition": {
+            "queue_status": "ingested_to_kb",
+            "trigger_type": "T1_lifecycle_shift",
+            "priority": "P0",
+            "kb_target_ref": "calls:WATCH_LAMBDA;calls:D_NVDA_20261116_LAMBDA_CPO;calls:D_LAMBDA_20261116_NVDA_CPO;calls:ECL064;calls:ECL065;calls:EV061;calls:EE064;calls:EE065",
+            "rationale": "NVDA已在calls/universe.csv注册且同时取得NVIDIA与Lambda双第一方HTTP 200官稿，严格通过python3 -m calls check，作为双源互证（corroborated）事件EV061正式写入calls并同步入review_queue.csv",
+            "queue_id": "DRQ0104"
+          }
+        },
+        {
+          "sub_id": "LEAD_4C_AMPHENOL_SC26_XPO_LPO_448G",
+          "entity": "Amphenol Corporation / Amphenol Communications Solutions (NYSE:APH)",
+          "verified_facts": {
+            "public_metadata_clue": "SC26展台（Booth 2546）展示12.8T XPO-LPO线性可插拔光模块（64×224Gb/s PAM4，约80W，液冷，兼容XPO MSA与OIF-CMIS）及448G Front I/O OverPass与XtremePass共封装铜缆（CPC）",
+            "http_probe_result": "官方产品活动页 amphenol-cs.com/connect/super-computing-2026.html 返回 HTTP 403 (5817B)，配套规格书域 cdn.amphenol-cs.com 亦返回 HTTP 403 (6022B)，investors.amphenol.com 投资者关系站未发布SC26新闻稿"
+          },
+          "verbatim_quotes": [],
+          "disposition": {
+            "queue_id": "DRQ0105",
+            "queue_status": "watch_deferred",
+            "trigger_type": "T4_universe_blindspot",
+            "priority": "P2",
+            "entity_node_id": "N177",
+            "rationale": "严守不绕过403反爬红线，不将搜索摘要伪装为一手原文；已将安费诺(Amphenol)对称补入tree.yaml观察池，并在review_queue.csv以watch_deferred诚实记录宇宙外展会演示线索与HTTP 403受阻状态"
+          }
+        }
+      ]
+    }
+  ],
+  "archived_primary_files": [
+    {
+      "item_id": "L1_300916_ACQ_AOJIE_20261117",
+      "lead_group": "LEAD_1_300916_CHENGDU_AOJIE",
+      "entity": "深圳朗特智能控制股份有限公司 / 成都奥捷通信技术有限公司",
+      "stock_or_ticker": "300916",
+      "published_date": "2026-11-17",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-11-17/1225674762.PDF",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/300916_2026-11-17_关于终止部分募投项目并将剩余募集资金投入新项目暨关联交易的公告_1225674762.pdf",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/300916_2026-11-17_关于终止部分募投项目并将剩余募集资金投入新项目暨关联交易的公告_1225674762.txt",
+      "primary_bytes": 519158,
+      "primary_sha256": "ff90ad2b693c75cceddfb37b5ca017dda956f5c47a59a8cfe6546bd007ec5f50",
+      "txt_bytes": 103777,
+      "txt_sha256": "95f9c990e9eb5dfdf7ec68d065367d5d9410daa38356a358e9ef9c2d232c3572"
+    },
+    {
+      "item_id": "L1_300916_BOARD_RES_20261117",
+      "lead_group": "LEAD_1_300916_CHENGDU_AOJIE",
+      "entity": "深圳朗特智能控制股份有限公司",
+      "stock_or_ticker": "300916",
+      "published_date": "2026-11-17",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-11-17/1225674760.PDF",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/300916_2026-11-17_第四届董事会第七次会议决议公告_1225674760.pdf",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/300916_2026-11-17_第四届董事会第七次会议决议公告_1225674760.txt",
+      "primary_bytes": 109118,
+      "primary_sha256": "5246afdd61fdf2a6917a633dcd3620bf01178de0da9dd43dff4e1789bf459819",
+      "txt_bytes": 4669,
+      "txt_sha256": "ecf9df82d3d6a2b477063324bcf43541f90d082e0c5c2054875a5813ff0efdab"
+    },
+    {
+      "item_id": "L1_300916_LOI_20261023",
+      "lead_group": "LEAD_1_300916_CHENGDU_AOJIE",
+      "entity": "深圳朗特智能控制股份有限公司",
+      "stock_or_ticker": "300916",
+      "published_date": "2026-10-23",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-23/1225621313.PDF",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/300916_2026-10-23_关于签署股权收购意向协议的公告_1225621313.pdf",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/300916_2026-10-23_关于签署股权收购意向协议的公告_1225621313.txt",
+      "primary_bytes": 170715,
+      "primary_sha256": "2820171451534f54b55184195d45dfc198620268fbde9e4b0a61b2881dbb8eab",
+      "txt_bytes": 18638,
+      "txt_sha256": "7c79d5168ae23813ae866b3b1aea447be205f1ca81875153062793fd6a6d1cb8"
+    },
+    {
+      "item_id": "L2_301314_PREPLAN_20261026",
+      "lead_group": "LEAD_2_301314_SHENZHEN_HONGGANG",
+      "entity": "珠海科瑞思科技股份有限公司 / 深圳市宏钢光电封装技术股份有限公司",
+      "stock_or_ticker": "301314",
+      "published_date": "2026-10-26",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-26/1225620972.PDF",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/ir/301314/301314_2026-10-26_发行股份及支付现金购买资产并募集配套资金暨关联交易预案.pdf",
+      "txt_rel": "corpus/ir/301314/301314_2026-10-26_发行股份及支付现金购买资产并募集配套资金暨关联交易预案.pdf.txt",
+      "primary_bytes": 885251,
+      "primary_sha256": "0b0d623d03dac5a1171aba4edaa10916477421d39cec6bfe8160426404d44d13",
+      "txt_bytes": 196437,
+      "txt_sha256": "53a1966b234fa4ff0a13235878aaf7a3f48da2bd388235de358dae660ce9bf9a"
+    },
+    {
+      "item_id": "L2_301314_DEFER_EGM_20261026",
+      "lead_group": "LEAD_2_301314_SHENZHEN_HONGGANG",
+      "entity": "珠海科瑞思科技股份有限公司",
+      "stock_or_ticker": "301314",
+      "published_date": "2026-10-26",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-26/1225620986.PDF",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/ir/301314/301314_2026-10-26_关于暂不召开股东会审议本次交易相关事项的公告.pdf",
+      "txt_rel": "corpus/ir/301314/301314_2026-10-26_关于暂不召开股东会审议本次交易相关事项的公告.pdf.txt",
+      "primary_bytes": 68147,
+      "primary_sha256": "8a1accecabb60222de7d2093feef34de0cffe7ef959a6862fadfb6adaed23378",
+      "txt_bytes": 1700,
+      "txt_sha256": "f7948c6420ee5bf1f0736bf4a0a3f7134df42c40c9e0971622a1a8eaec4555cb"
+    },
+    {
+      "item_id": "L2_301314_RESUME_RISK_20261026",
+      "lead_group": "LEAD_2_301314_SHENZHEN_HONGGANG",
+      "entity": "珠海科瑞思科技股份有限公司",
+      "stock_or_ticker": "301314",
+      "published_date": "2026-10-26",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-26/1225620989.PDF",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/ir/301314/301314_2026-10-26_关于披露重组预案的一般风险提示暨公司股票复牌的公告.pdf",
+      "txt_rel": "corpus/ir/301314/301314_2026-10-26_关于披露重组预案的一般风险提示暨公司股票复牌的公告.pdf.txt",
+      "primary_bytes": 83939,
+      "primary_sha256": "47a4320437a178f1e99b304f5daa9eee73f07e30b13963a560c10c4c85c16fd9",
+      "txt_bytes": 4020,
+      "txt_sha256": "33280b9f2428c96d4e21323c0cf6484961b096feb99d973a0989ff9b9aa742f7"
+    },
+    {
+      "item_id": "L3A_XIHE_CSRC_APPROVAL_20261023",
+      "lead_group": "LEAD_3_XIHE_TECH_AND_CANSEMI_301660",
+      "entity": "上海羲禾科技股份有限公司",
+      "stock_or_ticker": "IPO_STAR_XIHE",
+      "published_date": "2026-10-23",
+      "url": "https://static.sse.com.cn/stock/disclosure/announcement/c/202610/002212_20261023_8UEY.pdf",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/xihe_2026-10-23_证监会同意上海羲禾科技科创板IPO注册批复_002212_8UEY.pdf",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/xihe_2026-10-23_证监会同意上海羲禾科技科创板IPO注册批复_002212_8UEY.txt",
+      "primary_bytes": 804788,
+      "primary_sha256": "e1b78406cdef4264ef943ea290f061dfe2f99524f716f2822698c7d50af74621",
+      "txt_bytes": 1300,
+      "txt_sha256": "194ac5af9b2a6f1924a7826fd3132e9747479a6be105bf34f7e29de1f0425c68"
+    },
+    {
+      "item_id": "L3A_XIHE_SPONSOR_REPORT_20261014",
+      "lead_group": "LEAD_3_XIHE_TECH_AND_CANSEMI_301660",
+      "entity": "上海羲禾科技股份有限公司",
+      "stock_or_ticker": "IPO_STAR_XIHE",
+      "published_date": "2026-10-14",
+      "url": "https://static.sse.com.cn/stock/disclosure/announcement/c/202610/002212_20261014_L6U8.pdf",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/xihe_2026-10-14_国泰海通关于上海羲禾科技科创板上市保荐书_002212_L6U8.pdf",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/xihe_2026-10-14_国泰海通关于上海羲禾科技科创板上市保荐书_002212_L6U8.txt",
+      "primary_bytes": 839640,
+      "primary_sha256": "fadcc9cdd9b570a48f5207560abb7bcc82564a10a3ab56267e70267797a9cdcb",
+      "txt_bytes": 61737,
+      "txt_sha256": "cb353907c7a1f99a89f36ed705d54e4a1eb0d0ee6de8462fa531d73e48cd77c1"
+    },
+    {
+      "item_id": "L3A_XIHE_PROSPECTUS_REG_20261014",
+      "lead_group": "LEAD_3_XIHE_TECH_AND_CANSEMI_301660",
+      "entity": "上海羲禾科技股份有限公司",
+      "stock_or_ticker": "IPO_STAR_XIHE",
+      "published_date": "2026-10-14",
+      "url": "https://static.sse.com.cn/stock/disclosure/announcement/c/202610/002212_20261014_U3DB.pdf",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/xihe_2026-10-14_上海羲禾科技科创板招股说明书注册稿_002212_U3DB.pdf",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/xihe_2026-10-14_上海羲禾科技科创板招股说明书注册稿_002212_U3DB.txt",
+      "primary_bytes": 6962182,
+      "primary_sha256": "9626ce9254c2e3f706cd7a52057deb5de3f1d3d0360c2178f0c0608b65dcd661",
+      "txt_bytes": 934000,
+      "txt_sha256": "50426dcb9584ee654ce731625c39091831445e5dc1cd235ca75234bd21e4098d"
+    },
+    {
+      "item_id": "L3B_301660_PROCEEDS_USE_20260915",
+      "lead_group": "LEAD_3_XIHE_TECH_AND_CANSEMI_301660",
+      "entity": "粤芯半导体技术股份有限公司",
+      "stock_or_ticker": "301660",
+      "published_date": "2026-09-15",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564492.PDF",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/301660_2026-09-15_粤芯半导体募集资金具体运用情况_1225564492.pdf",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/301660_2026-09-15_粤芯半导体募集资金具体运用情况_1225564492.txt",
+      "primary_bytes": 308821,
+      "primary_sha256": "8045c06989fb32618144b0cb936047640f82f28a9e0bc1818a39bc03baa8563f",
+      "txt_bytes": 10609,
+      "txt_sha256": "568c99541a9ccd82c52777fee5d570890e81c5101e3bb8b50166331ebf505be2"
+    },
+    {
+      "item_id": "L3B_301660_PROSPECTUS_20261008",
+      "lead_group": "LEAD_3_XIHE_TECH_AND_CANSEMI_301660",
+      "entity": "粤芯半导体技术股份有限公司",
+      "stock_or_ticker": "301660",
+      "published_date": "2026-10-08",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-08/1225590835.PDF",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/301660_2026-10-08_粤芯半导体创业板招股说明书_1225590835.pdf",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/301660_2026-10-08_粤芯半导体创业板招股说明书_1225590835.txt",
+      "primary_bytes": 5779892,
+      "primary_sha256": "c00eddbd0a8562c38fd654a01ef0c6a4d32b3576f1e1ee17a66fe8c7476af764",
+      "txt_bytes": 1077358,
+      "txt_sha256": "11c9d23b77256b114698ce8bfc6e9add1f3588bb3fb0192125f9dc2d224f99d1"
+    },
+    {
+      "item_id": "L3B_301660_LISTING_NOTICE_20261012",
+      "lead_group": "LEAD_3_XIHE_TECH_AND_CANSEMI_301660",
+      "entity": "粤芯半导体技术股份有限公司",
+      "stock_or_ticker": "301660",
+      "published_date": "2026-10-12",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-12/1225600521.PDF",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/301660_2026-10-12_粤芯半导体创业板上市公告书_1225600521.pdf",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/301660_2026-10-12_粤芯半导体创业板上市公告书_1225600521.txt",
+      "primary_bytes": 1283095,
+      "primary_sha256": "487630325b97452194ff31f442cf1d4c37530b9fdbf458c6e2bf237883d1c599",
+      "txt_bytes": 254097,
+      "txt_sha256": "fd138ed3774fbae50a15bd05a38416868fed89fdd0fbc93f9aee1e7859183d1c"
+    },
+    {
+      "item_id": "L3B_301660_Q3_REPORT_20261030",
+      "lead_group": "LEAD_3_XIHE_TECH_AND_CANSEMI_301660",
+      "entity": "粤芯半导体技术股份有限公司",
+      "stock_or_ticker": "301660",
+      "published_date": "2026-10-30",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225640482.PDF",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/301660_2026-10-30_粤芯半导体2026年三季度报告_1225640482.pdf",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/301660_2026-10-30_粤芯半导体2026年三季度报告_1225640482.txt",
+      "primary_bytes": 456643,
+      "primary_sha256": "2abf1ec500f074e23fe28e0de6494fe1f725315eed4f27299ce42c25b8be6a7a",
+      "txt_bytes": 27426,
+      "txt_sha256": "343f15b0a8c7a770ed57f2699687189c30ba1fa9f5c0b98b5d80474837075ac6"
+    },
+    {
+      "item_id": "L4_OIF_Q4_7PROJECTS_20261111",
+      "lead_group": "LEAD_4_OIF_Q4_AND_SC26_OVERSEAS",
+      "entity": "Optical Internetworking Forum (OIF)",
+      "stock_or_ticker": "STD_OIF",
+      "published_date": "2026-11-11",
+      "url": "https://www.oiforum.com/oif-launches-seven-new-technical-projects-at-q4-member-meeting-reflecting-accelerating-demand-for-next-generation-connectivity/",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/oif_2026-11-11_q4_seven_new_projects_448g_rtlr_40w_elsfp.html",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/oif_2026-11-11_q4_seven_new_projects_448g_rtlr_40w_elsfp.txt",
+      "primary_bytes": 245449,
+      "primary_sha256": "597def4f85735ea123eaa9c19cb864846e5b3aebc77568e6168952247beeb798",
+      "txt_bytes": 6903,
+      "txt_sha256": "ae5fe7515978ff5dbe49d373adf3fe72db91053aa27f988ef616a1d02c98e08b"
+    },
+    {
+      "item_id": "L4_NVDA_LAMBDA_SC26_CPO_20261116",
+      "lead_group": "LEAD_4_OIF_Q4_AND_SC26_OVERSEAS",
+      "entity": "NVIDIA Corporation / Lambda Inc.",
+      "stock_or_ticker": "NVDA/WATCH_LAMBDA",
+      "published_date": "2026-11-16",
+      "url": "https://blogs.nvidia.com/blog/lambda-photonics/",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/nvda_lambda_2026-11-16_sc26_cpo_10k_gpu_cluster.html",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/nvda_lambda_2026-11-16_sc26_cpo_10k_gpu_cluster.txt",
+      "primary_bytes": 111296,
+      "primary_sha256": "3da8b9eb5327936a87e874f1a1c625fda784de76c5c1387aaeade306566cc6c0",
+      "txt_bytes": 4155,
+      "txt_sha256": "e211dfa1cccfe12a6f77d8d6a81ee42f085746731051a05fc7105df74ca4629b"
+    },
+    {
+      "item_id": "L4_LAMBDA_NVDA_SC26_CPO_20261116",
+      "lead_group": "LEAD_4_OIF_Q4_AND_SC26_OVERSEAS",
+      "entity": "Lambda Inc. / NVIDIA Corporation",
+      "stock_or_ticker": "WATCH_LAMBDA/NVDA",
+      "published_date": "2026-11-16",
+      "url": "https://lambda.com/blog/worlds-first-large-scale-deployment-of-nvidia-photonics-switches-with-cpo",
+      "http_status": 200,
+      "archive_status": "archived_http_200",
+      "primary_rel": "corpus/web/step5_20261122/blindspots/lambda_2026-11-16_sc26_worlds_first_cpo_deployment.html",
+      "txt_rel": "corpus/web/step5_20261122/blindspots/lambda_2026-11-16_sc26_worlds_first_cpo_deployment.txt",
+      "primary_bytes": 60526,
+      "primary_sha256": "ca5536fbd3fe21ca66b0204ee8d98877cd46e786180cc0dd18678e5d44186afe",
+      "txt_bytes": 3972,
+      "txt_sha256": "9c5a4479987e381c47b339d15acf5116863c75c4581059547dc899775285e0b4"
+    }
+  ],
+  "gated_or_js_shell_urls": [
+    {
+      "item_id": "L4_APH_SC26_EVENT_PAGE",
+      "lead_group": "LEAD_4_OIF_Q4_AND_SC26_OVERSEAS",
+      "entity": "Amphenol Communications Solutions",
+      "stock_or_ticker": "NYSE:APH",
+      "url": "https://www.amphenol-cs.com/connect/super-computing-2026.html",
+      "http_status": 403,
+      "response_bytes": 5817,
+      "archive_status": "http_403_or_gated",
+      "notes": "amphenol-cs.com 站点返回 HTTP 403 WAF 拦截页（其静态 PDF 域 cdn.amphenol-cs.com/.../hsio-cn-xpo-overpass.pdf 亦返回 HTTP 403，且 investors.amphenol.com 未发 SC26 新闻稿）；严守红线零绕过，以 url 锚诚实留置 review_queue.csv watch_deferred"
+    },
+    {
+      "item_id": "L4_LAMBDA_BUSINESSWIRE_MIRROR",
+      "lead_group": "LEAD_4_OIF_Q4_AND_SC26_OVERSEAS",
+      "entity": "Lambda Inc.",
+      "stock_or_ticker": "WATCH_LAMBDA",
+      "url": "https://www.businesswire.com/news/home/20261116930878/en/Lambda-Announces-Worlds-First-Large-Scale-CPO-Deployment-of-NVIDIA-Photonics-Switches",
+      "http_status": 403,
+      "response_bytes": 547,
+      "archive_status": "http_403_or_gated",
+      "notes": "BusinessWire 分发页返回 HTTP 403，但已直接抓回 Lambda 官网同文第一方正式稿 lambda.com/blog/... (HTTP 200) 与 NVIDIA 官网博客 blogs.nvidia.com/blog/lambda-photonics/ (HTTP 200) 双源互证"
+    },
+    {
+      "item_id": "L4_AVGO_SC26_MEDIA_KIT",
+      "lead_group": "LEAD_4_OIF_Q4_AND_SC26_OVERSEAS",
+      "entity": "Broadcom Inc.",
+      "stock_or_ticker": "AVGO",
+      "url": "https://www.broadcom.com/company/news/resources/media-kits/sc26",
+      "http_status": 200,
+      "response_bytes": 18481,
+      "archive_status": "http_200_empty_js_shell",
+      "notes": "broadcom.com 主站返回 p_chars=0 纯前端 SPA 空壳且 investors.broadcom.com 未发 SC26 法定新闻稿，不作事实源引用"
+    },
+    {
+      "item_id": "L4_MRVL_SC26_NEWSROOM",
+      "lead_group": "LEAD_4_OIF_Q4_AND_SC26_OVERSEAS",
+      "entity": "Marvell Technology, Inc.",
+      "stock_or_ticker": "MRVL",
+      "url": "https://www.marvell.com/company/newsroom/marvell-connectivity-ai-infrastructure-supercomputing-2026.html",
+      "http_status": 403,
+      "response_bytes": 477,
+      "archive_status": "http_403_or_gated",
+      "notes": "marvell.com 营销站 Akamai 返回 HTTP 403（investor.marvell.com 投资者新闻室未列该展台通稿），不绕过、不入 calls 正史"
+    }
+  ]
+}

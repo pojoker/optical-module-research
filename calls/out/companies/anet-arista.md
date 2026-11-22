@@ -16,11 +16,11 @@
 
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
+| 2026Q3 | [S_ANET_2026Q3](https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Third-Quarter-2026-Financial-Results/default.aspx) | A | available | 公司IR官方2026Q3业绩新闻稿；本地存档HTML与清洗TXT；归档 corpus/web/step4_20261122/anet_20261103_2026q3_results.txt |
 | 2026Q2 | [S_ANET_2026Q2](https://www.sec.gov/Archives/edgar/data/1596532/000159653226000174/ex991q226-earningsrelease.htm) | A | available | 公司向SEC提交的Q2 2026业绩Exhibit 99.1 |
 | 2026Q1 | [S_ANET_2026Q1_CALL](https://www.fool.com/earnings/call-transcripts/2026/05/05/arista-anet-q1-2026-earnings-transcript/) | C | available | 免费公开第三方完整逐字稿；仅保存管理层短引文和行号锚 |
 | 2026Q1 | [S_ANET_2026Q1](https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-First-Quarter-2026-Financial-Results/default.aspx) | A | available | 公司官方季度业绩新闻稿 |
 | 2025Q4 | [S_ANET_2025Q4](https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Fourth-Quarter-and-Year-End-2025-Financial-Results/default.aspx) | A | available | 公司官方季度及全年业绩新闻稿 |
-| 2025Q3 | [S_ANET_2025Q3](https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2025/Arista-Networks-Inc--Reports-Third-Quarter-2025-Financial-Results/) | A | available | 公司官方季度业绩新闻稿 |
 
 ## 已审核管理层陈述
 

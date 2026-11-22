@@ -1,0 +1,200 @@
+{
+  "workpack_id": "OPTICAL-STEP2-ARCHIVE-SALVAGE-20261121",
+  "verified_at": "2026-11-21",
+  "verifier_agent": "carbon-verifier",
+  "verifier_model": "gemini-pro-orchestrator",
+  "verifier_model_display_name": "Orchestrator (Carbon)",
+  "passed": true,
+  "step2_scope_passed": true,
+  "pass_summary": "All 6 required machine gates (scan --selftest [119/119], scan --check [①-⑭ green], render --verify, participation --check [463/463, 90 confirmed, 15 pending], -m calls check, and Step 1+2+capability pytest [77 passed, 56 subtests passed]) plus the active repository pytest suite (479 passed, 1 deselected, 146 subtests passed) exited with code 0. Independent byte-level idempotency reruns across all 3 Step 2 deterministic builders (37 tracked output files) showed 0 SHA-256 drift, 220/220 (100.0%) step2_expansion quotes matched local corpus texts verbatim, 18 months of customs 4-way tables reconciled at 0.000% error, all 236 edges (E001-E236) and 74 negative cuts (0 leaks) verified against live edges.csv, and archive/ git tracked files remained 100% untouched.",
+  "gates": {
+    "scan_selftest": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 scan.py --selftest",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "[selftest] 合计 119 用例, 通过 119, 失败 0 (原有 90 条 100% 保留 + Step 2 新增 29 条)"
+    },
+    "scan_check": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 scan.py --check",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "[语料] 最新文件距今97天; 宇宙内缺席年报 0 家 | 不变量全绿(①-⑭)"
+    },
+    "render_verify": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 render.py --verify",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "--verify: 两次临时重建一致(out/非canonical)"
+    },
+    "participation_check": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 participation.py --check",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "参与识别: 全绿 | 宇宙 463 | 覆盖 463 | 确认 90 | 待确认 15"
+    },
+    "calls_check": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 -m calls check",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "OK: validated 39 companies / 166 sources / 70 claims; 21 themes / 12 cross-checks / 9 commitments / 4 technology feedback rows; event ledger validated / 34 reviewed radar events; canonical references are closed; no canonical file was written"
+    },
+    "pytest_step1_step2_capability": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 -m pytest -q tests/test_step1_ledger_gates.py tests/test_step2_archive_salvage.py tests/test_capability_report_semantics.py",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "77 passed, 56 subtests passed"
+    },
+    "pytest_repo_active": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 -m pytest -q --ignore=tests/site --ignore=out --ignore=archive -k \"not test_workpack_declares_zero_architecture_budget\"",
+      "exit_code": 0,
+      "passed": true,
+      "output_summary": "479 passed, 1 deselected, 146 subtests passed (single deselected test is pre-existing legacy workpack ID check 'OM-PHYS-001' in tests/research/test_question_completion_semantics.py:92 outside allowed_write_paths)"
+    }
+  },
+  "derived_rebuilds": {
+    "render_py": "out/ 已重建 (全景.md/html, 知识库.md/html [含 KN007 老化测试毛利率 37.45%/50.65%->12.55%], 问题队列.md, 研究问题树.md)",
+    "participation_py": "out/参与识别.* 已重建 | 宇宙 463 | 覆盖 463 | 确认 90 | 待确认 15",
+    "build_detailed_capability_report_py": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jowang/miniconda3/bin/python3 build_detailed_capability_report.py --html-output out/step2-archive-salvage-20261121/光模块产业链全景图_公司能力细化版.html",
+      "companies": 90,
+      "capabilities": 183,
+      "nodes": 38,
+      "html_output": "out/step2-archive-salvage-20261121/光模块产业链全景图_公司能力细化版.html",
+      "html_size_bytes": 449148,
+      "workbuddy_external_dir_untouched": true
+    }
+  },
+  "independent_audit": {
+    "builders_idempotency": {
+      "passed": true,
+      "scripts_rerun": [
+        "out/step2-archive-salvage-20261121/build_customs_and_entities.py",
+        "out/step2-archive-salvage-20261121/build_content_ledger.py",
+        "out/step2-archive-salvage-20261121/build_timelines_and_refs.py"
+      ],
+      "tracked_output_files_checked": 37,
+      "sha256_drift_count": 0
+    },
+    "shard_a_corpus_entities_customs_macro": {
+      "passed": true,
+      "corpus_annual_2023_pdf_count": 34,
+      "demo_pdf_count": 30,
+      "demo_pdfs_matched_in_local_corpus_by_sha256": 30,
+      "v16_pdf_txt_sidecars_verified": 11,
+      "archive_git_tracked_modifications": 0,
+      "truth_assertions_live_passed": "16/16",
+      "entity_nodes_rows": 169,
+      "entity_nodes_intermediary_count": 12,
+      "entity_nodes_evaporated_6_present": [
+        "PINEWAVE",
+        "浙江粮油",
+        "顺丰速运",
+        "金信诺",
+        "等离子体所",
+        "索恩格"
+      ],
+      "entity_registry_yaml_safe_load": true,
+      "customs_rows": {
+        "customs_monthly.csv": 30,
+        "customs_partners.csv": 2881,
+        "customs_province.csv": 2246,
+        "customs_trademode.csv": 731,
+        "hs85177950_product_catalog.csv": 25,
+        "hs85177950_company_linkage.csv": 27
+      },
+      "customs_embedded_newlines": 0,
+      "customs_18_month_usd_max_error_pct": 0.0,
+      "customs_18_month_kg_max_error_pct": 0.0,
+      "macro_evidence_rows": 35,
+      "macro_added_claims": [
+        "MC033",
+        "MC034",
+        "MC035"
+      ]
+    },
+    "shard_b_content_ledger_and_kn007": {
+      "passed": true,
+      "total_rows": 597,
+      "v1_salvage_rows": 377,
+      "step2_expansion_rows": 220,
+      "total_companies": 20,
+      "expansion_companies": 15,
+      "fact_type_enum_violations": 0,
+      "stance_enum_violations": 0,
+      "invalid_leaf_cell_ids": 0,
+      "step2_expansion_live_verbatim_hits": "220/220 (100.0%)",
+      "all_rows_verified_local": "594/597 (remaining 3 are historical C43/C47/C48 cross-page table headers marked inherited_v1_verified)",
+      "kn007_burn_in_margin_collapse_verified": true
+    },
+    "shard_c_relationships_and_refs": {
+      "passed": true,
+      "relationship_timeline_rows": 446,
+      "unique_relations": 204,
+      "edges_covered": "236/236 (E001-E236)",
+      "equipment_watch_pool_integrated": "25/25 (14 linked in-place + 11 supplementary rows incl. FT-OB-20241213 4800万欧元)",
+      "special_observe_types_isolated": {
+        "confirmed_ended": 1,
+        "procedural_intermediary": 1,
+        "bad_debt_frozen": 3,
+        "censored": 8
+      },
+      "daily_hookup_columns_and_contract_present": true,
+      "edge_negative_cuts_rows": 74,
+      "edge_negative_cuts_leaked_in_edges_csv": 0,
+      "counterparty_audit_rows": 15,
+      "sellside_watch_alarms_rows": 7,
+      "refs_deanonymization_case_005_present": true,
+      "refs_file_count": 8
+    },
+    "protected_baselines_and_boundaries": {
+      "edges_csv_unchanged_vs_step2_baseline": true,
+      "frozen_csv_unchanged_463_rows": true,
+      "points_p031_and_p209_untouched": true,
+      "macro_encoding_utf8_bom_crlf": true,
+      "points_encoding_utf8_bom_lf": true,
+      "root_whitelist_violations": 0,
+      "unexpected_paths_outside_allowed_write_paths": 0,
+      "git_commit_created": false
+    }
+  },
+  "before_after_metrics": {
+    "scan_selftest_cases": {
+      "before": 90,
+      "after": 119
+    },
+    "pytest_step1_step2_capability_passed": {
+      "before": 64,
+      "after": 77
+    },
+    "pytest_repo_active_passed": {
+      "before": 466,
+      "after": 479
+    },
+    "macro_evidence_rows": {
+      "before": 32,
+      "after": 35
+    },
+    "content_ledger_rows": {
+      "before": 0,
+      "after": 597
+    },
+    "relationship_timeline_rows": {
+      "before": 0,
+      "after": 446
+    },
+    "edge_negative_cuts_rows": {
+      "before": 0,
+      "after": 74
+    },
+    "entity_nodes_rows": {
+      "before": 0,
+      "after": 169
+    }
+  },
+  "pending_user_decisions": [
+    "Step 3（2026 年 9–11 月 Daily 高频增量并库）启动授权：relationship_timeline.csv 已预留 daily_ir / daily_qa / daily_announcement 挂接列与幂等契约（如罗博特科×NVIDIA 2026-11-16 互动易确认量产订单交付、Tower×中际旭创 2026-11-03 NPO 合作等），是否授权进入第三步执行并库。",
+    "v6 宇宙对称扩容授权：联讯仪器（688808，已于 2026-04-24 科创板上市，entity_nodes 与 W03 已记录最新状态，points.csv P061 仍受不扩 _frozen 分母约束暂挂 [待v6扩容同步]），连同云南锗业、科瑞技术、微见智能、镭神技术等是否单列授权纳入 corpus/_frozen.csv 分母扩容。",
+    "内容台账与时间线候选结论的领域复核与晋升：corpus/content_ledger/（597 条）与 corpus/relationships/（446 条时序行）现作为有锚可审计语料/台账层落地；是否需要将其中特定工艺结论进一步提炼晋升为根级 knowledge.yaml 新 KN/WHY 条目（须人工复核 + 单列授权）。",
+    "历史测试与工作区提交授权：是否授权修正允许写路径外的 tests/research/test_question_completion_semantics.py:92 旧工作包 ID 硬编码（'OM-PHYS-001'）及配置 pytest 忽略 out/ 历史打包副本，以及是否对 Step 1 + Step 2 改动执行 git commit。"
+  ]
+}

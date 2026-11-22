@@ -8,8 +8,8 @@
 
 - 季度槽登记：4/4 个季度槽已登记（含未采集槽位）
 - 可用来源：2/4 个季度槽有 `available` 材料
-- 陈述登记：10 条 `claims.csv` 陈述（含 candidate/rejected）
-- 已核陈述：9 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
+- 陈述登记：11 条 `claims.csv` 陈述（含 candidate/rejected）
+- 已核陈述：10 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
 - 已核事件：1 条已审核雷达事件（asserted 1 / corroborated 0）
 
 ## 四季度覆盖
@@ -17,7 +17,7 @@
 | 槽位 | 信源 | 等级 | 状态 | 缺失/说明 |
 |---|---|---:|---|---|
 | 2026Q2 | [S_AAOI_2026Q2](https://investors.ao-inc.com/news-releases/news-release-details/applied-optoelectronics-reports-second-quarter-2026-results) | A | available | 公司官方季度业绩新闻稿 |
-| 2026Q1 | [S_AAOI_Q1_RESULT_A](https://investors.ao-inc.com/node/17011) | A | available | 公司官方季度业绩材料；与C级逐字稿并列登记 |
+| 2026Q1 | [S_AAOI_Q1_RESULT_A](https://investors.ao-inc.com/2026-05-07-Applied-Optoelectronics-Reports-First-Quarter-2026-Results) | A | available | 公司官方季度业绩材料；与C级逐字稿并列登记；原URL https://investors.ao-inc.com/node/17011 因IR站点迁移404，2026-11-11核验更新为同文官方带日期永久链接 |
 | 2026Q1 | [S_AAOI_2026Q1_C](https://www.fool.com/earnings/call-transcripts/2026/05/07/aaoi-q1-2026-earnings-call-transcript/) | C | available | 免费公开第三方逐字稿；仅保存短引文和定位 |
 | 2025Q4 | S_AAOI_2025Q4 | unknown | not_collected | MVP尚未完成逐字稿人工核验 |
 | 2025Q3 | S_AAOI_2025Q3 | unknown | not_collected | MVP尚未完成逐字稿人工核验 |
@@ -26,13 +26,13 @@
 
 > `reviewed` 仅表示原文已核（说话人、原文、锚点经人工复核），不代表独立来源交叉证实。
 
-- `CL001` · fact · first_shipment · [S_AAOI_Q1_RESULT_A](https://investors.ao-inc.com/node/17011) `CEO quote paragraph`
+- `CL001` · fact · first_shipment · [S_AAOI_Q1_RESULT_A](https://investors.ao-inc.com/2026-05-07-Applied-Optoelectronics-Reports-First-Quarter-2026-Results) `CEO quote paragraph`
   - 归纳：AAOI称Q1完成对一家大型超大规模客户的首次800G批量交付
   - 原文短引：“We completed our first volume shipment of our 800G products to one of our large hyperscale customers in Q1.”
-- `CL002` · fact · scaled · [S_AAOI_Q1_RESULT_A](https://investors.ao-inc.com/node/17011) `CFO quote paragraph`
+- `CL002` · fact · scaled · [S_AAOI_Q1_RESULT_A](https://investors.ao-inc.com/2026-05-07-Applied-Optoelectronics-Reports-First-Quarter-2026-Results) `CFO quote paragraph`
   - 归纳：AAOI称Q1末800G模块月产能接近10万只
   - 原文短引：“exiting Q1 with total manufacturing capacity of nearly 100,000 units of 800G transceivers per month”
-- `CL003` · forward_looking · ramping · [S_AAOI_Q1_RESULT_A](https://investors.ao-inc.com/node/17011) `CEO quote paragraph`
+- `CL003` · forward_looking · ramping · [S_AAOI_Q1_RESULT_A](https://investors.ao-inc.com/2026-05-07-Applied-Optoelectronics-Reports-First-Quarter-2026-Results) `CEO quote paragraph`
   - 归纳：AAOI预计800G从Q2开始明显放量
   - 原文短引：“we continue to anticipate a strong volume ramp of our 800G products starting in Q2”
 - `CL005` · fact · unknown · [S_AAOI_2026Q1_C](https://www.fool.com/earnings/call-transcripts/2026/05/07/aaoi-q1-2026-earnings-call-transcript/) `Q&A / response lines 227-230`
@@ -50,6 +50,9 @@
 - `CL015` · fact · unknown · [S_AAOI_2026Q1_C](https://www.fool.com/earnings/call-transcripts/2026/05/07/aaoi-q1-2026-earnings-call-transcript/) `Q&A lines 172-182`
   - 归纳：AAOI管理层称行业存在InP激光器制造产能短缺
   - 原文短引：“We see a shortage of indium phosphide laser manufacturing capacity across the industry right now”
+- `CL075` · fact · ramping · [S_AAOI_2026Q2](https://investors.ao-inc.com/news-releases/news-release-details/applied-optoelectronics-reports-second-quarter-2026-results) `CEO quote, paragraph 1`
+  - 归纳：AAOI在2026Q2业绩稿确认截至6月30日季度800G模块实现强劲放量且环比翻倍以上；未单列出货只数或分产品收入
+  - 原文短引：“we saw a strong volume ramp of our 800G products, which more than doubled sequentially”
 
 ## 公司官网技术作者陈述（与管理层商业确认隔离）
 

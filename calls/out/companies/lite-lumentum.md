@@ -8,9 +8,9 @@
 
 - 季度槽登记：4/4 个季度槽已登记（含未采集槽位）
 - 可用来源：2/4 个季度槽有 `available` 材料
-- 陈述登记：12 条 `claims.csv` 陈述（含 candidate/rejected）
-- 已核陈述：12 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
-- 已核事件：4 条已审核雷达事件（asserted 4 / corroborated 0）
+- 陈述登记：13 条 `claims.csv` 陈述（含 candidate/rejected）
+- 已核陈述：13 条 `reviewed`（reviewed 仅表示原文已核，不代表独立来源交叉）
+- 已核事件：7 条已审核雷达事件（asserted 7 / corroborated 0）
 
 ## 四季度覆盖
 
@@ -50,6 +50,9 @@
 - `CL027` · fact · unknown · [S_LITE_2026Q3_C](https://www.fool.com/earnings/call-transcripts/2026/05/06/lumentum-lite-q3-2026-earnings-transcript/) `transcript Q&A / Ryan Koontz response on EML supply`
   - 归纳：Lumentum在EML与激光器供给问答中称供需缺口可能超过30%
   - 原文短引：“The supply-demand imbalance is probably even higher than we reported in our last call, somewhere greater than 30%.”
+- `CL077` · fact · volume_order · [S_LITE_2027Q1](https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-First-Quarter-of-Fiscal-Year-2027-Financial-Results/default.aspx) `CEO commentary, paragraph 1 (p2)`
+  - 归纳：Lumentum在FY27Q1业绩稿披露取得第二项重大NPO/CPO定点并附逾50亿美元采购承诺；系NPO与CPO合并口径而非纯CPO单列，不等于当季确收收入
+  - 原文短引：“During the quarter, we secured our second major NPO/CPO win, backed by purchase commitments exceeding $5 billion.”
 
 ## 公司官网技术作者陈述（与管理层商业确认隔离）
 

@@ -169,11 +169,11 @@
         {
           "endpoint_id": "COHR_OFFICIAL_RELEASES",
           "endpoint_kind": "official_ir",
-          "url": "https://ir.coherent.com/news-events/news-releases",
+          "url": "https://ir.coherent.com/news-events/corporate-releases",
           "disclosure_type": "official_release",
           "content_class": "corporate_narrative",
           "provenance_class": "first_party",
-          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "note": "2026-10-13 沿Coherent官网投资者菜单核验新企业新闻入口，原news-events/news-releases为404。当前采集corporate-releases；财务发布另列financial-releases，未宣称此入口覆盖全部财务发布。",
           "article_path_pattern": "/news-release-details/"
         }
       ]
@@ -416,11 +416,11 @@
         {
           "endpoint_id": "WATCH_LIGHTMATTER_OFFICIAL_RELEASES",
           "endpoint_kind": "official_ir",
-          "url": "https://lightmatter.co/press-releases/",
+          "url": "https://lightmatter.com/press-releases/",
           "disclosure_type": "official_release",
           "content_class": "corporate_narrative",
           "provenance_class": "first_party",
-          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
+          "note": "2026-10-13 原.co列表明确链接官方.com文章；改用同一官网声明的.com目录，保持同域过滤，不加入第三方转载。",
           "article_path_pattern": "^/press-release/|^/press-releases/[^/]+"
         }
       ]
@@ -462,8 +462,8 @@
           "disclosure_type": "official_release",
           "content_class": "corporate_narrative",
           "provenance_class": "first_party",
-          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态由运行结果单独报告，配置不等于健康或研究覆盖。",
-          "article_path_pattern": "^/en/news-events/news/detail/"
+          "note": "2026-10-13 官方列表真实文章路径为news/news-detailpage；修复原/detail路径不匹配。日期和正文覆盖以实际运行逐篇验证为准。",
+          "article_path_pattern": "^/en/news-events/news/news-detailpage/[^/]+/?$"
         }
       ]
     },
@@ -969,8 +969,8 @@
           "disclosure_type": "official_release",
           "content_class": "corporate_narrative",
           "provenance_class": "first_party",
-          "note": "2026-09-09 官方检索或站内导航确认披露目录；本地获取状态单独报告，配置不等于成功。",
-          "article_path_pattern": "^/us/en/newsroom/press-release/"
+          "note": "2026-10-13 核验官网media-browser声明的公开GET模型；仅按声明的Press Release与News Advisory类型获取，同域文章日期绑定，固定总20项/原60秒预算；博客不冒充官方公告，截断覆盖仍保留partial。",
+          "article_path_pattern": "^/us/en/newsroom/(?:press-release|news-advisory)/"
         }
       ]
     },

@@ -1,0 +1,193 @@
+[
+  {
+    "id": "G-cf34d3f9017c9f88",
+    "verdict": "部分证实并更正",
+    "confirmed": "S. 5548 确实存在，2026-09-24 提出并交参议院国土安全和政府事务委员会。核到的状态文件无通过动作。提案拟限制某些联邦采购，规定相关禁令若成法则在成法五年后生效。景旺电子半年报称已批量交付 800G 和 1.6T 光模块 PCB。",
+    "missing": "生益科技自身同速率批交原文未定位。另一发行人是生益电子，其半年报说 1.6T 在打样测试，不能代替母公司披露，也不能据此断言之后未交付。",
+    "proposal": "补景旺电子在 2026 上半年已批量交付 800G 和 1.6T 光模块 PCB的发行人自述。另将 S. 5548 提出和转委员会记录保存在政策证据。",
+    "target": "points.csv P031 / B1 可补 1.6T 披露锚。政策证据留本页，主体登记待定。",
+    "evidence": [
+      {
+        "title": "GovInfo · S. 5548 提案文本",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119s5548is/html/BILLS-119s5548is.htm",
+        "locator": "封面；§2",
+        "quote": "To prohibit Federal procurement of certain optical transceivers"
+      },
+      {
+        "title": "GovInfo · S. 5548 官方状态 XML",
+        "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/s/BILLSTATUS-119s5548.xml",
+        "locator": "actions 与 latestAction",
+        "quote": "Introduced in Senate"
+      },
+      {
+        "title": "景旺电子 2026 年半年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225493416.PDF",
+        "locator": "第三节管理层讨论与分析，数据中心及高速光模块段",
+        "quote": "报告期内公司已批量交付 800G、1.6T 光模块 PCB"
+      },
+      {
+        "title": "生益电子 2026 年半年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225474834.PDF",
+        "locator": "管理层讨论与分析，1.6T 光模块 PCB 段",
+        "quote": "1.6T光模块PCB已打样测试中"
+      }
+    ],
+    "search": [
+      "GovInfo BILLS-119s5548is 与 BILLSTATUS-119s5548.xml",
+      "景旺电子 1.6T 光模块 PCB 批量 半年报",
+      "生益科技 600183 1.6T 与生益电子 688183 分开查"
+    ]
+  },
+  {
+    "id": "G-d4a9cc9237f3b367",
+    "verdict": "部分证实",
+    "confirmed": "EAR §734.9 有 FDP 规则，实体清单规则需匹配对应产品和终端用户范围。许可还要按分类、目的地、最终用途及用户分别判断。",
+    "missing": "缺 Broadcom、Marvell 具体型号、ECCN、交易链及最终用户。也未定位光模块带宽自身构成一条普遍禁线的条款。",
+    "proposal": "收录 §734.9 的适用判据，标记为法规原文背景。",
+    "target": "本页政策证据。正式账本主体待定位，calls/disclosures.csv 和 calls/events.csv 须先核对登记主体与引用。",
+    "evidence": [
+      {
+        "title": "BIS EAR §734.9",
+        "url": "https://www.bis.gov/regulations/ear/734",
+        "locator": "§734.9 导言、(e)",
+        "quote": "assessing the item classification, destination, end-use, and end-user"
+      },
+      {
+        "title": "BIS EAR Part 744",
+        "url": "https://www.bis.gov/regulations/ear/744",
+        "locator": "§744.23 及补编 4",
+        "quote": "Entity List"
+      }
+    ],
+    "search": [
+      "BIS EAR 734.9 FDP Entity List",
+      "BIS EAR Part 744 advanced computing 3A090 4A090 光模块 DSP"
+    ]
+  },
+  {
+    "id": "G-54b8a89c403b4579",
+    "verdict": "部分证实",
+    "confirmed": "BIS 的 CCL 有部分半导体测试或检验设备条目，3B002 以条目列明的设备和参数为边界。",
+    "missing": "原句没给日期、厂家、设备型号和 ECCN，缺直接证据把所谓高速光模块测试仪绑定到该项。",
+    "proposal": "",
+    "target": "保留补证。若定位具体测试设备，与现有设备叶格复核后再定。",
+    "evidence": [
+      {
+        "title": "BIS Commerce Control List",
+        "url": "https://www.bis.gov/regulations/ear/interactive-commerce-control-list",
+        "locator": "ECCN 3B002",
+        "quote": "Test or inspection equipment"
+      }
+    ],
+    "search": [
+      "BIS 3B002 semiconductor test equipment",
+      "BIS 3B002 optical transceiver high speed test instrument"
+    ]
+  },
+  {
+    "id": "G-5b053e953f0a179a",
+    "verdict": "部分证实",
+    "confirmed": "BIS 按 ECCN、交易条件和终端用途管理。CCL 覆盖某些测试/检验设备。",
+    "missing": "缺能把 3/5 nm DSP 或这些测试仪器绑定到具体 ECCN 的原件。企业产地须分别核对同型号工序、物料和个案裁定，无法从东南亚全工序的概述推出。",
+    "proposal": "",
+    "target": "本页补证。BIS 条款可并入 G-d4a9cc9237f3b367，CBP 个案单独核。",
+    "evidence": [
+      {
+        "title": "BIS EAR §734.9",
+        "url": "https://www.bis.gov/regulations/ear/734",
+        "locator": "§734.9 导言、(e)",
+        "quote": "assessing the item classification, destination, end-use, and end-user"
+      },
+      {
+        "title": "BIS Commerce Control List",
+        "url": "https://www.bis.gov/regulations/ear/interactive-commerce-control-list",
+        "locator": "ECCN 3B002",
+        "quote": "Test or inspection equipment"
+      }
+    ],
+    "search": [
+      "BIS EAR 734 744 advanced computing ECCN",
+      "BIS 3B002 测试设备",
+      "CBP optical transceiver country of origin specific model"
+    ]
+  },
+  {
+    "id": "G-d59f258cf29e3b61",
+    "verdict": "部分证实",
+    "confirmed": "EAR 的先进计算/再出口条件与 FCC 26-50 的设备授权框架均有官方文本。Section 301 为另一个关税制度。",
+    "missing": "缺单独的高速互联带宽红线法条、关税归类和具体变化时间。原句把三套制度合在一起，无法核实整个行业结论。",
+    "proposal": "",
+    "target": "并到本页 FCC 26-50、BIS §734.9 和 Section 301 各自的证据记录。",
+    "evidence": [
+      {
+        "title": "BIS EAR §734.9",
+        "url": "https://www.bis.gov/regulations/ear/734",
+        "locator": "§734.9 导言、(e)",
+        "quote": "assessing the item classification, destination, end-use, and end-user"
+      },
+      {
+        "title": "BIS EAR Part 744",
+        "url": "https://www.bis.gov/regulations/ear/744",
+        "locator": "§744.23 及补编 4",
+        "quote": "Entity List"
+      },
+      {
+        "title": "Federal Register · FCC 26-50",
+        "url": "https://www.federalregister.gov/d/2026-18535",
+        "locator": "Dates 与 Final Rules",
+        "quote": "This final rule is effective October 13, 2026."
+      }
+    ],
+    "search": [
+      "BIS EAR 734.9、744",
+      "Federal Register 2026-18535",
+      "USTR Section 301 见本表 G-b56a487cd32b51e8"
+    ]
+  },
+  {
+    "id": "G-8a28326f0e24c1db",
+    "verdict": "部分证实",
+    "confirmed": "Fusion 自己的 2026 年 10 月市场观察把 800G/1.6T optics、AEC 和 DSP 的交期列为延长，且按设计和认证条件区分。",
+    "missing": "Fusion 原表是渠道观察，缺制造商逐型号交期或全行业样本。所查 Fusion 文档不能排除各法域政策限制。",
+    "proposal": "",
+    "target": "对照 calls/themes.csv T016 的瓶颈范围。保留为第三方市场观察，等待制造商一手资料。",
+    "evidence": [
+      {
+        "title": "Fusion Worldwide · The Greensheet October 2026",
+        "url": "https://info.fusionww.com/blog/the-greensheet-october-2026",
+        "locator": "Lead Times & Pricing 表及注释",
+        "quote": "Extended; design and qualification-specific"
+      },
+      {
+        "title": "Fusion Worldwide · Chinese Optical Transceiver Ban",
+        "url": "https://info.fusionww.com/blog/chinese-optical-transceiver-ban-what-procurement-should-know?hs_amp=true",
+        "locator": "开头",
+        "quote": "the FCC is drafting a measure"
+      }
+    ],
+    "search": [
+      "Fusion Worldwide October 2026 Greensheet 102.4T 224G",
+      "Fusion Worldwide optical transceiver ban"
+    ]
+  },
+  {
+    "id": "G-48b980ecc0e4ea6f",
+    "verdict": "公开不可验证",
+    "confirmed": "这是一项供应链建议。CBP 的 H335829 对特定光收发器的裁定也表明，部分工序转移后仍可能认定为原产中国。",
+    "missing": "缺同型号工序、零部件来源、适用关税与可对应个案的 CBP 裁定。",
+    "proposal": "",
+    "target": "无可写条目。留在复核清单。",
+    "evidence": [
+      {
+        "title": "CBP CROSS · H335829 原文",
+        "url": "https://rulings.cbp.gov/api/ruling/H335829",
+        "locator": "HOLDING，依该案事实",
+        "quote": "the country of origin of the subject optical transceiver units is China"
+      }
+    ],
+    "search": [
+      "CBP H335829 CROSS 官方原件入口",
+      "CBP optical transceivers substantial transformation"
+    ]
+  }
+]
